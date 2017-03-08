@@ -1,1 +1,0 @@
-# knetikcloud-csharp-net20-client
