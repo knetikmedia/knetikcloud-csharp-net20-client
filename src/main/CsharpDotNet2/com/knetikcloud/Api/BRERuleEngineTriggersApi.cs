@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a trigger Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
         /// </summary>
         /// <param name="breTriggerResource">The BRE trigger resource object</param>
-        /// <returns>ModelBreTriggerResource</returns>
-        ModelBreTriggerResource CreateBRETrigger (ModelBreTriggerResource breTriggerResource);
+        /// <returns>BreTriggerResource</returns>
+        BreTriggerResource CreateBRETrigger (BreTriggerResource breTriggerResource);
         /// <summary>
         /// Delete a trigger May fail if there are existing rules against it. Cannot delete core triggers
         /// </summary>
@@ -27,8 +27,8 @@ namespace com.knetikcloud.Api
         /// Get a single trigger 
         /// </summary>
         /// <param name="eventName">The trigger event name</param>
-        /// <returns>ModelBreTriggerResource</returns>
-        ModelBreTriggerResource GetBRETrigger (string eventName);
+        /// <returns>BreTriggerResource</returns>
+        BreTriggerResource GetBRETrigger (string eventName);
         /// <summary>
         /// List triggers 
         /// </summary>
@@ -39,15 +39,15 @@ namespace com.knetikcloud.Api
         /// <param name="filterSearch">Filter for triggers containing the given words somewhere within name, description and tags</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceBreTriggerResource</returns>
-        ModelPageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page);
+        /// <returns>PageResourceBreTriggerResource</returns>
+        PageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page);
         /// <summary>
         /// Update a trigger May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
         /// </summary>
         /// <param name="eventName">The trigger event name</param>
         /// <param name="breTriggerResource">The BRE trigger resource object</param>
-        /// <returns>ModelBreTriggerResource</returns>
-        ModelBreTriggerResource UpdateBRETrigger (string eventName, ModelBreTriggerResource breTriggerResource);
+        /// <returns>BreTriggerResource</returns>
+        BreTriggerResource UpdateBRETrigger (string eventName, BreTriggerResource breTriggerResource);
     }
   
     /// <summary>
@@ -107,8 +107,8 @@ namespace com.knetikcloud.Api
         /// Create a trigger Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
         /// </summary>
         /// <param name="breTriggerResource">The BRE trigger resource object</param> 
-        /// <returns>ModelBreTriggerResource</returns>            
-        public ModelBreTriggerResource CreateBRETrigger (ModelBreTriggerResource breTriggerResource)
+        /// <returns>BreTriggerResource</returns>            
+        public BreTriggerResource CreateBRETrigger (BreTriggerResource breTriggerResource)
         {
             
     
@@ -134,7 +134,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateBRETrigger: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreTriggerResource) ApiClient.Deserialize(response.Content, typeof(ModelBreTriggerResource), response.Headers);
+            return (BreTriggerResource) ApiClient.Deserialize(response.Content, typeof(BreTriggerResource), response.Headers);
         }
     
         /// <summary>
@@ -178,8 +178,8 @@ namespace com.knetikcloud.Api
         /// Get a single trigger 
         /// </summary>
         /// <param name="eventName">The trigger event name</param> 
-        /// <returns>ModelBreTriggerResource</returns>            
-        public ModelBreTriggerResource GetBRETrigger (string eventName)
+        /// <returns>BreTriggerResource</returns>            
+        public BreTriggerResource GetBRETrigger (string eventName)
         {
             
             // verify the required parameter 'eventName' is set
@@ -208,7 +208,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRETrigger: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreTriggerResource) ApiClient.Deserialize(response.Content, typeof(ModelBreTriggerResource), response.Headers);
+            return (BreTriggerResource) ApiClient.Deserialize(response.Content, typeof(BreTriggerResource), response.Headers);
         }
     
         /// <summary>
@@ -221,8 +221,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterSearch">Filter for triggers containing the given words somewhere within name, description and tags</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceBreTriggerResource</returns>            
-        public ModelPageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page)
+        /// <returns>PageResourceBreTriggerResource</returns>            
+        public PageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page)
         {
             
     
@@ -254,7 +254,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRETriggers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBreTriggerResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBreTriggerResource), response.Headers);
+            return (PageResourceBreTriggerResource) ApiClient.Deserialize(response.Content, typeof(PageResourceBreTriggerResource), response.Headers);
         }
     
         /// <summary>
@@ -262,8 +262,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="eventName">The trigger event name</param> 
         /// <param name="breTriggerResource">The BRE trigger resource object</param> 
-        /// <returns>ModelBreTriggerResource</returns>            
-        public ModelBreTriggerResource UpdateBRETrigger (string eventName, ModelBreTriggerResource breTriggerResource)
+        /// <returns>BreTriggerResource</returns>            
+        public BreTriggerResource UpdateBRETrigger (string eventName, BreTriggerResource breTriggerResource)
         {
             
             // verify the required parameter 'eventName' is set
@@ -293,7 +293,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBRETrigger: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreTriggerResource) ApiClient.Deserialize(response.Content, typeof(ModelBreTriggerResource), response.Headers);
+            return (BreTriggerResource) ApiClient.Deserialize(response.Content, typeof(BreTriggerResource), response.Headers);
         }
     
     }

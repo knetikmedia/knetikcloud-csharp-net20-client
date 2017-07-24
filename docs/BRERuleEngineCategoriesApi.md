@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="createbrecategorytemplate"></a>
 # **CreateBRECategoryTemplate**
-> ModelTemplateResource CreateBRECategoryTemplate (ModelTemplateResource template)
+> TemplateResource CreateBRECategoryTemplate (TemplateResource template)
 
 Create a BRE category template
 
@@ -41,12 +41,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineCategoriesApi();
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The category template to create (optional) 
+            var template = new TemplateResource(); // TemplateResource | The category template to create (optional) 
 
             try
             {
                 // Create a BRE category template
-                ModelTemplateResource result = apiInstance.CreateBRECategoryTemplate(template);
+                TemplateResource result = apiInstance.CreateBRECategoryTemplate(template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,11 +62,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The category template to create | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The category template to create | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ void (empty response body)
 
 <a name="getbrecategories"></a>
 # **GetBRECategories**
-> ModelPageResourceBreCategoryResource GetBRECategories (int? size, int? page)
+> PageResourceBreCategoryResource GetBRECategories (int? size, int? page)
 
 List categories
 
@@ -176,7 +176,7 @@ namespace Example
             try
             {
                 // List categories
-                ModelPageResourceBreCategoryResource result = apiInstance.GetBRECategories(size, page);
+                PageResourceBreCategoryResource result = apiInstance.GetBRECategories(size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBreCategoryResource**](ModelPageResourceBreCategoryResource.md)
+[**PageResourceBreCategoryResource**](PageResourceBreCategoryResource.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 <a name="getbrecategory"></a>
 # **GetBRECategory**
-> ModelBreCategoryResource GetBRECategory (string name)
+> BreCategoryResource GetBRECategory (string name)
 
 Get a single category
 
@@ -240,7 +240,7 @@ namespace Example
             try
             {
                 // Get a single category
-                ModelBreCategoryResource result = apiInstance.GetBRECategory(name);
+                BreCategoryResource result = apiInstance.GetBRECategory(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBreCategoryResource**](ModelBreCategoryResource.md)
+[**BreCategoryResource**](BreCategoryResource.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 <a name="getbrecategorytemplate"></a>
 # **GetBRECategoryTemplate**
-> ModelTemplateResource GetBRECategoryTemplate (string id)
+> TemplateResource GetBRECategoryTemplate (string id)
 
 Get a single BRE category template
 
@@ -303,7 +303,7 @@ namespace Example
             try
             {
                 // Get a single BRE category template
-                ModelTemplateResource result = apiInstance.GetBRECategoryTemplate(id);
+                TemplateResource result = apiInstance.GetBRECategoryTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="getbrecategorytemplates"></a>
 # **GetBRECategoryTemplates**
-> ModelPageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order)
 
 List and search BRE category templates
 
@@ -368,7 +368,7 @@ namespace Example
             try
             {
                 // List and search BRE category templates
-                ModelPageResourceTemplateResource result = apiInstance.GetBRECategoryTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetBRECategoryTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebrecategory"></a>
 # **UpdateBRECategory**
-> ModelBreCategoryResource UpdateBRECategory (string name, ModelBreCategoryResource category)
+> BreCategoryResource UpdateBRECategory (string name, BreCategoryResource category)
 
 Update a category
 
@@ -429,12 +429,12 @@ namespace Example
 
             var apiInstance = new BRERuleEngineCategoriesApi();
             var name = name_example;  // string | The category name
-            var category = new ModelBreCategoryResource(); // ModelBreCategoryResource | The updated BRE category information (optional) 
+            var category = new BreCategoryResource(); // BreCategoryResource | The updated BRE category information (optional) 
 
             try
             {
                 // Update a category
-                ModelBreCategoryResource result = apiInstance.UpdateBRECategory(name, category);
+                BreCategoryResource result = apiInstance.UpdateBRECategory(name, category);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,11 +451,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The category name | 
- **category** | [**ModelBreCategoryResource**](ModelBreCategoryResource.md)| The updated BRE category information | [optional] 
+ **category** | [**BreCategoryResource**](BreCategoryResource.md)| The updated BRE category information | [optional] 
 
 ### Return type
 
-[**ModelBreCategoryResource**](ModelBreCategoryResource.md)
+[**BreCategoryResource**](BreCategoryResource.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebrecategorytemplate"></a>
 # **UpdateBRECategoryTemplate**
-> ModelTemplateResource UpdateBRECategoryTemplate (string id, ModelTemplateResource template)
+> TemplateResource UpdateBRECategoryTemplate (string id, TemplateResource template)
 
 Update a BRE category template
 
@@ -494,12 +494,12 @@ namespace Example
 
             var apiInstance = new BRERuleEngineCategoriesApi();
             var id = id_example;  // string | The id of the template
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The updated category template definition (optional) 
+            var template = new TemplateResource(); // TemplateResource | The updated category template definition (optional) 
 
             try
             {
                 // Update a BRE category template
-                ModelTemplateResource result = apiInstance.UpdateBRECategoryTemplate(id, template);
+                TemplateResource result = apiInstance.UpdateBRECategoryTemplate(id, template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -516,11 +516,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The updated category template definition | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The updated category template definition | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

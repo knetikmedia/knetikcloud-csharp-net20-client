@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The payment request to be sent to XSolla</param>
         /// <returns>string</returns>
-        string CreateXsollaTokenUrl (ModelXsollaPaymentRequest request);
+        string CreateXsollaTokenUrl (XsollaPaymentRequest request);
         /// <summary>
         /// Receives payment response from Xsolla Only used by Xsolla to call back to JSAPI after processing user payment action
         /// </summary>
@@ -82,7 +82,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The payment request to be sent to XSolla</param> 
         /// <returns>string</returns>            
-        public string CreateXsollaTokenUrl (ModelXsollaPaymentRequest request)
+        public string CreateXsollaTokenUrl (XsollaPaymentRequest request)
         {
             
     

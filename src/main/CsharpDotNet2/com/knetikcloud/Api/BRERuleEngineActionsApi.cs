@@ -18,8 +18,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterName">Filter for actions that have names containing the given string</param>
         /// <param name="filterTags">Filter for actions that have all of the given tags (comma separated list)</param>
         /// <param name="filterSearch">Filter for actions containing the given words somewhere within name, description and tags</param>
-        /// <returns>List&lt;ModelActionResource&gt;</returns>
-        List<ModelActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch);
+        /// <returns>List&lt;ActionResource&gt;</returns>
+        List<ActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch);
     }
   
     /// <summary>
@@ -82,8 +82,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterName">Filter for actions that have names containing the given string</param> 
         /// <param name="filterTags">Filter for actions that have all of the given tags (comma separated list)</param> 
         /// <param name="filterSearch">Filter for actions containing the given words somewhere within name, description and tags</param> 
-        /// <returns>List&lt;ModelActionResource&gt;</returns>            
-        public List<ModelActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch)
+        /// <returns>List&lt;ActionResource&gt;</returns>            
+        public List<ActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch)
         {
             
     
@@ -112,7 +112,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREActions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelActionResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelActionResource>), response.Headers);
+            return (List<ActionResource>) ApiClient.Deserialize(response.Content, typeof(List<ActionResource>), response.Headers);
         }
     
     }

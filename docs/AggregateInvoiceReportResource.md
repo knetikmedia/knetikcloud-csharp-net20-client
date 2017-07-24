@@ -1,12 +1,12 @@
-# com.knetikcloud.Model.ModelAggregateInvoiceReportResource
+# com.knetikcloud.Model.AggregateInvoiceReportResource
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | **long?** |  | [optional] [default to null]
-**Date** | **string** |  | [optional] [default to null]
-**Revenue** | **double?** |  | [optional] [default to null]
-**UserCount** | **long?** |  | [optional] [default to null]
+**Count** | **long?** |  | [optional] 
+**Date** | **string** |  | [optional] 
+**Revenue** | **double?** |  | [optional] 
+**UserCount** | **long?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

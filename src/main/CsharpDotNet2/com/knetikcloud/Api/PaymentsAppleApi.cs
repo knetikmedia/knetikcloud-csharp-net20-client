@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request for paying an invoice through an Apple receipt</param>
         /// <returns>string</returns>
-        string VerifyAppleReceipt (ModelApplyPaymentRequest request);
+        string VerifyAppleReceipt (ApplyPaymentRequest request);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request for paying an invoice through an Apple receipt</param> 
         /// <returns>string</returns>            
-        public string VerifyAppleReceipt (ModelApplyPaymentRequest request)
+        public string VerifyAppleReceipt (ApplyPaymentRequest request)
         {
             
     

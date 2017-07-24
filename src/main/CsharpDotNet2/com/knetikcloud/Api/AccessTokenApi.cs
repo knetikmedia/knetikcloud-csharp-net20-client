@@ -19,8 +19,8 @@ namespace com.knetikcloud.Api
         /// <param name="clientSecret">The secret key of the client.  Used only with a grant_type of client_credentials</param>
         /// <param name="username">The username of the client.  Used only with a grant_type of password</param>
         /// <param name="password">The password of the client.  Used only with a grant_type of password</param>
-        /// <returns>ModelOAuth2Resource</returns>
-        ModelOAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password);
+        /// <returns>OAuth2Resource</returns>
+        OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password);
     }
   
     /// <summary>
@@ -84,8 +84,8 @@ namespace com.knetikcloud.Api
         /// <param name="clientSecret">The secret key of the client.  Used only with a grant_type of client_credentials</param> 
         /// <param name="username">The username of the client.  Used only with a grant_type of password</param> 
         /// <param name="password">The password of the client.  Used only with a grant_type of password</param> 
-        /// <returns>ModelOAuth2Resource</returns>            
-        public ModelOAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
+        /// <returns>OAuth2Resource</returns>            
+        public OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
         {
             
             // verify the required parameter 'grantType' is set
@@ -121,7 +121,7 @@ if (password != null) formParams.Add("password", ApiClient.ParameterToString(pas
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetOAuthToken: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelOAuth2Resource) ApiClient.Deserialize(response.Content, typeof(ModelOAuth2Resource), response.Headers);
+            return (OAuth2Resource) ApiClient.Deserialize(response.Content, typeof(OAuth2Resource), response.Headers);
         }
     
     }

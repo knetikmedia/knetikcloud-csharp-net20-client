@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="addcustomdiscount"></a>
 # **AddCustomDiscount**
-> void AddCustomDiscount (string id, ModelCouponDefinition customDiscount)
+> void AddCustomDiscount (string id, CouponDefinition customDiscount)
 
 Adds a custom discount to the cart
 
@@ -45,7 +45,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var customDiscount = new ModelCouponDefinition(); // ModelCouponDefinition | The details of the discount to add (optional) 
+            var customDiscount = new CouponDefinition(); // CouponDefinition | The details of the discount to add (optional) 
 
             try
             {
@@ -66,7 +66,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **customDiscount** | [**ModelCouponDefinition**](ModelCouponDefinition.md)| The details of the discount to add | [optional] 
+ **customDiscount** | [**CouponDefinition**](CouponDefinition.md)| The details of the discount to add | [optional] 
 
 ### Return type
 
@@ -85,7 +85,7 @@ void (empty response body)
 
 <a name="adddiscounttocart"></a>
 # **AddDiscountToCart**
-> void AddDiscountToCart (string id, ModelSkuRequest skuRequest)
+> void AddDiscountToCart (string id, SkuRequest skuRequest)
 
 Adds a discount coupon to the cart
 
@@ -109,7 +109,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var skuRequest = new ModelSkuRequest(); // ModelSkuRequest | The request of the sku (optional) 
+            var skuRequest = new SkuRequest(); // SkuRequest | The request of the sku (optional) 
 
             try
             {
@@ -130,7 +130,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **skuRequest** | [**ModelSkuRequest**](ModelSkuRequest.md)| The request of the sku | [optional] 
+ **skuRequest** | [**SkuRequest**](SkuRequest.md)| The request of the sku | [optional] 
 
 ### Return type
 
@@ -149,7 +149,7 @@ void (empty response body)
 
 <a name="additemtocart"></a>
 # **AddItemToCart**
-> void AddItemToCart (string id, ModelCartItemRequest cartItemRequest)
+> void AddItemToCart (string id, CartItemRequest cartItemRequest)
 
 Add an item to the cart
 
@@ -175,7 +175,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var cartItemRequest = new ModelCartItemRequest(); // ModelCartItemRequest | The cart item request object (optional) 
+            var cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object (optional) 
 
             try
             {
@@ -196,7 +196,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **cartItemRequest** | [**ModelCartItemRequest**](ModelCartItemRequest.md)| The cart item request object | [optional] 
+ **cartItemRequest** | [**CartItemRequest**](CartItemRequest.md)| The cart item request object | [optional] 
 
 ### Return type
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 <a name="getcart"></a>
 # **GetCart**
-> ModelCart GetCart (string id)
+> Cart GetCart (string id)
 
 Returns the cart with the given GUID
 
@@ -310,7 +310,7 @@ namespace Example
             try
             {
                 // Returns the cart with the given GUID
-                ModelCart result = apiInstance.GetCart(id);
+                Cart result = apiInstance.GetCart(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCart**](ModelCart.md)
+[**Cart**](Cart.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 <a name="getcarts"></a>
 # **GetCarts**
-> ModelPageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order)
+> PageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order)
 
 Get a list of carts
 
@@ -376,7 +376,7 @@ namespace Example
             try
             {
                 // Get a list of carts
-                ModelPageResourceCartSummary result = apiInstance.GetCarts(filterOwnerId, size, page, order);
+                PageResourceCartSummary result = apiInstance.GetCarts(filterOwnerId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCartSummary**](ModelPageResourceCartSummary.md)
+[**PageResourceCartSummary**](PageResourceCartSummary.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 <a name="getshippable"></a>
 # **GetShippable**
-> ModelCartShippableResponse GetShippable (string id)
+> CartShippableResponse GetShippable (string id)
 
 Returns whether a cart requires shipping
 
@@ -442,7 +442,7 @@ namespace Example
             try
             {
                 // Returns whether a cart requires shipping
-                ModelCartShippableResponse result = apiInstance.GetShippable(id);
+                CartShippableResponse result = apiInstance.GetShippable(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCartShippableResponse**](ModelCartShippableResponse.md)
+[**CartShippableResponse**](CartShippableResponse.md)
 
 ### Authorization
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 <a name="getshippingcountries"></a>
 # **GetShippingCountries**
-> ModelSampleCountriesResponse GetShippingCountries (string id)
+> SampleCountriesResponse GetShippingCountries (string id)
 
 Get the list of available shipping countries per vendor
 
@@ -507,7 +507,7 @@ namespace Example
             try
             {
                 // Get the list of available shipping countries per vendor
-                ModelSampleCountriesResponse result = apiInstance.GetShippingCountries(id);
+                SampleCountriesResponse result = apiInstance.GetShippingCountries(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelSampleCountriesResponse**](ModelSampleCountriesResponse.md)
+[**SampleCountriesResponse**](SampleCountriesResponse.md)
 
 ### Authorization
 
@@ -736,7 +736,7 @@ void (empty response body)
 
 <a name="updateitemincart"></a>
 # **UpdateItemInCart**
-> void UpdateItemInCart (string id, ModelCartItemRequest cartItemRequest)
+> void UpdateItemInCart (string id, CartItemRequest cartItemRequest)
 
 Changes the quantity of an item already in the cart
 
@@ -762,7 +762,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var cartItemRequest = new ModelCartItemRequest(); // ModelCartItemRequest | The cart item request object (optional) 
+            var cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object (optional) 
 
             try
             {
@@ -783,7 +783,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **cartItemRequest** | [**ModelCartItemRequest**](ModelCartItemRequest.md)| The cart item request object | [optional] 
+ **cartItemRequest** | [**CartItemRequest**](CartItemRequest.md)| The cart item request object | [optional] 
 
 ### Return type
 
@@ -802,7 +802,7 @@ void (empty response body)
 
 <a name="updateshippingaddress"></a>
 # **UpdateShippingAddress**
-> void UpdateShippingAddress (string id, ModelCartShippingAddressRequest cartShippingAddressRequest)
+> void UpdateShippingAddress (string id, CartShippingAddressRequest cartShippingAddressRequest)
 
 Modifies or sets the order shipping address
 
@@ -826,7 +826,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var cartShippingAddressRequest = new ModelCartShippingAddressRequest(); // ModelCartShippingAddressRequest | The cart shipping address request object (optional) 
+            var cartShippingAddressRequest = new CartShippingAddressRequest(); // CartShippingAddressRequest | The cart shipping address request object (optional) 
 
             try
             {
@@ -847,7 +847,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **cartShippingAddressRequest** | [**ModelCartShippingAddressRequest**](ModelCartShippingAddressRequest.md)| The cart shipping address request object | [optional] 
+ **cartShippingAddressRequest** | [**CartShippingAddressRequest**](CartShippingAddressRequest.md)| The cart shipping address request object | [optional] 
 
 ### Return type
 

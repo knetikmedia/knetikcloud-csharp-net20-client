@@ -1,14 +1,14 @@
-# com.knetikcloud.Model.ModelSqlDatabaseConfig
+# com.knetikcloud.Model.SqlDatabaseConfig
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionPoolSize** | **int?** |  | [optional] [default to null]
-**DbName** | **string** |  | [optional] [default to null]
-**Hostname** | **string** |  | [optional] [default to null]
-**Password** | **string** |  | [optional] [default to null]
-**Port** | **int?** |  | [optional] [default to null]
-**Username** | **string** |  | [optional] [default to null]
+**ConnectionPoolSize** | **int?** |  | [optional] 
+**DbName** | **string** |  | [optional] 
+**Hostname** | **string** |  | [optional] 
+**Password** | **string** |  | [optional] 
+**Port** | **int?** |  | [optional] 
+**Username** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

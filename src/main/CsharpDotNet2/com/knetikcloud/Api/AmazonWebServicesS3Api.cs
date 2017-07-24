@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="filename">The file name</param>
         /// <param name="contentType">The content type</param>
-        /// <returns>ModelAmazonS3Activity</returns>
-        ModelAmazonS3Activity GetSignedS3URL (string filename, string contentType);
+        /// <returns>AmazonS3Activity</returns>
+        AmazonS3Activity GetSignedS3URL (string filename, string contentType);
     }
   
     /// <summary>
@@ -78,8 +78,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="filename">The file name</param> 
         /// <param name="contentType">The content type</param> 
-        /// <returns>ModelAmazonS3Activity</returns>            
-        public ModelAmazonS3Activity GetSignedS3URL (string filename, string contentType)
+        /// <returns>AmazonS3Activity</returns>            
+        public AmazonS3Activity GetSignedS3URL (string filename, string contentType)
         {
             
     
@@ -106,7 +106,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSignedS3URL: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAmazonS3Activity) ApiClient.Deserialize(response.Content, typeof(ModelAmazonS3Activity), response.Headers);
+            return (AmazonS3Activity) ApiClient.Deserialize(response.Content, typeof(AmazonS3Activity), response.Headers);
         }
     
     }

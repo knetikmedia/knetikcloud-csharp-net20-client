@@ -1,10 +1,10 @@
-# com.knetikcloud.Model.ModelWalletTotalResponse
+# com.knetikcloud.Model.WalletTotalResponse
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrencyCode** | **string** | The currency code | [optional] [default to null]
-**Total** | **double?** | The sum of all wallets in the system for this currency | [optional] [default to null]
+**CurrencyCode** | **string** | The currency code | [optional] 
+**Total** | **double?** | The sum of all wallets in the system for this currency | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

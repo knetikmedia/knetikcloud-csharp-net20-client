@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createrewardset"></a>
 # **CreateRewardSet**
-> ModelRewardSetResource CreateRewardSet (ModelRewardSetResource rewardSetResource)
+> RewardSetResource CreateRewardSet (RewardSetResource rewardSetResource)
 
 Create a reward set
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsRewardsApi();
-            var rewardSetResource = new ModelRewardSetResource(); // ModelRewardSetResource | The reward set resource object (optional) 
+            var rewardSetResource = new RewardSetResource(); // RewardSetResource | The reward set resource object (optional) 
 
             try
             {
                 // Create a reward set
-                ModelRewardSetResource result = apiInstance.CreateRewardSet(rewardSetResource);
+                RewardSetResource result = apiInstance.CreateRewardSet(rewardSetResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rewardSetResource** | [**ModelRewardSetResource**](ModelRewardSetResource.md)| The reward set resource object | [optional] 
+ **rewardSetResource** | [**RewardSetResource**](RewardSetResource.md)| The reward set resource object | [optional] 
 
 ### Return type
 
-[**ModelRewardSetResource**](ModelRewardSetResource.md)
+[**RewardSetResource**](RewardSetResource.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getrewardset"></a>
 # **GetRewardSet**
-> ModelRewardSetResource GetRewardSet (int? id)
+> RewardSetResource GetRewardSet (int? id)
 
 Get a single reward set
 
@@ -163,7 +163,7 @@ namespace Example
             try
             {
                 // Get a single reward set
-                ModelRewardSetResource result = apiInstance.GetRewardSet(id);
+                RewardSetResource result = apiInstance.GetRewardSet(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRewardSetResource**](ModelRewardSetResource.md)
+[**RewardSetResource**](RewardSetResource.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="getrewardsets"></a>
 # **GetRewardSets**
-> ModelPageResourceRewardSetResource GetRewardSets (int? size, int? page, string order)
+> PageResourceRewardSetResource GetRewardSets (int? size, int? page, string order)
 
 List and search reward sets
 
@@ -225,7 +225,7 @@ namespace Example
             try
             {
                 // List and search reward sets
-                ModelPageResourceRewardSetResource result = apiInstance.GetRewardSets(size, page, order);
+                PageResourceRewardSetResource result = apiInstance.GetRewardSets(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceRewardSetResource**](ModelPageResourceRewardSetResource.md)
+[**PageResourceRewardSetResource**](PageResourceRewardSetResource.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ No authorization required
 
 <a name="updaterewardset"></a>
 # **UpdateRewardSet**
-> ModelRewardSetResource UpdateRewardSet (int? id, ModelRewardSetResource rewardSetResource)
+> RewardSetResource UpdateRewardSet (int? id, RewardSetResource rewardSetResource)
 
 Update a reward set
 
@@ -286,12 +286,12 @@ namespace Example
 
             var apiInstance = new CampaignsRewardsApi();
             var id = 56;  // int? | The reward id
-            var rewardSetResource = new ModelRewardSetResource(); // ModelRewardSetResource | The reward set resource object (optional) 
+            var rewardSetResource = new RewardSetResource(); // RewardSetResource | The reward set resource object (optional) 
 
             try
             {
                 // Update a reward set
-                ModelRewardSetResource result = apiInstance.UpdateRewardSet(id, rewardSetResource);
+                RewardSetResource result = apiInstance.UpdateRewardSet(id, rewardSetResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -308,11 +308,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The reward id | 
- **rewardSetResource** | [**ModelRewardSetResource**](ModelRewardSetResource.md)| The reward set resource object | [optional] 
+ **rewardSetResource** | [**RewardSetResource**](RewardSetResource.md)| The reward set resource object | [optional] 
 
 ### Return type
 
-[**ModelRewardSetResource**](ModelRewardSetResource.md)
+[**RewardSetResource**](RewardSetResource.md)
 
 ### Authorization
 

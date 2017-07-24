@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="linkaccounts"></a>
 # **LinkAccounts**
-> void LinkAccounts (ModelFacebookToken facebookToken)
+> void LinkAccounts (FacebookToken facebookToken)
 
 Link facebook account
 
@@ -34,7 +34,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SocialFacebookApi();
-            var facebookToken = new ModelFacebookToken(); // ModelFacebookToken | The token from facebook (optional) 
+            var facebookToken = new FacebookToken(); // FacebookToken | The token from facebook (optional) 
 
             try
             {
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **facebookToken** | [**ModelFacebookToken**](ModelFacebookToken.md)| The token from facebook | [optional] 
+ **facebookToken** | [**FacebookToken**](FacebookToken.md)| The token from facebook | [optional] 
 
 ### Return type
 

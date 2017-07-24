@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="addmembertogroup"></a>
 # **AddMemberToGroup**
-> ModelGroupMemberResource AddMemberToGroup (string uniqueName, ModelGroupMemberResource user)
+> GroupMemberResource AddMemberToGroup (string uniqueName, GroupMemberResource user)
 
 Adds a new member to the group
 
@@ -49,12 +49,12 @@ namespace Example
 
             var apiInstance = new UsersGroupsApi();
             var uniqueName = uniqueName_example;  // string | The group unique name
-            var user = new ModelGroupMemberResource(); // ModelGroupMemberResource | The id and status for a user to add to the group
+            var user = new GroupMemberResource(); // GroupMemberResource | The id and status for a user to add to the group
 
             try
             {
                 // Adds a new member to the group
-                ModelGroupMemberResource result = apiInstance.AddMemberToGroup(uniqueName, user);
+                GroupMemberResource result = apiInstance.AddMemberToGroup(uniqueName, user);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -71,11 +71,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **string**| The group unique name | 
- **user** | [**ModelGroupMemberResource**](ModelGroupMemberResource.md)| The id and status for a user to add to the group | 
+ **user** | [**GroupMemberResource**](GroupMemberResource.md)| The id and status for a user to add to the group | 
 
 ### Return type
 
-[**ModelGroupMemberResource**](ModelGroupMemberResource.md)
+[**GroupMemberResource**](GroupMemberResource.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="addmemberstogroup"></a>
 # **AddMembersToGroup**
-> List<ModelGroupMemberResource> AddMembersToGroup (string uniqueName, List<ModelGroupMemberResource> users)
+> List<GroupMemberResource> AddMembersToGroup (string uniqueName, List<GroupMemberResource> users)
 
 Adds multiple members to the group
 
@@ -114,12 +114,12 @@ namespace Example
 
             var apiInstance = new UsersGroupsApi();
             var uniqueName = uniqueName_example;  // string | The group unique name
-            var users = new List<ModelGroupMemberResource>(); // List<ModelGroupMemberResource> | The id and status for a list of users to add to the group
+            var users = new List<GroupMemberResource>(); // List<GroupMemberResource> | The id and status for a list of users to add to the group
 
             try
             {
                 // Adds multiple members to the group
-                List&lt;ModelGroupMemberResource&gt; result = apiInstance.AddMembersToGroup(uniqueName, users);
+                List&lt;GroupMemberResource&gt; result = apiInstance.AddMembersToGroup(uniqueName, users);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -136,11 +136,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **string**| The group unique name | 
- **users** | [**List<ModelGroupMemberResource>**](ModelGroupMemberResource.md)| The id and status for a list of users to add to the group | 
+ **users** | [**List<GroupMemberResource>**](GroupMemberResource.md)| The id and status for a list of users to add to the group | 
 
 ### Return type
 
-[**List<ModelGroupMemberResource>**](ModelGroupMemberResource.md)
+[**List<GroupMemberResource>**](GroupMemberResource.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 <a name="creategroup"></a>
 # **CreateGroup**
-> ModelGroupResource CreateGroup (ModelGroupResource groupResource)
+> GroupResource CreateGroup (GroupResource groupResource)
 
 Create a group
 
@@ -178,12 +178,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersGroupsApi();
-            var groupResource = new ModelGroupResource(); // ModelGroupResource | The new group (optional) 
+            var groupResource = new GroupResource(); // GroupResource | The new group (optional) 
 
             try
             {
                 // Create a group
-                ModelGroupResource result = apiInstance.CreateGroup(groupResource);
+                GroupResource result = apiInstance.CreateGroup(groupResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -199,11 +199,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupResource** | [**ModelGroupResource**](ModelGroupResource.md)| The new group | [optional] 
+ **groupResource** | [**GroupResource**](GroupResource.md)| The new group | [optional] 
 
 ### Return type
 
-[**ModelGroupResource**](ModelGroupResource.md)
+[**GroupResource**](GroupResource.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 <a name="creategrouptemplate"></a>
 # **CreateGroupTemplate**
-> ModelTemplateResource CreateGroupTemplate (ModelTemplateResource groupTemplateResource)
+> TemplateResource CreateGroupTemplate (TemplateResource groupTemplateResource)
 
 Create a group template
 
@@ -243,12 +243,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersGroupsApi();
-            var groupTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The group template resource object (optional) 
+            var groupTemplateResource = new TemplateResource(); // TemplateResource | The group template resource object (optional) 
 
             try
             {
                 // Create a group template
-                ModelTemplateResource result = apiInstance.CreateGroupTemplate(groupTemplateResource);
+                TemplateResource result = apiInstance.CreateGroupTemplate(groupTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -264,11 +264,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The group template resource object | [optional] 
+ **groupTemplateResource** | [**TemplateResource**](TemplateResource.md)| The group template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -411,7 +411,7 @@ void (empty response body)
 
 <a name="getgroup"></a>
 # **GetGroup**
-> ModelGroupResource GetGroup (string uniqueName)
+> GroupResource GetGroup (string uniqueName)
 
 Loads a specific group's details
 
@@ -436,7 +436,7 @@ namespace Example
             try
             {
                 // Loads a specific group's details
-                ModelGroupResource result = apiInstance.GetGroup(uniqueName);
+                GroupResource result = apiInstance.GetGroup(uniqueName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelGroupResource**](ModelGroupResource.md)
+[**GroupResource**](GroupResource.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ No authorization required
 
 <a name="getgroupmember"></a>
 # **GetGroupMember**
-> ModelGroupMemberResource GetGroupMember (string uniqueName, int? userId)
+> GroupMemberResource GetGroupMember (string uniqueName, int? userId)
 
 Get a user from a group
 
@@ -497,7 +497,7 @@ namespace Example
             try
             {
                 // Get a user from a group
-                ModelGroupMemberResource result = apiInstance.GetGroupMember(uniqueName, userId);
+                GroupMemberResource result = apiInstance.GetGroupMember(uniqueName, userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelGroupMemberResource**](ModelGroupMemberResource.md)
+[**GroupMemberResource**](GroupMemberResource.md)
 
 ### Authorization
 
@@ -533,7 +533,7 @@ No authorization required
 
 <a name="getgroupmembers"></a>
 # **GetGroupMembers**
-> ModelPageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order)
+> PageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order)
 
 Lists members of the group
 
@@ -561,7 +561,7 @@ namespace Example
             try
             {
                 // Lists members of the group
-                ModelPageResourceGroupMemberResource result = apiInstance.GetGroupMembers(uniqueName, size, page, order);
+                PageResourceGroupMemberResource result = apiInstance.GetGroupMembers(uniqueName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceGroupMemberResource**](ModelPageResourceGroupMemberResource.md)
+[**PageResourceGroupMemberResource**](PageResourceGroupMemberResource.md)
 
 ### Authorization
 
@@ -599,7 +599,7 @@ No authorization required
 
 <a name="getgrouptemplate"></a>
 # **GetGroupTemplate**
-> ModelTemplateResource GetGroupTemplate (string id)
+> TemplateResource GetGroupTemplate (string id)
 
 Get a single group template
 
@@ -627,7 +627,7 @@ namespace Example
             try
             {
                 // Get a single group template
-                ModelTemplateResource result = apiInstance.GetGroupTemplate(id);
+                TemplateResource result = apiInstance.GetGroupTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -662,7 +662,7 @@ Name | Type | Description  | Notes
 
 <a name="getgrouptemplates"></a>
 # **GetGroupTemplates**
-> ModelPageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order)
 
 List and search group templates
 
@@ -692,7 +692,7 @@ namespace Example
             try
             {
                 // List and search group templates
-                ModelPageResourceTemplateResource result = apiInstance.GetGroupTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetGroupTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -853,7 +853,7 @@ void (empty response body)
 
 <a name="updategroup"></a>
 # **UpdateGroup**
-> void UpdateGroup (string uniqueName, ModelGroupResource groupResource)
+> void UpdateGroup (string uniqueName, GroupResource groupResource)
 
 Update a group
 
@@ -877,7 +877,7 @@ namespace Example
 
             var apiInstance = new UsersGroupsApi();
             var uniqueName = uniqueName_example;  // string | The group unique name
-            var groupResource = new ModelGroupResource(); // ModelGroupResource | The updated group (optional) 
+            var groupResource = new GroupResource(); // GroupResource | The updated group (optional) 
 
             try
             {
@@ -898,7 +898,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **string**| The group unique name | 
- **groupResource** | [**ModelGroupResource**](ModelGroupResource.md)| The updated group | [optional] 
+ **groupResource** | [**GroupResource**](GroupResource.md)| The updated group | [optional] 
 
 ### Return type
 
@@ -983,7 +983,7 @@ void (empty response body)
 
 <a name="updategrouptemplate"></a>
 # **UpdateGroupTemplate**
-> ModelTemplateResource UpdateGroupTemplate (string id, ModelTemplateResource groupTemplateResource)
+> TemplateResource UpdateGroupTemplate (string id, TemplateResource groupTemplateResource)
 
 Update a group template
 
@@ -1007,12 +1007,12 @@ namespace Example
 
             var apiInstance = new UsersGroupsApi();
             var id = id_example;  // string | The id of the template
-            var groupTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The group template resource object (optional) 
+            var groupTemplateResource = new TemplateResource(); // TemplateResource | The group template resource object (optional) 
 
             try
             {
                 // Update a group template
-                ModelTemplateResource result = apiInstance.UpdateGroupTemplate(id, groupTemplateResource);
+                TemplateResource result = apiInstance.UpdateGroupTemplate(id, groupTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1029,11 +1029,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **groupTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The group template resource object | [optional] 
+ **groupTemplateResource** | [**TemplateResource**](TemplateResource.md)| The group template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -1048,7 +1048,7 @@ Name | Type | Description  | Notes
 
 <a name="updategroups"></a>
 # **UpdateGroups**
-> ModelPageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order)
+> PageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order)
 
 List and search groups
 
@@ -1081,7 +1081,7 @@ namespace Example
             try
             {
                 // List and search groups
-                ModelPageResourceGroupResource result = apiInstance.UpdateGroups(filterTemplate, filterMemberCount, filterName, filterUniqueName, filterParent, filterStatus, size, page, order);
+                PageResourceGroupResource result = apiInstance.UpdateGroups(filterTemplate, filterMemberCount, filterName, filterUniqueName, filterParent, filterStatus, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1109,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceGroupResource**](ModelPageResourceGroupResource.md)
+[**PageResourceGroupResource**](PageResourceGroupResource.md)
 
 ### Authorization
 

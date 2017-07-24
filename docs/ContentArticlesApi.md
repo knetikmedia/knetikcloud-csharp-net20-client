@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createarticle"></a>
 # **CreateArticle**
-> ModelArticleResource CreateArticle (ModelArticleResource articleResource)
+> ArticleResource CreateArticle (ArticleResource articleResource)
 
 Create a new article
 
@@ -43,12 +43,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ContentArticlesApi();
-            var articleResource = new ModelArticleResource(); // ModelArticleResource | The new article (optional) 
+            var articleResource = new ArticleResource(); // ArticleResource | The new article (optional) 
 
             try
             {
                 // Create a new article
-                ModelArticleResource result = apiInstance.CreateArticle(articleResource);
+                ArticleResource result = apiInstance.CreateArticle(articleResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -64,11 +64,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **articleResource** | [**ModelArticleResource**](ModelArticleResource.md)| The new article | [optional] 
+ **articleResource** | [**ArticleResource**](ArticleResource.md)| The new article | [optional] 
 
 ### Return type
 
-[**ModelArticleResource**](ModelArticleResource.md)
+[**ArticleResource**](ArticleResource.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="createarticletemplate"></a>
 # **CreateArticleTemplate**
-> ModelTemplateResource CreateArticleTemplate (ModelTemplateResource articleTemplateResource)
+> TemplateResource CreateArticleTemplate (TemplateResource articleTemplateResource)
 
 Create an article template
 
@@ -108,12 +108,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ContentArticlesApi();
-            var articleTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The article template resource object (optional) 
+            var articleTemplateResource = new TemplateResource(); // TemplateResource | The article template resource object (optional) 
 
             try
             {
                 // Create an article template
-                ModelTemplateResource result = apiInstance.CreateArticleTemplate(articleTemplateResource);
+                TemplateResource result = apiInstance.CreateArticleTemplate(articleTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -129,11 +129,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **articleTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The article template resource object | [optional] 
+ **articleTemplateResource** | [**TemplateResource**](TemplateResource.md)| The article template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ void (empty response body)
 
 <a name="getarticle"></a>
 # **GetArticle**
-> ModelArticleResource GetArticle (string id)
+> ArticleResource GetArticle (string id)
 
 Get a single article
 
@@ -301,7 +301,7 @@ namespace Example
             try
             {
                 // Get a single article
-                ModelArticleResource result = apiInstance.GetArticle(id);
+                ArticleResource result = apiInstance.GetArticle(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelArticleResource**](ModelArticleResource.md)
+[**ArticleResource**](ArticleResource.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ No authorization required
 
 <a name="getarticletemplate"></a>
 # **GetArticleTemplate**
-> ModelTemplateResource GetArticleTemplate (string id)
+> TemplateResource GetArticleTemplate (string id)
 
 Get a single article template
 
@@ -364,7 +364,7 @@ namespace Example
             try
             {
                 // Get a single article template
-                ModelTemplateResource result = apiInstance.GetArticleTemplate(id);
+                TemplateResource result = apiInstance.GetArticleTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 <a name="getarticletemplates"></a>
 # **GetArticleTemplates**
-> ModelPageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order)
 
 List and search article templates
 
@@ -429,7 +429,7 @@ namespace Example
             try
             {
                 // List and search article templates
-                ModelPageResourceTemplateResource result = apiInstance.GetArticleTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetArticleTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="getarticles"></a>
 # **GetArticles**
-> ModelPageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTitle, int? size, int? page, string order)
+> PageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order)
 
 List and search articles
 
@@ -489,7 +489,9 @@ namespace Example
             
             var apiInstance = new ContentArticlesApi();
             var filterCategory = filterCategory_example;  // string | Filter for articles from a specific category by id (optional) 
-            var filterTagset = filterTagset_example;  // string | Filter for articles with specified tags (separated by comma) (optional) 
+            var filterTagset = filterTagset_example;  // string | Filter for articles with at least one of a specified set of tags (separated by comma) (optional) 
+            var filterTagIntersection = filterTagIntersection_example;  // string | Filter for articles with all of a specified set of tags (separated by comma) (optional) 
+            var filterTagExclusion = filterTagExclusion_example;  // string | Filter for articles with none of a specified set of tags (separated by comma) (optional) 
             var filterTitle = filterTitle_example;  // string | Filter for articles whose title contains a string (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
@@ -498,7 +500,7 @@ namespace Example
             try
             {
                 // List and search articles
-                ModelPageResourceArticleResource result = apiInstance.GetArticles(filterCategory, filterTagset, filterTitle, size, page, order);
+                PageResourceArticleResource result = apiInstance.GetArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -515,7 +517,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterCategory** | **string**| Filter for articles from a specific category by id | [optional] 
- **filterTagset** | **string**| Filter for articles with specified tags (separated by comma) | [optional] 
+ **filterTagset** | **string**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
+ **filterTagIntersection** | **string**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
+ **filterTagExclusion** | **string**| Filter for articles with none of a specified set of tags (separated by comma) | [optional] 
  **filterTitle** | **string**| Filter for articles whose title contains a string | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
@@ -523,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceArticleResource**](ModelPageResourceArticleResource.md)
+[**PageResourceArticleResource**](PageResourceArticleResource.md)
 
 ### Authorization
 
@@ -538,7 +542,7 @@ No authorization required
 
 <a name="updatearticle"></a>
 # **UpdateArticle**
-> ModelArticleResource UpdateArticle (string id, ModelArticleResource articleResource)
+> ArticleResource UpdateArticle (string id, ArticleResource articleResource)
 
 Update an existing article
 
@@ -562,12 +566,12 @@ namespace Example
 
             var apiInstance = new ContentArticlesApi();
             var id = id_example;  // string | The article id
-            var articleResource = new ModelArticleResource(); // ModelArticleResource | The article object (optional) 
+            var articleResource = new ArticleResource(); // ArticleResource | The article object (optional) 
 
             try
             {
                 // Update an existing article
-                ModelArticleResource result = apiInstance.UpdateArticle(id, articleResource);
+                ArticleResource result = apiInstance.UpdateArticle(id, articleResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -584,11 +588,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The article id | 
- **articleResource** | [**ModelArticleResource**](ModelArticleResource.md)| The article object | [optional] 
+ **articleResource** | [**ArticleResource**](ArticleResource.md)| The article object | [optional] 
 
 ### Return type
 
-[**ModelArticleResource**](ModelArticleResource.md)
+[**ArticleResource**](ArticleResource.md)
 
 ### Authorization
 
@@ -603,7 +607,7 @@ Name | Type | Description  | Notes
 
 <a name="updatearticletemplate"></a>
 # **UpdateArticleTemplate**
-> ModelTemplateResource UpdateArticleTemplate (string id, ModelTemplateResource articleTemplateResource)
+> TemplateResource UpdateArticleTemplate (string id, TemplateResource articleTemplateResource)
 
 Update an article template
 
@@ -627,12 +631,12 @@ namespace Example
 
             var apiInstance = new ContentArticlesApi();
             var id = id_example;  // string | The id of the template
-            var articleTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The article template resource object (optional) 
+            var articleTemplateResource = new TemplateResource(); // TemplateResource | The article template resource object (optional) 
 
             try
             {
                 // Update an article template
-                ModelTemplateResource result = apiInstance.UpdateArticleTemplate(id, articleTemplateResource);
+                TemplateResource result = apiInstance.UpdateArticleTemplate(id, articleTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -649,11 +653,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **articleTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The article template resource object | [optional] 
+ **articleTemplateResource** | [**TemplateResource**](TemplateResource.md)| The article template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

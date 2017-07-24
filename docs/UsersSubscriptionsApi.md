@@ -11,11 +11,12 @@ Method | HTTP request | Description
 [**SetSubscriptionPaymentMethod**](UsersSubscriptionsApi.md#setsubscriptionpaymentmethod) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/payment-method | Set the payment method to use for a subscription
 [**SetSubscriptionStatus**](UsersSubscriptionsApi.md#setsubscriptionstatus) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/status | Set the status of a subscription
 [**SetUserSubscriptionPlan**](UsersSubscriptionsApi.md#setusersubscriptionplan) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/plan | Set a new subscription plan for a user
+[**SetUserSubscriptionPrice**](UsersSubscriptionsApi.md#setusersubscriptionprice) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/price-override | Set a new subscription price for a user
 
 
 <a name="getusersubscriptiondetails"></a>
 # **GetUserSubscriptionDetails**
-> ModelInventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId)
+> InventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId)
 
 Get details about a user's subscription
 
@@ -44,7 +45,7 @@ namespace Example
             try
             {
                 // Get details about a user's subscription
-                ModelInventorySubscriptionResource result = apiInstance.GetUserSubscriptionDetails(userId, inventoryId);
+                InventorySubscriptionResource result = apiInstance.GetUserSubscriptionDetails(userId, inventoryId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelInventorySubscriptionResource**](ModelInventorySubscriptionResource.md)
+[**InventorySubscriptionResource**](InventorySubscriptionResource.md)
 
 ### Authorization
 
@@ -80,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserssubscriptiondetails"></a>
 # **GetUsersSubscriptionDetails**
-> List<ModelInventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId)
+> List<InventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId)
 
 Get details about a user's subscriptions
 
@@ -108,7 +109,7 @@ namespace Example
             try
             {
                 // Get details about a user's subscriptions
-                List&lt;ModelInventorySubscriptionResource&gt; result = apiInstance.GetUsersSubscriptionDetails(userId);
+                List&lt;InventorySubscriptionResource&gt; result = apiInstance.GetUsersSubscriptionDetails(userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelInventorySubscriptionResource>**](ModelInventorySubscriptionResource.md)
+[**List<InventorySubscriptionResource>**](InventorySubscriptionResource.md)
 
 ### Authorization
 
@@ -143,7 +144,7 @@ Name | Type | Description  | Notes
 
 <a name="reactivateusersubscription"></a>
 # **ReactivateUserSubscription**
-> ModelInvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ModelReactivateSubscriptionRequest reactivateSubscriptionRequest)
+> InvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ReactivateSubscriptionRequest reactivateSubscriptionRequest)
 
 Reactivate a subscription and charge fee
 
@@ -168,12 +169,12 @@ namespace Example
             var apiInstance = new UsersSubscriptionsApi();
             var userId = 56;  // int? | The id of the user
             var inventoryId = 56;  // int? | The id of the user's inventory
-            var reactivateSubscriptionRequest = new ModelReactivateSubscriptionRequest(); // ModelReactivateSubscriptionRequest | The reactivate subscription request object inventory (optional) 
+            var reactivateSubscriptionRequest = new ReactivateSubscriptionRequest(); // ReactivateSubscriptionRequest | The reactivate subscription request object inventory (optional) 
 
             try
             {
                 // Reactivate a subscription and charge fee
-                ModelInvoiceResource result = apiInstance.ReactivateUserSubscription(userId, inventoryId, reactivateSubscriptionRequest);
+                InvoiceResource result = apiInstance.ReactivateUserSubscription(userId, inventoryId, reactivateSubscriptionRequest);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -191,11 +192,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **inventoryId** | **int?**| The id of the user&#39;s inventory | 
- **reactivateSubscriptionRequest** | [**ModelReactivateSubscriptionRequest**](ModelReactivateSubscriptionRequest.md)| The reactivate subscription request object inventory | [optional] 
+ **reactivateSubscriptionRequest** | [**ReactivateSubscriptionRequest**](ReactivateSubscriptionRequest.md)| The reactivate subscription request object inventory | [optional] 
 
 ### Return type
 
-[**ModelInvoiceResource**](ModelInvoiceResource.md)
+[**InvoiceResource**](InvoiceResource.md)
 
 ### Authorization
 
@@ -460,6 +461,74 @@ Name | Type | Description  | Notes
  **userId** | **int?**| The id of the user | 
  **inventoryId** | **int?**| The id of the user&#39;s inventory | 
  **planId** | **string**| The id of the new plan. Must be from the same subscription | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setusersubscriptionprice"></a>
+# **SetUserSubscriptionPrice**
+> void SetUserSubscriptionPrice (int? userId, int? inventoryId, SubscriptionPriceOverrideRequest theOverrideDetails)
+
+Set a new subscription price for a user
+
+This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class SetUserSubscriptionPriceExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UsersSubscriptionsApi();
+            var userId = 56;  // int? | The id of the user
+            var inventoryId = 56;  // int? | The id of the user's inventory
+            var theOverrideDetails = new SubscriptionPriceOverrideRequest(); // SubscriptionPriceOverrideRequest | override (optional) 
+
+            try
+            {
+                // Set a new subscription price for a user
+                apiInstance.SetUserSubscriptionPrice(userId, inventoryId, theOverrideDetails);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersSubscriptionsApi.SetUserSubscriptionPrice: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int?**| The id of the user | 
+ **inventoryId** | **int?**| The id of the user&#39;s inventory | 
+ **theOverrideDetails** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| override | [optional] 
 
 ### Return type
 

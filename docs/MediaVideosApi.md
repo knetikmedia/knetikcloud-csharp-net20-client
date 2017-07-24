@@ -98,7 +98,7 @@ void (empty response body)
 
 <a name="addvideo"></a>
 # **AddVideo**
-> ModelVideoResource AddVideo (ModelVideoResource videoResource)
+> VideoResource AddVideo (VideoResource videoResource)
 
 Adds a new video in the system
 
@@ -121,12 +121,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MediaVideosApi();
-            var videoResource = new ModelVideoResource(); // ModelVideoResource | The video object (optional) 
+            var videoResource = new VideoResource(); // VideoResource | The video object (optional) 
 
             try
             {
                 // Adds a new video in the system
-                ModelVideoResource result = apiInstance.AddVideo(videoResource);
+                VideoResource result = apiInstance.AddVideo(videoResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -142,11 +142,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **videoResource** | [**ModelVideoResource**](ModelVideoResource.md)| The video object | [optional] 
+ **videoResource** | [**VideoResource**](VideoResource.md)| The video object | [optional] 
 
 ### Return type
 
-[**ModelVideoResource**](ModelVideoResource.md)
+[**VideoResource**](VideoResource.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 <a name="addvideocomment"></a>
 # **AddVideoComment**
-> ModelCommentResource AddVideoComment (int? videoId, ModelCommentResource commentResource)
+> CommentResource AddVideoComment (int? videoId, CommentResource commentResource)
 
 Add a new video comment
 
@@ -185,12 +185,12 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var videoId = 56;  // int? | The video id 
-            var commentResource = new ModelCommentResource(); // ModelCommentResource | The comment object (optional) 
+            var commentResource = new CommentResource(); // CommentResource | The comment object (optional) 
 
             try
             {
                 // Add a new video comment
-                ModelCommentResource result = apiInstance.AddVideoComment(videoId, commentResource);
+                CommentResource result = apiInstance.AddVideoComment(videoId, commentResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -207,11 +207,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int?**| The video id  | 
- **commentResource** | [**ModelCommentResource**](ModelCommentResource.md)| The comment object | [optional] 
+ **commentResource** | [**CommentResource**](CommentResource.md)| The comment object | [optional] 
 
 ### Return type
 
-[**ModelCommentResource**](ModelCommentResource.md)
+[**CommentResource**](CommentResource.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 <a name="addvideocontributor"></a>
 # **AddVideoContributor**
-> void AddVideoContributor (long? videoId, ModelContributionResource contributionResource)
+> void AddVideoContributor (long? videoId, ContributionResource contributionResource)
 
 Adds a contributor to a video
 
@@ -250,7 +250,7 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var videoId = 789;  // long? | The video id
-            var contributionResource = new ModelContributionResource(); // ModelContributionResource | The contribution object (optional) 
+            var contributionResource = new ContributionResource(); // ContributionResource | The contribution object (optional) 
 
             try
             {
@@ -271,7 +271,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
- **contributionResource** | [**ModelContributionResource**](ModelContributionResource.md)| The contribution object | [optional] 
+ **contributionResource** | [**ContributionResource**](ContributionResource.md)| The contribution object | [optional] 
 
 ### Return type
 
@@ -290,7 +290,7 @@ void (empty response body)
 
 <a name="addvideoflag"></a>
 # **AddVideoFlag**
-> ModelFlagResource AddVideoFlag (long? videoId, string reason)
+> FlagResource AddVideoFlag (long? videoId, string reason)
 
 Add a new flag
 
@@ -319,7 +319,7 @@ namespace Example
             try
             {
                 // Add a new flag
-                ModelFlagResource result = apiInstance.AddVideoFlag(videoId, reason);
+                FlagResource result = apiInstance.AddVideoFlag(videoId, reason);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelFlagResource**](ModelFlagResource.md)
+[**FlagResource**](FlagResource.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 <a name="addvideorelationships"></a>
 # **AddVideoRelationships**
-> ModelVideoRelationshipResource AddVideoRelationships (long? videoId, ModelVideoRelationshipResource videoRelationshipResource)
+> VideoRelationshipResource AddVideoRelationships (long? videoId, VideoRelationshipResource videoRelationshipResource)
 
 Adds one or more existing videos as related to this one
 
@@ -379,12 +379,12 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var videoId = 789;  // long? | The video id
-            var videoRelationshipResource = new ModelVideoRelationshipResource(); // ModelVideoRelationshipResource | The video relationship object  (optional) 
+            var videoRelationshipResource = new VideoRelationshipResource(); // VideoRelationshipResource | The video relationship object  (optional) 
 
             try
             {
                 // Adds one or more existing videos as related to this one
-                ModelVideoRelationshipResource result = apiInstance.AddVideoRelationships(videoId, videoRelationshipResource);
+                VideoRelationshipResource result = apiInstance.AddVideoRelationships(videoId, videoRelationshipResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -401,11 +401,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
- **videoRelationshipResource** | [**ModelVideoRelationshipResource**](ModelVideoRelationshipResource.md)| The video relationship object  | [optional] 
+ **videoRelationshipResource** | [**VideoRelationshipResource**](VideoRelationshipResource.md)| The video relationship object  | [optional] 
 
 ### Return type
 
-[**ModelVideoRelationshipResource**](ModelVideoRelationshipResource.md)
+[**VideoRelationshipResource**](VideoRelationshipResource.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 <a name="createvideodisposition"></a>
 # **CreateVideoDisposition**
-> ModelDispositionResource CreateVideoDisposition (int? videoId, ModelDispositionResource dispositionResource)
+> DispositionResource CreateVideoDisposition (int? videoId, DispositionResource dispositionResource)
 
 Create a video disposition
 
@@ -444,12 +444,12 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var videoId = 56;  // int? | The video id
-            var dispositionResource = new ModelDispositionResource(); // ModelDispositionResource | The disposition object (optional) 
+            var dispositionResource = new DispositionResource(); // DispositionResource | The disposition object (optional) 
 
             try
             {
                 // Create a video disposition
-                ModelDispositionResource result = apiInstance.CreateVideoDisposition(videoId, dispositionResource);
+                DispositionResource result = apiInstance.CreateVideoDisposition(videoId, dispositionResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -466,11 +466,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **int?**| The video id | 
- **dispositionResource** | [**ModelDispositionResource**](ModelDispositionResource.md)| The disposition object | [optional] 
+ **dispositionResource** | [**DispositionResource**](DispositionResource.md)| The disposition object | [optional] 
 
 ### Return type
 
-[**ModelDispositionResource**](ModelDispositionResource.md)
+[**DispositionResource**](DispositionResource.md)
 
 ### Authorization
 
@@ -799,7 +799,7 @@ void (empty response body)
 
 <a name="getuservideos"></a>
 # **GetUserVideos**
-> ModelPageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page)
+> PageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page)
 
 Get user videos
 
@@ -830,7 +830,7 @@ namespace Example
             try
             {
                 // Get user videos
-                ModelPageResourceVideoResource result = apiInstance.GetUserVideos(userId, excludeFlagged, size, page);
+                PageResourceVideoResource result = apiInstance.GetUserVideos(userId, excludeFlagged, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceVideoResource**](ModelPageResourceVideoResource.md)
+[**PageResourceVideoResource**](PageResourceVideoResource.md)
 
 ### Authorization
 
@@ -868,7 +868,7 @@ Name | Type | Description  | Notes
 
 <a name="getvideo"></a>
 # **GetVideo**
-> ModelVideoResource GetVideo (long? id)
+> VideoResource GetVideo (long? id)
 
 Loads a specific video details
 
@@ -896,7 +896,7 @@ namespace Example
             try
             {
                 // Loads a specific video details
-                ModelVideoResource result = apiInstance.GetVideo(id);
+                VideoResource result = apiInstance.GetVideo(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelVideoResource**](ModelVideoResource.md)
+[**VideoResource**](VideoResource.md)
 
 ### Authorization
 
@@ -931,7 +931,7 @@ Name | Type | Description  | Notes
 
 <a name="getvideocomments"></a>
 # **GetVideoComments**
-> ModelPageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page)
+> PageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page)
 
 Returns a page of comments for a video
 
@@ -958,7 +958,7 @@ namespace Example
             try
             {
                 // Returns a page of comments for a video
-                ModelPageResourceCommentResource result = apiInstance.GetVideoComments(videoId, size, page);
+                PageResourceCommentResource result = apiInstance.GetVideoComments(videoId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -980,7 +980,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCommentResource**](ModelPageResourceCommentResource.md)
+[**PageResourceCommentResource**](PageResourceCommentResource.md)
 
 ### Authorization
 
@@ -995,7 +995,7 @@ No authorization required
 
 <a name="getvideodispositions"></a>
 # **GetVideoDispositions**
-> ModelPageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page)
+> PageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page)
 
 Returns a page of dispositions for a video
 
@@ -1022,7 +1022,7 @@ namespace Example
             try
             {
                 // Returns a page of dispositions for a video
-                ModelPageResourceDispositionResource result = apiInstance.GetVideoDispositions(videoId, size, page);
+                PageResourceDispositionResource result = apiInstance.GetVideoDispositions(videoId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceDispositionResource**](ModelPageResourceDispositionResource.md)
+[**PageResourceDispositionResource**](PageResourceDispositionResource.md)
 
 ### Authorization
 
@@ -1059,7 +1059,7 @@ No authorization required
 
 <a name="getvideorelationships"></a>
 # **GetVideoRelationships**
-> ModelPageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page)
+> PageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page)
 
 Returns a page of video relationships
 
@@ -1086,7 +1086,7 @@ namespace Example
             try
             {
                 // Returns a page of video relationships
-                ModelPageResourceVideoRelationshipResource result = apiInstance.GetVideoRelationships(videoId, size, page);
+                PageResourceVideoRelationshipResource result = apiInstance.GetVideoRelationships(videoId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1108,7 +1108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceVideoRelationshipResource**](ModelPageResourceVideoRelationshipResource.md)
+[**PageResourceVideoRelationshipResource**](PageResourceVideoRelationshipResource.md)
 
 ### Authorization
 
@@ -1123,7 +1123,7 @@ No authorization required
 
 <a name="getvideos"></a>
 # **GetVideos**
-> ModelPageResourceVideoResource GetVideos (bool? excludeFlagged, Object filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, Object filterVideosByContributor, Object filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order)
+> PageResourceVideoResource GetVideos (bool? excludeFlagged, int? filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, int? filterVideosByContributor, int? filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order)
 
 Search videos using the documented filters
 
@@ -1144,12 +1144,12 @@ namespace Example
             
             var apiInstance = new MediaVideosApi();
             var excludeFlagged = true;  // bool? | Skip videos that have been flagged by the current user (optional)  (default to true)
-            var filterVideosByUploader = new Object(); // Object | Filter for videos by uploader id (optional) 
+            var filterVideosByUploader = 56;  // int? | Filter for videos by uploader id (optional) 
             var filterCategory = filterCategory_example;  // string | Filter for videos from a specific category by id (optional) 
             var filterTagset = filterTagset_example;  // string | Filter for videos with specified tags (separated by comma) (optional) 
             var filterVideosByName = filterVideosByName_example;  // string | Filter for videos which name *STARTS* with the given string (optional) 
-            var filterVideosByContributor = new Object(); // Object | Filter for videos with contribution from the artist specified by ID (optional) 
-            var filterVideosByAuthor = new Object(); // Object | Filter for videos with an artist as author specified by ID (optional) 
+            var filterVideosByContributor = 56;  // int? | Filter for videos with contribution from the artist specified by ID (optional) 
+            var filterVideosByAuthor = 56;  // int? | Filter for videos with an artist as author specified by ID (optional) 
             var filterHasAuthor = true;  // bool? | Filter for videos that have an author set if true, or that have no author if false (optional) 
             var filterHasUploader = true;  // bool? | Filter for videos that have an uploader set if true, or that have no uploader if false (optional) 
             var filterRelatedTo = filterRelatedTo_example;  // string | Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well (optional) 
@@ -1162,7 +1162,7 @@ namespace Example
             try
             {
                 // Search videos using the documented filters
-                ModelPageResourceVideoResource result = apiInstance.GetVideos(excludeFlagged, filterVideosByUploader, filterCategory, filterTagset, filterVideosByName, filterVideosByContributor, filterVideosByAuthor, filterHasAuthor, filterHasUploader, filterRelatedTo, filterFriends, filterDisposition, size, page, order);
+                PageResourceVideoResource result = apiInstance.GetVideos(excludeFlagged, filterVideosByUploader, filterCategory, filterTagset, filterVideosByName, filterVideosByContributor, filterVideosByAuthor, filterHasAuthor, filterHasUploader, filterRelatedTo, filterFriends, filterDisposition, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1179,12 +1179,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **excludeFlagged** | **bool?**| Skip videos that have been flagged by the current user | [optional] [default to true]
- **filterVideosByUploader** | [**Object**](.md)| Filter for videos by uploader id | [optional] 
+ **filterVideosByUploader** | **int?**| Filter for videos by uploader id | [optional] 
  **filterCategory** | **string**| Filter for videos from a specific category by id | [optional] 
  **filterTagset** | **string**| Filter for videos with specified tags (separated by comma) | [optional] 
  **filterVideosByName** | **string**| Filter for videos which name *STARTS* with the given string | [optional] 
- **filterVideosByContributor** | [**Object**](.md)| Filter for videos with contribution from the artist specified by ID | [optional] 
- **filterVideosByAuthor** | [**Object**](.md)| Filter for videos with an artist as author specified by ID | [optional] 
+ **filterVideosByContributor** | **int?**| Filter for videos with contribution from the artist specified by ID | [optional] 
+ **filterVideosByAuthor** | **int?**| Filter for videos with an artist as author specified by ID | [optional] 
  **filterHasAuthor** | **bool?**| Filter for videos that have an author set if true, or that have no author if false | [optional] 
  **filterHasUploader** | **bool?**| Filter for videos that have an uploader set if true, or that have no uploader if false | [optional] 
  **filterRelatedTo** | **string**| Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well | [optional] 
@@ -1196,7 +1196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceVideoResource**](ModelPageResourceVideoResource.md)
+[**PageResourceVideoResource**](PageResourceVideoResource.md)
 
 ### Authorization
 
@@ -1341,7 +1341,7 @@ void (empty response body)
 
 <a name="updatevideo"></a>
 # **UpdateVideo**
-> void UpdateVideo (long? id, ModelVideoResource videoResource)
+> void UpdateVideo (long? id, VideoResource videoResource)
 
 Modifies a video's details
 
@@ -1365,7 +1365,7 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var id = 789;  // long? | The video id
-            var videoResource = new ModelVideoResource(); // ModelVideoResource | The video object (optional) 
+            var videoResource = new VideoResource(); // VideoResource | The video object (optional) 
 
             try
             {
@@ -1386,7 +1386,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The video id | 
- **videoResource** | [**ModelVideoResource**](ModelVideoResource.md)| The video object | [optional] 
+ **videoResource** | [**VideoResource**](VideoResource.md)| The video object | [optional] 
 
 ### Return type
 

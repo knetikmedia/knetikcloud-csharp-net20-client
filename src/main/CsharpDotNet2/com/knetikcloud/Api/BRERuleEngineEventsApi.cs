@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="breEvent">The BRE event object</param>
         /// <returns>string</returns>
-        string SendBREEvent (ModelBreEvent breEvent);
+        string SendBREEvent (BreEvent breEvent);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="breEvent">The BRE event object</param> 
         /// <returns>string</returns>            
-        public string SendBREEvent (ModelBreEvent breEvent)
+        public string SendBREEvent (BreEvent breEvent)
         {
             
     

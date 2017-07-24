@@ -1,4 +1,4 @@
-# com.knetikcloud.Model.ModelCollectionCountry
+# com.knetikcloud.Model.CollectionCountry
 ## Properties
 
 Name | Type | Description | Notes

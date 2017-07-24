@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createxsollatokenurl"></a>
 # **CreateXsollaTokenUrl**
-> string CreateXsollaTokenUrl (ModelXsollaPaymentRequest request)
+> string CreateXsollaTokenUrl (XsollaPaymentRequest request)
 
 Create a payment token that should be used to forward the user to Xsolla so they can complete payment
 
@@ -33,7 +33,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsXsollaApi();
-            var request = new ModelXsollaPaymentRequest(); // ModelXsollaPaymentRequest | The payment request to be sent to XSolla (optional) 
+            var request = new XsollaPaymentRequest(); // XsollaPaymentRequest | The payment request to be sent to XSolla (optional) 
 
             try
             {
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelXsollaPaymentRequest**](ModelXsollaPaymentRequest.md)| The payment request to be sent to XSolla | [optional] 
+ **request** | [**XsollaPaymentRequest**](XsollaPaymentRequest.md)| The payment request to be sent to XSolla | [optional] 
 
 ### Return type
 

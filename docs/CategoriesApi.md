@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="createcategory"></a>
 # **CreateCategory**
-> ModelCategoryResource CreateCategory (ModelCategoryResource category)
+> CategoryResource CreateCategory (CategoryResource category)
 
 Create a new category
 
@@ -42,12 +42,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CategoriesApi();
-            var category = new ModelCategoryResource(); // ModelCategoryResource | The category to create (optional) 
+            var category = new CategoryResource(); // CategoryResource | The category to create (optional) 
 
             try
             {
                 // Create a new category
-                ModelCategoryResource result = apiInstance.CreateCategory(category);
+                CategoryResource result = apiInstance.CreateCategory(category);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,11 +63,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category** | [**ModelCategoryResource**](ModelCategoryResource.md)| The category to create | [optional] 
+ **category** | [**CategoryResource**](CategoryResource.md)| The category to create | [optional] 
 
 ### Return type
 
-[**ModelCategoryResource**](ModelCategoryResource.md)
+[**CategoryResource**](CategoryResource.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="createcategorytemplate"></a>
 # **CreateCategoryTemplate**
-> ModelTemplateResource CreateCategoryTemplate (ModelTemplateResource template)
+> TemplateResource CreateCategoryTemplate (TemplateResource template)
 
 Create a category template
 
@@ -107,12 +107,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CategoriesApi();
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The template to create (optional) 
+            var template = new TemplateResource(); // TemplateResource | The template to create (optional) 
 
             try
             {
                 // Create a category template
-                ModelTemplateResource result = apiInstance.CreateCategoryTemplate(template);
+                TemplateResource result = apiInstance.CreateCategoryTemplate(template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,11 +128,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The template to create | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The template to create | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ void (empty response body)
 
 <a name="getcategories"></a>
 # **GetCategories**
-> ModelPageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order)
+> PageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order)
 
 List and search categories with optional filters
 
@@ -304,7 +304,7 @@ namespace Example
             try
             {
                 // List and search categories with optional filters
-                ModelPageResourceCategoryResource result = apiInstance.GetCategories(filterSearch, filterActive, size, page, order);
+                PageResourceCategoryResource result = apiInstance.GetCategories(filterSearch, filterActive, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCategoryResource**](ModelPageResourceCategoryResource.md)
+[**PageResourceCategoryResource**](PageResourceCategoryResource.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ No authorization required
 
 <a name="getcategory"></a>
 # **GetCategory**
-> ModelCategoryResource GetCategory (string id)
+> CategoryResource GetCategory (string id)
 
 Get a single category
 
@@ -368,7 +368,7 @@ namespace Example
             try
             {
                 // Get a single category
-                ModelCategoryResource result = apiInstance.GetCategory(id);
+                CategoryResource result = apiInstance.GetCategory(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCategoryResource**](ModelCategoryResource.md)
+[**CategoryResource**](CategoryResource.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ No authorization required
 
 <a name="getcategorytemplate"></a>
 # **GetCategoryTemplate**
-> ModelTemplateResource GetCategoryTemplate (string id)
+> TemplateResource GetCategoryTemplate (string id)
 
 Get a single category template
 
@@ -431,7 +431,7 @@ namespace Example
             try
             {
                 // Get a single category template
-                ModelTemplateResource result = apiInstance.GetCategoryTemplate(id);
+                TemplateResource result = apiInstance.GetCategoryTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="getcategorytemplates"></a>
 # **GetCategoryTemplates**
-> ModelPageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order)
 
 List and search category templates
 
@@ -496,7 +496,7 @@ namespace Example
             try
             {
                 // List and search category templates
-                ModelPageResourceTemplateResource result = apiInstance.GetCategoryTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetCategoryTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 <a name="gettags"></a>
 # **GetTags**
-> ModelPageResourcestring GetTags (int? size, int? page)
+> PageResourcestring GetTags (int? size, int? page)
 
 List all trivia tags in the system
 
@@ -559,7 +559,7 @@ namespace Example
             try
             {
                 // List all trivia tags in the system
-                ModelPageResourcestring result = apiInstance.GetTags(size, page);
+                PageResourcestring result = apiInstance.GetTags(size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourcestring**](ModelPageResourcestring.md)
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -595,7 +595,7 @@ No authorization required
 
 <a name="updatecategory"></a>
 # **UpdateCategory**
-> ModelCategoryResource UpdateCategory (string id, ModelCategoryResource category)
+> CategoryResource UpdateCategory (string id, CategoryResource category)
 
 Update an existing category
 
@@ -619,12 +619,12 @@ namespace Example
 
             var apiInstance = new CategoriesApi();
             var id = id_example;  // string | The id of the category
-            var category = new ModelCategoryResource(); // ModelCategoryResource | The category to update (optional) 
+            var category = new CategoryResource(); // CategoryResource | The category to update (optional) 
 
             try
             {
                 // Update an existing category
-                ModelCategoryResource result = apiInstance.UpdateCategory(id, category);
+                CategoryResource result = apiInstance.UpdateCategory(id, category);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -641,11 +641,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the category | 
- **category** | [**ModelCategoryResource**](ModelCategoryResource.md)| The category to update | [optional] 
+ **category** | [**CategoryResource**](CategoryResource.md)| The category to update | [optional] 
 
 ### Return type
 
-[**ModelCategoryResource**](ModelCategoryResource.md)
+[**CategoryResource**](CategoryResource.md)
 
 ### Authorization
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecategorytemplate"></a>
 # **UpdateCategoryTemplate**
-> ModelTemplateResource UpdateCategoryTemplate (string id, ModelTemplateResource template)
+> TemplateResource UpdateCategoryTemplate (string id, TemplateResource template)
 
 Update a category template
 
@@ -684,12 +684,12 @@ namespace Example
 
             var apiInstance = new CategoriesApi();
             var id = id_example;  // string | The id of the template
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The updated template information (optional) 
+            var template = new TemplateResource(); // TemplateResource | The updated template information (optional) 
 
             try
             {
                 // Update a category template
-                ModelTemplateResource result = apiInstance.UpdateCategoryTemplate(id, template);
+                TemplateResource result = apiInstance.UpdateCategoryTemplate(id, template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -706,11 +706,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The updated template information | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The updated template information | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

@@ -15,28 +15,28 @@ namespace com.knetikcloud.Api
         /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn.
         /// </summary>
         /// <param name="challengeResource">The challenge resource object</param>
-        /// <returns>ModelChallengeResource</returns>
-        ModelChallengeResource CreateChallenge (ModelChallengeResource challengeResource);
+        /// <returns>ChallengeResource</returns>
+        ChallengeResource CreateChallenge (ChallengeResource challengeResource);
         /// <summary>
         /// Create a challenge activity 
         /// </summary>
         /// <param name="challengeId">The challenge id</param>
         /// <param name="challengeActivityResource">The challenge activity resource object</param>
         /// <param name="validateSettings">Whether to validate the settings being sent against the available settings on the base activity.</param>
-        /// <returns>ModelChallengeActivityResource</returns>
-        ModelChallengeActivityResource CreateChallengeActivity (long? challengeId, ModelChallengeActivityResource challengeActivityResource, bool? validateSettings);
+        /// <returns>ChallengeActivityResource</returns>
+        ChallengeActivityResource CreateChallengeActivity (long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings);
         /// <summary>
         /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have
         /// </summary>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateChallengeActivityTemplate (ModelTemplateResource challengeActivityTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateChallengeActivityTemplate (TemplateResource challengeActivityTemplateResource);
         /// <summary>
         /// Create a challenge template Challenge Templates define a type of challenge and the properties they have
         /// </summary>
         /// <param name="challengeTemplateResource">The challenge template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateChallengeTemplate (ModelTemplateResource challengeTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateChallengeTemplate (TemplateResource challengeTemplateResource);
         /// <summary>
         /// Delete a challenge 
         /// </summary>
@@ -44,12 +44,12 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void DeleteChallenge (long? id);
         /// <summary>
-        /// Delete a challenge activity 
+        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param>
+        /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
         /// <returns></returns>
-        void DeleteChallengeActivity (long? activityId, long? challengeId);
+        void DeleteChallengeActivity (long? id, long? challengeId);
         /// <summary>
         /// Delete a challenge activity template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
         /// </summary>
@@ -74,8 +74,8 @@ namespace com.knetikcloud.Api
         /// Retrieve a challenge 
         /// </summary>
         /// <param name="id">The challenge id</param>
-        /// <returns>ModelChallengeResource</returns>
-        ModelChallengeResource GetChallenge (long? id);
+        /// <returns>ChallengeResource</returns>
+        ChallengeResource GetChallenge (long? id);
         /// <summary>
         /// List and search challenge activities 
         /// </summary>
@@ -83,34 +83,35 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceBareChallengeActivityResource</returns>
-        ModelPageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order);
+        /// <returns>PageResourceBareChallengeActivityResource</returns>
+        PageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order);
         /// <summary>
-        /// Get a single challenge activity 
+        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param>
-        /// <returns>ModelChallengeActivityResource</returns>
-        ModelChallengeActivityResource GetChallengeActivity (long? activityId);
+        /// <param name="id">The challenge_activity id</param>
+        /// <param name="challengeId">The challenge id</param>
+        /// <returns>ChallengeActivityResource</returns>
+        ChallengeActivityResource GetChallengeActivity (long? id, long? challengeId);
         /// <summary>
         /// Get a single challenge activity template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetChallengeActivityTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetChallengeActivityTemplate (string id);
         /// <summary>
         /// List and search challenge activity templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order);
         /// <summary>
         /// Retrieve a single challenge event details 
         /// </summary>
         /// <param name="id">The challenge event id</param>
-        /// <returns>ModelChallengeEventResource</returns>
-        ModelChallengeEventResource GetChallengeEvent (long? id);
+        /// <returns>ChallengeEventResource</returns>
+        ChallengeEventResource GetChallengeEvent (long? id);
         /// <summary>
         /// Retrieve a list of challenge events 
         /// </summary>
@@ -121,22 +122,22 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceChallengeEventResource</returns>
-        ModelPageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order);
+        /// <returns>PageResourceChallengeEventResource</returns>
+        PageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order);
         /// <summary>
         /// Get a single challenge template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetChallengeTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetChallengeTemplate (string id);
         /// <summary>
         /// List and search challenge templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order);
         /// <summary>
         /// Retrieve a list of challenges 
         /// </summary>
@@ -147,37 +148,37 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceChallengeResource</returns>
-        ModelPageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order);
+        /// <returns>PageResourceChallengeResource</returns>
+        PageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order);
         /// <summary>
         /// Update a challenge If the challenge is a copy, changes will propagate to all the related challenges
         /// </summary>
         /// <param name="id">The challenge id</param>
         /// <param name="challengeResource">The challenge resource object</param>
-        /// <returns>ModelChallengeResource</returns>
-        ModelChallengeResource UpdateChallenge (long? id, ModelChallengeResource challengeResource);
+        /// <returns>ChallengeResource</returns>
+        ChallengeResource UpdateChallenge (long? id, ChallengeResource challengeResource);
         /// <summary>
-        /// Update a challenge activity 
+        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param>
+        /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
         /// <param name="challengeActivityResource">The challenge activity resource object</param>
-        /// <returns>ModelChallengeActivityResource</returns>
-        ModelChallengeActivityResource UpdateChallengeActivity (long? activityId, long? challengeId, ModelChallengeActivityResource challengeActivityResource);
+        /// <returns>ChallengeActivityResource</returns>
+        ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource);
         /// <summary>
         /// Update an challenge activity template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateChallengeActivityTemplate (string id, ModelTemplateResource challengeActivityTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateChallengeActivityTemplate (string id, TemplateResource challengeActivityTemplateResource);
         /// <summary>
         /// Update a challenge template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="challengeTemplateResource">The challenge template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateChallengeTemplate (string id, ModelTemplateResource challengeTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateChallengeTemplate (string id, TemplateResource challengeTemplateResource);
     }
   
     /// <summary>
@@ -237,8 +238,8 @@ namespace com.knetikcloud.Api
         /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn.
         /// </summary>
         /// <param name="challengeResource">The challenge resource object</param> 
-        /// <returns>ModelChallengeResource</returns>            
-        public ModelChallengeResource CreateChallenge (ModelChallengeResource challengeResource)
+        /// <returns>ChallengeResource</returns>            
+        public ChallengeResource CreateChallenge (ChallengeResource challengeResource)
         {
             
     
@@ -264,7 +265,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateChallenge: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeResource), response.Headers);
+            return (ChallengeResource) ApiClient.Deserialize(response.Content, typeof(ChallengeResource), response.Headers);
         }
     
         /// <summary>
@@ -273,8 +274,8 @@ namespace com.knetikcloud.Api
         /// <param name="challengeId">The challenge id</param> 
         /// <param name="challengeActivityResource">The challenge activity resource object</param> 
         /// <param name="validateSettings">Whether to validate the settings being sent against the available settings on the base activity.</param> 
-        /// <returns>ModelChallengeActivityResource</returns>            
-        public ModelChallengeActivityResource CreateChallengeActivity (long? challengeId, ModelChallengeActivityResource challengeActivityResource, bool? validateSettings)
+        /// <returns>ChallengeActivityResource</returns>            
+        public ChallengeActivityResource CreateChallengeActivity (long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings)
         {
             
             // verify the required parameter 'challengeId' is set
@@ -305,15 +306,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateChallengeActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeActivityResource), response.Headers);
+            return (ChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ChallengeActivityResource), response.Headers);
         }
     
         /// <summary>
         /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have
         /// </summary>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateChallengeActivityTemplate (ModelTemplateResource challengeActivityTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateChallengeActivityTemplate (TemplateResource challengeActivityTemplateResource)
         {
             
     
@@ -339,15 +340,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateChallengeActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
         /// Create a challenge template Challenge Templates define a type of challenge and the properties they have
         /// </summary>
         /// <param name="challengeTemplateResource">The challenge template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateChallengeTemplate (ModelTemplateResource challengeTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateChallengeTemplate (TemplateResource challengeTemplateResource)
         {
             
     
@@ -373,7 +374,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateChallengeTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -414,24 +415,24 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a challenge activity 
+        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param> 
+        /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
         /// <returns></returns>            
-        public void DeleteChallengeActivity (long? activityId, long? challengeId)
+        public void DeleteChallengeActivity (long? id, long? challengeId)
         {
             
-            // verify the required parameter 'activityId' is set
-            if (activityId == null) throw new ApiException(400, "Missing required parameter 'activityId' when calling DeleteChallengeActivity");
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling DeleteChallengeActivity");
             
             // verify the required parameter 'challengeId' is set
             if (challengeId == null) throw new ApiException(400, "Missing required parameter 'challengeId' when calling DeleteChallengeActivity");
             
     
-            var path = "/challenges/{challenge_id}/activities/{activity_id}";
+            var path = "/challenges/{challenge_id}/activities/{id}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "activity_id" + "}", ApiClient.ParameterToString(activityId));
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
 path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(challengeId));
     
             var queryParams = new Dictionary<String, String>();
@@ -574,8 +575,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// Retrieve a challenge 
         /// </summary>
         /// <param name="id">The challenge id</param> 
-        /// <returns>ModelChallengeResource</returns>            
-        public ModelChallengeResource GetChallenge (long? id)
+        /// <returns>ChallengeResource</returns>            
+        public ChallengeResource GetChallenge (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -604,7 +605,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallenge: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeResource), response.Headers);
+            return (ChallengeResource) ApiClient.Deserialize(response.Content, typeof(ChallengeResource), response.Headers);
         }
     
         /// <summary>
@@ -614,8 +615,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceBareChallengeActivityResource</returns>            
-        public ModelPageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order)
+        /// <returns>PageResourceBareChallengeActivityResource</returns>            
+        public PageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order)
         {
             
             // verify the required parameter 'challengeId' is set
@@ -647,24 +648,29 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeActivities: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBareChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBareChallengeActivityResource), response.Headers);
+            return (PageResourceBareChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(PageResourceBareChallengeActivityResource), response.Headers);
         }
     
         /// <summary>
-        /// Get a single challenge activity 
+        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param> 
-        /// <returns>ModelChallengeActivityResource</returns>            
-        public ModelChallengeActivityResource GetChallengeActivity (long? activityId)
+        /// <param name="id">The challenge_activity id</param> 
+        /// <param name="challengeId">The challenge id</param> 
+        /// <returns>ChallengeActivityResource</returns>            
+        public ChallengeActivityResource GetChallengeActivity (long? id, long? challengeId)
         {
             
-            // verify the required parameter 'activityId' is set
-            if (activityId == null) throw new ApiException(400, "Missing required parameter 'activityId' when calling GetChallengeActivity");
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling GetChallengeActivity");
+            
+            // verify the required parameter 'challengeId' is set
+            if (challengeId == null) throw new ApiException(400, "Missing required parameter 'challengeId' when calling GetChallengeActivity");
             
     
-            var path = "/challenges/{challenge_id}/activities/{activity_id}";
+            var path = "/challenges/{challenge_id}/activities/{id}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "activity_id" + "}", ApiClient.ParameterToString(activityId));
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
+path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(challengeId));
     
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();
@@ -684,15 +690,15 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeActivityResource), response.Headers);
+            return (ChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ChallengeActivityResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single challenge activity template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetChallengeActivityTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetChallengeActivityTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -721,7 +727,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -730,8 +736,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order)
         {
             
     
@@ -759,15 +765,15 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeActivityTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
         /// Retrieve a single challenge event details 
         /// </summary>
         /// <param name="id">The challenge event id</param> 
-        /// <returns>ModelChallengeEventResource</returns>            
-        public ModelChallengeEventResource GetChallengeEvent (long? id)
+        /// <returns>ChallengeEventResource</returns>            
+        public ChallengeEventResource GetChallengeEvent (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -796,7 +802,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeEvent: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeEventResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeEventResource), response.Headers);
+            return (ChallengeEventResource) ApiClient.Deserialize(response.Content, typeof(ChallengeEventResource), response.Headers);
         }
     
         /// <summary>
@@ -809,8 +815,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceChallengeEventResource</returns>            
-        public ModelPageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order)
+        /// <returns>PageResourceChallengeEventResource</returns>            
+        public PageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order)
         {
             
     
@@ -842,15 +848,15 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeEvents: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceChallengeEventResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceChallengeEventResource), response.Headers);
+            return (PageResourceChallengeEventResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChallengeEventResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single challenge template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetChallengeTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetChallengeTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -879,7 +885,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -888,8 +894,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order)
         {
             
     
@@ -917,7 +923,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -930,8 +936,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceChallengeResource</returns>            
-        public ModelPageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order)
+        /// <returns>PageResourceChallengeResource</returns>            
+        public PageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order)
         {
             
     
@@ -963,7 +969,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallenges: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceChallengeResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceChallengeResource), response.Headers);
+            return (PageResourceChallengeResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChallengeResource), response.Headers);
         }
     
         /// <summary>
@@ -971,8 +977,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// </summary>
         /// <param name="id">The challenge id</param> 
         /// <param name="challengeResource">The challenge resource object</param> 
-        /// <returns>ModelChallengeResource</returns>            
-        public ModelChallengeResource UpdateChallenge (long? id, ModelChallengeResource challengeResource)
+        /// <returns>ChallengeResource</returns>            
+        public ChallengeResource UpdateChallenge (long? id, ChallengeResource challengeResource)
         {
             
             // verify the required parameter 'id' is set
@@ -1002,29 +1008,29 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateChallenge: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeResource), response.Headers);
+            return (ChallengeResource) ApiClient.Deserialize(response.Content, typeof(ChallengeResource), response.Headers);
         }
     
         /// <summary>
-        /// Update a challenge activity 
+        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
         /// </summary>
-        /// <param name="activityId">The activity id</param> 
+        /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
         /// <param name="challengeActivityResource">The challenge activity resource object</param> 
-        /// <returns>ModelChallengeActivityResource</returns>            
-        public ModelChallengeActivityResource UpdateChallengeActivity (long? activityId, long? challengeId, ModelChallengeActivityResource challengeActivityResource)
+        /// <returns>ChallengeActivityResource</returns>            
+        public ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource)
         {
             
-            // verify the required parameter 'activityId' is set
-            if (activityId == null) throw new ApiException(400, "Missing required parameter 'activityId' when calling UpdateChallengeActivity");
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UpdateChallengeActivity");
             
             // verify the required parameter 'challengeId' is set
             if (challengeId == null) throw new ApiException(400, "Missing required parameter 'challengeId' when calling UpdateChallengeActivity");
             
     
-            var path = "/challenges/{challenge_id}/activities/{activity_id}";
+            var path = "/challenges/{challenge_id}/activities/{id}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "activity_id" + "}", ApiClient.ParameterToString(activityId));
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
 path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(challengeId));
     
             var queryParams = new Dictionary<String, String>();
@@ -1046,7 +1052,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateChallengeActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ModelChallengeActivityResource), response.Headers);
+            return (ChallengeActivityResource) ApiClient.Deserialize(response.Content, typeof(ChallengeActivityResource), response.Headers);
         }
     
         /// <summary>
@@ -1054,8 +1060,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateChallengeActivityTemplate (string id, ModelTemplateResource challengeActivityTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateChallengeActivityTemplate (string id, TemplateResource challengeActivityTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -1085,7 +1091,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateChallengeActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -1093,8 +1099,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="challengeTemplateResource">The challenge template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateChallengeTemplate (string id, ModelTemplateResource challengeTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateChallengeTemplate (string id, TemplateResource challengeTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -1124,7 +1130,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateChallengeTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

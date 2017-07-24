@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createcouponitem"></a>
 # **CreateCouponItem**
-> ModelCouponItem CreateCouponItem (bool? cascade, ModelCouponItem couponItem)
+> CouponItem CreateCouponItem (bool? cascade, CouponItem couponItem)
 
 Create a coupon item
 
@@ -43,12 +43,12 @@ namespace Example
 
             var apiInstance = new StoreCouponsApi();
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var couponItem = new ModelCouponItem(); // ModelCouponItem | The coupon item object (optional) 
+            var couponItem = new CouponItem(); // CouponItem | The coupon item object (optional) 
 
             try
             {
                 // Create a coupon item
-                ModelCouponItem result = apiInstance.CreateCouponItem(cascade, couponItem);
+                CouponItem result = apiInstance.CreateCouponItem(cascade, couponItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,11 +65,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **couponItem** | [**ModelCouponItem**](ModelCouponItem.md)| The coupon item object | [optional] 
+ **couponItem** | [**CouponItem**](CouponItem.md)| The coupon item object | [optional] 
 
 ### Return type
 
-[**ModelCouponItem**](ModelCouponItem.md)
+[**CouponItem**](CouponItem.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="createcoupontemplate"></a>
 # **CreateCouponTemplate**
-> ModelItemTemplateResource CreateCouponTemplate (ModelItemTemplateResource couponTemplateResource)
+> ItemTemplateResource CreateCouponTemplate (ItemTemplateResource couponTemplateResource)
 
 Create a coupon template
 
@@ -109,12 +109,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreCouponsApi();
-            var couponTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The new coupon template (optional) 
+            var couponTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new coupon template (optional) 
 
             try
             {
                 // Create a coupon template
-                ModelItemTemplateResource result = apiInstance.CreateCouponTemplate(couponTemplateResource);
+                ItemTemplateResource result = apiInstance.CreateCouponTemplate(couponTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,11 +130,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The new coupon template | [optional] 
+ **couponTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The new coupon template | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ void (empty response body)
 
 <a name="getcouponitem"></a>
 # **GetCouponItem**
-> ModelCouponItem GetCouponItem (int? id)
+> CouponItem GetCouponItem (int? id)
 
 Get a single coupon item
 
@@ -303,7 +303,7 @@ namespace Example
             try
             {
                 // Get a single coupon item
-                ModelCouponItem result = apiInstance.GetCouponItem(id);
+                CouponItem result = apiInstance.GetCouponItem(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCouponItem**](ModelCouponItem.md)
+[**CouponItem**](CouponItem.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="getcoupontemplate"></a>
 # **GetCouponTemplate**
-> ModelItemTemplateResource GetCouponTemplate (string id)
+> ItemTemplateResource GetCouponTemplate (string id)
 
 Get a single coupon template
 
@@ -368,7 +368,7 @@ namespace Example
             try
             {
                 // Get a single coupon template
-                ModelItemTemplateResource result = apiInstance.GetCouponTemplate(id);
+                ItemTemplateResource result = apiInstance.GetCouponTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 <a name="getcoupontemplates"></a>
 # **GetCouponTemplates**
-> ModelPageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order)
+> PageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order)
 
 List and search coupon templates
 
@@ -433,7 +433,7 @@ namespace Example
             try
             {
                 // List and search coupon templates
-                ModelPageResourceItemTemplateResource result = apiInstance.GetCouponTemplates(size, page, order);
+                PageResourceItemTemplateResource result = apiInstance.GetCouponTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceItemTemplateResource**](ModelPageResourceItemTemplateResource.md)
+[**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecouponitem"></a>
 # **UpdateCouponItem**
-> ModelCouponItem UpdateCouponItem (int? id, bool? cascade, ModelCouponItem couponItem)
+> CouponItem UpdateCouponItem (int? id, bool? cascade, CouponItem couponItem)
 
 Update a coupon item
 
@@ -495,12 +495,12 @@ namespace Example
             var apiInstance = new StoreCouponsApi();
             var id = 56;  // int? | The id of the coupon
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var couponItem = new ModelCouponItem(); // ModelCouponItem | The coupon item object (optional) 
+            var couponItem = new CouponItem(); // CouponItem | The coupon item object (optional) 
 
             try
             {
                 // Update a coupon item
-                ModelCouponItem result = apiInstance.UpdateCouponItem(id, cascade, couponItem);
+                CouponItem result = apiInstance.UpdateCouponItem(id, cascade, couponItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -518,11 +518,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the coupon | 
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **couponItem** | [**ModelCouponItem**](ModelCouponItem.md)| The coupon item object | [optional] 
+ **couponItem** | [**CouponItem**](CouponItem.md)| The coupon item object | [optional] 
 
 ### Return type
 
-[**ModelCouponItem**](ModelCouponItem.md)
+[**CouponItem**](CouponItem.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecoupontemplate"></a>
 # **UpdateCouponTemplate**
-> ModelItemTemplateResource UpdateCouponTemplate (string id, ModelItemTemplateResource couponTemplateResource)
+> ItemTemplateResource UpdateCouponTemplate (string id, ItemTemplateResource couponTemplateResource)
 
 Update a coupon template
 
@@ -561,12 +561,12 @@ namespace Example
 
             var apiInstance = new StoreCouponsApi();
             var id = id_example;  // string | The id of the template
-            var couponTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The coupon template resource object (optional) 
+            var couponTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The coupon template resource object (optional) 
 
             try
             {
                 // Update a coupon template
-                ModelItemTemplateResource result = apiInstance.UpdateCouponTemplate(id, couponTemplateResource);
+                ItemTemplateResource result = apiInstance.UpdateCouponTemplate(id, couponTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -583,11 +583,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **couponTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The coupon template resource object | [optional] 
+ **couponTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The coupon template resource object | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 

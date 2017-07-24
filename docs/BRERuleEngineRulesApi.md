@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="createbrerule"></a>
 # **CreateBRERule**
-> ModelBreRule CreateBRERule (ModelBreRule breRule)
+> BreRule CreateBRERule (BreRule breRule)
 
 Create a rule
 
@@ -40,12 +40,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineRulesApi();
-            var breRule = new ModelBreRule(); // ModelBreRule | The BRE rule object (optional) 
+            var breRule = new BreRule(); // BreRule | The BRE rule object (optional) 
 
             try
             {
                 // Create a rule
-                ModelBreRule result = apiInstance.CreateBRERule(breRule);
+                BreRule result = apiInstance.CreateBRERule(breRule);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,11 +61,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **breRule** | [**ModelBreRule**](ModelBreRule.md)| The BRE rule object | [optional] 
+ **breRule** | [**BreRule**](BreRule.md)| The BRE rule object | [optional] 
 
 ### Return type
 
-[**ModelBreRule**](ModelBreRule.md)
+[**BreRule**](BreRule.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ void (empty response body)
 
 <a name="getbreexpressionasstring"></a>
 # **GetBREExpressionAsString**
-> string GetBREExpressionAsString (ModelExpressionobject expression)
+> string GetBREExpressionAsString (Expressionobject expression)
 
 Returns a string representation of the provided expression
 
@@ -167,7 +167,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineRulesApi();
-            var expression = new ModelExpressionobject(); // ModelExpressionobject | The expression (optional) 
+            var expression = new Expressionobject(); // Expressionobject | The expression (optional) 
 
             try
             {
@@ -188,7 +188,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expression** | [**ModelExpressionobject**](ModelExpressionobject.md)| The expression | [optional] 
+ **expression** | [**Expressionobject**](Expressionobject.md)| The expression | [optional] 
 
 ### Return type
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="getbrerule"></a>
 # **GetBRERule**
-> ModelBreRule GetBRERule (string id)
+> BreRule GetBRERule (string id)
 
 Get a single rule
 
@@ -235,7 +235,7 @@ namespace Example
             try
             {
                 // Get a single rule
-                ModelBreRule result = apiInstance.GetBRERule(id);
+                BreRule result = apiInstance.GetBRERule(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBreRule**](ModelBreRule.md)
+[**BreRule**](BreRule.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a name="getbrerules"></a>
 # **GetBRERules**
-> ModelPageResourceBreRule GetBRERules (string filterName, bool? filterEnabled, bool? filterSystem, string filterTrigger, string filterAction, string filterCondition, int? size, int? page)
+> PageResourceBreRule GetBRERules (string filterName, bool? filterEnabled, bool? filterSystem, string filterTrigger, string filterAction, string filterCondition, int? size, int? page)
 
 List rules
 
@@ -305,7 +305,7 @@ namespace Example
             try
             {
                 // List rules
-                ModelPageResourceBreRule result = apiInstance.GetBRERules(filterName, filterEnabled, filterSystem, filterTrigger, filterAction, filterCondition, size, page);
+                PageResourceBreRule result = apiInstance.GetBRERules(filterName, filterEnabled, filterSystem, filterTrigger, filterAction, filterCondition, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBreRule**](ModelPageResourceBreRule.md)
+[**PageResourceBreRule**](PageResourceBreRule.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 <a name="setbrerule"></a>
 # **SetBRERule**
-> void SetBRERule (string id, ModelBooleanResource enabled)
+> void SetBRERule (string id, BooleanResource enabled)
 
 Enable or disable a rule
 
@@ -373,7 +373,7 @@ namespace Example
 
             var apiInstance = new BRERuleEngineRulesApi();
             var id = id_example;  // string | The id of the rule
-            var enabled = new ModelBooleanResource(); // ModelBooleanResource | The boolean value (optional) 
+            var enabled = new BooleanResource(); // BooleanResource | The boolean value (optional) 
 
             try
             {
@@ -394,7 +394,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the rule | 
- **enabled** | [**ModelBooleanResource**](ModelBooleanResource.md)| The boolean value | [optional] 
+ **enabled** | [**BooleanResource**](BooleanResource.md)| The boolean value | [optional] 
 
 ### Return type
 
@@ -413,7 +413,7 @@ void (empty response body)
 
 <a name="updatebrerule"></a>
 # **UpdateBRERule**
-> ModelBreRule UpdateBRERule (string id, ModelBreRule breRule)
+> BreRule UpdateBRERule (string id, BreRule breRule)
 
 Update a rule
 
@@ -439,12 +439,12 @@ namespace Example
 
             var apiInstance = new BRERuleEngineRulesApi();
             var id = id_example;  // string | The id of the rule
-            var breRule = new ModelBreRule(); // ModelBreRule | The BRE rule object (optional) 
+            var breRule = new BreRule(); // BreRule | The BRE rule object (optional) 
 
             try
             {
                 // Update a rule
-                ModelBreRule result = apiInstance.UpdateBRERule(id, breRule);
+                BreRule result = apiInstance.UpdateBRERule(id, breRule);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -461,11 +461,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the rule | 
- **breRule** | [**ModelBreRule**](ModelBreRule.md)| The BRE rule object | [optional] 
+ **breRule** | [**BreRule**](BreRule.md)| The BRE rule object | [optional] 
 
 ### Return type
 
-[**ModelBreRule**](ModelBreRule.md)
+[**BreRule**](BreRule.md)
 
 ### Authorization
 

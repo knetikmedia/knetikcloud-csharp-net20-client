@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Get a flag report 
         /// </summary>
         /// <param name="id">The flag report id</param>
-        /// <returns>ModelFlagReportResource</returns>
-        ModelFlagReportResource GetModerationReport (long? id);
+        /// <returns>FlagReportResource</returns>
+        FlagReportResource GetModerationReport (long? id);
         /// <summary>
         /// Returns a page of flag reports Context can be either a free-form string or a pre-defined context name
         /// </summary>
@@ -24,15 +24,15 @@ namespace com.knetikcloud.Api
         /// <param name="filterContext">Filter by moderation context</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceFlagReportResource</returns>
-        ModelPageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page);
+        /// <returns>PageResourceFlagReportResource</returns>
+        PageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page);
         /// <summary>
         /// Update a flag report Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
         /// </summary>
         /// <param name="id">The flag report id</param>
         /// <param name="flagReportResource">The new flag report</param>
         /// <returns></returns>
-        void UpdateModerationReport (long? id, ModelFlagReportResource flagReportResource);
+        void UpdateModerationReport (long? id, FlagReportResource flagReportResource);
     }
   
     /// <summary>
@@ -92,8 +92,8 @@ namespace com.knetikcloud.Api
         /// Get a flag report 
         /// </summary>
         /// <param name="id">The flag report id</param> 
-        /// <returns>ModelFlagReportResource</returns>            
-        public ModelFlagReportResource GetModerationReport (long? id)
+        /// <returns>FlagReportResource</returns>            
+        public FlagReportResource GetModerationReport (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -122,7 +122,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetModerationReport: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelFlagReportResource) ApiClient.Deserialize(response.Content, typeof(ModelFlagReportResource), response.Headers);
+            return (FlagReportResource) ApiClient.Deserialize(response.Content, typeof(FlagReportResource), response.Headers);
         }
     
         /// <summary>
@@ -132,8 +132,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterContext">Filter by moderation context</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceFlagReportResource</returns>            
-        public ModelPageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page)
+        /// <returns>PageResourceFlagReportResource</returns>            
+        public PageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page)
         {
             
     
@@ -162,7 +162,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetModerationReports: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceFlagReportResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceFlagReportResource), response.Headers);
+            return (PageResourceFlagReportResource) ApiClient.Deserialize(response.Content, typeof(PageResourceFlagReportResource), response.Headers);
         }
     
         /// <summary>
@@ -171,7 +171,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The flag report id</param> 
         /// <param name="flagReportResource">The new flag report</param> 
         /// <returns></returns>            
-        public void UpdateModerationReport (long? id, ModelFlagReportResource flagReportResource)
+        public void UpdateModerationReport (long? id, FlagReportResource flagReportResource)
         {
             
             // verify the required parameter 'id' is set

@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="metric">The new metric</param>
         /// <returns></returns>
-        void AddMetric (ModelMetricResource metric);
+        void AddMetric (MetricResource metric);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="metric">The new metric</param> 
         /// <returns></returns>            
-        public void AddMetric (ModelMetricResource metric)
+        public void AddMetric (MetricResource metric)
         {
             
     

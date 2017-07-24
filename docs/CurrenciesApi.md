@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createcurrency"></a>
 # **CreateCurrency**
-> ModelCurrencyResource CreateCurrency (ModelCurrencyResource currency)
+> CurrencyResource CreateCurrency (CurrencyResource currency)
 
 Create a currency
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CurrenciesApi();
-            var currency = new ModelCurrencyResource(); // ModelCurrencyResource | The currency object (optional) 
+            var currency = new CurrencyResource(); // CurrencyResource | The currency object (optional) 
 
             try
             {
                 // Create a currency
-                ModelCurrencyResource result = apiInstance.CreateCurrency(currency);
+                CurrencyResource result = apiInstance.CreateCurrency(currency);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | [**ModelCurrencyResource**](ModelCurrencyResource.md)| The currency object | [optional] 
+ **currency** | [**CurrencyResource**](CurrencyResource.md)| The currency object | [optional] 
 
 ### Return type
 
-[**ModelCurrencyResource**](ModelCurrencyResource.md)
+[**CurrencyResource**](CurrencyResource.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getcurrencies"></a>
 # **GetCurrencies**
-> ModelPageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order)
+> PageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order)
 
 List and search currencies
 
@@ -167,7 +167,7 @@ namespace Example
             try
             {
                 // List and search currencies
-                ModelPageResourceCurrencyResource result = apiInstance.GetCurrencies(filterEnabledCurrencies, filterType, size, page, order);
+                PageResourceCurrencyResource result = apiInstance.GetCurrencies(filterEnabledCurrencies, filterType, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCurrencyResource**](ModelPageResourceCurrencyResource.md)
+[**PageResourceCurrencyResource**](PageResourceCurrencyResource.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ No authorization required
 
 <a name="getcurrency"></a>
 # **GetCurrency**
-> ModelCurrencyResource GetCurrency (string code)
+> CurrencyResource GetCurrency (string code)
 
 Get a single currency
 
@@ -231,7 +231,7 @@ namespace Example
             try
             {
                 // Get a single currency
-                ModelCurrencyResource result = apiInstance.GetCurrency(code);
+                CurrencyResource result = apiInstance.GetCurrency(code);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCurrencyResource**](ModelCurrencyResource.md)
+[**CurrencyResource**](CurrencyResource.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ No authorization required
 
 <a name="updatecurrency"></a>
 # **UpdateCurrency**
-> void UpdateCurrency (string code, ModelCurrencyResource currency)
+> void UpdateCurrency (string code, CurrencyResource currency)
 
 Update a currency
 
@@ -290,7 +290,7 @@ namespace Example
 
             var apiInstance = new CurrenciesApi();
             var code = code_example;  // string | The currency code
-            var currency = new ModelCurrencyResource(); // ModelCurrencyResource | The currency object (optional) 
+            var currency = new CurrencyResource(); // CurrencyResource | The currency object (optional) 
 
             try
             {
@@ -311,7 +311,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string**| The currency code | 
- **currency** | [**ModelCurrencyResource**](ModelCurrencyResource.md)| The currency object | [optional] 
+ **currency** | [**CurrencyResource**](CurrencyResource.md)| The currency object | [optional] 
 
 ### Return type
 

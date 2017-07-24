@@ -24,8 +24,8 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceSimpleUserResource</returns>
-        ModelPageResourceSimpleUserResource GetFriends (string userId, int? size, int? page);
+        /// <returns>PageResourceSimpleUserResource</returns>
+        PageResourceSimpleUserResource GetFriends (string userId, int? size, int? page);
         /// <summary>
         /// Returns the invite token This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
         /// </summary>
@@ -38,8 +38,8 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceSimpleUserResource</returns>
-        ModelPageResourceSimpleUserResource GetInvites (string userId, int? size, int? page);
+        /// <returns>PageResourceSimpleUserResource</returns>
+        PageResourceSimpleUserResource GetInvites (string userId, int? size, int? page);
         /// <summary>
         /// Redeem friendship token Immediately connects the requested user with the user mapped by the provided invite token
         /// </summary>
@@ -157,8 +157,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceSimpleUserResource</returns>            
-        public ModelPageResourceSimpleUserResource GetFriends (string userId, int? size, int? page)
+        /// <returns>PageResourceSimpleUserResource</returns>            
+        public PageResourceSimpleUserResource GetFriends (string userId, int? size, int? page)
         {
             
             // verify the required parameter 'userId' is set
@@ -189,7 +189,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetFriends: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSimpleUserResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSimpleUserResource), response.Headers);
+            return (PageResourceSimpleUserResource) ApiClient.Deserialize(response.Content, typeof(PageResourceSimpleUserResource), response.Headers);
         }
     
         /// <summary>
@@ -235,8 +235,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceSimpleUserResource</returns>            
-        public ModelPageResourceSimpleUserResource GetInvites (string userId, int? size, int? page)
+        /// <returns>PageResourceSimpleUserResource</returns>            
+        public PageResourceSimpleUserResource GetInvites (string userId, int? size, int? page)
         {
             
             // verify the required parameter 'userId' is set
@@ -267,7 +267,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetInvites: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSimpleUserResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSimpleUserResource), response.Headers);
+            return (PageResourceSimpleUserResource) ApiClient.Deserialize(response.Content, typeof(PageResourceSimpleUserResource), response.Headers);
         }
     
         /// <summary>

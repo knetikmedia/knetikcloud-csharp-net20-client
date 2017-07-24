@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createaddress"></a>
 # **CreateAddress**
-> ModelSavedAddressResource CreateAddress (string userId, ModelSavedAddressResource savedAddressResource)
+> SavedAddressResource CreateAddress (string userId, SavedAddressResource savedAddressResource)
 
 Create a new address
 
@@ -37,12 +37,12 @@ namespace Example
 
             var apiInstance = new UsersAddressesApi();
             var userId = userId_example;  // string | The id of the user
-            var savedAddressResource = new ModelSavedAddressResource(); // ModelSavedAddressResource | The new address (optional) 
+            var savedAddressResource = new SavedAddressResource(); // SavedAddressResource | The new address (optional) 
 
             try
             {
                 // Create a new address
-                ModelSavedAddressResource result = apiInstance.CreateAddress(userId, savedAddressResource);
+                SavedAddressResource result = apiInstance.CreateAddress(userId, savedAddressResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,11 +59,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string**| The id of the user | 
- **savedAddressResource** | [**ModelSavedAddressResource**](ModelSavedAddressResource.md)| The new address | [optional] 
+ **savedAddressResource** | [**SavedAddressResource**](SavedAddressResource.md)| The new address | [optional] 
 
 ### Return type
 
-[**ModelSavedAddressResource**](ModelSavedAddressResource.md)
+[**SavedAddressResource**](SavedAddressResource.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ void (empty response body)
 
 <a name="getaddress"></a>
 # **GetAddress**
-> ModelSavedAddressResource GetAddress (string userId, int? id)
+> SavedAddressResource GetAddress (string userId, int? id)
 
 Get a single address
 
@@ -171,7 +171,7 @@ namespace Example
             try
             {
                 // Get a single address
-                ModelSavedAddressResource result = apiInstance.GetAddress(userId, id);
+                SavedAddressResource result = apiInstance.GetAddress(userId, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelSavedAddressResource**](ModelSavedAddressResource.md)
+[**SavedAddressResource**](SavedAddressResource.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="getaddresses"></a>
 # **GetAddresses**
-> ModelPageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order)
+> PageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order)
 
 List and search addresses
 
@@ -238,7 +238,7 @@ namespace Example
             try
             {
                 // List and search addresses
-                ModelPageResourceSavedAddressResource result = apiInstance.GetAddresses(userId, size, page, order);
+                PageResourceSavedAddressResource result = apiInstance.GetAddresses(userId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSavedAddressResource**](ModelPageResourceSavedAddressResource.md)
+[**PageResourceSavedAddressResource**](PageResourceSavedAddressResource.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 <a name="updateaddress"></a>
 # **UpdateAddress**
-> ModelSavedAddressResource UpdateAddress (string userId, int? id, ModelSavedAddressResource savedAddressResource)
+> SavedAddressResource UpdateAddress (string userId, int? id, SavedAddressResource savedAddressResource)
 
 Update an address
 
@@ -301,12 +301,12 @@ namespace Example
             var apiInstance = new UsersAddressesApi();
             var userId = userId_example;  // string | The id of the user
             var id = 56;  // int? | The id of the address
-            var savedAddressResource = new ModelSavedAddressResource(); // ModelSavedAddressResource | The saved address resource object (optional) 
+            var savedAddressResource = new SavedAddressResource(); // SavedAddressResource | The saved address resource object (optional) 
 
             try
             {
                 // Update an address
-                ModelSavedAddressResource result = apiInstance.UpdateAddress(userId, id, savedAddressResource);
+                SavedAddressResource result = apiInstance.UpdateAddress(userId, id, savedAddressResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -324,11 +324,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string**| The id of the user | 
  **id** | **int?**| The id of the address | 
- **savedAddressResource** | [**ModelSavedAddressResource**](ModelSavedAddressResource.md)| The saved address resource object | [optional] 
+ **savedAddressResource** | [**SavedAddressResource**](SavedAddressResource.md)| The saved address resource object | [optional] 
 
 ### Return type
 
-[**ModelSavedAddressResource**](ModelSavedAddressResource.md)
+[**SavedAddressResource**](SavedAddressResource.md)
 
 ### Authorization
 

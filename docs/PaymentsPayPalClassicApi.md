@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createpaypalbillingagreementurl"></a>
 # **CreatePayPalBillingAgreementUrl**
-> string CreatePayPalBillingAgreementUrl (ModelCreateBillingAgreementRequest request)
+> string CreatePayPalBillingAgreementUrl (CreateBillingAgreementRequest request)
 
 Create a PayPal Classic billing agreement for the user
 
@@ -37,7 +37,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsPayPalClassicApi();
-            var request = new ModelCreateBillingAgreementRequest(); // ModelCreateBillingAgreementRequest | The request to create a PayPal billing agreement (optional) 
+            var request = new CreateBillingAgreementRequest(); // CreateBillingAgreementRequest | The request to create a PayPal billing agreement (optional) 
 
             try
             {
@@ -58,7 +58,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelCreateBillingAgreementRequest**](ModelCreateBillingAgreementRequest.md)| The request to create a PayPal billing agreement | [optional] 
+ **request** | [**CreateBillingAgreementRequest**](CreateBillingAgreementRequest.md)| The request to create a PayPal billing agreement | [optional] 
 
 ### Return type
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 <a name="createpaypalexpresscheckout"></a>
 # **CreatePayPalExpressCheckout**
-> string CreatePayPalExpressCheckout (ModelCreatePayPalPaymentRequest request)
+> string CreatePayPalExpressCheckout (CreatePayPalPaymentRequest request)
 
 Create a payment token for PayPal express checkout
 
@@ -102,7 +102,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsPayPalClassicApi();
-            var request = new ModelCreatePayPalPaymentRequest(); // ModelCreatePayPalPaymentRequest | The request to create a PayPal payment token (optional) 
+            var request = new CreatePayPalPaymentRequest(); // CreatePayPalPaymentRequest | The request to create a PayPal payment token (optional) 
 
             try
             {
@@ -123,7 +123,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelCreatePayPalPaymentRequest**](ModelCreatePayPalPaymentRequest.md)| The request to create a PayPal payment token | [optional] 
+ **request** | [**CreatePayPalPaymentRequest**](CreatePayPalPaymentRequest.md)| The request to create a PayPal payment token | [optional] 
 
 ### Return type
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 <a name="finalizepaypalbillingagreement"></a>
 # **FinalizePayPalBillingAgreement**
-> int? FinalizePayPalBillingAgreement (ModelFinalizeBillingAgreementRequest request)
+> int? FinalizePayPalBillingAgreement (FinalizeBillingAgreementRequest request)
 
 Finalizes a billing agreement after the user has accepted through PayPal
 
@@ -167,7 +167,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsPayPalClassicApi();
-            var request = new ModelFinalizeBillingAgreementRequest(); // ModelFinalizeBillingAgreementRequest | The request to finalize a PayPal billing agreement (optional) 
+            var request = new FinalizeBillingAgreementRequest(); // FinalizeBillingAgreementRequest | The request to finalize a PayPal billing agreement (optional) 
 
             try
             {
@@ -188,7 +188,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelFinalizeBillingAgreementRequest**](ModelFinalizeBillingAgreementRequest.md)| The request to finalize a PayPal billing agreement | [optional] 
+ **request** | [**FinalizeBillingAgreementRequest**](FinalizeBillingAgreementRequest.md)| The request to finalize a PayPal billing agreement | [optional] 
 
 ### Return type
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="finalizepaypalcheckout"></a>
 # **FinalizePayPalCheckout**
-> void FinalizePayPalCheckout (ModelFinalizePayPalPaymentRequest request)
+> void FinalizePayPalCheckout (FinalizePayPalPaymentRequest request)
 
 Finalizes a payment after the user has completed checkout with PayPal
 
@@ -232,7 +232,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsPayPalClassicApi();
-            var request = new ModelFinalizePayPalPaymentRequest(); // ModelFinalizePayPalPaymentRequest | The request to finalize the payment (optional) 
+            var request = new FinalizePayPalPaymentRequest(); // FinalizePayPalPaymentRequest | The request to finalize the payment (optional) 
 
             try
             {
@@ -252,7 +252,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelFinalizePayPalPaymentRequest**](ModelFinalizePayPalPaymentRequest.md)| The request to finalize the payment | [optional] 
+ **request** | [**FinalizePayPalPaymentRequest**](FinalizePayPalPaymentRequest.md)| The request to finalize the payment | [optional] 
 
 ### Return type
 

@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Create a vendor 
         /// </summary>
         /// <param name="vendor">The vendor</param>
-        /// <returns>ModelVendorResource</returns>
-        ModelVendorResource CreateVendor (ModelVendorResource vendor);
+        /// <returns>VendorResource</returns>
+        VendorResource CreateVendor (VendorResource vendor);
         /// <summary>
         /// Create a vendor template Vendor Templates define a type of vendor and the properties they have.
         /// </summary>
         /// <param name="vendorTemplateResource">The new vendor template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource CreateVendorTemplate (ModelItemTemplateResource vendorTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource CreateVendorTemplate (ItemTemplateResource vendorTemplateResource);
         /// <summary>
         /// Delete a vendor 
         /// </summary>
@@ -40,22 +40,22 @@ namespace com.knetikcloud.Api
         /// Get a single vendor 
         /// </summary>
         /// <param name="id">The id of the vendor</param>
-        /// <returns>ModelVendorResource</returns>
-        ModelVendorResource GetVendor (int? id);
+        /// <returns>VendorResource</returns>
+        VendorResource GetVendor (int? id);
         /// <summary>
         /// Get a single vendor template Vendor Templates define a type of vendor and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource GetVendorTemplate (string id);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource GetVendorTemplate (string id);
         /// <summary>
         /// List and search vendor templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceItemTemplateResource</returns>
-        ModelPageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceItemTemplateResource</returns>
+        PageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order);
         /// <summary>
         /// List and search vendors 
         /// </summary>
@@ -63,22 +63,22 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceVendorResource</returns>
-        ModelPageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order);
+        /// <returns>PageResourceVendorResource</returns>
+        PageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order);
         /// <summary>
         /// Update a vendor 
         /// </summary>
         /// <param name="id">The id of the vendor</param>
         /// <param name="vendor">The vendor</param>
-        /// <returns>ModelVendorResource</returns>
-        ModelVendorResource UpdateVendor (int? id, ModelVendorResource vendor);
+        /// <returns>VendorResource</returns>
+        VendorResource UpdateVendor (int? id, VendorResource vendor);
         /// <summary>
         /// Update a vendor template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="vendorTemplateResource">The vendor template resource object</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource UpdateVendorTemplate (string id, ModelItemTemplateResource vendorTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource UpdateVendorTemplate (string id, ItemTemplateResource vendorTemplateResource);
     }
   
     /// <summary>
@@ -138,8 +138,8 @@ namespace com.knetikcloud.Api
         /// Create a vendor 
         /// </summary>
         /// <param name="vendor">The vendor</param> 
-        /// <returns>ModelVendorResource</returns>            
-        public ModelVendorResource CreateVendor (ModelVendorResource vendor)
+        /// <returns>VendorResource</returns>            
+        public VendorResource CreateVendor (VendorResource vendor)
         {
             
     
@@ -165,15 +165,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateVendor: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVendorResource) ApiClient.Deserialize(response.Content, typeof(ModelVendorResource), response.Headers);
+            return (VendorResource) ApiClient.Deserialize(response.Content, typeof(VendorResource), response.Headers);
         }
     
         /// <summary>
         /// Create a vendor template Vendor Templates define a type of vendor and the properties they have.
         /// </summary>
         /// <param name="vendorTemplateResource">The new vendor template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource CreateVendorTemplate (ModelItemTemplateResource vendorTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource CreateVendorTemplate (ItemTemplateResource vendorTemplateResource)
         {
             
     
@@ -199,7 +199,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateVendorTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -282,8 +282,8 @@ namespace com.knetikcloud.Api
         /// Get a single vendor 
         /// </summary>
         /// <param name="id">The id of the vendor</param> 
-        /// <returns>ModelVendorResource</returns>            
-        public ModelVendorResource GetVendor (int? id)
+        /// <returns>VendorResource</returns>            
+        public VendorResource GetVendor (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -312,15 +312,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVendor: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVendorResource) ApiClient.Deserialize(response.Content, typeof(ModelVendorResource), response.Headers);
+            return (VendorResource) ApiClient.Deserialize(response.Content, typeof(VendorResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single vendor template Vendor Templates define a type of vendor and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource GetVendorTemplate (string id)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource GetVendorTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -349,7 +349,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVendorTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -358,8 +358,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceItemTemplateResource</returns>            
-        public ModelPageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceItemTemplateResource</returns>            
+        public PageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order)
         {
             
     
@@ -387,7 +387,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVendorTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceItemTemplateResource), response.Headers);
+            return (PageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -397,8 +397,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceVendorResource</returns>            
-        public ModelPageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order)
+        /// <returns>PageResourceVendorResource</returns>            
+        public PageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order)
         {
             
     
@@ -427,7 +427,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVendors: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceVendorResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceVendorResource), response.Headers);
+            return (PageResourceVendorResource) ApiClient.Deserialize(response.Content, typeof(PageResourceVendorResource), response.Headers);
         }
     
         /// <summary>
@@ -435,8 +435,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the vendor</param> 
         /// <param name="vendor">The vendor</param> 
-        /// <returns>ModelVendorResource</returns>            
-        public ModelVendorResource UpdateVendor (int? id, ModelVendorResource vendor)
+        /// <returns>VendorResource</returns>            
+        public VendorResource UpdateVendor (int? id, VendorResource vendor)
         {
             
             // verify the required parameter 'id' is set
@@ -466,7 +466,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateVendor: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVendorResource) ApiClient.Deserialize(response.Content, typeof(ModelVendorResource), response.Headers);
+            return (VendorResource) ApiClient.Deserialize(response.Content, typeof(VendorResource), response.Headers);
         }
     
         /// <summary>
@@ -474,8 +474,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="vendorTemplateResource">The vendor template resource object</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource UpdateVendorTemplate (string id, ModelItemTemplateResource vendorTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource UpdateVendorTemplate (string id, ItemTemplateResource vendorTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -505,7 +505,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateVendorTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
     }

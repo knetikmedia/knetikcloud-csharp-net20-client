@@ -70,7 +70,7 @@ void (empty response body)
 
 <a name="getmaintenance"></a>
 # **GetMaintenance**
-> ModelMaintenance GetMaintenance ()
+> Maintenance GetMaintenance ()
 
 Get current maintenance info
 
@@ -96,7 +96,7 @@ namespace Example
             try
             {
                 // Get current maintenance info
-                ModelMaintenance result = apiInstance.GetMaintenance();
+                Maintenance result = apiInstance.GetMaintenance();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -113,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelMaintenance**](ModelMaintenance.md)
+[**Maintenance**](Maintenance.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ No authorization required
 
 <a name="setmaintenance"></a>
 # **SetMaintenance**
-> void SetMaintenance (ModelMaintenance maintenance)
+> void SetMaintenance (Maintenance maintenance)
 
 Set current maintenance info
 
@@ -151,7 +151,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UtilMaintenanceApi();
-            var maintenance = new ModelMaintenance(); // ModelMaintenance | The maintenance object (optional) 
+            var maintenance = new Maintenance(); // Maintenance | The maintenance object (optional) 
 
             try
             {
@@ -171,7 +171,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **maintenance** | [**ModelMaintenance**](ModelMaintenance.md)| The maintenance object | [optional] 
+ **maintenance** | [**Maintenance**](Maintenance.md)| The maintenance object | [optional] 
 
 ### Return type
 
@@ -190,7 +190,7 @@ void (empty response body)
 
 <a name="updatemaintenance"></a>
 # **UpdateMaintenance**
-> void UpdateMaintenance (ModelMaintenance maintenance)
+> void UpdateMaintenance (Maintenance maintenance)
 
 Update current maintenance info
 
@@ -213,7 +213,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UtilMaintenanceApi();
-            var maintenance = new ModelMaintenance(); // ModelMaintenance | The maintenance object (optional) 
+            var maintenance = new Maintenance(); // Maintenance | The maintenance object (optional) 
 
             try
             {
@@ -233,7 +233,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **maintenance** | [**ModelMaintenance**](ModelMaintenance.md)| The maintenance object | [optional] 
+ **maintenance** | [**Maintenance**](Maintenance.md)| The maintenance object | [optional] 
 
 ### Return type
 

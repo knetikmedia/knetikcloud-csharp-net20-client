@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createcatalogsale"></a>
 # **CreateCatalogSale**
-> ModelCatalogSale CreateCatalogSale (ModelCatalogSale catalogSale)
+> CatalogSale CreateCatalogSale (CatalogSale catalogSale)
 
 Create a sale
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreSalesApi();
-            var catalogSale = new ModelCatalogSale(); // ModelCatalogSale | The catalog sale object (optional) 
+            var catalogSale = new CatalogSale(); // CatalogSale | The catalog sale object (optional) 
 
             try
             {
                 // Create a sale
-                ModelCatalogSale result = apiInstance.CreateCatalogSale(catalogSale);
+                CatalogSale result = apiInstance.CreateCatalogSale(catalogSale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalogSale** | [**ModelCatalogSale**](ModelCatalogSale.md)| The catalog sale object | [optional] 
+ **catalogSale** | [**CatalogSale**](CatalogSale.md)| The catalog sale object | [optional] 
 
 ### Return type
 
-[**ModelCatalogSale**](ModelCatalogSale.md)
+[**CatalogSale**](CatalogSale.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getcatalogsale"></a>
 # **GetCatalogSale**
-> ModelCatalogSale GetCatalogSale (int? id)
+> CatalogSale GetCatalogSale (int? id)
 
 Get a single sale
 
@@ -166,7 +166,7 @@ namespace Example
             try
             {
                 // Get a single sale
-                ModelCatalogSale result = apiInstance.GetCatalogSale(id);
+                CatalogSale result = apiInstance.GetCatalogSale(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCatalogSale**](ModelCatalogSale.md)
+[**CatalogSale**](CatalogSale.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 <a name="getcatalogsales"></a>
 # **GetCatalogSales**
-> ModelPageResourceCatalogSale GetCatalogSales (int? size, int? page, string order)
+> PageResourceCatalogSale GetCatalogSales (int? size, int? page, string order)
 
 List and search sales
 
@@ -231,7 +231,7 @@ namespace Example
             try
             {
                 // List and search sales
-                ModelPageResourceCatalogSale result = apiInstance.GetCatalogSales(size, page, order);
+                PageResourceCatalogSale result = apiInstance.GetCatalogSales(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCatalogSale**](ModelPageResourceCatalogSale.md)
+[**PageResourceCatalogSale**](PageResourceCatalogSale.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecatalogsale"></a>
 # **UpdateCatalogSale**
-> ModelCatalogSale UpdateCatalogSale (int? id, ModelCatalogSale catalogSale)
+> CatalogSale UpdateCatalogSale (int? id, CatalogSale catalogSale)
 
 Update a sale
 
@@ -292,12 +292,12 @@ namespace Example
 
             var apiInstance = new StoreSalesApi();
             var id = 56;  // int? | The id of the sale
-            var catalogSale = new ModelCatalogSale(); // ModelCatalogSale | The catalog sale object (optional) 
+            var catalogSale = new CatalogSale(); // CatalogSale | The catalog sale object (optional) 
 
             try
             {
                 // Update a sale
-                ModelCatalogSale result = apiInstance.UpdateCatalogSale(id, catalogSale);
+                CatalogSale result = apiInstance.UpdateCatalogSale(id, catalogSale);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -314,11 +314,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the sale | 
- **catalogSale** | [**ModelCatalogSale**](ModelCatalogSale.md)| The catalog sale object | [optional] 
+ **catalogSale** | [**CatalogSale**](CatalogSale.md)| The catalog sale object | [optional] 
 
 ### Return type
 
-[**ModelCatalogSale**](ModelCatalogSale.md)
+[**CatalogSale**](CatalogSale.md)
 
 ### Authorization
 

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a BRE category template Templates define a type of BRE category and the properties they have
         /// </summary>
         /// <param name="template">The category template to create</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateBRECategoryTemplate (ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateBRECategoryTemplate (TemplateResource template);
         /// <summary>
         /// Delete a BRE category template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
         /// </summary>
@@ -29,42 +29,42 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceBreCategoryResource</returns>
-        ModelPageResourceBreCategoryResource GetBRECategories (int? size, int? page);
+        /// <returns>PageResourceBreCategoryResource</returns>
+        PageResourceBreCategoryResource GetBRECategories (int? size, int? page);
         /// <summary>
         /// Get a single category 
         /// </summary>
         /// <param name="name">The category name</param>
-        /// <returns>ModelBreCategoryResource</returns>
-        ModelBreCategoryResource GetBRECategory (string name);
+        /// <returns>BreCategoryResource</returns>
+        BreCategoryResource GetBRECategory (string name);
         /// <summary>
         /// Get a single BRE category template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetBRECategoryTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetBRECategoryTemplate (string id);
         /// <summary>
         /// List and search BRE category templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order);
         /// <summary>
         /// Update a category 
         /// </summary>
         /// <param name="name">The category name</param>
         /// <param name="category">The updated BRE category information</param>
-        /// <returns>ModelBreCategoryResource</returns>
-        ModelBreCategoryResource UpdateBRECategory (string name, ModelBreCategoryResource category);
+        /// <returns>BreCategoryResource</returns>
+        BreCategoryResource UpdateBRECategory (string name, BreCategoryResource category);
         /// <summary>
         /// Update a BRE category template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="template">The updated category template definition</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateBRECategoryTemplate (string id, ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateBRECategoryTemplate (string id, TemplateResource template);
     }
   
     /// <summary>
@@ -124,8 +124,8 @@ namespace com.knetikcloud.Api
         /// Create a BRE category template Templates define a type of BRE category and the properties they have
         /// </summary>
         /// <param name="template">The category template to create</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateBRECategoryTemplate (ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateBRECategoryTemplate (TemplateResource template)
         {
             
     
@@ -151,7 +151,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateBRECategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -198,8 +198,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceBreCategoryResource</returns>            
-        public ModelPageResourceBreCategoryResource GetBRECategories (int? size, int? page)
+        /// <returns>PageResourceBreCategoryResource</returns>            
+        public PageResourceBreCategoryResource GetBRECategories (int? size, int? page)
         {
             
     
@@ -226,15 +226,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRECategories: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBreCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBreCategoryResource), response.Headers);
+            return (PageResourceBreCategoryResource) ApiClient.Deserialize(response.Content, typeof(PageResourceBreCategoryResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single category 
         /// </summary>
         /// <param name="name">The category name</param> 
-        /// <returns>ModelBreCategoryResource</returns>            
-        public ModelBreCategoryResource GetBRECategory (string name)
+        /// <returns>BreCategoryResource</returns>            
+        public BreCategoryResource GetBRECategory (string name)
         {
             
             // verify the required parameter 'name' is set
@@ -263,15 +263,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRECategory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelBreCategoryResource), response.Headers);
+            return (BreCategoryResource) ApiClient.Deserialize(response.Content, typeof(BreCategoryResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single BRE category template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetBRECategoryTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetBRECategoryTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -300,7 +300,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRECategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -309,8 +309,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetBRECategoryTemplates (int? size, int? page, string order)
         {
             
     
@@ -338,7 +338,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBRECategoryTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -346,8 +346,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="name">The category name</param> 
         /// <param name="category">The updated BRE category information</param> 
-        /// <returns>ModelBreCategoryResource</returns>            
-        public ModelBreCategoryResource UpdateBRECategory (string name, ModelBreCategoryResource category)
+        /// <returns>BreCategoryResource</returns>            
+        public BreCategoryResource UpdateBRECategory (string name, BreCategoryResource category)
         {
             
             // verify the required parameter 'name' is set
@@ -377,7 +377,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBRECategory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelBreCategoryResource), response.Headers);
+            return (BreCategoryResource) ApiClient.Deserialize(response.Content, typeof(BreCategoryResource), response.Headers);
         }
     
         /// <summary>
@@ -385,8 +385,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="template">The updated category template definition</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateBRECategoryTemplate (string id, ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateBRECategoryTemplate (string id, TemplateResource template)
         {
             
             // verify the required parameter 'id' is set
@@ -416,7 +416,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBRECategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

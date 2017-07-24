@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="silentpostoptimal"></a>
 # **SilentPostOptimal**
-> string SilentPostOptimal (ModelOptimalPaymentRequest request)
+> string SilentPostOptimal (OptimalPaymentRequest request)
 
 Initiate silent post with Optimal
 
@@ -34,7 +34,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsOptimalApi();
-            var request = new ModelOptimalPaymentRequest(); // ModelOptimalPaymentRequest | The payment request to initiate (optional) 
+            var request = new OptimalPaymentRequest(); // OptimalPaymentRequest | The payment request to initiate (optional) 
 
             try
             {
@@ -55,7 +55,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelOptimalPaymentRequest**](ModelOptimalPaymentRequest.md)| The payment request to initiate | [optional] 
+ **request** | [**OptimalPaymentRequest**](OptimalPaymentRequest.md)| The payment request to initiate | [optional] 
 
 ### Return type
 

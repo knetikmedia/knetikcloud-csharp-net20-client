@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createbundleitem"></a>
 # **CreateBundleItem**
-> ModelBundleItem CreateBundleItem (bool? cascade, ModelBundleItem bundleItem)
+> BundleItem CreateBundleItem (bool? cascade, BundleItem bundleItem)
 
 Create a bundle item
 
@@ -43,12 +43,12 @@ namespace Example
 
             var apiInstance = new StoreBundlesApi();
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var bundleItem = new ModelBundleItem(); // ModelBundleItem | The bundle item object (optional) 
+            var bundleItem = new BundleItem(); // BundleItem | The bundle item object (optional) 
 
             try
             {
                 // Create a bundle item
-                ModelBundleItem result = apiInstance.CreateBundleItem(cascade, bundleItem);
+                BundleItem result = apiInstance.CreateBundleItem(cascade, bundleItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,11 +65,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **bundleItem** | [**ModelBundleItem**](ModelBundleItem.md)| The bundle item object | [optional] 
+ **bundleItem** | [**BundleItem**](BundleItem.md)| The bundle item object | [optional] 
 
 ### Return type
 
-[**ModelBundleItem**](ModelBundleItem.md)
+[**BundleItem**](BundleItem.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="createbundletemplate"></a>
 # **CreateBundleTemplate**
-> ModelItemTemplateResource CreateBundleTemplate (ModelItemTemplateResource bundleTemplateResource)
+> ItemTemplateResource CreateBundleTemplate (ItemTemplateResource bundleTemplateResource)
 
 Create a bundle template
 
@@ -109,12 +109,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreBundlesApi();
-            var bundleTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The new bundle template (optional) 
+            var bundleTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new bundle template (optional) 
 
             try
             {
                 // Create a bundle template
-                ModelItemTemplateResource result = apiInstance.CreateBundleTemplate(bundleTemplateResource);
+                ItemTemplateResource result = apiInstance.CreateBundleTemplate(bundleTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,11 +130,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bundleTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The new bundle template | [optional] 
+ **bundleTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The new bundle template | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ void (empty response body)
 
 <a name="getbundleitem"></a>
 # **GetBundleItem**
-> ModelBundleItem GetBundleItem (int? id)
+> BundleItem GetBundleItem (int? id)
 
 Get a single bundle item
 
@@ -300,7 +300,7 @@ namespace Example
             try
             {
                 // Get a single bundle item
-                ModelBundleItem result = apiInstance.GetBundleItem(id);
+                BundleItem result = apiInstance.GetBundleItem(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBundleItem**](ModelBundleItem.md)
+[**BundleItem**](BundleItem.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ No authorization required
 
 <a name="getbundletemplate"></a>
 # **GetBundleTemplate**
-> ModelItemTemplateResource GetBundleTemplate (string id)
+> ItemTemplateResource GetBundleTemplate (string id)
 
 Get a single bundle template
 
@@ -362,7 +362,7 @@ namespace Example
             try
             {
                 // Get a single bundle template
-                ModelItemTemplateResource result = apiInstance.GetBundleTemplate(id);
+                ItemTemplateResource result = apiInstance.GetBundleTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ No authorization required
 
 <a name="getbundletemplates"></a>
 # **GetBundleTemplates**
-> ModelPageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order)
+> PageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order)
 
 List and search bundle templates
 
@@ -424,7 +424,7 @@ namespace Example
             try
             {
                 // List and search bundle templates
-                ModelPageResourceItemTemplateResource result = apiInstance.GetBundleTemplates(size, page, order);
+                PageResourceItemTemplateResource result = apiInstance.GetBundleTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceItemTemplateResource**](ModelPageResourceItemTemplateResource.md)
+[**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ No authorization required
 
 <a name="updatebundleitem"></a>
 # **UpdateBundleItem**
-> ModelBundleItem UpdateBundleItem (int? id, bool? cascade, ModelBundleItem bundleItem)
+> BundleItem UpdateBundleItem (int? id, bool? cascade, BundleItem bundleItem)
 
 Update a bundle item
 
@@ -486,12 +486,12 @@ namespace Example
             var apiInstance = new StoreBundlesApi();
             var id = 56;  // int? | The id of the bundle
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var bundleItem = new ModelBundleItem(); // ModelBundleItem | The bundle item object (optional) 
+            var bundleItem = new BundleItem(); // BundleItem | The bundle item object (optional) 
 
             try
             {
                 // Update a bundle item
-                ModelBundleItem result = apiInstance.UpdateBundleItem(id, cascade, bundleItem);
+                BundleItem result = apiInstance.UpdateBundleItem(id, cascade, bundleItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -509,11 +509,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the bundle | 
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **bundleItem** | [**ModelBundleItem**](ModelBundleItem.md)| The bundle item object | [optional] 
+ **bundleItem** | [**BundleItem**](BundleItem.md)| The bundle item object | [optional] 
 
 ### Return type
 
-[**ModelBundleItem**](ModelBundleItem.md)
+[**BundleItem**](BundleItem.md)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebundletemplate"></a>
 # **UpdateBundleTemplate**
-> ModelItemTemplateResource UpdateBundleTemplate (string id, ModelItemTemplateResource bundleTemplateResource)
+> ItemTemplateResource UpdateBundleTemplate (string id, ItemTemplateResource bundleTemplateResource)
 
 Update a bundle template
 
@@ -552,12 +552,12 @@ namespace Example
 
             var apiInstance = new StoreBundlesApi();
             var id = id_example;  // string | The id of the template
-            var bundleTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The bundle template resource object (optional) 
+            var bundleTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The bundle template resource object (optional) 
 
             try
             {
                 // Update a bundle template
-                ModelItemTemplateResource result = apiInstance.UpdateBundleTemplate(id, bundleTemplateResource);
+                ItemTemplateResource result = apiInstance.UpdateBundleTemplate(id, bundleTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -574,11 +574,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **bundleTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The bundle template resource object | [optional] 
+ **bundleTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The bundle template resource object | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
         /// </summary>
         /// <param name="req">Invoice to be created</param>
-        /// <returns>List&lt;ModelInvoiceResource&gt;</returns>
-        List<ModelInvoiceResource> CreateInvoice (ModelInvoiceCreateRequest req);
+        /// <returns>List&lt;InvoiceResource&gt;</returns>
+        List<InvoiceResource> CreateInvoice (InvoiceCreateRequest req);
         /// <summary>
         /// Lists available fulfillment statuses 
         /// </summary>
@@ -26,16 +26,16 @@ namespace com.knetikcloud.Api
         /// Retrieve an invoice 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
-        /// <returns>ModelInvoiceResource</returns>
-        ModelInvoiceResource GetInvoice (int? id);
+        /// <returns>InvoiceResource</returns>
+        InvoiceResource GetInvoice (int? id);
         /// <summary>
         /// List invoice logs 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceInvoiceLogEntry</returns>
-        ModelPageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page);
+        /// <returns>PageResourceInvoiceLogEntry</returns>
+        PageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page);
         /// <summary>
         /// Retrieve invoices Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
         /// </summary>
@@ -56,8 +56,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceInvoiceResource</returns>
-        ModelPageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, Object filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order);
+        /// <returns>PageResourceInvoiceResource</returns>
+        PageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, string filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order);
         /// <summary>
         /// Lists available payment statuses 
         /// </summary>
@@ -69,7 +69,16 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the invoice</param>
         /// <param name="request">Payment info</param>
         /// <returns></returns>
-        void PayInvoice (int? id, ModelPayBySavedMethodRequest request);
+        void PayInvoice (int? id, PayBySavedMethodRequest request);
+        /// <summary>
+        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// </summary>
+        /// <param name="id">The id of the invoice</param>
+        /// <param name="bundleSku">The sku of the bundle in the invoice that contains the given target</param>
+        /// <param name="sku">The sku of an item in the bundle in the invoice</param>
+        /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param>
+        /// <returns></returns>
+        void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status);
         /// <summary>
         /// Set the external reference of an invoice 
         /// </summary>
@@ -98,14 +107,14 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the invoice</param>
         /// <param name="request">Payment status info</param>
         /// <returns></returns>
-        void SetPaymentStatus (int? id, ModelInvoicePaymentStatusRequest request);
+        void SetPaymentStatus (int? id, InvoicePaymentStatusRequest request);
         /// <summary>
         /// Set or update billing info 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="billingInfoRequest">Address info</param>
         /// <returns></returns>
-        void UpdateBillingInfo (int? id, ModelAddressResource billingInfoRequest);
+        void UpdateBillingInfo (int? id, AddressResource billingInfoRequest);
     }
   
     /// <summary>
@@ -165,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
         /// </summary>
         /// <param name="req">Invoice to be created</param> 
-        /// <returns>List&lt;ModelInvoiceResource&gt;</returns>            
-        public List<ModelInvoiceResource> CreateInvoice (ModelInvoiceCreateRequest req)
+        /// <returns>List&lt;InvoiceResource&gt;</returns>            
+        public List<InvoiceResource> CreateInvoice (InvoiceCreateRequest req)
         {
             
     
@@ -192,7 +201,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateInvoice: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelInvoiceResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelInvoiceResource>), response.Headers);
+            return (List<InvoiceResource>) ApiClient.Deserialize(response.Content, typeof(List<InvoiceResource>), response.Headers);
         }
     
         /// <summary>
@@ -231,8 +240,8 @@ namespace com.knetikcloud.Api
         /// Retrieve an invoice 
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
-        /// <returns>ModelInvoiceResource</returns>            
-        public ModelInvoiceResource GetInvoice (int? id)
+        /// <returns>InvoiceResource</returns>            
+        public InvoiceResource GetInvoice (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -261,7 +270,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetInvoice: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelInvoiceResource) ApiClient.Deserialize(response.Content, typeof(ModelInvoiceResource), response.Headers);
+            return (InvoiceResource) ApiClient.Deserialize(response.Content, typeof(InvoiceResource), response.Headers);
         }
     
         /// <summary>
@@ -270,8 +279,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the invoice</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceInvoiceLogEntry</returns>            
-        public ModelPageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page)
+        /// <returns>PageResourceInvoiceLogEntry</returns>            
+        public PageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page)
         {
             
             // verify the required parameter 'id' is set
@@ -302,7 +311,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetInvoiceLogs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceInvoiceLogEntry) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceInvoiceLogEntry), response.Headers);
+            return (PageResourceInvoiceLogEntry) ApiClient.Deserialize(response.Content, typeof(PageResourceInvoiceLogEntry), response.Headers);
         }
     
         /// <summary>
@@ -325,8 +334,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceInvoiceResource</returns>            
-        public ModelPageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, Object filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order)
+        /// <returns>PageResourceInvoiceResource</returns>            
+        public PageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, string filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order)
         {
             
     
@@ -368,7 +377,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetInvoices: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceInvoiceResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceInvoiceResource), response.Headers);
+            return (PageResourceInvoiceResource) ApiClient.Deserialize(response.Content, typeof(PageResourceInvoiceResource), response.Headers);
         }
     
         /// <summary>
@@ -409,7 +418,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the invoice</param> 
         /// <param name="request">Payment info</param> 
         /// <returns></returns>            
-        public void PayInvoice (int? id, ModelPayBySavedMethodRequest request)
+        public void PayInvoice (int? id, PayBySavedMethodRequest request)
         {
             
             // verify the required parameter 'id' is set
@@ -438,6 +447,58 @@ namespace com.knetikcloud.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling PayInvoice: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling PayInvoice: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return;
+        }
+    
+        /// <summary>
+        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// </summary>
+        /// <param name="id">The id of the invoice</param> 
+        /// <param name="bundleSku">The sku of the bundle in the invoice that contains the given target</param> 
+        /// <param name="sku">The sku of an item in the bundle in the invoice</param> 
+        /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param> 
+        /// <returns></returns>            
+        public void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status)
+        {
+            
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling SetBundledInvoiceItemFulfillmentStatus");
+            
+            // verify the required parameter 'bundleSku' is set
+            if (bundleSku == null) throw new ApiException(400, "Missing required parameter 'bundleSku' when calling SetBundledInvoiceItemFulfillmentStatus");
+            
+            // verify the required parameter 'sku' is set
+            if (sku == null) throw new ApiException(400, "Missing required parameter 'sku' when calling SetBundledInvoiceItemFulfillmentStatus");
+            
+            // verify the required parameter 'status' is set
+            if (status == null) throw new ApiException(400, "Missing required parameter 'status' when calling SetBundledInvoiceItemFulfillmentStatus");
+            
+    
+            var path = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
+path = path.Replace("{" + "bundleSku" + "}", ApiClient.ParameterToString(bundleSku));
+path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(status); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "OAuth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetBundledInvoiceItemFulfillmentStatus: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetBundledInvoiceItemFulfillmentStatus: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
         }
@@ -573,7 +634,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         /// <param name="id">The id of the invoice</param> 
         /// <param name="request">Payment status info</param> 
         /// <returns></returns>            
-        public void SetPaymentStatus (int? id, ModelInvoicePaymentStatusRequest request)
+        public void SetPaymentStatus (int? id, InvoicePaymentStatusRequest request)
         {
             
             // verify the required parameter 'id' is set
@@ -612,7 +673,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         /// <param name="id">The id of the invoice</param> 
         /// <param name="billingInfoRequest">Address info</param> 
         /// <returns></returns>            
-        public void UpdateBillingInfo (int? id, ModelAddressResource billingInfoRequest)
+        public void UpdateBillingInfo (int? id, AddressResource billingInfoRequest)
         {
             
             // verify the required parameter 'id' is set

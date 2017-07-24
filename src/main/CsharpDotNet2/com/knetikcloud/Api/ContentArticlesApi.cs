@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Create a new article Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
         /// </summary>
         /// <param name="articleResource">The new article</param>
-        /// <returns>ModelArticleResource</returns>
-        ModelArticleResource CreateArticle (ModelArticleResource articleResource);
+        /// <returns>ArticleResource</returns>
+        ArticleResource CreateArticle (ArticleResource articleResource);
         /// <summary>
         /// Create an article template Article Templates define a type of article and the properties they have
         /// </summary>
         /// <param name="articleTemplateResource">The article template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateArticleTemplate (ModelTemplateResource articleTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateArticleTemplate (TemplateResource articleTemplateResource);
         /// <summary>
         /// Delete an existing article 
         /// </summary>
@@ -40,47 +40,49 @@ namespace com.knetikcloud.Api
         /// Get a single article 
         /// </summary>
         /// <param name="id">The article id</param>
-        /// <returns>ModelArticleResource</returns>
-        ModelArticleResource GetArticle (string id);
+        /// <returns>ArticleResource</returns>
+        ArticleResource GetArticle (string id);
         /// <summary>
         /// Get a single article template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetArticleTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetArticleTemplate (string id);
         /// <summary>
         /// List and search article templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order);
         /// <summary>
         /// List and search articles Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
         /// <param name="filterCategory">Filter for articles from a specific category by id</param>
-        /// <param name="filterTagset">Filter for articles with specified tags (separated by comma)</param>
+        /// <param name="filterTagset">Filter for articles with at least one of a specified set of tags (separated by comma)</param>
+        /// <param name="filterTagIntersection">Filter for articles with all of a specified set of tags (separated by comma)</param>
+        /// <param name="filterTagExclusion">Filter for articles with none of a specified set of tags (separated by comma)</param>
         /// <param name="filterTitle">Filter for articles whose title contains a string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceArticleResource</returns>
-        ModelPageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTitle, int? size, int? page, string order);
+        /// <returns>PageResourceArticleResource</returns>
+        PageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order);
         /// <summary>
         /// Update an existing article 
         /// </summary>
         /// <param name="id">The article id</param>
         /// <param name="articleResource">The article object</param>
-        /// <returns>ModelArticleResource</returns>
-        ModelArticleResource UpdateArticle (string id, ModelArticleResource articleResource);
+        /// <returns>ArticleResource</returns>
+        ArticleResource UpdateArticle (string id, ArticleResource articleResource);
         /// <summary>
         /// Update an article template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="articleTemplateResource">The article template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateArticleTemplate (string id, ModelTemplateResource articleTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateArticleTemplate (string id, TemplateResource articleTemplateResource);
     }
   
     /// <summary>
@@ -140,8 +142,8 @@ namespace com.knetikcloud.Api
         /// Create a new article Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
         /// </summary>
         /// <param name="articleResource">The new article</param> 
-        /// <returns>ModelArticleResource</returns>            
-        public ModelArticleResource CreateArticle (ModelArticleResource articleResource)
+        /// <returns>ArticleResource</returns>            
+        public ArticleResource CreateArticle (ArticleResource articleResource)
         {
             
     
@@ -167,15 +169,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateArticle: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelArticleResource) ApiClient.Deserialize(response.Content, typeof(ModelArticleResource), response.Headers);
+            return (ArticleResource) ApiClient.Deserialize(response.Content, typeof(ArticleResource), response.Headers);
         }
     
         /// <summary>
         /// Create an article template Article Templates define a type of article and the properties they have
         /// </summary>
         /// <param name="articleTemplateResource">The article template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateArticleTemplate (ModelTemplateResource articleTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateArticleTemplate (TemplateResource articleTemplateResource)
         {
             
     
@@ -201,7 +203,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateArticleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -284,8 +286,8 @@ namespace com.knetikcloud.Api
         /// Get a single article 
         /// </summary>
         /// <param name="id">The article id</param> 
-        /// <returns>ModelArticleResource</returns>            
-        public ModelArticleResource GetArticle (string id)
+        /// <returns>ArticleResource</returns>            
+        public ArticleResource GetArticle (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -314,15 +316,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArticle: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelArticleResource) ApiClient.Deserialize(response.Content, typeof(ModelArticleResource), response.Headers);
+            return (ArticleResource) ApiClient.Deserialize(response.Content, typeof(ArticleResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single article template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetArticleTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetArticleTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -351,7 +353,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArticleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -360,8 +362,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order)
         {
             
     
@@ -389,20 +391,22 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArticleTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
         /// List and search articles Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
         /// <param name="filterCategory">Filter for articles from a specific category by id</param> 
-        /// <param name="filterTagset">Filter for articles with specified tags (separated by comma)</param> 
+        /// <param name="filterTagset">Filter for articles with at least one of a specified set of tags (separated by comma)</param> 
+        /// <param name="filterTagIntersection">Filter for articles with all of a specified set of tags (separated by comma)</param> 
+        /// <param name="filterTagExclusion">Filter for articles with none of a specified set of tags (separated by comma)</param> 
         /// <param name="filterTitle">Filter for articles whose title contains a string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceArticleResource</returns>            
-        public ModelPageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTitle, int? size, int? page, string order)
+        /// <returns>PageResourceArticleResource</returns>            
+        public PageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order)
         {
             
     
@@ -417,6 +421,8 @@ namespace com.knetikcloud.Api
     
              if (filterCategory != null) queryParams.Add("filter_category", ApiClient.ParameterToString(filterCategory)); // query parameter
  if (filterTagset != null) queryParams.Add("filter_tagset", ApiClient.ParameterToString(filterTagset)); // query parameter
+ if (filterTagIntersection != null) queryParams.Add("filter_tag_intersection", ApiClient.ParameterToString(filterTagIntersection)); // query parameter
+ if (filterTagExclusion != null) queryParams.Add("filter_tag_exclusion", ApiClient.ParameterToString(filterTagExclusion)); // query parameter
  if (filterTitle != null) queryParams.Add("filter_title", ApiClient.ParameterToString(filterTitle)); // query parameter
  if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
@@ -433,7 +439,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArticles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceArticleResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceArticleResource), response.Headers);
+            return (PageResourceArticleResource) ApiClient.Deserialize(response.Content, typeof(PageResourceArticleResource), response.Headers);
         }
     
         /// <summary>
@@ -441,8 +447,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The article id</param> 
         /// <param name="articleResource">The article object</param> 
-        /// <returns>ModelArticleResource</returns>            
-        public ModelArticleResource UpdateArticle (string id, ModelArticleResource articleResource)
+        /// <returns>ArticleResource</returns>            
+        public ArticleResource UpdateArticle (string id, ArticleResource articleResource)
         {
             
             // verify the required parameter 'id' is set
@@ -472,7 +478,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateArticle: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelArticleResource) ApiClient.Deserialize(response.Content, typeof(ModelArticleResource), response.Headers);
+            return (ArticleResource) ApiClient.Deserialize(response.Content, typeof(ArticleResource), response.Headers);
         }
     
         /// <summary>
@@ -480,8 +486,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="articleTemplateResource">The article template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateArticleTemplate (string id, ModelTemplateResource articleTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateArticleTemplate (string id, TemplateResource articleTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -511,7 +517,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateArticleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getbreexpressions"></a>
 # **GetBREExpressions**
-> List<ModelLookupTypeResource> GetBREExpressions ()
+> List<LookupTypeResource> GetBREExpressions ()
 
 Get a list of 'lookup' type expressions
 
@@ -38,7 +38,7 @@ namespace Example
             try
             {
                 // Get a list of 'lookup' type expressions
-                List&lt;ModelLookupTypeResource&gt; result = apiInstance.GetBREExpressions();
+                List&lt;LookupTypeResource&gt; result = apiInstance.GetBREExpressions();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelLookupTypeResource>**](ModelLookupTypeResource.md)
+[**List<LookupTypeResource>**](LookupTypeResource.md)
 
 ### Authorization
 

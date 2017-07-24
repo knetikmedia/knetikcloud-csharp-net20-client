@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="getusagebyday"></a>
 # **GetUsageByDay**
-> ModelPageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+> PageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
 
 Returns aggregated endpoint usage information by day
 
@@ -48,7 +48,7 @@ namespace Example
             try
             {
                 // Returns aggregated endpoint usage information by day
-                ModelPageResourceUsageInfo result = apiInstance.GetUsageByDay(startDate, endDate, combineEndpoints, method, url, size, page);
+                PageResourceUsageInfo result = apiInstance.GetUsageByDay(startDate, endDate, combineEndpoints, method, url, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUsageInfo**](ModelPageResourceUsageInfo.md)
+[**PageResourceUsageInfo**](PageResourceUsageInfo.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 <a name="getusagebyhour"></a>
 # **GetUsageByHour**
-> ModelPageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+> PageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
 
 Returns aggregated endpoint usage information by hour
 
@@ -123,7 +123,7 @@ namespace Example
             try
             {
                 // Returns aggregated endpoint usage information by hour
-                ModelPageResourceUsageInfo result = apiInstance.GetUsageByHour(startDate, endDate, combineEndpoints, method, url, size, page);
+                PageResourceUsageInfo result = apiInstance.GetUsageByHour(startDate, endDate, combineEndpoints, method, url, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUsageInfo**](ModelPageResourceUsageInfo.md)
+[**PageResourceUsageInfo**](PageResourceUsageInfo.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 <a name="getusagebyminute"></a>
 # **GetUsageByMinute**
-> ModelPageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+> PageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
 
 Returns aggregated endpoint usage information by minute
 
@@ -198,7 +198,7 @@ namespace Example
             try
             {
                 // Returns aggregated endpoint usage information by minute
-                ModelPageResourceUsageInfo result = apiInstance.GetUsageByMinute(startDate, endDate, combineEndpoints, method, url, size, page);
+                PageResourceUsageInfo result = apiInstance.GetUsageByMinute(startDate, endDate, combineEndpoints, method, url, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUsageInfo**](ModelPageResourceUsageInfo.md)
+[**PageResourceUsageInfo**](PageResourceUsageInfo.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 <a name="getusagebymonth"></a>
 # **GetUsageByMonth**
-> ModelPageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+> PageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
 
 Returns aggregated endpoint usage information by month
 
@@ -273,7 +273,7 @@ namespace Example
             try
             {
                 // Returns aggregated endpoint usage information by month
-                ModelPageResourceUsageInfo result = apiInstance.GetUsageByMonth(startDate, endDate, combineEndpoints, method, url, size, page);
+                PageResourceUsageInfo result = apiInstance.GetUsageByMonth(startDate, endDate, combineEndpoints, method, url, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUsageInfo**](ModelPageResourceUsageInfo.md)
+[**PageResourceUsageInfo**](PageResourceUsageInfo.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 <a name="getusagebyyear"></a>
 # **GetUsageByYear**
-> ModelPageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+> PageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
 
 Returns aggregated endpoint usage information by year
 
@@ -348,7 +348,7 @@ namespace Example
             try
             {
                 // Returns aggregated endpoint usage information by year
-                ModelPageResourceUsageInfo result = apiInstance.GetUsageByYear(startDate, endDate, combineEndpoints, method, url, size, page);
+                PageResourceUsageInfo result = apiInstance.GetUsageByYear(startDate, endDate, combineEndpoints, method, url, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUsageInfo**](ModelPageResourceUsageInfo.md)
+[**PageResourceUsageInfo**](PageResourceUsageInfo.md)
 
 ### Authorization
 

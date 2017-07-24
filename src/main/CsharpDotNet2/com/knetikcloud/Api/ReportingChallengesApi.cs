@@ -18,8 +18,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceChallengeEventParticipantResource</returns>
-        ModelPageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order);
+        /// <returns>PageResourceChallengeEventParticipantResource</returns>
+        PageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order);
         /// <summary>
         /// Retrieve a challenge event participant details Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
         /// </summary>
@@ -27,8 +27,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceChallengeEventParticipantResource</returns>
-        ModelPageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order);
+        /// <returns>PageResourceChallengeEventParticipantResource</returns>
+        PageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order);
     }
   
     /// <summary>
@@ -91,8 +91,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceChallengeEventParticipantResource</returns>            
-        public ModelPageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order)
+        /// <returns>PageResourceChallengeEventParticipantResource</returns>            
+        public PageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order)
         {
             
     
@@ -121,7 +121,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeEventLeaderboard: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceChallengeEventParticipantResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceChallengeEventParticipantResource), response.Headers);
+            return (PageResourceChallengeEventParticipantResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChallengeEventParticipantResource), response.Headers);
         }
     
         /// <summary>
@@ -131,8 +131,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceChallengeEventParticipantResource</returns>            
-        public ModelPageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order)
+        /// <returns>PageResourceChallengeEventParticipantResource</returns>            
+        public PageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order)
         {
             
     
@@ -161,7 +161,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetChallengeEventParticipants: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceChallengeEventParticipantResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceChallengeEventParticipantResource), response.Headers);
+            return (PageResourceChallengeEventParticipantResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChallengeEventParticipantResource), response.Headers);
         }
     
     }

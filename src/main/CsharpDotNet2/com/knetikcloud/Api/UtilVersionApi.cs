@@ -14,8 +14,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get current version info 
         /// </summary>
-        /// <returns>ModelVersion</returns>
-        ModelVersion GetVersion ();
+        /// <returns>Version</returns>
+        Version GetVersion ();
     }
   
     /// <summary>
@@ -74,8 +74,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get current version info 
         /// </summary>
-        /// <returns>ModelVersion</returns>            
-        public ModelVersion GetVersion ()
+        /// <returns>Version</returns>            
+        public Version GetVersion ()
         {
             
     
@@ -100,7 +100,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVersion: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVersion) ApiClient.Deserialize(response.Content, typeof(ModelVersion), response.Headers);
+            return (Version) ApiClient.Deserialize(response.Content, typeof(Version), response.Headers);
         }
     
     }

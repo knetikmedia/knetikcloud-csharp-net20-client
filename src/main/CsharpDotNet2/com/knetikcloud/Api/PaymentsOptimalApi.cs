@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The payment request to initiate</param>
         /// <returns>string</returns>
-        string SilentPostOptimal (ModelOptimalPaymentRequest request);
+        string SilentPostOptimal (OptimalPaymentRequest request);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The payment request to initiate</param> 
         /// <returns>string</returns>            
-        public string SilentPostOptimal (ModelOptimalPaymentRequest request)
+        public string SilentPostOptimal (OptimalPaymentRequest request)
         {
             
     

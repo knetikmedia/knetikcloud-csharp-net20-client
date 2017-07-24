@@ -1,10 +1,10 @@
-# com.knetikcloud.Model.ModelSimpleReferenceResourceint
+# com.knetikcloud.Model.SimpleReferenceResourceint
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int?** | The id of the referenced object | [default to null]
-**Name** | **string** | The name of the referenced object | [optional] [default to null]
+**Id** | **int?** | The id of the referenced object | 
+**Name** | **string** | The name of the referenced object | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

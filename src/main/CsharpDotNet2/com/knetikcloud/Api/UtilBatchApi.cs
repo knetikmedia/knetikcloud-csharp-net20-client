@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Get batch result with token Tokens expire in 24 hours
         /// </summary>
         /// <param name="token">token</param>
-        /// <returns>List&lt;ModelBatchReturn&gt;</returns>
-        List<ModelBatchReturn> GetBatch (string token);
+        /// <returns>List&lt;BatchReturn&gt;</returns>
+        List<BatchReturn> GetBatch (string token);
         /// <summary>
         /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
         /// </summary>
         /// <param name="batch">The batch object</param>
-        /// <returns>List&lt;ModelBatchReturn&gt;</returns>
-        List<ModelBatchReturn> SendBatch (ModelBatch batch);
+        /// <returns>List&lt;BatchReturn&gt;</returns>
+        List<BatchReturn> SendBatch (Batch batch);
     }
   
     /// <summary>
@@ -82,8 +82,8 @@ namespace com.knetikcloud.Api
         /// Get batch result with token Tokens expire in 24 hours
         /// </summary>
         /// <param name="token">token</param> 
-        /// <returns>List&lt;ModelBatchReturn&gt;</returns>            
-        public List<ModelBatchReturn> GetBatch (string token)
+        /// <returns>List&lt;BatchReturn&gt;</returns>            
+        public List<BatchReturn> GetBatch (string token)
         {
             
             // verify the required parameter 'token' is set
@@ -112,15 +112,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBatch: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelBatchReturn>) ApiClient.Deserialize(response.Content, typeof(List<ModelBatchReturn>), response.Headers);
+            return (List<BatchReturn>) ApiClient.Deserialize(response.Content, typeof(List<BatchReturn>), response.Headers);
         }
     
         /// <summary>
         /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
         /// </summary>
         /// <param name="batch">The batch object</param> 
-        /// <returns>List&lt;ModelBatchReturn&gt;</returns>            
-        public List<ModelBatchReturn> SendBatch (ModelBatch batch)
+        /// <returns>List&lt;BatchReturn&gt;</returns>            
+        public List<BatchReturn> SendBatch (Batch batch)
         {
             
     
@@ -146,7 +146,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SendBatch: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelBatchReturn>) ApiClient.Deserialize(response.Content, typeof(List<ModelBatchReturn>), response.Headers);
+            return (List<BatchReturn>) ApiClient.Deserialize(response.Content, typeof(List<BatchReturn>), response.Headers);
         }
     
     }

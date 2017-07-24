@@ -16,14 +16,14 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userResources">userResources</param>
         /// <param name="id">id</param>
-        /// <returns>ModelDeviceResource</returns>
-        ModelDeviceResource AddDeviceUsers (List<ModelSimpleUserResource> userResources, int? id);
+        /// <returns>DeviceResource</returns>
+        DeviceResource AddDeviceUsers (List<SimpleUserResource> userResources, int? id);
         /// <summary>
         /// Create a device 
         /// </summary>
         /// <param name="device">device</param>
-        /// <returns>ModelDeviceResource</returns>
-        ModelDeviceResource CreateDevice (ModelDeviceResource device);
+        /// <returns>DeviceResource</returns>
+        DeviceResource CreateDevice (DeviceResource device);
         /// <summary>
         /// Delete a device 
         /// </summary>
@@ -48,8 +48,8 @@ namespace com.knetikcloud.Api
         /// Get a single device 
         /// </summary>
         /// <param name="id">id</param>
-        /// <returns>ModelDeviceResource</returns>
-        ModelDeviceResource GetDevice (int? id);
+        /// <returns>DeviceResource</returns>
+        DeviceResource GetDevice (int? id);
         /// <summary>
         /// List and search devices Get a list of devices with optional filtering
         /// </summary>
@@ -58,15 +58,15 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceDeviceResource</returns>
-        ModelPageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order);
+        /// <returns>PageResourceDeviceResource</returns>
+        PageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order);
         /// <summary>
         /// Update a device 
         /// </summary>
         /// <param name="device">device</param>
         /// <param name="id">id</param>
-        /// <returns>ModelDeviceResource</returns>
-        ModelDeviceResource UpdateDevice (ModelDeviceResource device, int? id);
+        /// <returns>DeviceResource</returns>
+        DeviceResource UpdateDevice (DeviceResource device, int? id);
     }
   
     /// <summary>
@@ -127,8 +127,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userResources">userResources</param> 
         /// <param name="id">id</param> 
-        /// <returns>ModelDeviceResource</returns>            
-        public ModelDeviceResource AddDeviceUsers (List<ModelSimpleUserResource> userResources, int? id)
+        /// <returns>DeviceResource</returns>            
+        public DeviceResource AddDeviceUsers (List<SimpleUserResource> userResources, int? id)
         {
             
             // verify the required parameter 'userResources' is set
@@ -161,15 +161,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddDeviceUsers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDeviceResource) ApiClient.Deserialize(response.Content, typeof(ModelDeviceResource), response.Headers);
+            return (DeviceResource) ApiClient.Deserialize(response.Content, typeof(DeviceResource), response.Headers);
         }
     
         /// <summary>
         /// Create a device 
         /// </summary>
         /// <param name="device">device</param> 
-        /// <returns>ModelDeviceResource</returns>            
-        public ModelDeviceResource CreateDevice (ModelDeviceResource device)
+        /// <returns>DeviceResource</returns>            
+        public DeviceResource CreateDevice (DeviceResource device)
         {
             
             // verify the required parameter 'device' is set
@@ -198,7 +198,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateDevice: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDeviceResource) ApiClient.Deserialize(response.Content, typeof(ModelDeviceResource), response.Headers);
+            return (DeviceResource) ApiClient.Deserialize(response.Content, typeof(DeviceResource), response.Headers);
         }
     
         /// <summary>
@@ -323,8 +323,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// Get a single device 
         /// </summary>
         /// <param name="id">id</param> 
-        /// <returns>ModelDeviceResource</returns>            
-        public ModelDeviceResource GetDevice (int? id)
+        /// <returns>DeviceResource</returns>            
+        public DeviceResource GetDevice (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -353,7 +353,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDevice: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDeviceResource) ApiClient.Deserialize(response.Content, typeof(ModelDeviceResource), response.Headers);
+            return (DeviceResource) ApiClient.Deserialize(response.Content, typeof(DeviceResource), response.Headers);
         }
     
         /// <summary>
@@ -364,8 +364,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceDeviceResource</returns>            
-        public ModelPageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order)
+        /// <returns>PageResourceDeviceResource</returns>            
+        public PageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order)
         {
             
     
@@ -395,7 +395,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDevices: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceDeviceResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceDeviceResource), response.Headers);
+            return (PageResourceDeviceResource) ApiClient.Deserialize(response.Content, typeof(PageResourceDeviceResource), response.Headers);
         }
     
         /// <summary>
@@ -403,8 +403,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// </summary>
         /// <param name="device">device</param> 
         /// <param name="id">id</param> 
-        /// <returns>ModelDeviceResource</returns>            
-        public ModelDeviceResource UpdateDevice (ModelDeviceResource device, int? id)
+        /// <returns>DeviceResource</returns>            
+        public DeviceResource UpdateDevice (DeviceResource device, int? id)
         {
             
             // verify the required parameter 'device' is set
@@ -437,7 +437,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateDevice: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDeviceResource) ApiClient.Deserialize(response.Content, typeof(ModelDeviceResource), response.Headers);
+            return (DeviceResource) ApiClient.Deserialize(response.Content, typeof(DeviceResource), response.Headers);
         }
     
     }

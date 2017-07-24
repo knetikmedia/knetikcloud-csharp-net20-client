@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="createclient"></a>
 # **CreateClient**
-> ModelClientResource CreateClient (ModelClientResource clientResource)
+> ClientResource CreateClient (ClientResource clientResource)
 
 Create a new client
 
@@ -39,12 +39,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new AuthClientsApi();
-            var clientResource = new ModelClientResource(); // ModelClientResource | The client resource object (optional) 
+            var clientResource = new ClientResource(); // ClientResource | The client resource object (optional) 
 
             try
             {
                 // Create a new client
-                ModelClientResource result = apiInstance.CreateClient(clientResource);
+                ClientResource result = apiInstance.CreateClient(clientResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -60,11 +60,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientResource** | [**ModelClientResource**](ModelClientResource.md)| The client resource object | [optional] 
+ **clientResource** | [**ClientResource**](ClientResource.md)| The client resource object | [optional] 
 
 ### Return type
 
-[**ModelClientResource**](ModelClientResource.md)
+[**ClientResource**](ClientResource.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ void (empty response body)
 
 <a name="getclient"></a>
 # **GetClient**
-> ModelClientResource GetClient (string clientKey)
+> ClientResource GetClient (string clientKey)
 
 Get a single client
 
@@ -169,7 +169,7 @@ namespace Example
             try
             {
                 // Get a single client
-                ModelClientResource result = apiInstance.GetClient(clientKey);
+                ClientResource result = apiInstance.GetClient(clientKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelClientResource**](ModelClientResource.md)
+[**ClientResource**](ClientResource.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 <a name="getclientgranttypes"></a>
 # **GetClientGrantTypes**
-> List<ModelGrantTypeResource> GetClientGrantTypes ()
+> List<GrantTypeResource> GetClientGrantTypes ()
 
 List available client grant types
 
@@ -231,7 +231,7 @@ namespace Example
             try
             {
                 // List available client grant types
-                List&lt;ModelGrantTypeResource&gt; result = apiInstance.GetClientGrantTypes();
+                List&lt;GrantTypeResource&gt; result = apiInstance.GetClientGrantTypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelGrantTypeResource>**](ModelGrantTypeResource.md)
+[**List<GrantTypeResource>**](GrantTypeResource.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ This endpoint does not need any parameter.
 
 <a name="getclients"></a>
 # **GetClients**
-> ModelPageResourceClientResource GetClients (int? size, int? page, string order)
+> PageResourceClientResource GetClients (int? size, int? page, string order)
 
 List and search clients
 
@@ -293,7 +293,7 @@ namespace Example
             try
             {
                 // List and search clients
-                ModelPageResourceClientResource result = apiInstance.GetClients(size, page, order);
+                PageResourceClientResource result = apiInstance.GetClients(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceClientResource**](ModelPageResourceClientResource.md)
+[**PageResourceClientResource**](PageResourceClientResource.md)
 
 ### Authorization
 
@@ -458,7 +458,7 @@ void (empty response body)
 
 <a name="updateclient"></a>
 # **UpdateClient**
-> ModelClientResource UpdateClient (string clientKey, ModelClientResource clientResource)
+> ClientResource UpdateClient (string clientKey, ClientResource clientResource)
 
 Update a client
 
@@ -482,12 +482,12 @@ namespace Example
 
             var apiInstance = new AuthClientsApi();
             var clientKey = clientKey_example;  // string | The key of the client
-            var clientResource = new ModelClientResource(); // ModelClientResource | The client resource object (optional) 
+            var clientResource = new ClientResource(); // ClientResource | The client resource object (optional) 
 
             try
             {
                 // Update a client
-                ModelClientResource result = apiInstance.UpdateClient(clientKey, clientResource);
+                ClientResource result = apiInstance.UpdateClient(clientKey, clientResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -504,11 +504,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientKey** | **string**| The key of the client | 
- **clientResource** | [**ModelClientResource**](ModelClientResource.md)| The client resource object | [optional] 
+ **clientResource** | [**ClientResource**](ClientResource.md)| The client resource object | [optional] 
 
 ### Return type
 
-[**ModelClientResource**](ModelClientResource.md)
+[**ClientResource**](ClientResource.md)
 
 ### Authorization
 

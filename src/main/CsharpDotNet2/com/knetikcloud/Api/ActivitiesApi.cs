@@ -15,21 +15,21 @@ namespace com.knetikcloud.Api
         /// Create an activity 
         /// </summary>
         /// <param name="activityResource">The activity resource object</param>
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>
-        ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc CreateActivity (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource);
+        /// <returns>ActivityResource</returns>
+        ActivityResource CreateActivity (ActivityResource activityResource);
         /// <summary>
         /// Create a new activity occurrence. Ex: start a game Has to enforce extra rules if not used as an admin
         /// </summary>
         /// <param name="test">if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings</param>
         /// <param name="activityOccurrenceResource">The activity occurrence object</param>
-        /// <returns>ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings</returns>
-        ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings CreateActivityOccurrence (bool? test, ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource);
+        /// <returns>ActivityOccurrenceResource</returns>
+        ActivityOccurrenceResource CreateActivityOccurrence (bool? test, ActivityOccurrenceResource activityOccurrenceResource);
         /// <summary>
         /// Create a activity template Activity Templates define a type of activity and the properties they have
         /// </summary>
         /// <param name="activityTemplateResource">The activity template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateActivityTemplate (ModelTemplateResource activityTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateActivityTemplate (TemplateResource activityTemplateResource);
         /// <summary>
         /// Delete an activity 
         /// </summary>
@@ -52,42 +52,42 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceBareActivityResource</returns>
-        ModelPageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, Object filterId, int? size, int? page, string order);
+        /// <returns>PageResourceBareActivityResource</returns>
+        PageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, string filterId, int? size, int? page, string order);
         /// <summary>
         /// Get a single activity 
         /// </summary>
         /// <param name="id">The id of the activity</param>
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>
-        ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc GetActivity (long? id);
+        /// <returns>ActivityResource</returns>
+        ActivityResource GetActivity (long? id);
         /// <summary>
         /// Get a single activity template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetActivityTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetActivityTemplate (string id);
         /// <summary>
         /// List and search activity templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order);
         /// <summary>
         /// Sets the status of an activity occurrence to FINISHED and logs metrics 
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param>
         /// <param name="activityOccurrenceResults">The activity occurrence object</param>
-        /// <returns>ModelActivityOccurrenceResults</returns>
-        ModelActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ModelActivityOccurrenceResults activityOccurrenceResults);
+        /// <returns>ActivityOccurrenceResults</returns>
+        ActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults);
         /// <summary>
         /// Update an activity 
         /// </summary>
         /// <param name="id">The id of the activity</param>
         /// <param name="activityResource">The activity resource object</param>
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>
-        ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc UpdateActivity (long? id, ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource);
+        /// <returns>ActivityResource</returns>
+        ActivityResource UpdateActivity (long? id, ActivityResource activityResource);
         /// <summary>
         /// Updated the status of an activity occurrence If setting to &#39;FINISHED&#39; you must POST to /results instead to record the metrics and get synchronous reward results
         /// </summary>
@@ -100,8 +100,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="activityTemplateResource">The activity template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateActivityTemplate (string id, ModelTemplateResource activityTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateActivityTemplate (string id, TemplateResource activityTemplateResource);
     }
   
     /// <summary>
@@ -161,8 +161,8 @@ namespace com.knetikcloud.Api
         /// Create an activity 
         /// </summary>
         /// <param name="activityResource">The activity resource object</param> 
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>            
-        public ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc CreateActivity (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource)
+        /// <returns>ActivityResource</returns>            
+        public ActivityResource CreateActivity (ActivityResource activityResource)
         {
             
     
@@ -188,7 +188,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiClient.Deserialize(response.Content, typeof(ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc), response.Headers);
+            return (ActivityResource) ApiClient.Deserialize(response.Content, typeof(ActivityResource), response.Headers);
         }
     
         /// <summary>
@@ -196,8 +196,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="test">if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings</param> 
         /// <param name="activityOccurrenceResource">The activity occurrence object</param> 
-        /// <returns>ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings</returns>            
-        public ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings CreateActivityOccurrence (bool? test, ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource)
+        /// <returns>ActivityOccurrenceResource</returns>            
+        public ActivityOccurrenceResource CreateActivityOccurrence (bool? test, ActivityOccurrenceResource activityOccurrenceResource)
         {
             
     
@@ -224,15 +224,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateActivityOccurrence: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings) ApiClient.Deserialize(response.Content, typeof(ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings), response.Headers);
+            return (ActivityOccurrenceResource) ApiClient.Deserialize(response.Content, typeof(ActivityOccurrenceResource), response.Headers);
         }
     
         /// <summary>
         /// Create a activity template Activity Templates define a type of activity and the properties they have
         /// </summary>
         /// <param name="activityTemplateResource">The activity template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateActivityTemplate (ModelTemplateResource activityTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateActivityTemplate (TemplateResource activityTemplateResource)
         {
             
     
@@ -258,7 +258,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -346,8 +346,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceBareActivityResource</returns>            
-        public ModelPageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, Object filterId, int? size, int? page, string order)
+        /// <returns>PageResourceBareActivityResource</returns>            
+        public PageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, string filterId, int? size, int? page, string order)
         {
             
     
@@ -378,15 +378,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetActivities: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBareActivityResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBareActivityResource), response.Headers);
+            return (PageResourceBareActivityResource) ApiClient.Deserialize(response.Content, typeof(PageResourceBareActivityResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single activity 
         /// </summary>
         /// <param name="id">The id of the activity</param> 
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>            
-        public ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc GetActivity (long? id)
+        /// <returns>ActivityResource</returns>            
+        public ActivityResource GetActivity (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -415,15 +415,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiClient.Deserialize(response.Content, typeof(ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc), response.Headers);
+            return (ActivityResource) ApiClient.Deserialize(response.Content, typeof(ActivityResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single activity template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetActivityTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetActivityTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -452,7 +452,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -461,8 +461,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order)
         {
             
     
@@ -490,7 +490,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetActivityTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -498,8 +498,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param> 
         /// <param name="activityOccurrenceResults">The activity occurrence object</param> 
-        /// <returns>ModelActivityOccurrenceResults</returns>            
-        public ModelActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ModelActivityOccurrenceResults activityOccurrenceResults)
+        /// <returns>ActivityOccurrenceResults</returns>            
+        public ActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults)
         {
             
             // verify the required parameter 'activityOccurrenceId' is set
@@ -529,7 +529,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetActivityOccurrenceResults: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelActivityOccurrenceResults) ApiClient.Deserialize(response.Content, typeof(ModelActivityOccurrenceResults), response.Headers);
+            return (ActivityOccurrenceResults) ApiClient.Deserialize(response.Content, typeof(ActivityOccurrenceResults), response.Headers);
         }
     
         /// <summary>
@@ -537,8 +537,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the activity</param> 
         /// <param name="activityResource">The activity resource object</param> 
-        /// <returns>ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc</returns>            
-        public ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc UpdateActivity (long? id, ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource)
+        /// <returns>ActivityResource</returns>            
+        public ActivityResource UpdateActivity (long? id, ActivityResource activityResource)
         {
             
             // verify the required parameter 'id' is set
@@ -568,7 +568,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateActivity: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiClient.Deserialize(response.Content, typeof(ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc), response.Headers);
+            return (ActivityResource) ApiClient.Deserialize(response.Content, typeof(ActivityResource), response.Headers);
         }
     
         /// <summary>
@@ -615,8 +615,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="activityTemplateResource">The activity template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateActivityTemplate (string id, ModelTemplateResource activityTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateActivityTemplate (string id, TemplateResource activityTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -646,7 +646,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateActivityTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

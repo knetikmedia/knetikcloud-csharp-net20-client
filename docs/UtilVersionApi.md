@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getversion"></a>
 # **GetVersion**
-> ModelVersion GetVersion ()
+> Version GetVersion ()
 
 Get current version info
 
@@ -33,7 +33,7 @@ namespace Example
             try
             {
                 // Get current version info
-                ModelVersion result = apiInstance.GetVersion();
+                Version result = apiInstance.GetVersion();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
+[**Version**](Version.md)
 
 ### Authorization
 

@@ -16,22 +16,22 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
-        /// <returns>ModelInventorySubscriptionResource</returns>
-        ModelInventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId);
+        /// <returns>InventorySubscriptionResource</returns>
+        InventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId);
         /// <summary>
         /// Get details about a user&#39;s subscriptions 
         /// </summary>
         /// <param name="userId">The id of the user</param>
-        /// <returns>List&lt;ModelInventorySubscriptionResource&gt;</returns>
-        List<ModelInventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId);
+        /// <returns>List&lt;InventorySubscriptionResource&gt;</returns>
+        List<InventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId);
         /// <summary>
         /// Reactivate a subscription and charge fee 
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
         /// <param name="reactivateSubscriptionRequest">The reactivate subscription request object inventory</param>
-        /// <returns>ModelInvoiceResource</returns>
-        ModelInvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ModelReactivateSubscriptionRequest reactivateSubscriptionRequest);
+        /// <returns>InvoiceResource</returns>
+        InvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ReactivateSubscriptionRequest reactivateSubscriptionRequest);
         /// <summary>
         /// Set a new date to bill a subscription on 
         /// </summary>
@@ -64,6 +64,14 @@ namespace com.knetikcloud.Api
         /// <param name="planId">The id of the new plan. Must be from the same subscription</param>
         /// <returns></returns>
         void SetUserSubscriptionPlan (int? userId, int? inventoryId, string planId);
+        /// <summary>
+        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+        /// </summary>
+        /// <param name="userId">The id of the user</param>
+        /// <param name="inventoryId">The id of the user&#39;s inventory</param>
+        /// <param name="theOverrideDetails">override</param>
+        /// <returns></returns>
+        void SetUserSubscriptionPrice (int? userId, int? inventoryId, SubscriptionPriceOverrideRequest theOverrideDetails);
     }
   
     /// <summary>
@@ -124,8 +132,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
-        /// <returns>ModelInventorySubscriptionResource</returns>            
-        public ModelInventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId)
+        /// <returns>InventorySubscriptionResource</returns>            
+        public InventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId)
         {
             
             // verify the required parameter 'userId' is set
@@ -158,15 +166,15 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserSubscriptionDetails: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelInventorySubscriptionResource) ApiClient.Deserialize(response.Content, typeof(ModelInventorySubscriptionResource), response.Headers);
+            return (InventorySubscriptionResource) ApiClient.Deserialize(response.Content, typeof(InventorySubscriptionResource), response.Headers);
         }
     
         /// <summary>
         /// Get details about a user&#39;s subscriptions 
         /// </summary>
         /// <param name="userId">The id of the user</param> 
-        /// <returns>List&lt;ModelInventorySubscriptionResource&gt;</returns>            
-        public List<ModelInventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId)
+        /// <returns>List&lt;InventorySubscriptionResource&gt;</returns>            
+        public List<InventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId)
         {
             
             // verify the required parameter 'userId' is set
@@ -195,7 +203,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsersSubscriptionDetails: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelInventorySubscriptionResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelInventorySubscriptionResource>), response.Headers);
+            return (List<InventorySubscriptionResource>) ApiClient.Deserialize(response.Content, typeof(List<InventorySubscriptionResource>), response.Headers);
         }
     
         /// <summary>
@@ -204,8 +212,8 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
         /// <param name="reactivateSubscriptionRequest">The reactivate subscription request object inventory</param> 
-        /// <returns>ModelInvoiceResource</returns>            
-        public ModelInvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ModelReactivateSubscriptionRequest reactivateSubscriptionRequest)
+        /// <returns>InvoiceResource</returns>            
+        public InvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ReactivateSubscriptionRequest reactivateSubscriptionRequest)
         {
             
             // verify the required parameter 'userId' is set
@@ -239,7 +247,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReactivateUserSubscription: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelInvoiceResource) ApiClient.Deserialize(response.Content, typeof(ModelInvoiceResource), response.Headers);
+            return (InvoiceResource) ApiClient.Deserialize(response.Content, typeof(InvoiceResource), response.Headers);
         }
     
         /// <summary>
@@ -420,6 +428,50 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
                 throw new ApiException ((int)response.StatusCode, "Error calling SetUserSubscriptionPlan: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetUserSubscriptionPlan: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return;
+        }
+    
+        /// <summary>
+        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+        /// </summary>
+        /// <param name="userId">The id of the user</param> 
+        /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
+        /// <param name="theOverrideDetails">override</param> 
+        /// <returns></returns>            
+        public void SetUserSubscriptionPrice (int? userId, int? inventoryId, SubscriptionPriceOverrideRequest theOverrideDetails)
+        {
+            
+            // verify the required parameter 'userId' is set
+            if (userId == null) throw new ApiException(400, "Missing required parameter 'userId' when calling SetUserSubscriptionPrice");
+            
+            // verify the required parameter 'inventoryId' is set
+            if (inventoryId == null) throw new ApiException(400, "Missing required parameter 'inventoryId' when calling SetUserSubscriptionPrice");
+            
+    
+            var path = "/users/{user_id}/subscriptions/{inventory_id}/price-override";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
+path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inventoryId));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(theOverrideDetails); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "OAuth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetUserSubscriptionPrice: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetUserSubscriptionPrice: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
         }

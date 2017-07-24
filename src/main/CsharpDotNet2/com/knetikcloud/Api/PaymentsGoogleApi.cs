@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request for paying an invoice through a Google in-app payment</param>
         /// <returns>int?</returns>
-        int? HandleGooglePayment (ModelGooglePaymentRequest request);
+        int? HandleGooglePayment (GooglePaymentRequest request);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request for paying an invoice through a Google in-app payment</param> 
         /// <returns>int?</returns>            
-        public int? HandleGooglePayment (ModelGooglePaymentRequest request)
+        public int? HandleGooglePayment (GooglePaymentRequest request)
         {
             
     

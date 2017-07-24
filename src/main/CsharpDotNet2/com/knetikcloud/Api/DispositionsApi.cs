@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Add a new disposition 
         /// </summary>
         /// <param name="disposition">The new disposition record</param>
-        /// <returns>ModelDispositionResource</returns>
-        ModelDispositionResource AddDisposition (ModelDispositionResource disposition);
+        /// <returns>DispositionResource</returns>
+        DispositionResource AddDisposition (DispositionResource disposition);
         /// <summary>
         /// Delete a disposition 
         /// </summary>
@@ -27,15 +27,15 @@ namespace com.knetikcloud.Api
         /// Returns a disposition 
         /// </summary>
         /// <param name="id">The id of the disposition record</param>
-        /// <returns>ModelDispositionResource</returns>
-        ModelDispositionResource GetDisposition (long? id);
+        /// <returns>DispositionResource</returns>
+        DispositionResource GetDisposition (long? id);
         /// <summary>
         /// Returns a list of disposition counts 
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param>
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param>
-        /// <returns>List&lt;ModelDispositionCount&gt;</returns>
-        List<ModelDispositionCount> GetDispositionCounts (string filterContext, string filterOwner);
+        /// <returns>List&lt;DispositionCount&gt;</returns>
+        List<DispositionCount> GetDispositionCounts (string filterContext, string filterOwner);
         /// <summary>
         /// Returns a page of dispositions 
         /// </summary>
@@ -44,8 +44,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceDispositionResource</returns>
-        ModelPageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order);
+        /// <returns>PageResourceDispositionResource</returns>
+        PageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order);
     }
   
     /// <summary>
@@ -105,8 +105,8 @@ namespace com.knetikcloud.Api
         /// Add a new disposition 
         /// </summary>
         /// <param name="disposition">The new disposition record</param> 
-        /// <returns>ModelDispositionResource</returns>            
-        public ModelDispositionResource AddDisposition (ModelDispositionResource disposition)
+        /// <returns>DispositionResource</returns>            
+        public DispositionResource AddDisposition (DispositionResource disposition)
         {
             
     
@@ -132,7 +132,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddDisposition: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDispositionResource) ApiClient.Deserialize(response.Content, typeof(ModelDispositionResource), response.Headers);
+            return (DispositionResource) ApiClient.Deserialize(response.Content, typeof(DispositionResource), response.Headers);
         }
     
         /// <summary>
@@ -176,8 +176,8 @@ namespace com.knetikcloud.Api
         /// Returns a disposition 
         /// </summary>
         /// <param name="id">The id of the disposition record</param> 
-        /// <returns>ModelDispositionResource</returns>            
-        public ModelDispositionResource GetDisposition (long? id)
+        /// <returns>DispositionResource</returns>            
+        public DispositionResource GetDisposition (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -206,7 +206,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDisposition: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDispositionResource) ApiClient.Deserialize(response.Content, typeof(ModelDispositionResource), response.Headers);
+            return (DispositionResource) ApiClient.Deserialize(response.Content, typeof(DispositionResource), response.Headers);
         }
     
         /// <summary>
@@ -214,8 +214,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param> 
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param> 
-        /// <returns>List&lt;ModelDispositionCount&gt;</returns>            
-        public List<ModelDispositionCount> GetDispositionCounts (string filterContext, string filterOwner)
+        /// <returns>List&lt;DispositionCount&gt;</returns>            
+        public List<DispositionCount> GetDispositionCounts (string filterContext, string filterOwner)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDispositionCounts: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelDispositionCount>) ApiClient.Deserialize(response.Content, typeof(List<ModelDispositionCount>), response.Headers);
+            return (List<DispositionCount>) ApiClient.Deserialize(response.Content, typeof(List<DispositionCount>), response.Headers);
         }
     
         /// <summary>
@@ -253,8 +253,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceDispositionResource</returns>            
-        public ModelPageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order)
+        /// <returns>PageResourceDispositionResource</returns>            
+        public PageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order)
         {
             
     
@@ -284,7 +284,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDispositions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceDispositionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceDispositionResource), response.Headers);
+            return (PageResourceDispositionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceDispositionResource), response.Headers);
         }
     
     }

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a new role 
         /// </summary>
         /// <param name="roleResource">The role resource object</param>
-        /// <returns>ModelRoleResource</returns>
-        ModelRoleResource CreateRole (ModelRoleResource roleResource);
+        /// <returns>RoleResource</returns>
+        RoleResource CreateRole (RoleResource roleResource);
         /// <summary>
         /// Delete a role 
         /// </summary>
@@ -28,56 +28,56 @@ namespace com.knetikcloud.Api
         /// Get roles for a client 
         /// </summary>
         /// <param name="clientKey">The client key</param>
-        /// <returns>List&lt;ModelRoleResource&gt;</returns>
-        List<ModelRoleResource> GetClientRoles (string clientKey);
+        /// <returns>List&lt;RoleResource&gt;</returns>
+        List<RoleResource> GetClientRoles (string clientKey);
         /// <summary>
         /// Get a single role 
         /// </summary>
         /// <param name="role">The role value</param>
-        /// <returns>ModelRoleResource</returns>
-        ModelRoleResource GetRole (string role);
+        /// <returns>RoleResource</returns>
+        RoleResource GetRole (string role);
         /// <summary>
         /// List and search roles 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceRoleResource</returns>
-        ModelPageResourceRoleResource GetRoles (int? size, int? page, string order);
+        /// <returns>PageResourceRoleResource</returns>
+        PageResourceRoleResource GetRoles (int? size, int? page, string order);
         /// <summary>
         /// Get roles for a user 
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
-        /// <returns>List&lt;ModelRoleResource&gt;</returns>
-        List<ModelRoleResource> GetUserRoles (int? userId);
+        /// <returns>List&lt;RoleResource&gt;</returns>
+        List<RoleResource> GetUserRoles (int? userId);
         /// <summary>
         /// Set roles for a client 
         /// </summary>
         /// <param name="clientKey">The client key</param>
         /// <param name="rolesList">The list of unique roles</param>
-        /// <returns>ModelClientResource</returns>
-        ModelClientResource SetClientRoles (string clientKey, List<string> rolesList);
+        /// <returns>ClientResource</returns>
+        ClientResource SetClientRoles (string clientKey, List<string> rolesList);
         /// <summary>
         /// Set permissions for a role 
         /// </summary>
         /// <param name="role">The role value</param>
         /// <param name="permissionsList">The list of unique permissions</param>
-        /// <returns>ModelRoleResource</returns>
-        ModelRoleResource SetPermissionsForRole (string role, List<string> permissionsList);
+        /// <returns>RoleResource</returns>
+        RoleResource SetPermissionsForRole (string role, List<string> permissionsList);
         /// <summary>
         /// Set roles for a user 
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <param name="rolesList">The list of unique roles</param>
-        /// <returns>ModelUserResource</returns>
-        ModelUserResource SetUserRoles (int? userId, List<string> rolesList);
+        /// <returns>UserResource</returns>
+        UserResource SetUserRoles (int? userId, List<string> rolesList);
         /// <summary>
         /// Update a role 
         /// </summary>
         /// <param name="role">The role value</param>
         /// <param name="roleResource">The role resource object</param>
-        /// <returns>ModelRoleResource</returns>
-        ModelRoleResource UpdateRole (string role, ModelRoleResource roleResource);
+        /// <returns>RoleResource</returns>
+        RoleResource UpdateRole (string role, RoleResource roleResource);
     }
   
     /// <summary>
@@ -137,8 +137,8 @@ namespace com.knetikcloud.Api
         /// Create a new role 
         /// </summary>
         /// <param name="roleResource">The role resource object</param> 
-        /// <returns>ModelRoleResource</returns>            
-        public ModelRoleResource CreateRole (ModelRoleResource roleResource)
+        /// <returns>RoleResource</returns>            
+        public RoleResource CreateRole (RoleResource roleResource)
         {
             
     
@@ -164,7 +164,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateRole: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRoleResource) ApiClient.Deserialize(response.Content, typeof(ModelRoleResource), response.Headers);
+            return (RoleResource) ApiClient.Deserialize(response.Content, typeof(RoleResource), response.Headers);
         }
     
         /// <summary>
@@ -210,8 +210,8 @@ namespace com.knetikcloud.Api
         /// Get roles for a client 
         /// </summary>
         /// <param name="clientKey">The client key</param> 
-        /// <returns>List&lt;ModelRoleResource&gt;</returns>            
-        public List<ModelRoleResource> GetClientRoles (string clientKey)
+        /// <returns>List&lt;RoleResource&gt;</returns>            
+        public List<RoleResource> GetClientRoles (string clientKey)
         {
             
             // verify the required parameter 'clientKey' is set
@@ -240,15 +240,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetClientRoles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelRoleResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelRoleResource>), response.Headers);
+            return (List<RoleResource>) ApiClient.Deserialize(response.Content, typeof(List<RoleResource>), response.Headers);
         }
     
         /// <summary>
         /// Get a single role 
         /// </summary>
         /// <param name="role">The role value</param> 
-        /// <returns>ModelRoleResource</returns>            
-        public ModelRoleResource GetRole (string role)
+        /// <returns>RoleResource</returns>            
+        public RoleResource GetRole (string role)
         {
             
             // verify the required parameter 'role' is set
@@ -277,7 +277,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRole: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRoleResource) ApiClient.Deserialize(response.Content, typeof(ModelRoleResource), response.Headers);
+            return (RoleResource) ApiClient.Deserialize(response.Content, typeof(RoleResource), response.Headers);
         }
     
         /// <summary>
@@ -286,8 +286,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceRoleResource</returns>            
-        public ModelPageResourceRoleResource GetRoles (int? size, int? page, string order)
+        /// <returns>PageResourceRoleResource</returns>            
+        public PageResourceRoleResource GetRoles (int? size, int? page, string order)
         {
             
     
@@ -315,15 +315,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRoles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceRoleResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceRoleResource), response.Headers);
+            return (PageResourceRoleResource) ApiClient.Deserialize(response.Content, typeof(PageResourceRoleResource), response.Headers);
         }
     
         /// <summary>
         /// Get roles for a user 
         /// </summary>
         /// <param name="userId">The user&#39;s id</param> 
-        /// <returns>List&lt;ModelRoleResource&gt;</returns>            
-        public List<ModelRoleResource> GetUserRoles (int? userId)
+        /// <returns>List&lt;RoleResource&gt;</returns>            
+        public List<RoleResource> GetUserRoles (int? userId)
         {
             
             // verify the required parameter 'userId' is set
@@ -352,7 +352,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserRoles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelRoleResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelRoleResource>), response.Headers);
+            return (List<RoleResource>) ApiClient.Deserialize(response.Content, typeof(List<RoleResource>), response.Headers);
         }
     
         /// <summary>
@@ -360,8 +360,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="clientKey">The client key</param> 
         /// <param name="rolesList">The list of unique roles</param> 
-        /// <returns>ModelClientResource</returns>            
-        public ModelClientResource SetClientRoles (string clientKey, List<string> rolesList)
+        /// <returns>ClientResource</returns>            
+        public ClientResource SetClientRoles (string clientKey, List<string> rolesList)
         {
             
             // verify the required parameter 'clientKey' is set
@@ -391,7 +391,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetClientRoles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelClientResource) ApiClient.Deserialize(response.Content, typeof(ModelClientResource), response.Headers);
+            return (ClientResource) ApiClient.Deserialize(response.Content, typeof(ClientResource), response.Headers);
         }
     
         /// <summary>
@@ -399,8 +399,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <param name="permissionsList">The list of unique permissions</param> 
-        /// <returns>ModelRoleResource</returns>            
-        public ModelRoleResource SetPermissionsForRole (string role, List<string> permissionsList)
+        /// <returns>RoleResource</returns>            
+        public RoleResource SetPermissionsForRole (string role, List<string> permissionsList)
         {
             
             // verify the required parameter 'role' is set
@@ -430,7 +430,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetPermissionsForRole: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRoleResource) ApiClient.Deserialize(response.Content, typeof(ModelRoleResource), response.Headers);
+            return (RoleResource) ApiClient.Deserialize(response.Content, typeof(RoleResource), response.Headers);
         }
     
         /// <summary>
@@ -438,8 +438,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The user&#39;s id</param> 
         /// <param name="rolesList">The list of unique roles</param> 
-        /// <returns>ModelUserResource</returns>            
-        public ModelUserResource SetUserRoles (int? userId, List<string> rolesList)
+        /// <returns>UserResource</returns>            
+        public UserResource SetUserRoles (int? userId, List<string> rolesList)
         {
             
             // verify the required parameter 'userId' is set
@@ -469,7 +469,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetUserRoles: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserResource) ApiClient.Deserialize(response.Content, typeof(ModelUserResource), response.Headers);
+            return (UserResource) ApiClient.Deserialize(response.Content, typeof(UserResource), response.Headers);
         }
     
         /// <summary>
@@ -477,8 +477,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <param name="roleResource">The role resource object</param> 
-        /// <returns>ModelRoleResource</returns>            
-        public ModelRoleResource UpdateRole (string role, ModelRoleResource roleResource)
+        /// <returns>RoleResource</returns>            
+        public RoleResource UpdateRole (string role, RoleResource roleResource)
         {
             
             // verify the required parameter 'role' is set
@@ -508,7 +508,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateRole: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRoleResource) ApiClient.Deserialize(response.Content, typeof(ModelRoleResource), response.Headers);
+            return (RoleResource) ApiClient.Deserialize(response.Content, typeof(RoleResource), response.Headers);
         }
     
     }

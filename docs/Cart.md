@@ -1,29 +1,29 @@
-# com.knetikcloud.Model.ModelCart
+# com.knetikcloud.Model.Cart
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AvailableShippingOptions** | [**List&lt;ModelCartShippingOption&gt;**](ModelCartShippingOption.md) |  | [optional] [default to null]
-**CountryTax** | **double?** |  | [optional] [default to null]
-**Coupons** | [**List&lt;ModelCouponDefinition&gt;**](ModelCouponDefinition.md) |  | [optional] [default to null]
-**Created** | **long?** |  | [optional] [default to null]
-**CurrencyCode** | **string** |  | [optional] [default to null]
-**DiscountTotal** | **double?** |  | [optional] [default to null]
-**ErrorCode** | **int?** |  | [optional] [default to null]
-**ErrorMessage** | **string** |  | [optional] [default to null]
-**GrandTotal** | **double?** |  | [optional] [default to null]
-**Id** | **string** |  | [optional] [default to null]
-**InvoiceId** | **double?** |  | [optional] [default to null]
-**Items** | [**List&lt;ModelCartLineItem&gt;**](ModelCartLineItem.md) |  | [optional] [default to null]
-**Owner** | **int?** |  | [optional] [default to null]
-**SelectedShippingOptions** | [**List&lt;ModelCartShippingOption&gt;**](ModelCartShippingOption.md) |  | [optional] [default to null]
-**Shippable** | **bool?** |  | [optional] [default to null]
-**ShippingAddress** | [**ModelCartShippingAddressRequest**](ModelCartShippingAddressRequest.md) |  | [optional] [default to null]
-**ShippingCost** | **double?** |  | [optional] [default to null]
-**StateTax** | **double?** |  | [optional] [default to null]
-**Status** | **string** |  | [optional] [default to null]
-**Subtotal** | **double?** |  | [optional] [default to null]
-**Updated** | **long?** |  | [optional] [default to null]
+**AvailableShippingOptions** | [**List&lt;CartShippingOption&gt;**](CartShippingOption.md) |  | [optional] 
+**CountryTax** | **double?** |  | [optional] 
+**Coupons** | [**List&lt;CouponDefinition&gt;**](CouponDefinition.md) |  | [optional] 
+**Created** | **long?** |  | [optional] 
+**CurrencyCode** | **string** |  | [optional] 
+**DiscountTotal** | **double?** |  | [optional] 
+**ErrorCode** | **int?** |  | [optional] 
+**ErrorMessage** | **string** |  | [optional] 
+**GrandTotal** | **double?** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**InvoiceId** | **double?** |  | [optional] 
+**Items** | [**List&lt;CartLineItem&gt;**](CartLineItem.md) |  | [optional] 
+**Owner** | **int?** |  | [optional] 
+**SelectedShippingOptions** | [**List&lt;CartShippingOption&gt;**](CartShippingOption.md) |  | [optional] 
+**Shippable** | **bool?** |  | [optional] 
+**ShippingAddress** | [**CartShippingAddressRequest**](CartShippingAddressRequest.md) |  | [optional] 
+**ShippingCost** | **double?** |  | [optional] 
+**StateTax** | **double?** |  | [optional] 
+**Status** | **string** |  | [optional] 
+**Subtotal** | **double?** |  | [optional] 
+**Updated** | **long?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

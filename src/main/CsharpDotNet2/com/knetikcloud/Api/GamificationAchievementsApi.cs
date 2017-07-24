@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Create a new achievement definition If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
         /// </summary>
         /// <param name="achievement">The achievement definition</param>
-        /// <returns>ModelAchievementDefinitionResource</returns>
-        ModelAchievementDefinitionResource CreateAchievement (ModelAchievementDefinitionResource achievement);
+        /// <returns>AchievementDefinitionResource</returns>
+        AchievementDefinitionResource CreateAchievement (AchievementDefinitionResource achievement);
         /// <summary>
         /// Create an achievement template Achievement templates define a type of achievement and the properties they have
         /// </summary>
         /// <param name="template">The achievement template to be created</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateAchievementTemplate (ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateAchievementTemplate (TemplateResource template);
         /// <summary>
         /// Delete an achievement definition Will also disable the associated generated rule, if any.
         /// </summary>
@@ -40,27 +40,27 @@ namespace com.knetikcloud.Api
         /// Get a single achievement definition 
         /// </summary>
         /// <param name="name">The name of the achievement</param>
-        /// <returns>ModelAchievementDefinitionResource</returns>
-        ModelAchievementDefinitionResource GetAchievement (string name);
+        /// <returns>AchievementDefinitionResource</returns>
+        AchievementDefinitionResource GetAchievement (string name);
         /// <summary>
         /// Get a single achievement template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetAchievementTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetAchievementTemplate (string id);
         /// <summary>
         /// List and search achievement templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order);
         /// <summary>
         /// Get the list of triggers that can be used to trigger an achievement progress update 
         /// </summary>
-        /// <returns>List&lt;ModelBreTriggerResource&gt;</returns>
-        List<ModelBreTriggerResource> GetAchievementTriggers ();
+        /// <returns>List&lt;BreTriggerResource&gt;</returns>
+        List<BreTriggerResource> GetAchievementTriggers ();
         /// <summary>
         /// Get all achievement definitions in the system 
         /// </summary>
@@ -71,21 +71,21 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
         /// <param name="filterDerived">Filter for achievements that are derived from other services</param>
-        /// <returns>ModelPageResourceAchievementDefinitionResource</returns>
-        ModelPageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived);
+        /// <returns>PageResourceAchievementDefinitionResource</returns>
+        PageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived);
         /// <summary>
         /// Get a list of derived achievements Used by other services that depend on achievements
         /// </summary>
         /// <param name="name">The name of the derived achievement</param>
-        /// <returns>List&lt;ModelAchievementDefinitionResource&gt;</returns>
-        List<ModelAchievementDefinitionResource> GetDerivedAchievements (string name);
+        /// <returns>List&lt;AchievementDefinitionResource&gt;</returns>
+        List<AchievementDefinitionResource> GetDerivedAchievements (string name);
         /// <summary>
         /// Retrieve progress on a given achievement for a given user Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <param name="achievementName">The achievement&#39;s name</param>
-        /// <returns>ModelUserAchievementGroupResource</returns>
-        ModelUserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName);
+        /// <returns>UserAchievementGroupResource</returns>
+        UserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName);
         /// <summary>
         /// Retrieve progress on achievements for a given user Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
@@ -95,8 +95,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>
-        ModelPageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
+        /// <returns>PageResourceUserAchievementGroupResource</returns>
+        PageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
         /// <summary>
         /// Retrieve progress on a given achievement for all users Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
         /// </summary>
@@ -106,8 +106,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>
-        ModelPageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
+        /// <returns>PageResourceUserAchievementGroupResource</returns>
+        PageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
         /// <summary>
         /// Retrieve progress on achievements for all users Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
         /// </summary>
@@ -116,38 +116,38 @@ namespace com.knetikcloud.Api
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>
-        ModelPageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
+        /// <returns>PageResourceUserAchievementGroupResource</returns>
+        PageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page);
         /// <summary>
         /// Increment an achievement progress record for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <param name="achievementName">The achievement&#39;s name</param>
         /// <param name="progress">The amount to add to the progress value</param>
-        /// <returns>ModelUserAchievementGroupResource</returns>
-        ModelUserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress);
+        /// <returns>UserAchievementGroupResource</returns>
+        UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress);
         /// <summary>
         /// Set an achievement progress record for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <param name="achievementName">The achievement&#39;s name</param>
         /// <param name="progress">The new progress value</param>
-        /// <returns>ModelUserAchievementGroupResource</returns>
-        ModelUserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress);
+        /// <returns>UserAchievementGroupResource</returns>
+        UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress);
         /// <summary>
         /// Update an achievement definition The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
         /// </summary>
         /// <param name="name">The name of the achievement</param>
         /// <param name="achievement">The achievement definition</param>
-        /// <returns>ModelAchievementDefinitionResource</returns>
-        ModelAchievementDefinitionResource UpdateAchievement (string name, ModelAchievementDefinitionResource achievement);
+        /// <returns>AchievementDefinitionResource</returns>
+        AchievementDefinitionResource UpdateAchievement (string name, AchievementDefinitionResource achievement);
         /// <summary>
         /// Update an achievement template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="template">The updated template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateAchievementTemplate (string id, ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateAchievementTemplate (string id, TemplateResource template);
     }
   
     /// <summary>
@@ -207,8 +207,8 @@ namespace com.knetikcloud.Api
         /// Create a new achievement definition If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
         /// </summary>
         /// <param name="achievement">The achievement definition</param> 
-        /// <returns>ModelAchievementDefinitionResource</returns>            
-        public ModelAchievementDefinitionResource CreateAchievement (ModelAchievementDefinitionResource achievement)
+        /// <returns>AchievementDefinitionResource</returns>            
+        public AchievementDefinitionResource CreateAchievement (AchievementDefinitionResource achievement)
         {
             
     
@@ -234,15 +234,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateAchievement: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(ModelAchievementDefinitionResource), response.Headers);
+            return (AchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(AchievementDefinitionResource), response.Headers);
         }
     
         /// <summary>
         /// Create an achievement template Achievement templates define a type of achievement and the properties they have
         /// </summary>
         /// <param name="template">The achievement template to be created</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateAchievementTemplate (ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateAchievementTemplate (TemplateResource template)
         {
             
     
@@ -268,7 +268,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateAchievementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -351,8 +351,8 @@ namespace com.knetikcloud.Api
         /// Get a single achievement definition 
         /// </summary>
         /// <param name="name">The name of the achievement</param> 
-        /// <returns>ModelAchievementDefinitionResource</returns>            
-        public ModelAchievementDefinitionResource GetAchievement (string name)
+        /// <returns>AchievementDefinitionResource</returns>            
+        public AchievementDefinitionResource GetAchievement (string name)
         {
             
             // verify the required parameter 'name' is set
@@ -381,15 +381,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAchievement: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(ModelAchievementDefinitionResource), response.Headers);
+            return (AchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(AchievementDefinitionResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single achievement template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetAchievementTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetAchievementTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -418,7 +418,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAchievementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -427,8 +427,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order)
         {
             
     
@@ -456,14 +456,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAchievementTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
         /// Get the list of triggers that can be used to trigger an achievement progress update 
         /// </summary>
-        /// <returns>List&lt;ModelBreTriggerResource&gt;</returns>            
-        public List<ModelBreTriggerResource> GetAchievementTriggers ()
+        /// <returns>List&lt;BreTriggerResource&gt;</returns>            
+        public List<BreTriggerResource> GetAchievementTriggers ()
         {
             
     
@@ -488,7 +488,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAchievementTriggers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelBreTriggerResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelBreTriggerResource>), response.Headers);
+            return (List<BreTriggerResource>) ApiClient.Deserialize(response.Content, typeof(List<BreTriggerResource>), response.Headers);
         }
     
         /// <summary>
@@ -501,8 +501,8 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
         /// <param name="filterDerived">Filter for achievements that are derived from other services</param> 
-        /// <returns>ModelPageResourceAchievementDefinitionResource</returns>            
-        public ModelPageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived)
+        /// <returns>PageResourceAchievementDefinitionResource</returns>            
+        public PageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived)
         {
             
     
@@ -534,15 +534,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAchievements: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceAchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceAchievementDefinitionResource), response.Headers);
+            return (PageResourceAchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceAchievementDefinitionResource), response.Headers);
         }
     
         /// <summary>
         /// Get a list of derived achievements Used by other services that depend on achievements
         /// </summary>
         /// <param name="name">The name of the derived achievement</param> 
-        /// <returns>List&lt;ModelAchievementDefinitionResource&gt;</returns>            
-        public List<ModelAchievementDefinitionResource> GetDerivedAchievements (string name)
+        /// <returns>List&lt;AchievementDefinitionResource&gt;</returns>            
+        public List<AchievementDefinitionResource> GetDerivedAchievements (string name)
         {
             
             // verify the required parameter 'name' is set
@@ -571,7 +571,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetDerivedAchievements: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelAchievementDefinitionResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelAchievementDefinitionResource>), response.Headers);
+            return (List<AchievementDefinitionResource>) ApiClient.Deserialize(response.Content, typeof(List<AchievementDefinitionResource>), response.Headers);
         }
     
         /// <summary>
@@ -579,8 +579,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The user&#39;s id</param> 
         /// <param name="achievementName">The achievement&#39;s name</param> 
-        /// <returns>ModelUserAchievementGroupResource</returns>            
-        public ModelUserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName)
+        /// <returns>UserAchievementGroupResource</returns>            
+        public UserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName)
         {
             
             // verify the required parameter 'userId' is set
@@ -613,7 +613,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserAchievementProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelUserAchievementGroupResource), response.Headers);
+            return (UserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(UserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -625,8 +625,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>            
-        public ModelPageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+        /// <returns>PageResourceUserAchievementGroupResource</returns>            
+        public PageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
         {
             
             // verify the required parameter 'userId' is set
@@ -660,7 +660,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserAchievementsProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserAchievementGroupResource), response.Headers);
+            return (PageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -672,8 +672,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>            
-        public ModelPageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+        /// <returns>PageResourceUserAchievementGroupResource</returns>            
+        public PageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
         {
             
             // verify the required parameter 'achievementName' is set
@@ -707,7 +707,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsersAchievementProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserAchievementGroupResource), response.Headers);
+            return (PageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -718,8 +718,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="filterAchievementName">Filter for achievements whose name contains a string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUserAchievementGroupResource</returns>            
-        public ModelPageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+        /// <returns>PageResourceUserAchievementGroupResource</returns>            
+        public PageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
         {
             
     
@@ -749,7 +749,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsersAchievementsProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserAchievementGroupResource), response.Headers);
+            return (PageResourceUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -758,8 +758,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="userId">The user&#39;s id</param> 
         /// <param name="achievementName">The achievement&#39;s name</param> 
         /// <param name="progress">The amount to add to the progress value</param> 
-        /// <returns>ModelUserAchievementGroupResource</returns>            
-        public ModelUserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
+        /// <returns>UserAchievementGroupResource</returns>            
+        public UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
         {
             
             // verify the required parameter 'userId' is set
@@ -793,7 +793,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling IncrementAchievementProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelUserAchievementGroupResource), response.Headers);
+            return (UserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(UserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -802,8 +802,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="userId">The user&#39;s id</param> 
         /// <param name="achievementName">The achievement&#39;s name</param> 
         /// <param name="progress">The new progress value</param> 
-        /// <returns>ModelUserAchievementGroupResource</returns>            
-        public ModelUserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
+        /// <returns>UserAchievementGroupResource</returns>            
+        public UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
         {
             
             // verify the required parameter 'userId' is set
@@ -837,7 +837,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SetAchievementProgress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelUserAchievementGroupResource), response.Headers);
+            return (UserAchievementGroupResource) ApiClient.Deserialize(response.Content, typeof(UserAchievementGroupResource), response.Headers);
         }
     
         /// <summary>
@@ -845,8 +845,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// </summary>
         /// <param name="name">The name of the achievement</param> 
         /// <param name="achievement">The achievement definition</param> 
-        /// <returns>ModelAchievementDefinitionResource</returns>            
-        public ModelAchievementDefinitionResource UpdateAchievement (string name, ModelAchievementDefinitionResource achievement)
+        /// <returns>AchievementDefinitionResource</returns>            
+        public AchievementDefinitionResource UpdateAchievement (string name, AchievementDefinitionResource achievement)
         {
             
             // verify the required parameter 'name' is set
@@ -876,7 +876,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateAchievement: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(ModelAchievementDefinitionResource), response.Headers);
+            return (AchievementDefinitionResource) ApiClient.Deserialize(response.Content, typeof(AchievementDefinitionResource), response.Headers);
         }
     
         /// <summary>
@@ -884,8 +884,8 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="template">The updated template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateAchievementTemplate (string id, ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateAchievementTemplate (string id, TemplateResource template)
         {
             
             // verify the required parameter 'id' is set
@@ -915,7 +915,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateAchievementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

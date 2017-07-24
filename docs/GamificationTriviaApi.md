@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 <a name="addquestionanswers"></a>
 # **AddQuestionAnswers**
-> ModelAnswerResource AddQuestionAnswers (string questionId, ModelAnswerResource answer)
+> AnswerResource AddQuestionAnswers (string questionId, AnswerResource answer)
 
 Add an answer to a question
 
@@ -62,12 +62,12 @@ namespace Example
 
             var apiInstance = new GamificationTriviaApi();
             var questionId = questionId_example;  // string | The id of the question
-            var answer = new ModelAnswerResource(); // ModelAnswerResource | The new answer (optional) 
+            var answer = new AnswerResource(); // AnswerResource | The new answer (optional) 
 
             try
             {
                 // Add an answer to a question
-                ModelAnswerResource result = apiInstance.AddQuestionAnswers(questionId, answer);
+                AnswerResource result = apiInstance.AddQuestionAnswers(questionId, answer);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -84,11 +84,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **questionId** | **string**| The id of the question | 
- **answer** | [**ModelAnswerResource**](ModelAnswerResource.md)| The new answer | [optional] 
+ **answer** | [**AnswerResource**](AnswerResource.md)| The new answer | [optional] 
 
 ### Return type
 
-[**ModelAnswerResource**](ModelAnswerResource.md)
+[**AnswerResource**](AnswerResource.md)
 
 ### Authorization
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="createimportjob"></a>
 # **CreateImportJob**
-> ModelImportJobResource CreateImportJob (ModelImportJobResource request)
+> ImportJobResource CreateImportJob (ImportJobResource request)
 
 Create an import job
 
@@ -273,12 +273,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationTriviaApi();
-            var request = new ModelImportJobResource(); // ModelImportJobResource | The new import job (optional) 
+            var request = new ImportJobResource(); // ImportJobResource | The new import job (optional) 
 
             try
             {
                 // Create an import job
-                ModelImportJobResource result = apiInstance.CreateImportJob(request);
+                ImportJobResource result = apiInstance.CreateImportJob(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -294,11 +294,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelImportJobResource**](ModelImportJobResource.md)| The new import job | [optional] 
+ **request** | [**ImportJobResource**](ImportJobResource.md)| The new import job | [optional] 
 
 ### Return type
 
-[**ModelImportJobResource**](ModelImportJobResource.md)
+[**ImportJobResource**](ImportJobResource.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 <a name="createquestion"></a>
 # **CreateQuestion**
-> ModelQuestionResource CreateQuestion (ModelQuestionResource question)
+> QuestionResource CreateQuestion (QuestionResource question)
 
 Create a question
 
@@ -336,12 +336,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationTriviaApi();
-            var question = new ModelQuestionResource(); // ModelQuestionResource | The new question (optional) 
+            var question = new QuestionResource(); // QuestionResource | The new question (optional) 
 
             try
             {
                 // Create a question
-                ModelQuestionResource result = apiInstance.CreateQuestion(question);
+                QuestionResource result = apiInstance.CreateQuestion(question);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -357,11 +357,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**ModelQuestionResource**](ModelQuestionResource.md)| The new question | [optional] 
+ **question** | [**QuestionResource**](QuestionResource.md)| The new question | [optional] 
 
 ### Return type
 
-[**ModelQuestionResource**](ModelQuestionResource.md)
+[**QuestionResource**](QuestionResource.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 <a name="createquestiontemplate"></a>
 # **CreateQuestionTemplate**
-> ModelQuestionTemplateResource CreateQuestionTemplate (ModelQuestionTemplateResource questionTemplateResource)
+> QuestionTemplateResource CreateQuestionTemplate (QuestionTemplateResource questionTemplateResource)
 
 Create a question template
 
@@ -401,12 +401,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationTriviaApi();
-            var questionTemplateResource = new ModelQuestionTemplateResource(); // ModelQuestionTemplateResource | The question template resource object (optional) 
+            var questionTemplateResource = new QuestionTemplateResource(); // QuestionTemplateResource | The question template resource object (optional) 
 
             try
             {
                 // Create a question template
-                ModelQuestionTemplateResource result = apiInstance.CreateQuestionTemplate(questionTemplateResource);
+                QuestionTemplateResource result = apiInstance.CreateQuestionTemplate(questionTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -422,11 +422,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionTemplateResource** | [**ModelQuestionTemplateResource**](ModelQuestionTemplateResource.md)| The question template resource object | [optional] 
+ **questionTemplateResource** | [**QuestionTemplateResource**](QuestionTemplateResource.md)| The question template resource object | [optional] 
 
 ### Return type
 
-[**ModelQuestionTemplateResource**](ModelQuestionTemplateResource.md)
+[**QuestionTemplateResource**](QuestionTemplateResource.md)
 
 ### Authorization
 
@@ -697,7 +697,7 @@ void (empty response body)
 
 <a name="getimportjob"></a>
 # **GetImportJob**
-> ModelImportJobResource GetImportJob (long? id)
+> ImportJobResource GetImportJob (long? id)
 
 Get an import job
 
@@ -725,7 +725,7 @@ namespace Example
             try
             {
                 // Get an import job
-                ModelImportJobResource result = apiInstance.GetImportJob(id);
+                ImportJobResource result = apiInstance.GetImportJob(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelImportJobResource**](ModelImportJobResource.md)
+[**ImportJobResource**](ImportJobResource.md)
 
 ### Authorization
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 <a name="getimportjobs"></a>
 # **GetImportJobs**
-> ModelPageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order)
+> PageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order)
 
 Get a list of import job
 
@@ -794,7 +794,7 @@ namespace Example
             try
             {
                 // Get a list of import job
-                ModelPageResourceImportJobResource result = apiInstance.GetImportJobs(filterVendor, filterCategory, filterName, filterStatus, size, page, order);
+                PageResourceImportJobResource result = apiInstance.GetImportJobs(filterVendor, filterCategory, filterName, filterStatus, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceImportJobResource**](ModelPageResourceImportJobResource.md)
+[**PageResourceImportJobResource**](PageResourceImportJobResource.md)
 
 ### Authorization
 
@@ -835,7 +835,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestion"></a>
 # **GetQuestion**
-> ModelQuestionResource GetQuestion (string id)
+> QuestionResource GetQuestion (string id)
 
 Get a single question
 
@@ -863,7 +863,7 @@ namespace Example
             try
             {
                 // Get a single question
-                ModelQuestionResource result = apiInstance.GetQuestion(id);
+                QuestionResource result = apiInstance.GetQuestion(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelQuestionResource**](ModelQuestionResource.md)
+[**QuestionResource**](QuestionResource.md)
 
 ### Authorization
 
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestionanswer"></a>
 # **GetQuestionAnswer**
-> ModelAnswerResource GetQuestionAnswer (string questionId, string id)
+> AnswerResource GetQuestionAnswer (string questionId, string id)
 
 Get an answer for a question
 
@@ -927,7 +927,7 @@ namespace Example
             try
             {
                 // Get an answer for a question
-                ModelAnswerResource result = apiInstance.GetQuestionAnswer(questionId, id);
+                AnswerResource result = apiInstance.GetQuestionAnswer(questionId, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelAnswerResource**](ModelAnswerResource.md)
+[**AnswerResource**](AnswerResource.md)
 
 ### Authorization
 
@@ -963,7 +963,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestionanswers"></a>
 # **GetQuestionAnswers**
-> List<ModelAnswerResource> GetQuestionAnswers (string questionId)
+> List<AnswerResource> GetQuestionAnswers (string questionId)
 
 List the answers available for a question
 
@@ -991,7 +991,7 @@ namespace Example
             try
             {
                 // List the answers available for a question
-                List&lt;ModelAnswerResource&gt; result = apiInstance.GetQuestionAnswers(questionId);
+                List&lt;AnswerResource&gt; result = apiInstance.GetQuestionAnswers(questionId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1011,7 +1011,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelAnswerResource>**](ModelAnswerResource.md)
+[**List<AnswerResource>**](AnswerResource.md)
 
 ### Authorization
 
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestiondeltas"></a>
 # **GetQuestionDeltas**
-> List<ModelDeltaResource> GetQuestionDeltas (long? since)
+> List<DeltaResource> GetQuestionDeltas (long? since)
 
 List question deltas in ascending order of updated date
 
@@ -1056,7 +1056,7 @@ namespace Example
             try
             {
                 // List question deltas in ascending order of updated date
-                List&lt;ModelDeltaResource&gt; result = apiInstance.GetQuestionDeltas(since);
+                List&lt;DeltaResource&gt; result = apiInstance.GetQuestionDeltas(since);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1076,7 +1076,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelDeltaResource>**](ModelDeltaResource.md)
+[**List<DeltaResource>**](DeltaResource.md)
 
 ### Authorization
 
@@ -1154,7 +1154,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestiontemplate"></a>
 # **GetQuestionTemplate**
-> ModelQuestionTemplateResource GetQuestionTemplate (string id)
+> QuestionTemplateResource GetQuestionTemplate (string id)
 
 Get a single question template
 
@@ -1182,7 +1182,7 @@ namespace Example
             try
             {
                 // Get a single question template
-                ModelQuestionTemplateResource result = apiInstance.GetQuestionTemplate(id);
+                QuestionTemplateResource result = apiInstance.GetQuestionTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelQuestionTemplateResource**](ModelQuestionTemplateResource.md)
+[**QuestionTemplateResource**](QuestionTemplateResource.md)
 
 ### Authorization
 
@@ -1217,7 +1217,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestiontemplates"></a>
 # **GetQuestionTemplates**
-> ModelPageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order)
+> PageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order)
 
 List and search question templates
 
@@ -1247,7 +1247,7 @@ namespace Example
             try
             {
                 // List and search question templates
-                ModelPageResourceQuestionTemplateResource result = apiInstance.GetQuestionTemplates(size, page, order);
+                PageResourceQuestionTemplateResource result = apiInstance.GetQuestionTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1269,7 +1269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceQuestionTemplateResource**](ModelPageResourceQuestionTemplateResource.md)
+[**PageResourceQuestionTemplateResource**](PageResourceQuestionTemplateResource.md)
 
 ### Authorization
 
@@ -1284,7 +1284,7 @@ Name | Type | Description  | Notes
 
 <a name="getquestions"></a>
 # **GetQuestions**
-> ModelPageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId)
+> PageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId)
 
 List and search questions
 
@@ -1322,7 +1322,7 @@ namespace Example
             try
             {
                 // List and search questions
-                ModelPageResourceQuestionResource result = apiInstance.GetQuestions(size, page, order, filterSearch, filterIdset, filterCategory, filterTagset, filterTag, filterType, filterPublished, filterImportId);
+                PageResourceQuestionResource result = apiInstance.GetQuestions(size, page, order, filterSearch, filterIdset, filterCategory, filterTagset, filterTag, filterType, filterPublished, filterImportId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1352,7 +1352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceQuestionResource**](ModelPageResourceQuestionResource.md)
+[**PageResourceQuestionResource**](PageResourceQuestionResource.md)
 
 ### Authorization
 
@@ -1444,7 +1444,7 @@ Name | Type | Description  | Notes
 
 <a name="processimportjob"></a>
 # **ProcessImportJob**
-> ModelImportJobResource ProcessImportJob (long? id, bool? publishNow)
+> ImportJobResource ProcessImportJob (long? id, bool? publishNow)
 
 Start processing an import job
 
@@ -1475,7 +1475,7 @@ namespace Example
             try
             {
                 // Start processing an import job
-                ModelImportJobResource result = apiInstance.ProcessImportJob(id, publishNow);
+                ImportJobResource result = apiInstance.ProcessImportJob(id, publishNow);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1496,7 +1496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelImportJobResource**](ModelImportJobResource.md)
+[**ImportJobResource**](ImportJobResource.md)
 
 ### Authorization
 
@@ -1656,7 +1656,7 @@ Name | Type | Description  | Notes
 
 <a name="searchquestiontags"></a>
 # **SearchQuestionTags**
-> ModelCollectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId)
+> Collectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId)
 
 List and search tags by the beginning of the string
 
@@ -1688,7 +1688,7 @@ namespace Example
             try
             {
                 // List and search tags by the beginning of the string
-                ModelCollectionstring result = apiInstance.SearchQuestionTags(filterSearch, filterCategory, filterImportId);
+                Collectionstring result = apiInstance.SearchQuestionTags(filterSearch, filterCategory, filterImportId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1710,7 +1710,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCollectionstring**](ModelCollectionstring.md)
+[**Collectionstring**](Collectionstring.md)
 
 ### Authorization
 
@@ -1725,7 +1725,7 @@ Name | Type | Description  | Notes
 
 <a name="updateimportjob"></a>
 # **UpdateImportJob**
-> ModelImportJobResource UpdateImportJob (long? id, ModelImportJobResource request)
+> ImportJobResource UpdateImportJob (long? id, ImportJobResource request)
 
 Update an import job
 
@@ -1751,12 +1751,12 @@ namespace Example
 
             var apiInstance = new GamificationTriviaApi();
             var id = 789;  // long? | The id of the job
-            var request = new ModelImportJobResource(); // ModelImportJobResource | The updated job (optional) 
+            var request = new ImportJobResource(); // ImportJobResource | The updated job (optional) 
 
             try
             {
                 // Update an import job
-                ModelImportJobResource result = apiInstance.UpdateImportJob(id, request);
+                ImportJobResource result = apiInstance.UpdateImportJob(id, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1773,11 +1773,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The id of the job | 
- **request** | [**ModelImportJobResource**](ModelImportJobResource.md)| The updated job | [optional] 
+ **request** | [**ImportJobResource**](ImportJobResource.md)| The updated job | [optional] 
 
 ### Return type
 
-[**ModelImportJobResource**](ModelImportJobResource.md)
+[**ImportJobResource**](ImportJobResource.md)
 
 ### Authorization
 
@@ -1792,7 +1792,7 @@ Name | Type | Description  | Notes
 
 <a name="updatequestion"></a>
 # **UpdateQuestion**
-> ModelQuestionResource UpdateQuestion (string id, ModelQuestionResource question)
+> QuestionResource UpdateQuestion (string id, QuestionResource question)
 
 Update a question
 
@@ -1816,12 +1816,12 @@ namespace Example
 
             var apiInstance = new GamificationTriviaApi();
             var id = id_example;  // string | The id of the question
-            var question = new ModelQuestionResource(); // ModelQuestionResource | The updated question (optional) 
+            var question = new QuestionResource(); // QuestionResource | The updated question (optional) 
 
             try
             {
                 // Update a question
-                ModelQuestionResource result = apiInstance.UpdateQuestion(id, question);
+                QuestionResource result = apiInstance.UpdateQuestion(id, question);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1838,11 +1838,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the question | 
- **question** | [**ModelQuestionResource**](ModelQuestionResource.md)| The updated question | [optional] 
+ **question** | [**QuestionResource**](QuestionResource.md)| The updated question | [optional] 
 
 ### Return type
 
-[**ModelQuestionResource**](ModelQuestionResource.md)
+[**QuestionResource**](QuestionResource.md)
 
 ### Authorization
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Notes
 
 <a name="updatequestionanswer"></a>
 # **UpdateQuestionAnswer**
-> void UpdateQuestionAnswer (string questionId, string id, ModelAnswerResource answer)
+> void UpdateQuestionAnswer (string questionId, string id, AnswerResource answer)
 
 Update an answer for a question
 
@@ -1882,7 +1882,7 @@ namespace Example
             var apiInstance = new GamificationTriviaApi();
             var questionId = questionId_example;  // string | The id of the question
             var id = id_example;  // string | The id of the answer
-            var answer = new ModelAnswerResource(); // ModelAnswerResource | The updated answer (optional) 
+            var answer = new AnswerResource(); // AnswerResource | The updated answer (optional) 
 
             try
             {
@@ -1904,7 +1904,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **questionId** | **string**| The id of the question | 
  **id** | **string**| The id of the answer | 
- **answer** | [**ModelAnswerResource**](ModelAnswerResource.md)| The updated answer | [optional] 
+ **answer** | [**AnswerResource**](AnswerResource.md)| The updated answer | [optional] 
 
 ### Return type
 
@@ -1923,7 +1923,7 @@ void (empty response body)
 
 <a name="updatequestiontemplate"></a>
 # **UpdateQuestionTemplate**
-> ModelQuestionTemplateResource UpdateQuestionTemplate (string id, ModelQuestionTemplateResource questionTemplateResource)
+> QuestionTemplateResource UpdateQuestionTemplate (string id, QuestionTemplateResource questionTemplateResource)
 
 Update a question template
 
@@ -1947,12 +1947,12 @@ namespace Example
 
             var apiInstance = new GamificationTriviaApi();
             var id = id_example;  // string | The id of the template
-            var questionTemplateResource = new ModelQuestionTemplateResource(); // ModelQuestionTemplateResource | The question template resource object (optional) 
+            var questionTemplateResource = new QuestionTemplateResource(); // QuestionTemplateResource | The question template resource object (optional) 
 
             try
             {
                 // Update a question template
-                ModelQuestionTemplateResource result = apiInstance.UpdateQuestionTemplate(id, questionTemplateResource);
+                QuestionTemplateResource result = apiInstance.UpdateQuestionTemplate(id, questionTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1969,11 +1969,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **questionTemplateResource** | [**ModelQuestionTemplateResource**](ModelQuestionTemplateResource.md)| The question template resource object | [optional] 
+ **questionTemplateResource** | [**QuestionTemplateResource**](QuestionTemplateResource.md)| The question template resource object | [optional] 
 
 ### Return type
 
-[**ModelQuestionTemplateResource**](ModelQuestionTemplateResource.md)
+[**QuestionTemplateResource**](QuestionTemplateResource.md)
 
 ### Authorization
 
@@ -1988,7 +1988,7 @@ Name | Type | Description  | Notes
 
 <a name="updatequestionsinbulk"></a>
 # **UpdateQuestionsInBulk**
-> int? UpdateQuestionsInBulk (ModelQuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
+> int? UpdateQuestionsInBulk (QuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
 
 Bulk update questions
 
@@ -2013,7 +2013,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationTriviaApi();
-            var question = new ModelQuestionResource(); // ModelQuestionResource | New values for a set of question fields (optional) 
+            var question = new QuestionResource(); // QuestionResource | New values for a set of question fields (optional) 
             var filterSearch = filterSearch_example;  // string | Filter for documents whose question, answers or tags contains provided string (optional) 
             var filterIdset = filterIdset_example;  // string | Filter for documents whose id is in the comma separated list provided (optional) 
             var filterCategory = filterCategory_example;  // string | Filter for questions with specified category, by id (optional) 
@@ -2041,7 +2041,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**ModelQuestionResource**](ModelQuestionResource.md)| New values for a set of question fields | [optional] 
+ **question** | [**QuestionResource**](QuestionResource.md)| New values for a set of question fields | [optional] 
  **filterSearch** | **string**| Filter for documents whose question, answers or tags contains provided string | [optional] 
  **filterIdset** | **string**| Filter for documents whose id is in the comma separated list provided | [optional] 
  **filterCategory** | **string**| Filter for questions with specified category, by id | [optional] 

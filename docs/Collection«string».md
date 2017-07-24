@@ -1,4 +1,4 @@
-# com.knetikcloud.Model.ModelCollectionstring
+# com.knetikcloud.Model.Collectionstring
 ## Properties
 
 Name | Type | Description | Notes

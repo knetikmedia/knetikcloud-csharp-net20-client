@@ -80,7 +80,7 @@ void (empty response body)
 
 <a name="getfriends"></a>
 # **GetFriends**
-> ModelPageResourceSimpleUserResource GetFriends (string userId, int? size, int? page)
+> PageResourceSimpleUserResource GetFriends (string userId, int? size, int? page)
 
 Get friends list
 
@@ -110,7 +110,7 @@ namespace Example
             try
             {
                 // Get friends list
-                ModelPageResourceSimpleUserResource result = apiInstance.GetFriends(userId, size, page);
+                PageResourceSimpleUserResource result = apiInstance.GetFriends(userId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSimpleUserResource**](ModelPageResourceSimpleUserResource.md)
+[**PageResourceSimpleUserResource**](PageResourceSimpleUserResource.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 <a name="getinvites"></a>
 # **GetInvites**
-> ModelPageResourceSimpleUserResource GetInvites (string userId, int? size, int? page)
+> PageResourceSimpleUserResource GetInvites (string userId, int? size, int? page)
 
 Get pending invites
 
@@ -244,7 +244,7 @@ namespace Example
             try
             {
                 // Get pending invites
-                ModelPageResourceSimpleUserResource result = apiInstance.GetInvites(userId, size, page);
+                PageResourceSimpleUserResource result = apiInstance.GetInvites(userId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSimpleUserResource**](ModelPageResourceSimpleUserResource.md)
+[**PageResourceSimpleUserResource**](PageResourceSimpleUserResource.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createconfig"></a>
 # **CreateConfig**
-> ModelConfig CreateConfig (ModelConfig config)
+> Config CreateConfig (Config config)
 
 Create a new config
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ConfigsApi();
-            var config = new ModelConfig(); // ModelConfig | The config object (optional) 
+            var config = new Config(); // Config | The config object (optional) 
 
             try
             {
                 // Create a new config
-                ModelConfig result = apiInstance.CreateConfig(config);
+                Config result = apiInstance.CreateConfig(config);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **config** | [**ModelConfig**](ModelConfig.md)| The config object | [optional] 
+ **config** | [**Config**](Config.md)| The config object | [optional] 
 
 ### Return type
 
-[**ModelConfig**](ModelConfig.md)
+[**Config**](Config.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getconfig"></a>
 # **GetConfig**
-> ModelConfig GetConfig (string name)
+> Config GetConfig (string name)
 
 Get a single config
 
@@ -168,7 +168,7 @@ namespace Example
             try
             {
                 // Get a single config
-                ModelConfig result = apiInstance.GetConfig(name);
+                Config result = apiInstance.GetConfig(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelConfig**](ModelConfig.md)
+[**Config**](Config.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 <a name="getconfigs"></a>
 # **GetConfigs**
-> ModelPageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order)
+> PageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order)
 
 List and search configs
 
@@ -234,7 +234,7 @@ namespace Example
             try
             {
                 // List and search configs
-                ModelPageResourceConfig result = apiInstance.GetConfigs(filterSearch, size, page, order);
+                PageResourceConfig result = apiInstance.GetConfigs(filterSearch, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceConfig**](ModelPageResourceConfig.md)
+[**PageResourceConfig**](PageResourceConfig.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="updateconfig"></a>
 # **UpdateConfig**
-> void UpdateConfig (string name, ModelConfig config)
+> void UpdateConfig (string name, Config config)
 
 Update an existing config
 
@@ -296,7 +296,7 @@ namespace Example
 
             var apiInstance = new ConfigsApi();
             var name = name_example;  // string | The config name
-            var config = new ModelConfig(); // ModelConfig | The config object (optional) 
+            var config = new Config(); // Config | The config object (optional) 
 
             try
             {
@@ -317,7 +317,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The config name | 
- **config** | [**ModelConfig**](ModelConfig.md)| The config object | [optional] 
+ **config** | [**Config**](Config.md)| The config object | [optional] 
 
 ### Return type
 

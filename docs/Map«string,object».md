@@ -1,4 +1,4 @@
-# com.knetikcloud.Model.ModelMapstringobject
+# com.knetikcloud.Model.Mapstringobject
 ## Properties
 
 Name | Type | Description | Notes

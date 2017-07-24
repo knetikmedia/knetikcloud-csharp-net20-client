@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a fulfillment type 
         /// </summary>
         /// <param name="type">The fulfillment type</param>
-        /// <returns>ModelFulfillmentType</returns>
-        ModelFulfillmentType CreateFulfillmentType (ModelFulfillmentType type);
+        /// <returns>FulfillmentType</returns>
+        FulfillmentType CreateFulfillmentType (FulfillmentType type);
         /// <summary>
         /// Delete a fulfillment type 
         /// </summary>
@@ -27,23 +27,23 @@ namespace com.knetikcloud.Api
         /// Get a single fulfillment type 
         /// </summary>
         /// <param name="id">The id</param>
-        /// <returns>ModelFulfillmentType</returns>
-        ModelFulfillmentType GetFulfillmentType (int? id);
+        /// <returns>FulfillmentType</returns>
+        FulfillmentType GetFulfillmentType (int? id);
         /// <summary>
         /// List and search fulfillment types 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceFulfillmentType</returns>
-        ModelPageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order);
+        /// <returns>PageResourceFulfillmentType</returns>
+        PageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order);
         /// <summary>
         /// Update a fulfillment type 
         /// </summary>
         /// <param name="id">The id</param>
         /// <param name="fulfillmentType">The fulfillment type</param>
         /// <returns></returns>
-        void UpdateFulfillmentType (int? id, ModelFulfillmentType fulfillmentType);
+        void UpdateFulfillmentType (int? id, FulfillmentType fulfillmentType);
     }
   
     /// <summary>
@@ -103,8 +103,8 @@ namespace com.knetikcloud.Api
         /// Create a fulfillment type 
         /// </summary>
         /// <param name="type">The fulfillment type</param> 
-        /// <returns>ModelFulfillmentType</returns>            
-        public ModelFulfillmentType CreateFulfillmentType (ModelFulfillmentType type)
+        /// <returns>FulfillmentType</returns>            
+        public FulfillmentType CreateFulfillmentType (FulfillmentType type)
         {
             
     
@@ -130,7 +130,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateFulfillmentType: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelFulfillmentType) ApiClient.Deserialize(response.Content, typeof(ModelFulfillmentType), response.Headers);
+            return (FulfillmentType) ApiClient.Deserialize(response.Content, typeof(FulfillmentType), response.Headers);
         }
     
         /// <summary>
@@ -174,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Get a single fulfillment type 
         /// </summary>
         /// <param name="id">The id</param> 
-        /// <returns>ModelFulfillmentType</returns>            
-        public ModelFulfillmentType GetFulfillmentType (int? id)
+        /// <returns>FulfillmentType</returns>            
+        public FulfillmentType GetFulfillmentType (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetFulfillmentType: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelFulfillmentType) ApiClient.Deserialize(response.Content, typeof(ModelFulfillmentType), response.Headers);
+            return (FulfillmentType) ApiClient.Deserialize(response.Content, typeof(FulfillmentType), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceFulfillmentType</returns>            
-        public ModelPageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order)
+        /// <returns>PageResourceFulfillmentType</returns>            
+        public PageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetFulfillmentTypes: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceFulfillmentType) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceFulfillmentType), response.Headers);
+            return (PageResourceFulfillmentType) ApiClient.Deserialize(response.Content, typeof(PageResourceFulfillmentType), response.Headers);
         }
     
         /// <summary>
@@ -251,7 +251,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id</param> 
         /// <param name="fulfillmentType">The fulfillment type</param> 
         /// <returns></returns>            
-        public void UpdateFulfillmentType (int? id, ModelFulfillmentType fulfillmentType)
+        public void UpdateFulfillmentType (int? id, FulfillmentType fulfillmentType)
         {
             
             // verify the required parameter 'id' is set

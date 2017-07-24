@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a level schema 
         /// </summary>
         /// <param name="level">The level schema definition</param>
-        /// <returns>ModelLevelingResource</returns>
-        ModelLevelingResource CreateLevel (ModelLevelingResource level);
+        /// <returns>LevelingResource</returns>
+        LevelingResource CreateLevel (LevelingResource level);
         /// <summary>
         /// Delete a level 
         /// </summary>
@@ -27,13 +27,13 @@ namespace com.knetikcloud.Api
         /// Retrieve a level 
         /// </summary>
         /// <param name="name">The level schema name</param>
-        /// <returns>ModelLevelingResource</returns>
-        ModelLevelingResource GetLevel (string name);
+        /// <returns>LevelingResource</returns>
+        LevelingResource GetLevel (string name);
         /// <summary>
         /// Get the list of triggers that can be used to trigger a leveling progress update 
         /// </summary>
-        /// <returns>List&lt;ModelBreTriggerResource&gt;</returns>
-        List<ModelBreTriggerResource> GetLevelTriggers ();
+        /// <returns>List&lt;BreTriggerResource&gt;</returns>
+        List<BreTriggerResource> GetLevelTriggers ();
         /// <summary>
         /// List and search levels Get a list of levels schemas with optional filtering
         /// </summary>
@@ -41,15 +41,15 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceLevelingResource</returns>
-        ModelPageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order);
+        /// <returns>PageResourceLevelingResource</returns>
+        PageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order);
         /// <summary>
         /// Get a user&#39;s progress for a given level schema 
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="name">The level schema name</param>
-        /// <returns>ModelUserLevelingResource</returns>
-        ModelUserLevelingResource GetUserLevel (int? userId, string name);
+        /// <returns>UserLevelingResource</returns>
+        UserLevelingResource GetUserLevel (int? userId, string name);
         /// <summary>
         /// Get a user&#39;s progress for all level schemas Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
         /// </summary>
@@ -58,8 +58,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceUserLevelingResource</returns>
-        ModelPageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order);
+        /// <returns>PageResourceUserLevelingResource</returns>
+        PageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order);
         /// <summary>
         /// Update or create a leveling progress record for a user If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
         /// </summary>
@@ -81,8 +81,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="name">The level schema name</param>
         /// <param name="newLevel">The level schema definition</param>
-        /// <returns>ModelLevelingResource</returns>
-        ModelLevelingResource UpdateLevel (string name, ModelLevelingResource newLevel);
+        /// <returns>LevelingResource</returns>
+        LevelingResource UpdateLevel (string name, LevelingResource newLevel);
     }
   
     /// <summary>
@@ -142,8 +142,8 @@ namespace com.knetikcloud.Api
         /// Create a level schema 
         /// </summary>
         /// <param name="level">The level schema definition</param> 
-        /// <returns>ModelLevelingResource</returns>            
-        public ModelLevelingResource CreateLevel (ModelLevelingResource level)
+        /// <returns>LevelingResource</returns>            
+        public LevelingResource CreateLevel (LevelingResource level)
         {
             
     
@@ -169,7 +169,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateLevel: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelLevelingResource), response.Headers);
+            return (LevelingResource) ApiClient.Deserialize(response.Content, typeof(LevelingResource), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// Retrieve a level 
         /// </summary>
         /// <param name="name">The level schema name</param> 
-        /// <returns>ModelLevelingResource</returns>            
-        public ModelLevelingResource GetLevel (string name)
+        /// <returns>LevelingResource</returns>            
+        public LevelingResource GetLevel (string name)
         {
             
             // verify the required parameter 'name' is set
@@ -243,14 +243,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetLevel: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelLevelingResource), response.Headers);
+            return (LevelingResource) ApiClient.Deserialize(response.Content, typeof(LevelingResource), response.Headers);
         }
     
         /// <summary>
         /// Get the list of triggers that can be used to trigger a leveling progress update 
         /// </summary>
-        /// <returns>List&lt;ModelBreTriggerResource&gt;</returns>            
-        public List<ModelBreTriggerResource> GetLevelTriggers ()
+        /// <returns>List&lt;BreTriggerResource&gt;</returns>            
+        public List<BreTriggerResource> GetLevelTriggers ()
         {
             
     
@@ -275,7 +275,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetLevelTriggers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelBreTriggerResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelBreTriggerResource>), response.Headers);
+            return (List<BreTriggerResource>) ApiClient.Deserialize(response.Content, typeof(List<BreTriggerResource>), response.Headers);
         }
     
         /// <summary>
@@ -285,8 +285,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceLevelingResource</returns>            
-        public ModelPageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order)
+        /// <returns>PageResourceLevelingResource</returns>            
+        public PageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order)
         {
             
     
@@ -315,7 +315,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetLevels: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceLevelingResource), response.Headers);
+            return (PageResourceLevelingResource) ApiClient.Deserialize(response.Content, typeof(PageResourceLevelingResource), response.Headers);
         }
     
         /// <summary>
@@ -323,8 +323,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="name">The level schema name</param> 
-        /// <returns>ModelUserLevelingResource</returns>            
-        public ModelUserLevelingResource GetUserLevel (int? userId, string name)
+        /// <returns>UserLevelingResource</returns>            
+        public UserLevelingResource GetUserLevel (int? userId, string name)
         {
             
             // verify the required parameter 'userId' is set
@@ -357,7 +357,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserLevel: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelUserLevelingResource), response.Headers);
+            return (UserLevelingResource) ApiClient.Deserialize(response.Content, typeof(UserLevelingResource), response.Headers);
         }
     
         /// <summary>
@@ -368,8 +368,8 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceUserLevelingResource</returns>            
-        public ModelPageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order)
+        /// <returns>PageResourceUserLevelingResource</returns>            
+        public PageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order)
         {
             
             // verify the required parameter 'userId' is set
@@ -402,7 +402,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserLevels: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserLevelingResource), response.Headers);
+            return (PageResourceUserLevelingResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserLevelingResource), response.Headers);
         }
     
         /// <summary>
@@ -498,8 +498,8 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         /// </summary>
         /// <param name="name">The level schema name</param> 
         /// <param name="newLevel">The level schema definition</param> 
-        /// <returns>ModelLevelingResource</returns>            
-        public ModelLevelingResource UpdateLevel (string name, ModelLevelingResource newLevel)
+        /// <returns>LevelingResource</returns>            
+        public LevelingResource UpdateLevel (string name, LevelingResource newLevel)
         {
             
             // verify the required parameter 'name' is set
@@ -529,7 +529,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateLevel: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelLevelingResource) ApiClient.Deserialize(response.Content, typeof(ModelLevelingResource), response.Headers);
+            return (LevelingResource) ApiClient.Deserialize(response.Content, typeof(LevelingResource), response.Headers);
         }
     
     }

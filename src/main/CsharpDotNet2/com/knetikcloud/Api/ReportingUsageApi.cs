@@ -21,8 +21,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUsageInfo</returns>
-        ModelPageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
+        /// <returns>PageResourceUsageInfo</returns>
+        PageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
         /// <summary>
         /// Returns aggregated endpoint usage information by hour 
         /// </summary>
@@ -33,8 +33,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUsageInfo</returns>
-        ModelPageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
+        /// <returns>PageResourceUsageInfo</returns>
+        PageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
         /// <summary>
         /// Returns aggregated endpoint usage information by minute 
         /// </summary>
@@ -45,8 +45,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUsageInfo</returns>
-        ModelPageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
+        /// <returns>PageResourceUsageInfo</returns>
+        PageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
         /// <summary>
         /// Returns aggregated endpoint usage information by month 
         /// </summary>
@@ -57,8 +57,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUsageInfo</returns>
-        ModelPageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
+        /// <returns>PageResourceUsageInfo</returns>
+        PageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
         /// <summary>
         /// Returns aggregated endpoint usage information by year 
         /// </summary>
@@ -69,8 +69,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUsageInfo</returns>
-        ModelPageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
+        /// <returns>PageResourceUsageInfo</returns>
+        PageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page);
         /// <summary>
         /// Returns list of endpoints called (method and url) 
         /// </summary>
@@ -143,8 +143,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUsageInfo</returns>            
-        public ModelPageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+        /// <returns>PageResourceUsageInfo</returns>            
+        public PageResourceUsageInfo GetUsageByDay (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
         {
             
             // verify the required parameter 'startDate' is set
@@ -182,7 +182,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsageByDay: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUsageInfo), response.Headers);
+            return (PageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(PageResourceUsageInfo), response.Headers);
         }
     
         /// <summary>
@@ -195,8 +195,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUsageInfo</returns>            
-        public ModelPageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+        /// <returns>PageResourceUsageInfo</returns>            
+        public PageResourceUsageInfo GetUsageByHour (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
         {
             
             // verify the required parameter 'startDate' is set
@@ -234,7 +234,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsageByHour: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUsageInfo), response.Headers);
+            return (PageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(PageResourceUsageInfo), response.Headers);
         }
     
         /// <summary>
@@ -247,8 +247,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUsageInfo</returns>            
-        public ModelPageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+        /// <returns>PageResourceUsageInfo</returns>            
+        public PageResourceUsageInfo GetUsageByMinute (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
         {
             
             // verify the required parameter 'startDate' is set
@@ -286,7 +286,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsageByMinute: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUsageInfo), response.Headers);
+            return (PageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(PageResourceUsageInfo), response.Headers);
         }
     
         /// <summary>
@@ -299,8 +299,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUsageInfo</returns>            
-        public ModelPageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+        /// <returns>PageResourceUsageInfo</returns>            
+        public PageResourceUsageInfo GetUsageByMonth (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
         {
             
             // verify the required parameter 'startDate' is set
@@ -338,7 +338,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsageByMonth: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUsageInfo), response.Headers);
+            return (PageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(PageResourceUsageInfo), response.Headers);
         }
     
         /// <summary>
@@ -351,8 +351,8 @@ namespace com.knetikcloud.Api
         /// <param name="url">Filter for a certain endpoint.  Must include method as well to work</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUsageInfo</returns>            
-        public ModelPageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
+        /// <returns>PageResourceUsageInfo</returns>            
+        public PageResourceUsageInfo GetUsageByYear (long? startDate, long? endDate, bool? combineEndpoints, string method, string url, int? size, int? page)
         {
             
             // verify the required parameter 'startDate' is set
@@ -390,7 +390,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsageByYear: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUsageInfo), response.Headers);
+            return (PageResourceUsageInfo) ApiClient.Deserialize(response.Content, typeof(PageResourceUsageInfo), response.Headers);
         }
     
         /// <summary>

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a global definition Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
         /// </summary>
         /// <param name="breGlobalResource">The BRE global resource object</param>
-        /// <returns>ModelBreGlobalResource</returns>
-        ModelBreGlobalResource CreateBREGlobal (ModelBreGlobalResource breGlobalResource);
+        /// <returns>BreGlobalResource</returns>
+        BreGlobalResource CreateBREGlobal (BreGlobalResource breGlobalResource);
         /// <summary>
         /// Delete a global May fail if there are existing rules against it. Cannot delete core globals
         /// </summary>
@@ -27,23 +27,23 @@ namespace com.knetikcloud.Api
         /// Get a single global definition 
         /// </summary>
         /// <param name="id">The id of the global definition</param>
-        /// <returns>ModelBreGlobalResource</returns>
-        ModelBreGlobalResource GetBREGlobal (string id);
+        /// <returns>BreGlobalResource</returns>
+        BreGlobalResource GetBREGlobal (string id);
         /// <summary>
         /// List global definitions 
         /// </summary>
         /// <param name="filterSystem">Filter for globals that are system globals when true, or not when false. Leave off for both mixed</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceBreGlobalResource</returns>
-        ModelPageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page);
+        /// <returns>PageResourceBreGlobalResource</returns>
+        PageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page);
         /// <summary>
         /// Update a global definition May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
         /// </summary>
         /// <param name="id">The id of the global definition</param>
         /// <param name="breGlobalResource">The BRE global resource object</param>
-        /// <returns>ModelBreGlobalResource</returns>
-        ModelBreGlobalResource UpdateBREGlobal (string id, ModelBreGlobalResource breGlobalResource);
+        /// <returns>BreGlobalResource</returns>
+        BreGlobalResource UpdateBREGlobal (string id, BreGlobalResource breGlobalResource);
     }
   
     /// <summary>
@@ -103,8 +103,8 @@ namespace com.knetikcloud.Api
         /// Create a global definition Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
         /// </summary>
         /// <param name="breGlobalResource">The BRE global resource object</param> 
-        /// <returns>ModelBreGlobalResource</returns>            
-        public ModelBreGlobalResource CreateBREGlobal (ModelBreGlobalResource breGlobalResource)
+        /// <returns>BreGlobalResource</returns>            
+        public BreGlobalResource CreateBREGlobal (BreGlobalResource breGlobalResource)
         {
             
     
@@ -130,7 +130,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateBREGlobal: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreGlobalResource) ApiClient.Deserialize(response.Content, typeof(ModelBreGlobalResource), response.Headers);
+            return (BreGlobalResource) ApiClient.Deserialize(response.Content, typeof(BreGlobalResource), response.Headers);
         }
     
         /// <summary>
@@ -174,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Get a single global definition 
         /// </summary>
         /// <param name="id">The id of the global definition</param> 
-        /// <returns>ModelBreGlobalResource</returns>            
-        public ModelBreGlobalResource GetBREGlobal (string id)
+        /// <returns>BreGlobalResource</returns>            
+        public BreGlobalResource GetBREGlobal (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREGlobal: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreGlobalResource) ApiClient.Deserialize(response.Content, typeof(ModelBreGlobalResource), response.Headers);
+            return (BreGlobalResource) ApiClient.Deserialize(response.Content, typeof(BreGlobalResource), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterSystem">Filter for globals that are system globals when true, or not when false. Leave off for both mixed</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceBreGlobalResource</returns>            
-        public ModelPageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page)
+        /// <returns>PageResourceBreGlobalResource</returns>            
+        public PageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREGlobals: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBreGlobalResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBreGlobalResource), response.Headers);
+            return (PageResourceBreGlobalResource) ApiClient.Deserialize(response.Content, typeof(PageResourceBreGlobalResource), response.Headers);
         }
     
         /// <summary>
@@ -250,8 +250,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the global definition</param> 
         /// <param name="breGlobalResource">The BRE global resource object</param> 
-        /// <returns>ModelBreGlobalResource</returns>            
-        public ModelBreGlobalResource UpdateBREGlobal (string id, ModelBreGlobalResource breGlobalResource)
+        /// <returns>BreGlobalResource</returns>            
+        public BreGlobalResource UpdateBREGlobal (string id, BreGlobalResource breGlobalResource)
         {
             
             // verify the required parameter 'id' is set
@@ -281,7 +281,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBREGlobal: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreGlobalResource) ApiClient.Deserialize(response.Content, typeof(ModelBreGlobalResource), response.Headers);
+            return (BreGlobalResource) ApiClient.Deserialize(response.Content, typeof(BreGlobalResource), response.Headers);
         }
     
     }

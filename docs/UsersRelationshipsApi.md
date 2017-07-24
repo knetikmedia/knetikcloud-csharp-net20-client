@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createuserrelationship"></a>
 # **CreateUserRelationship**
-> ModelUserRelationshipResource CreateUserRelationship (ModelUserRelationshipResource relationship)
+> UserRelationshipResource CreateUserRelationship (UserRelationshipResource relationship)
 
 Create a user relationship
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersRelationshipsApi();
-            var relationship = new ModelUserRelationshipResource(); // ModelUserRelationshipResource | The new relationship (optional) 
+            var relationship = new UserRelationshipResource(); // UserRelationshipResource | The new relationship (optional) 
 
             try
             {
                 // Create a user relationship
-                ModelUserRelationshipResource result = apiInstance.CreateUserRelationship(relationship);
+                UserRelationshipResource result = apiInstance.CreateUserRelationship(relationship);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **relationship** | [**ModelUserRelationshipResource**](ModelUserRelationshipResource.md)| The new relationship | [optional] 
+ **relationship** | [**UserRelationshipResource**](UserRelationshipResource.md)| The new relationship | [optional] 
 
 ### Return type
 
-[**ModelUserRelationshipResource**](ModelUserRelationshipResource.md)
+[**UserRelationshipResource**](UserRelationshipResource.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getuserrelationship"></a>
 # **GetUserRelationship**
-> ModelUserRelationshipResource GetUserRelationship (long? id)
+> UserRelationshipResource GetUserRelationship (long? id)
 
 Get a user relationship
 
@@ -166,7 +166,7 @@ namespace Example
             try
             {
                 // Get a user relationship
-                ModelUserRelationshipResource result = apiInstance.GetUserRelationship(id);
+                UserRelationshipResource result = apiInstance.GetUserRelationship(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserRelationshipResource**](ModelUserRelationshipResource.md)
+[**UserRelationshipResource**](UserRelationshipResource.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserrelationships"></a>
 # **GetUserRelationships**
-> ModelPageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order)
+> PageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order)
 
 Get a list of user relationships
 
@@ -231,7 +231,7 @@ namespace Example
             try
             {
                 // Get a list of user relationships
-                ModelPageResourceUserRelationshipResource result = apiInstance.GetUserRelationships(size, page, order);
+                PageResourceUserRelationshipResource result = apiInstance.GetUserRelationships(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserRelationshipResource**](ModelPageResourceUserRelationshipResource.md)
+[**PageResourceUserRelationshipResource**](PageResourceUserRelationshipResource.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 <a name="updateuserrelationship"></a>
 # **UpdateUserRelationship**
-> ModelUserRelationshipResource UpdateUserRelationship (long? id, ModelUserRelationshipResource relationship)
+> UserRelationshipResource UpdateUserRelationship (long? id, UserRelationshipResource relationship)
 
 Update a user relationship
 
@@ -292,12 +292,12 @@ namespace Example
 
             var apiInstance = new UsersRelationshipsApi();
             var id = 789;  // long? | The id of the relationship
-            var relationship = new ModelUserRelationshipResource(); // ModelUserRelationshipResource | The new relationship (optional) 
+            var relationship = new UserRelationshipResource(); // UserRelationshipResource | The new relationship (optional) 
 
             try
             {
                 // Update a user relationship
-                ModelUserRelationshipResource result = apiInstance.UpdateUserRelationship(id, relationship);
+                UserRelationshipResource result = apiInstance.UpdateUserRelationship(id, relationship);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -314,11 +314,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The id of the relationship | 
- **relationship** | [**ModelUserRelationshipResource**](ModelUserRelationshipResource.md)| The new relationship | [optional] 
+ **relationship** | [**UserRelationshipResource**](UserRelationshipResource.md)| The new relationship | [optional] 
 
 ### Return type
 
-[**ModelUserRelationshipResource**](ModelUserRelationshipResource.md)
+[**UserRelationshipResource**](UserRelationshipResource.md)
 
 ### Authorization
 

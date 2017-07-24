@@ -1,11 +1,11 @@
-# com.knetikcloud.Model.ModelEventContextResource
+# com.knetikcloud.Model.EventContextResource
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EventName** | **string** |  | [optional] [default to null]
-**Parameters** | [**Dictionary&lt;String, ModelExpressionResource&gt;**](ModelExpressionResource.md) |  | [optional] [default to null]
-**Type** | **string** |  | [optional] [default to null]
+**EventName** | **string** |  | [optional] 
+**Parameters** | [**Dictionary&lt;string, ExpressionResource&gt;**](ExpressionResource.md) |  | [optional] 
+**Type** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

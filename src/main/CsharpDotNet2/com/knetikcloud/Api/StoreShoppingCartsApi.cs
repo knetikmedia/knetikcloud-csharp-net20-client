@@ -17,21 +17,21 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param>
         /// <param name="customDiscount">The details of the discount to add</param>
         /// <returns></returns>
-        void AddCustomDiscount (string id, ModelCouponDefinition customDiscount);
+        void AddCustomDiscount (string id, CouponDefinition customDiscount);
         /// <summary>
         /// Adds a discount coupon to the cart 
         /// </summary>
         /// <param name="id">The id of the cart</param>
         /// <param name="skuRequest">The request of the sku</param>
         /// <returns></returns>
-        void AddDiscountToCart (string id, ModelSkuRequest skuRequest);
+        void AddDiscountToCart (string id, SkuRequest skuRequest);
         /// <summary>
         /// Add an item to the cart Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
         /// </summary>
         /// <param name="id">The id of the cart</param>
         /// <param name="cartItemRequest">The cart item request object</param>
         /// <returns></returns>
-        void AddItemToCart (string id, ModelCartItemRequest cartItemRequest);
+        void AddItemToCart (string id, CartItemRequest cartItemRequest);
         /// <summary>
         /// Create a cart You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
         /// </summary>
@@ -43,8 +43,8 @@ namespace com.knetikcloud.Api
         /// Returns the cart with the given GUID 
         /// </summary>
         /// <param name="id">The id of the cart</param>
-        /// <returns>ModelCart</returns>
-        ModelCart GetCart (string id);
+        /// <returns>Cart</returns>
+        Cart GetCart (string id);
         /// <summary>
         /// Get a list of carts 
         /// </summary>
@@ -52,20 +52,20 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCartSummary</returns>
-        ModelPageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order);
+        /// <returns>PageResourceCartSummary</returns>
+        PageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order);
         /// <summary>
         /// Returns whether a cart requires shipping 
         /// </summary>
         /// <param name="id">The id of the cart</param>
-        /// <returns>ModelCartShippableResponse</returns>
-        ModelCartShippableResponse GetShippable (string id);
+        /// <returns>CartShippableResponse</returns>
+        CartShippableResponse GetShippable (string id);
         /// <summary>
         /// Get the list of available shipping countries per vendor Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
         /// </summary>
         /// <param name="id">The id of the cart</param>
-        /// <returns>ModelSampleCountriesResponse</returns>
-        ModelSampleCountriesResponse GetShippingCountries (string id);
+        /// <returns>SampleCountriesResponse</returns>
+        SampleCountriesResponse GetShippingCountries (string id);
         /// <summary>
         /// Removes a discount coupon from the cart 
         /// </summary>
@@ -93,14 +93,14 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param>
         /// <param name="cartItemRequest">The cart item request object</param>
         /// <returns></returns>
-        void UpdateItemInCart (string id, ModelCartItemRequest cartItemRequest);
+        void UpdateItemInCart (string id, CartItemRequest cartItemRequest);
         /// <summary>
         /// Modifies or sets the order shipping address 
         /// </summary>
         /// <param name="id">The id of the cart</param>
         /// <param name="cartShippingAddressRequest">The cart shipping address request object</param>
         /// <returns></returns>
-        void UpdateShippingAddress (string id, ModelCartShippingAddressRequest cartShippingAddressRequest);
+        void UpdateShippingAddress (string id, CartShippingAddressRequest cartShippingAddressRequest);
     }
   
     /// <summary>
@@ -162,7 +162,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param> 
         /// <param name="customDiscount">The details of the discount to add</param> 
         /// <returns></returns>            
-        public void AddCustomDiscount (string id, ModelCouponDefinition customDiscount)
+        public void AddCustomDiscount (string id, CouponDefinition customDiscount)
         {
             
             // verify the required parameter 'id' is set
@@ -201,7 +201,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param> 
         /// <param name="skuRequest">The request of the sku</param> 
         /// <returns></returns>            
-        public void AddDiscountToCart (string id, ModelSkuRequest skuRequest)
+        public void AddDiscountToCart (string id, SkuRequest skuRequest)
         {
             
             // verify the required parameter 'id' is set
@@ -240,7 +240,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param> 
         /// <param name="cartItemRequest">The cart item request object</param> 
         /// <returns></returns>            
-        public void AddItemToCart (string id, ModelCartItemRequest cartItemRequest)
+        public void AddItemToCart (string id, CartItemRequest cartItemRequest)
         {
             
             // verify the required parameter 'id' is set
@@ -313,8 +313,8 @@ namespace com.knetikcloud.Api
         /// Returns the cart with the given GUID 
         /// </summary>
         /// <param name="id">The id of the cart</param> 
-        /// <returns>ModelCart</returns>            
-        public ModelCart GetCart (string id)
+        /// <returns>Cart</returns>            
+        public Cart GetCart (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -343,7 +343,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCart: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCart) ApiClient.Deserialize(response.Content, typeof(ModelCart), response.Headers);
+            return (Cart) ApiClient.Deserialize(response.Content, typeof(Cart), response.Headers);
         }
     
         /// <summary>
@@ -353,8 +353,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCartSummary</returns>            
-        public ModelPageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order)
+        /// <returns>PageResourceCartSummary</returns>            
+        public PageResourceCartSummary GetCarts (int? filterOwnerId, int? size, int? page, string order)
         {
             
     
@@ -383,15 +383,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCarts: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCartSummary) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCartSummary), response.Headers);
+            return (PageResourceCartSummary) ApiClient.Deserialize(response.Content, typeof(PageResourceCartSummary), response.Headers);
         }
     
         /// <summary>
         /// Returns whether a cart requires shipping 
         /// </summary>
         /// <param name="id">The id of the cart</param> 
-        /// <returns>ModelCartShippableResponse</returns>            
-        public ModelCartShippableResponse GetShippable (string id)
+        /// <returns>CartShippableResponse</returns>            
+        public CartShippableResponse GetShippable (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -420,15 +420,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetShippable: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCartShippableResponse) ApiClient.Deserialize(response.Content, typeof(ModelCartShippableResponse), response.Headers);
+            return (CartShippableResponse) ApiClient.Deserialize(response.Content, typeof(CartShippableResponse), response.Headers);
         }
     
         /// <summary>
         /// Get the list of available shipping countries per vendor Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
         /// </summary>
         /// <param name="id">The id of the cart</param> 
-        /// <returns>ModelSampleCountriesResponse</returns>            
-        public ModelSampleCountriesResponse GetShippingCountries (string id)
+        /// <returns>SampleCountriesResponse</returns>            
+        public SampleCountriesResponse GetShippingCountries (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -457,7 +457,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetShippingCountries: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSampleCountriesResponse) ApiClient.Deserialize(response.Content, typeof(ModelSampleCountriesResponse), response.Headers);
+            return (SampleCountriesResponse) ApiClient.Deserialize(response.Content, typeof(SampleCountriesResponse), response.Headers);
         }
     
         /// <summary>
@@ -586,7 +586,7 @@ path = path.Replace("{" + "code" + "}", ApiClient.ParameterToString(code));
         /// <param name="id">The id of the cart</param> 
         /// <param name="cartItemRequest">The cart item request object</param> 
         /// <returns></returns>            
-        public void UpdateItemInCart (string id, ModelCartItemRequest cartItemRequest)
+        public void UpdateItemInCart (string id, CartItemRequest cartItemRequest)
         {
             
             // verify the required parameter 'id' is set
@@ -625,7 +625,7 @@ path = path.Replace("{" + "code" + "}", ApiClient.ParameterToString(code));
         /// <param name="id">The id of the cart</param> 
         /// <param name="cartShippingAddressRequest">The cart shipping address request object</param> 
         /// <returns></returns>            
-        public void UpdateShippingAddress (string id, ModelCartShippingAddressRequest cartShippingAddressRequest)
+        public void UpdateShippingAddress (string id, CartShippingAddressRequest cartShippingAddressRequest)
         {
             
             // verify the required parameter 'id' is set

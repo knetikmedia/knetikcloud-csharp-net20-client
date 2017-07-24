@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getuserregistrations"></a>
 # **GetUserRegistrations**
-> ModelPageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page)
+> PageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page)
 
 Get user registration info
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Get user registration info
-                ModelPageResourceAggregateCountResource result = apiInstance.GetUserRegistrations(granularity, startDate, endDate, size, page);
+                PageResourceAggregateCountResource result = apiInstance.GetUserRegistrations(granularity, startDate, endDate, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceAggregateCountResource**](ModelPageResourceAggregateCountResource.md)
+[**PageResourceAggregateCountResource**](PageResourceAggregateCountResource.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="adddisposition"></a>
 # **AddDisposition**
-> ModelDispositionResource AddDisposition (ModelDispositionResource disposition)
+> DispositionResource AddDisposition (DispositionResource disposition)
 
 Add a new disposition
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DispositionsApi();
-            var disposition = new ModelDispositionResource(); // ModelDispositionResource | The new disposition record (optional) 
+            var disposition = new DispositionResource(); // DispositionResource | The new disposition record (optional) 
 
             try
             {
                 // Add a new disposition
-                ModelDispositionResource result = apiInstance.AddDisposition(disposition);
+                DispositionResource result = apiInstance.AddDisposition(disposition);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **disposition** | [**ModelDispositionResource**](ModelDispositionResource.md)| The new disposition record | [optional] 
+ **disposition** | [**DispositionResource**](DispositionResource.md)| The new disposition record | [optional] 
 
 ### Return type
 
-[**ModelDispositionResource**](ModelDispositionResource.md)
+[**DispositionResource**](DispositionResource.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getdisposition"></a>
 # **GetDisposition**
-> ModelDispositionResource GetDisposition (long? id)
+> DispositionResource GetDisposition (long? id)
 
 Returns a disposition
 
@@ -163,7 +163,7 @@ namespace Example
             try
             {
                 // Returns a disposition
-                ModelDispositionResource result = apiInstance.GetDisposition(id);
+                DispositionResource result = apiInstance.GetDisposition(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelDispositionResource**](ModelDispositionResource.md)
+[**DispositionResource**](DispositionResource.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="getdispositioncounts"></a>
 # **GetDispositionCounts**
-> List<ModelDispositionCount> GetDispositionCounts (string filterContext, string filterOwner)
+> List<DispositionCount> GetDispositionCounts (string filterContext, string filterOwner)
 
 Returns a list of disposition counts
 
@@ -224,7 +224,7 @@ namespace Example
             try
             {
                 // Returns a list of disposition counts
-                List&lt;ModelDispositionCount&gt; result = apiInstance.GetDispositionCounts(filterContext, filterOwner);
+                List&lt;DispositionCount&gt; result = apiInstance.GetDispositionCounts(filterContext, filterOwner);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelDispositionCount>**](ModelDispositionCount.md)
+[**List<DispositionCount>**](DispositionCount.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ No authorization required
 
 <a name="getdispositions"></a>
 # **GetDispositions**
-> ModelPageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order)
+> PageResourceDispositionResource GetDispositions (string filterContext, string filterOwner, int? size, int? page, string order)
 
 Returns a page of dispositions
 
@@ -289,7 +289,7 @@ namespace Example
             try
             {
                 // Returns a page of dispositions
-                ModelPageResourceDispositionResource result = apiInstance.GetDispositions(filterContext, filterOwner, size, page, order);
+                PageResourceDispositionResource result = apiInstance.GetDispositions(filterContext, filterOwner, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceDispositionResource**](ModelPageResourceDispositionResource.md)
+[**PageResourceDispositionResource**](PageResourceDispositionResource.md)
 
 ### Authorization
 

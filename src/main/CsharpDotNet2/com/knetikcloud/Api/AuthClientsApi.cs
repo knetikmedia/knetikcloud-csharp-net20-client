@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a new client 
         /// </summary>
         /// <param name="clientResource">The client resource object</param>
-        /// <returns>ModelClientResource</returns>
-        ModelClientResource CreateClient (ModelClientResource clientResource);
+        /// <returns>ClientResource</returns>
+        ClientResource CreateClient (ClientResource clientResource);
         /// <summary>
         /// Delete a client 
         /// </summary>
@@ -27,21 +27,21 @@ namespace com.knetikcloud.Api
         /// Get a single client 
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
-        /// <returns>ModelClientResource</returns>
-        ModelClientResource GetClient (string clientKey);
+        /// <returns>ClientResource</returns>
+        ClientResource GetClient (string clientKey);
         /// <summary>
         /// List available client grant types 
         /// </summary>
-        /// <returns>List&lt;ModelGrantTypeResource&gt;</returns>
-        List<ModelGrantTypeResource> GetClientGrantTypes ();
+        /// <returns>List&lt;GrantTypeResource&gt;</returns>
+        List<GrantTypeResource> GetClientGrantTypes ();
         /// <summary>
         /// List and search clients 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceClientResource</returns>
-        ModelPageResourceClientResource GetClients (int? size, int? page, string order);
+        /// <returns>PageResourceClientResource</returns>
+        PageResourceClientResource GetClients (int? size, int? page, string order);
         /// <summary>
         /// Set grant types for a client 
         /// </summary>
@@ -61,8 +61,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <param name="clientResource">The client resource object</param>
-        /// <returns>ModelClientResource</returns>
-        ModelClientResource UpdateClient (string clientKey, ModelClientResource clientResource);
+        /// <returns>ClientResource</returns>
+        ClientResource UpdateClient (string clientKey, ClientResource clientResource);
     }
   
     /// <summary>
@@ -122,8 +122,8 @@ namespace com.knetikcloud.Api
         /// Create a new client 
         /// </summary>
         /// <param name="clientResource">The client resource object</param> 
-        /// <returns>ModelClientResource</returns>            
-        public ModelClientResource CreateClient (ModelClientResource clientResource)
+        /// <returns>ClientResource</returns>            
+        public ClientResource CreateClient (ClientResource clientResource)
         {
             
     
@@ -149,7 +149,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateClient: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelClientResource) ApiClient.Deserialize(response.Content, typeof(ModelClientResource), response.Headers);
+            return (ClientResource) ApiClient.Deserialize(response.Content, typeof(ClientResource), response.Headers);
         }
     
         /// <summary>
@@ -193,8 +193,8 @@ namespace com.knetikcloud.Api
         /// Get a single client 
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
-        /// <returns>ModelClientResource</returns>            
-        public ModelClientResource GetClient (string clientKey)
+        /// <returns>ClientResource</returns>            
+        public ClientResource GetClient (string clientKey)
         {
             
             // verify the required parameter 'clientKey' is set
@@ -223,14 +223,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetClient: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelClientResource) ApiClient.Deserialize(response.Content, typeof(ModelClientResource), response.Headers);
+            return (ClientResource) ApiClient.Deserialize(response.Content, typeof(ClientResource), response.Headers);
         }
     
         /// <summary>
         /// List available client grant types 
         /// </summary>
-        /// <returns>List&lt;ModelGrantTypeResource&gt;</returns>            
-        public List<ModelGrantTypeResource> GetClientGrantTypes ()
+        /// <returns>List&lt;GrantTypeResource&gt;</returns>            
+        public List<GrantTypeResource> GetClientGrantTypes ()
         {
             
     
@@ -255,7 +255,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetClientGrantTypes: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelGrantTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelGrantTypeResource>), response.Headers);
+            return (List<GrantTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<GrantTypeResource>), response.Headers);
         }
     
         /// <summary>
@@ -264,8 +264,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceClientResource</returns>            
-        public ModelPageResourceClientResource GetClients (int? size, int? page, string order)
+        /// <returns>PageResourceClientResource</returns>            
+        public PageResourceClientResource GetClients (int? size, int? page, string order)
         {
             
     
@@ -293,7 +293,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetClients: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceClientResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceClientResource), response.Headers);
+            return (PageResourceClientResource) ApiClient.Deserialize(response.Content, typeof(PageResourceClientResource), response.Headers);
         }
     
         /// <summary>
@@ -379,8 +379,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <param name="clientResource">The client resource object</param> 
-        /// <returns>ModelClientResource</returns>            
-        public ModelClientResource UpdateClient (string clientKey, ModelClientResource clientResource)
+        /// <returns>ClientResource</returns>            
+        public ClientResource UpdateClient (string clientKey, ClientResource clientResource)
         {
             
             // verify the required parameter 'clientKey' is set
@@ -410,7 +410,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateClient: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelClientResource) ApiClient.Deserialize(response.Content, typeof(ModelClientResource), response.Headers);
+            return (ClientResource) ApiClient.Deserialize(response.Content, typeof(ClientResource), response.Headers);
         }
     
     }

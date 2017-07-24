@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="createsubscription"></a>
 # **CreateSubscription**
-> ModelSubscriptionResource CreateSubscription (ModelSubscriptionResource subscriptionResource)
+> SubscriptionResource CreateSubscription (SubscriptionResource subscriptionResource)
 
 Creates a subscription item and associated plans
 
@@ -42,12 +42,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreSubscriptionsApi();
-            var subscriptionResource = new ModelSubscriptionResource(); // ModelSubscriptionResource | The subscription to be created (optional) 
+            var subscriptionResource = new SubscriptionResource(); // SubscriptionResource | The subscription to be created (optional) 
 
             try
             {
                 // Creates a subscription item and associated plans
-                ModelSubscriptionResource result = apiInstance.CreateSubscription(subscriptionResource);
+                SubscriptionResource result = apiInstance.CreateSubscription(subscriptionResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,11 +63,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionResource** | [**ModelSubscriptionResource**](ModelSubscriptionResource.md)| The subscription to be created | [optional] 
+ **subscriptionResource** | [**SubscriptionResource**](SubscriptionResource.md)| The subscription to be created | [optional] 
 
 ### Return type
 
-[**ModelSubscriptionResource**](ModelSubscriptionResource.md)
+[**SubscriptionResource**](SubscriptionResource.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="createsubscriptiontemplate"></a>
 # **CreateSubscriptionTemplate**
-> ModelSubscriptionTemplateResource CreateSubscriptionTemplate (ModelSubscriptionTemplateResource subscriptionTemplateResource)
+> SubscriptionTemplateResource CreateSubscriptionTemplate (SubscriptionTemplateResource subscriptionTemplateResource)
 
 Create a subscription template
 
@@ -107,12 +107,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreSubscriptionsApi();
-            var subscriptionTemplateResource = new ModelSubscriptionTemplateResource(); // ModelSubscriptionTemplateResource | The new subscription template (optional) 
+            var subscriptionTemplateResource = new SubscriptionTemplateResource(); // SubscriptionTemplateResource | The new subscription template (optional) 
 
             try
             {
                 // Create a subscription template
-                ModelSubscriptionTemplateResource result = apiInstance.CreateSubscriptionTemplate(subscriptionTemplateResource);
+                SubscriptionTemplateResource result = apiInstance.CreateSubscriptionTemplate(subscriptionTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,11 +128,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionTemplateResource** | [**ModelSubscriptionTemplateResource**](ModelSubscriptionTemplateResource.md)| The new subscription template | [optional] 
+ **subscriptionTemplateResource** | [**SubscriptionTemplateResource**](SubscriptionTemplateResource.md)| The new subscription template | [optional] 
 
 ### Return type
 
-[**ModelSubscriptionTemplateResource**](ModelSubscriptionTemplateResource.md)
+[**SubscriptionTemplateResource**](SubscriptionTemplateResource.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ void (empty response body)
 
 <a name="getsubscription"></a>
 # **GetSubscription**
-> ModelSubscriptionResource GetSubscription (int? id)
+> SubscriptionResource GetSubscription (int? id)
 
 Retrieve a single subscription item and associated plans
 
@@ -302,7 +302,7 @@ namespace Example
             try
             {
                 // Retrieve a single subscription item and associated plans
-                ModelSubscriptionResource result = apiInstance.GetSubscription(id);
+                SubscriptionResource result = apiInstance.GetSubscription(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelSubscriptionResource**](ModelSubscriptionResource.md)
+[**SubscriptionResource**](SubscriptionResource.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ No authorization required
 
 <a name="getsubscriptiontemplate"></a>
 # **GetSubscriptionTemplate**
-> ModelSubscriptionTemplateResource GetSubscriptionTemplate (string id)
+> SubscriptionTemplateResource GetSubscriptionTemplate (string id)
 
 Get a single subscription template
 
@@ -367,7 +367,7 @@ namespace Example
             try
             {
                 // Get a single subscription template
-                ModelSubscriptionTemplateResource result = apiInstance.GetSubscriptionTemplate(id);
+                SubscriptionTemplateResource result = apiInstance.GetSubscriptionTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelSubscriptionTemplateResource**](ModelSubscriptionTemplateResource.md)
+[**SubscriptionTemplateResource**](SubscriptionTemplateResource.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 <a name="getsubscriptiontemplates"></a>
 # **GetSubscriptionTemplates**
-> ModelPageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order)
+> PageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order)
 
 List and search subscription templates
 
@@ -432,7 +432,7 @@ namespace Example
             try
             {
                 // List and search subscription templates
-                ModelPageResourceSubscriptionTemplateResource result = apiInstance.GetSubscriptionTemplates(size, page, order);
+                PageResourceSubscriptionTemplateResource result = apiInstance.GetSubscriptionTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSubscriptionTemplateResource**](ModelPageResourceSubscriptionTemplateResource.md)
+[**PageResourceSubscriptionTemplateResource**](PageResourceSubscriptionTemplateResource.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 <a name="getsubscriptions"></a>
 # **GetSubscriptions**
-> ModelPageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order)
+> PageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order)
 
 List available subscription items and associated plans
 
@@ -496,7 +496,7 @@ namespace Example
             try
             {
                 // List available subscription items and associated plans
-                ModelPageResourceSubscriptionResource result = apiInstance.GetSubscriptions(size, page, order);
+                PageResourceSubscriptionResource result = apiInstance.GetSubscriptions(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSubscriptionResource**](ModelPageResourceSubscriptionResource.md)
+[**PageResourceSubscriptionResource**](PageResourceSubscriptionResource.md)
 
 ### Authorization
 
@@ -591,7 +591,7 @@ void (empty response body)
 
 <a name="updatesubscription"></a>
 # **UpdateSubscription**
-> void UpdateSubscription (int? id, ModelSubscriptionResource subscriptionResource)
+> void UpdateSubscription (int? id, SubscriptionResource subscriptionResource)
 
 Updates a subscription item and associated plans
 
@@ -617,7 +617,7 @@ namespace Example
 
             var apiInstance = new StoreSubscriptionsApi();
             var id = 56;  // int? | The id of the subscription
-            var subscriptionResource = new ModelSubscriptionResource(); // ModelSubscriptionResource | The subscription resource object (optional) 
+            var subscriptionResource = new SubscriptionResource(); // SubscriptionResource | The subscription resource object (optional) 
 
             try
             {
@@ -638,7 +638,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the subscription | 
- **subscriptionResource** | [**ModelSubscriptionResource**](ModelSubscriptionResource.md)| The subscription resource object | [optional] 
+ **subscriptionResource** | [**SubscriptionResource**](SubscriptionResource.md)| The subscription resource object | [optional] 
 
 ### Return type
 
@@ -657,7 +657,7 @@ void (empty response body)
 
 <a name="updatesubscriptiontemplate"></a>
 # **UpdateSubscriptionTemplate**
-> ModelSubscriptionTemplateResource UpdateSubscriptionTemplate (string id, ModelSubscriptionTemplateResource subscriptionTemplateResource)
+> SubscriptionTemplateResource UpdateSubscriptionTemplate (string id, SubscriptionTemplateResource subscriptionTemplateResource)
 
 Update a subscription template
 
@@ -681,12 +681,12 @@ namespace Example
 
             var apiInstance = new StoreSubscriptionsApi();
             var id = id_example;  // string | The id of the template
-            var subscriptionTemplateResource = new ModelSubscriptionTemplateResource(); // ModelSubscriptionTemplateResource | The subscription template resource object (optional) 
+            var subscriptionTemplateResource = new SubscriptionTemplateResource(); // SubscriptionTemplateResource | The subscription template resource object (optional) 
 
             try
             {
                 // Update a subscription template
-                ModelSubscriptionTemplateResource result = apiInstance.UpdateSubscriptionTemplate(id, subscriptionTemplateResource);
+                SubscriptionTemplateResource result = apiInstance.UpdateSubscriptionTemplate(id, subscriptionTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -703,11 +703,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **subscriptionTemplateResource** | [**ModelSubscriptionTemplateResource**](ModelSubscriptionTemplateResource.md)| The subscription template resource object | [optional] 
+ **subscriptionTemplateResource** | [**SubscriptionTemplateResource**](SubscriptionTemplateResource.md)| The subscription template resource object | [optional] 
 
 ### Return type
 
-[**ModelSubscriptionTemplateResource**](ModelSubscriptionTemplateResource.md)
+[**SubscriptionTemplateResource**](SubscriptionTemplateResource.md)
 
 ### Authorization
 

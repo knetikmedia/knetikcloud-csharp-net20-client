@@ -1,4 +1,4 @@
-# com.knetikcloud.Model.ModelExpressionobject
+# com.knetikcloud.Model.Expressionobject
 ## Properties
 
 Name | Type | Description | Notes

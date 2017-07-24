@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Add a new comment 
         /// </summary>
         /// <param name="commentResource">The comment to be added</param>
-        /// <returns>ModelCommentResource</returns>
-        ModelCommentResource AddComment (ModelCommentResource commentResource);
+        /// <returns>CommentResource</returns>
+        CommentResource AddComment (CommentResource commentResource);
         /// <summary>
         /// Delete a comment 
         /// </summary>
@@ -27,8 +27,8 @@ namespace com.knetikcloud.Api
         /// Return a comment 
         /// </summary>
         /// <param name="id">The comment id</param>
-        /// <returns>ModelCommentResource</returns>
-        ModelCommentResource GetComment (long? id);
+        /// <returns>CommentResource</returns>
+        CommentResource GetComment (long? id);
         /// <summary>
         /// Returns a page of comments 
         /// </summary>
@@ -36,16 +36,16 @@ namespace com.knetikcloud.Api
         /// <param name="contextId">Get comments by context id</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceCommentResource</returns>
-        ModelPageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page);
+        /// <returns>PageResourceCommentResource</returns>
+        PageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page);
         /// <summary>
         /// Search the comment index The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
         /// </summary>
         /// <param name="query">The search query</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelCommentSearch</returns>
-        ModelCommentSearch SearchComments (Object query, int? size, int? page);
+        /// <returns>CommentSearch</returns>
+        CommentSearch SearchComments (Object query, int? size, int? page);
         /// <summary>
         /// Update a comment 
         /// </summary>
@@ -112,8 +112,8 @@ namespace com.knetikcloud.Api
         /// Add a new comment 
         /// </summary>
         /// <param name="commentResource">The comment to be added</param> 
-        /// <returns>ModelCommentResource</returns>            
-        public ModelCommentResource AddComment (ModelCommentResource commentResource)
+        /// <returns>CommentResource</returns>            
+        public CommentResource AddComment (CommentResource commentResource)
         {
             
     
@@ -139,7 +139,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddComment: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCommentResource) ApiClient.Deserialize(response.Content, typeof(ModelCommentResource), response.Headers);
+            return (CommentResource) ApiClient.Deserialize(response.Content, typeof(CommentResource), response.Headers);
         }
     
         /// <summary>
@@ -183,8 +183,8 @@ namespace com.knetikcloud.Api
         /// Return a comment 
         /// </summary>
         /// <param name="id">The comment id</param> 
-        /// <returns>ModelCommentResource</returns>            
-        public ModelCommentResource GetComment (long? id)
+        /// <returns>CommentResource</returns>            
+        public CommentResource GetComment (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -213,7 +213,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetComment: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCommentResource) ApiClient.Deserialize(response.Content, typeof(ModelCommentResource), response.Headers);
+            return (CommentResource) ApiClient.Deserialize(response.Content, typeof(CommentResource), response.Headers);
         }
     
         /// <summary>
@@ -223,8 +223,8 @@ namespace com.knetikcloud.Api
         /// <param name="contextId">Get comments by context id</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceCommentResource</returns>            
-        public ModelPageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page)
+        /// <returns>PageResourceCommentResource</returns>            
+        public PageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page)
         {
             
             // verify the required parameter 'context' is set
@@ -259,7 +259,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetComments: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCommentResource), response.Headers);
+            return (PageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCommentResource), response.Headers);
         }
     
         /// <summary>
@@ -268,8 +268,8 @@ namespace com.knetikcloud.Api
         /// <param name="query">The search query</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelCommentSearch</returns>            
-        public ModelCommentSearch SearchComments (Object query, int? size, int? page)
+        /// <returns>CommentSearch</returns>            
+        public CommentSearch SearchComments (Object query, int? size, int? page)
         {
             
     
@@ -297,7 +297,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SearchComments: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCommentSearch) ApiClient.Deserialize(response.Content, typeof(ModelCommentSearch), response.Headers);
+            return (CommentSearch) ApiClient.Deserialize(response.Content, typeof(CommentSearch), response.Headers);
         }
     
         /// <summary>

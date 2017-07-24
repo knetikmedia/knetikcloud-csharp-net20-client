@@ -85,7 +85,7 @@ void (empty response body)
 
 <a name="createcampaign"></a>
 # **CreateCampaign**
-> ModelCampaignResource CreateCampaign (ModelCampaignResource campaignResource)
+> CampaignResource CreateCampaign (CampaignResource campaignResource)
 
 Create a campaign
 
@@ -108,12 +108,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsApi();
-            var campaignResource = new ModelCampaignResource(); // ModelCampaignResource | The campaign resource object (optional) 
+            var campaignResource = new CampaignResource(); // CampaignResource | The campaign resource object (optional) 
 
             try
             {
                 // Create a campaign
-                ModelCampaignResource result = apiInstance.CreateCampaign(campaignResource);
+                CampaignResource result = apiInstance.CreateCampaign(campaignResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -129,11 +129,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignResource** | [**ModelCampaignResource**](ModelCampaignResource.md)| The campaign resource object | [optional] 
+ **campaignResource** | [**CampaignResource**](CampaignResource.md)| The campaign resource object | [optional] 
 
 ### Return type
 
-[**ModelCampaignResource**](ModelCampaignResource.md)
+[**CampaignResource**](CampaignResource.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="createcampaigntemplate"></a>
 # **CreateCampaignTemplate**
-> ModelTemplateResource CreateCampaignTemplate (ModelTemplateResource campaignTemplateResource)
+> TemplateResource CreateCampaignTemplate (TemplateResource campaignTemplateResource)
 
 Create a campaign template
 
@@ -173,12 +173,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsApi();
-            var campaignTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The campaign template resource object (optional) 
+            var campaignTemplateResource = new TemplateResource(); // TemplateResource | The campaign template resource object (optional) 
 
             try
             {
                 // Create a campaign template
-                ModelTemplateResource result = apiInstance.CreateCampaignTemplate(campaignTemplateResource);
+                TemplateResource result = apiInstance.CreateCampaignTemplate(campaignTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -194,11 +194,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaignTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The campaign template resource object | [optional] 
+ **campaignTemplateResource** | [**TemplateResource**](TemplateResource.md)| The campaign template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ void (empty response body)
 
 <a name="getcampaign"></a>
 # **GetCampaign**
-> ModelCampaignResource GetCampaign (long? id)
+> CampaignResource GetCampaign (long? id)
 
 Returns a single campaign
 
@@ -366,7 +366,7 @@ namespace Example
             try
             {
                 // Returns a single campaign
-                ModelCampaignResource result = apiInstance.GetCampaign(id);
+                CampaignResource result = apiInstance.GetCampaign(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCampaignResource**](ModelCampaignResource.md)
+[**CampaignResource**](CampaignResource.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ No authorization required
 
 <a name="getcampaignchallenges"></a>
 # **GetCampaignChallenges**
-> ModelPageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order)
+> PageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order)
 
 List the challenges associated with a campaign
 
@@ -431,7 +431,7 @@ namespace Example
             try
             {
                 // List the challenges associated with a campaign
-                ModelPageResourceChallengeResource result = apiInstance.GetCampaignChallenges(id, filterStartDate, filterEndDate, size, page, order);
+                PageResourceChallengeResource result = apiInstance.GetCampaignChallenges(id, filterStartDate, filterEndDate, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceChallengeResource**](ModelPageResourceChallengeResource.md)
+[**PageResourceChallengeResource**](PageResourceChallengeResource.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ No authorization required
 
 <a name="getcampaigntemplate"></a>
 # **GetCampaignTemplate**
-> ModelTemplateResource GetCampaignTemplate (string id)
+> TemplateResource GetCampaignTemplate (string id)
 
 Get a single campaign template
 
@@ -499,7 +499,7 @@ namespace Example
             try
             {
                 // Get a single campaign template
-                ModelTemplateResource result = apiInstance.GetCampaignTemplate(id);
+                TemplateResource result = apiInstance.GetCampaignTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 <a name="getcampaigntemplates"></a>
 # **GetCampaignTemplates**
-> ModelPageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order)
 
 List and search campaign templates
 
@@ -564,7 +564,7 @@ namespace Example
             try
             {
                 // List and search campaign templates
-                ModelPageResourceTemplateResource result = apiInstance.GetCampaignTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetCampaignTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 <a name="getcampaigns"></a>
 # **GetCampaigns**
-> ModelPageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order)
+> PageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order)
 
 List and search campaigns
 
@@ -629,7 +629,7 @@ namespace Example
             try
             {
                 // List and search campaigns
-                ModelPageResourceCampaignResource result = apiInstance.GetCampaigns(filterActive, size, page, order);
+                PageResourceCampaignResource result = apiInstance.GetCampaigns(filterActive, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCampaignResource**](ModelPageResourceCampaignResource.md)
+[**PageResourceCampaignResource**](PageResourceCampaignResource.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ void (empty response body)
 
 <a name="updatecampaign"></a>
 # **UpdateCampaign**
-> ModelCampaignResource UpdateCampaign (long? id, ModelCampaignResource campaignResource)
+> CampaignResource UpdateCampaign (long? id, CampaignResource campaignResource)
 
 Update a campaign
 
@@ -755,12 +755,12 @@ namespace Example
 
             var apiInstance = new CampaignsApi();
             var id = 789;  // long? | The campaign id
-            var campaignResource = new ModelCampaignResource(); // ModelCampaignResource | The campaign resource object (optional) 
+            var campaignResource = new CampaignResource(); // CampaignResource | The campaign resource object (optional) 
 
             try
             {
                 // Update a campaign
-                ModelCampaignResource result = apiInstance.UpdateCampaign(id, campaignResource);
+                CampaignResource result = apiInstance.UpdateCampaign(id, campaignResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -777,11 +777,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The campaign id | 
- **campaignResource** | [**ModelCampaignResource**](ModelCampaignResource.md)| The campaign resource object | [optional] 
+ **campaignResource** | [**CampaignResource**](CampaignResource.md)| The campaign resource object | [optional] 
 
 ### Return type
 
-[**ModelCampaignResource**](ModelCampaignResource.md)
+[**CampaignResource**](CampaignResource.md)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ Name | Type | Description  | Notes
 
 <a name="updatecampaigntemplate"></a>
 # **UpdateCampaignTemplate**
-> ModelTemplateResource UpdateCampaignTemplate (string id, ModelTemplateResource campaignTemplateResource)
+> TemplateResource UpdateCampaignTemplate (string id, TemplateResource campaignTemplateResource)
 
 Update an campaign template
 
@@ -820,12 +820,12 @@ namespace Example
 
             var apiInstance = new CampaignsApi();
             var id = id_example;  // string | The id of the template
-            var campaignTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The campaign template resource object (optional) 
+            var campaignTemplateResource = new TemplateResource(); // TemplateResource | The campaign template resource object (optional) 
 
             try
             {
                 // Update an campaign template
-                ModelTemplateResource result = apiInstance.UpdateCampaignTemplate(id, campaignTemplateResource);
+                TemplateResource result = apiInstance.UpdateCampaignTemplate(id, campaignTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -842,11 +842,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **campaignTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The campaign template resource object | [optional] 
+ **campaignTemplateResource** | [**TemplateResource**](TemplateResource.md)| The campaign template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

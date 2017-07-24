@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createvendor"></a>
 # **CreateVendor**
-> ModelVendorResource CreateVendor (ModelVendorResource vendor)
+> VendorResource CreateVendor (VendorResource vendor)
 
 Create a vendor
 
@@ -41,12 +41,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreVendorsApi();
-            var vendor = new ModelVendorResource(); // ModelVendorResource | The vendor (optional) 
+            var vendor = new VendorResource(); // VendorResource | The vendor (optional) 
 
             try
             {
                 // Create a vendor
-                ModelVendorResource result = apiInstance.CreateVendor(vendor);
+                VendorResource result = apiInstance.CreateVendor(vendor);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,11 +62,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vendor** | [**ModelVendorResource**](ModelVendorResource.md)| The vendor | [optional] 
+ **vendor** | [**VendorResource**](VendorResource.md)| The vendor | [optional] 
 
 ### Return type
 
-[**ModelVendorResource**](ModelVendorResource.md)
+[**VendorResource**](VendorResource.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="createvendortemplate"></a>
 # **CreateVendorTemplate**
-> ModelItemTemplateResource CreateVendorTemplate (ModelItemTemplateResource vendorTemplateResource)
+> ItemTemplateResource CreateVendorTemplate (ItemTemplateResource vendorTemplateResource)
 
 Create a vendor template
 
@@ -106,12 +106,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreVendorsApi();
-            var vendorTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The new vendor template (optional) 
+            var vendorTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new vendor template (optional) 
 
             try
             {
                 // Create a vendor template
-                ModelItemTemplateResource result = apiInstance.CreateVendorTemplate(vendorTemplateResource);
+                ItemTemplateResource result = apiInstance.CreateVendorTemplate(vendorTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,11 +127,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vendorTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The new vendor template | [optional] 
+ **vendorTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The new vendor template | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ void (empty response body)
 
 <a name="getvendor"></a>
 # **GetVendor**
-> ModelVendorResource GetVendor (int? id)
+> VendorResource GetVendor (int? id)
 
 Get a single vendor
 
@@ -297,7 +297,7 @@ namespace Example
             try
             {
                 // Get a single vendor
-                ModelVendorResource result = apiInstance.GetVendor(id);
+                VendorResource result = apiInstance.GetVendor(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelVendorResource**](ModelVendorResource.md)
+[**VendorResource**](VendorResource.md)
 
 ### Authorization
 
@@ -332,7 +332,7 @@ No authorization required
 
 <a name="getvendortemplate"></a>
 # **GetVendorTemplate**
-> ModelItemTemplateResource GetVendorTemplate (string id)
+> ItemTemplateResource GetVendorTemplate (string id)
 
 Get a single vendor template
 
@@ -362,7 +362,7 @@ namespace Example
             try
             {
                 // Get a single vendor template
-                ModelItemTemplateResource result = apiInstance.GetVendorTemplate(id);
+                ItemTemplateResource result = apiInstance.GetVendorTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 <a name="getvendortemplates"></a>
 # **GetVendorTemplates**
-> ModelPageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order)
+> PageResourceItemTemplateResource GetVendorTemplates (int? size, int? page, string order)
 
 List and search vendor templates
 
@@ -427,7 +427,7 @@ namespace Example
             try
             {
                 // List and search vendor templates
-                ModelPageResourceItemTemplateResource result = apiInstance.GetVendorTemplates(size, page, order);
+                PageResourceItemTemplateResource result = apiInstance.GetVendorTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceItemTemplateResource**](ModelPageResourceItemTemplateResource.md)
+[**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
 
 ### Authorization
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 <a name="getvendors"></a>
 # **GetVendors**
-> ModelPageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order)
+> PageResourceVendorResource GetVendors (string filterName, int? size, int? page, string order)
 
 List and search vendors
 
@@ -492,7 +492,7 @@ namespace Example
             try
             {
                 // List and search vendors
-                ModelPageResourceVendorResource result = apiInstance.GetVendors(filterName, size, page, order);
+                PageResourceVendorResource result = apiInstance.GetVendors(filterName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceVendorResource**](ModelPageResourceVendorResource.md)
+[**PageResourceVendorResource**](PageResourceVendorResource.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ No authorization required
 
 <a name="updatevendor"></a>
 # **UpdateVendor**
-> ModelVendorResource UpdateVendor (int? id, ModelVendorResource vendor)
+> VendorResource UpdateVendor (int? id, VendorResource vendor)
 
 Update a vendor
 
@@ -554,12 +554,12 @@ namespace Example
 
             var apiInstance = new StoreVendorsApi();
             var id = 56;  // int? | The id of the vendor
-            var vendor = new ModelVendorResource(); // ModelVendorResource | The vendor (optional) 
+            var vendor = new VendorResource(); // VendorResource | The vendor (optional) 
 
             try
             {
                 // Update a vendor
-                ModelVendorResource result = apiInstance.UpdateVendor(id, vendor);
+                VendorResource result = apiInstance.UpdateVendor(id, vendor);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -576,11 +576,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the vendor | 
- **vendor** | [**ModelVendorResource**](ModelVendorResource.md)| The vendor | [optional] 
+ **vendor** | [**VendorResource**](VendorResource.md)| The vendor | [optional] 
 
 ### Return type
 
-[**ModelVendorResource**](ModelVendorResource.md)
+[**VendorResource**](VendorResource.md)
 
 ### Authorization
 
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 <a name="updatevendortemplate"></a>
 # **UpdateVendorTemplate**
-> ModelItemTemplateResource UpdateVendorTemplate (string id, ModelItemTemplateResource vendorTemplateResource)
+> ItemTemplateResource UpdateVendorTemplate (string id, ItemTemplateResource vendorTemplateResource)
 
 Update a vendor template
 
@@ -619,12 +619,12 @@ namespace Example
 
             var apiInstance = new StoreVendorsApi();
             var id = id_example;  // string | The id of the template
-            var vendorTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The vendor template resource object (optional) 
+            var vendorTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The vendor template resource object (optional) 
 
             try
             {
                 // Update a vendor template
-                ModelItemTemplateResource result = apiInstance.UpdateVendorTemplate(id, vendorTemplateResource);
+                ItemTemplateResource result = apiInstance.UpdateVendorTemplate(id, vendorTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -641,11 +641,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **vendorTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The vendor template resource object | [optional] 
+ **vendorTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The vendor template resource object | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 

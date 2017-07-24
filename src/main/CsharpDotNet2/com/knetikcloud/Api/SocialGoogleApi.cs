@@ -12,11 +12,11 @@ namespace com.knetikcloud.Api
     public interface ISocialGoogleApi
     {
         /// <summary>
-        /// Link facebook account Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
         /// </summary>
-        /// <param name="facebookToken">The token from facebook</param>
+        /// <param name="googleToken">The token from google</param>
         /// <returns></returns>
-        void LinkAccounts1 (ModelGoogleToken facebookToken);
+        void LinkAccounts1 (GoogleToken googleToken);
     }
   
     /// <summary>
@@ -73,11 +73,11 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Link facebook account Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
         /// </summary>
-        /// <param name="facebookToken">The token from facebook</param> 
+        /// <param name="googleToken">The token from google</param> 
         /// <returns></returns>            
-        public void LinkAccounts1 (ModelGoogleToken facebookToken)
+        public void LinkAccounts1 (GoogleToken googleToken)
         {
             
     
@@ -90,7 +90,7 @@ namespace com.knetikcloud.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                                                postBody = ApiClient.Serialize(facebookToken); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(googleToken); // http body (model) parameter
     
             // authentication setting, if any
             String[] authSettings = new String[] { "OAuth2" };

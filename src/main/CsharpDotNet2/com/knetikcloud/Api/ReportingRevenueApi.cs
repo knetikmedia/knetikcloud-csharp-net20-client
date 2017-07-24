@@ -17,16 +17,16 @@ namespace com.knetikcloud.Api
         /// <param name="currencyCode">The code for a currency to get sales data for</param>
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param>
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
-        /// <returns>ModelRevenueReportResource</returns>
-        ModelRevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate);
+        /// <returns>RevenueReportResource</returns>
+        RevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate);
         /// <summary>
         /// Get refund revenue info Get basic info about revenue loss from refunds (for all item types), summed up within a time range.
         /// </summary>
         /// <param name="currencyCode">The code for a currency to get refund data for</param>
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param>
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
-        /// <returns>ModelRevenueReportResource</returns>
-        ModelRevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate);
+        /// <returns>RevenueReportResource</returns>
+        RevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate);
         /// <summary>
         /// Get revenue info by country Get basic info about revenue from sales of all types, summed up within a time range and split out by country. Sorted for largest revenue at the top
         /// </summary>
@@ -35,8 +35,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceRevenueCountryReportResource</returns>
-        ModelPageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page);
+        /// <returns>PageResourceRevenueCountryReportResource</returns>
+        PageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page);
         /// <summary>
         /// Get revenue info by item Get basic info about revenue from sales of all types, summed up within a time range and split out by specific item. Sorted for largest revenue at the top
         /// </summary>
@@ -45,16 +45,16 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceRevenueProductReportResource</returns>
-        ModelPageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page);
+        /// <returns>PageResourceRevenueProductReportResource</returns>
+        PageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page);
         /// <summary>
         /// Get subscription revenue info Get basic info about revenue from sales of new subscriptions as well as recurring payemnts, summed up within a time range
         /// </summary>
         /// <param name="currencyCode">The code for a currency to get sales data for</param>
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param>
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
-        /// <returns>ModelRevenueReportResource</returns>
-        ModelRevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate);
+        /// <returns>RevenueReportResource</returns>
+        RevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate);
     }
   
     /// <summary>
@@ -116,8 +116,8 @@ namespace com.knetikcloud.Api
         /// <param name="currencyCode">The code for a currency to get sales data for</param> 
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param> 
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
-        /// <returns>ModelRevenueReportResource</returns>            
-        public ModelRevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate)
+        /// <returns>RevenueReportResource</returns>            
+        public RevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -148,7 +148,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetItemRevenue: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRevenueReportResource) ApiClient.Deserialize(response.Content, typeof(ModelRevenueReportResource), response.Headers);
+            return (RevenueReportResource) ApiClient.Deserialize(response.Content, typeof(RevenueReportResource), response.Headers);
         }
     
         /// <summary>
@@ -157,8 +157,8 @@ namespace com.knetikcloud.Api
         /// <param name="currencyCode">The code for a currency to get refund data for</param> 
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param> 
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
-        /// <returns>ModelRevenueReportResource</returns>            
-        public ModelRevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate)
+        /// <returns>RevenueReportResource</returns>            
+        public RevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -189,7 +189,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRefundRevenue: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRevenueReportResource) ApiClient.Deserialize(response.Content, typeof(ModelRevenueReportResource), response.Headers);
+            return (RevenueReportResource) ApiClient.Deserialize(response.Content, typeof(RevenueReportResource), response.Headers);
         }
     
         /// <summary>
@@ -200,8 +200,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceRevenueCountryReportResource</returns>            
-        public ModelPageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page)
+        /// <returns>PageResourceRevenueCountryReportResource</returns>            
+        public PageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -234,7 +234,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRevenueByCountry: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceRevenueCountryReportResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceRevenueCountryReportResource), response.Headers);
+            return (PageResourceRevenueCountryReportResource) ApiClient.Deserialize(response.Content, typeof(PageResourceRevenueCountryReportResource), response.Headers);
         }
     
         /// <summary>
@@ -245,8 +245,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceRevenueProductReportResource</returns>            
-        public ModelPageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page)
+        /// <returns>PageResourceRevenueProductReportResource</returns>            
+        public PageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -279,7 +279,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRevenueByItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceRevenueProductReportResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceRevenueProductReportResource), response.Headers);
+            return (PageResourceRevenueProductReportResource) ApiClient.Deserialize(response.Content, typeof(PageResourceRevenueProductReportResource), response.Headers);
         }
     
         /// <summary>
@@ -288,8 +288,8 @@ namespace com.knetikcloud.Api
         /// <param name="currencyCode">The code for a currency to get sales data for</param> 
         /// <param name="startDate">The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time</param> 
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
-        /// <returns>ModelRevenueReportResource</returns>            
-        public ModelRevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate)
+        /// <returns>RevenueReportResource</returns>            
+        public RevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -320,7 +320,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscriptionRevenue: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRevenueReportResource) ApiClient.Deserialize(response.Content, typeof(ModelRevenueReportResource), response.Headers);
+            return (RevenueReportResource) ApiClient.Deserialize(response.Content, typeof(RevenueReportResource), response.Headers);
         }
     
     }

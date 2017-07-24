@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createlevel"></a>
 # **CreateLevel**
-> ModelLevelingResource CreateLevel (ModelLevelingResource level)
+> LevelingResource CreateLevel (LevelingResource level)
 
 Create a level schema
 
@@ -41,12 +41,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationLevelingApi();
-            var level = new ModelLevelingResource(); // ModelLevelingResource | The level schema definition (optional) 
+            var level = new LevelingResource(); // LevelingResource | The level schema definition (optional) 
 
             try
             {
                 // Create a level schema
-                ModelLevelingResource result = apiInstance.CreateLevel(level);
+                LevelingResource result = apiInstance.CreateLevel(level);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,11 +62,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **level** | [**ModelLevelingResource**](ModelLevelingResource.md)| The level schema definition | [optional] 
+ **level** | [**LevelingResource**](LevelingResource.md)| The level schema definition | [optional] 
 
 ### Return type
 
-[**ModelLevelingResource**](ModelLevelingResource.md)
+[**LevelingResource**](LevelingResource.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ void (empty response body)
 
 <a name="getlevel"></a>
 # **GetLevel**
-> ModelLevelingResource GetLevel (string name)
+> LevelingResource GetLevel (string name)
 
 Retrieve a level
 
@@ -171,7 +171,7 @@ namespace Example
             try
             {
                 // Retrieve a level
-                ModelLevelingResource result = apiInstance.GetLevel(name);
+                LevelingResource result = apiInstance.GetLevel(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelLevelingResource**](ModelLevelingResource.md)
+[**LevelingResource**](LevelingResource.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 <a name="getleveltriggers"></a>
 # **GetLevelTriggers**
-> List<ModelBreTriggerResource> GetLevelTriggers ()
+> List<BreTriggerResource> GetLevelTriggers ()
 
 Get the list of triggers that can be used to trigger a leveling progress update
 
@@ -233,7 +233,7 @@ namespace Example
             try
             {
                 // Get the list of triggers that can be used to trigger a leveling progress update
-                List&lt;ModelBreTriggerResource&gt; result = apiInstance.GetLevelTriggers();
+                List&lt;BreTriggerResource&gt; result = apiInstance.GetLevelTriggers();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -250,7 +250,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelBreTriggerResource>**](ModelBreTriggerResource.md)
+[**List<BreTriggerResource>**](BreTriggerResource.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ This endpoint does not need any parameter.
 
 <a name="getlevels"></a>
 # **GetLevels**
-> ModelPageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order)
+> PageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order)
 
 List and search levels
 
@@ -298,7 +298,7 @@ namespace Example
             try
             {
                 // List and search levels
-                ModelPageResourceLevelingResource result = apiInstance.GetLevels(filterName, size, page, order);
+                PageResourceLevelingResource result = apiInstance.GetLevels(filterName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceLevelingResource**](ModelPageResourceLevelingResource.md)
+[**PageResourceLevelingResource**](PageResourceLevelingResource.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserlevel"></a>
 # **GetUserLevel**
-> ModelUserLevelingResource GetUserLevel (int? userId, string name)
+> UserLevelingResource GetUserLevel (int? userId, string name)
 
 Get a user's progress for a given level schema
 
@@ -365,7 +365,7 @@ namespace Example
             try
             {
                 // Get a user's progress for a given level schema
-                ModelUserLevelingResource result = apiInstance.GetUserLevel(userId, name);
+                UserLevelingResource result = apiInstance.GetUserLevel(userId, name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserLevelingResource**](ModelUserLevelingResource.md)
+[**UserLevelingResource**](UserLevelingResource.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserlevels"></a>
 # **GetUserLevels**
-> ModelPageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order)
+> PageResourceUserLevelingResource GetUserLevels (int? userId, string filterName, int? size, int? page, string order)
 
 Get a user's progress for all level schemas
 
@@ -435,7 +435,7 @@ namespace Example
             try
             {
                 // Get a user's progress for all level schemas
-                ModelPageResourceUserLevelingResource result = apiInstance.GetUserLevels(userId, filterName, size, page, order);
+                PageResourceUserLevelingResource result = apiInstance.GetUserLevels(userId, filterName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserLevelingResource**](ModelPageResourceUserLevelingResource.md)
+[**PageResourceUserLevelingResource**](PageResourceUserLevelingResource.md)
 
 ### Authorization
 
@@ -610,7 +610,7 @@ void (empty response body)
 
 <a name="updatelevel"></a>
 # **UpdateLevel**
-> ModelLevelingResource UpdateLevel (string name, ModelLevelingResource newLevel)
+> LevelingResource UpdateLevel (string name, LevelingResource newLevel)
 
 Update a level
 
@@ -634,12 +634,12 @@ namespace Example
 
             var apiInstance = new GamificationLevelingApi();
             var name = name_example;  // string | The level schema name
-            var newLevel = new ModelLevelingResource(); // ModelLevelingResource | The level schema definition (optional) 
+            var newLevel = new LevelingResource(); // LevelingResource | The level schema definition (optional) 
 
             try
             {
                 // Update a level
-                ModelLevelingResource result = apiInstance.UpdateLevel(name, newLevel);
+                LevelingResource result = apiInstance.UpdateLevel(name, newLevel);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -656,11 +656,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The level schema name | 
- **newLevel** | [**ModelLevelingResource**](ModelLevelingResource.md)| The level schema definition | [optional] 
+ **newLevel** | [**LevelingResource**](LevelingResource.md)| The level schema definition | [optional] 
 
 ### Return type
 
-[**ModelLevelingResource**](ModelLevelingResource.md)
+[**LevelingResource**](LevelingResource.md)
 
 ### Authorization
 

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a user relationship 
         /// </summary>
         /// <param name="relationship">The new relationship</param>
-        /// <returns>ModelUserRelationshipResource</returns>
-        ModelUserRelationshipResource CreateUserRelationship (ModelUserRelationshipResource relationship);
+        /// <returns>UserRelationshipResource</returns>
+        UserRelationshipResource CreateUserRelationship (UserRelationshipResource relationship);
         /// <summary>
         /// Delete a user relationship 
         /// </summary>
@@ -27,23 +27,23 @@ namespace com.knetikcloud.Api
         /// Get a user relationship 
         /// </summary>
         /// <param name="id">The id of the relationship</param>
-        /// <returns>ModelUserRelationshipResource</returns>
-        ModelUserRelationshipResource GetUserRelationship (long? id);
+        /// <returns>UserRelationshipResource</returns>
+        UserRelationshipResource GetUserRelationship (long? id);
         /// <summary>
         /// Get a list of user relationships 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceUserRelationshipResource</returns>
-        ModelPageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order);
+        /// <returns>PageResourceUserRelationshipResource</returns>
+        PageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order);
         /// <summary>
         /// Update a user relationship 
         /// </summary>
         /// <param name="id">The id of the relationship</param>
         /// <param name="relationship">The new relationship</param>
-        /// <returns>ModelUserRelationshipResource</returns>
-        ModelUserRelationshipResource UpdateUserRelationship (long? id, ModelUserRelationshipResource relationship);
+        /// <returns>UserRelationshipResource</returns>
+        UserRelationshipResource UpdateUserRelationship (long? id, UserRelationshipResource relationship);
     }
   
     /// <summary>
@@ -103,8 +103,8 @@ namespace com.knetikcloud.Api
         /// Create a user relationship 
         /// </summary>
         /// <param name="relationship">The new relationship</param> 
-        /// <returns>ModelUserRelationshipResource</returns>            
-        public ModelUserRelationshipResource CreateUserRelationship (ModelUserRelationshipResource relationship)
+        /// <returns>UserRelationshipResource</returns>            
+        public UserRelationshipResource CreateUserRelationship (UserRelationshipResource relationship)
         {
             
     
@@ -130,7 +130,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateUserRelationship: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelUserRelationshipResource), response.Headers);
+            return (UserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(UserRelationshipResource), response.Headers);
         }
     
         /// <summary>
@@ -174,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Get a user relationship 
         /// </summary>
         /// <param name="id">The id of the relationship</param> 
-        /// <returns>ModelUserRelationshipResource</returns>            
-        public ModelUserRelationshipResource GetUserRelationship (long? id)
+        /// <returns>UserRelationshipResource</returns>            
+        public UserRelationshipResource GetUserRelationship (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserRelationship: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelUserRelationshipResource), response.Headers);
+            return (UserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(UserRelationshipResource), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceUserRelationshipResource</returns>            
-        public ModelPageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order)
+        /// <returns>PageResourceUserRelationshipResource</returns>            
+        public PageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserRelationships: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserRelationshipResource), response.Headers);
+            return (PageResourceUserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserRelationshipResource), response.Headers);
         }
     
         /// <summary>
@@ -250,8 +250,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the relationship</param> 
         /// <param name="relationship">The new relationship</param> 
-        /// <returns>ModelUserRelationshipResource</returns>            
-        public ModelUserRelationshipResource UpdateUserRelationship (long? id, ModelUserRelationshipResource relationship)
+        /// <returns>UserRelationshipResource</returns>            
+        public UserRelationshipResource UpdateUserRelationship (long? id, UserRelationshipResource relationship)
         {
             
             // verify the required parameter 'id' is set
@@ -281,7 +281,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateUserRelationship: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelUserRelationshipResource), response.Headers);
+            return (UserRelationshipResource) ApiClient.Deserialize(response.Content, typeof(UserRelationshipResource), response.Headers);
         }
     
     }

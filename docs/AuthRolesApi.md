@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createrole"></a>
 # **CreateRole**
-> ModelRoleResource CreateRole (ModelRoleResource roleResource)
+> RoleResource CreateRole (RoleResource roleResource)
 
 Create a new role
 
@@ -41,12 +41,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new AuthRolesApi();
-            var roleResource = new ModelRoleResource(); // ModelRoleResource | The role resource object (optional) 
+            var roleResource = new RoleResource(); // RoleResource | The role resource object (optional) 
 
             try
             {
                 // Create a new role
-                ModelRoleResource result = apiInstance.CreateRole(roleResource);
+                RoleResource result = apiInstance.CreateRole(roleResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,11 +62,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleResource** | [**ModelRoleResource**](ModelRoleResource.md)| The role resource object | [optional] 
+ **roleResource** | [**RoleResource**](RoleResource.md)| The role resource object | [optional] 
 
 ### Return type
 
-[**ModelRoleResource**](ModelRoleResource.md)
+[**RoleResource**](RoleResource.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ void (empty response body)
 
 <a name="getclientroles"></a>
 # **GetClientRoles**
-> List<ModelRoleResource> GetClientRoles (string clientKey)
+> List<RoleResource> GetClientRoles (string clientKey)
 
 Get roles for a client
 
@@ -173,7 +173,7 @@ namespace Example
             try
             {
                 // Get roles for a client
-                List&lt;ModelRoleResource&gt; result = apiInstance.GetClientRoles(clientKey);
+                List&lt;RoleResource&gt; result = apiInstance.GetClientRoles(clientKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelRoleResource>**](ModelRoleResource.md)
+[**List<RoleResource>**](RoleResource.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 <a name="getrole"></a>
 # **GetRole**
-> ModelRoleResource GetRole (string role)
+> RoleResource GetRole (string role)
 
 Get a single role
 
@@ -236,7 +236,7 @@ namespace Example
             try
             {
                 // Get a single role
-                ModelRoleResource result = apiInstance.GetRole(role);
+                RoleResource result = apiInstance.GetRole(role);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRoleResource**](ModelRoleResource.md)
+[**RoleResource**](RoleResource.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 <a name="getroles"></a>
 # **GetRoles**
-> ModelPageResourceRoleResource GetRoles (int? size, int? page, string order)
+> PageResourceRoleResource GetRoles (int? size, int? page, string order)
 
 List and search roles
 
@@ -301,7 +301,7 @@ namespace Example
             try
             {
                 // List and search roles
-                ModelPageResourceRoleResource result = apiInstance.GetRoles(size, page, order);
+                PageResourceRoleResource result = apiInstance.GetRoles(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceRoleResource**](ModelPageResourceRoleResource.md)
+[**PageResourceRoleResource**](PageResourceRoleResource.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserroles"></a>
 # **GetUserRoles**
-> List<ModelRoleResource> GetUserRoles (int? userId)
+> List<RoleResource> GetUserRoles (int? userId)
 
 Get roles for a user
 
@@ -366,7 +366,7 @@ namespace Example
             try
             {
                 // Get roles for a user
-                List&lt;ModelRoleResource&gt; result = apiInstance.GetUserRoles(userId);
+                List&lt;RoleResource&gt; result = apiInstance.GetUserRoles(userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelRoleResource>**](ModelRoleResource.md)
+[**List<RoleResource>**](RoleResource.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 <a name="setclientroles"></a>
 # **SetClientRoles**
-> ModelClientResource SetClientRoles (string clientKey, List<string> rolesList)
+> ClientResource SetClientRoles (string clientKey, List<string> rolesList)
 
 Set roles for a client
 
@@ -430,7 +430,7 @@ namespace Example
             try
             {
                 // Set roles for a client
-                ModelClientResource result = apiInstance.SetClientRoles(clientKey, rolesList);
+                ClientResource result = apiInstance.SetClientRoles(clientKey, rolesList);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelClientResource**](ModelClientResource.md)
+[**ClientResource**](ClientResource.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="setpermissionsforrole"></a>
 # **SetPermissionsForRole**
-> ModelRoleResource SetPermissionsForRole (string role, List<string> permissionsList)
+> RoleResource SetPermissionsForRole (string role, List<string> permissionsList)
 
 Set permissions for a role
 
@@ -495,7 +495,7 @@ namespace Example
             try
             {
                 // Set permissions for a role
-                ModelRoleResource result = apiInstance.SetPermissionsForRole(role, permissionsList);
+                RoleResource result = apiInstance.SetPermissionsForRole(role, permissionsList);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRoleResource**](ModelRoleResource.md)
+[**RoleResource**](RoleResource.md)
 
 ### Authorization
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 <a name="setuserroles"></a>
 # **SetUserRoles**
-> ModelUserResource SetUserRoles (int? userId, List<string> rolesList)
+> UserResource SetUserRoles (int? userId, List<string> rolesList)
 
 Set roles for a user
 
@@ -560,7 +560,7 @@ namespace Example
             try
             {
                 // Set roles for a user
-                ModelUserResource result = apiInstance.SetUserRoles(userId, rolesList);
+                UserResource result = apiInstance.SetUserRoles(userId, rolesList);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserResource**](ModelUserResource.md)
+[**UserResource**](UserResource.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 <a name="updaterole"></a>
 # **UpdateRole**
-> ModelRoleResource UpdateRole (string role, ModelRoleResource roleResource)
+> RoleResource UpdateRole (string role, RoleResource roleResource)
 
 Update a role
 
@@ -620,12 +620,12 @@ namespace Example
 
             var apiInstance = new AuthRolesApi();
             var role = role_example;  // string | The role value
-            var roleResource = new ModelRoleResource(); // ModelRoleResource | The role resource object (optional) 
+            var roleResource = new RoleResource(); // RoleResource | The role resource object (optional) 
 
             try
             {
                 // Update a role
-                ModelRoleResource result = apiInstance.UpdateRole(role, roleResource);
+                RoleResource result = apiInstance.UpdateRole(role, roleResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -642,11 +642,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role** | **string**| The role value | 
- **roleResource** | [**ModelRoleResource**](ModelRoleResource.md)| The role resource object | [optional] 
+ **roleResource** | [**RoleResource**](RoleResource.md)| The role resource object | [optional] 
 
 ### Return type
 
-[**ModelRoleResource**](ModelRoleResource.md)
+[**RoleResource**](RoleResource.md)
 
 ### Authorization
 

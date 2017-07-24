@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="gettransaction"></a>
 # **GetTransaction**
-> ModelTransactionResource GetTransaction (int? id)
+> TransactionResource GetTransaction (int? id)
 
 Get the details for a single transaction
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Get the details for a single transaction
-                ModelTransactionResource result = apiInstance.GetTransaction(id);
+                TransactionResource result = apiInstance.GetTransaction(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTransactionResource**](ModelTransactionResource.md)
+[**TransactionResource**](TransactionResource.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="gettransactions"></a>
 # **GetTransactions**
-> ModelPageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order)
+> PageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order)
 
 List and search transactions
 
@@ -105,7 +105,7 @@ namespace Example
             try
             {
                 // List and search transactions
-                ModelPageResourceTransactionResource result = apiInstance.GetTransactions(filterInvoice, size, page, order);
+                PageResourceTransactionResource result = apiInstance.GetTransactions(filterInvoice, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTransactionResource**](ModelPageResourceTransactionResource.md)
+[**PageResourceTransactionResource**](PageResourceTransactionResource.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 <a name="refundtransaction"></a>
 # **RefundTransaction**
-> ModelRefundResource RefundTransaction (int? id, ModelRefundRequest request)
+> RefundResource RefundTransaction (int? id, RefundRequest request)
 
 Refund a payment transaction, in full or in part
 
@@ -169,12 +169,12 @@ namespace Example
 
             var apiInstance = new PaymentsTransactionsApi();
             var id = 56;  // int? | The id of the transaction to refund
-            var request = new ModelRefundRequest(); // ModelRefundRequest | Request containing refund details (optional) 
+            var request = new RefundRequest(); // RefundRequest | Request containing refund details (optional) 
 
             try
             {
                 // Refund a payment transaction, in full or in part
-                ModelRefundResource result = apiInstance.RefundTransaction(id, request);
+                RefundResource result = apiInstance.RefundTransaction(id, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -191,11 +191,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the transaction to refund | 
- **request** | [**ModelRefundRequest**](ModelRefundRequest.md)| Request containing refund details | [optional] 
+ **request** | [**RefundRequest**](RefundRequest.md)| Request containing refund details | [optional] 
 
 ### Return type
 
-[**ModelRefundResource**](ModelRefundResource.md)
+[**RefundResource**](RefundResource.md)
 
 ### Authorization
 

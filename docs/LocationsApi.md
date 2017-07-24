@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getcountries"></a>
 # **GetCountries**
-> List<ModelCountryResource> GetCountries ()
+> List<CountryResource> GetCountries ()
 
 Get a list of countries
 
@@ -36,7 +36,7 @@ namespace Example
             try
             {
                 // Get a list of countries
-                List&lt;ModelCountryResource&gt; result = apiInstance.GetCountries();
+                List&lt;CountryResource&gt; result = apiInstance.GetCountries();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelCountryResource>**](ModelCountryResource.md)
+[**List<CountryResource>**](CountryResource.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ No authorization required
 
 <a name="getcountrystates"></a>
 # **GetCountryStates**
-> List<ModelStateResource> GetCountryStates (string countryCodeIso3)
+> List<StateResource> GetCountryStates (string countryCodeIso3)
 
 Get a list of a country's states
 
@@ -151,7 +151,7 @@ namespace Example
             try
             {
                 // Get a list of a country's states
-                List&lt;ModelStateResource&gt; result = apiInstance.GetCountryStates(countryCodeIso3);
+                List&lt;StateResource&gt; result = apiInstance.GetCountryStates(countryCodeIso3);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelStateResource>**](ModelStateResource.md)
+[**List<StateResource>**](StateResource.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ No authorization required
 
 <a name="getcurrencybygeolocation"></a>
 # **GetCurrencyByGeoLocation**
-> ModelCurrencyResource GetCurrencyByGeoLocation ()
+> CurrencyResource GetCurrencyByGeoLocation ()
 
 Get the currency information of your country
 
@@ -212,7 +212,7 @@ namespace Example
             try
             {
                 // Get the currency information of your country
-                ModelCurrencyResource result = apiInstance.GetCurrencyByGeoLocation();
+                CurrencyResource result = apiInstance.GetCurrencyByGeoLocation();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -229,7 +229,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelCurrencyResource**](ModelCurrencyResource.md)
+[**CurrencyResource**](CurrencyResource.md)
 
 ### Authorization
 

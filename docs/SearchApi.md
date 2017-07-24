@@ -81,7 +81,7 @@ void (empty response body)
 
 <a name="addsearchmappings"></a>
 # **AddSearchMappings**
-> void AddSearchMappings (List<ModelSearchReferenceMapping> mappings)
+> void AddSearchMappings (List<SearchReferenceMapping> mappings)
 
 Register reference mappings
 
@@ -106,7 +106,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SearchApi();
-            var mappings = new List<ModelSearchReferenceMapping>(); // List<ModelSearchReferenceMapping> | The mappings to add (optional) 
+            var mappings = new List<SearchReferenceMapping>(); // List<SearchReferenceMapping> | The mappings to add (optional) 
 
             try
             {
@@ -126,7 +126,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mappings** | [**List<ModelSearchReferenceMapping>**](ModelSearchReferenceMapping.md)| The mappings to add | [optional] 
+ **mappings** | [**List<SearchReferenceMapping>**](SearchReferenceMapping.md)| The mappings to add | [optional] 
 
 ### Return type
 
@@ -275,7 +275,7 @@ void (empty response body)
 
 <a name="searchindex"></a>
 # **SearchIndex**
-> ModelPageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page)
+> PageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page)
 
 Search an index
 
@@ -305,7 +305,7 @@ namespace Example
             try
             {
                 // Search an index
-                ModelPageResourceMapstringobject result = apiInstance.SearchIndex(type, query, size, page);
+                PageResourceMapstringobject result = apiInstance.SearchIndex(type, query, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceMapstringobject**](ModelPageResourceMapstringobject.md)
+[**PageResourceMapstringobject**](PageResourceMapstringobject.md)
 
 ### Authorization
 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**GetInvoices**](InvoicesApi.md#getinvoices) | **GET** /invoices | Retrieve invoices
 [**GetPaymentStatuses**](InvoicesApi.md#getpaymentstatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
 [**PayInvoice**](InvoicesApi.md#payinvoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**SetBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setbundledinvoiceitemfulfillmentstatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**SetExternalRef**](InvoicesApi.md#setexternalref) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**SetInvoiceItemFulfillmentStatus**](InvoicesApi.md#setinvoiceitemfulfillmentstatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
 [**SetOrderNotes**](InvoicesApi.md#setordernotes) | **PUT** /invoices/{id}/order-notes | Set the order notes of an invoice
@@ -20,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="createinvoice"></a>
 # **CreateInvoice**
-> List<ModelInvoiceResource> CreateInvoice (ModelInvoiceCreateRequest req)
+> List<InvoiceResource> CreateInvoice (InvoiceCreateRequest req)
 
 Create an invoice
 
@@ -45,12 +46,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi();
-            var req = new ModelInvoiceCreateRequest(); // ModelInvoiceCreateRequest | Invoice to be created (optional) 
+            var req = new InvoiceCreateRequest(); // InvoiceCreateRequest | Invoice to be created (optional) 
 
             try
             {
                 // Create an invoice
-                List&lt;ModelInvoiceResource&gt; result = apiInstance.CreateInvoice(req);
+                List&lt;InvoiceResource&gt; result = apiInstance.CreateInvoice(req);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,11 +67,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **req** | [**ModelInvoiceCreateRequest**](ModelInvoiceCreateRequest.md)| Invoice to be created | [optional] 
+ **req** | [**InvoiceCreateRequest**](InvoiceCreateRequest.md)| Invoice to be created | [optional] 
 
 ### Return type
 
-[**List<ModelInvoiceResource>**](ModelInvoiceResource.md)
+[**List<InvoiceResource>**](InvoiceResource.md)
 
 ### Authorization
 
@@ -141,7 +142,7 @@ No authorization required
 
 <a name="getinvoice"></a>
 # **GetInvoice**
-> ModelInvoiceResource GetInvoice (int? id)
+> InvoiceResource GetInvoice (int? id)
 
 Retrieve an invoice
 
@@ -169,7 +170,7 @@ namespace Example
             try
             {
                 // Retrieve an invoice
-                ModelInvoiceResource result = apiInstance.GetInvoice(id);
+                InvoiceResource result = apiInstance.GetInvoice(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -189,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelInvoiceResource**](ModelInvoiceResource.md)
+[**InvoiceResource**](InvoiceResource.md)
 
 ### Authorization
 
@@ -204,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="getinvoicelogs"></a>
 # **GetInvoiceLogs**
-> ModelPageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page)
+> PageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page)
 
 List invoice logs
 
@@ -234,7 +235,7 @@ namespace Example
             try
             {
                 // List invoice logs
-                ModelPageResourceInvoiceLogEntry result = apiInstance.GetInvoiceLogs(id, size, page);
+                PageResourceInvoiceLogEntry result = apiInstance.GetInvoiceLogs(id, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -256,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceInvoiceLogEntry**](ModelPageResourceInvoiceLogEntry.md)
+[**PageResourceInvoiceLogEntry**](PageResourceInvoiceLogEntry.md)
 
 ### Authorization
 
@@ -271,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="getinvoices"></a>
 # **GetInvoices**
-> ModelPageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, Object filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order)
+> PageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, string filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order)
 
 Retrieve invoices
 
@@ -303,7 +304,7 @@ namespace Example
             var filterItemName = filterItemName_example;  // string | Filters invoices by item name containing the given string (optional) 
             var filterExternalRef = filterExternalRef_example;  // string | Filters invoices by external reference. (optional) 
             var filterCreatedDate = filterCreatedDate_example;  // string | Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date=GT,1452154258,LT,1554254874 (optional) 
-            var filterVendorIds = new Object(); // Object | Filters invoices for ones from one of the vendors whose id is in the given comma separated list (optional) 
+            var filterVendorIds = filterVendorIds_example;  // string | Filters invoices for ones from one of the vendors whose id is in the given comma separated list (optional) 
             var filterCurrency = filterCurrency_example;  // string | Filters invoices by currency. ISO3 currency code (optional) 
             var filterShippingStateName = filterShippingStateName_example;  // string | Filters invoices by shipping address: Exact match state name (optional) 
             var filterShippingCountryName = filterShippingCountryName_example;  // string | Filters invoices by shipping address: Exact match country name (optional) 
@@ -317,7 +318,7 @@ namespace Example
             try
             {
                 // Retrieve invoices
-                ModelPageResourceInvoiceResource result = apiInstance.GetInvoices(filterUser, filterEmail, filterFulfillmentStatus, filterPaymentStatus, filterItemName, filterExternalRef, filterCreatedDate, filterVendorIds, filterCurrency, filterShippingStateName, filterShippingCountryName, filterShipping, filterVendorName, filterSku, size, page, order);
+                PageResourceInvoiceResource result = apiInstance.GetInvoices(filterUser, filterEmail, filterFulfillmentStatus, filterPaymentStatus, filterItemName, filterExternalRef, filterCreatedDate, filterVendorIds, filterCurrency, filterShippingStateName, filterShippingCountryName, filterShipping, filterVendorName, filterSku, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -340,7 +341,7 @@ Name | Type | Description  | Notes
  **filterItemName** | **string**| Filters invoices by item name containing the given string | [optional] 
  **filterExternalRef** | **string**| Filters invoices by external reference. | [optional] 
  **filterCreatedDate** | **string**| Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874 | [optional] 
- **filterVendorIds** | [**Object**](.md)| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
+ **filterVendorIds** | **string**| Filters invoices for ones from one of the vendors whose id is in the given comma separated list | [optional] 
  **filterCurrency** | **string**| Filters invoices by currency. ISO3 currency code | [optional] 
  **filterShippingStateName** | **string**| Filters invoices by shipping address: Exact match state name | [optional] 
  **filterShippingCountryName** | **string**| Filters invoices by shipping address: Exact match country name | [optional] 
@@ -353,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceInvoiceResource**](ModelPageResourceInvoiceResource.md)
+[**PageResourceInvoiceResource**](PageResourceInvoiceResource.md)
 
 ### Authorization
 
@@ -424,7 +425,7 @@ No authorization required
 
 <a name="payinvoice"></a>
 # **PayInvoice**
-> void PayInvoice (int? id, ModelPayBySavedMethodRequest request)
+> void PayInvoice (int? id, PayBySavedMethodRequest request)
 
 Trigger payment of an invoice
 
@@ -448,7 +449,7 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var request = new ModelPayBySavedMethodRequest(); // ModelPayBySavedMethodRequest | Payment info (optional) 
+            var request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | Payment info (optional) 
 
             try
             {
@@ -469,7 +470,77 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **request** | [**ModelPayBySavedMethodRequest**](ModelPayBySavedMethodRequest.md)| Payment info | [optional] 
+ **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setbundledinvoiceitemfulfillmentstatus"></a>
+# **SetBundledInvoiceItemFulfillmentStatus**
+> void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status)
+
+Set the fulfillment status of a bundled invoice item
+
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class SetBundledInvoiceItemFulfillmentStatusExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new InvoicesApi();
+            var id = 56;  // int? | The id of the invoice
+            var bundleSku = bundleSku_example;  // string | The sku of the bundle in the invoice that contains the given target
+            var sku = sku_example;  // string | The sku of an item in the bundle in the invoice
+            var status = status_example;  // string | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+
+            try
+            {
+                // Set the fulfillment status of a bundled invoice item
+                apiInstance.SetBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InvoicesApi.SetBundledInvoiceItemFulfillmentStatus: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**| The id of the invoice | 
+ **bundleSku** | **string**| The sku of the bundle in the invoice that contains the given target | 
+ **sku** | **string**| The sku of an item in the bundle in the invoice | 
+ **status** | **string**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -684,7 +755,7 @@ void (empty response body)
 
 <a name="setpaymentstatus"></a>
 # **SetPaymentStatus**
-> void SetPaymentStatus (int? id, ModelInvoicePaymentStatusRequest request)
+> void SetPaymentStatus (int? id, InvoicePaymentStatusRequest request)
 
 Set the payment status of an invoice
 
@@ -710,7 +781,7 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var request = new ModelInvoicePaymentStatusRequest(); // ModelInvoicePaymentStatusRequest | Payment status info (optional) 
+            var request = new InvoicePaymentStatusRequest(); // InvoicePaymentStatusRequest | Payment status info (optional) 
 
             try
             {
@@ -731,7 +802,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **request** | [**ModelInvoicePaymentStatusRequest**](ModelInvoicePaymentStatusRequest.md)| Payment status info | [optional] 
+ **request** | [**InvoicePaymentStatusRequest**](InvoicePaymentStatusRequest.md)| Payment status info | [optional] 
 
 ### Return type
 
@@ -750,7 +821,7 @@ void (empty response body)
 
 <a name="updatebillinginfo"></a>
 # **UpdateBillingInfo**
-> void UpdateBillingInfo (int? id, ModelAddressResource billingInfoRequest)
+> void UpdateBillingInfo (int? id, AddressResource billingInfoRequest)
 
 Set or update billing info
 
@@ -774,7 +845,7 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var billingInfoRequest = new ModelAddressResource(); // ModelAddressResource | Address info (optional) 
+            var billingInfoRequest = new AddressResource(); // AddressResource | Address info (optional) 
 
             try
             {
@@ -795,7 +866,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **billingInfoRequest** | [**ModelAddressResource**](ModelAddressResource.md)| Address info | [optional] 
+ **billingInfoRequest** | [**AddressResource**](AddressResource.md)| Address info | [optional] 
 
 ### Return type
 

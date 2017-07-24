@@ -16,13 +16,13 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="logEntry">The user log entry to be added</param>
         /// <returns></returns>
-        void AddUserLog (ModelUserActionLog logEntry);
+        void AddUserLog (UserActionLog logEntry);
         /// <summary>
         /// Get an existing BRE event log entry by id 
         /// </summary>
         /// <param name="id">The BRE event log entry id</param>
-        /// <returns>ModelBreEventLog</returns>
-        ModelBreEventLog GetBREEventLog (string id);
+        /// <returns>BreEventLog</returns>
+        BreEventLog GetBREEventLog (string id);
         /// <summary>
         /// Returns a list of BRE event log entries 
         /// </summary>
@@ -32,14 +32,14 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceBreEventLog</returns>
-        ModelPageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order);
+        /// <returns>PageResourceBreEventLog</returns>
+        PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order);
         /// <summary>
         /// Get an existing forward log entry by id 
         /// </summary>
         /// <param name="id">The forward log entry id</param>
-        /// <returns>ModelForwardLog</returns>
-        ModelForwardLog GetBREForwardLog (string id);
+        /// <returns>ForwardLog</returns>
+        ForwardLog GetBREForwardLog (string id);
         /// <summary>
         /// Returns a list of forward log entries 
         /// </summary>
@@ -49,14 +49,14 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceForwardLog</returns>
-        ModelPageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order);
+        /// <returns>PageResourceForwardLog</returns>
+        PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order);
         /// <summary>
         /// Returns a user log entry by id 
         /// </summary>
         /// <param name="id">The user log entry id</param>
-        /// <returns>ModelUserActionLog</returns>
-        ModelUserActionLog GetUserLog (string id);
+        /// <returns>UserActionLog</returns>
+        UserActionLog GetUserLog (string id);
         /// <summary>
         /// Returns a page of user logs entries 
         /// </summary>
@@ -65,8 +65,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceUserActionLog</returns>
-        ModelPageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order);
+        /// <returns>PageResourceUserActionLog</returns>
+        PageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order);
     }
   
     /// <summary>
@@ -127,7 +127,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="logEntry">The user log entry to be added</param> 
         /// <returns></returns>            
-        public void AddUserLog (ModelUserActionLog logEntry)
+        public void AddUserLog (UserActionLog logEntry)
         {
             
     
@@ -160,8 +160,8 @@ namespace com.knetikcloud.Api
         /// Get an existing BRE event log entry by id 
         /// </summary>
         /// <param name="id">The BRE event log entry id</param> 
-        /// <returns>ModelBreEventLog</returns>            
-        public ModelBreEventLog GetBREEventLog (string id)
+        /// <returns>BreEventLog</returns>            
+        public BreEventLog GetBREEventLog (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -190,7 +190,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREEventLog: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBreEventLog) ApiClient.Deserialize(response.Content, typeof(ModelBreEventLog), response.Headers);
+            return (BreEventLog) ApiClient.Deserialize(response.Content, typeof(BreEventLog), response.Headers);
         }
     
         /// <summary>
@@ -202,8 +202,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceBreEventLog</returns>            
-        public ModelPageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order)
+        /// <returns>PageResourceBreEventLog</returns>            
+        public PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order)
         {
             
     
@@ -234,15 +234,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREEventLogs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBreEventLog) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBreEventLog), response.Headers);
+            return (PageResourceBreEventLog) ApiClient.Deserialize(response.Content, typeof(PageResourceBreEventLog), response.Headers);
         }
     
         /// <summary>
         /// Get an existing forward log entry by id 
         /// </summary>
         /// <param name="id">The forward log entry id</param> 
-        /// <returns>ModelForwardLog</returns>            
-        public ModelForwardLog GetBREForwardLog (string id)
+        /// <returns>ForwardLog</returns>            
+        public ForwardLog GetBREForwardLog (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -271,7 +271,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREForwardLog: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelForwardLog) ApiClient.Deserialize(response.Content, typeof(ModelForwardLog), response.Headers);
+            return (ForwardLog) ApiClient.Deserialize(response.Content, typeof(ForwardLog), response.Headers);
         }
     
         /// <summary>
@@ -283,8 +283,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceForwardLog</returns>            
-        public ModelPageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order)
+        /// <returns>PageResourceForwardLog</returns>            
+        public PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order)
         {
             
     
@@ -315,15 +315,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREForwardLogs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceForwardLog) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceForwardLog), response.Headers);
+            return (PageResourceForwardLog) ApiClient.Deserialize(response.Content, typeof(PageResourceForwardLog), response.Headers);
         }
     
         /// <summary>
         /// Returns a user log entry by id 
         /// </summary>
         /// <param name="id">The user log entry id</param> 
-        /// <returns>ModelUserActionLog</returns>            
-        public ModelUserActionLog GetUserLog (string id)
+        /// <returns>UserActionLog</returns>            
+        public UserActionLog GetUserLog (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -352,7 +352,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserLog: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserActionLog) ApiClient.Deserialize(response.Content, typeof(ModelUserActionLog), response.Headers);
+            return (UserActionLog) ApiClient.Deserialize(response.Content, typeof(UserActionLog), response.Headers);
         }
     
         /// <summary>
@@ -363,8 +363,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceUserActionLog</returns>            
-        public ModelPageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order)
+        /// <returns>PageResourceUserActionLog</returns>            
+        public PageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order)
         {
             
     
@@ -394,7 +394,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserLogs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserActionLog) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserActionLog), response.Headers);
+            return (PageResourceUserActionLog) ApiClient.Deserialize(response.Content, typeof(PageResourceUserActionLog), response.Headers);
         }
     
     }

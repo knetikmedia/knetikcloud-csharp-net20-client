@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getbrevariabletypes"></a>
 # **GetBREVariableTypes**
-> List<ModelVariableTypeResource> GetBREVariableTypes ()
+> List<VariableTypeResource> GetBREVariableTypes ()
 
 Get a list of variable types available
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Get a list of variable types available
-                List&lt;ModelVariableTypeResource&gt; result = apiInstance.GetBREVariableTypes();
+                List&lt;VariableTypeResource&gt; result = apiInstance.GetBREVariableTypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelVariableTypeResource>**](ModelVariableTypeResource.md)
+[**List<VariableTypeResource>**](VariableTypeResource.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 
 <a name="getbrevariablevalues"></a>
 # **GetBREVariableValues**
-> ModelPageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page)
+> PageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page)
 
 List valid values for a type
 
@@ -104,7 +104,7 @@ namespace Example
             try
             {
                 // List valid values for a type
-                ModelPageResourceSimpleReferenceResourceobject result = apiInstance.GetBREVariableValues(name, filterName, size, page);
+                PageResourceSimpleReferenceResourceobject result = apiInstance.GetBREVariableValues(name, filterName, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSimpleReferenceResourceobject**](ModelPageResourceSimpleReferenceResourceobject.md)
+[**PageResourceSimpleReferenceResourceobject**](PageResourceSimpleReferenceResourceobject.md)
 
 ### Authorization
 

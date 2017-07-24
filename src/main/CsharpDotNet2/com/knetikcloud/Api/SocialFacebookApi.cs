@@ -16,7 +16,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="facebookToken">The token from facebook</param>
         /// <returns></returns>
-        void LinkAccounts (ModelFacebookToken facebookToken);
+        void LinkAccounts (FacebookToken facebookToken);
     }
   
     /// <summary>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="facebookToken">The token from facebook</param> 
         /// <returns></returns>            
-        public void LinkAccounts (ModelFacebookToken facebookToken)
+        public void LinkAccounts (FacebookToken facebookToken)
         {
             
     

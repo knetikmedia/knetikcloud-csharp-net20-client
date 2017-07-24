@@ -9,13 +9,13 @@ Method | HTTP request | Description
 [**CreateChallengeActivityTemplate**](CampaignsChallengesApi.md#createchallengeactivitytemplate) | **POST** /challenge-activities/templates | Create a challenge activity template
 [**CreateChallengeTemplate**](CampaignsChallengesApi.md#createchallengetemplate) | **POST** /challenges/templates | Create a challenge template
 [**DeleteChallenge**](CampaignsChallengesApi.md#deletechallenge) | **DELETE** /challenges/{id} | Delete a challenge
-[**DeleteChallengeActivity**](CampaignsChallengesApi.md#deletechallengeactivity) | **DELETE** /challenges/{challenge_id}/activities/{activity_id} | Delete a challenge activity
+[**DeleteChallengeActivity**](CampaignsChallengesApi.md#deletechallengeactivity) | **DELETE** /challenges/{challenge_id}/activities/{id} | Delete a challenge activity
 [**DeleteChallengeActivityTemplate**](CampaignsChallengesApi.md#deletechallengeactivitytemplate) | **DELETE** /challenge-activities/templates/{id} | Delete a challenge activity template
 [**DeleteChallengeEvent**](CampaignsChallengesApi.md#deletechallengeevent) | **DELETE** /challenges/events/{id} | Delete a challenge event
 [**DeleteChallengeTemplate**](CampaignsChallengesApi.md#deletechallengetemplate) | **DELETE** /challenges/templates/{id} | Delete a challenge template
 [**GetChallenge**](CampaignsChallengesApi.md#getchallenge) | **GET** /challenges/{id} | Retrieve a challenge
 [**GetChallengeActivities**](CampaignsChallengesApi.md#getchallengeactivities) | **GET** /challenges/{challenge_id}/activities | List and search challenge activities
-[**GetChallengeActivity**](CampaignsChallengesApi.md#getchallengeactivity) | **GET** /challenges/{challenge_id}/activities/{activity_id} | Get a single challenge activity
+[**GetChallengeActivity**](CampaignsChallengesApi.md#getchallengeactivity) | **GET** /challenges/{challenge_id}/activities/{id} | Get a single challenge activity
 [**GetChallengeActivityTemplate**](CampaignsChallengesApi.md#getchallengeactivitytemplate) | **GET** /challenge-activities/templates/{id} | Get a single challenge activity template
 [**GetChallengeActivityTemplates**](CampaignsChallengesApi.md#getchallengeactivitytemplates) | **GET** /challenge-activities/templates | List and search challenge activity templates
 [**GetChallengeEvent**](CampaignsChallengesApi.md#getchallengeevent) | **GET** /challenges/events/{id} | Retrieve a single challenge event details
@@ -24,14 +24,14 @@ Method | HTTP request | Description
 [**GetChallengeTemplates**](CampaignsChallengesApi.md#getchallengetemplates) | **GET** /challenges/templates | List and search challenge templates
 [**GetChallenges**](CampaignsChallengesApi.md#getchallenges) | **GET** /challenges | Retrieve a list of challenges
 [**UpdateChallenge**](CampaignsChallengesApi.md#updatechallenge) | **PUT** /challenges/{id} | Update a challenge
-[**UpdateChallengeActivity**](CampaignsChallengesApi.md#updatechallengeactivity) | **PUT** /challenges/{challenge_id}/activities/{activity_id} | Update a challenge activity
+[**UpdateChallengeActivity**](CampaignsChallengesApi.md#updatechallengeactivity) | **PUT** /challenges/{challenge_id}/activities/{id} | Update a challenge activity
 [**UpdateChallengeActivityTemplate**](CampaignsChallengesApi.md#updatechallengeactivitytemplate) | **PUT** /challenge-activities/templates/{id} | Update an challenge activity template
 [**UpdateChallengeTemplate**](CampaignsChallengesApi.md#updatechallengetemplate) | **PUT** /challenges/templates/{id} | Update a challenge template
 
 
 <a name="createchallenge"></a>
 # **CreateChallenge**
-> ModelChallengeResource CreateChallenge (ModelChallengeResource challengeResource)
+> ChallengeResource CreateChallenge (ChallengeResource challengeResource)
 
 Create a challenge
 
@@ -56,12 +56,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsChallengesApi();
-            var challengeResource = new ModelChallengeResource(); // ModelChallengeResource | The challenge resource object (optional) 
+            var challengeResource = new ChallengeResource(); // ChallengeResource | The challenge resource object (optional) 
 
             try
             {
                 // Create a challenge
-                ModelChallengeResource result = apiInstance.CreateChallenge(challengeResource);
+                ChallengeResource result = apiInstance.CreateChallenge(challengeResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -77,11 +77,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **challengeResource** | [**ModelChallengeResource**](ModelChallengeResource.md)| The challenge resource object | [optional] 
+ **challengeResource** | [**ChallengeResource**](ChallengeResource.md)| The challenge resource object | [optional] 
 
 ### Return type
 
-[**ModelChallengeResource**](ModelChallengeResource.md)
+[**ChallengeResource**](ChallengeResource.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="createchallengeactivity"></a>
 # **CreateChallengeActivity**
-> ModelChallengeActivityResource CreateChallengeActivity (long? challengeId, ModelChallengeActivityResource challengeActivityResource, bool? validateSettings)
+> ChallengeActivityResource CreateChallengeActivity (long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings)
 
 Create a challenge activity
 
@@ -120,13 +120,13 @@ namespace Example
 
             var apiInstance = new CampaignsChallengesApi();
             var challengeId = 789;  // long? | The challenge id
-            var challengeActivityResource = new ModelChallengeActivityResource(); // ModelChallengeActivityResource | The challenge activity resource object (optional) 
+            var challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object (optional) 
             var validateSettings = true;  // bool? | Whether to validate the settings being sent against the available settings on the base activity. (optional)  (default to false)
 
             try
             {
                 // Create a challenge activity
-                ModelChallengeActivityResource result = apiInstance.CreateChallengeActivity(challengeId, challengeActivityResource, validateSettings);
+                ChallengeActivityResource result = apiInstance.CreateChallengeActivity(challengeId, challengeActivityResource, validateSettings);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -143,12 +143,12 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **challengeId** | **long?**| The challenge id | 
- **challengeActivityResource** | [**ModelChallengeActivityResource**](ModelChallengeActivityResource.md)| The challenge activity resource object | [optional] 
+ **challengeActivityResource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
  **validateSettings** | **bool?**| Whether to validate the settings being sent against the available settings on the base activity. | [optional] [default to false]
 
 ### Return type
 
-[**ModelChallengeActivityResource**](ModelChallengeActivityResource.md)
+[**ChallengeActivityResource**](ChallengeActivityResource.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="createchallengeactivitytemplate"></a>
 # **CreateChallengeActivityTemplate**
-> ModelTemplateResource CreateChallengeActivityTemplate (ModelTemplateResource challengeActivityTemplateResource)
+> TemplateResource CreateChallengeActivityTemplate (TemplateResource challengeActivityTemplateResource)
 
 Create a challenge activity template
 
@@ -188,12 +188,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsChallengesApi();
-            var challengeActivityTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The challengeActivity template resource object (optional) 
+            var challengeActivityTemplateResource = new TemplateResource(); // TemplateResource | The challengeActivity template resource object (optional) 
 
             try
             {
                 // Create a challenge activity template
-                ModelTemplateResource result = apiInstance.CreateChallengeActivityTemplate(challengeActivityTemplateResource);
+                TemplateResource result = apiInstance.CreateChallengeActivityTemplate(challengeActivityTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -209,11 +209,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **challengeActivityTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The challengeActivity template resource object | [optional] 
+ **challengeActivityTemplateResource** | [**TemplateResource**](TemplateResource.md)| The challengeActivity template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="createchallengetemplate"></a>
 # **CreateChallengeTemplate**
-> ModelTemplateResource CreateChallengeTemplate (ModelTemplateResource challengeTemplateResource)
+> TemplateResource CreateChallengeTemplate (TemplateResource challengeTemplateResource)
 
 Create a challenge template
 
@@ -253,12 +253,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsChallengesApi();
-            var challengeTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The challenge template resource object (optional) 
+            var challengeTemplateResource = new TemplateResource(); // TemplateResource | The challenge template resource object (optional) 
 
             try
             {
                 // Create a challenge template
-                ModelTemplateResource result = apiInstance.CreateChallengeTemplate(challengeTemplateResource);
+                TemplateResource result = apiInstance.CreateChallengeTemplate(challengeTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -274,11 +274,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **challengeTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The challenge template resource object | [optional] 
+ **challengeTemplateResource** | [**TemplateResource**](TemplateResource.md)| The challenge template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -355,9 +355,11 @@ void (empty response body)
 
 <a name="deletechallengeactivity"></a>
 # **DeleteChallengeActivity**
-> void DeleteChallengeActivity (long? activityId, long? challengeId)
+> void DeleteChallengeActivity (long? id, long? challengeId)
 
 Delete a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```csharp
@@ -378,13 +380,13 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsChallengesApi();
-            var activityId = 789;  // long? | The activity id
+            var id = 789;  // long? | The challenge_activity id
             var challengeId = 789;  // long? | The challenge id
 
             try
             {
                 // Delete a challenge activity
-                apiInstance.DeleteChallengeActivity(activityId, challengeId);
+                apiInstance.DeleteChallengeActivity(id, challengeId);
             }
             catch (Exception e)
             {
@@ -399,7 +401,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **long?**| The activity id | 
+ **id** | **long?**| The challenge_activity id | 
  **challengeId** | **long?**| The challenge id | 
 
 ### Return type
@@ -613,7 +615,7 @@ void (empty response body)
 
 <a name="getchallenge"></a>
 # **GetChallenge**
-> ModelChallengeResource GetChallenge (long? id)
+> ChallengeResource GetChallenge (long? id)
 
 Retrieve a challenge
 
@@ -638,7 +640,7 @@ namespace Example
             try
             {
                 // Retrieve a challenge
-                ModelChallengeResource result = apiInstance.GetChallenge(id);
+                ChallengeResource result = apiInstance.GetChallenge(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -658,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelChallengeResource**](ModelChallengeResource.md)
+[**ChallengeResource**](ChallengeResource.md)
 
 ### Authorization
 
@@ -673,7 +675,7 @@ No authorization required
 
 <a name="getchallengeactivities"></a>
 # **GetChallengeActivities**
-> ModelPageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order)
+> PageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order)
 
 List and search challenge activities
 
@@ -701,7 +703,7 @@ namespace Example
             try
             {
                 // List and search challenge activities
-                ModelPageResourceBareChallengeActivityResource result = apiInstance.GetChallengeActivities(challengeId, size, page, order);
+                PageResourceBareChallengeActivityResource result = apiInstance.GetChallengeActivities(challengeId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -724,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBareChallengeActivityResource**](ModelPageResourceBareChallengeActivityResource.md)
+[**PageResourceBareChallengeActivityResource**](PageResourceBareChallengeActivityResource.md)
 
 ### Authorization
 
@@ -739,9 +741,11 @@ No authorization required
 
 <a name="getchallengeactivity"></a>
 # **GetChallengeActivity**
-> ModelChallengeActivityResource GetChallengeActivity (long? activityId)
+> ChallengeActivityResource GetChallengeActivity (long? id, long? challengeId)
 
 Get a single challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```csharp
@@ -759,12 +763,13 @@ namespace Example
         {
             
             var apiInstance = new CampaignsChallengesApi();
-            var activityId = 789;  // long? | The activity id
+            var id = 789;  // long? | The challenge_activity id
+            var challengeId = 789;  // long? | The challenge id
 
             try
             {
                 // Get a single challenge activity
-                ModelChallengeActivityResource result = apiInstance.GetChallengeActivity(activityId);
+                ChallengeActivityResource result = apiInstance.GetChallengeActivity(id, challengeId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -780,11 +785,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **long?**| The activity id | 
+ **id** | **long?**| The challenge_activity id | 
+ **challengeId** | **long?**| The challenge id | 
 
 ### Return type
 
-[**ModelChallengeActivityResource**](ModelChallengeActivityResource.md)
+[**ChallengeActivityResource**](ChallengeActivityResource.md)
 
 ### Authorization
 
@@ -799,7 +805,7 @@ No authorization required
 
 <a name="getchallengeactivitytemplate"></a>
 # **GetChallengeActivityTemplate**
-> ModelTemplateResource GetChallengeActivityTemplate (string id)
+> TemplateResource GetChallengeActivityTemplate (string id)
 
 Get a single challenge activity template
 
@@ -827,7 +833,7 @@ namespace Example
             try
             {
                 // Get a single challenge activity template
-                ModelTemplateResource result = apiInstance.GetChallengeActivityTemplate(id);
+                TemplateResource result = apiInstance.GetChallengeActivityTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -847,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -862,7 +868,7 @@ Name | Type | Description  | Notes
 
 <a name="getchallengeactivitytemplates"></a>
 # **GetChallengeActivityTemplates**
-> ModelPageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order)
 
 List and search challenge activity templates
 
@@ -892,7 +898,7 @@ namespace Example
             try
             {
                 // List and search challenge activity templates
-                ModelPageResourceTemplateResource result = apiInstance.GetChallengeActivityTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetChallengeActivityTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -914,7 +920,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -929,7 +935,7 @@ Name | Type | Description  | Notes
 
 <a name="getchallengeevent"></a>
 # **GetChallengeEvent**
-> ModelChallengeEventResource GetChallengeEvent (long? id)
+> ChallengeEventResource GetChallengeEvent (long? id)
 
 Retrieve a single challenge event details
 
@@ -954,7 +960,7 @@ namespace Example
             try
             {
                 // Retrieve a single challenge event details
-                ModelChallengeEventResource result = apiInstance.GetChallengeEvent(id);
+                ChallengeEventResource result = apiInstance.GetChallengeEvent(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -974,7 +980,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelChallengeEventResource**](ModelChallengeEventResource.md)
+[**ChallengeEventResource**](ChallengeEventResource.md)
 
 ### Authorization
 
@@ -989,7 +995,7 @@ No authorization required
 
 <a name="getchallengeevents"></a>
 # **GetChallengeEvents**
-> ModelPageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order)
+> PageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order)
 
 Retrieve a list of challenge events
 
@@ -1020,7 +1026,7 @@ namespace Example
             try
             {
                 // Retrieve a list of challenge events
-                ModelPageResourceChallengeEventResource result = apiInstance.GetChallengeEvents(filterStartDate, filterEndDate, filterCampaigns, filterChallenge, size, page, order);
+                PageResourceChallengeEventResource result = apiInstance.GetChallengeEvents(filterStartDate, filterEndDate, filterCampaigns, filterChallenge, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1046,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceChallengeEventResource**](ModelPageResourceChallengeEventResource.md)
+[**PageResourceChallengeEventResource**](PageResourceChallengeEventResource.md)
 
 ### Authorization
 
@@ -1061,7 +1067,7 @@ No authorization required
 
 <a name="getchallengetemplate"></a>
 # **GetChallengeTemplate**
-> ModelTemplateResource GetChallengeTemplate (string id)
+> TemplateResource GetChallengeTemplate (string id)
 
 Get a single challenge template
 
@@ -1089,7 +1095,7 @@ namespace Example
             try
             {
                 // Get a single challenge template
-                ModelTemplateResource result = apiInstance.GetChallengeTemplate(id);
+                TemplateResource result = apiInstance.GetChallengeTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1109,7 +1115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -1124,7 +1130,7 @@ Name | Type | Description  | Notes
 
 <a name="getchallengetemplates"></a>
 # **GetChallengeTemplates**
-> ModelPageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order)
 
 List and search challenge templates
 
@@ -1154,7 +1160,7 @@ namespace Example
             try
             {
                 // List and search challenge templates
-                ModelPageResourceTemplateResource result = apiInstance.GetChallengeTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetChallengeTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1176,7 +1182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -1191,7 +1197,7 @@ Name | Type | Description  | Notes
 
 <a name="getchallenges"></a>
 # **GetChallenges**
-> ModelPageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order)
+> PageResourceChallengeResource GetChallenges (bool? filterTemplate, bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order)
 
 Retrieve a list of challenges
 
@@ -1222,7 +1228,7 @@ namespace Example
             try
             {
                 // Retrieve a list of challenges
-                ModelPageResourceChallengeResource result = apiInstance.GetChallenges(filterTemplate, filterActiveCampaign, filterStartDate, filterEndDate, size, page, order);
+                PageResourceChallengeResource result = apiInstance.GetChallenges(filterTemplate, filterActiveCampaign, filterStartDate, filterEndDate, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1248,7 +1254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceChallengeResource**](ModelPageResourceChallengeResource.md)
+[**PageResourceChallengeResource**](PageResourceChallengeResource.md)
 
 ### Authorization
 
@@ -1263,7 +1269,7 @@ No authorization required
 
 <a name="updatechallenge"></a>
 # **UpdateChallenge**
-> ModelChallengeResource UpdateChallenge (long? id, ModelChallengeResource challengeResource)
+> ChallengeResource UpdateChallenge (long? id, ChallengeResource challengeResource)
 
 Update a challenge
 
@@ -1289,12 +1295,12 @@ namespace Example
 
             var apiInstance = new CampaignsChallengesApi();
             var id = 789;  // long? | The challenge id
-            var challengeResource = new ModelChallengeResource(); // ModelChallengeResource | The challenge resource object (optional) 
+            var challengeResource = new ChallengeResource(); // ChallengeResource | The challenge resource object (optional) 
 
             try
             {
                 // Update a challenge
-                ModelChallengeResource result = apiInstance.UpdateChallenge(id, challengeResource);
+                ChallengeResource result = apiInstance.UpdateChallenge(id, challengeResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1311,11 +1317,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The challenge id | 
- **challengeResource** | [**ModelChallengeResource**](ModelChallengeResource.md)| The challenge resource object | [optional] 
+ **challengeResource** | [**ChallengeResource**](ChallengeResource.md)| The challenge resource object | [optional] 
 
 ### Return type
 
-[**ModelChallengeResource**](ModelChallengeResource.md)
+[**ChallengeResource**](ChallengeResource.md)
 
 ### Authorization
 
@@ -1330,9 +1336,11 @@ Name | Type | Description  | Notes
 
 <a name="updatechallengeactivity"></a>
 # **UpdateChallengeActivity**
-> ModelChallengeActivityResource UpdateChallengeActivity (long? activityId, long? challengeId, ModelChallengeActivityResource challengeActivityResource)
+> ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource)
 
 Update a challenge activity
+
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
 
 ### Example
 ```csharp
@@ -1353,14 +1361,14 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CampaignsChallengesApi();
-            var activityId = 789;  // long? | The activity id
+            var id = 789;  // long? | The challenge_activity id
             var challengeId = 789;  // long? | The challenge id
-            var challengeActivityResource = new ModelChallengeActivityResource(); // ModelChallengeActivityResource | The challenge activity resource object (optional) 
+            var challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object (optional) 
 
             try
             {
                 // Update a challenge activity
-                ModelChallengeActivityResource result = apiInstance.UpdateChallengeActivity(activityId, challengeId, challengeActivityResource);
+                ChallengeActivityResource result = apiInstance.UpdateChallengeActivity(id, challengeId, challengeActivityResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1376,13 +1384,13 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityId** | **long?**| The activity id | 
+ **id** | **long?**| The challenge_activity id | 
  **challengeId** | **long?**| The challenge id | 
- **challengeActivityResource** | [**ModelChallengeActivityResource**](ModelChallengeActivityResource.md)| The challenge activity resource object | [optional] 
+ **challengeActivityResource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
 
 ### Return type
 
-[**ModelChallengeActivityResource**](ModelChallengeActivityResource.md)
+[**ChallengeActivityResource**](ChallengeActivityResource.md)
 
 ### Authorization
 
@@ -1397,7 +1405,7 @@ Name | Type | Description  | Notes
 
 <a name="updatechallengeactivitytemplate"></a>
 # **UpdateChallengeActivityTemplate**
-> ModelTemplateResource UpdateChallengeActivityTemplate (string id, ModelTemplateResource challengeActivityTemplateResource)
+> TemplateResource UpdateChallengeActivityTemplate (string id, TemplateResource challengeActivityTemplateResource)
 
 Update an challenge activity template
 
@@ -1421,12 +1429,12 @@ namespace Example
 
             var apiInstance = new CampaignsChallengesApi();
             var id = id_example;  // string | The id of the template
-            var challengeActivityTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The challengeActivity template resource object (optional) 
+            var challengeActivityTemplateResource = new TemplateResource(); // TemplateResource | The challengeActivity template resource object (optional) 
 
             try
             {
                 // Update an challenge activity template
-                ModelTemplateResource result = apiInstance.UpdateChallengeActivityTemplate(id, challengeActivityTemplateResource);
+                TemplateResource result = apiInstance.UpdateChallengeActivityTemplate(id, challengeActivityTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1443,11 +1451,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **challengeActivityTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The challengeActivity template resource object | [optional] 
+ **challengeActivityTemplateResource** | [**TemplateResource**](TemplateResource.md)| The challengeActivity template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -1462,7 +1470,7 @@ Name | Type | Description  | Notes
 
 <a name="updatechallengetemplate"></a>
 # **UpdateChallengeTemplate**
-> ModelTemplateResource UpdateChallengeTemplate (string id, ModelTemplateResource challengeTemplateResource)
+> TemplateResource UpdateChallengeTemplate (string id, TemplateResource challengeTemplateResource)
 
 Update a challenge template
 
@@ -1486,12 +1494,12 @@ namespace Example
 
             var apiInstance = new CampaignsChallengesApi();
             var id = id_example;  // string | The id of the template
-            var challengeTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The challenge template resource object (optional) 
+            var challengeTemplateResource = new TemplateResource(); // TemplateResource | The challenge template resource object (optional) 
 
             try
             {
                 // Update a challenge template
-                ModelTemplateResource result = apiInstance.UpdateChallengeTemplate(id, challengeTemplateResource);
+                TemplateResource result = apiInstance.UpdateChallengeTemplate(id, challengeTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1508,11 +1516,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **challengeTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The challenge template resource object | [optional] 
+ **challengeTemplateResource** | [**TemplateResource**](TemplateResource.md)| The challenge template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

@@ -22,14 +22,14 @@ namespace com.knetikcloud.Api
         /// Create a campaign 
         /// </summary>
         /// <param name="campaignResource">The campaign resource object</param>
-        /// <returns>ModelCampaignResource</returns>
-        ModelCampaignResource CreateCampaign (ModelCampaignResource campaignResource);
+        /// <returns>CampaignResource</returns>
+        CampaignResource CreateCampaign (CampaignResource campaignResource);
         /// <summary>
         /// Create a campaign template Campaign Templates define a type of campaign and the properties they have
         /// </summary>
         /// <param name="campaignTemplateResource">The campaign template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateCampaignTemplate (ModelTemplateResource campaignTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateCampaignTemplate (TemplateResource campaignTemplateResource);
         /// <summary>
         /// Delete a campaign 
         /// </summary>
@@ -47,8 +47,8 @@ namespace com.knetikcloud.Api
         /// Returns a single campaign 
         /// </summary>
         /// <param name="id">The campaign id</param>
-        /// <returns>ModelCampaignResource</returns>
-        ModelCampaignResource GetCampaign (long? id);
+        /// <returns>CampaignResource</returns>
+        CampaignResource GetCampaign (long? id);
         /// <summary>
         /// List the challenges associated with a campaign 
         /// </summary>
@@ -58,22 +58,22 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceChallengeResource</returns>
-        ModelPageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order);
+        /// <returns>PageResourceChallengeResource</returns>
+        PageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order);
         /// <summary>
         /// Get a single campaign template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetCampaignTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetCampaignTemplate (string id);
         /// <summary>
         /// List and search campaign templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order);
         /// <summary>
         /// List and search campaigns 
         /// </summary>
@@ -81,8 +81,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCampaignResource</returns>
-        ModelPageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order);
+        /// <returns>PageResourceCampaignResource</returns>
+        PageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order);
         /// <summary>
         /// Remove a challenge from a campaign 
         /// </summary>
@@ -95,15 +95,15 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The campaign id</param>
         /// <param name="campaignResource">The campaign resource object</param>
-        /// <returns>ModelCampaignResource</returns>
-        ModelCampaignResource UpdateCampaign (long? id, ModelCampaignResource campaignResource);
+        /// <returns>CampaignResource</returns>
+        CampaignResource UpdateCampaign (long? id, CampaignResource campaignResource);
         /// <summary>
         /// Update an campaign template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="campaignTemplateResource">The campaign template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateCampaignTemplate (string id, ModelTemplateResource campaignTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateCampaignTemplate (string id, TemplateResource campaignTemplateResource);
     }
   
     /// <summary>
@@ -202,8 +202,8 @@ namespace com.knetikcloud.Api
         /// Create a campaign 
         /// </summary>
         /// <param name="campaignResource">The campaign resource object</param> 
-        /// <returns>ModelCampaignResource</returns>            
-        public ModelCampaignResource CreateCampaign (ModelCampaignResource campaignResource)
+        /// <returns>CampaignResource</returns>            
+        public CampaignResource CreateCampaign (CampaignResource campaignResource)
         {
             
     
@@ -229,15 +229,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCampaign: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCampaignResource) ApiClient.Deserialize(response.Content, typeof(ModelCampaignResource), response.Headers);
+            return (CampaignResource) ApiClient.Deserialize(response.Content, typeof(CampaignResource), response.Headers);
         }
     
         /// <summary>
         /// Create a campaign template Campaign Templates define a type of campaign and the properties they have
         /// </summary>
         /// <param name="campaignTemplateResource">The campaign template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateCampaignTemplate (ModelTemplateResource campaignTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateCampaignTemplate (TemplateResource campaignTemplateResource)
         {
             
     
@@ -263,7 +263,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCampaignTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -346,8 +346,8 @@ namespace com.knetikcloud.Api
         /// Returns a single campaign 
         /// </summary>
         /// <param name="id">The campaign id</param> 
-        /// <returns>ModelCampaignResource</returns>            
-        public ModelCampaignResource GetCampaign (long? id)
+        /// <returns>CampaignResource</returns>            
+        public CampaignResource GetCampaign (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -376,7 +376,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCampaign: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCampaignResource) ApiClient.Deserialize(response.Content, typeof(ModelCampaignResource), response.Headers);
+            return (CampaignResource) ApiClient.Deserialize(response.Content, typeof(CampaignResource), response.Headers);
         }
     
         /// <summary>
@@ -388,8 +388,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceChallengeResource</returns>            
-        public ModelPageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order)
+        /// <returns>PageResourceChallengeResource</returns>            
+        public PageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order)
         {
             
             // verify the required parameter 'id' is set
@@ -423,15 +423,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCampaignChallenges: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceChallengeResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceChallengeResource), response.Headers);
+            return (PageResourceChallengeResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChallengeResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single campaign template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetCampaignTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetCampaignTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -460,7 +460,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCampaignTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -469,8 +469,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order)
         {
             
     
@@ -498,7 +498,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCampaignTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -508,8 +508,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCampaignResource</returns>            
-        public ModelPageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order)
+        /// <returns>PageResourceCampaignResource</returns>            
+        public PageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order)
         {
             
     
@@ -538,7 +538,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCampaigns: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCampaignResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCampaignResource), response.Headers);
+            return (PageResourceCampaignResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCampaignResource), response.Headers);
         }
     
         /// <summary>
@@ -588,8 +588,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="id">The campaign id</param> 
         /// <param name="campaignResource">The campaign resource object</param> 
-        /// <returns>ModelCampaignResource</returns>            
-        public ModelCampaignResource UpdateCampaign (long? id, ModelCampaignResource campaignResource)
+        /// <returns>CampaignResource</returns>            
+        public CampaignResource UpdateCampaign (long? id, CampaignResource campaignResource)
         {
             
             // verify the required parameter 'id' is set
@@ -619,7 +619,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCampaign: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCampaignResource) ApiClient.Deserialize(response.Content, typeof(ModelCampaignResource), response.Headers);
+            return (CampaignResource) ApiClient.Deserialize(response.Content, typeof(CampaignResource), response.Headers);
         }
     
         /// <summary>
@@ -627,8 +627,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="campaignTemplateResource">The campaign template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateCampaignTemplate (string id, ModelTemplateResource campaignTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateCampaignTemplate (string id, TemplateResource campaignTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -658,7 +658,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCampaignTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

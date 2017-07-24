@@ -15,15 +15,15 @@ namespace com.knetikcloud.Api
         /// Create a country tax 
         /// </summary>
         /// <param name="taxResource">The tax object</param>
-        /// <returns>ModelCountryTaxResource</returns>
-        ModelCountryTaxResource CreateCountryTax (ModelCountryTaxResource taxResource);
+        /// <returns>CountryTaxResource</returns>
+        CountryTaxResource CreateCountryTax (CountryTaxResource taxResource);
         /// <summary>
         /// Create a state tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="taxResource">The tax object</param>
-        /// <returns>ModelStateTaxResource</returns>
-        ModelStateTaxResource CreateStateTax (string countryCodeIso3, ModelStateTaxResource taxResource);
+        /// <returns>StateTaxResource</returns>
+        StateTaxResource CreateStateTax (string countryCodeIso3, StateTaxResource taxResource);
         /// <summary>
         /// Delete an existing tax 
         /// </summary>
@@ -41,31 +41,31 @@ namespace com.knetikcloud.Api
         /// Get a single tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
-        /// <returns>ModelCountryTaxResource</returns>
-        ModelCountryTaxResource GetCountryTax (string countryCodeIso3);
+        /// <returns>CountryTaxResource</returns>
+        CountryTaxResource GetCountryTax (string countryCodeIso3);
         /// <summary>
         /// List and search taxes Get a list of taxes
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCountryTaxResource</returns>
-        ModelPageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order);
+        /// <returns>PageResourceCountryTaxResource</returns>
+        PageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order);
         /// <summary>
         /// Get a single state tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="stateCode">The code of the state</param>
-        /// <returns>ModelStateTaxResource</returns>
-        ModelStateTaxResource GetStateTax (string countryCodeIso3, string stateCode);
+        /// <returns>StateTaxResource</returns>
+        StateTaxResource GetStateTax (string countryCodeIso3, string stateCode);
         /// <summary>
         /// List and search taxes across all countries Get a list of taxes
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceStateTaxResource</returns>
-        ModelPageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order);
+        /// <returns>PageResourceStateTaxResource</returns>
+        PageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order);
         /// <summary>
         /// List and search taxes within a country Get a list of taxes
         /// </summary>
@@ -73,23 +73,23 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceStateTaxResource</returns>
-        ModelPageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order);
+        /// <returns>PageResourceStateTaxResource</returns>
+        PageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order);
         /// <summary>
         /// Create or update a tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="taxResource">The tax object</param>
-        /// <returns>ModelCountryTaxResource</returns>
-        ModelCountryTaxResource UpdateCountryTax (string countryCodeIso3, ModelCountryTaxResource taxResource);
+        /// <returns>CountryTaxResource</returns>
+        CountryTaxResource UpdateCountryTax (string countryCodeIso3, CountryTaxResource taxResource);
         /// <summary>
         /// Create or update a state tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="stateCode">The code of the state</param>
         /// <param name="taxResource">The tax object</param>
-        /// <returns>ModelStateTaxResource</returns>
-        ModelStateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, ModelStateTaxResource taxResource);
+        /// <returns>StateTaxResource</returns>
+        StateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, StateTaxResource taxResource);
     }
   
     /// <summary>
@@ -149,8 +149,8 @@ namespace com.knetikcloud.Api
         /// Create a country tax 
         /// </summary>
         /// <param name="taxResource">The tax object</param> 
-        /// <returns>ModelCountryTaxResource</returns>            
-        public ModelCountryTaxResource CreateCountryTax (ModelCountryTaxResource taxResource)
+        /// <returns>CountryTaxResource</returns>            
+        public CountryTaxResource CreateCountryTax (CountryTaxResource taxResource)
         {
             
     
@@ -176,7 +176,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCountryTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCountryTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelCountryTaxResource), response.Headers);
+            return (CountryTaxResource) ApiClient.Deserialize(response.Content, typeof(CountryTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -184,8 +184,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="taxResource">The tax object</param> 
-        /// <returns>ModelStateTaxResource</returns>            
-        public ModelStateTaxResource CreateStateTax (string countryCodeIso3, ModelStateTaxResource taxResource)
+        /// <returns>StateTaxResource</returns>            
+        public StateTaxResource CreateStateTax (string countryCodeIso3, StateTaxResource taxResource)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -215,7 +215,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateStateTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStateTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelStateTaxResource), response.Headers);
+            return (StateTaxResource) ApiClient.Deserialize(response.Content, typeof(StateTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -301,8 +301,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// Get a single tax 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
-        /// <returns>ModelCountryTaxResource</returns>            
-        public ModelCountryTaxResource GetCountryTax (string countryCodeIso3)
+        /// <returns>CountryTaxResource</returns>            
+        public CountryTaxResource GetCountryTax (string countryCodeIso3)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -331,7 +331,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCountryTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCountryTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelCountryTaxResource), response.Headers);
+            return (CountryTaxResource) ApiClient.Deserialize(response.Content, typeof(CountryTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -340,8 +340,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCountryTaxResource</returns>            
-        public ModelPageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order)
+        /// <returns>PageResourceCountryTaxResource</returns>            
+        public PageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order)
         {
             
     
@@ -369,7 +369,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCountryTaxes: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCountryTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCountryTaxResource), response.Headers);
+            return (PageResourceCountryTaxResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCountryTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -377,8 +377,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="stateCode">The code of the state</param> 
-        /// <returns>ModelStateTaxResource</returns>            
-        public ModelStateTaxResource GetStateTax (string countryCodeIso3, string stateCode)
+        /// <returns>StateTaxResource</returns>            
+        public StateTaxResource GetStateTax (string countryCodeIso3, string stateCode)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -411,7 +411,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStateTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStateTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelStateTaxResource), response.Headers);
+            return (StateTaxResource) ApiClient.Deserialize(response.Content, typeof(StateTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -420,8 +420,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceStateTaxResource</returns>            
-        public ModelPageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order)
+        /// <returns>PageResourceStateTaxResource</returns>            
+        public PageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order)
         {
             
     
@@ -449,7 +449,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStateTaxesForCountries: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceStateTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceStateTaxResource), response.Headers);
+            return (PageResourceStateTaxResource) ApiClient.Deserialize(response.Content, typeof(PageResourceStateTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -459,8 +459,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceStateTaxResource</returns>            
-        public ModelPageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order)
+        /// <returns>PageResourceStateTaxResource</returns>            
+        public PageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -492,7 +492,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStateTaxesForCountry: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceStateTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceStateTaxResource), response.Headers);
+            return (PageResourceStateTaxResource) ApiClient.Deserialize(response.Content, typeof(PageResourceStateTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -500,8 +500,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="taxResource">The tax object</param> 
-        /// <returns>ModelCountryTaxResource</returns>            
-        public ModelCountryTaxResource UpdateCountryTax (string countryCodeIso3, ModelCountryTaxResource taxResource)
+        /// <returns>CountryTaxResource</returns>            
+        public CountryTaxResource UpdateCountryTax (string countryCodeIso3, CountryTaxResource taxResource)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -531,7 +531,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCountryTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCountryTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelCountryTaxResource), response.Headers);
+            return (CountryTaxResource) ApiClient.Deserialize(response.Content, typeof(CountryTaxResource), response.Headers);
         }
     
         /// <summary>
@@ -540,8 +540,8 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="stateCode">The code of the state</param> 
         /// <param name="taxResource">The tax object</param> 
-        /// <returns>ModelStateTaxResource</returns>            
-        public ModelStateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, ModelStateTaxResource taxResource)
+        /// <returns>StateTaxResource</returns>            
+        public StateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, StateTaxResource taxResource)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -575,7 +575,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateStateTax: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStateTaxResource) ApiClient.Deserialize(response.Content, typeof(ModelStateTaxResource), response.Headers);
+            return (StateTaxResource) ApiClient.Deserialize(response.Content, typeof(StateTaxResource), response.Headers);
         }
     
     }

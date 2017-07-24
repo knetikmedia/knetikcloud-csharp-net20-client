@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="sendrawemail"></a>
 # **SendRawEmail**
-> void SendRawEmail (ModelRawEmailResource rawEmailResource)
+> void SendRawEmail (RawEmailResource rawEmailResource)
 
 Send a raw email to one or more users
 
@@ -35,7 +35,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MessagingApi();
-            var rawEmailResource = new ModelRawEmailResource(); // ModelRawEmailResource | The new raw email to be sent (optional) 
+            var rawEmailResource = new RawEmailResource(); // RawEmailResource | The new raw email to be sent (optional) 
 
             try
             {
@@ -55,7 +55,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rawEmailResource** | [**ModelRawEmailResource**](ModelRawEmailResource.md)| The new raw email to be sent | [optional] 
+ **rawEmailResource** | [**RawEmailResource**](RawEmailResource.md)| The new raw email to be sent | [optional] 
 
 ### Return type
 
@@ -74,7 +74,7 @@ void (empty response body)
 
 <a name="sendrawsms"></a>
 # **SendRawSMS**
-> void SendRawSMS (ModelRawSMSResource rawSMSResource)
+> void SendRawSMS (RawSMSResource rawSMSResource)
 
 Send a raw SMS
 
@@ -99,7 +99,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MessagingApi();
-            var rawSMSResource = new ModelRawSMSResource(); // ModelRawSMSResource | The new raw SMS to be sent (optional) 
+            var rawSMSResource = new RawSMSResource(); // RawSMSResource | The new raw SMS to be sent (optional) 
 
             try
             {
@@ -119,7 +119,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rawSMSResource** | [**ModelRawSMSResource**](ModelRawSMSResource.md)| The new raw SMS to be sent | [optional] 
+ **rawSMSResource** | [**RawSMSResource**](RawSMSResource.md)| The new raw SMS to be sent | [optional] 
 
 ### Return type
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="sendtemplatedemail"></a>
 # **SendTemplatedEmail**
-> void SendTemplatedEmail (ModelTemplateEmailResource messageResource)
+> void SendTemplatedEmail (TemplateEmailResource messageResource)
 
 Send a templated email to one or more users
 
@@ -161,7 +161,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MessagingApi();
-            var messageResource = new ModelTemplateEmailResource(); // ModelTemplateEmailResource | The new template email to be sent (optional) 
+            var messageResource = new TemplateEmailResource(); // TemplateEmailResource | The new template email to be sent (optional) 
 
             try
             {
@@ -181,7 +181,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messageResource** | [**ModelTemplateEmailResource**](ModelTemplateEmailResource.md)| The new template email to be sent | [optional] 
+ **messageResource** | [**TemplateEmailResource**](TemplateEmailResource.md)| The new template email to be sent | [optional] 
 
 ### Return type
 
@@ -200,7 +200,7 @@ void (empty response body)
 
 <a name="sendtemplatedsms"></a>
 # **SendTemplatedSMS**
-> void SendTemplatedSMS (ModelTemplateSMSResource templateSMSResource)
+> void SendTemplatedSMS (TemplateSMSResource templateSMSResource)
 
 Send a new templated SMS
 
@@ -225,7 +225,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MessagingApi();
-            var templateSMSResource = new ModelTemplateSMSResource(); // ModelTemplateSMSResource | The new template SMS to be sent (optional) 
+            var templateSMSResource = new TemplateSMSResource(); // TemplateSMSResource | The new template SMS to be sent (optional) 
 
             try
             {
@@ -245,7 +245,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateSMSResource** | [**ModelTemplateSMSResource**](ModelTemplateSMSResource.md)| The new template SMS to be sent | [optional] 
+ **templateSMSResource** | [**TemplateSMSResource**](TemplateSMSResource.md)| The new template SMS to be sent | [optional] 
 
 ### Return type
 

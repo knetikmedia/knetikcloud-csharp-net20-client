@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getuserwallet"></a>
 # **GetUserWallet**
-> ModelSimpleWallet GetUserWallet (int? userId, string currencyCode)
+> SimpleWallet GetUserWallet (int? userId, string currencyCode)
 
 Returns the user's wallet for the given currency code
 
@@ -44,7 +44,7 @@ namespace Example
             try
             {
                 // Returns the user's wallet for the given currency code
-                ModelSimpleWallet result = apiInstance.GetUserWallet(userId, currencyCode);
+                SimpleWallet result = apiInstance.GetUserWallet(userId, currencyCode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelSimpleWallet**](ModelSimpleWallet.md)
+[**SimpleWallet**](SimpleWallet.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserwallettransactions"></a>
 # **GetUserWalletTransactions**
-> ModelPageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order)
+> PageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order)
 
 Retrieve a user's wallet transactions
 
@@ -116,7 +116,7 @@ namespace Example
             try
             {
                 // Retrieve a user's wallet transactions
-                ModelPageResourceWalletTransactionResource result = apiInstance.GetUserWalletTransactions(userId, currencyCode, filterType, filterMaxDate, filterMinDate, filterSign, size, page, order);
+                PageResourceWalletTransactionResource result = apiInstance.GetUserWalletTransactions(userId, currencyCode, filterType, filterMaxDate, filterMinDate, filterSign, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceWalletTransactionResource**](ModelPageResourceWalletTransactionResource.md)
+[**PageResourceWalletTransactionResource**](PageResourceWalletTransactionResource.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserwallets"></a>
 # **GetUserWallets**
-> List<ModelSimpleWallet> GetUserWallets (int? userId)
+> List<SimpleWallet> GetUserWallets (int? userId)
 
 List all of a user's wallets
 
@@ -187,7 +187,7 @@ namespace Example
             try
             {
                 // List all of a user's wallets
-                List&lt;ModelSimpleWallet&gt; result = apiInstance.GetUserWallets(userId);
+                List&lt;SimpleWallet&gt; result = apiInstance.GetUserWallets(userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelSimpleWallet>**](ModelSimpleWallet.md)
+[**List<SimpleWallet>**](SimpleWallet.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 <a name="getwalletbalances"></a>
 # **GetWalletBalances**
-> ModelPageResourceWalletTotalResponse GetWalletBalances ()
+> PageResourceWalletTotalResponse GetWalletBalances ()
 
 Retrieves a summation of wallet balances by currency code
 
@@ -249,7 +249,7 @@ namespace Example
             try
             {
                 // Retrieves a summation of wallet balances by currency code
-                ModelPageResourceWalletTotalResponse result = apiInstance.GetWalletBalances();
+                PageResourceWalletTotalResponse result = apiInstance.GetWalletBalances();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -266,7 +266,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelPageResourceWalletTotalResponse**](ModelPageResourceWalletTotalResponse.md)
+[**PageResourceWalletTotalResponse**](PageResourceWalletTotalResponse.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ This endpoint does not need any parameter.
 
 <a name="getwallettransactions"></a>
 # **GetWalletTransactions**
-> ModelPageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order)
+> PageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order)
 
 Retrieve wallet transactions across the system
 
@@ -319,7 +319,7 @@ namespace Example
             try
             {
                 // Retrieve wallet transactions across the system
-                ModelPageResourceWalletTransactionResource result = apiInstance.GetWalletTransactions(filterInvoice, filterType, filterDate, filterSign, filterUserId, filterUsername, filterDetails, filterCurrencyCode, size, page, order);
+                PageResourceWalletTransactionResource result = apiInstance.GetWalletTransactions(filterInvoice, filterType, filterDate, filterSign, filterUserId, filterUsername, filterDetails, filterCurrencyCode, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceWalletTransactionResource**](ModelPageResourceWalletTransactionResource.md)
+[**PageResourceWalletTransactionResource**](PageResourceWalletTransactionResource.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 <a name="getwallets"></a>
 # **GetWallets**
-> ModelPageResourceSimpleWallet GetWallets (int? size, int? page, string order)
+> PageResourceSimpleWallet GetWallets (int? size, int? page, string order)
 
 Retrieve a list of wallets across the system
 
@@ -394,7 +394,7 @@ namespace Example
             try
             {
                 // Retrieve a list of wallets across the system
-                ModelPageResourceSimpleWallet result = apiInstance.GetWallets(size, page, order);
+                PageResourceSimpleWallet result = apiInstance.GetWallets(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceSimpleWallet**](ModelPageResourceSimpleWallet.md)
+[**PageResourceSimpleWallet**](PageResourceSimpleWallet.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 <a name="updatewalletbalance"></a>
 # **UpdateWalletBalance**
-> ModelWalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, ModelWalletAlterRequest request)
+> WalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, WalletAlterRequest request)
 
 Updates the balance for a user's wallet
 
@@ -456,12 +456,12 @@ namespace Example
             var apiInstance = new PaymentsWalletsApi();
             var userId = 56;  // int? | The ID of the user for whom wallet is being modified
             var currencyCode = currencyCode_example;  // string | Currency code of the user's wallet
-            var request = new ModelWalletAlterRequest(); // ModelWalletAlterRequest | The requested balance modification to be made to the user's wallet (optional) 
+            var request = new WalletAlterRequest(); // WalletAlterRequest | The requested balance modification to be made to the user's wallet (optional) 
 
             try
             {
                 // Updates the balance for a user's wallet
-                ModelWalletTransactionResource result = apiInstance.UpdateWalletBalance(userId, currencyCode, request);
+                WalletTransactionResource result = apiInstance.UpdateWalletBalance(userId, currencyCode, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -479,11 +479,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The ID of the user for whom wallet is being modified | 
  **currencyCode** | **string**| Currency code of the user&#39;s wallet | 
- **request** | [**ModelWalletAlterRequest**](ModelWalletAlterRequest.md)| The requested balance modification to be made to the user&#39;s wallet | [optional] 
+ **request** | [**WalletAlterRequest**](WalletAlterRequest.md)| The requested balance modification to be made to the user&#39;s wallet | [optional] 
 
 ### Return type
 
-[**ModelWalletTransactionResource**](ModelWalletTransactionResource.md)
+[**WalletTransactionResource**](WalletTransactionResource.md)
 
 ### Authorization
 

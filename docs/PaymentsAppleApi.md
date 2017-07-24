@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="verifyapplereceipt"></a>
 # **VerifyAppleReceipt**
-> string VerifyAppleReceipt (ModelApplyPaymentRequest request)
+> string VerifyAppleReceipt (ApplyPaymentRequest request)
 
 Pay invoice with Apple receipt
 
@@ -31,7 +31,7 @@ namespace Example
         {
             
             var apiInstance = new PaymentsAppleApi();
-            var request = new ModelApplyPaymentRequest(); // ModelApplyPaymentRequest | The request for paying an invoice through an Apple receipt (optional) 
+            var request = new ApplyPaymentRequest(); // ApplyPaymentRequest | The request for paying an invoice through an Apple receipt (optional) 
 
             try
             {
@@ -52,7 +52,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelApplyPaymentRequest**](ModelApplyPaymentRequest.md)| The request for paying an invoice through an Apple receipt | [optional] 
+ **request** | [**ApplyPaymentRequest**](ApplyPaymentRequest.md)| The request for paying an invoice through an Apple receipt | [optional] 
 
 ### Return type
 

@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Creates a subscription item and associated plans 
         /// </summary>
         /// <param name="subscriptionResource">The subscription to be created</param>
-        /// <returns>ModelSubscriptionResource</returns>
-        ModelSubscriptionResource CreateSubscription (ModelSubscriptionResource subscriptionResource);
+        /// <returns>SubscriptionResource</returns>
+        SubscriptionResource CreateSubscription (SubscriptionResource subscriptionResource);
         /// <summary>
         /// Create a subscription template Subscription Templates define a type of subscription and the properties they have.
         /// </summary>
         /// <param name="subscriptionTemplateResource">The new subscription template</param>
-        /// <returns>ModelSubscriptionTemplateResource</returns>
-        ModelSubscriptionTemplateResource CreateSubscriptionTemplate (ModelSubscriptionTemplateResource subscriptionTemplateResource);
+        /// <returns>SubscriptionTemplateResource</returns>
+        SubscriptionTemplateResource CreateSubscriptionTemplate (SubscriptionTemplateResource subscriptionTemplateResource);
         /// <summary>
         /// Delete a subscription plan Must not be locked or a migration target
         /// </summary>
@@ -41,30 +41,30 @@ namespace com.knetikcloud.Api
         /// Retrieve a single subscription item and associated plans 
         /// </summary>
         /// <param name="id">The id of the subscription</param>
-        /// <returns>ModelSubscriptionResource</returns>
-        ModelSubscriptionResource GetSubscription (int? id);
+        /// <returns>SubscriptionResource</returns>
+        SubscriptionResource GetSubscription (int? id);
         /// <summary>
         /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelSubscriptionTemplateResource</returns>
-        ModelSubscriptionTemplateResource GetSubscriptionTemplate (string id);
+        /// <returns>SubscriptionTemplateResource</returns>
+        SubscriptionTemplateResource GetSubscriptionTemplate (string id);
         /// <summary>
         /// List and search subscription templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceSubscriptionTemplateResource</returns>
-        ModelPageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceSubscriptionTemplateResource</returns>
+        PageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order);
         /// <summary>
         /// List available subscription items and associated plans 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceSubscriptionResource</returns>
-        ModelPageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order);
+        /// <returns>PageResourceSubscriptionResource</returns>
+        PageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order);
         /// <summary>
         /// Processes subscriptions and charge dues 
         /// </summary>
@@ -76,14 +76,14 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the subscription</param>
         /// <param name="subscriptionResource">The subscription resource object</param>
         /// <returns></returns>
-        void UpdateSubscription (int? id, ModelSubscriptionResource subscriptionResource);
+        void UpdateSubscription (int? id, SubscriptionResource subscriptionResource);
         /// <summary>
         /// Update a subscription template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="subscriptionTemplateResource">The subscription template resource object</param>
-        /// <returns>ModelSubscriptionTemplateResource</returns>
-        ModelSubscriptionTemplateResource UpdateSubscriptionTemplate (string id, ModelSubscriptionTemplateResource subscriptionTemplateResource);
+        /// <returns>SubscriptionTemplateResource</returns>
+        SubscriptionTemplateResource UpdateSubscriptionTemplate (string id, SubscriptionTemplateResource subscriptionTemplateResource);
     }
   
     /// <summary>
@@ -143,8 +143,8 @@ namespace com.knetikcloud.Api
         /// Creates a subscription item and associated plans 
         /// </summary>
         /// <param name="subscriptionResource">The subscription to be created</param> 
-        /// <returns>ModelSubscriptionResource</returns>            
-        public ModelSubscriptionResource CreateSubscription (ModelSubscriptionResource subscriptionResource)
+        /// <returns>SubscriptionResource</returns>            
+        public SubscriptionResource CreateSubscription (SubscriptionResource subscriptionResource)
         {
             
     
@@ -170,15 +170,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateSubscription: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSubscriptionResource) ApiClient.Deserialize(response.Content, typeof(ModelSubscriptionResource), response.Headers);
+            return (SubscriptionResource) ApiClient.Deserialize(response.Content, typeof(SubscriptionResource), response.Headers);
         }
     
         /// <summary>
         /// Create a subscription template Subscription Templates define a type of subscription and the properties they have.
         /// </summary>
         /// <param name="subscriptionTemplateResource">The new subscription template</param> 
-        /// <returns>ModelSubscriptionTemplateResource</returns>            
-        public ModelSubscriptionTemplateResource CreateSubscriptionTemplate (ModelSubscriptionTemplateResource subscriptionTemplateResource)
+        /// <returns>SubscriptionTemplateResource</returns>            
+        public SubscriptionTemplateResource CreateSubscriptionTemplate (SubscriptionTemplateResource subscriptionTemplateResource)
         {
             
     
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateSubscriptionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelSubscriptionTemplateResource), response.Headers);
+            return (SubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(SubscriptionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -292,8 +292,8 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         /// Retrieve a single subscription item and associated plans 
         /// </summary>
         /// <param name="id">The id of the subscription</param> 
-        /// <returns>ModelSubscriptionResource</returns>            
-        public ModelSubscriptionResource GetSubscription (int? id)
+        /// <returns>SubscriptionResource</returns>            
+        public SubscriptionResource GetSubscription (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -322,15 +322,15 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscription: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSubscriptionResource) ApiClient.Deserialize(response.Content, typeof(ModelSubscriptionResource), response.Headers);
+            return (SubscriptionResource) ApiClient.Deserialize(response.Content, typeof(SubscriptionResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelSubscriptionTemplateResource</returns>            
-        public ModelSubscriptionTemplateResource GetSubscriptionTemplate (string id)
+        /// <returns>SubscriptionTemplateResource</returns>            
+        public SubscriptionTemplateResource GetSubscriptionTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -359,7 +359,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscriptionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelSubscriptionTemplateResource), response.Headers);
+            return (SubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(SubscriptionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -368,8 +368,8 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceSubscriptionTemplateResource</returns>            
-        public ModelPageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceSubscriptionTemplateResource</returns>            
+        public PageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order)
         {
             
     
@@ -397,7 +397,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscriptionTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSubscriptionTemplateResource), response.Headers);
+            return (PageResourceSubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceSubscriptionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -406,8 +406,8 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceSubscriptionResource</returns>            
-        public ModelPageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order)
+        /// <returns>PageResourceSubscriptionResource</returns>            
+        public PageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order)
         {
             
     
@@ -435,7 +435,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscriptions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSubscriptionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSubscriptionResource), response.Headers);
+            return (PageResourceSubscriptionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceSubscriptionResource), response.Headers);
         }
     
         /// <summary>
@@ -476,7 +476,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         /// <param name="id">The id of the subscription</param> 
         /// <param name="subscriptionResource">The subscription resource object</param> 
         /// <returns></returns>            
-        public void UpdateSubscription (int? id, ModelSubscriptionResource subscriptionResource)
+        public void UpdateSubscription (int? id, SubscriptionResource subscriptionResource)
         {
             
             // verify the required parameter 'id' is set
@@ -514,8 +514,8 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="subscriptionTemplateResource">The subscription template resource object</param> 
-        /// <returns>ModelSubscriptionTemplateResource</returns>            
-        public ModelSubscriptionTemplateResource UpdateSubscriptionTemplate (string id, ModelSubscriptionTemplateResource subscriptionTemplateResource)
+        /// <returns>SubscriptionTemplateResource</returns>            
+        public SubscriptionTemplateResource UpdateSubscriptionTemplate (string id, SubscriptionTemplateResource subscriptionTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -545,7 +545,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateSubscriptionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelSubscriptionTemplateResource), response.Headers);
+            return (SubscriptionTemplateResource) ApiClient.Deserialize(response.Content, typeof(SubscriptionTemplateResource), response.Headers);
         }
     
     }

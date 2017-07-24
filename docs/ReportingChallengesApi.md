@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getchallengeeventleaderboard"></a>
 # **GetChallengeEventLeaderboard**
-> ModelPageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order)
+> PageResourceChallengeEventParticipantResource GetChallengeEventLeaderboard (long? filterEvent, int? size, int? page, string order)
 
 Retrieve a challenge event leaderboard details
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Retrieve a challenge event leaderboard details
-                ModelPageResourceChallengeEventParticipantResource result = apiInstance.GetChallengeEventLeaderboard(filterEvent, size, page, order);
+                PageResourceChallengeEventParticipantResource result = apiInstance.GetChallengeEventLeaderboard(filterEvent, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceChallengeEventParticipantResource**](ModelPageResourceChallengeEventParticipantResource.md)
+[**PageResourceChallengeEventParticipantResource**](PageResourceChallengeEventParticipantResource.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="getchallengeeventparticipants"></a>
 # **GetChallengeEventParticipants**
-> ModelPageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order)
+> PageResourceChallengeEventParticipantResource GetChallengeEventParticipants (long? filterEvent, int? size, int? page, string order)
 
 Retrieve a challenge event participant details
 
@@ -114,7 +114,7 @@ namespace Example
             try
             {
                 // Retrieve a challenge event participant details
-                ModelPageResourceChallengeEventParticipantResource result = apiInstance.GetChallengeEventParticipants(filterEvent, size, page, order);
+                PageResourceChallengeEventParticipantResource result = apiInstance.GetChallengeEventParticipants(filterEvent, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceChallengeEventParticipantResource**](ModelPageResourceChallengeEventParticipantResource.md)
+[**PageResourceChallengeEventParticipantResource**](PageResourceChallengeEventParticipantResource.md)
 
 ### Authorization
 

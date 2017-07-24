@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a currency 
         /// </summary>
         /// <param name="currency">The currency object</param>
-        /// <returns>ModelCurrencyResource</returns>
-        ModelCurrencyResource CreateCurrency (ModelCurrencyResource currency);
+        /// <returns>CurrencyResource</returns>
+        CurrencyResource CreateCurrency (CurrencyResource currency);
         /// <summary>
         /// Delete a currency 
         /// </summary>
@@ -31,21 +31,21 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCurrencyResource</returns>
-        ModelPageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order);
+        /// <returns>PageResourceCurrencyResource</returns>
+        PageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order);
         /// <summary>
         /// Get a single currency 
         /// </summary>
         /// <param name="code">The currency code</param>
-        /// <returns>ModelCurrencyResource</returns>
-        ModelCurrencyResource GetCurrency (string code);
+        /// <returns>CurrencyResource</returns>
+        CurrencyResource GetCurrency (string code);
         /// <summary>
         /// Update a currency 
         /// </summary>
         /// <param name="code">The currency code</param>
         /// <param name="currency">The currency object</param>
         /// <returns></returns>
-        void UpdateCurrency (string code, ModelCurrencyResource currency);
+        void UpdateCurrency (string code, CurrencyResource currency);
     }
   
     /// <summary>
@@ -105,8 +105,8 @@ namespace com.knetikcloud.Api
         /// Create a currency 
         /// </summary>
         /// <param name="currency">The currency object</param> 
-        /// <returns>ModelCurrencyResource</returns>            
-        public ModelCurrencyResource CreateCurrency (ModelCurrencyResource currency)
+        /// <returns>CurrencyResource</returns>            
+        public CurrencyResource CreateCurrency (CurrencyResource currency)
         {
             
     
@@ -132,7 +132,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCurrency: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCurrencyResource) ApiClient.Deserialize(response.Content, typeof(ModelCurrencyResource), response.Headers);
+            return (CurrencyResource) ApiClient.Deserialize(response.Content, typeof(CurrencyResource), response.Headers);
         }
     
         /// <summary>
@@ -180,8 +180,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCurrencyResource</returns>            
-        public ModelPageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order)
+        /// <returns>PageResourceCurrencyResource</returns>            
+        public PageResourceCurrencyResource GetCurrencies (bool? filterEnabledCurrencies, string filterType, int? size, int? page, string order)
         {
             
     
@@ -211,15 +211,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCurrencies: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCurrencyResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCurrencyResource), response.Headers);
+            return (PageResourceCurrencyResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCurrencyResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single currency 
         /// </summary>
         /// <param name="code">The currency code</param> 
-        /// <returns>ModelCurrencyResource</returns>            
-        public ModelCurrencyResource GetCurrency (string code)
+        /// <returns>CurrencyResource</returns>            
+        public CurrencyResource GetCurrency (string code)
         {
             
             // verify the required parameter 'code' is set
@@ -248,7 +248,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCurrency: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCurrencyResource) ApiClient.Deserialize(response.Content, typeof(ModelCurrencyResource), response.Headers);
+            return (CurrencyResource) ApiClient.Deserialize(response.Content, typeof(CurrencyResource), response.Headers);
         }
     
         /// <summary>
@@ -257,7 +257,7 @@ namespace com.knetikcloud.Api
         /// <param name="code">The currency code</param> 
         /// <param name="currency">The currency object</param> 
         /// <returns></returns>            
-        public void UpdateCurrency (string code, ModelCurrencyResource currency)
+        public void UpdateCurrency (string code, CurrencyResource currency)
         {
             
             // verify the required parameter 'code' is set

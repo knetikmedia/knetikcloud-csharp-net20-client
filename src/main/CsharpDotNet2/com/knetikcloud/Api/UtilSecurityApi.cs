@@ -18,13 +18,13 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceLocationLogResource</returns>
-        ModelPageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order);
+        /// <returns>PageResourceLocationLogResource</returns>
+        PageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order);
         /// <summary>
         /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info 
         /// </summary>
-        /// <returns>ModelTokenDetailsResource</returns>
-        ModelTokenDetailsResource GetUserTokenDetails ();
+        /// <returns>TokenDetailsResource</returns>
+        TokenDetailsResource GetUserTokenDetails ();
     }
   
     /// <summary>
@@ -87,8 +87,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceLocationLogResource</returns>            
-        public ModelPageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order)
+        /// <returns>PageResourceLocationLogResource</returns>            
+        public PageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order)
         {
             
     
@@ -117,14 +117,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserLocationLog: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceLocationLogResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceLocationLogResource), response.Headers);
+            return (PageResourceLocationLogResource) ApiClient.Deserialize(response.Content, typeof(PageResourceLocationLogResource), response.Headers);
         }
     
         /// <summary>
         /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info 
         /// </summary>
-        /// <returns>ModelTokenDetailsResource</returns>            
-        public ModelTokenDetailsResource GetUserTokenDetails ()
+        /// <returns>TokenDetailsResource</returns>            
+        public TokenDetailsResource GetUserTokenDetails ()
         {
             
     
@@ -149,7 +149,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserTokenDetails: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTokenDetailsResource) ApiClient.Deserialize(response.Content, typeof(ModelTokenDetailsResource), response.Headers);
+            return (TokenDetailsResource) ApiClient.Deserialize(response.Content, typeof(TokenDetailsResource), response.Headers);
         }
     
     }

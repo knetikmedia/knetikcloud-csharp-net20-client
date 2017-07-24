@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getbreactions"></a>
 # **GetBREActions**
-> List<ModelActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch)
+> List<ActionResource> GetBREActions (string filterCategory, string filterName, string filterTags, string filterSearch)
 
 Get a list of available actions
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // Get a list of available actions
-                List&lt;ModelActionResource&gt; result = apiInstance.GetBREActions(filterCategory, filterName, filterTags, filterSearch);
+                List&lt;ActionResource&gt; result = apiInstance.GetBREActions(filterCategory, filterName, filterTags, filterSearch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelActionResource>**](ModelActionResource.md)
+[**List<ActionResource>**](ActionResource.md)
 
 ### Authorization
 

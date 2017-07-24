@@ -16,14 +16,14 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="shippingItem">The shipping item object</param>
-        /// <returns>ModelShippingItem</returns>
-        ModelShippingItem CreateShippingItem (bool? cascade, ModelShippingItem shippingItem);
+        /// <returns>ShippingItem</returns>
+        ShippingItem CreateShippingItem (bool? cascade, ShippingItem shippingItem);
         /// <summary>
         /// Create a shipping template Shipping Templates define a type of shipping and the properties they have.
         /// </summary>
         /// <param name="shippingTemplateResource">The new shipping template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource CreateShippingTemplate (ModelItemTemplateResource shippingTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource CreateShippingTemplate (ItemTemplateResource shippingTemplateResource);
         /// <summary>
         /// Delete a shipping item 
         /// </summary>
@@ -41,37 +41,37 @@ namespace com.knetikcloud.Api
         /// Get a single shipping item 
         /// </summary>
         /// <param name="id">The id of the shipping item</param>
-        /// <returns>ModelShippingItem</returns>
-        ModelShippingItem GetShippingItem (int? id);
+        /// <returns>ShippingItem</returns>
+        ShippingItem GetShippingItem (int? id);
         /// <summary>
         /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource GetShippingTemplate (string id);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource GetShippingTemplate (string id);
         /// <summary>
         /// List and search shipping templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceItemTemplateResource</returns>
-        ModelPageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceItemTemplateResource</returns>
+        PageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order);
         /// <summary>
         /// Update a shipping item 
         /// </summary>
         /// <param name="id">The id of the shipping item</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="shippingItem">The shipping item object</param>
-        /// <returns>ModelShippingItem</returns>
-        ModelShippingItem UpdateShippingItem (int? id, bool? cascade, ModelShippingItem shippingItem);
+        /// <returns>ShippingItem</returns>
+        ShippingItem UpdateShippingItem (int? id, bool? cascade, ShippingItem shippingItem);
         /// <summary>
         /// Update a shipping template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="shippingTemplateResource">The shipping template resource object</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource UpdateShippingTemplate (string id, ModelItemTemplateResource shippingTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource UpdateShippingTemplate (string id, ItemTemplateResource shippingTemplateResource);
     }
   
     /// <summary>
@@ -132,8 +132,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="shippingItem">The shipping item object</param> 
-        /// <returns>ModelShippingItem</returns>            
-        public ModelShippingItem CreateShippingItem (bool? cascade, ModelShippingItem shippingItem)
+        /// <returns>ShippingItem</returns>            
+        public ShippingItem CreateShippingItem (bool? cascade, ShippingItem shippingItem)
         {
             
     
@@ -160,15 +160,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateShippingItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelShippingItem) ApiClient.Deserialize(response.Content, typeof(ModelShippingItem), response.Headers);
+            return (ShippingItem) ApiClient.Deserialize(response.Content, typeof(ShippingItem), response.Headers);
         }
     
         /// <summary>
         /// Create a shipping template Shipping Templates define a type of shipping and the properties they have.
         /// </summary>
         /// <param name="shippingTemplateResource">The new shipping template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource CreateShippingTemplate (ModelItemTemplateResource shippingTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource CreateShippingTemplate (ItemTemplateResource shippingTemplateResource)
         {
             
     
@@ -194,7 +194,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateShippingTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -277,8 +277,8 @@ namespace com.knetikcloud.Api
         /// Get a single shipping item 
         /// </summary>
         /// <param name="id">The id of the shipping item</param> 
-        /// <returns>ModelShippingItem</returns>            
-        public ModelShippingItem GetShippingItem (int? id)
+        /// <returns>ShippingItem</returns>            
+        public ShippingItem GetShippingItem (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -307,15 +307,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetShippingItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelShippingItem) ApiClient.Deserialize(response.Content, typeof(ModelShippingItem), response.Headers);
+            return (ShippingItem) ApiClient.Deserialize(response.Content, typeof(ShippingItem), response.Headers);
         }
     
         /// <summary>
         /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource GetShippingTemplate (string id)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource GetShippingTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -344,7 +344,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetShippingTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -353,8 +353,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceItemTemplateResource</returns>            
-        public ModelPageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceItemTemplateResource</returns>            
+        public PageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order)
         {
             
     
@@ -382,7 +382,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetShippingTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceItemTemplateResource), response.Headers);
+            return (PageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -391,8 +391,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the shipping item</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="shippingItem">The shipping item object</param> 
-        /// <returns>ModelShippingItem</returns>            
-        public ModelShippingItem UpdateShippingItem (int? id, bool? cascade, ModelShippingItem shippingItem)
+        /// <returns>ShippingItem</returns>            
+        public ShippingItem UpdateShippingItem (int? id, bool? cascade, ShippingItem shippingItem)
         {
             
             // verify the required parameter 'id' is set
@@ -423,7 +423,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateShippingItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelShippingItem) ApiClient.Deserialize(response.Content, typeof(ModelShippingItem), response.Headers);
+            return (ShippingItem) ApiClient.Deserialize(response.Content, typeof(ShippingItem), response.Headers);
         }
     
         /// <summary>
@@ -431,8 +431,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="shippingTemplateResource">The shipping template resource object</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource UpdateShippingTemplate (string id, ModelItemTemplateResource shippingTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource UpdateShippingTemplate (string id, ItemTemplateResource shippingTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -462,7 +462,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateShippingTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
     }

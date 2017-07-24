@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="addcomment"></a>
 # **AddComment**
-> ModelCommentResource AddComment (ModelCommentResource commentResource)
+> CommentResource AddComment (CommentResource commentResource)
 
 Add a new comment
 
@@ -37,12 +37,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ContentCommentsApi();
-            var commentResource = new ModelCommentResource(); // ModelCommentResource | The comment to be added (optional) 
+            var commentResource = new CommentResource(); // CommentResource | The comment to be added (optional) 
 
             try
             {
                 // Add a new comment
-                ModelCommentResource result = apiInstance.AddComment(commentResource);
+                CommentResource result = apiInstance.AddComment(commentResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -58,11 +58,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **commentResource** | [**ModelCommentResource**](ModelCommentResource.md)| The comment to be added | [optional] 
+ **commentResource** | [**CommentResource**](CommentResource.md)| The comment to be added | [optional] 
 
 ### Return type
 
-[**ModelCommentResource**](ModelCommentResource.md)
+[**CommentResource**](CommentResource.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ void (empty response body)
 
 <a name="getcomment"></a>
 # **GetComment**
-> ModelCommentResource GetComment (long? id)
+> CommentResource GetComment (long? id)
 
 Return a comment
 
@@ -164,7 +164,7 @@ namespace Example
             try
             {
                 // Return a comment
-                ModelCommentResource result = apiInstance.GetComment(id);
+                CommentResource result = apiInstance.GetComment(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCommentResource**](ModelCommentResource.md)
+[**CommentResource**](CommentResource.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 
 <a name="getcomments"></a>
 # **GetComments**
-> ModelPageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page)
+> PageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page)
 
 Returns a page of comments
 
@@ -227,7 +227,7 @@ namespace Example
             try
             {
                 // Returns a page of comments
-                ModelPageResourceCommentResource result = apiInstance.GetComments(context, contextId, size, page);
+                PageResourceCommentResource result = apiInstance.GetComments(context, contextId, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCommentResource**](ModelPageResourceCommentResource.md)
+[**PageResourceCommentResource**](PageResourceCommentResource.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ No authorization required
 
 <a name="searchcomments"></a>
 # **SearchComments**
-> ModelCommentSearch SearchComments (Object query, int? size, int? page)
+> CommentSearch SearchComments (Object query, int? size, int? page)
 
 Search the comment index
 
@@ -294,7 +294,7 @@ namespace Example
             try
             {
                 // Search the comment index
-                ModelCommentSearch result = apiInstance.SearchComments(query, size, page);
+                CommentSearch result = apiInstance.SearchComments(query, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCommentSearch**](ModelCommentSearch.md)
+[**CommentSearch**](CommentSearch.md)
 
 ### Authorization
 

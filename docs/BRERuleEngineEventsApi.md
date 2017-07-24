@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="sendbreevent"></a>
 # **SendBREEvent**
-> string SendBREEvent (ModelBreEvent breEvent)
+> string SendBREEvent (BreEvent breEvent)
 
 Fire a new event, based on an existing trigger
 
@@ -34,7 +34,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineEventsApi();
-            var breEvent = new ModelBreEvent(); // ModelBreEvent | The BRE event object (optional) 
+            var breEvent = new BreEvent(); // BreEvent | The BRE event object (optional) 
 
             try
             {
@@ -55,7 +55,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **breEvent** | [**ModelBreEvent**](ModelBreEvent.md)| The BRE event object | [optional] 
+ **breEvent** | [**BreEvent**](BreEvent.md)| The BRE event object | [optional] 
 
 ### Return type
 

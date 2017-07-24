@@ -16,27 +16,27 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
         /// <param name="user">The id and status for a user to add to the group</param>
-        /// <returns>ModelGroupMemberResource</returns>
-        ModelGroupMemberResource AddMemberToGroup (string uniqueName, ModelGroupMemberResource user);
+        /// <returns>GroupMemberResource</returns>
+        GroupMemberResource AddMemberToGroup (string uniqueName, GroupMemberResource user);
         /// <summary>
         /// Adds multiple members to the group 
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
         /// <param name="users">The id and status for a list of users to add to the group</param>
-        /// <returns>List&lt;ModelGroupMemberResource&gt;</returns>
-        List<ModelGroupMemberResource> AddMembersToGroup (string uniqueName, List<ModelGroupMemberResource> users);
+        /// <returns>List&lt;GroupMemberResource&gt;</returns>
+        List<GroupMemberResource> AddMembersToGroup (string uniqueName, List<GroupMemberResource> users);
         /// <summary>
         /// Create a group 
         /// </summary>
         /// <param name="groupResource">The new group</param>
-        /// <returns>ModelGroupResource</returns>
-        ModelGroupResource CreateGroup (ModelGroupResource groupResource);
+        /// <returns>GroupResource</returns>
+        GroupResource CreateGroup (GroupResource groupResource);
         /// <summary>
         /// Create a group template Group Templates define a type of group and the properties they have
         /// </summary>
         /// <param name="groupTemplateResource">The group template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateGroupTemplate (ModelTemplateResource groupTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateGroupTemplate (TemplateResource groupTemplateResource);
         /// <summary>
         /// Removes a group from the system IF no resources are attached to it 
         /// </summary>
@@ -54,15 +54,15 @@ namespace com.knetikcloud.Api
         /// Loads a specific group&#39;s details 
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
-        /// <returns>ModelGroupResource</returns>
-        ModelGroupResource GetGroup (string uniqueName);
+        /// <returns>GroupResource</returns>
+        GroupResource GetGroup (string uniqueName);
         /// <summary>
         /// Get a user from a group 
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
         /// <param name="userId">The id of the user</param>
-        /// <returns>ModelGroupMemberResource</returns>
-        ModelGroupMemberResource GetGroupMember (string uniqueName, int? userId);
+        /// <returns>GroupMemberResource</returns>
+        GroupMemberResource GetGroupMember (string uniqueName, int? userId);
         /// <summary>
         /// Lists members of the group 
         /// </summary>
@@ -70,22 +70,22 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceGroupMemberResource</returns>
-        ModelPageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order);
+        /// <returns>PageResourceGroupMemberResource</returns>
+        PageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order);
         /// <summary>
         /// Get a single group template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetGroupTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetGroupTemplate (string id);
         /// <summary>
         /// List and search group templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order);
         /// <summary>
         /// List groups a user is in 
         /// </summary>
@@ -105,7 +105,7 @@ namespace com.knetikcloud.Api
         /// <param name="uniqueName">The group unique name</param>
         /// <param name="groupResource">The updated group</param>
         /// <returns></returns>
-        void UpdateGroup (string uniqueName, ModelGroupResource groupResource);
+        void UpdateGroup (string uniqueName, GroupResource groupResource);
         /// <summary>
         /// Change a user&#39;s status 
         /// </summary>
@@ -119,8 +119,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="groupTemplateResource">The group template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateGroupTemplate (string id, ModelTemplateResource groupTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateGroupTemplate (string id, TemplateResource groupTemplateResource);
         /// <summary>
         /// List and search groups 
         /// </summary>
@@ -133,8 +133,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceGroupResource</returns>
-        ModelPageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order);
+        /// <returns>PageResourceGroupResource</returns>
+        PageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order);
     }
   
     /// <summary>
@@ -195,8 +195,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
         /// <param name="user">The id and status for a user to add to the group</param> 
-        /// <returns>ModelGroupMemberResource</returns>            
-        public ModelGroupMemberResource AddMemberToGroup (string uniqueName, ModelGroupMemberResource user)
+        /// <returns>GroupMemberResource</returns>            
+        public GroupMemberResource AddMemberToGroup (string uniqueName, GroupMemberResource user)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -229,7 +229,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddMemberToGroup: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelGroupMemberResource) ApiClient.Deserialize(response.Content, typeof(ModelGroupMemberResource), response.Headers);
+            return (GroupMemberResource) ApiClient.Deserialize(response.Content, typeof(GroupMemberResource), response.Headers);
         }
     
         /// <summary>
@@ -237,8 +237,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
         /// <param name="users">The id and status for a list of users to add to the group</param> 
-        /// <returns>List&lt;ModelGroupMemberResource&gt;</returns>            
-        public List<ModelGroupMemberResource> AddMembersToGroup (string uniqueName, List<ModelGroupMemberResource> users)
+        /// <returns>List&lt;GroupMemberResource&gt;</returns>            
+        public List<GroupMemberResource> AddMembersToGroup (string uniqueName, List<GroupMemberResource> users)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -271,15 +271,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddMembersToGroup: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelGroupMemberResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelGroupMemberResource>), response.Headers);
+            return (List<GroupMemberResource>) ApiClient.Deserialize(response.Content, typeof(List<GroupMemberResource>), response.Headers);
         }
     
         /// <summary>
         /// Create a group 
         /// </summary>
         /// <param name="groupResource">The new group</param> 
-        /// <returns>ModelGroupResource</returns>            
-        public ModelGroupResource CreateGroup (ModelGroupResource groupResource)
+        /// <returns>GroupResource</returns>            
+        public GroupResource CreateGroup (GroupResource groupResource)
         {
             
     
@@ -305,15 +305,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateGroup: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelGroupResource), response.Headers);
+            return (GroupResource) ApiClient.Deserialize(response.Content, typeof(GroupResource), response.Headers);
         }
     
         /// <summary>
         /// Create a group template Group Templates define a type of group and the properties they have
         /// </summary>
         /// <param name="groupTemplateResource">The group template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateGroupTemplate (ModelTemplateResource groupTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateGroupTemplate (TemplateResource groupTemplateResource)
         {
             
     
@@ -339,7 +339,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateGroupTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -422,8 +422,8 @@ namespace com.knetikcloud.Api
         /// Loads a specific group&#39;s details 
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
-        /// <returns>ModelGroupResource</returns>            
-        public ModelGroupResource GetGroup (string uniqueName)
+        /// <returns>GroupResource</returns>            
+        public GroupResource GetGroup (string uniqueName)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -452,7 +452,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroup: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelGroupResource), response.Headers);
+            return (GroupResource) ApiClient.Deserialize(response.Content, typeof(GroupResource), response.Headers);
         }
     
         /// <summary>
@@ -460,8 +460,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
         /// <param name="userId">The id of the user</param> 
-        /// <returns>ModelGroupMemberResource</returns>            
-        public ModelGroupMemberResource GetGroupMember (string uniqueName, int? userId)
+        /// <returns>GroupMemberResource</returns>            
+        public GroupMemberResource GetGroupMember (string uniqueName, int? userId)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -494,7 +494,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroupMember: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelGroupMemberResource) ApiClient.Deserialize(response.Content, typeof(ModelGroupMemberResource), response.Headers);
+            return (GroupMemberResource) ApiClient.Deserialize(response.Content, typeof(GroupMemberResource), response.Headers);
         }
     
         /// <summary>
@@ -504,8 +504,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceGroupMemberResource</returns>            
-        public ModelPageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order)
+        /// <returns>PageResourceGroupMemberResource</returns>            
+        public PageResourceGroupMemberResource GetGroupMembers (string uniqueName, int? size, int? page, string order)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -537,15 +537,15 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroupMembers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceGroupMemberResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceGroupMemberResource), response.Headers);
+            return (PageResourceGroupMemberResource) ApiClient.Deserialize(response.Content, typeof(PageResourceGroupMemberResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single group template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetGroupTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetGroupTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -574,7 +574,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroupTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -583,8 +583,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetGroupTemplates (int? size, int? page, string order)
         {
             
     
@@ -612,7 +612,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroupTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -700,7 +700,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="uniqueName">The group unique name</param> 
         /// <param name="groupResource">The updated group</param> 
         /// <returns></returns>            
-        public void UpdateGroup (string uniqueName, ModelGroupResource groupResource)
+        public void UpdateGroup (string uniqueName, GroupResource groupResource)
         {
             
             // verify the required parameter 'uniqueName' is set
@@ -785,8 +785,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="groupTemplateResource">The group template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateGroupTemplate (string id, ModelTemplateResource groupTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateGroupTemplate (string id, TemplateResource groupTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -816,7 +816,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateGroupTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -831,8 +831,8 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceGroupResource</returns>            
-        public ModelPageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order)
+        /// <returns>PageResourceGroupResource</returns>            
+        public PageResourceGroupResource UpdateGroups (string filterTemplate, string filterMemberCount, string filterName, string filterUniqueName, string filterParent, string filterStatus, int? size, int? page, string order)
         {
             
     
@@ -866,7 +866,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateGroups: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceGroupResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceGroupResource), response.Headers);
+            return (PageResourceGroupResource) ApiClient.Deserialize(response.Content, typeof(PageResourceGroupResource), response.Headers);
         }
     
     }

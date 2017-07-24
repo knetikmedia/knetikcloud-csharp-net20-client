@@ -16,14 +16,14 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="bundleItem">The bundle item object</param>
-        /// <returns>ModelBundleItem</returns>
-        ModelBundleItem CreateBundleItem (bool? cascade, ModelBundleItem bundleItem);
+        /// <returns>BundleItem</returns>
+        BundleItem CreateBundleItem (bool? cascade, BundleItem bundleItem);
         /// <summary>
         /// Create a bundle template Bundle Templates define a type of bundle and the properties they have.
         /// </summary>
         /// <param name="bundleTemplateResource">The new bundle template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource CreateBundleTemplate (ModelItemTemplateResource bundleTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource CreateBundleTemplate (ItemTemplateResource bundleTemplateResource);
         /// <summary>
         /// Delete a bundle item 
         /// </summary>
@@ -41,37 +41,37 @@ namespace com.knetikcloud.Api
         /// Get a single bundle item 
         /// </summary>
         /// <param name="id">The id of the bundle</param>
-        /// <returns>ModelBundleItem</returns>
-        ModelBundleItem GetBundleItem (int? id);
+        /// <returns>BundleItem</returns>
+        BundleItem GetBundleItem (int? id);
         /// <summary>
         /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource GetBundleTemplate (string id);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource GetBundleTemplate (string id);
         /// <summary>
         /// List and search bundle templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceItemTemplateResource</returns>
-        ModelPageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceItemTemplateResource</returns>
+        PageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order);
         /// <summary>
         /// Update a bundle item 
         /// </summary>
         /// <param name="id">The id of the bundle</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="bundleItem">The bundle item object</param>
-        /// <returns>ModelBundleItem</returns>
-        ModelBundleItem UpdateBundleItem (int? id, bool? cascade, ModelBundleItem bundleItem);
+        /// <returns>BundleItem</returns>
+        BundleItem UpdateBundleItem (int? id, bool? cascade, BundleItem bundleItem);
         /// <summary>
         /// Update a bundle template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="bundleTemplateResource">The bundle template resource object</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource UpdateBundleTemplate (string id, ModelItemTemplateResource bundleTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource UpdateBundleTemplate (string id, ItemTemplateResource bundleTemplateResource);
     }
   
     /// <summary>
@@ -132,8 +132,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="bundleItem">The bundle item object</param> 
-        /// <returns>ModelBundleItem</returns>            
-        public ModelBundleItem CreateBundleItem (bool? cascade, ModelBundleItem bundleItem)
+        /// <returns>BundleItem</returns>            
+        public BundleItem CreateBundleItem (bool? cascade, BundleItem bundleItem)
         {
             
     
@@ -160,15 +160,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateBundleItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBundleItem) ApiClient.Deserialize(response.Content, typeof(ModelBundleItem), response.Headers);
+            return (BundleItem) ApiClient.Deserialize(response.Content, typeof(BundleItem), response.Headers);
         }
     
         /// <summary>
         /// Create a bundle template Bundle Templates define a type of bundle and the properties they have.
         /// </summary>
         /// <param name="bundleTemplateResource">The new bundle template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource CreateBundleTemplate (ModelItemTemplateResource bundleTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource CreateBundleTemplate (ItemTemplateResource bundleTemplateResource)
         {
             
     
@@ -194,7 +194,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateBundleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -277,8 +277,8 @@ namespace com.knetikcloud.Api
         /// Get a single bundle item 
         /// </summary>
         /// <param name="id">The id of the bundle</param> 
-        /// <returns>ModelBundleItem</returns>            
-        public ModelBundleItem GetBundleItem (int? id)
+        /// <returns>BundleItem</returns>            
+        public BundleItem GetBundleItem (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -307,15 +307,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBundleItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBundleItem) ApiClient.Deserialize(response.Content, typeof(ModelBundleItem), response.Headers);
+            return (BundleItem) ApiClient.Deserialize(response.Content, typeof(BundleItem), response.Headers);
         }
     
         /// <summary>
         /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource GetBundleTemplate (string id)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource GetBundleTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -344,7 +344,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBundleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -353,8 +353,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceItemTemplateResource</returns>            
-        public ModelPageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceItemTemplateResource</returns>            
+        public PageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order)
         {
             
     
@@ -382,7 +382,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBundleTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceItemTemplateResource), response.Headers);
+            return (PageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -391,8 +391,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the bundle</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="bundleItem">The bundle item object</param> 
-        /// <returns>ModelBundleItem</returns>            
-        public ModelBundleItem UpdateBundleItem (int? id, bool? cascade, ModelBundleItem bundleItem)
+        /// <returns>BundleItem</returns>            
+        public BundleItem UpdateBundleItem (int? id, bool? cascade, BundleItem bundleItem)
         {
             
             // verify the required parameter 'id' is set
@@ -423,7 +423,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBundleItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelBundleItem) ApiClient.Deserialize(response.Content, typeof(ModelBundleItem), response.Headers);
+            return (BundleItem) ApiClient.Deserialize(response.Content, typeof(BundleItem), response.Headers);
         }
     
         /// <summary>
@@ -431,8 +431,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="bundleTemplateResource">The bundle template resource object</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource UpdateBundleTemplate (string id, ModelItemTemplateResource bundleTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource UpdateBundleTemplate (string id, ItemTemplateResource bundleTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -462,7 +462,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateBundleTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
     }

@@ -1,9 +1,9 @@
-# com.knetikcloud.Model.ModelGoogleToken
+# com.knetikcloud.Model.GoogleToken
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthorizationCode** | **string** | A valid authorization code from google. See google documention for how to obtain one. | [default to null]
+**AuthorizationCode** | **string** | A valid authorization code from google. See google documention for how to obtain one. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

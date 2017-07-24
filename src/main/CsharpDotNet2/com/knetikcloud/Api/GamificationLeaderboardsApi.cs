@@ -19,16 +19,16 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelLeaderboardResource</returns>
-        ModelLeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order);
+        /// <returns>LeaderboardResource</returns>
+        LeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order);
         /// <summary>
         /// Retrieves a specific user entry with rank The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
         /// </summary>
         /// <param name="contextType">The context type for the leaderboard</param>
         /// <param name="contextId">The context id for the leaderboard</param>
         /// <param name="id">The id of a user</param>
-        /// <returns>ModelLeaderboardEntryResource</returns>
-        ModelLeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id);
+        /// <returns>LeaderboardEntryResource</returns>
+        LeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id);
         /// <summary>
         /// Get a list of available leaderboard strategy names 
         /// </summary>
@@ -97,8 +97,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelLeaderboardResource</returns>            
-        public ModelLeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order)
+        /// <returns>LeaderboardResource</returns>            
+        public LeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order)
         {
             
             // verify the required parameter 'contextType' is set
@@ -134,7 +134,7 @@ path = path.Replace("{" + "context_id" + "}", ApiClient.ParameterToString(contex
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetLeaderboard: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelLeaderboardResource) ApiClient.Deserialize(response.Content, typeof(ModelLeaderboardResource), response.Headers);
+            return (LeaderboardResource) ApiClient.Deserialize(response.Content, typeof(LeaderboardResource), response.Headers);
         }
     
         /// <summary>
@@ -143,8 +143,8 @@ path = path.Replace("{" + "context_id" + "}", ApiClient.ParameterToString(contex
         /// <param name="contextType">The context type for the leaderboard</param> 
         /// <param name="contextId">The context id for the leaderboard</param> 
         /// <param name="id">The id of a user</param> 
-        /// <returns>ModelLeaderboardEntryResource</returns>            
-        public ModelLeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id)
+        /// <returns>LeaderboardEntryResource</returns>            
+        public LeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id)
         {
             
             // verify the required parameter 'contextType' is set
@@ -181,7 +181,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetLeaderboardRank: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelLeaderboardEntryResource) ApiClient.Deserialize(response.Content, typeof(ModelLeaderboardEntryResource), response.Headers);
+            return (LeaderboardEntryResource) ApiClient.Deserialize(response.Content, typeof(LeaderboardEntryResource), response.Headers);
         }
     
         /// <summary>

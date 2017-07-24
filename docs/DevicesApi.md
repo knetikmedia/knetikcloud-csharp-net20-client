@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="adddeviceusers"></a>
 # **AddDeviceUsers**
-> ModelDeviceResource AddDeviceUsers (List<ModelSimpleUserResource> userResources, int? id)
+> DeviceResource AddDeviceUsers (List<SimpleUserResource> userResources, int? id)
 
 Add device users
 
@@ -39,13 +39,13 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DevicesApi();
-            var userResources = new List<ModelSimpleUserResource>(); // List<ModelSimpleUserResource> | userResources
+            var userResources = new List<SimpleUserResource>(); // List<SimpleUserResource> | userResources
             var id = 56;  // int? | id
 
             try
             {
                 // Add device users
-                ModelDeviceResource result = apiInstance.AddDeviceUsers(userResources, id);
+                DeviceResource result = apiInstance.AddDeviceUsers(userResources, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,12 +61,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userResources** | [**List<ModelSimpleUserResource>**](ModelSimpleUserResource.md)| userResources | 
+ **userResources** | [**List<SimpleUserResource>**](SimpleUserResource.md)| userResources | 
  **id** | **int?**| id | 
 
 ### Return type
 
-[**ModelDeviceResource**](ModelDeviceResource.md)
+[**DeviceResource**](DeviceResource.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="createdevice"></a>
 # **CreateDevice**
-> ModelDeviceResource CreateDevice (ModelDeviceResource device)
+> DeviceResource CreateDevice (DeviceResource device)
 
 Create a device
 
@@ -104,12 +104,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DevicesApi();
-            var device = new ModelDeviceResource(); // ModelDeviceResource | device
+            var device = new DeviceResource(); // DeviceResource | device
 
             try
             {
                 // Create a device
-                ModelDeviceResource result = apiInstance.CreateDevice(device);
+                DeviceResource result = apiInstance.CreateDevice(device);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,11 +125,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**ModelDeviceResource**](ModelDeviceResource.md)| device | 
+ **device** | [**DeviceResource**](DeviceResource.md)| device | 
 
 ### Return type
 
-[**ModelDeviceResource**](ModelDeviceResource.md)
+[**DeviceResource**](DeviceResource.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ void (empty response body)
 
 <a name="getdevice"></a>
 # **GetDevice**
-> ModelDeviceResource GetDevice (int? id)
+> DeviceResource GetDevice (int? id)
 
 Get a single device
 
@@ -362,7 +362,7 @@ namespace Example
             try
             {
                 // Get a single device
-                ModelDeviceResource result = apiInstance.GetDevice(id);
+                DeviceResource result = apiInstance.GetDevice(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelDeviceResource**](ModelDeviceResource.md)
+[**DeviceResource**](DeviceResource.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 <a name="getdevices"></a>
 # **GetDevices**
-> ModelPageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order)
+> PageResourceDeviceResource GetDevices (string filterMake, string filterModel, int? size, int? page, string order)
 
 List and search devices
 
@@ -431,7 +431,7 @@ namespace Example
             try
             {
                 // List and search devices
-                ModelPageResourceDeviceResource result = apiInstance.GetDevices(filterMake, filterModel, size, page, order);
+                PageResourceDeviceResource result = apiInstance.GetDevices(filterMake, filterModel, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceDeviceResource**](ModelPageResourceDeviceResource.md)
+[**PageResourceDeviceResource**](PageResourceDeviceResource.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedevice"></a>
 # **UpdateDevice**
-> ModelDeviceResource UpdateDevice (ModelDeviceResource device, int? id)
+> DeviceResource UpdateDevice (DeviceResource device, int? id)
 
 Update a device
 
@@ -493,13 +493,13 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new DevicesApi();
-            var device = new ModelDeviceResource(); // ModelDeviceResource | device
+            var device = new DeviceResource(); // DeviceResource | device
             var id = 56;  // int? | id
 
             try
             {
                 // Update a device
-                ModelDeviceResource result = apiInstance.UpdateDevice(device, id);
+                DeviceResource result = apiInstance.UpdateDevice(device, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -515,12 +515,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**ModelDeviceResource**](ModelDeviceResource.md)| device | 
+ **device** | [**DeviceResource**](DeviceResource.md)| device | 
  **id** | **int?**| id | 
 
 ### Return type
 
-[**ModelDeviceResource**](ModelDeviceResource.md)
+[**DeviceResource**](DeviceResource.md)
 
 ### Authorization
 

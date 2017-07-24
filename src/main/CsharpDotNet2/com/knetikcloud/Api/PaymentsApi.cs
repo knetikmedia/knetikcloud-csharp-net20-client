@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being created</param>
         /// <param name="paymentMethod">Payment method being created</param>
-        /// <returns>ModelPaymentMethodResource</returns>
-        ModelPaymentMethodResource CreatePaymentMethod (int? userId, ModelPaymentMethodResource paymentMethod);
+        /// <returns>PaymentMethodResource</returns>
+        PaymentMethodResource CreatePaymentMethod (int? userId, PaymentMethodResource paymentMethod);
         /// <summary>
         /// Delete an existing payment method for a user 
         /// </summary>
@@ -30,23 +30,27 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being retrieved</param>
         /// <param name="id">ID of the payment method being retrieved</param>
-        /// <returns>ModelPaymentMethodResource</returns>
-        ModelPaymentMethodResource GetPaymentMethod (int? userId, int? id);
+        /// <returns>PaymentMethodResource</returns>
+        PaymentMethodResource GetPaymentMethod (int? userId, int? id);
         /// <summary>
         /// Get all payment methods for a user 
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment methods are being retrieved</param>
+        /// <param name="filterName">Filter for payment methods whose name starts with a given string</param>
+        /// <param name="filterPaymentType">Filter for payment methods with a specific payment type</param>
+        /// <param name="filterPaymentMethodTypeId">Filter for payment methods with a specific payment method type by id</param>
+        /// <param name="filterPaymentMethodTypeName">Filter for payment methods whose payment method type name starts with a given string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>List&lt;ModelPaymentMethodResource&gt;</returns>
-        List<ModelPaymentMethodResource> GetPaymentMethods (int? userId, int? size, int? page, string order);
+        /// <returns>List&lt;PaymentMethodResource&gt;</returns>
+        List<PaymentMethodResource> GetPaymentMethods (int? userId, string filterName, string filterPaymentType, int? filterPaymentMethodTypeId, string filterPaymentMethodTypeName, int? size, int? page, string order);
         /// <summary>
         /// Authorize payment of an invoice for later capture 
         /// </summary>
         /// <param name="request">Payment authorization request</param>
-        /// <returns>ModelPaymentAuthorizationResource</returns>
-        ModelPaymentAuthorizationResource PaymentAuthorization (ModelPaymentAuthorizationResource request);
+        /// <returns>PaymentAuthorizationResource</returns>
+        PaymentAuthorizationResource PaymentAuthorization (PaymentAuthorizationResource request);
         /// <summary>
         /// Capture an existing invoice payment authorization 
         /// </summary>
@@ -59,8 +63,8 @@ namespace com.knetikcloud.Api
         /// <param name="userId">ID of the user for whom the payment method is being updated</param>
         /// <param name="id">ID of the payment method being updated</param>
         /// <param name="paymentMethod">The updated payment method data</param>
-        /// <returns>ModelPaymentMethodResource</returns>
-        ModelPaymentMethodResource UpdatePaymentMethod (int? userId, int? id, ModelPaymentMethodResource paymentMethod);
+        /// <returns>PaymentMethodResource</returns>
+        PaymentMethodResource UpdatePaymentMethod (int? userId, int? id, PaymentMethodResource paymentMethod);
     }
   
     /// <summary>
@@ -121,8 +125,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being created</param> 
         /// <param name="paymentMethod">Payment method being created</param> 
-        /// <returns>ModelPaymentMethodResource</returns>            
-        public ModelPaymentMethodResource CreatePaymentMethod (int? userId, ModelPaymentMethodResource paymentMethod)
+        /// <returns>PaymentMethodResource</returns>            
+        public PaymentMethodResource CreatePaymentMethod (int? userId, PaymentMethodResource paymentMethod)
         {
             
             // verify the required parameter 'userId' is set
@@ -152,7 +156,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreatePaymentMethod: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(ModelPaymentMethodResource), response.Headers);
+            return (PaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(PaymentMethodResource), response.Headers);
         }
     
         /// <summary>
@@ -202,8 +206,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being retrieved</param> 
         /// <param name="id">ID of the payment method being retrieved</param> 
-        /// <returns>ModelPaymentMethodResource</returns>            
-        public ModelPaymentMethodResource GetPaymentMethod (int? userId, int? id)
+        /// <returns>PaymentMethodResource</returns>            
+        public PaymentMethodResource GetPaymentMethod (int? userId, int? id)
         {
             
             // verify the required parameter 'userId' is set
@@ -236,18 +240,22 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPaymentMethod: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(ModelPaymentMethodResource), response.Headers);
+            return (PaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(PaymentMethodResource), response.Headers);
         }
     
         /// <summary>
         /// Get all payment methods for a user 
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment methods are being retrieved</param> 
+        /// <param name="filterName">Filter for payment methods whose name starts with a given string</param> 
+        /// <param name="filterPaymentType">Filter for payment methods with a specific payment type</param> 
+        /// <param name="filterPaymentMethodTypeId">Filter for payment methods with a specific payment method type by id</param> 
+        /// <param name="filterPaymentMethodTypeName">Filter for payment methods whose payment method type name starts with a given string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>List&lt;ModelPaymentMethodResource&gt;</returns>            
-        public List<ModelPaymentMethodResource> GetPaymentMethods (int? userId, int? size, int? page, string order)
+        /// <returns>List&lt;PaymentMethodResource&gt;</returns>            
+        public List<PaymentMethodResource> GetPaymentMethods (int? userId, string filterName, string filterPaymentType, int? filterPaymentMethodTypeId, string filterPaymentMethodTypeName, int? size, int? page, string order)
         {
             
             // verify the required parameter 'userId' is set
@@ -264,7 +272,11 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
+             if (filterName != null) queryParams.Add("filter_name", ApiClient.ParameterToString(filterName)); // query parameter
+ if (filterPaymentType != null) queryParams.Add("filter_payment_type", ApiClient.ParameterToString(filterPaymentType)); // query parameter
+ if (filterPaymentMethodTypeId != null) queryParams.Add("filter_payment_method_type_id", ApiClient.ParameterToString(filterPaymentMethodTypeId)); // query parameter
+ if (filterPaymentMethodTypeName != null) queryParams.Add("filter_payment_method_type_name", ApiClient.ParameterToString(filterPaymentMethodTypeName)); // query parameter
+ if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
@@ -279,15 +291,15 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPaymentMethods: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelPaymentMethodResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelPaymentMethodResource>), response.Headers);
+            return (List<PaymentMethodResource>) ApiClient.Deserialize(response.Content, typeof(List<PaymentMethodResource>), response.Headers);
         }
     
         /// <summary>
         /// Authorize payment of an invoice for later capture 
         /// </summary>
         /// <param name="request">Payment authorization request</param> 
-        /// <returns>ModelPaymentAuthorizationResource</returns>            
-        public ModelPaymentAuthorizationResource PaymentAuthorization (ModelPaymentAuthorizationResource request)
+        /// <returns>PaymentAuthorizationResource</returns>            
+        public PaymentAuthorizationResource PaymentAuthorization (PaymentAuthorizationResource request)
         {
             
     
@@ -313,7 +325,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling PaymentAuthorization: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPaymentAuthorizationResource) ApiClient.Deserialize(response.Content, typeof(ModelPaymentAuthorizationResource), response.Headers);
+            return (PaymentAuthorizationResource) ApiClient.Deserialize(response.Content, typeof(PaymentAuthorizationResource), response.Headers);
         }
     
         /// <summary>
@@ -359,8 +371,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">ID of the user for whom the payment method is being updated</param> 
         /// <param name="id">ID of the payment method being updated</param> 
         /// <param name="paymentMethod">The updated payment method data</param> 
-        /// <returns>ModelPaymentMethodResource</returns>            
-        public ModelPaymentMethodResource UpdatePaymentMethod (int? userId, int? id, ModelPaymentMethodResource paymentMethod)
+        /// <returns>PaymentMethodResource</returns>            
+        public PaymentMethodResource UpdatePaymentMethod (int? userId, int? id, PaymentMethodResource paymentMethod)
         {
             
             // verify the required parameter 'userId' is set
@@ -394,7 +406,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdatePaymentMethod: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(ModelPaymentMethodResource), response.Headers);
+            return (PaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(PaymentMethodResource), response.Headers);
         }
     
     }

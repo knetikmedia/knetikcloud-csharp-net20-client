@@ -1,12 +1,12 @@
-# com.knetikcloud.Model.ModelBillingReport
+# com.knetikcloud.Model.BillingReport
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Created** | **long?** |  | [optional] [default to null]
-**Id** | **string** |  | [optional] [default to null]
-**LastKnownFailures** | **List&lt;string&gt;** |  | [optional] [default to null]
-**Statistics** | **Dictionary&lt;String, int?&gt;** |  | [optional] [default to null]
+**Created** | **long?** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**LastKnownFailures** | **List&lt;string&gt;** |  | [optional] 
+**Statistics** | **Dictionary&lt;string, int?&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

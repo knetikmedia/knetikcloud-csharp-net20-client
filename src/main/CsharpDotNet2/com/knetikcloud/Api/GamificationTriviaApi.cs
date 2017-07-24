@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="answer">The new answer</param>
-        /// <returns>ModelAnswerResource</returns>
-        ModelAnswerResource AddQuestionAnswers (string questionId, ModelAnswerResource answer);
+        /// <returns>AnswerResource</returns>
+        AnswerResource AddQuestionAnswers (string questionId, AnswerResource answer);
         /// <summary>
         /// Add a tag to a question 
         /// </summary>
@@ -43,20 +43,20 @@ namespace com.knetikcloud.Api
         /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
         /// </summary>
         /// <param name="request">The new import job</param>
-        /// <returns>ModelImportJobResource</returns>
-        ModelImportJobResource CreateImportJob (ModelImportJobResource request);
+        /// <returns>ImportJobResource</returns>
+        ImportJobResource CreateImportJob (ImportJobResource request);
         /// <summary>
         /// Create a question 
         /// </summary>
         /// <param name="question">The new question</param>
-        /// <returns>ModelQuestionResource</returns>
-        ModelQuestionResource CreateQuestion (ModelQuestionResource question);
+        /// <returns>QuestionResource</returns>
+        QuestionResource CreateQuestion (QuestionResource question);
         /// <summary>
         /// Create a question template Question templates define a type of question and the properties they have
         /// </summary>
         /// <param name="questionTemplateResource">The question template resource object</param>
-        /// <returns>ModelQuestionTemplateResource</returns>
-        ModelQuestionTemplateResource CreateQuestionTemplate (ModelQuestionTemplateResource questionTemplateResource);
+        /// <returns>QuestionTemplateResource</returns>
+        QuestionTemplateResource CreateQuestionTemplate (QuestionTemplateResource questionTemplateResource);
         /// <summary>
         /// Delete an import job Also deletes all questions that were imported by it
         /// </summary>
@@ -87,8 +87,8 @@ namespace com.knetikcloud.Api
         /// Get an import job 
         /// </summary>
         /// <param name="id">The id of the job</param>
-        /// <returns>ModelImportJobResource</returns>
-        ModelImportJobResource GetImportJob (long? id);
+        /// <returns>ImportJobResource</returns>
+        ImportJobResource GetImportJob (long? id);
         /// <summary>
         /// Get a list of import job 
         /// </summary>
@@ -99,33 +99,33 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceImportJobResource</returns>
-        ModelPageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order);
+        /// <returns>PageResourceImportJobResource</returns>
+        PageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order);
         /// <summary>
         /// Get a single question 
         /// </summary>
         /// <param name="id">The id of the question</param>
-        /// <returns>ModelQuestionResource</returns>
-        ModelQuestionResource GetQuestion (string id);
+        /// <returns>QuestionResource</returns>
+        QuestionResource GetQuestion (string id);
         /// <summary>
         /// Get an answer for a question 
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="id">The id of the answer</param>
-        /// <returns>ModelAnswerResource</returns>
-        ModelAnswerResource GetQuestionAnswer (string questionId, string id);
+        /// <returns>AnswerResource</returns>
+        AnswerResource GetQuestionAnswer (string questionId, string id);
         /// <summary>
         /// List the answers available for a question 
         /// </summary>
         /// <param name="questionId">The id of the question</param>
-        /// <returns>List&lt;ModelAnswerResource&gt;</returns>
-        List<ModelAnswerResource> GetQuestionAnswers (string questionId);
+        /// <returns>List&lt;AnswerResource&gt;</returns>
+        List<AnswerResource> GetQuestionAnswers (string questionId);
         /// <summary>
         /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
         /// </summary>
         /// <param name="since">Timestamp in seconds</param>
-        /// <returns>List&lt;ModelDeltaResource&gt;</returns>
-        List<ModelDeltaResource> GetQuestionDeltas (long? since);
+        /// <returns>List&lt;DeltaResource&gt;</returns>
+        List<DeltaResource> GetQuestionDeltas (long? since);
         /// <summary>
         /// List the tags for a question 
         /// </summary>
@@ -136,16 +136,16 @@ namespace com.knetikcloud.Api
         /// Get a single question template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelQuestionTemplateResource</returns>
-        ModelQuestionTemplateResource GetQuestionTemplate (string id);
+        /// <returns>QuestionTemplateResource</returns>
+        QuestionTemplateResource GetQuestionTemplate (string id);
         /// <summary>
         /// List and search question templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceQuestionTemplateResource</returns>
-        ModelPageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceQuestionTemplateResource</returns>
+        PageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order);
         /// <summary>
         /// List and search questions 
         /// </summary>
@@ -160,8 +160,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterType">Filter for questions with specified type.  Allowable values: (&#39;TEXT&#39;, &#39;IMAGE&#39;, &#39;VIDEO&#39;, &#39;AUDIO&#39;)</param>
         /// <param name="filterPublished">Filter for questions currenctly published or not</param>
         /// <param name="filterImportId">Filter for questions from a specific import job</param>
-        /// <returns>ModelPageResourceQuestionResource</returns>
-        ModelPageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId);
+        /// <returns>PageResourceQuestionResource</returns>
+        PageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId);
         /// <summary>
         /// Count questions based on filters This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
         /// </summary>
@@ -179,8 +179,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <param name="publishNow">Whether the new questions should be published live immediately</param>
-        /// <returns>ModelImportJobResource</returns>
-        ModelImportJobResource ProcessImportJob (long? id, bool? publishNow);
+        /// <returns>ImportJobResource</returns>
+        ImportJobResource ProcessImportJob (long? id, bool? publishNow);
         /// <summary>
         /// Remove a tag from a question 
         /// </summary>
@@ -208,22 +208,22 @@ namespace com.knetikcloud.Api
         /// <param name="filterSearch">Filter for tags starting with the given text</param>
         /// <param name="filterCategory">Filter for tags on questions from a specific category</param>
         /// <param name="filterImportId">Filter for tags on questions from a specific import job</param>
-        /// <returns>ModelCollectionstring</returns>
-        ModelCollectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId);
+        /// <returns>Collectionstring</returns>
+        Collectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId);
         /// <summary>
         /// Update an import job Changes should be made before process is started for there to be any effect.
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <param name="request">The updated job</param>
-        /// <returns>ModelImportJobResource</returns>
-        ModelImportJobResource UpdateImportJob (long? id, ModelImportJobResource request);
+        /// <returns>ImportJobResource</returns>
+        ImportJobResource UpdateImportJob (long? id, ImportJobResource request);
         /// <summary>
         /// Update a question 
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <param name="question">The updated question</param>
-        /// <returns>ModelQuestionResource</returns>
-        ModelQuestionResource UpdateQuestion (string id, ModelQuestionResource question);
+        /// <returns>QuestionResource</returns>
+        QuestionResource UpdateQuestion (string id, QuestionResource question);
         /// <summary>
         /// Update an answer for a question 
         /// </summary>
@@ -231,14 +231,14 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the answer</param>
         /// <param name="answer">The updated answer</param>
         /// <returns></returns>
-        void UpdateQuestionAnswer (string questionId, string id, ModelAnswerResource answer);
+        void UpdateQuestionAnswer (string questionId, string id, AnswerResource answer);
         /// <summary>
         /// Update a question template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="questionTemplateResource">The question template resource object</param>
-        /// <returns>ModelQuestionTemplateResource</returns>
-        ModelQuestionTemplateResource UpdateQuestionTemplate (string id, ModelQuestionTemplateResource questionTemplateResource);
+        /// <returns>QuestionTemplateResource</returns>
+        QuestionTemplateResource UpdateQuestionTemplate (string id, QuestionTemplateResource questionTemplateResource);
         /// <summary>
         /// Bulk update questions Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
         /// </summary>
@@ -251,7 +251,7 @@ namespace com.knetikcloud.Api
         /// <param name="filterPublished">Filter for questions currenctly published or not</param>
         /// <param name="filterImportId">Filter for questions from a specific import job</param>
         /// <returns>int?</returns>
-        int? UpdateQuestionsInBulk (ModelQuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
+        int? UpdateQuestionsInBulk (QuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
     }
   
     /// <summary>
@@ -312,8 +312,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="answer">The new answer</param> 
-        /// <returns>ModelAnswerResource</returns>            
-        public ModelAnswerResource AddQuestionAnswers (string questionId, ModelAnswerResource answer)
+        /// <returns>AnswerResource</returns>            
+        public AnswerResource AddQuestionAnswers (string questionId, AnswerResource answer)
         {
             
             // verify the required parameter 'questionId' is set
@@ -343,7 +343,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddQuestionAnswers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAnswerResource) ApiClient.Deserialize(response.Content, typeof(ModelAnswerResource), response.Headers);
+            return (AnswerResource) ApiClient.Deserialize(response.Content, typeof(AnswerResource), response.Headers);
         }
     
         /// <summary>
@@ -439,8 +439,8 @@ namespace com.knetikcloud.Api
         /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
         /// </summary>
         /// <param name="request">The new import job</param> 
-        /// <returns>ModelImportJobResource</returns>            
-        public ModelImportJobResource CreateImportJob (ModelImportJobResource request)
+        /// <returns>ImportJobResource</returns>            
+        public ImportJobResource CreateImportJob (ImportJobResource request)
         {
             
     
@@ -466,15 +466,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateImportJob: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelImportJobResource) ApiClient.Deserialize(response.Content, typeof(ModelImportJobResource), response.Headers);
+            return (ImportJobResource) ApiClient.Deserialize(response.Content, typeof(ImportJobResource), response.Headers);
         }
     
         /// <summary>
         /// Create a question 
         /// </summary>
         /// <param name="question">The new question</param> 
-        /// <returns>ModelQuestionResource</returns>            
-        public ModelQuestionResource CreateQuestion (ModelQuestionResource question)
+        /// <returns>QuestionResource</returns>            
+        public QuestionResource CreateQuestion (QuestionResource question)
         {
             
     
@@ -500,15 +500,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateQuestion: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionResource), response.Headers);
+            return (QuestionResource) ApiClient.Deserialize(response.Content, typeof(QuestionResource), response.Headers);
         }
     
         /// <summary>
         /// Create a question template Question templates define a type of question and the properties they have
         /// </summary>
         /// <param name="questionTemplateResource">The question template resource object</param> 
-        /// <returns>ModelQuestionTemplateResource</returns>            
-        public ModelQuestionTemplateResource CreateQuestionTemplate (ModelQuestionTemplateResource questionTemplateResource)
+        /// <returns>QuestionTemplateResource</returns>            
+        public QuestionTemplateResource CreateQuestionTemplate (QuestionTemplateResource questionTemplateResource)
         {
             
     
@@ -534,7 +534,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateQuestionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionTemplateResource), response.Headers);
+            return (QuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(QuestionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -696,8 +696,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// Get an import job 
         /// </summary>
         /// <param name="id">The id of the job</param> 
-        /// <returns>ModelImportJobResource</returns>            
-        public ModelImportJobResource GetImportJob (long? id)
+        /// <returns>ImportJobResource</returns>            
+        public ImportJobResource GetImportJob (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -726,7 +726,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetImportJob: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelImportJobResource) ApiClient.Deserialize(response.Content, typeof(ModelImportJobResource), response.Headers);
+            return (ImportJobResource) ApiClient.Deserialize(response.Content, typeof(ImportJobResource), response.Headers);
         }
     
         /// <summary>
@@ -739,8 +739,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceImportJobResource</returns>            
-        public ModelPageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order)
+        /// <returns>PageResourceImportJobResource</returns>            
+        public PageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order)
         {
             
     
@@ -772,15 +772,15 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetImportJobs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceImportJobResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceImportJobResource), response.Headers);
+            return (PageResourceImportJobResource) ApiClient.Deserialize(response.Content, typeof(PageResourceImportJobResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single question 
         /// </summary>
         /// <param name="id">The id of the question</param> 
-        /// <returns>ModelQuestionResource</returns>            
-        public ModelQuestionResource GetQuestion (string id)
+        /// <returns>QuestionResource</returns>            
+        public QuestionResource GetQuestion (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -809,7 +809,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestion: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionResource), response.Headers);
+            return (QuestionResource) ApiClient.Deserialize(response.Content, typeof(QuestionResource), response.Headers);
         }
     
         /// <summary>
@@ -817,8 +817,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="id">The id of the answer</param> 
-        /// <returns>ModelAnswerResource</returns>            
-        public ModelAnswerResource GetQuestionAnswer (string questionId, string id)
+        /// <returns>AnswerResource</returns>            
+        public AnswerResource GetQuestionAnswer (string questionId, string id)
         {
             
             // verify the required parameter 'questionId' is set
@@ -851,15 +851,15 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestionAnswer: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelAnswerResource) ApiClient.Deserialize(response.Content, typeof(ModelAnswerResource), response.Headers);
+            return (AnswerResource) ApiClient.Deserialize(response.Content, typeof(AnswerResource), response.Headers);
         }
     
         /// <summary>
         /// List the answers available for a question 
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
-        /// <returns>List&lt;ModelAnswerResource&gt;</returns>            
-        public List<ModelAnswerResource> GetQuestionAnswers (string questionId)
+        /// <returns>List&lt;AnswerResource&gt;</returns>            
+        public List<AnswerResource> GetQuestionAnswers (string questionId)
         {
             
             // verify the required parameter 'questionId' is set
@@ -888,15 +888,15 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestionAnswers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelAnswerResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelAnswerResource>), response.Headers);
+            return (List<AnswerResource>) ApiClient.Deserialize(response.Content, typeof(List<AnswerResource>), response.Headers);
         }
     
         /// <summary>
         /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
         /// </summary>
         /// <param name="since">Timestamp in seconds</param> 
-        /// <returns>List&lt;ModelDeltaResource&gt;</returns>            
-        public List<ModelDeltaResource> GetQuestionDeltas (long? since)
+        /// <returns>List&lt;DeltaResource&gt;</returns>            
+        public List<DeltaResource> GetQuestionDeltas (long? since)
         {
             
     
@@ -922,7 +922,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestionDeltas: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelDeltaResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelDeltaResource>), response.Headers);
+            return (List<DeltaResource>) ApiClient.Deserialize(response.Content, typeof(List<DeltaResource>), response.Headers);
         }
     
         /// <summary>
@@ -966,8 +966,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// Get a single question template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelQuestionTemplateResource</returns>            
-        public ModelQuestionTemplateResource GetQuestionTemplate (string id)
+        /// <returns>QuestionTemplateResource</returns>            
+        public QuestionTemplateResource GetQuestionTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -996,7 +996,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionTemplateResource), response.Headers);
+            return (QuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(QuestionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -1005,8 +1005,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceQuestionTemplateResource</returns>            
-        public ModelPageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceQuestionTemplateResource</returns>            
+        public PageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order)
         {
             
     
@@ -1034,7 +1034,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestionTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceQuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceQuestionTemplateResource), response.Headers);
+            return (PageResourceQuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceQuestionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -1051,8 +1051,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="filterType">Filter for questions with specified type.  Allowable values: (&#39;TEXT&#39;, &#39;IMAGE&#39;, &#39;VIDEO&#39;, &#39;AUDIO&#39;)</param> 
         /// <param name="filterPublished">Filter for questions currenctly published or not</param> 
         /// <param name="filterImportId">Filter for questions from a specific import job</param> 
-        /// <returns>ModelPageResourceQuestionResource</returns>            
-        public ModelPageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId)
+        /// <returns>PageResourceQuestionResource</returns>            
+        public PageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId)
         {
             
     
@@ -1088,7 +1088,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetQuestions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceQuestionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceQuestionResource), response.Headers);
+            return (PageResourceQuestionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceQuestionResource), response.Headers);
         }
     
         /// <summary>
@@ -1142,8 +1142,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <param name="publishNow">Whether the new questions should be published live immediately</param> 
-        /// <returns>ModelImportJobResource</returns>            
-        public ModelImportJobResource ProcessImportJob (long? id, bool? publishNow)
+        /// <returns>ImportJobResource</returns>            
+        public ImportJobResource ProcessImportJob (long? id, bool? publishNow)
         {
             
             // verify the required parameter 'id' is set
@@ -1176,7 +1176,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ProcessImportJob: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelImportJobResource) ApiClient.Deserialize(response.Content, typeof(ModelImportJobResource), response.Headers);
+            return (ImportJobResource) ApiClient.Deserialize(response.Content, typeof(ImportJobResource), response.Headers);
         }
     
         /// <summary>
@@ -1280,8 +1280,8 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// <param name="filterSearch">Filter for tags starting with the given text</param> 
         /// <param name="filterCategory">Filter for tags on questions from a specific category</param> 
         /// <param name="filterImportId">Filter for tags on questions from a specific import job</param> 
-        /// <returns>ModelCollectionstring</returns>            
-        public ModelCollectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId)
+        /// <returns>Collectionstring</returns>            
+        public Collectionstring SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId)
         {
             
     
@@ -1309,7 +1309,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SearchQuestionTags: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCollectionstring) ApiClient.Deserialize(response.Content, typeof(ModelCollectionstring), response.Headers);
+            return (Collectionstring) ApiClient.Deserialize(response.Content, typeof(Collectionstring), response.Headers);
         }
     
         /// <summary>
@@ -1317,8 +1317,8 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <param name="request">The updated job</param> 
-        /// <returns>ModelImportJobResource</returns>            
-        public ModelImportJobResource UpdateImportJob (long? id, ModelImportJobResource request)
+        /// <returns>ImportJobResource</returns>            
+        public ImportJobResource UpdateImportJob (long? id, ImportJobResource request)
         {
             
             // verify the required parameter 'id' is set
@@ -1348,7 +1348,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateImportJob: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelImportJobResource) ApiClient.Deserialize(response.Content, typeof(ModelImportJobResource), response.Headers);
+            return (ImportJobResource) ApiClient.Deserialize(response.Content, typeof(ImportJobResource), response.Headers);
         }
     
         /// <summary>
@@ -1356,8 +1356,8 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <param name="question">The updated question</param> 
-        /// <returns>ModelQuestionResource</returns>            
-        public ModelQuestionResource UpdateQuestion (string id, ModelQuestionResource question)
+        /// <returns>QuestionResource</returns>            
+        public QuestionResource UpdateQuestion (string id, QuestionResource question)
         {
             
             // verify the required parameter 'id' is set
@@ -1387,7 +1387,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateQuestion: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionResource), response.Headers);
+            return (QuestionResource) ApiClient.Deserialize(response.Content, typeof(QuestionResource), response.Headers);
         }
     
         /// <summary>
@@ -1397,7 +1397,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// <param name="id">The id of the answer</param> 
         /// <param name="answer">The updated answer</param> 
         /// <returns></returns>            
-        public void UpdateQuestionAnswer (string questionId, string id, ModelAnswerResource answer)
+        public void UpdateQuestionAnswer (string questionId, string id, AnswerResource answer)
         {
             
             // verify the required parameter 'questionId' is set
@@ -1439,8 +1439,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="questionTemplateResource">The question template resource object</param> 
-        /// <returns>ModelQuestionTemplateResource</returns>            
-        public ModelQuestionTemplateResource UpdateQuestionTemplate (string id, ModelQuestionTemplateResource questionTemplateResource)
+        /// <returns>QuestionTemplateResource</returns>            
+        public QuestionTemplateResource UpdateQuestionTemplate (string id, QuestionTemplateResource questionTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -1470,7 +1470,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateQuestionTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelQuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelQuestionTemplateResource), response.Headers);
+            return (QuestionTemplateResource) ApiClient.Deserialize(response.Content, typeof(QuestionTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -1485,7 +1485,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="filterPublished">Filter for questions currenctly published or not</param> 
         /// <param name="filterImportId">Filter for questions from a specific import job</param> 
         /// <returns>int?</returns>            
-        public int? UpdateQuestionsInBulk (ModelQuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
+        public int? UpdateQuestionsInBulk (QuestionResource question, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
         {
             
     

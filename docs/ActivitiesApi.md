@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="createactivity"></a>
 # **CreateActivity**
-> ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc CreateActivity (ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource)
+> ActivityResource CreateActivity (ActivityResource activityResource)
 
 Create an activity
 
@@ -44,12 +44,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ActivitiesApi();
-            var activityResource = new ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc(); // ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object (optional) 
+            var activityResource = new ActivityResource(); // ActivityResource | The activity resource object (optional) 
 
             try
             {
                 // Create an activity
-                ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.CreateActivity(activityResource);
+                ActivityResource result = apiInstance.CreateActivity(activityResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,11 +65,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityResource** | [**ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional] 
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="createactivityoccurrence"></a>
 # **CreateActivityOccurrence**
-> ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings CreateActivityOccurrence (bool? test, ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource)
+> ActivityOccurrenceResource CreateActivityOccurrence (bool? test, ActivityOccurrenceResource activityOccurrenceResource)
 
 Create a new activity occurrence. Ex: start a game
 
@@ -110,12 +110,12 @@ namespace Example
 
             var apiInstance = new ActivitiesApi();
             var test = true;  // bool? | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings (optional)  (default to false)
-            var activityOccurrenceResource = new ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings(); // ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings | The activity occurrence object (optional) 
+            var activityOccurrenceResource = new ActivityOccurrenceResource(); // ActivityOccurrenceResource | The activity occurrence object (optional) 
 
             try
             {
                 // Create a new activity occurrence. Ex: start a game
-                ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings result = apiInstance.CreateActivityOccurrence(test, activityOccurrenceResource);
+                ActivityOccurrenceResource result = apiInstance.CreateActivityOccurrence(test, activityOccurrenceResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -132,11 +132,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **test** | **bool?**| if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings | [optional] [default to false]
- **activityOccurrenceResource** | [**ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)| The activity occurrence object | [optional] 
+ **activityOccurrenceResource** | [**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
-[**ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](ModelAOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 <a name="createactivitytemplate"></a>
 # **CreateActivityTemplate**
-> ModelTemplateResource CreateActivityTemplate (ModelTemplateResource activityTemplateResource)
+> TemplateResource CreateActivityTemplate (TemplateResource activityTemplateResource)
 
 Create a activity template
 
@@ -176,12 +176,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ActivitiesApi();
-            var activityTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The activity template resource object (optional) 
+            var activityTemplateResource = new TemplateResource(); // TemplateResource | The activity template resource object (optional) 
 
             try
             {
                 // Create a activity template
-                ModelTemplateResource result = apiInstance.CreateActivityTemplate(activityTemplateResource);
+                TemplateResource result = apiInstance.CreateActivityTemplate(activityTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -197,11 +197,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The activity template resource object | [optional] 
+ **activityTemplateResource** | [**TemplateResource**](TemplateResource.md)| The activity template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ void (empty response body)
 
 <a name="getactivities"></a>
 # **GetActivities**
-> ModelPageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, Object filterId, int? size, int? page, string order)
+> PageResourceBareActivityResource GetActivities (bool? filterTemplate, string filterName, string filterId, int? size, int? page, string order)
 
 List activity definitions
 
@@ -366,7 +366,7 @@ namespace Example
             var apiInstance = new ActivitiesApi();
             var filterTemplate = true;  // bool? | Filter for activities that are templates, or specifically not if false (optional) 
             var filterName = filterName_example;  // string | Filter for activities that have a name starting with specified string (optional) 
-            var filterId = new Object(); // Object | Filter for activities with an id in the given comma separated list of ids (optional) 
+            var filterId = filterId_example;  // string | Filter for activities with an id in the given comma separated list of ids (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
             var order = order_example;  // string | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)  (default to id:ASC)
@@ -374,7 +374,7 @@ namespace Example
             try
             {
                 // List activity definitions
-                ModelPageResourceBareActivityResource result = apiInstance.GetActivities(filterTemplate, filterName, filterId, size, page, order);
+                PageResourceBareActivityResource result = apiInstance.GetActivities(filterTemplate, filterName, filterId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -392,14 +392,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterTemplate** | **bool?**| Filter for activities that are templates, or specifically not if false | [optional] 
  **filterName** | **string**| Filter for activities that have a name starting with specified string | [optional] 
- **filterId** | [**Object**](.md)| Filter for activities with an id in the given comma separated list of ids | [optional] 
+ **filterId** | **string**| Filter for activities with an id in the given comma separated list of ids | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **string**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
 
 ### Return type
 
-[**ModelPageResourceBareActivityResource**](ModelPageResourceBareActivityResource.md)
+[**PageResourceBareActivityResource**](PageResourceBareActivityResource.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ No authorization required
 
 <a name="getactivity"></a>
 # **GetActivity**
-> ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc GetActivity (long? id)
+> ActivityResource GetActivity (long? id)
 
 Get a single activity
 
@@ -439,7 +439,7 @@ namespace Example
             try
             {
                 // Get a single activity
-                ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.GetActivity(id);
+                ActivityResource result = apiInstance.GetActivity(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -474,7 +474,7 @@ No authorization required
 
 <a name="getactivitytemplate"></a>
 # **GetActivityTemplate**
-> ModelTemplateResource GetActivityTemplate (string id)
+> TemplateResource GetActivityTemplate (string id)
 
 Get a single activity template
 
@@ -502,7 +502,7 @@ namespace Example
             try
             {
                 // Get a single activity template
-                ModelTemplateResource result = apiInstance.GetActivityTemplate(id);
+                TemplateResource result = apiInstance.GetActivityTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 <a name="getactivitytemplates"></a>
 # **GetActivityTemplates**
-> ModelPageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order)
 
 List and search activity templates
 
@@ -567,7 +567,7 @@ namespace Example
             try
             {
                 // List and search activity templates
-                ModelPageResourceTemplateResource result = apiInstance.GetActivityTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetActivityTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 <a name="setactivityoccurrenceresults"></a>
 # **SetActivityOccurrenceResults**
-> ModelActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ModelActivityOccurrenceResults activityOccurrenceResults)
+> ActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
 
@@ -628,12 +628,12 @@ namespace Example
 
             var apiInstance = new ActivitiesApi();
             var activityOccurrenceId = 789;  // long? | The id of the activity occurrence
-            var activityOccurrenceResults = new ModelActivityOccurrenceResults(); // ModelActivityOccurrenceResults | The activity occurrence object (optional) 
+            var activityOccurrenceResults = new ActivityOccurrenceResultsResource(); // ActivityOccurrenceResultsResource | The activity occurrence object (optional) 
 
             try
             {
                 // Sets the status of an activity occurrence to FINISHED and logs metrics
-                ModelActivityOccurrenceResults result = apiInstance.SetActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults);
+                ActivityOccurrenceResults result = apiInstance.SetActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -650,11 +650,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **long?**| The id of the activity occurrence | 
- **activityOccurrenceResults** | [**ModelActivityOccurrenceResults**](ModelActivityOccurrenceResults.md)| The activity occurrence object | [optional] 
+ **activityOccurrenceResults** | [**ActivityOccurrenceResultsResource**](ActivityOccurrenceResultsResource.md)| The activity occurrence object | [optional] 
 
 ### Return type
 
-[**ModelActivityOccurrenceResults**](ModelActivityOccurrenceResults.md)
+[**ActivityOccurrenceResults**](ActivityOccurrenceResults.md)
 
 ### Authorization
 
@@ -669,7 +669,7 @@ Name | Type | Description  | Notes
 
 <a name="updateactivity"></a>
 # **UpdateActivity**
-> ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc UpdateActivity (long? id, ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource)
+> ActivityResource UpdateActivity (long? id, ActivityResource activityResource)
 
 Update an activity
 
@@ -693,12 +693,12 @@ namespace Example
 
             var apiInstance = new ActivitiesApi();
             var id = 789;  // long? | The id of the activity
-            var activityResource = new ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc(); // ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object (optional) 
+            var activityResource = new ActivityResource(); // ActivityResource | The activity resource object (optional) 
 
             try
             {
                 // Update an activity
-                ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.UpdateActivity(id, activityResource);
+                ActivityResource result = apiInstance.UpdateActivity(id, activityResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -715,11 +715,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The id of the activity | 
- **activityResource** | [**ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional] 
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional] 
 
 ### Return type
 
-[**ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](ModelRepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ void (empty response body)
 
 <a name="updateactivitytemplate"></a>
 # **UpdateActivityTemplate**
-> ModelTemplateResource UpdateActivityTemplate (string id, ModelTemplateResource activityTemplateResource)
+> TemplateResource UpdateActivityTemplate (string id, TemplateResource activityTemplateResource)
 
 Update an activity template
 
@@ -824,12 +824,12 @@ namespace Example
 
             var apiInstance = new ActivitiesApi();
             var id = id_example;  // string | The id of the template
-            var activityTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The activity template resource object (optional) 
+            var activityTemplateResource = new TemplateResource(); // TemplateResource | The activity template resource object (optional) 
 
             try
             {
                 // Update an activity template
-                ModelTemplateResource result = apiInstance.UpdateActivityTemplate(id, activityTemplateResource);
+                TemplateResource result = apiInstance.UpdateActivityTemplate(id, activityTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -846,11 +846,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **activityTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The activity template resource object | [optional] 
+ **activityTemplateResource** | [**TemplateResource**](TemplateResource.md)| The activity template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

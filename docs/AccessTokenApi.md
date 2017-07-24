@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getoauthtoken"></a>
 # **GetOAuthToken**
-> ModelOAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
+> OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
 
 Get access token
 
@@ -38,7 +38,7 @@ namespace Example
             try
             {
                 // Get access token
-                ModelOAuth2Resource result = apiInstance.GetOAuthToken(grantType, clientId, clientSecret, username, password);
+                OAuth2Resource result = apiInstance.GetOAuthToken(grantType, clientId, clientSecret, username, password);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelOAuth2Resource**](ModelOAuth2Resource.md)
+[**OAuth2Resource**](OAuth2Resource.md)
 
 ### Authorization
 

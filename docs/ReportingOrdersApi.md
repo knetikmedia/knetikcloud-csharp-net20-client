@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getinvoicereports"></a>
 # **GetInvoiceReports**
-> ModelPageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page)
+> PageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page)
 
 Retrieve invoice counts aggregated by time ranges
 
@@ -44,7 +44,7 @@ namespace Example
             try
             {
                 // Retrieve invoice counts aggregated by time ranges
-                ModelPageResourceAggregateInvoiceReportResource result = apiInstance.GetInvoiceReports(currencyCode, granularity, filterPaymentStatus, filterFulfillmentStatus, startDate, endDate, size, page);
+                PageResourceAggregateInvoiceReportResource result = apiInstance.GetInvoiceReports(currencyCode, granularity, filterPaymentStatus, filterFulfillmentStatus, startDate, endDate, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceAggregateInvoiceReportResource**](ModelPageResourceAggregateInvoiceReportResource.md)
+[**PageResourceAggregateInvoiceReportResource**](PageResourceAggregateInvoiceReportResource.md)
 
 ### Authorization
 

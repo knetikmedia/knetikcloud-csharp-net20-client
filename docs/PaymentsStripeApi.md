@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createstripepaymentmethod"></a>
 # **CreateStripePaymentMethod**
-> ModelPaymentMethodResource CreateStripePaymentMethod (ModelStripeCreatePaymentMethod request)
+> PaymentMethodResource CreateStripePaymentMethod (StripeCreatePaymentMethod request)
 
 Create a Stripe payment method for a user
 
@@ -35,12 +35,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsStripeApi();
-            var request = new ModelStripeCreatePaymentMethod(); // ModelStripeCreatePaymentMethod | The request to create a Stripe customer with payment info (optional) 
+            var request = new StripeCreatePaymentMethod(); // StripeCreatePaymentMethod | The request to create a Stripe customer with payment info (optional) 
 
             try
             {
                 // Create a Stripe payment method for a user
-                ModelPaymentMethodResource result = apiInstance.CreateStripePaymentMethod(request);
+                PaymentMethodResource result = apiInstance.CreateStripePaymentMethod(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -56,11 +56,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelStripeCreatePaymentMethod**](ModelStripeCreatePaymentMethod.md)| The request to create a Stripe customer with payment info | [optional] 
+ **request** | [**StripeCreatePaymentMethod**](StripeCreatePaymentMethod.md)| The request to create a Stripe customer with payment info | [optional] 
 
 ### Return type
 
-[**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)
+[**PaymentMethodResource**](PaymentMethodResource.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 <a name="paystripeinvoice"></a>
 # **PayStripeInvoice**
-> void PayStripeInvoice (ModelStripePaymentRequest request)
+> void PayStripeInvoice (StripePaymentRequest request)
 
 Pay with a single use token
 
@@ -95,7 +95,7 @@ namespace Example
         {
             
             var apiInstance = new PaymentsStripeApi();
-            var request = new ModelStripePaymentRequest(); // ModelStripePaymentRequest | The request to pay an invoice (optional) 
+            var request = new StripePaymentRequest(); // StripePaymentRequest | The request to pay an invoice (optional) 
 
             try
             {
@@ -115,7 +115,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelStripePaymentRequest**](ModelStripePaymentRequest.md)| The request to pay an invoice | [optional] 
+ **request** | [**StripePaymentRequest**](StripePaymentRequest.md)| The request to pay an invoice | [optional] 
 
 ### Return type
 

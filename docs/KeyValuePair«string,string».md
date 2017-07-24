@@ -1,10 +1,10 @@
-# com.knetikcloud.Model.ModelKeyValuePairstringstring
+# com.knetikcloud.Model.KeyValuePairstringstring
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | **string** |  | [optional] [default to null]
-**Value** | **string** |  | [optional] [default to null]
+**Key** | **string** |  | [optional] 
+**Value** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

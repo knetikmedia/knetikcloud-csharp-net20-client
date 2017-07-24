@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getuserlocationlog"></a>
 # **GetUserLocationLog**
-> ModelPageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order)
+> PageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order)
 
 Returns the authentication log for a user
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // Returns the authentication log for a user
-                ModelPageResourceLocationLogResource result = apiInstance.GetUserLocationLog(userId, size, page, order);
+                PageResourceLocationLogResource result = apiInstance.GetUserLocationLog(userId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceLocationLogResource**](ModelPageResourceLocationLogResource.md)
+[**PageResourceLocationLogResource**](PageResourceLocationLogResource.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 <a name="getusertokendetails"></a>
 # **GetUserTokenDetails**
-> ModelTokenDetailsResource GetUserTokenDetails ()
+> TokenDetailsResource GetUserTokenDetails ()
 
 Returns the authentication token details. Use /users endpoint for detailed user's info
 
@@ -108,7 +108,7 @@ namespace Example
             try
             {
                 // Returns the authentication token details. Use /users endpoint for detailed user's info
-                ModelTokenDetailsResource result = apiInstance.GetUserTokenDetails();
+                TokenDetailsResource result = apiInstance.GetUserTokenDetails();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelTokenDetailsResource**](ModelTokenDetailsResource.md)
+[**TokenDetailsResource**](TokenDetailsResource.md)
 
 ### Authorization
 

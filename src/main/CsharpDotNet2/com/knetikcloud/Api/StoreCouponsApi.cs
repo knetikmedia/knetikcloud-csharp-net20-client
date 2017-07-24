@@ -16,14 +16,14 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="couponItem">The coupon item object</param>
-        /// <returns>ModelCouponItem</returns>
-        ModelCouponItem CreateCouponItem (bool? cascade, ModelCouponItem couponItem);
+        /// <returns>CouponItem</returns>
+        CouponItem CreateCouponItem (bool? cascade, CouponItem couponItem);
         /// <summary>
         /// Create a coupon template Coupon Templates define a type of coupon and the properties they have.
         /// </summary>
         /// <param name="couponTemplateResource">The new coupon template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource CreateCouponTemplate (ModelItemTemplateResource couponTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource CreateCouponTemplate (ItemTemplateResource couponTemplateResource);
         /// <summary>
         /// Delete a coupon item 
         /// </summary>
@@ -41,37 +41,37 @@ namespace com.knetikcloud.Api
         /// Get a single coupon item 
         /// </summary>
         /// <param name="id">The id of the coupon</param>
-        /// <returns>ModelCouponItem</returns>
-        ModelCouponItem GetCouponItem (int? id);
+        /// <returns>CouponItem</returns>
+        CouponItem GetCouponItem (int? id);
         /// <summary>
         /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource GetCouponTemplate (string id);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource GetCouponTemplate (string id);
         /// <summary>
         /// List and search coupon templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceItemTemplateResource</returns>
-        ModelPageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceItemTemplateResource</returns>
+        PageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order);
         /// <summary>
         /// Update a coupon item 
         /// </summary>
         /// <param name="id">The id of the coupon</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="couponItem">The coupon item object</param>
-        /// <returns>ModelCouponItem</returns>
-        ModelCouponItem UpdateCouponItem (int? id, bool? cascade, ModelCouponItem couponItem);
+        /// <returns>CouponItem</returns>
+        CouponItem UpdateCouponItem (int? id, bool? cascade, CouponItem couponItem);
         /// <summary>
         /// Update a coupon template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="couponTemplateResource">The coupon template resource object</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource UpdateCouponTemplate (string id, ModelItemTemplateResource couponTemplateResource);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource UpdateCouponTemplate (string id, ItemTemplateResource couponTemplateResource);
     }
   
     /// <summary>
@@ -132,8 +132,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="couponItem">The coupon item object</param> 
-        /// <returns>ModelCouponItem</returns>            
-        public ModelCouponItem CreateCouponItem (bool? cascade, ModelCouponItem couponItem)
+        /// <returns>CouponItem</returns>            
+        public CouponItem CreateCouponItem (bool? cascade, CouponItem couponItem)
         {
             
     
@@ -160,15 +160,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCouponItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCouponItem) ApiClient.Deserialize(response.Content, typeof(ModelCouponItem), response.Headers);
+            return (CouponItem) ApiClient.Deserialize(response.Content, typeof(CouponItem), response.Headers);
         }
     
         /// <summary>
         /// Create a coupon template Coupon Templates define a type of coupon and the properties they have.
         /// </summary>
         /// <param name="couponTemplateResource">The new coupon template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource CreateCouponTemplate (ModelItemTemplateResource couponTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource CreateCouponTemplate (ItemTemplateResource couponTemplateResource)
         {
             
     
@@ -194,7 +194,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCouponTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -277,8 +277,8 @@ namespace com.knetikcloud.Api
         /// Get a single coupon item 
         /// </summary>
         /// <param name="id">The id of the coupon</param> 
-        /// <returns>ModelCouponItem</returns>            
-        public ModelCouponItem GetCouponItem (int? id)
+        /// <returns>CouponItem</returns>            
+        public CouponItem GetCouponItem (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -307,15 +307,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCouponItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCouponItem) ApiClient.Deserialize(response.Content, typeof(ModelCouponItem), response.Headers);
+            return (CouponItem) ApiClient.Deserialize(response.Content, typeof(CouponItem), response.Headers);
         }
     
         /// <summary>
         /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource GetCouponTemplate (string id)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource GetCouponTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -344,7 +344,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCouponTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -353,8 +353,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceItemTemplateResource</returns>            
-        public ModelPageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceItemTemplateResource</returns>            
+        public PageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order)
         {
             
     
@@ -382,7 +382,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCouponTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceItemTemplateResource), response.Headers);
+            return (PageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -391,8 +391,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the coupon</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="couponItem">The coupon item object</param> 
-        /// <returns>ModelCouponItem</returns>            
-        public ModelCouponItem UpdateCouponItem (int? id, bool? cascade, ModelCouponItem couponItem)
+        /// <returns>CouponItem</returns>            
+        public CouponItem UpdateCouponItem (int? id, bool? cascade, CouponItem couponItem)
         {
             
             // verify the required parameter 'id' is set
@@ -423,7 +423,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCouponItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCouponItem) ApiClient.Deserialize(response.Content, typeof(ModelCouponItem), response.Headers);
+            return (CouponItem) ApiClient.Deserialize(response.Content, typeof(CouponItem), response.Headers);
         }
     
         /// <summary>
@@ -431,8 +431,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="couponTemplateResource">The coupon template resource object</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource UpdateCouponTemplate (string id, ModelItemTemplateResource couponTemplateResource)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource UpdateCouponTemplate (string id, ItemTemplateResource couponTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -462,7 +462,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCouponTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
     }

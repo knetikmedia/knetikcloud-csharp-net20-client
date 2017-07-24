@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="addartist"></a>
 # **AddArtist**
-> ModelArtistResource AddArtist (ModelArtistResource artistResource)
+> ArtistResource AddArtist (ArtistResource artistResource)
 
 Adds a new artist in the system
 
@@ -43,12 +43,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MediaArtistsApi();
-            var artistResource = new ModelArtistResource(); // ModelArtistResource | The new artist (optional) 
+            var artistResource = new ArtistResource(); // ArtistResource | The new artist (optional) 
 
             try
             {
                 // Adds a new artist in the system
-                ModelArtistResource result = apiInstance.AddArtist(artistResource);
+                ArtistResource result = apiInstance.AddArtist(artistResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -64,11 +64,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artistResource** | [**ModelArtistResource**](ModelArtistResource.md)| The new artist | [optional] 
+ **artistResource** | [**ArtistResource**](ArtistResource.md)| The new artist | [optional] 
 
 ### Return type
 
-[**ModelArtistResource**](ModelArtistResource.md)
+[**ArtistResource**](ArtistResource.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="createartisttemplate"></a>
 # **CreateArtistTemplate**
-> ModelTemplateResource CreateArtistTemplate (ModelTemplateResource artistTemplateResource)
+> TemplateResource CreateArtistTemplate (TemplateResource artistTemplateResource)
 
 Create an artist template
 
@@ -108,12 +108,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new MediaArtistsApi();
-            var artistTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The artist template resource object (optional) 
+            var artistTemplateResource = new TemplateResource(); // TemplateResource | The artist template resource object (optional) 
 
             try
             {
                 // Create an artist template
-                ModelTemplateResource result = apiInstance.CreateArtistTemplate(artistTemplateResource);
+                TemplateResource result = apiInstance.CreateArtistTemplate(artistTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -129,11 +129,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artistTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The artist template resource object | [optional] 
+ **artistTemplateResource** | [**TemplateResource**](TemplateResource.md)| The artist template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ void (empty response body)
 
 <a name="getartist"></a>
 # **GetArtist**
-> ModelArtistResource GetArtist (long? id, int? showContributions)
+> ArtistResource GetArtist (long? id, int? showContributions)
 
 Loads a specific artist details
 
@@ -302,7 +302,7 @@ namespace Example
             try
             {
                 // Loads a specific artist details
-                ModelArtistResource result = apiInstance.GetArtist(id, showContributions);
+                ArtistResource result = apiInstance.GetArtist(id, showContributions);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelArtistResource**](ModelArtistResource.md)
+[**ArtistResource**](ArtistResource.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ No authorization required
 
 <a name="getartisttemplate"></a>
 # **GetArtistTemplate**
-> ModelTemplateResource GetArtistTemplate (string id)
+> TemplateResource GetArtistTemplate (string id)
 
 Get a single artist template
 
@@ -366,7 +366,7 @@ namespace Example
             try
             {
                 // Get a single artist template
-                ModelTemplateResource result = apiInstance.GetArtistTemplate(id);
+                TemplateResource result = apiInstance.GetArtistTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 <a name="getartisttemplates"></a>
 # **GetArtistTemplates**
-> ModelPageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order)
 
 List and search artist templates
 
@@ -431,7 +431,7 @@ namespace Example
             try
             {
                 // List and search artist templates
-                ModelPageResourceTemplateResource result = apiInstance.GetArtistTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetArtistTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 <a name="getartists"></a>
 # **GetArtists**
-> ModelPageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order)
+> PageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order)
 
 Search for artists
 
@@ -496,7 +496,7 @@ namespace Example
             try
             {
                 // Search for artists
-                ModelPageResourceArtistResource result = apiInstance.GetArtists(filterArtistsByName, size, page, order);
+                PageResourceArtistResource result = apiInstance.GetArtists(filterArtistsByName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceArtistResource**](ModelPageResourceArtistResource.md)
+[**PageResourceArtistResource**](PageResourceArtistResource.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ No authorization required
 
 <a name="updateartist"></a>
 # **UpdateArtist**
-> void UpdateArtist (long? id, ModelArtistResource artistResource)
+> void UpdateArtist (long? id, ArtistResource artistResource)
 
 Modifies an artist details
 
@@ -558,7 +558,7 @@ namespace Example
 
             var apiInstance = new MediaArtistsApi();
             var id = 789;  // long? | The artist id
-            var artistResource = new ModelArtistResource(); // ModelArtistResource | The new artist (optional) 
+            var artistResource = new ArtistResource(); // ArtistResource | The new artist (optional) 
 
             try
             {
@@ -579,7 +579,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The artist id | 
- **artistResource** | [**ModelArtistResource**](ModelArtistResource.md)| The new artist | [optional] 
+ **artistResource** | [**ArtistResource**](ArtistResource.md)| The new artist | [optional] 
 
 ### Return type
 
@@ -598,7 +598,7 @@ void (empty response body)
 
 <a name="updateartisttemplate"></a>
 # **UpdateArtistTemplate**
-> ModelTemplateResource UpdateArtistTemplate (string id, ModelTemplateResource artistTemplateResource)
+> TemplateResource UpdateArtistTemplate (string id, TemplateResource artistTemplateResource)
 
 Update an artist template
 
@@ -622,12 +622,12 @@ namespace Example
 
             var apiInstance = new MediaArtistsApi();
             var id = id_example;  // string | The id of the template
-            var artistTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The artist template resource object (optional) 
+            var artistTemplateResource = new TemplateResource(); // TemplateResource | The artist template resource object (optional) 
 
             try
             {
                 // Update an artist template
-                ModelTemplateResource result = apiInstance.UpdateArtistTemplate(id, artistTemplateResource);
+                TemplateResource result = apiInstance.UpdateArtistTemplate(id, artistTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -644,11 +644,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **artistTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The artist template resource object | [optional] 
+ **artistTemplateResource** | [**TemplateResource**](TemplateResource.md)| The artist template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createbreglobal"></a>
 # **CreateBREGlobal**
-> ModelBreGlobalResource CreateBREGlobal (ModelBreGlobalResource breGlobalResource)
+> BreGlobalResource CreateBREGlobal (BreGlobalResource breGlobalResource)
 
 Create a global definition
 
@@ -38,12 +38,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineGlobalsApi();
-            var breGlobalResource = new ModelBreGlobalResource(); // ModelBreGlobalResource | The BRE global resource object (optional) 
+            var breGlobalResource = new BreGlobalResource(); // BreGlobalResource | The BRE global resource object (optional) 
 
             try
             {
                 // Create a global definition
-                ModelBreGlobalResource result = apiInstance.CreateBREGlobal(breGlobalResource);
+                BreGlobalResource result = apiInstance.CreateBREGlobal(breGlobalResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,11 +59,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **breGlobalResource** | [**ModelBreGlobalResource**](ModelBreGlobalResource.md)| The BRE global resource object | [optional] 
+ **breGlobalResource** | [**BreGlobalResource**](BreGlobalResource.md)| The BRE global resource object | [optional] 
 
 ### Return type
 
-[**ModelBreGlobalResource**](ModelBreGlobalResource.md)
+[**BreGlobalResource**](BreGlobalResource.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ void (empty response body)
 
 <a name="getbreglobal"></a>
 # **GetBREGlobal**
-> ModelBreGlobalResource GetBREGlobal (string id)
+> BreGlobalResource GetBREGlobal (string id)
 
 Get a single global definition
 
@@ -170,7 +170,7 @@ namespace Example
             try
             {
                 // Get a single global definition
-                ModelBreGlobalResource result = apiInstance.GetBREGlobal(id);
+                BreGlobalResource result = apiInstance.GetBREGlobal(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBreGlobalResource**](ModelBreGlobalResource.md)
+[**BreGlobalResource**](BreGlobalResource.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="getbreglobals"></a>
 # **GetBREGlobals**
-> ModelPageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page)
+> PageResourceBreGlobalResource GetBREGlobals (bool? filterSystem, int? size, int? page)
 
 List global definitions
 
@@ -235,7 +235,7 @@ namespace Example
             try
             {
                 // List global definitions
-                ModelPageResourceBreGlobalResource result = apiInstance.GetBREGlobals(filterSystem, size, page);
+                PageResourceBreGlobalResource result = apiInstance.GetBREGlobals(filterSystem, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBreGlobalResource**](ModelPageResourceBreGlobalResource.md)
+[**PageResourceBreGlobalResource**](PageResourceBreGlobalResource.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebreglobal"></a>
 # **UpdateBREGlobal**
-> ModelBreGlobalResource UpdateBREGlobal (string id, ModelBreGlobalResource breGlobalResource)
+> BreGlobalResource UpdateBREGlobal (string id, BreGlobalResource breGlobalResource)
 
 Update a global definition
 
@@ -298,12 +298,12 @@ namespace Example
 
             var apiInstance = new BRERuleEngineGlobalsApi();
             var id = id_example;  // string | The id of the global definition
-            var breGlobalResource = new ModelBreGlobalResource(); // ModelBreGlobalResource | The BRE global resource object (optional) 
+            var breGlobalResource = new BreGlobalResource(); // BreGlobalResource | The BRE global resource object (optional) 
 
             try
             {
                 // Update a global definition
-                ModelBreGlobalResource result = apiInstance.UpdateBREGlobal(id, breGlobalResource);
+                BreGlobalResource result = apiInstance.UpdateBREGlobal(id, breGlobalResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -320,11 +320,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the global definition | 
- **breGlobalResource** | [**ModelBreGlobalResource**](ModelBreGlobalResource.md)| The BRE global resource object | [optional] 
+ **breGlobalResource** | [**BreGlobalResource**](BreGlobalResource.md)| The BRE global resource object | [optional] 
 
 ### Return type
 
-[**ModelBreGlobalResource**](ModelBreGlobalResource.md)
+[**BreGlobalResource**](BreGlobalResource.md)
 
 ### Authorization
 

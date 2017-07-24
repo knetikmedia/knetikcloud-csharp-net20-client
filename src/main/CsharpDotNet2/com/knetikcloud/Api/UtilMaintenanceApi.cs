@@ -19,20 +19,20 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get current maintenance info Get current maintenance info. 404 if no maintenance.
         /// </summary>
-        /// <returns>ModelMaintenance</returns>
-        ModelMaintenance GetMaintenance ();
+        /// <returns>Maintenance</returns>
+        Maintenance GetMaintenance ();
         /// <summary>
         /// Set current maintenance info 
         /// </summary>
         /// <param name="maintenance">The maintenance object</param>
         /// <returns></returns>
-        void SetMaintenance (ModelMaintenance maintenance);
+        void SetMaintenance (Maintenance maintenance);
         /// <summary>
         /// Update current maintenance info 
         /// </summary>
         /// <param name="maintenance">The maintenance object</param>
         /// <returns></returns>
-        void UpdateMaintenance (ModelMaintenance maintenance);
+        void UpdateMaintenance (Maintenance maintenance);
     }
   
     /// <summary>
@@ -123,8 +123,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get current maintenance info Get current maintenance info. 404 if no maintenance.
         /// </summary>
-        /// <returns>ModelMaintenance</returns>            
-        public ModelMaintenance GetMaintenance ()
+        /// <returns>Maintenance</returns>            
+        public Maintenance GetMaintenance ()
         {
             
     
@@ -149,7 +149,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetMaintenance: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelMaintenance) ApiClient.Deserialize(response.Content, typeof(ModelMaintenance), response.Headers);
+            return (Maintenance) ApiClient.Deserialize(response.Content, typeof(Maintenance), response.Headers);
         }
     
         /// <summary>
@@ -157,7 +157,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="maintenance">The maintenance object</param> 
         /// <returns></returns>            
-        public void SetMaintenance (ModelMaintenance maintenance)
+        public void SetMaintenance (Maintenance maintenance)
         {
             
     
@@ -191,7 +191,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="maintenance">The maintenance object</param> 
         /// <returns></returns>            
-        public void UpdateMaintenance (ModelMaintenance maintenance)
+        public void UpdateMaintenance (Maintenance maintenance)
         {
             
     

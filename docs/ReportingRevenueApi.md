@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="getitemrevenue"></a>
 # **GetItemRevenue**
-> ModelRevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate)
+> RevenueReportResource GetItemRevenue (string currencyCode, long? startDate, long? endDate)
 
 Get item revenue info
 
@@ -45,7 +45,7 @@ namespace Example
             try
             {
                 // Get item revenue info
-                ModelRevenueReportResource result = apiInstance.GetItemRevenue(currencyCode, startDate, endDate);
+                RevenueReportResource result = apiInstance.GetItemRevenue(currencyCode, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRevenueReportResource**](ModelRevenueReportResource.md)
+[**RevenueReportResource**](RevenueReportResource.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="getrefundrevenue"></a>
 # **GetRefundRevenue**
-> ModelRevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate)
+> RevenueReportResource GetRefundRevenue (string currencyCode, long? startDate, long? endDate)
 
 Get refund revenue info
 
@@ -114,7 +114,7 @@ namespace Example
             try
             {
                 // Get refund revenue info
-                ModelRevenueReportResource result = apiInstance.GetRefundRevenue(currencyCode, startDate, endDate);
+                RevenueReportResource result = apiInstance.GetRefundRevenue(currencyCode, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRevenueReportResource**](ModelRevenueReportResource.md)
+[**RevenueReportResource**](RevenueReportResource.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 <a name="getrevenuebycountry"></a>
 # **GetRevenueByCountry**
-> ModelPageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page)
+> PageResourceRevenueCountryReportResource GetRevenueByCountry (string currencyCode, long? startDate, long? endDate, int? size, int? page)
 
 Get revenue info by country
 
@@ -185,7 +185,7 @@ namespace Example
             try
             {
                 // Get revenue info by country
-                ModelPageResourceRevenueCountryReportResource result = apiInstance.GetRevenueByCountry(currencyCode, startDate, endDate, size, page);
+                PageResourceRevenueCountryReportResource result = apiInstance.GetRevenueByCountry(currencyCode, startDate, endDate, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceRevenueCountryReportResource**](ModelPageResourceRevenueCountryReportResource.md)
+[**PageResourceRevenueCountryReportResource**](PageResourceRevenueCountryReportResource.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 <a name="getrevenuebyitem"></a>
 # **GetRevenueByItem**
-> ModelPageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page)
+> PageResourceRevenueProductReportResource GetRevenueByItem (string currencyCode, long? startDate, long? endDate, int? size, int? page)
 
 Get revenue info by item
 
@@ -258,7 +258,7 @@ namespace Example
             try
             {
                 // Get revenue info by item
-                ModelPageResourceRevenueProductReportResource result = apiInstance.GetRevenueByItem(currencyCode, startDate, endDate, size, page);
+                PageResourceRevenueProductReportResource result = apiInstance.GetRevenueByItem(currencyCode, startDate, endDate, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceRevenueProductReportResource**](ModelPageResourceRevenueProductReportResource.md)
+[**PageResourceRevenueProductReportResource**](PageResourceRevenueProductReportResource.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 <a name="getsubscriptionrevenue"></a>
 # **GetSubscriptionRevenue**
-> ModelRevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate)
+> RevenueReportResource GetSubscriptionRevenue (string currencyCode, long? startDate, long? endDate)
 
 Get subscription revenue info
 
@@ -329,7 +329,7 @@ namespace Example
             try
             {
                 // Get subscription revenue info
-                ModelRevenueReportResource result = apiInstance.GetSubscriptionRevenue(currencyCode, startDate, endDate);
+                RevenueReportResource result = apiInstance.GetSubscriptionRevenue(currencyCode, startDate, endDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelRevenueReportResource**](ModelRevenueReportResource.md)
+[**RevenueReportResource**](RevenueReportResource.md)
 
 ### Authorization
 

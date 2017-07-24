@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getleaderboard"></a>
 # **GetLeaderboard**
-> ModelLeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order)
+> LeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order)
 
 Retrieves leaderboard details and paginated entries
 
@@ -42,7 +42,7 @@ namespace Example
             try
             {
                 // Retrieves leaderboard details and paginated entries
-                ModelLeaderboardResource result = apiInstance.GetLeaderboard(contextType, contextId, size, page, order);
+                LeaderboardResource result = apiInstance.GetLeaderboard(contextType, contextId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelLeaderboardResource**](ModelLeaderboardResource.md)
+[**LeaderboardResource**](LeaderboardResource.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 
 <a name="getleaderboardrank"></a>
 # **GetLeaderboardRank**
-> ModelLeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id)
+> LeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id)
 
 Retrieves a specific user entry with rank
 
@@ -113,7 +113,7 @@ namespace Example
             try
             {
                 // Retrieves a specific user entry with rank
-                ModelLeaderboardEntryResource result = apiInstance.GetLeaderboardRank(contextType, contextId, id);
+                LeaderboardEntryResource result = apiInstance.GetLeaderboardRank(contextType, contextId, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelLeaderboardEntryResource**](ModelLeaderboardEntryResource.md)
+[**LeaderboardEntryResource**](LeaderboardEntryResource.md)
 
 ### Authorization
 

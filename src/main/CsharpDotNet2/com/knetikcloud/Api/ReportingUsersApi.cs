@@ -19,8 +19,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceAggregateCountResource</returns>
-        ModelPageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page);
+        /// <returns>PageResourceAggregateCountResource</returns>
+        PageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page);
     }
   
     /// <summary>
@@ -84,8 +84,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to aggregate, unix timestamp in seconds. Default is end of time</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceAggregateCountResource</returns>            
-        public ModelPageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page)
+        /// <returns>PageResourceAggregateCountResource</returns>            
+        public PageResourceAggregateCountResource GetUserRegistrations (string granularity, long? startDate, long? endDate, int? size, int? page)
         {
             
     
@@ -115,7 +115,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserRegistrations: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceAggregateCountResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceAggregateCountResource), response.Headers);
+            return (PageResourceAggregateCountResource) ApiClient.Deserialize(response.Content, typeof(PageResourceAggregateCountResource), response.Headers);
         }
     
     }

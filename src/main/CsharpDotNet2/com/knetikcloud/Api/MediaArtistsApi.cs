@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions
         /// </summary>
         /// <param name="artistResource">The new artist</param>
-        /// <returns>ModelArtistResource</returns>
-        ModelArtistResource AddArtist (ModelArtistResource artistResource);
+        /// <returns>ArtistResource</returns>
+        ArtistResource AddArtist (ArtistResource artistResource);
         /// <summary>
         /// Create an artist template Artist Templates define a type of artist and the properties they have
         /// </summary>
         /// <param name="artistTemplateResource">The artist template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateArtistTemplate (ModelTemplateResource artistTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateArtistTemplate (TemplateResource artistTemplateResource);
         /// <summary>
         /// Removes an artist from the system IF no resources are attached to it 
         /// </summary>
@@ -41,22 +41,22 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The artist id</param>
         /// <param name="showContributions">The number of contributions to show fetch</param>
-        /// <returns>ModelArtistResource</returns>
-        ModelArtistResource GetArtist (long? id, int? showContributions);
+        /// <returns>ArtistResource</returns>
+        ArtistResource GetArtist (long? id, int? showContributions);
         /// <summary>
         /// Get a single artist template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetArtistTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetArtistTemplate (string id);
         /// <summary>
         /// List and search artist templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order);
         /// <summary>
         /// Search for artists 
         /// </summary>
@@ -64,22 +64,22 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceArtistResource</returns>
-        ModelPageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order);
+        /// <returns>PageResourceArtistResource</returns>
+        PageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order);
         /// <summary>
         /// Modifies an artist details 
         /// </summary>
         /// <param name="id">The artist id</param>
         /// <param name="artistResource">The new artist</param>
         /// <returns></returns>
-        void UpdateArtist (long? id, ModelArtistResource artistResource);
+        void UpdateArtist (long? id, ArtistResource artistResource);
         /// <summary>
         /// Update an artist template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="artistTemplateResource">The artist template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateArtistTemplate (string id, ModelTemplateResource artistTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateArtistTemplate (string id, TemplateResource artistTemplateResource);
     }
   
     /// <summary>
@@ -139,8 +139,8 @@ namespace com.knetikcloud.Api
         /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions
         /// </summary>
         /// <param name="artistResource">The new artist</param> 
-        /// <returns>ModelArtistResource</returns>            
-        public ModelArtistResource AddArtist (ModelArtistResource artistResource)
+        /// <returns>ArtistResource</returns>            
+        public ArtistResource AddArtist (ArtistResource artistResource)
         {
             
     
@@ -166,15 +166,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddArtist: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelArtistResource) ApiClient.Deserialize(response.Content, typeof(ModelArtistResource), response.Headers);
+            return (ArtistResource) ApiClient.Deserialize(response.Content, typeof(ArtistResource), response.Headers);
         }
     
         /// <summary>
         /// Create an artist template Artist Templates define a type of artist and the properties they have
         /// </summary>
         /// <param name="artistTemplateResource">The artist template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateArtistTemplate (ModelTemplateResource artistTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateArtistTemplate (TemplateResource artistTemplateResource)
         {
             
     
@@ -200,7 +200,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateArtistTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -284,8 +284,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The artist id</param> 
         /// <param name="showContributions">The number of contributions to show fetch</param> 
-        /// <returns>ModelArtistResource</returns>            
-        public ModelArtistResource GetArtist (long? id, int? showContributions)
+        /// <returns>ArtistResource</returns>            
+        public ArtistResource GetArtist (long? id, int? showContributions)
         {
             
             // verify the required parameter 'id' is set
@@ -315,15 +315,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArtist: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelArtistResource) ApiClient.Deserialize(response.Content, typeof(ModelArtistResource), response.Headers);
+            return (ArtistResource) ApiClient.Deserialize(response.Content, typeof(ArtistResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single artist template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetArtistTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetArtistTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -352,7 +352,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArtistTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -361,8 +361,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order)
         {
             
     
@@ -390,7 +390,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArtistTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -400,8 +400,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceArtistResource</returns>            
-        public ModelPageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order)
+        /// <returns>PageResourceArtistResource</returns>            
+        public PageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order)
         {
             
     
@@ -430,7 +430,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetArtists: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceArtistResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceArtistResource), response.Headers);
+            return (PageResourceArtistResource) ApiClient.Deserialize(response.Content, typeof(PageResourceArtistResource), response.Headers);
         }
     
         /// <summary>
@@ -439,7 +439,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The artist id</param> 
         /// <param name="artistResource">The new artist</param> 
         /// <returns></returns>            
-        public void UpdateArtist (long? id, ModelArtistResource artistResource)
+        public void UpdateArtist (long? id, ArtistResource artistResource)
         {
             
             // verify the required parameter 'id' is set
@@ -477,8 +477,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="artistTemplateResource">The artist template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateArtistTemplate (string id, ModelTemplateResource artistTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateArtistTemplate (string id, TemplateResource artistTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -508,7 +508,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateArtistTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

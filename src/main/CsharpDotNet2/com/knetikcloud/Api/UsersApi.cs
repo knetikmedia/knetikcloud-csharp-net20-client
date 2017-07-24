@@ -22,8 +22,8 @@ namespace com.knetikcloud.Api
         /// Create a user template User Templates define a type of user and the properties they have
         /// </summary>
         /// <param name="userTemplateResource">The user template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateUserTemplate (ModelTemplateResource userTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateUserTemplate (TemplateResource userTemplateResource);
         /// <summary>
         /// Delete a user template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
         /// </summary>
@@ -35,8 +35,8 @@ namespace com.knetikcloud.Api
         /// Get a single user Additional private info is included as USERS_ADMIN
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param>
-        /// <returns>ModelUserResource</returns>
-        ModelUserResource GetUser (string id);
+        /// <returns>UserResource</returns>
+        UserResource GetUser (string id);
         /// <summary>
         /// List tags for a user 
         /// </summary>
@@ -47,16 +47,16 @@ namespace com.knetikcloud.Api
         /// Get a single user template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetUserTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetUserTemplate (string id);
         /// <summary>
         /// List and search user templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetUserTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetUserTemplates (int? size, int? page, string order);
         /// <summary>
         /// List and search users Additional private info is included as USERS_ADMIN
         /// </summary>
@@ -73,21 +73,21 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceUserBaseResource</returns>
-        ModelPageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order);
+        /// <returns>PageResourceUserBaseResource</returns>
+        PageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order);
         /// <summary>
         /// Choose a new password after a reset Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
         /// </summary>
         /// <param name="id">The id of the user</param>
         /// <param name="newPasswordRequest">The new password request object</param>
         /// <returns></returns>
-        void PasswordReset (int? id, ModelNewPasswordRequest newPasswordRequest);
+        void PasswordReset (int? id, NewPasswordRequest newPasswordRequest);
         /// <summary>
         /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security
         /// </summary>
         /// <param name="userResource">The user resource object</param>
-        /// <returns>ModelUserResource</returns>
-        ModelUserResource RegisterUser (ModelUserResource userResource);
+        /// <returns>UserResource</returns>
+        UserResource RegisterUser (UserResource userResource);
         /// <summary>
         /// Remove a tag from a user 
         /// </summary>
@@ -113,21 +113,21 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="passwordReset">An object containing one of three methods to look up a user</param>
         /// <returns></returns>
-        void SubmitPasswordReset (ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty passwordReset);
+        void SubmitPasswordReset (PasswordResetRequest passwordReset);
         /// <summary>
         /// Update a user Password will not be edited on this endpoint, use password specific endpoints.
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param>
         /// <param name="userResource">The user resource object</param>
         /// <returns></returns>
-        void UpdateUser (string id, ModelUserResource userResource);
+        void UpdateUser (string id, UserResource userResource);
         /// <summary>
         /// Update a user template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="userTemplateResource">The user template resource object</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateUserTemplate (string id, ModelTemplateResource userTemplateResource);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateUserTemplate (string id, TemplateResource userTemplateResource);
     }
   
     /// <summary>
@@ -229,8 +229,8 @@ namespace com.knetikcloud.Api
         /// Create a user template User Templates define a type of user and the properties they have
         /// </summary>
         /// <param name="userTemplateResource">The user template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateUserTemplate (ModelTemplateResource userTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateUserTemplate (TemplateResource userTemplateResource)
         {
             
     
@@ -256,7 +256,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateUserTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -302,8 +302,8 @@ namespace com.knetikcloud.Api
         /// Get a single user Additional private info is included as USERS_ADMIN
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param> 
-        /// <returns>ModelUserResource</returns>            
-        public ModelUserResource GetUser (string id)
+        /// <returns>UserResource</returns>            
+        public UserResource GetUser (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -332,7 +332,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUser: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserResource) ApiClient.Deserialize(response.Content, typeof(ModelUserResource), response.Headers);
+            return (UserResource) ApiClient.Deserialize(response.Content, typeof(UserResource), response.Headers);
         }
     
         /// <summary>
@@ -376,8 +376,8 @@ namespace com.knetikcloud.Api
         /// Get a single user template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetUserTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetUserTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -406,7 +406,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -415,8 +415,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetUserTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetUserTemplates (int? size, int? page, string order)
         {
             
     
@@ -444,7 +444,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -463,8 +463,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceUserBaseResource</returns>            
-        public ModelPageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order)
+        /// <returns>PageResourceUserBaseResource</returns>            
+        public PageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order)
         {
             
     
@@ -502,7 +502,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsers: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserBaseResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserBaseResource), response.Headers);
+            return (PageResourceUserBaseResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserBaseResource), response.Headers);
         }
     
         /// <summary>
@@ -511,7 +511,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the user</param> 
         /// <param name="newPasswordRequest">The new password request object</param> 
         /// <returns></returns>            
-        public void PasswordReset (int? id, ModelNewPasswordRequest newPasswordRequest)
+        public void PasswordReset (int? id, NewPasswordRequest newPasswordRequest)
         {
             
             // verify the required parameter 'id' is set
@@ -548,8 +548,8 @@ namespace com.knetikcloud.Api
         /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security
         /// </summary>
         /// <param name="userResource">The user resource object</param> 
-        /// <returns>ModelUserResource</returns>            
-        public ModelUserResource RegisterUser (ModelUserResource userResource)
+        /// <returns>UserResource</returns>            
+        public UserResource RegisterUser (UserResource userResource)
         {
             
     
@@ -575,7 +575,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling RegisterUser: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserResource) ApiClient.Deserialize(response.Content, typeof(ModelUserResource), response.Headers);
+            return (UserResource) ApiClient.Deserialize(response.Content, typeof(UserResource), response.Headers);
         }
     
         /// <summary>
@@ -701,7 +701,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// </summary>
         /// <param name="passwordReset">An object containing one of three methods to look up a user</param> 
         /// <returns></returns>            
-        public void SubmitPasswordReset (ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty passwordReset)
+        public void SubmitPasswordReset (PasswordResetRequest passwordReset)
         {
             
     
@@ -736,7 +736,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// <param name="id">The id of the user or &#39;me&#39;</param> 
         /// <param name="userResource">The user resource object</param> 
         /// <returns></returns>            
-        public void UpdateUser (string id, ModelUserResource userResource)
+        public void UpdateUser (string id, UserResource userResource)
         {
             
             // verify the required parameter 'id' is set
@@ -774,8 +774,8 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="userTemplateResource">The user template resource object</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateUserTemplate (string id, ModelTemplateResource userTemplateResource)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateUserTemplate (string id, TemplateResource userTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -805,7 +805,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateUserTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

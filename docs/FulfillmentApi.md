@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createfulfillmenttype"></a>
 # **CreateFulfillmentType**
-> ModelFulfillmentType CreateFulfillmentType (ModelFulfillmentType type)
+> FulfillmentType CreateFulfillmentType (FulfillmentType type)
 
 Create a fulfillment type
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FulfillmentApi();
-            var type = new ModelFulfillmentType(); // ModelFulfillmentType | The fulfillment type (optional) 
+            var type = new FulfillmentType(); // FulfillmentType | The fulfillment type (optional) 
 
             try
             {
                 // Create a fulfillment type
-                ModelFulfillmentType result = apiInstance.CreateFulfillmentType(type);
+                FulfillmentType result = apiInstance.CreateFulfillmentType(type);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**ModelFulfillmentType**](ModelFulfillmentType.md)| The fulfillment type | [optional] 
+ **type** | [**FulfillmentType**](FulfillmentType.md)| The fulfillment type | [optional] 
 
 ### Return type
 
-[**ModelFulfillmentType**](ModelFulfillmentType.md)
+[**FulfillmentType**](FulfillmentType.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ void (empty response body)
 
 <a name="getfulfillmenttype"></a>
 # **GetFulfillmentType**
-> ModelFulfillmentType GetFulfillmentType (int? id)
+> FulfillmentType GetFulfillmentType (int? id)
 
 Get a single fulfillment type
 
@@ -163,7 +163,7 @@ namespace Example
             try
             {
                 // Get a single fulfillment type
-                ModelFulfillmentType result = apiInstance.GetFulfillmentType(id);
+                FulfillmentType result = apiInstance.GetFulfillmentType(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelFulfillmentType**](ModelFulfillmentType.md)
+[**FulfillmentType**](FulfillmentType.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="getfulfillmenttypes"></a>
 # **GetFulfillmentTypes**
-> ModelPageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order)
+> PageResourceFulfillmentType GetFulfillmentTypes (int? size, int? page, string order)
 
 List and search fulfillment types
 
@@ -225,7 +225,7 @@ namespace Example
             try
             {
                 // List and search fulfillment types
-                ModelPageResourceFulfillmentType result = apiInstance.GetFulfillmentTypes(size, page, order);
+                PageResourceFulfillmentType result = apiInstance.GetFulfillmentTypes(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceFulfillmentType**](ModelPageResourceFulfillmentType.md)
+[**PageResourceFulfillmentType**](PageResourceFulfillmentType.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ No authorization required
 
 <a name="updatefulfillmenttype"></a>
 # **UpdateFulfillmentType**
-> void UpdateFulfillmentType (int? id, ModelFulfillmentType fulfillmentType)
+> void UpdateFulfillmentType (int? id, FulfillmentType fulfillmentType)
 
 Update a fulfillment type
 
@@ -286,7 +286,7 @@ namespace Example
 
             var apiInstance = new FulfillmentApi();
             var id = 56;  // int? | The id
-            var fulfillmentType = new ModelFulfillmentType(); // ModelFulfillmentType | The fulfillment type (optional) 
+            var fulfillmentType = new FulfillmentType(); // FulfillmentType | The fulfillment type (optional) 
 
             try
             {
@@ -307,7 +307,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id | 
- **fulfillmentType** | [**ModelFulfillmentType**](ModelFulfillmentType.md)| The fulfillment type | [optional] 
+ **fulfillmentType** | [**FulfillmentType**](FulfillmentType.md)| The fulfillment type | [optional] 
 
 ### Return type
 

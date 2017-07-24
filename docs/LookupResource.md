@@ -1,11 +1,11 @@
-# com.knetikcloud.Model.ModelLookupResource
+# com.knetikcloud.Model.LookupResource
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LookupKey** | [**ModelExpressionResource**](ModelExpressionResource.md) |  | [optional] [default to null]
-**Type** | **string** |  | [optional] [default to null]
-**ValueType** | **string** |  | [optional] [default to null]
+**LookupKey** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
+**Type** | **string** |  | [optional] 
+**ValueType** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

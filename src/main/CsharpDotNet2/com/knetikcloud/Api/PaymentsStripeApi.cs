@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Create a Stripe payment method for a user Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
         /// </summary>
         /// <param name="request">The request to create a Stripe customer with payment info</param>
-        /// <returns>ModelPaymentMethodResource</returns>
-        ModelPaymentMethodResource CreateStripePaymentMethod (ModelStripeCreatePaymentMethod request);
+        /// <returns>PaymentMethodResource</returns>
+        PaymentMethodResource CreateStripePaymentMethod (StripeCreatePaymentMethod request);
         /// <summary>
         /// Pay with a single use token 
         /// </summary>
         /// <param name="request">The request to pay an invoice</param>
         /// <returns></returns>
-        void PayStripeInvoice (ModelStripePaymentRequest request);
+        void PayStripeInvoice (StripePaymentRequest request);
     }
   
     /// <summary>
@@ -82,8 +82,8 @@ namespace com.knetikcloud.Api
         /// Create a Stripe payment method for a user Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
         /// </summary>
         /// <param name="request">The request to create a Stripe customer with payment info</param> 
-        /// <returns>ModelPaymentMethodResource</returns>            
-        public ModelPaymentMethodResource CreateStripePaymentMethod (ModelStripeCreatePaymentMethod request)
+        /// <returns>PaymentMethodResource</returns>            
+        public PaymentMethodResource CreateStripePaymentMethod (StripeCreatePaymentMethod request)
         {
             
     
@@ -109,7 +109,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateStripePaymentMethod: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(ModelPaymentMethodResource), response.Headers);
+            return (PaymentMethodResource) ApiClient.Deserialize(response.Content, typeof(PaymentMethodResource), response.Headers);
         }
     
         /// <summary>
@@ -117,7 +117,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to pay an invoice</param> 
         /// <returns></returns>            
-        public void PayStripeInvoice (ModelStripePaymentRequest request)
+        public void PayStripeInvoice (StripePaymentRequest request)
         {
             
     

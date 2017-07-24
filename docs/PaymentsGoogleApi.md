@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="handlegooglepayment"></a>
 # **HandleGooglePayment**
-> int? HandleGooglePayment (ModelGooglePaymentRequest request)
+> int? HandleGooglePayment (GooglePaymentRequest request)
 
 Mark an invoice paid with Google
 
@@ -31,7 +31,7 @@ namespace Example
         {
             
             var apiInstance = new PaymentsGoogleApi();
-            var request = new ModelGooglePaymentRequest(); // ModelGooglePaymentRequest | The request for paying an invoice through a Google in-app payment (optional) 
+            var request = new GooglePaymentRequest(); // GooglePaymentRequest | The request for paying an invoice through a Google in-app payment (optional) 
 
             try
             {
@@ -52,7 +52,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelGooglePaymentRequest**](ModelGooglePaymentRequest.md)| The request for paying an invoice through a Google in-app payment | [optional] 
+ **request** | [**GooglePaymentRequest**](GooglePaymentRequest.md)| The request for paying an invoice through a Google in-app payment | [optional] 
 
 ### Return type
 

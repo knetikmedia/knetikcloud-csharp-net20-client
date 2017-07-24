@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="savedAddressResource">The new address</param>
-        /// <returns>ModelSavedAddressResource</returns>
-        ModelSavedAddressResource CreateAddress (string userId, ModelSavedAddressResource savedAddressResource);
+        /// <returns>SavedAddressResource</returns>
+        SavedAddressResource CreateAddress (string userId, SavedAddressResource savedAddressResource);
         /// <summary>
         /// Delete an address 
         /// </summary>
@@ -30,8 +30,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="id">The id of the address</param>
-        /// <returns>ModelSavedAddressResource</returns>
-        ModelSavedAddressResource GetAddress (string userId, int? id);
+        /// <returns>SavedAddressResource</returns>
+        SavedAddressResource GetAddress (string userId, int? id);
         /// <summary>
         /// List and search addresses 
         /// </summary>
@@ -39,16 +39,16 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceSavedAddressResource</returns>
-        ModelPageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order);
+        /// <returns>PageResourceSavedAddressResource</returns>
+        PageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order);
         /// <summary>
         /// Update an address 
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="id">The id of the address</param>
         /// <param name="savedAddressResource">The saved address resource object</param>
-        /// <returns>ModelSavedAddressResource</returns>
-        ModelSavedAddressResource UpdateAddress (string userId, int? id, ModelSavedAddressResource savedAddressResource);
+        /// <returns>SavedAddressResource</returns>
+        SavedAddressResource UpdateAddress (string userId, int? id, SavedAddressResource savedAddressResource);
     }
   
     /// <summary>
@@ -109,8 +109,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="savedAddressResource">The new address</param> 
-        /// <returns>ModelSavedAddressResource</returns>            
-        public ModelSavedAddressResource CreateAddress (string userId, ModelSavedAddressResource savedAddressResource)
+        /// <returns>SavedAddressResource</returns>            
+        public SavedAddressResource CreateAddress (string userId, SavedAddressResource savedAddressResource)
         {
             
             // verify the required parameter 'userId' is set
@@ -140,7 +140,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateAddress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSavedAddressResource) ApiClient.Deserialize(response.Content, typeof(ModelSavedAddressResource), response.Headers);
+            return (SavedAddressResource) ApiClient.Deserialize(response.Content, typeof(SavedAddressResource), response.Headers);
         }
     
         /// <summary>
@@ -190,8 +190,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="id">The id of the address</param> 
-        /// <returns>ModelSavedAddressResource</returns>            
-        public ModelSavedAddressResource GetAddress (string userId, int? id)
+        /// <returns>SavedAddressResource</returns>            
+        public SavedAddressResource GetAddress (string userId, int? id)
         {
             
             // verify the required parameter 'userId' is set
@@ -224,7 +224,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAddress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSavedAddressResource) ApiClient.Deserialize(response.Content, typeof(ModelSavedAddressResource), response.Headers);
+            return (SavedAddressResource) ApiClient.Deserialize(response.Content, typeof(SavedAddressResource), response.Headers);
         }
     
         /// <summary>
@@ -234,8 +234,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceSavedAddressResource</returns>            
-        public ModelPageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order)
+        /// <returns>PageResourceSavedAddressResource</returns>            
+        public PageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order)
         {
             
             // verify the required parameter 'userId' is set
@@ -267,7 +267,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetAddresses: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSavedAddressResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSavedAddressResource), response.Headers);
+            return (PageResourceSavedAddressResource) ApiClient.Deserialize(response.Content, typeof(PageResourceSavedAddressResource), response.Headers);
         }
     
         /// <summary>
@@ -276,8 +276,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">The id of the user</param> 
         /// <param name="id">The id of the address</param> 
         /// <param name="savedAddressResource">The saved address resource object</param> 
-        /// <returns>ModelSavedAddressResource</returns>            
-        public ModelSavedAddressResource UpdateAddress (string userId, int? id, ModelSavedAddressResource savedAddressResource)
+        /// <returns>SavedAddressResource</returns>            
+        public SavedAddressResource UpdateAddress (string userId, int? id, SavedAddressResource savedAddressResource)
         {
             
             // verify the required parameter 'userId' is set
@@ -311,7 +311,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateAddress: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSavedAddressResource) ApiClient.Deserialize(response.Content, typeof(ModelSavedAddressResource), response.Headers);
+            return (SavedAddressResource) ApiClient.Deserialize(response.Content, typeof(SavedAddressResource), response.Headers);
         }
     
     }

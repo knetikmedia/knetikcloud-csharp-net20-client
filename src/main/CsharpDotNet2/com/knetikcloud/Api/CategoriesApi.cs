@@ -15,14 +15,14 @@ namespace com.knetikcloud.Api
         /// Create a new category 
         /// </summary>
         /// <param name="category">The category to create</param>
-        /// <returns>ModelCategoryResource</returns>
-        ModelCategoryResource CreateCategory (ModelCategoryResource category);
+        /// <returns>CategoryResource</returns>
+        CategoryResource CreateCategory (CategoryResource category);
         /// <summary>
         /// Create a category template Templates define a type of category and the properties they have
         /// </summary>
         /// <param name="template">The template to create</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource CreateCategoryTemplate (ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateCategoryTemplate (TemplateResource template);
         /// <summary>
         /// Delete an existing category 
         /// </summary>
@@ -44,49 +44,49 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCategoryResource</returns>
-        ModelPageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order);
+        /// <returns>PageResourceCategoryResource</returns>
+        PageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order);
         /// <summary>
         /// Get a single category 
         /// </summary>
         /// <param name="id">The id of the category to retrieve</param>
-        /// <returns>ModelCategoryResource</returns>
-        ModelCategoryResource GetCategory (string id);
+        /// <returns>CategoryResource</returns>
+        CategoryResource GetCategory (string id);
         /// <summary>
         /// Get a single category template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource GetCategoryTemplate (string id);
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetCategoryTemplate (string id);
         /// <summary>
         /// List and search category templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTemplateResource</returns>
-        ModelPageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order);
         /// <summary>
         /// List all trivia tags in the system 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourcestring</returns>
-        ModelPageResourcestring GetTags (int? size, int? page);
+        /// <returns>PageResourcestring</returns>
+        PageResourcestring GetTags (int? size, int? page);
         /// <summary>
         /// Update an existing category 
         /// </summary>
         /// <param name="id">The id of the category</param>
         /// <param name="category">The category to update</param>
-        /// <returns>ModelCategoryResource</returns>
-        ModelCategoryResource UpdateCategory (string id, ModelCategoryResource category);
+        /// <returns>CategoryResource</returns>
+        CategoryResource UpdateCategory (string id, CategoryResource category);
         /// <summary>
         /// Update a category template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="template">The updated template information</param>
-        /// <returns>ModelTemplateResource</returns>
-        ModelTemplateResource UpdateCategoryTemplate (string id, ModelTemplateResource template);
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateCategoryTemplate (string id, TemplateResource template);
     }
   
     /// <summary>
@@ -146,8 +146,8 @@ namespace com.knetikcloud.Api
         /// Create a new category 
         /// </summary>
         /// <param name="category">The category to create</param> 
-        /// <returns>ModelCategoryResource</returns>            
-        public ModelCategoryResource CreateCategory (ModelCategoryResource category)
+        /// <returns>CategoryResource</returns>            
+        public CategoryResource CreateCategory (CategoryResource category)
         {
             
     
@@ -173,15 +173,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCategory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelCategoryResource), response.Headers);
+            return (CategoryResource) ApiClient.Deserialize(response.Content, typeof(CategoryResource), response.Headers);
         }
     
         /// <summary>
         /// Create a category template Templates define a type of category and the properties they have
         /// </summary>
         /// <param name="template">The template to create</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource CreateCategoryTemplate (ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateCategoryTemplate (TemplateResource template)
         {
             
     
@@ -207,7 +207,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -294,8 +294,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCategoryResource</returns>            
-        public ModelPageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order)
+        /// <returns>PageResourceCategoryResource</returns>            
+        public PageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order)
         {
             
     
@@ -325,15 +325,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCategories: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCategoryResource), response.Headers);
+            return (PageResourceCategoryResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCategoryResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single category 
         /// </summary>
         /// <param name="id">The id of the category to retrieve</param> 
-        /// <returns>ModelCategoryResource</returns>            
-        public ModelCategoryResource GetCategory (string id)
+        /// <returns>CategoryResource</returns>            
+        public CategoryResource GetCategory (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -362,15 +362,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCategory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelCategoryResource), response.Headers);
+            return (CategoryResource) ApiClient.Deserialize(response.Content, typeof(CategoryResource), response.Headers);
         }
     
         /// <summary>
         /// Get a single category template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource GetCategoryTemplate (string id)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetCategoryTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -399,7 +399,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -408,8 +408,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTemplateResource</returns>            
-        public ModelPageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order)
         {
             
     
@@ -437,7 +437,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCategoryTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTemplateResource), response.Headers);
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -445,8 +445,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourcestring</returns>            
-        public ModelPageResourcestring GetTags (int? size, int? page)
+        /// <returns>PageResourcestring</returns>            
+        public PageResourcestring GetTags (int? size, int? page)
         {
             
     
@@ -473,7 +473,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTags: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourcestring) ApiClient.Deserialize(response.Content, typeof(ModelPageResourcestring), response.Headers);
+            return (PageResourcestring) ApiClient.Deserialize(response.Content, typeof(PageResourcestring), response.Headers);
         }
     
         /// <summary>
@@ -481,8 +481,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the category</param> 
         /// <param name="category">The category to update</param> 
-        /// <returns>ModelCategoryResource</returns>            
-        public ModelCategoryResource UpdateCategory (string id, ModelCategoryResource category)
+        /// <returns>CategoryResource</returns>            
+        public CategoryResource UpdateCategory (string id, CategoryResource category)
         {
             
             // verify the required parameter 'id' is set
@@ -512,7 +512,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCategory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCategoryResource) ApiClient.Deserialize(response.Content, typeof(ModelCategoryResource), response.Headers);
+            return (CategoryResource) ApiClient.Deserialize(response.Content, typeof(CategoryResource), response.Headers);
         }
     
         /// <summary>
@@ -520,8 +520,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="template">The updated template information</param> 
-        /// <returns>ModelTemplateResource</returns>            
-        public ModelTemplateResource UpdateCategoryTemplate (string id, ModelTemplateResource template)
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateCategoryTemplate (string id, TemplateResource template)
         {
             
             // verify the required parameter 'id' is set
@@ -551,7 +551,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCategoryTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelTemplateResource), response.Headers);
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
     }

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="createitemtemplate"></a>
 # **CreateItemTemplate**
-> ModelStoreItemTemplateResource CreateItemTemplate (ModelStoreItemTemplateResource itemTemplateResource)
+> StoreItemTemplateResource CreateItemTemplate (StoreItemTemplateResource itemTemplateResource)
 
 Create an item template
 
@@ -45,12 +45,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreApi();
-            var itemTemplateResource = new ModelStoreItemTemplateResource(); // ModelStoreItemTemplateResource | The new item template (optional) 
+            var itemTemplateResource = new StoreItemTemplateResource(); // StoreItemTemplateResource | The new item template (optional) 
 
             try
             {
                 // Create an item template
-                ModelStoreItemTemplateResource result = apiInstance.CreateItemTemplate(itemTemplateResource);
+                StoreItemTemplateResource result = apiInstance.CreateItemTemplate(itemTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,11 +66,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemTemplateResource** | [**ModelStoreItemTemplateResource**](ModelStoreItemTemplateResource.md)| The new item template | [optional] 
+ **itemTemplateResource** | [**StoreItemTemplateResource**](StoreItemTemplateResource.md)| The new item template | [optional] 
 
 ### Return type
 
-[**ModelStoreItemTemplateResource**](ModelStoreItemTemplateResource.md)
+[**StoreItemTemplateResource**](StoreItemTemplateResource.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="createstoreitem"></a>
 # **CreateStoreItem**
-> ModelStoreItem CreateStoreItem (bool? cascade, ModelStoreItem storeItem)
+> StoreItem CreateStoreItem (bool? cascade, StoreItem storeItem)
 
 Create a store item
 
@@ -111,12 +111,12 @@ namespace Example
 
             var apiInstance = new StoreApi();
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var storeItem = new ModelStoreItem(); // ModelStoreItem | The store item object (optional) 
+            var storeItem = new StoreItem(); // StoreItem | The store item object (optional) 
 
             try
             {
                 // Create a store item
-                ModelStoreItem result = apiInstance.CreateStoreItem(cascade, storeItem);
+                StoreItem result = apiInstance.CreateStoreItem(cascade, storeItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -133,11 +133,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **storeItem** | [**ModelStoreItem**](ModelStoreItem.md)| The store item object | [optional] 
+ **storeItem** | [**StoreItem**](StoreItem.md)| The store item object | [optional] 
 
 ### Return type
 
-[**ModelStoreItem**](ModelStoreItem.md)
+[**StoreItem**](StoreItem.md)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ void (empty response body)
 
 <a name="getbehaviors"></a>
 # **GetBehaviors**
-> List<ModelBehaviorDefinitionResource> GetBehaviors ()
+> List<BehaviorDefinitionResource> GetBehaviors ()
 
 List available item behaviors
 
@@ -305,7 +305,7 @@ namespace Example
             try
             {
                 // List available item behaviors
-                List&lt;ModelBehaviorDefinitionResource&gt; result = apiInstance.GetBehaviors();
+                List&lt;BehaviorDefinitionResource&gt; result = apiInstance.GetBehaviors();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -322,7 +322,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelBehaviorDefinitionResource>**](ModelBehaviorDefinitionResource.md)
+[**List<BehaviorDefinitionResource>**](BehaviorDefinitionResource.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ This endpoint does not need any parameter.
 
 <a name="getitemtemplate"></a>
 # **GetItemTemplate**
-> ModelStoreItemTemplateResource GetItemTemplate (string id)
+> StoreItemTemplateResource GetItemTemplate (string id)
 
 Get a single item template
 
@@ -367,7 +367,7 @@ namespace Example
             try
             {
                 // Get a single item template
-                ModelStoreItemTemplateResource result = apiInstance.GetItemTemplate(id);
+                StoreItemTemplateResource result = apiInstance.GetItemTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelStoreItemTemplateResource**](ModelStoreItemTemplateResource.md)
+[**StoreItemTemplateResource**](StoreItemTemplateResource.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 <a name="getitemtemplates"></a>
 # **GetItemTemplates**
-> ModelPageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order)
+> PageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order)
 
 List and search item templates
 
@@ -432,7 +432,7 @@ namespace Example
             try
             {
                 // List and search item templates
-                ModelPageResourceStoreItemTemplateResource result = apiInstance.GetItemTemplates(size, page, order);
+                PageResourceStoreItemTemplateResource result = apiInstance.GetItemTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceStoreItemTemplateResource**](ModelPageResourceStoreItemTemplateResource.md)
+[**PageResourceStoreItemTemplateResource**](PageResourceStoreItemTemplateResource.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 <a name="getstore"></a>
 # **GetStore**
-> ModelPageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly)
+> PageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly)
 
 Get a listing of store items
 
@@ -500,7 +500,7 @@ namespace Example
             try
             {
                 // Get a listing of store items
-                ModelPageResourceStoreItem result = apiInstance.GetStore(limit, page, useCatalog, ignoreLocation, inStockOnly);
+                PageResourceStoreItem result = apiInstance.GetStore(limit, page, useCatalog, ignoreLocation, inStockOnly);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceStoreItem**](ModelPageResourceStoreItem.md)
+[**PageResourceStoreItem**](PageResourceStoreItem.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ No authorization required
 
 <a name="getstoreitem"></a>
 # **GetStoreItem**
-> ModelStoreItem GetStoreItem (int? id)
+> StoreItem GetStoreItem (int? id)
 
 Get a single store item
 
@@ -564,7 +564,7 @@ namespace Example
             try
             {
                 // Get a single store item
-                ModelStoreItem result = apiInstance.GetStoreItem(id);
+                StoreItem result = apiInstance.GetStoreItem(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelStoreItem**](ModelStoreItem.md)
+[**StoreItem**](StoreItem.md)
 
 ### Authorization
 
@@ -599,7 +599,7 @@ No authorization required
 
 <a name="getstoreitems"></a>
 # **GetStoreItems**
-> ModelPageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order)
+> PageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order)
 
 List and search store items
 
@@ -640,7 +640,7 @@ namespace Example
             try
             {
                 // List and search store items
-                ModelPageResourceStoreItem result = apiInstance.GetStoreItems(filterNameSearch, filterUniqueKey, filterPublished, filterDisplayable, filterStart, filterEnd, filterStartDate, filterStopDate, filterSku, filterPrice, filterTag, filterItemsByType, filterBundledSkus, filterVendor, size, page, order);
+                PageResourceStoreItem result = apiInstance.GetStoreItems(filterNameSearch, filterUniqueKey, filterPublished, filterDisplayable, filterStart, filterEnd, filterStartDate, filterStopDate, filterSku, filterPrice, filterTag, filterItemsByType, filterBundledSkus, filterVendor, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceStoreItem**](ModelPageResourceStoreItem.md)
+[**PageResourceStoreItem**](PageResourceStoreItem.md)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ No authorization required
 
 <a name="updateitemtemplate"></a>
 # **UpdateItemTemplate**
-> ModelStoreItemTemplateResource UpdateItemTemplate (string id, ModelStoreItemTemplateResource itemTemplateResource)
+> StoreItemTemplateResource UpdateItemTemplate (string id, StoreItemTemplateResource itemTemplateResource)
 
 Update an item template
 
@@ -715,12 +715,12 @@ namespace Example
 
             var apiInstance = new StoreApi();
             var id = id_example;  // string | The id of the template
-            var itemTemplateResource = new ModelStoreItemTemplateResource(); // ModelStoreItemTemplateResource | The item template resource object (optional) 
+            var itemTemplateResource = new StoreItemTemplateResource(); // StoreItemTemplateResource | The item template resource object (optional) 
 
             try
             {
                 // Update an item template
-                ModelStoreItemTemplateResource result = apiInstance.UpdateItemTemplate(id, itemTemplateResource);
+                StoreItemTemplateResource result = apiInstance.UpdateItemTemplate(id, itemTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -737,11 +737,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **itemTemplateResource** | [**ModelStoreItemTemplateResource**](ModelStoreItemTemplateResource.md)| The item template resource object | [optional] 
+ **itemTemplateResource** | [**StoreItemTemplateResource**](StoreItemTemplateResource.md)| The item template resource object | [optional] 
 
 ### Return type
 
-[**ModelStoreItemTemplateResource**](ModelStoreItemTemplateResource.md)
+[**StoreItemTemplateResource**](StoreItemTemplateResource.md)
 
 ### Authorization
 
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 <a name="updatestoreitem"></a>
 # **UpdateStoreItem**
-> ModelStoreItem UpdateStoreItem (int? id, bool? cascade, ModelStoreItem storeItem)
+> StoreItem UpdateStoreItem (int? id, bool? cascade, StoreItem storeItem)
 
 Update a store item
 
@@ -781,12 +781,12 @@ namespace Example
             var apiInstance = new StoreApi();
             var id = 56;  // int? | The id of the item
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var storeItem = new ModelStoreItem(); // ModelStoreItem | The store item object (optional) 
+            var storeItem = new StoreItem(); // StoreItem | The store item object (optional) 
 
             try
             {
                 // Update a store item
-                ModelStoreItem result = apiInstance.UpdateStoreItem(id, cascade, storeItem);
+                StoreItem result = apiInstance.UpdateStoreItem(id, cascade, storeItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -804,11 +804,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the item | 
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **storeItem** | [**ModelStoreItem**](ModelStoreItem.md)| The store item object | [optional] 
+ **storeItem** | [**StoreItem**](StoreItem.md)| The store item object | [optional] 
 
 ### Return type
 
-[**ModelStoreItem**](ModelStoreItem.md)
+[**StoreItem**](StoreItem.md)
 
 ### Authorization
 

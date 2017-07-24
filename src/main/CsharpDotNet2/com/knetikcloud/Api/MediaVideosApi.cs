@@ -22,43 +22,43 @@ namespace com.knetikcloud.Api
         /// Adds a new video in the system 
         /// </summary>
         /// <param name="videoResource">The video object</param>
-        /// <returns>ModelVideoResource</returns>
-        ModelVideoResource AddVideo (ModelVideoResource videoResource);
+        /// <returns>VideoResource</returns>
+        VideoResource AddVideo (VideoResource videoResource);
         /// <summary>
         /// Add a new video comment 
         /// </summary>
         /// <param name="videoId">The video id </param>
         /// <param name="commentResource">The comment object</param>
-        /// <returns>ModelCommentResource</returns>
-        ModelCommentResource AddVideoComment (int? videoId, ModelCommentResource commentResource);
+        /// <returns>CommentResource</returns>
+        CommentResource AddVideoComment (int? videoId, CommentResource commentResource);
         /// <summary>
         /// Adds a contributor to a video 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="contributionResource">The contribution object</param>
         /// <returns></returns>
-        void AddVideoContributor (long? videoId, ModelContributionResource contributionResource);
+        void AddVideoContributor (long? videoId, ContributionResource contributionResource);
         /// <summary>
         /// Add a new flag 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="reason">The flag reason</param>
-        /// <returns>ModelFlagResource</returns>
-        ModelFlagResource AddVideoFlag (long? videoId, string reason);
+        /// <returns>FlagResource</returns>
+        FlagResource AddVideoFlag (long? videoId, string reason);
         /// <summary>
         /// Adds one or more existing videos as related to this one 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="videoRelationshipResource">The video relationship object </param>
-        /// <returns>ModelVideoRelationshipResource</returns>
-        ModelVideoRelationshipResource AddVideoRelationships (long? videoId, ModelVideoRelationshipResource videoRelationshipResource);
+        /// <returns>VideoRelationshipResource</returns>
+        VideoRelationshipResource AddVideoRelationships (long? videoId, VideoRelationshipResource videoRelationshipResource);
         /// <summary>
         /// Create a video disposition 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="dispositionResource">The disposition object</param>
-        /// <returns>ModelDispositionResource</returns>
-        ModelDispositionResource CreateVideoDisposition (int? videoId, ModelDispositionResource dispositionResource);
+        /// <returns>DispositionResource</returns>
+        DispositionResource CreateVideoDisposition (int? videoId, DispositionResource dispositionResource);
         /// <summary>
         /// Deletes a video from the system if no resources are attached to it 
         /// </summary>
@@ -98,38 +98,38 @@ namespace com.knetikcloud.Api
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceVideoResource</returns>
-        ModelPageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page);
+        /// <returns>PageResourceVideoResource</returns>
+        PageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page);
         /// <summary>
         /// Loads a specific video details 
         /// </summary>
         /// <param name="id">The video id</param>
-        /// <returns>ModelVideoResource</returns>
-        ModelVideoResource GetVideo (long? id);
+        /// <returns>VideoResource</returns>
+        VideoResource GetVideo (long? id);
         /// <summary>
         /// Returns a page of comments for a video 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceCommentResource</returns>
-        ModelPageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page);
+        /// <returns>PageResourceCommentResource</returns>
+        PageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page);
         /// <summary>
         /// Returns a page of dispositions for a video 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceDispositionResource</returns>
-        ModelPageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page);
+        /// <returns>PageResourceDispositionResource</returns>
+        PageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page);
         /// <summary>
         /// Returns a page of video relationships 
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceVideoRelationshipResource</returns>
-        ModelPageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page);
+        /// <returns>PageResourceVideoRelationshipResource</returns>
+        PageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page);
         /// <summary>
         /// Search videos using the documented filters 
         /// </summary>
@@ -148,8 +148,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceVideoResource</returns>
-        ModelPageResourceVideoResource GetVideos (bool? excludeFlagged, Object filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, Object filterVideosByContributor, Object filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order);
+        /// <returns>PageResourceVideoResource</returns>
+        PageResourceVideoResource GetVideos (bool? excludeFlagged, int? filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, int? filterVideosByContributor, int? filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order);
         /// <summary>
         /// Removes a user from a video&#39;s whitelist Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
         /// </summary>
@@ -170,7 +170,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The video id</param>
         /// <param name="videoResource">The video object</param>
         /// <returns></returns>
-        void UpdateVideo (long? id, ModelVideoResource videoResource);
+        void UpdateVideo (long? id, VideoResource videoResource);
         /// <summary>
         /// Update a video comment 
         /// </summary>
@@ -291,8 +291,8 @@ namespace com.knetikcloud.Api
         /// Adds a new video in the system 
         /// </summary>
         /// <param name="videoResource">The video object</param> 
-        /// <returns>ModelVideoResource</returns>            
-        public ModelVideoResource AddVideo (ModelVideoResource videoResource)
+        /// <returns>VideoResource</returns>            
+        public VideoResource AddVideo (VideoResource videoResource)
         {
             
     
@@ -318,7 +318,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddVideo: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVideoResource) ApiClient.Deserialize(response.Content, typeof(ModelVideoResource), response.Headers);
+            return (VideoResource) ApiClient.Deserialize(response.Content, typeof(VideoResource), response.Headers);
         }
     
         /// <summary>
@@ -326,8 +326,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="videoId">The video id </param> 
         /// <param name="commentResource">The comment object</param> 
-        /// <returns>ModelCommentResource</returns>            
-        public ModelCommentResource AddVideoComment (int? videoId, ModelCommentResource commentResource)
+        /// <returns>CommentResource</returns>            
+        public CommentResource AddVideoComment (int? videoId, CommentResource commentResource)
         {
             
             // verify the required parameter 'videoId' is set
@@ -357,7 +357,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddVideoComment: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCommentResource) ApiClient.Deserialize(response.Content, typeof(ModelCommentResource), response.Headers);
+            return (CommentResource) ApiClient.Deserialize(response.Content, typeof(CommentResource), response.Headers);
         }
     
         /// <summary>
@@ -366,7 +366,7 @@ namespace com.knetikcloud.Api
         /// <param name="videoId">The video id</param> 
         /// <param name="contributionResource">The contribution object</param> 
         /// <returns></returns>            
-        public void AddVideoContributor (long? videoId, ModelContributionResource contributionResource)
+        public void AddVideoContributor (long? videoId, ContributionResource contributionResource)
         {
             
             // verify the required parameter 'videoId' is set
@@ -404,8 +404,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="reason">The flag reason</param> 
-        /// <returns>ModelFlagResource</returns>            
-        public ModelFlagResource AddVideoFlag (long? videoId, string reason)
+        /// <returns>FlagResource</returns>            
+        public FlagResource AddVideoFlag (long? videoId, string reason)
         {
             
             // verify the required parameter 'videoId' is set
@@ -435,7 +435,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddVideoFlag: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelFlagResource) ApiClient.Deserialize(response.Content, typeof(ModelFlagResource), response.Headers);
+            return (FlagResource) ApiClient.Deserialize(response.Content, typeof(FlagResource), response.Headers);
         }
     
         /// <summary>
@@ -443,8 +443,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="videoRelationshipResource">The video relationship object </param> 
-        /// <returns>ModelVideoRelationshipResource</returns>            
-        public ModelVideoRelationshipResource AddVideoRelationships (long? videoId, ModelVideoRelationshipResource videoRelationshipResource)
+        /// <returns>VideoRelationshipResource</returns>            
+        public VideoRelationshipResource AddVideoRelationships (long? videoId, VideoRelationshipResource videoRelationshipResource)
         {
             
             // verify the required parameter 'videoId' is set
@@ -474,7 +474,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddVideoRelationships: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVideoRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelVideoRelationshipResource), response.Headers);
+            return (VideoRelationshipResource) ApiClient.Deserialize(response.Content, typeof(VideoRelationshipResource), response.Headers);
         }
     
         /// <summary>
@@ -482,8 +482,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="dispositionResource">The disposition object</param> 
-        /// <returns>ModelDispositionResource</returns>            
-        public ModelDispositionResource CreateVideoDisposition (int? videoId, ModelDispositionResource dispositionResource)
+        /// <returns>DispositionResource</returns>            
+        public DispositionResource CreateVideoDisposition (int? videoId, DispositionResource dispositionResource)
         {
             
             // verify the required parameter 'videoId' is set
@@ -513,7 +513,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateVideoDisposition: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelDispositionResource) ApiClient.Deserialize(response.Content, typeof(ModelDispositionResource), response.Headers);
+            return (DispositionResource) ApiClient.Deserialize(response.Content, typeof(DispositionResource), response.Headers);
         }
     
         /// <summary>
@@ -718,8 +718,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceVideoResource</returns>            
-        public ModelPageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page)
+        /// <returns>PageResourceVideoResource</returns>            
+        public PageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page)
         {
             
             // verify the required parameter 'userId' is set
@@ -751,15 +751,15 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserVideos: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceVideoResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceVideoResource), response.Headers);
+            return (PageResourceVideoResource) ApiClient.Deserialize(response.Content, typeof(PageResourceVideoResource), response.Headers);
         }
     
         /// <summary>
         /// Loads a specific video details 
         /// </summary>
         /// <param name="id">The video id</param> 
-        /// <returns>ModelVideoResource</returns>            
-        public ModelVideoResource GetVideo (long? id)
+        /// <returns>VideoResource</returns>            
+        public VideoResource GetVideo (long? id)
         {
             
             // verify the required parameter 'id' is set
@@ -788,7 +788,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideo: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelVideoResource) ApiClient.Deserialize(response.Content, typeof(ModelVideoResource), response.Headers);
+            return (VideoResource) ApiClient.Deserialize(response.Content, typeof(VideoResource), response.Headers);
         }
     
         /// <summary>
@@ -797,8 +797,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceCommentResource</returns>            
-        public ModelPageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page)
+        /// <returns>PageResourceCommentResource</returns>            
+        public PageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page)
         {
             
             // verify the required parameter 'videoId' is set
@@ -829,7 +829,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideoComments: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCommentResource), response.Headers);
+            return (PageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCommentResource), response.Headers);
         }
     
         /// <summary>
@@ -838,8 +838,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceDispositionResource</returns>            
-        public ModelPageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page)
+        /// <returns>PageResourceDispositionResource</returns>            
+        public PageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page)
         {
             
             // verify the required parameter 'videoId' is set
@@ -870,7 +870,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideoDispositions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceDispositionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceDispositionResource), response.Headers);
+            return (PageResourceDispositionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceDispositionResource), response.Headers);
         }
     
         /// <summary>
@@ -879,8 +879,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceVideoRelationshipResource</returns>            
-        public ModelPageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page)
+        /// <returns>PageResourceVideoRelationshipResource</returns>            
+        public PageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page)
         {
             
             // verify the required parameter 'videoId' is set
@@ -911,7 +911,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideoRelationships: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceVideoRelationshipResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceVideoRelationshipResource), response.Headers);
+            return (PageResourceVideoRelationshipResource) ApiClient.Deserialize(response.Content, typeof(PageResourceVideoRelationshipResource), response.Headers);
         }
     
         /// <summary>
@@ -932,8 +932,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceVideoResource</returns>            
-        public ModelPageResourceVideoResource GetVideos (bool? excludeFlagged, Object filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, Object filterVideosByContributor, Object filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order)
+        /// <returns>PageResourceVideoResource</returns>            
+        public PageResourceVideoResource GetVideos (bool? excludeFlagged, int? filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, int? filterVideosByContributor, int? filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order)
         {
             
     
@@ -973,7 +973,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideos: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceVideoResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceVideoResource), response.Headers);
+            return (PageResourceVideoResource) ApiClient.Deserialize(response.Content, typeof(PageResourceVideoResource), response.Headers);
         }
     
         /// <summary>
@@ -1066,7 +1066,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="id">The video id</param> 
         /// <param name="videoResource">The video object</param> 
         /// <returns></returns>            
-        public void UpdateVideo (long? id, ModelVideoResource videoResource)
+        public void UpdateVideo (long? id, VideoResource videoResource)
         {
             
             // verify the required parameter 'id' is set

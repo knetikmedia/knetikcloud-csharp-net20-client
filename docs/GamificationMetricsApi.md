@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="addmetric"></a>
 # **AddMetric**
-> void AddMetric (ModelMetricResource metric)
+> void AddMetric (MetricResource metric)
 
 Add a metric
 
@@ -34,7 +34,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationMetricsApi();
-            var metric = new ModelMetricResource(); // ModelMetricResource | The new metric (optional) 
+            var metric = new MetricResource(); // MetricResource | The new metric (optional) 
 
             try
             {
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **metric** | [**ModelMetricResource**](ModelMetricResource.md)| The new metric | [optional] 
+ **metric** | [**MetricResource**](MetricResource.md)| The new metric | [optional] 
 
 ### Return type
 

@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a new permission 
         /// </summary>
         /// <param name="permissionResource">The permission resource object</param>
-        /// <returns>ModelPermissionResource</returns>
-        ModelPermissionResource CreatePermission (ModelPermissionResource permissionResource);
+        /// <returns>PermissionResource</returns>
+        PermissionResource CreatePermission (PermissionResource permissionResource);
         /// <summary>
         /// Delete a permission 
         /// </summary>
@@ -28,23 +28,23 @@ namespace com.knetikcloud.Api
         /// Get a single permission 
         /// </summary>
         /// <param name="permission">The permission value</param>
-        /// <returns>ModelPermissionResource</returns>
-        ModelPermissionResource GetPermission (string permission);
+        /// <returns>PermissionResource</returns>
+        PermissionResource GetPermission (string permission);
         /// <summary>
         /// List and search permissions 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourcePermissionResource</returns>
-        ModelPageResourcePermissionResource GetPermissions (int? size, int? page, string order);
+        /// <returns>PageResourcePermissionResource</returns>
+        PageResourcePermissionResource GetPermissions (int? size, int? page, string order);
         /// <summary>
         /// Update a permission 
         /// </summary>
         /// <param name="permission">The permission value</param>
         /// <param name="permissionResource">The permission resource object</param>
-        /// <returns>ModelPermissionResource</returns>
-        ModelPermissionResource UpdatePermission (string permission, ModelPermissionResource permissionResource);
+        /// <returns>PermissionResource</returns>
+        PermissionResource UpdatePermission (string permission, PermissionResource permissionResource);
     }
   
     /// <summary>
@@ -104,8 +104,8 @@ namespace com.knetikcloud.Api
         /// Create a new permission 
         /// </summary>
         /// <param name="permissionResource">The permission resource object</param> 
-        /// <returns>ModelPermissionResource</returns>            
-        public ModelPermissionResource CreatePermission (ModelPermissionResource permissionResource)
+        /// <returns>PermissionResource</returns>            
+        public PermissionResource CreatePermission (PermissionResource permissionResource)
         {
             
     
@@ -131,7 +131,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreatePermission: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPermissionResource) ApiClient.Deserialize(response.Content, typeof(ModelPermissionResource), response.Headers);
+            return (PermissionResource) ApiClient.Deserialize(response.Content, typeof(PermissionResource), response.Headers);
         }
     
         /// <summary>
@@ -177,8 +177,8 @@ namespace com.knetikcloud.Api
         /// Get a single permission 
         /// </summary>
         /// <param name="permission">The permission value</param> 
-        /// <returns>ModelPermissionResource</returns>            
-        public ModelPermissionResource GetPermission (string permission)
+        /// <returns>PermissionResource</returns>            
+        public PermissionResource GetPermission (string permission)
         {
             
             // verify the required parameter 'permission' is set
@@ -207,7 +207,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPermission: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPermissionResource) ApiClient.Deserialize(response.Content, typeof(ModelPermissionResource), response.Headers);
+            return (PermissionResource) ApiClient.Deserialize(response.Content, typeof(PermissionResource), response.Headers);
         }
     
         /// <summary>
@@ -216,8 +216,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourcePermissionResource</returns>            
-        public ModelPageResourcePermissionResource GetPermissions (int? size, int? page, string order)
+        /// <returns>PageResourcePermissionResource</returns>            
+        public PageResourcePermissionResource GetPermissions (int? size, int? page, string order)
         {
             
     
@@ -245,7 +245,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPermissions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourcePermissionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourcePermissionResource), response.Headers);
+            return (PageResourcePermissionResource) ApiClient.Deserialize(response.Content, typeof(PageResourcePermissionResource), response.Headers);
         }
     
         /// <summary>
@@ -253,8 +253,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="permission">The permission value</param> 
         /// <param name="permissionResource">The permission resource object</param> 
-        /// <returns>ModelPermissionResource</returns>            
-        public ModelPermissionResource UpdatePermission (string permission, ModelPermissionResource permissionResource)
+        /// <returns>PermissionResource</returns>            
+        public PermissionResource UpdatePermission (string permission, PermissionResource permissionResource)
         {
             
             // verify the required parameter 'permission' is set
@@ -284,7 +284,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdatePermission: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPermissionResource) ApiClient.Deserialize(response.Content, typeof(ModelPermissionResource), response.Headers);
+            return (PermissionResource) ApiClient.Deserialize(response.Content, typeof(PermissionResource), response.Headers);
         }
     
     }

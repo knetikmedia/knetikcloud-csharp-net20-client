@@ -1,4 +1,4 @@
-# com.knetikcloud.Model.ModelLocalizer
+# com.knetikcloud.Model.Localizer
 ## Properties
 
 Name | Type | Description | Notes

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="answerpoll"></a>
 # **AnswerPoll**
-> ModelPollResponseResource AnswerPoll (string id, string answerKey)
+> PollResponseResource AnswerPoll (string id, string answerKey)
 
 Add your vote to a poll
 
@@ -49,7 +49,7 @@ namespace Example
             try
             {
                 // Add your vote to a poll
-                ModelPollResponseResource result = apiInstance.AnswerPoll(id, answerKey);
+                PollResponseResource result = apiInstance.AnswerPoll(id, answerKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPollResponseResource**](ModelPollResponseResource.md)
+[**PollResponseResource**](PollResponseResource.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="createpoll"></a>
 # **CreatePoll**
-> ModelPollResource CreatePoll (ModelPollResource pollResource)
+> PollResource CreatePoll (PollResource pollResource)
 
 Create a new poll
 
@@ -110,12 +110,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ContentPollsApi();
-            var pollResource = new ModelPollResource(); // ModelPollResource | The poll object (optional) 
+            var pollResource = new PollResource(); // PollResource | The poll object (optional) 
 
             try
             {
                 // Create a new poll
-                ModelPollResource result = apiInstance.CreatePoll(pollResource);
+                PollResource result = apiInstance.CreatePoll(pollResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -131,11 +131,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pollResource** | [**ModelPollResource**](ModelPollResource.md)| The poll object | [optional] 
+ **pollResource** | [**PollResource**](PollResource.md)| The poll object | [optional] 
 
 ### Return type
 
-[**ModelPollResource**](ModelPollResource.md)
+[**PollResource**](PollResource.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 <a name="createpolltemplate"></a>
 # **CreatePollTemplate**
-> ModelTemplateResource CreatePollTemplate (ModelTemplateResource pollTemplateResource)
+> TemplateResource CreatePollTemplate (TemplateResource pollTemplateResource)
 
 Create a poll template
 
@@ -175,12 +175,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ContentPollsApi();
-            var pollTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The poll template resource object (optional) 
+            var pollTemplateResource = new TemplateResource(); // TemplateResource | The poll template resource object (optional) 
 
             try
             {
                 // Create a poll template
-                ModelTemplateResource result = apiInstance.CreatePollTemplate(pollTemplateResource);
+                TemplateResource result = apiInstance.CreatePollTemplate(pollTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -196,11 +196,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pollTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The poll template resource object | [optional] 
+ **pollTemplateResource** | [**TemplateResource**](TemplateResource.md)| The poll template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ void (empty response body)
 
 <a name="getpoll"></a>
 # **GetPoll**
-> ModelPollResource GetPoll (string id)
+> PollResource GetPoll (string id)
 
 Get a single poll
 
@@ -368,7 +368,7 @@ namespace Example
             try
             {
                 // Get a single poll
-                ModelPollResource result = apiInstance.GetPoll(id);
+                PollResource result = apiInstance.GetPoll(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPollResource**](ModelPollResource.md)
+[**PollResource**](PollResource.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ No authorization required
 
 <a name="getpollanswer"></a>
 # **GetPollAnswer**
-> ModelPollResponseResource GetPollAnswer (string id)
+> PollResponseResource GetPollAnswer (string id)
 
 Get poll answer
 
@@ -431,7 +431,7 @@ namespace Example
             try
             {
                 // Get poll answer
-                ModelPollResponseResource result = apiInstance.GetPollAnswer(id);
+                PollResponseResource result = apiInstance.GetPollAnswer(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPollResponseResource**](ModelPollResponseResource.md)
+[**PollResponseResource**](PollResponseResource.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ Name | Type | Description  | Notes
 
 <a name="getpolltemplate"></a>
 # **GetPollTemplate**
-> ModelTemplateResource GetPollTemplate (string id)
+> TemplateResource GetPollTemplate (string id)
 
 Get a single poll template
 
@@ -494,7 +494,7 @@ namespace Example
             try
             {
                 // Get a single poll template
-                ModelTemplateResource result = apiInstance.GetPollTemplate(id);
+                TemplateResource result = apiInstance.GetPollTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 <a name="getpolltemplates"></a>
 # **GetPollTemplates**
-> ModelPageResourceTemplateResource GetPollTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetPollTemplates (int? size, int? page, string order)
 
 List and search poll templates
 
@@ -559,7 +559,7 @@ namespace Example
             try
             {
                 // List and search poll templates
-                ModelPageResourceTemplateResource result = apiInstance.GetPollTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetPollTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 <a name="getpolls"></a>
 # **GetPolls**
-> ModelPageResourcePollResource GetPolls (string filterCategory, string filterTagset, string filterText, int? size, int? page, string order)
+> PageResourcePollResource GetPolls (string filterCategory, string filterTagset, string filterText, int? size, int? page, string order)
 
 List and search polls
 
@@ -628,7 +628,7 @@ namespace Example
             try
             {
                 // List and search polls
-                ModelPageResourcePollResource result = apiInstance.GetPolls(filterCategory, filterTagset, filterText, size, page, order);
+                PageResourcePollResource result = apiInstance.GetPolls(filterCategory, filterTagset, filterText, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourcePollResource**](ModelPageResourcePollResource.md)
+[**PageResourcePollResource**](PageResourcePollResource.md)
 
 ### Authorization
 
@@ -668,7 +668,7 @@ No authorization required
 
 <a name="updatepoll"></a>
 # **UpdatePoll**
-> ModelPollResource UpdatePoll (string id, ModelPollResource pollResource)
+> PollResource UpdatePoll (string id, PollResource pollResource)
 
 Update an existing poll
 
@@ -692,12 +692,12 @@ namespace Example
 
             var apiInstance = new ContentPollsApi();
             var id = id_example;  // string | The poll id
-            var pollResource = new ModelPollResource(); // ModelPollResource | The poll object (optional) 
+            var pollResource = new PollResource(); // PollResource | The poll object (optional) 
 
             try
             {
                 // Update an existing poll
-                ModelPollResource result = apiInstance.UpdatePoll(id, pollResource);
+                PollResource result = apiInstance.UpdatePoll(id, pollResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -714,11 +714,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The poll id | 
- **pollResource** | [**ModelPollResource**](ModelPollResource.md)| The poll object | [optional] 
+ **pollResource** | [**PollResource**](PollResource.md)| The poll object | [optional] 
 
 ### Return type
 
-[**ModelPollResource**](ModelPollResource.md)
+[**PollResource**](PollResource.md)
 
 ### Authorization
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepolltemplate"></a>
 # **UpdatePollTemplate**
-> ModelTemplateResource UpdatePollTemplate (string id, ModelTemplateResource pollTemplateResource)
+> TemplateResource UpdatePollTemplate (string id, TemplateResource pollTemplateResource)
 
 Update a poll template
 
@@ -757,12 +757,12 @@ namespace Example
 
             var apiInstance = new ContentPollsApi();
             var id = id_example;  // string | The id of the template
-            var pollTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The poll template resource object (optional) 
+            var pollTemplateResource = new TemplateResource(); // TemplateResource | The poll template resource object (optional) 
 
             try
             {
                 // Update a poll template
-                ModelTemplateResource result = apiInstance.UpdatePollTemplate(id, pollTemplateResource);
+                TemplateResource result = apiInstance.UpdatePollTemplate(id, pollTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -779,11 +779,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **pollTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The poll template resource object | [optional] 
+ **pollTemplateResource** | [**TemplateResource**](TemplateResource.md)| The poll template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

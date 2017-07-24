@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 <a name="additemtouserinventory"></a>
 # **AddItemToUserInventory**
-> ModelInvoiceResource AddItemToUserInventory (int? id, ModelUserInventoryAddRequest userInventoryAddRequest)
+> InvoiceResource AddItemToUserInventory (int? id, UserInventoryAddRequest userInventoryAddRequest)
 
 Adds an item to the user inventory
 
@@ -55,12 +55,12 @@ namespace Example
 
             var apiInstance = new UsersInventoryApi();
             var id = 56;  // int? | The id of the user
-            var userInventoryAddRequest = new ModelUserInventoryAddRequest(); // ModelUserInventoryAddRequest | The user inventory add request object (optional) 
+            var userInventoryAddRequest = new UserInventoryAddRequest(); // UserInventoryAddRequest | The user inventory add request object (optional) 
 
             try
             {
                 // Adds an item to the user inventory
-                ModelInvoiceResource result = apiInstance.AddItemToUserInventory(id, userInventoryAddRequest);
+                InvoiceResource result = apiInstance.AddItemToUserInventory(id, userInventoryAddRequest);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -77,11 +77,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the user | 
- **userInventoryAddRequest** | [**ModelUserInventoryAddRequest**](ModelUserInventoryAddRequest.md)| The user inventory add request object | [optional] 
+ **userInventoryAddRequest** | [**UserInventoryAddRequest**](UserInventoryAddRequest.md)| The user inventory add request object | [optional] 
 
 ### Return type
 
-[**ModelInvoiceResource**](ModelInvoiceResource.md)
+[**InvoiceResource**](InvoiceResource.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ void (empty response body)
 
 <a name="createentitlementitem"></a>
 # **CreateEntitlementItem**
-> ModelEntitlementItem CreateEntitlementItem (bool? cascade, ModelEntitlementItem entitlementItem)
+> EntitlementItem CreateEntitlementItem (bool? cascade, EntitlementItem entitlementItem)
 
 Create an entitlement item
 
@@ -188,12 +188,12 @@ namespace Example
 
             var apiInstance = new UsersInventoryApi();
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var entitlementItem = new ModelEntitlementItem(); // ModelEntitlementItem | The entitlement item object (optional) 
+            var entitlementItem = new EntitlementItem(); // EntitlementItem | The entitlement item object (optional) 
 
             try
             {
                 // Create an entitlement item
-                ModelEntitlementItem result = apiInstance.CreateEntitlementItem(cascade, entitlementItem);
+                EntitlementItem result = apiInstance.CreateEntitlementItem(cascade, entitlementItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -210,11 +210,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **entitlementItem** | [**ModelEntitlementItem**](ModelEntitlementItem.md)| The entitlement item object | [optional] 
+ **entitlementItem** | [**EntitlementItem**](EntitlementItem.md)| The entitlement item object | [optional] 
 
 ### Return type
 
-[**ModelEntitlementItem**](ModelEntitlementItem.md)
+[**EntitlementItem**](EntitlementItem.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 <a name="createentitlementtemplate"></a>
 # **CreateEntitlementTemplate**
-> ModelItemTemplateResource CreateEntitlementTemplate (ModelItemTemplateResource template)
+> ItemTemplateResource CreateEntitlementTemplate (ItemTemplateResource template)
 
 Create an entitlement template
 
@@ -254,12 +254,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersInventoryApi();
-            var template = new ModelItemTemplateResource(); // ModelItemTemplateResource | The entitlement template to be created (optional) 
+            var template = new ItemTemplateResource(); // ItemTemplateResource | The entitlement template to be created (optional) 
 
             try
             {
                 // Create an entitlement template
-                ModelItemTemplateResource result = apiInstance.CreateEntitlementTemplate(template);
+                ItemTemplateResource result = apiInstance.CreateEntitlementTemplate(template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -275,11 +275,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The entitlement template to be created | [optional] 
+ **template** | [**ItemTemplateResource**](ItemTemplateResource.md)| The entitlement template to be created | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -422,7 +422,7 @@ void (empty response body)
 
 <a name="getentitlementitem"></a>
 # **GetEntitlementItem**
-> ModelEntitlementItem GetEntitlementItem (int? entitlementId)
+> EntitlementItem GetEntitlementItem (int? entitlementId)
 
 Get a single entitlement item
 
@@ -447,7 +447,7 @@ namespace Example
             try
             {
                 // Get a single entitlement item
-                ModelEntitlementItem result = apiInstance.GetEntitlementItem(entitlementId);
+                EntitlementItem result = apiInstance.GetEntitlementItem(entitlementId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelEntitlementItem**](ModelEntitlementItem.md)
+[**EntitlementItem**](EntitlementItem.md)
 
 ### Authorization
 
@@ -482,7 +482,7 @@ No authorization required
 
 <a name="getentitlementitems"></a>
 # **GetEntitlementItems**
-> ModelPageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order)
+> PageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order)
 
 List and search entitlement items
 
@@ -509,7 +509,7 @@ namespace Example
             try
             {
                 // List and search entitlement items
-                ModelPageResourceEntitlementItem result = apiInstance.GetEntitlementItems(size, page, order);
+                PageResourceEntitlementItem result = apiInstance.GetEntitlementItems(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceEntitlementItem**](ModelPageResourceEntitlementItem.md)
+[**PageResourceEntitlementItem**](PageResourceEntitlementItem.md)
 
 ### Authorization
 
@@ -546,7 +546,7 @@ No authorization required
 
 <a name="getentitlementtemplate"></a>
 # **GetEntitlementTemplate**
-> ModelItemTemplateResource GetEntitlementTemplate (string id)
+> ItemTemplateResource GetEntitlementTemplate (string id)
 
 Get a single entitlement template
 
@@ -574,7 +574,7 @@ namespace Example
             try
             {
                 // Get a single entitlement template
-                ModelItemTemplateResource result = apiInstance.GetEntitlementTemplate(id);
+                ItemTemplateResource result = apiInstance.GetEntitlementTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 <a name="getentitlementtemplates"></a>
 # **GetEntitlementTemplates**
-> ModelPageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order)
+> PageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order)
 
 List and search entitlement templates
 
@@ -639,7 +639,7 @@ namespace Example
             try
             {
                 // List and search entitlement templates
-                ModelPageResourceItemTemplateResource result = apiInstance.GetEntitlementTemplates(size, page, order);
+                PageResourceItemTemplateResource result = apiInstance.GetEntitlementTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -661,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceItemTemplateResource**](ModelPageResourceItemTemplateResource.md)
+[**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
 
 ### Authorization
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserinventories"></a>
 # **GetUserInventories**
-> ModelPageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
+> PageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
 
 List the user inventory entries for a given user
 
@@ -712,7 +712,7 @@ namespace Example
             try
             {
                 // List the user inventory entries for a given user
-                ModelPageResourceUserInventoryResource result = apiInstance.GetUserInventories(id, inactive, size, page, filterItemName, filterItemId, filterUsername, filterGroup, filterDate);
+                PageResourceUserInventoryResource result = apiInstance.GetUserInventories(id, inactive, size, page, filterItemName, filterItemId, filterUsername, filterGroup, filterDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserInventoryResource**](ModelPageResourceUserInventoryResource.md)
+[**PageResourceUserInventoryResource**](PageResourceUserInventoryResource.md)
 
 ### Authorization
 
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserinventory"></a>
 # **GetUserInventory**
-> ModelUserInventoryResource GetUserInventory (int? userId, int? id)
+> UserInventoryResource GetUserInventory (int? userId, int? id)
 
 Get an inventory entry
 
@@ -784,7 +784,7 @@ namespace Example
             try
             {
                 // Get an inventory entry
-                ModelUserInventoryResource result = apiInstance.GetUserInventory(userId, id);
+                UserInventoryResource result = apiInstance.GetUserInventory(userId, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserInventoryResource**](ModelUserInventoryResource.md)
+[**UserInventoryResource**](UserInventoryResource.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserinventorylog"></a>
 # **GetUserInventoryLog**
-> ModelPageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page)
+> PageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page)
 
 List the log entries for this inventory entry
 
@@ -851,7 +851,7 @@ namespace Example
             try
             {
                 // List the log entries for this inventory entry
-                ModelPageResourceUserItemLogResource result = apiInstance.GetUserInventoryLog(userId, id, size, page);
+                PageResourceUserItemLogResource result = apiInstance.GetUserInventoryLog(userId, id, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserItemLogResource**](ModelPageResourceUserItemLogResource.md)
+[**PageResourceUserItemLogResource**](PageResourceUserItemLogResource.md)
 
 ### Authorization
 
@@ -889,7 +889,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersinventory"></a>
 # **GetUsersInventory**
-> ModelPageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
+> PageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
 
 List the user inventory entries for all users
 
@@ -924,7 +924,7 @@ namespace Example
             try
             {
                 // List the user inventory entries for all users
-                ModelPageResourceUserInventoryResource result = apiInstance.GetUsersInventory(inactive, size, page, filterItemName, filterItemId, filterUsername, filterGroup, filterDate);
+                PageResourceUserInventoryResource result = apiInstance.GetUsersInventory(inactive, size, page, filterItemName, filterItemId, filterUsername, filterGroup, filterDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserInventoryResource**](ModelPageResourceUserInventoryResource.md)
+[**PageResourceUserInventoryResource**](PageResourceUserInventoryResource.md)
 
 ### Authorization
 
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 
 <a name="grantuserentitlement"></a>
 # **GrantUserEntitlement**
-> void GrantUserEntitlement (int? userId, ModelEntitlementGrantRequest grantRequest)
+> void GrantUserEntitlement (int? userId, EntitlementGrantRequest grantRequest)
 
 Grant an entitlement
 
@@ -990,7 +990,7 @@ namespace Example
 
             var apiInstance = new UsersInventoryApi();
             var userId = 56;  // int? | The id of the user to grant the entitlement to
-            var grantRequest = new ModelEntitlementGrantRequest(); // ModelEntitlementGrantRequest | grantRequest
+            var grantRequest = new EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
 
             try
             {
@@ -1011,7 +1011,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user to grant the entitlement to | 
- **grantRequest** | [**ModelEntitlementGrantRequest**](ModelEntitlementGrantRequest.md)| grantRequest | 
+ **grantRequest** | [**EntitlementGrantRequest**](EntitlementGrantRequest.md)| grantRequest | 
 
 ### Return type
 
@@ -1030,7 +1030,7 @@ void (empty response body)
 
 <a name="updateentitlementitem"></a>
 # **UpdateEntitlementItem**
-> void UpdateEntitlementItem (int? entitlementId, bool? cascade, ModelEntitlementItem entitlementItem)
+> void UpdateEntitlementItem (int? entitlementId, bool? cascade, EntitlementItem entitlementItem)
 
 Update an entitlement item
 
@@ -1055,7 +1055,7 @@ namespace Example
             var apiInstance = new UsersInventoryApi();
             var entitlementId = 56;  // int? | The id of the entitlement
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var entitlementItem = new ModelEntitlementItem(); // ModelEntitlementItem | The entitlement item object (optional) 
+            var entitlementItem = new EntitlementItem(); // EntitlementItem | The entitlement item object (optional) 
 
             try
             {
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **entitlementId** | **int?**| The id of the entitlement | 
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **entitlementItem** | [**ModelEntitlementItem**](ModelEntitlementItem.md)| The entitlement item object | [optional] 
+ **entitlementItem** | [**EntitlementItem**](EntitlementItem.md)| The entitlement item object | [optional] 
 
 ### Return type
 
@@ -1096,7 +1096,7 @@ void (empty response body)
 
 <a name="updateentitlementtemplate"></a>
 # **UpdateEntitlementTemplate**
-> ModelItemTemplateResource UpdateEntitlementTemplate (string id, ModelItemTemplateResource template)
+> ItemTemplateResource UpdateEntitlementTemplate (string id, ItemTemplateResource template)
 
 Update an entitlement template
 
@@ -1120,12 +1120,12 @@ namespace Example
 
             var apiInstance = new UsersInventoryApi();
             var id = id_example;  // string | The id of the template
-            var template = new ModelItemTemplateResource(); // ModelItemTemplateResource | The updated template (optional) 
+            var template = new ItemTemplateResource(); // ItemTemplateResource | The updated template (optional) 
 
             try
             {
                 // Update an entitlement template
-                ModelItemTemplateResource result = apiInstance.UpdateEntitlementTemplate(id, template);
+                ItemTemplateResource result = apiInstance.UpdateEntitlementTemplate(id, template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1142,11 +1142,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **template** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The updated template | [optional] 
+ **template** | [**ItemTemplateResource**](ItemTemplateResource.md)| The updated template | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 

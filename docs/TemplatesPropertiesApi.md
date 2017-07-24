@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="gettemplatepropertytype"></a>
 # **GetTemplatePropertyType**
-> ModelPropertyFieldListResource GetTemplatePropertyType (string type)
+> PropertyFieldListResource GetTemplatePropertyType (string type)
 
 Get details for a template property type
 
@@ -35,7 +35,7 @@ namespace Example
             try
             {
                 // Get details for a template property type
-                ModelPropertyFieldListResource result = apiInstance.GetTemplatePropertyType(type);
+                PropertyFieldListResource result = apiInstance.GetTemplatePropertyType(type);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPropertyFieldListResource**](ModelPropertyFieldListResource.md)
+[**PropertyFieldListResource**](PropertyFieldListResource.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ No authorization required
 
 <a name="gettemplatepropertytypes"></a>
 # **GetTemplatePropertyTypes**
-> List<ModelPropertyFieldListResource> GetTemplatePropertyTypes ()
+> List<PropertyFieldListResource> GetTemplatePropertyTypes ()
 
 List template property types
 
@@ -94,7 +94,7 @@ namespace Example
             try
             {
                 // List template property types
-                List&lt;ModelPropertyFieldListResource&gt; result = apiInstance.GetTemplatePropertyTypes();
+                List&lt;PropertyFieldListResource&gt; result = apiInstance.GetTemplatePropertyTypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelPropertyFieldListResource>**](ModelPropertyFieldListResource.md)
+[**List<PropertyFieldListResource>**](PropertyFieldListResource.md)
 
 ### Authorization
 

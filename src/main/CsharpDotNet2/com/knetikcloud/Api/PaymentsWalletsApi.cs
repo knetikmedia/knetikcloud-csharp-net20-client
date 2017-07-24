@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being retrieved</param>
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param>
-        /// <returns>ModelSimpleWallet</returns>
-        ModelSimpleWallet GetUserWallet (int? userId, string currencyCode);
+        /// <returns>SimpleWallet</returns>
+        SimpleWallet GetUserWallet (int? userId, string currencyCode);
         /// <summary>
         /// Retrieve a user&#39;s wallet transactions 
         /// </summary>
@@ -30,19 +30,19 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceWalletTransactionResource</returns>
-        ModelPageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order);
+        /// <returns>PageResourceWalletTransactionResource</returns>
+        PageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order);
         /// <summary>
         /// List all of a user&#39;s wallets 
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallets are being retrieved</param>
-        /// <returns>List&lt;ModelSimpleWallet&gt;</returns>
-        List<ModelSimpleWallet> GetUserWallets (int? userId);
+        /// <returns>List&lt;SimpleWallet&gt;</returns>
+        List<SimpleWallet> GetUserWallets (int? userId);
         /// <summary>
         /// Retrieves a summation of wallet balances by currency code 
         /// </summary>
-        /// <returns>ModelPageResourceWalletTotalResponse</returns>
-        ModelPageResourceWalletTotalResponse GetWalletBalances ();
+        /// <returns>PageResourceWalletTotalResponse</returns>
+        PageResourceWalletTotalResponse GetWalletBalances ();
         /// <summary>
         /// Retrieve wallet transactions across the system 
         /// </summary>
@@ -57,24 +57,24 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceWalletTransactionResource</returns>
-        ModelPageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order);
+        /// <returns>PageResourceWalletTransactionResource</returns>
+        PageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order);
         /// <summary>
         /// Retrieve a list of wallets across the system 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceSimpleWallet</returns>
-        ModelPageResourceSimpleWallet GetWallets (int? size, int? page, string order);
+        /// <returns>PageResourceSimpleWallet</returns>
+        PageResourceSimpleWallet GetWallets (int? size, int? page, string order);
         /// <summary>
         /// Updates the balance for a user&#39;s wallet 
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being modified</param>
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param>
         /// <param name="request">The requested balance modification to be made to the user&#39;s wallet</param>
-        /// <returns>ModelWalletTransactionResource</returns>
-        ModelWalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, ModelWalletAlterRequest request);
+        /// <returns>WalletTransactionResource</returns>
+        WalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, WalletAlterRequest request);
     }
   
     /// <summary>
@@ -135,8 +135,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being retrieved</param> 
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param> 
-        /// <returns>ModelSimpleWallet</returns>            
-        public ModelSimpleWallet GetUserWallet (int? userId, string currencyCode)
+        /// <returns>SimpleWallet</returns>            
+        public SimpleWallet GetUserWallet (int? userId, string currencyCode)
         {
             
             // verify the required parameter 'userId' is set
@@ -169,7 +169,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserWallet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelSimpleWallet) ApiClient.Deserialize(response.Content, typeof(ModelSimpleWallet), response.Headers);
+            return (SimpleWallet) ApiClient.Deserialize(response.Content, typeof(SimpleWallet), response.Headers);
         }
     
         /// <summary>
@@ -184,8 +184,8 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceWalletTransactionResource</returns>            
-        public ModelPageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order)
+        /// <returns>PageResourceWalletTransactionResource</returns>            
+        public PageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order)
         {
             
             // verify the required parameter 'userId' is set
@@ -225,15 +225,15 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserWalletTransactions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceWalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceWalletTransactionResource), response.Headers);
+            return (PageResourceWalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceWalletTransactionResource), response.Headers);
         }
     
         /// <summary>
         /// List all of a user&#39;s wallets 
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallets are being retrieved</param> 
-        /// <returns>List&lt;ModelSimpleWallet&gt;</returns>            
-        public List<ModelSimpleWallet> GetUserWallets (int? userId)
+        /// <returns>List&lt;SimpleWallet&gt;</returns>            
+        public List<SimpleWallet> GetUserWallets (int? userId)
         {
             
             // verify the required parameter 'userId' is set
@@ -262,14 +262,14 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserWallets: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelSimpleWallet>) ApiClient.Deserialize(response.Content, typeof(List<ModelSimpleWallet>), response.Headers);
+            return (List<SimpleWallet>) ApiClient.Deserialize(response.Content, typeof(List<SimpleWallet>), response.Headers);
         }
     
         /// <summary>
         /// Retrieves a summation of wallet balances by currency code 
         /// </summary>
-        /// <returns>ModelPageResourceWalletTotalResponse</returns>            
-        public ModelPageResourceWalletTotalResponse GetWalletBalances ()
+        /// <returns>PageResourceWalletTotalResponse</returns>            
+        public PageResourceWalletTotalResponse GetWalletBalances ()
         {
             
     
@@ -294,7 +294,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetWalletBalances: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceWalletTotalResponse) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceWalletTotalResponse), response.Headers);
+            return (PageResourceWalletTotalResponse) ApiClient.Deserialize(response.Content, typeof(PageResourceWalletTotalResponse), response.Headers);
         }
     
         /// <summary>
@@ -311,8 +311,8 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceWalletTransactionResource</returns>            
-        public ModelPageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order)
+        /// <returns>PageResourceWalletTransactionResource</returns>            
+        public PageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order)
         {
             
     
@@ -348,7 +348,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetWalletTransactions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceWalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceWalletTransactionResource), response.Headers);
+            return (PageResourceWalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceWalletTransactionResource), response.Headers);
         }
     
         /// <summary>
@@ -357,8 +357,8 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceSimpleWallet</returns>            
-        public ModelPageResourceSimpleWallet GetWallets (int? size, int? page, string order)
+        /// <returns>PageResourceSimpleWallet</returns>            
+        public PageResourceSimpleWallet GetWallets (int? size, int? page, string order)
         {
             
     
@@ -386,7 +386,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetWallets: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSimpleWallet) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSimpleWallet), response.Headers);
+            return (PageResourceSimpleWallet) ApiClient.Deserialize(response.Content, typeof(PageResourceSimpleWallet), response.Headers);
         }
     
         /// <summary>
@@ -395,8 +395,8 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         /// <param name="userId">The ID of the user for whom wallet is being modified</param> 
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param> 
         /// <param name="request">The requested balance modification to be made to the user&#39;s wallet</param> 
-        /// <returns>ModelWalletTransactionResource</returns>            
-        public ModelWalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, ModelWalletAlterRequest request)
+        /// <returns>WalletTransactionResource</returns>            
+        public WalletTransactionResource UpdateWalletBalance (int? userId, string currencyCode, WalletAlterRequest request)
         {
             
             // verify the required parameter 'userId' is set
@@ -430,7 +430,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateWalletBalance: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelWalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(ModelWalletTransactionResource), response.Headers);
+            return (WalletTransactionResource) ApiClient.Deserialize(response.Content, typeof(WalletTransactionResource), response.Headers);
         }
     
     }

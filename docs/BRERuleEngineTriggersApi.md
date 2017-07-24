@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createbretrigger"></a>
 # **CreateBRETrigger**
-> ModelBreTriggerResource CreateBRETrigger (ModelBreTriggerResource breTriggerResource)
+> BreTriggerResource CreateBRETrigger (BreTriggerResource breTriggerResource)
 
 Create a trigger
 
@@ -38,12 +38,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new BRERuleEngineTriggersApi();
-            var breTriggerResource = new ModelBreTriggerResource(); // ModelBreTriggerResource | The BRE trigger resource object (optional) 
+            var breTriggerResource = new BreTriggerResource(); // BreTriggerResource | The BRE trigger resource object (optional) 
 
             try
             {
                 // Create a trigger
-                ModelBreTriggerResource result = apiInstance.CreateBRETrigger(breTriggerResource);
+                BreTriggerResource result = apiInstance.CreateBRETrigger(breTriggerResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,11 +59,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **breTriggerResource** | [**ModelBreTriggerResource**](ModelBreTriggerResource.md)| The BRE trigger resource object | [optional] 
+ **breTriggerResource** | [**BreTriggerResource**](BreTriggerResource.md)| The BRE trigger resource object | [optional] 
 
 ### Return type
 
-[**ModelBreTriggerResource**](ModelBreTriggerResource.md)
+[**BreTriggerResource**](BreTriggerResource.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ void (empty response body)
 
 <a name="getbretrigger"></a>
 # **GetBRETrigger**
-> ModelBreTriggerResource GetBRETrigger (string eventName)
+> BreTriggerResource GetBRETrigger (string eventName)
 
 Get a single trigger
 
@@ -170,7 +170,7 @@ namespace Example
             try
             {
                 // Get a single trigger
-                ModelBreTriggerResource result = apiInstance.GetBRETrigger(eventName);
+                BreTriggerResource result = apiInstance.GetBRETrigger(eventName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBreTriggerResource**](ModelBreTriggerResource.md)
+[**BreTriggerResource**](BreTriggerResource.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="getbretriggers"></a>
 # **GetBRETriggers**
-> ModelPageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page)
+> PageResourceBreTriggerResource GetBRETriggers (bool? filterSystem, string filterCategory, string filterTags, string filterName, string filterSearch, int? size, int? page)
 
 List triggers
 
@@ -239,7 +239,7 @@ namespace Example
             try
             {
                 // List triggers
-                ModelPageResourceBreTriggerResource result = apiInstance.GetBRETriggers(filterSystem, filterCategory, filterTags, filterName, filterSearch, size, page);
+                PageResourceBreTriggerResource result = apiInstance.GetBRETriggers(filterSystem, filterCategory, filterTags, filterName, filterSearch, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBreTriggerResource**](ModelPageResourceBreTriggerResource.md)
+[**PageResourceBreTriggerResource**](PageResourceBreTriggerResource.md)
 
 ### Authorization
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 <a name="updatebretrigger"></a>
 # **UpdateBRETrigger**
-> ModelBreTriggerResource UpdateBRETrigger (string eventName, ModelBreTriggerResource breTriggerResource)
+> BreTriggerResource UpdateBRETrigger (string eventName, BreTriggerResource breTriggerResource)
 
 Update a trigger
 
@@ -306,12 +306,12 @@ namespace Example
 
             var apiInstance = new BRERuleEngineTriggersApi();
             var eventName = eventName_example;  // string | The trigger event name
-            var breTriggerResource = new ModelBreTriggerResource(); // ModelBreTriggerResource | The BRE trigger resource object (optional) 
+            var breTriggerResource = new BreTriggerResource(); // BreTriggerResource | The BRE trigger resource object (optional) 
 
             try
             {
                 // Update a trigger
-                ModelBreTriggerResource result = apiInstance.UpdateBRETrigger(eventName, breTriggerResource);
+                BreTriggerResource result = apiInstance.UpdateBRETrigger(eventName, breTriggerResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -328,11 +328,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventName** | **string**| The trigger event name | 
- **breTriggerResource** | [**ModelBreTriggerResource**](ModelBreTriggerResource.md)| The BRE trigger resource object | [optional] 
+ **breTriggerResource** | [**BreTriggerResource**](BreTriggerResource.md)| The BRE trigger resource object | [optional] 
 
 ### Return type
 
-[**ModelBreTriggerResource**](ModelBreTriggerResource.md)
+[**BreTriggerResource**](BreTriggerResource.md)
 
 ### Authorization
 

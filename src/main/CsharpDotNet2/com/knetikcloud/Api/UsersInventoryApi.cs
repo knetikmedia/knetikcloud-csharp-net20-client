@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the user</param>
         /// <param name="userInventoryAddRequest">The user inventory add request object</param>
-        /// <returns>ModelInvoiceResource</returns>
-        ModelInvoiceResource AddItemToUserInventory (int? id, ModelUserInventoryAddRequest userInventoryAddRequest);
+        /// <returns>InvoiceResource</returns>
+        InvoiceResource AddItemToUserInventory (int? id, UserInventoryAddRequest userInventoryAddRequest);
         /// <summary>
         /// Check for access to an item without consuming Useful for pre-check and accounts for all various buisness rules
         /// </summary>
@@ -31,14 +31,14 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="entitlementItem">The entitlement item object</param>
-        /// <returns>ModelEntitlementItem</returns>
-        ModelEntitlementItem CreateEntitlementItem (bool? cascade, ModelEntitlementItem entitlementItem);
+        /// <returns>EntitlementItem</returns>
+        EntitlementItem CreateEntitlementItem (bool? cascade, EntitlementItem entitlementItem);
         /// <summary>
         /// Create an entitlement template Entitlement templates define a type of entitlement and the properties they have
         /// </summary>
         /// <param name="template">The entitlement template to be created</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource CreateEntitlementTemplate (ModelItemTemplateResource template);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource CreateEntitlementTemplate (ItemTemplateResource template);
         /// <summary>
         /// Delete an entitlement item 
         /// </summary>
@@ -56,30 +56,30 @@ namespace com.knetikcloud.Api
         /// Get a single entitlement item 
         /// </summary>
         /// <param name="entitlementId">The id of the entitlement</param>
-        /// <returns>ModelEntitlementItem</returns>
-        ModelEntitlementItem GetEntitlementItem (int? entitlementId);
+        /// <returns>EntitlementItem</returns>
+        EntitlementItem GetEntitlementItem (int? entitlementId);
         /// <summary>
         /// List and search entitlement items 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceEntitlementItem</returns>
-        ModelPageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order);
+        /// <returns>PageResourceEntitlementItem</returns>
+        PageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order);
         /// <summary>
         /// Get a single entitlement template 
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource GetEntitlementTemplate (string id);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource GetEntitlementTemplate (string id);
         /// <summary>
         /// List and search entitlement templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceItemTemplateResource</returns>
-        ModelPageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceItemTemplateResource</returns>
+        PageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order);
         /// <summary>
         /// List the user inventory entries for a given user 
         /// </summary>
@@ -92,15 +92,15 @@ namespace com.knetikcloud.Api
         /// <param name="filterUsername">Filter by entries owned by the user with the specified username</param>
         /// <param name="filterGroup">Filter by entries owned by the users in a given group, by unique name</param>
         /// <param name="filterDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
-        /// <returns>ModelPageResourceUserInventoryResource</returns>
-        ModelPageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate);
+        /// <returns>PageResourceUserInventoryResource</returns>
+        PageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate);
         /// <summary>
         /// Get an inventory entry 
         /// </summary>
         /// <param name="userId">The id of the inventory owner or &#39;me&#39; for the logged in user</param>
         /// <param name="id">The id of the user inventory</param>
-        /// <returns>ModelUserInventoryResource</returns>
-        ModelUserInventoryResource GetUserInventory (int? userId, int? id);
+        /// <returns>UserInventoryResource</returns>
+        UserInventoryResource GetUserInventory (int? userId, int? id);
         /// <summary>
         /// List the log entries for this inventory entry 
         /// </summary>
@@ -108,8 +108,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the user inventory</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceUserItemLogResource</returns>
-        ModelPageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page);
+        /// <returns>PageResourceUserItemLogResource</returns>
+        PageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page);
         /// <summary>
         /// List the user inventory entries for all users 
         /// </summary>
@@ -121,15 +121,15 @@ namespace com.knetikcloud.Api
         /// <param name="filterUsername">Filter by entries owned by the user with the specified username</param>
         /// <param name="filterGroup">Filter by entries owned by the users in a given group, by unique name</param>
         /// <param name="filterDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
-        /// <returns>ModelPageResourceUserInventoryResource</returns>
-        ModelPageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate);
+        /// <returns>PageResourceUserInventoryResource</returns>
+        PageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate);
         /// <summary>
         /// Grant an entitlement 
         /// </summary>
         /// <param name="userId">The id of the user to grant the entitlement to</param>
         /// <param name="grantRequest">grantRequest</param>
         /// <returns></returns>
-        void GrantUserEntitlement (int? userId, ModelEntitlementGrantRequest grantRequest);
+        void GrantUserEntitlement (int? userId, EntitlementGrantRequest grantRequest);
         /// <summary>
         /// Update an entitlement item 
         /// </summary>
@@ -137,14 +137,14 @@ namespace com.knetikcloud.Api
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="entitlementItem">The entitlement item object</param>
         /// <returns></returns>
-        void UpdateEntitlementItem (int? entitlementId, bool? cascade, ModelEntitlementItem entitlementItem);
+        void UpdateEntitlementItem (int? entitlementId, bool? cascade, EntitlementItem entitlementItem);
         /// <summary>
         /// Update an entitlement template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="template">The updated template</param>
-        /// <returns>ModelItemTemplateResource</returns>
-        ModelItemTemplateResource UpdateEntitlementTemplate (string id, ModelItemTemplateResource template);
+        /// <returns>ItemTemplateResource</returns>
+        ItemTemplateResource UpdateEntitlementTemplate (string id, ItemTemplateResource template);
         /// <summary>
         /// Set the behavior data for an inventory entry 
         /// </summary>
@@ -238,8 +238,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the user</param> 
         /// <param name="userInventoryAddRequest">The user inventory add request object</param> 
-        /// <returns>ModelInvoiceResource</returns>            
-        public ModelInvoiceResource AddItemToUserInventory (int? id, ModelUserInventoryAddRequest userInventoryAddRequest)
+        /// <returns>InvoiceResource</returns>            
+        public InvoiceResource AddItemToUserInventory (int? id, UserInventoryAddRequest userInventoryAddRequest)
         {
             
             // verify the required parameter 'id' is set
@@ -269,7 +269,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddItemToUserInventory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelInvoiceResource) ApiClient.Deserialize(response.Content, typeof(ModelInvoiceResource), response.Headers);
+            return (InvoiceResource) ApiClient.Deserialize(response.Content, typeof(InvoiceResource), response.Headers);
         }
     
         /// <summary>
@@ -321,8 +321,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="entitlementItem">The entitlement item object</param> 
-        /// <returns>ModelEntitlementItem</returns>            
-        public ModelEntitlementItem CreateEntitlementItem (bool? cascade, ModelEntitlementItem entitlementItem)
+        /// <returns>EntitlementItem</returns>            
+        public EntitlementItem CreateEntitlementItem (bool? cascade, EntitlementItem entitlementItem)
         {
             
     
@@ -349,15 +349,15 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateEntitlementItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelEntitlementItem) ApiClient.Deserialize(response.Content, typeof(ModelEntitlementItem), response.Headers);
+            return (EntitlementItem) ApiClient.Deserialize(response.Content, typeof(EntitlementItem), response.Headers);
         }
     
         /// <summary>
         /// Create an entitlement template Entitlement templates define a type of entitlement and the properties they have
         /// </summary>
         /// <param name="template">The entitlement template to be created</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource CreateEntitlementTemplate (ModelItemTemplateResource template)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource CreateEntitlementTemplate (ItemTemplateResource template)
         {
             
     
@@ -383,7 +383,7 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateEntitlementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -466,8 +466,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// Get a single entitlement item 
         /// </summary>
         /// <param name="entitlementId">The id of the entitlement</param> 
-        /// <returns>ModelEntitlementItem</returns>            
-        public ModelEntitlementItem GetEntitlementItem (int? entitlementId)
+        /// <returns>EntitlementItem</returns>            
+        public EntitlementItem GetEntitlementItem (int? entitlementId)
         {
             
             // verify the required parameter 'entitlementId' is set
@@ -496,7 +496,7 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetEntitlementItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelEntitlementItem) ApiClient.Deserialize(response.Content, typeof(ModelEntitlementItem), response.Headers);
+            return (EntitlementItem) ApiClient.Deserialize(response.Content, typeof(EntitlementItem), response.Headers);
         }
     
         /// <summary>
@@ -505,8 +505,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceEntitlementItem</returns>            
-        public ModelPageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order)
+        /// <returns>PageResourceEntitlementItem</returns>            
+        public PageResourceEntitlementItem GetEntitlementItems (int? size, int? page, string order)
         {
             
     
@@ -534,15 +534,15 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetEntitlementItems: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceEntitlementItem) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceEntitlementItem), response.Headers);
+            return (PageResourceEntitlementItem) ApiClient.Deserialize(response.Content, typeof(PageResourceEntitlementItem), response.Headers);
         }
     
         /// <summary>
         /// Get a single entitlement template 
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource GetEntitlementTemplate (string id)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource GetEntitlementTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -571,7 +571,7 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetEntitlementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -580,8 +580,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceItemTemplateResource</returns>            
-        public ModelPageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceItemTemplateResource</returns>            
+        public PageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order)
         {
             
     
@@ -609,7 +609,7 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetEntitlementTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceItemTemplateResource), response.Headers);
+            return (PageResourceItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -624,8 +624,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// <param name="filterUsername">Filter by entries owned by the user with the specified username</param> 
         /// <param name="filterGroup">Filter by entries owned by the users in a given group, by unique name</param> 
         /// <param name="filterDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
-        /// <returns>ModelPageResourceUserInventoryResource</returns>            
-        public ModelPageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
+        /// <returns>PageResourceUserInventoryResource</returns>            
+        public PageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
         {
             
             // verify the required parameter 'id' is set
@@ -662,7 +662,7 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserInventories: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserInventoryResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserInventoryResource), response.Headers);
+            return (PageResourceUserInventoryResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserInventoryResource), response.Headers);
         }
     
         /// <summary>
@@ -670,8 +670,8 @@ path = path.Replace("{" + "item_id" + "}", ApiClient.ParameterToString(itemId));
         /// </summary>
         /// <param name="userId">The id of the inventory owner or &#39;me&#39; for the logged in user</param> 
         /// <param name="id">The id of the user inventory</param> 
-        /// <returns>ModelUserInventoryResource</returns>            
-        public ModelUserInventoryResource GetUserInventory (int? userId, int? id)
+        /// <returns>UserInventoryResource</returns>            
+        public UserInventoryResource GetUserInventory (int? userId, int? id)
         {
             
             // verify the required parameter 'userId' is set
@@ -704,7 +704,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserInventory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelUserInventoryResource) ApiClient.Deserialize(response.Content, typeof(ModelUserInventoryResource), response.Headers);
+            return (UserInventoryResource) ApiClient.Deserialize(response.Content, typeof(UserInventoryResource), response.Headers);
         }
     
         /// <summary>
@@ -714,8 +714,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="id">The id of the user inventory</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceUserItemLogResource</returns>            
-        public ModelPageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page)
+        /// <returns>PageResourceUserItemLogResource</returns>            
+        public PageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page)
         {
             
             // verify the required parameter 'userId' is set
@@ -750,7 +750,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUserInventoryLog: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserItemLogResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserItemLogResource), response.Headers);
+            return (PageResourceUserItemLogResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserItemLogResource), response.Headers);
         }
     
         /// <summary>
@@ -764,8 +764,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="filterUsername">Filter by entries owned by the user with the specified username</param> 
         /// <param name="filterGroup">Filter by entries owned by the users in a given group, by unique name</param> 
         /// <param name="filterDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
-        /// <returns>ModelPageResourceUserInventoryResource</returns>            
-        public ModelPageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
+        /// <returns>PageResourceUserInventoryResource</returns>            
+        public PageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
         {
             
     
@@ -798,7 +798,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetUsersInventory: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceUserInventoryResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceUserInventoryResource), response.Headers);
+            return (PageResourceUserInventoryResource) ApiClient.Deserialize(response.Content, typeof(PageResourceUserInventoryResource), response.Headers);
         }
     
         /// <summary>
@@ -807,7 +807,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">The id of the user to grant the entitlement to</param> 
         /// <param name="grantRequest">grantRequest</param> 
         /// <returns></returns>            
-        public void GrantUserEntitlement (int? userId, ModelEntitlementGrantRequest grantRequest)
+        public void GrantUserEntitlement (int? userId, EntitlementGrantRequest grantRequest)
         {
             
             // verify the required parameter 'userId' is set
@@ -850,7 +850,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="entitlementItem">The entitlement item object</param> 
         /// <returns></returns>            
-        public void UpdateEntitlementItem (int? entitlementId, bool? cascade, ModelEntitlementItem entitlementItem)
+        public void UpdateEntitlementItem (int? entitlementId, bool? cascade, EntitlementItem entitlementItem)
         {
             
             // verify the required parameter 'entitlementId' is set
@@ -889,8 +889,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="template">The updated template</param> 
-        /// <returns>ModelItemTemplateResource</returns>            
-        public ModelItemTemplateResource UpdateEntitlementTemplate (string id, ModelItemTemplateResource template)
+        /// <returns>ItemTemplateResource</returns>            
+        public ItemTemplateResource UpdateEntitlementTemplate (string id, ItemTemplateResource template)
         {
             
             // verify the required parameter 'id' is set
@@ -920,7 +920,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateEntitlementTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelItemTemplateResource), response.Headers);
+            return (ItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ItemTemplateResource), response.Headers);
         }
     
         /// <summary>

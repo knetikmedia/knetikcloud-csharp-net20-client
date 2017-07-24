@@ -16,25 +16,25 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="rawEmailResource">The new raw email to be sent</param>
         /// <returns></returns>
-        void SendRawEmail (ModelRawEmailResource rawEmailResource);
+        void SendRawEmail (RawEmailResource rawEmailResource);
         /// <summary>
         /// Send a raw SMS Sends a raw SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
         /// </summary>
         /// <param name="rawSMSResource">The new raw SMS to be sent</param>
         /// <returns></returns>
-        void SendRawSMS (ModelRawSMSResource rawSMSResource);
+        void SendRawSMS (RawSMSResource rawSMSResource);
         /// <summary>
         /// Send a templated email to one or more users 
         /// </summary>
         /// <param name="messageResource">The new template email to be sent</param>
         /// <returns></returns>
-        void SendTemplatedEmail (ModelTemplateEmailResource messageResource);
+        void SendTemplatedEmail (TemplateEmailResource messageResource);
         /// <summary>
         /// Send a new templated SMS Sends a templated SMS text message to one or more users. User&#39;s without registered mobile numbers will be skipped.
         /// </summary>
         /// <param name="templateSMSResource">The new template SMS to be sent</param>
         /// <returns></returns>
-        void SendTemplatedSMS (ModelTemplateSMSResource templateSMSResource);
+        void SendTemplatedSMS (TemplateSMSResource templateSMSResource);
     }
   
     /// <summary>
@@ -95,7 +95,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="rawEmailResource">The new raw email to be sent</param> 
         /// <returns></returns>            
-        public void SendRawEmail (ModelRawEmailResource rawEmailResource)
+        public void SendRawEmail (RawEmailResource rawEmailResource)
         {
             
     
@@ -129,7 +129,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="rawSMSResource">The new raw SMS to be sent</param> 
         /// <returns></returns>            
-        public void SendRawSMS (ModelRawSMSResource rawSMSResource)
+        public void SendRawSMS (RawSMSResource rawSMSResource)
         {
             
     
@@ -163,7 +163,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="messageResource">The new template email to be sent</param> 
         /// <returns></returns>            
-        public void SendTemplatedEmail (ModelTemplateEmailResource messageResource)
+        public void SendTemplatedEmail (TemplateEmailResource messageResource)
         {
             
     
@@ -197,7 +197,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="templateSMSResource">The new template SMS to be sent</param> 
         /// <returns></returns>            
-        public void SendTemplatedSMS (ModelTemplateSMSResource templateSMSResource)
+        public void SendTemplatedSMS (TemplateSMSResource templateSMSResource)
         {
             
     

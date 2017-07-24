@@ -15,15 +15,15 @@ namespace com.knetikcloud.Api
         /// Create an item template Item Templates define a type of item and the properties they have.
         /// </summary>
         /// <param name="itemTemplateResource">The new item template</param>
-        /// <returns>ModelStoreItemTemplateResource</returns>
-        ModelStoreItemTemplateResource CreateItemTemplate (ModelStoreItemTemplateResource itemTemplateResource);
+        /// <returns>StoreItemTemplateResource</returns>
+        StoreItemTemplateResource CreateItemTemplate (StoreItemTemplateResource itemTemplateResource);
         /// <summary>
         /// Create a store item SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="storeItem">The store item object</param>
-        /// <returns>ModelStoreItem</returns>
-        ModelStoreItem CreateStoreItem (bool? cascade, ModelStoreItem storeItem);
+        /// <returns>StoreItem</returns>
+        StoreItem CreateStoreItem (bool? cascade, StoreItem storeItem);
         /// <summary>
         /// Delete an item template 
         /// </summary>
@@ -40,22 +40,22 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List available item behaviors 
         /// </summary>
-        /// <returns>List&lt;ModelBehaviorDefinitionResource&gt;</returns>
-        List<ModelBehaviorDefinitionResource> GetBehaviors ();
+        /// <returns>List&lt;BehaviorDefinitionResource&gt;</returns>
+        List<BehaviorDefinitionResource> GetBehaviors ();
         /// <summary>
         /// Get a single item template Item Templates define a type of item and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param>
-        /// <returns>ModelStoreItemTemplateResource</returns>
-        ModelStoreItemTemplateResource GetItemTemplate (string id);
+        /// <returns>StoreItemTemplateResource</returns>
+        StoreItemTemplateResource GetItemTemplate (string id);
         /// <summary>
         /// List and search item templates 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceStoreItemTemplateResource</returns>
-        ModelPageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order);
+        /// <returns>PageResourceStoreItemTemplateResource</returns>
+        PageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order);
         /// <summary>
         /// Get a listing of store items The exact structure of each items may differ to include fields specific to the type. The same is true for behaviors.
         /// </summary>
@@ -64,14 +64,14 @@ namespace com.knetikcloud.Api
         /// <param name="useCatalog">Whether to remove items that are not intended for display or not in date</param>
         /// <param name="ignoreLocation">Whether to ignore country restrictions based on the caller&#39;s location</param>
         /// <param name="inStockOnly">Whether only in-stock items should be returned.  Default value is false</param>
-        /// <returns>ModelPageResourceStoreItem</returns>
-        ModelPageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly);
+        /// <returns>PageResourceStoreItem</returns>
+        PageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly);
         /// <summary>
         /// Get a single store item 
         /// </summary>
         /// <param name="id">The id of the item</param>
-        /// <returns>ModelStoreItem</returns>
-        ModelStoreItem GetStoreItem (int? id);
+        /// <returns>StoreItem</returns>
+        StoreItem GetStoreItem (int? id);
         /// <summary>
         /// List and search store items 
         /// </summary>
@@ -92,23 +92,23 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceStoreItem</returns>
-        ModelPageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order);
+        /// <returns>PageResourceStoreItem</returns>
+        PageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order);
         /// <summary>
         /// Update an item template 
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="itemTemplateResource">The item template resource object</param>
-        /// <returns>ModelStoreItemTemplateResource</returns>
-        ModelStoreItemTemplateResource UpdateItemTemplate (string id, ModelStoreItemTemplateResource itemTemplateResource);
+        /// <returns>StoreItemTemplateResource</returns>
+        StoreItemTemplateResource UpdateItemTemplate (string id, StoreItemTemplateResource itemTemplateResource);
         /// <summary>
         /// Update a store item 
         /// </summary>
         /// <param name="id">The id of the item</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="storeItem">The store item object</param>
-        /// <returns>ModelStoreItem</returns>
-        ModelStoreItem UpdateStoreItem (int? id, bool? cascade, ModelStoreItem storeItem);
+        /// <returns>StoreItem</returns>
+        StoreItem UpdateStoreItem (int? id, bool? cascade, StoreItem storeItem);
     }
   
     /// <summary>
@@ -168,8 +168,8 @@ namespace com.knetikcloud.Api
         /// Create an item template Item Templates define a type of item and the properties they have.
         /// </summary>
         /// <param name="itemTemplateResource">The new item template</param> 
-        /// <returns>ModelStoreItemTemplateResource</returns>            
-        public ModelStoreItemTemplateResource CreateItemTemplate (ModelStoreItemTemplateResource itemTemplateResource)
+        /// <returns>StoreItemTemplateResource</returns>            
+        public StoreItemTemplateResource CreateItemTemplate (StoreItemTemplateResource itemTemplateResource)
         {
             
     
@@ -195,7 +195,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateItemTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelStoreItemTemplateResource), response.Headers);
+            return (StoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(StoreItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -203,8 +203,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="storeItem">The store item object</param> 
-        /// <returns>ModelStoreItem</returns>            
-        public ModelStoreItem CreateStoreItem (bool? cascade, ModelStoreItem storeItem)
+        /// <returns>StoreItem</returns>            
+        public StoreItem CreateStoreItem (bool? cascade, StoreItem storeItem)
         {
             
     
@@ -231,7 +231,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateStoreItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItem) ApiClient.Deserialize(response.Content, typeof(ModelStoreItem), response.Headers);
+            return (StoreItem) ApiClient.Deserialize(response.Content, typeof(StoreItem), response.Headers);
         }
     
         /// <summary>
@@ -313,8 +313,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List available item behaviors 
         /// </summary>
-        /// <returns>List&lt;ModelBehaviorDefinitionResource&gt;</returns>            
-        public List<ModelBehaviorDefinitionResource> GetBehaviors ()
+        /// <returns>List&lt;BehaviorDefinitionResource&gt;</returns>            
+        public List<BehaviorDefinitionResource> GetBehaviors ()
         {
             
     
@@ -339,15 +339,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBehaviors: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelBehaviorDefinitionResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelBehaviorDefinitionResource>), response.Headers);
+            return (List<BehaviorDefinitionResource>) ApiClient.Deserialize(response.Content, typeof(List<BehaviorDefinitionResource>), response.Headers);
         }
     
         /// <summary>
         /// Get a single item template Item Templates define a type of item and the properties they have.
         /// </summary>
         /// <param name="id">The id of the template</param> 
-        /// <returns>ModelStoreItemTemplateResource</returns>            
-        public ModelStoreItemTemplateResource GetItemTemplate (string id)
+        /// <returns>StoreItemTemplateResource</returns>            
+        public StoreItemTemplateResource GetItemTemplate (string id)
         {
             
             // verify the required parameter 'id' is set
@@ -376,7 +376,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetItemTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelStoreItemTemplateResource), response.Headers);
+            return (StoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(StoreItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -385,8 +385,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceStoreItemTemplateResource</returns>            
-        public ModelPageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order)
+        /// <returns>PageResourceStoreItemTemplateResource</returns>            
+        public PageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order)
         {
             
     
@@ -414,7 +414,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetItemTemplates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceStoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceStoreItemTemplateResource), response.Headers);
+            return (PageResourceStoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceStoreItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -425,8 +425,8 @@ namespace com.knetikcloud.Api
         /// <param name="useCatalog">Whether to remove items that are not intended for display or not in date</param> 
         /// <param name="ignoreLocation">Whether to ignore country restrictions based on the caller&#39;s location</param> 
         /// <param name="inStockOnly">Whether only in-stock items should be returned.  Default value is false</param> 
-        /// <returns>ModelPageResourceStoreItem</returns>            
-        public ModelPageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly)
+        /// <returns>PageResourceStoreItem</returns>            
+        public PageResourceStoreItem GetStore (int? limit, int? page, bool? useCatalog, bool? ignoreLocation, bool? inStockOnly)
         {
             
     
@@ -456,15 +456,15 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStore: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceStoreItem) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceStoreItem), response.Headers);
+            return (PageResourceStoreItem) ApiClient.Deserialize(response.Content, typeof(PageResourceStoreItem), response.Headers);
         }
     
         /// <summary>
         /// Get a single store item 
         /// </summary>
         /// <param name="id">The id of the item</param> 
-        /// <returns>ModelStoreItem</returns>            
-        public ModelStoreItem GetStoreItem (int? id)
+        /// <returns>StoreItem</returns>            
+        public StoreItem GetStoreItem (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -493,7 +493,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStoreItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItem) ApiClient.Deserialize(response.Content, typeof(ModelStoreItem), response.Headers);
+            return (StoreItem) ApiClient.Deserialize(response.Content, typeof(StoreItem), response.Headers);
         }
     
         /// <summary>
@@ -516,8 +516,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceStoreItem</returns>            
-        public ModelPageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order)
+        /// <returns>PageResourceStoreItem</returns>            
+        public PageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order)
         {
             
     
@@ -559,7 +559,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStoreItems: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceStoreItem) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceStoreItem), response.Headers);
+            return (PageResourceStoreItem) ApiClient.Deserialize(response.Content, typeof(PageResourceStoreItem), response.Headers);
         }
     
         /// <summary>
@@ -567,8 +567,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="itemTemplateResource">The item template resource object</param> 
-        /// <returns>ModelStoreItemTemplateResource</returns>            
-        public ModelStoreItemTemplateResource UpdateItemTemplate (string id, ModelStoreItemTemplateResource itemTemplateResource)
+        /// <returns>StoreItemTemplateResource</returns>            
+        public StoreItemTemplateResource UpdateItemTemplate (string id, StoreItemTemplateResource itemTemplateResource)
         {
             
             // verify the required parameter 'id' is set
@@ -598,7 +598,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateItemTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(ModelStoreItemTemplateResource), response.Headers);
+            return (StoreItemTemplateResource) ApiClient.Deserialize(response.Content, typeof(StoreItemTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -607,8 +607,8 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the item</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="storeItem">The store item object</param> 
-        /// <returns>ModelStoreItem</returns>            
-        public ModelStoreItem UpdateStoreItem (int? id, bool? cascade, ModelStoreItem storeItem)
+        /// <returns>StoreItem</returns>            
+        public StoreItem UpdateStoreItem (int? id, bool? cascade, StoreItem storeItem)
         {
             
             // verify the required parameter 'id' is set
@@ -639,7 +639,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateStoreItem: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelStoreItem) ApiClient.Deserialize(response.Content, typeof(ModelStoreItem), response.Headers);
+            return (StoreItem) ApiClient.Deserialize(response.Content, typeof(StoreItem), response.Headers);
         }
     
     }

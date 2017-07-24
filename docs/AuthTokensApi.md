@@ -75,7 +75,7 @@ void (empty response body)
 
 <a name="gettoken"></a>
 # **GetToken**
-> ModelOauthAccessTokenResource GetToken (string username, string clientId)
+> OauthAccessTokenResource GetToken (string username, string clientId)
 
 Get a single token by username and client id
 
@@ -104,7 +104,7 @@ namespace Example
             try
             {
                 // Get a single token by username and client id
-                ModelOauthAccessTokenResource result = apiInstance.GetToken(username, clientId);
+                OauthAccessTokenResource result = apiInstance.GetToken(username, clientId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelOauthAccessTokenResource**](ModelOauthAccessTokenResource.md)
+[**OauthAccessTokenResource**](OauthAccessTokenResource.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 <a name="gettokens"></a>
 # **GetTokens**
-> ModelPageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order)
+> PageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order)
 
 List usernames and client ids
 
@@ -174,7 +174,7 @@ namespace Example
             try
             {
                 // List usernames and client ids
-                ModelPageResourceOauthAccessTokenResource result = apiInstance.GetTokens(filterClientId, filterUsername, size, page, order);
+                PageResourceOauthAccessTokenResource result = apiInstance.GetTokens(filterClientId, filterUsername, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceOauthAccessTokenResource**](ModelPageResourceOauthAccessTokenResource.md)
+[**PageResourceOauthAccessTokenResource**](PageResourceOauthAccessTokenResource.md)
 
 ### Authorization
 

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="createpaymentmethod"></a>
 # **CreatePaymentMethod**
-> ModelPaymentMethodResource CreatePaymentMethod (int? userId, ModelPaymentMethodResource paymentMethod)
+> PaymentMethodResource CreatePaymentMethod (int? userId, PaymentMethodResource paymentMethod)
 
 Create a new payment method for a user
 
@@ -39,12 +39,12 @@ namespace Example
 
             var apiInstance = new PaymentsApi();
             var userId = 56;  // int? | ID of the user for whom the payment method is being created
-            var paymentMethod = new ModelPaymentMethodResource(); // ModelPaymentMethodResource | Payment method being created (optional) 
+            var paymentMethod = new PaymentMethodResource(); // PaymentMethodResource | Payment method being created (optional) 
 
             try
             {
                 // Create a new payment method for a user
-                ModelPaymentMethodResource result = apiInstance.CreatePaymentMethod(userId, paymentMethod);
+                PaymentMethodResource result = apiInstance.CreatePaymentMethod(userId, paymentMethod);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,11 +61,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| ID of the user for whom the payment method is being created | 
- **paymentMethod** | [**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)| Payment method being created | [optional] 
+ **paymentMethod** | [**PaymentMethodResource**](PaymentMethodResource.md)| Payment method being created | [optional] 
 
 ### Return type
 
-[**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)
+[**PaymentMethodResource**](PaymentMethodResource.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ void (empty response body)
 
 <a name="getpaymentmethod"></a>
 # **GetPaymentMethod**
-> ModelPaymentMethodResource GetPaymentMethod (int? userId, int? id)
+> PaymentMethodResource GetPaymentMethod (int? userId, int? id)
 
 Get a single payment method for a user
 
@@ -173,7 +173,7 @@ namespace Example
             try
             {
                 // Get a single payment method for a user
-                ModelPaymentMethodResource result = apiInstance.GetPaymentMethod(userId, id);
+                PaymentMethodResource result = apiInstance.GetPaymentMethod(userId, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)
+[**PaymentMethodResource**](PaymentMethodResource.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 <a name="getpaymentmethods"></a>
 # **GetPaymentMethods**
-> List<ModelPaymentMethodResource> GetPaymentMethods (int? userId, int? size, int? page, string order)
+> List<PaymentMethodResource> GetPaymentMethods (int? userId, string filterName, string filterPaymentType, int? filterPaymentMethodTypeId, string filterPaymentMethodTypeName, int? size, int? page, string order)
 
 Get all payment methods for a user
 
@@ -233,6 +233,10 @@ namespace Example
 
             var apiInstance = new PaymentsApi();
             var userId = 56;  // int? | ID of the user for whom the payment methods are being retrieved
+            var filterName = filterName_example;  // string | Filter for payment methods whose name starts with a given string (optional) 
+            var filterPaymentType = filterPaymentType_example;  // string | Filter for payment methods with a specific payment type (optional) 
+            var filterPaymentMethodTypeId = 56;  // int? | Filter for payment methods with a specific payment method type by id (optional) 
+            var filterPaymentMethodTypeName = filterPaymentMethodTypeName_example;  // string | Filter for payment methods whose payment method type name starts with a given string (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
             var order = order_example;  // string | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)  (default to id:ASC)
@@ -240,7 +244,7 @@ namespace Example
             try
             {
                 // Get all payment methods for a user
-                List&lt;ModelPaymentMethodResource&gt; result = apiInstance.GetPaymentMethods(userId, size, page, order);
+                List&lt;PaymentMethodResource&gt; result = apiInstance.GetPaymentMethods(userId, filterName, filterPaymentType, filterPaymentMethodTypeId, filterPaymentMethodTypeName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -257,13 +261,17 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| ID of the user for whom the payment methods are being retrieved | 
+ **filterName** | **string**| Filter for payment methods whose name starts with a given string | [optional] 
+ **filterPaymentType** | **string**| Filter for payment methods with a specific payment type | [optional] 
+ **filterPaymentMethodTypeId** | **int?**| Filter for payment methods with a specific payment method type by id | [optional] 
+ **filterPaymentMethodTypeName** | **string**| Filter for payment methods whose payment method type name starts with a given string | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **string**| a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
 
 ### Return type
 
-[**List<ModelPaymentMethodResource>**](ModelPaymentMethodResource.md)
+[**List<PaymentMethodResource>**](PaymentMethodResource.md)
 
 ### Authorization
 
@@ -278,7 +286,7 @@ Name | Type | Description  | Notes
 
 <a name="paymentauthorization"></a>
 # **PaymentAuthorization**
-> ModelPaymentAuthorizationResource PaymentAuthorization (ModelPaymentAuthorizationResource request)
+> PaymentAuthorizationResource PaymentAuthorization (PaymentAuthorizationResource request)
 
 Authorize payment of an invoice for later capture
 
@@ -301,12 +309,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new PaymentsApi();
-            var request = new ModelPaymentAuthorizationResource(); // ModelPaymentAuthorizationResource | Payment authorization request (optional) 
+            var request = new PaymentAuthorizationResource(); // PaymentAuthorizationResource | Payment authorization request (optional) 
 
             try
             {
                 // Authorize payment of an invoice for later capture
-                ModelPaymentAuthorizationResource result = apiInstance.PaymentAuthorization(request);
+                PaymentAuthorizationResource result = apiInstance.PaymentAuthorization(request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -322,11 +330,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ModelPaymentAuthorizationResource**](ModelPaymentAuthorizationResource.md)| Payment authorization request | [optional] 
+ **request** | [**PaymentAuthorizationResource**](PaymentAuthorizationResource.md)| Payment authorization request | [optional] 
 
 ### Return type
 
-[**ModelPaymentAuthorizationResource**](ModelPaymentAuthorizationResource.md)
+[**PaymentAuthorizationResource**](PaymentAuthorizationResource.md)
 
 ### Authorization
 
@@ -403,7 +411,7 @@ void (empty response body)
 
 <a name="updatepaymentmethod"></a>
 # **UpdatePaymentMethod**
-> ModelPaymentMethodResource UpdatePaymentMethod (int? userId, int? id, ModelPaymentMethodResource paymentMethod)
+> PaymentMethodResource UpdatePaymentMethod (int? userId, int? id, PaymentMethodResource paymentMethod)
 
 Update an existing payment method for a user
 
@@ -428,12 +436,12 @@ namespace Example
             var apiInstance = new PaymentsApi();
             var userId = 56;  // int? | ID of the user for whom the payment method is being updated
             var id = 56;  // int? | ID of the payment method being updated
-            var paymentMethod = new ModelPaymentMethodResource(); // ModelPaymentMethodResource | The updated payment method data (optional) 
+            var paymentMethod = new PaymentMethodResource(); // PaymentMethodResource | The updated payment method data (optional) 
 
             try
             {
                 // Update an existing payment method for a user
-                ModelPaymentMethodResource result = apiInstance.UpdatePaymentMethod(userId, id, paymentMethod);
+                PaymentMethodResource result = apiInstance.UpdatePaymentMethod(userId, id, paymentMethod);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -451,11 +459,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| ID of the user for whom the payment method is being updated | 
  **id** | **int?**| ID of the payment method being updated | 
- **paymentMethod** | [**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)| The updated payment method data | [optional] 
+ **paymentMethod** | [**PaymentMethodResource**](PaymentMethodResource.md)| The updated payment method data | [optional] 
 
 ### Return type
 
-[**ModelPaymentMethodResource**](ModelPaymentMethodResource.md)
+[**PaymentMethodResource**](PaymentMethodResource.md)
 
 ### Authorization
 

@@ -24,7 +24,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="mappings">The mappings to add</param>
         /// <returns></returns>
-        void AddSearchMappings (List<ModelSearchReferenceMapping> mappings);
+        void AddSearchMappings (List<SearchReferenceMapping> mappings);
         /// <summary>
         /// Delete an object Mainly intended for internal use. Requires SEARCH_ADMIN.
         /// </summary>
@@ -45,8 +45,8 @@ namespace com.knetikcloud.Api
         /// <param name="query">The query to be used for the search</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceMapstringobject</returns>
-        ModelPageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page);
+        /// <returns>PageResourceMapstringobject</returns>
+        PageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page);
     }
   
     /// <summary>
@@ -151,7 +151,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="mappings">The mappings to add</param> 
         /// <returns></returns>            
-        public void AddSearchMappings (List<ModelSearchReferenceMapping> mappings)
+        public void AddSearchMappings (List<SearchReferenceMapping> mappings)
         {
             
     
@@ -266,8 +266,8 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="query">The query to be used for the search</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceMapstringobject</returns>            
-        public ModelPageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page)
+        /// <returns>PageResourceMapstringobject</returns>            
+        public PageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page)
         {
             
             // verify the required parameter 'type' is set
@@ -299,7 +299,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SearchIndex: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceMapstringobject) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceMapstringobject), response.Headers);
+            return (PageResourceMapstringobject) ApiClient.Deserialize(response.Content, typeof(PageResourceMapstringobject), response.Headers);
         }
     
     }

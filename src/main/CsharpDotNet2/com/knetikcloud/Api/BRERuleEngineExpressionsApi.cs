@@ -14,8 +14,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of &#39;lookup&#39; type expressions These are expression types that take a second expression as input and produce a value. These can be used in addition to the standard types, like parameter, global and constant (see BRE documentation for details).
         /// </summary>
-        /// <returns>List&lt;ModelLookupTypeResource&gt;</returns>
-        List<ModelLookupTypeResource> GetBREExpressions ();
+        /// <returns>List&lt;LookupTypeResource&gt;</returns>
+        List<LookupTypeResource> GetBREExpressions ();
     }
   
     /// <summary>
@@ -74,8 +74,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of &#39;lookup&#39; type expressions These are expression types that take a second expression as input and produce a value. These can be used in addition to the standard types, like parameter, global and constant (see BRE documentation for details).
         /// </summary>
-        /// <returns>List&lt;ModelLookupTypeResource&gt;</returns>            
-        public List<ModelLookupTypeResource> GetBREExpressions ()
+        /// <returns>List&lt;LookupTypeResource&gt;</returns>            
+        public List<LookupTypeResource> GetBREExpressions ()
         {
             
     
@@ -100,7 +100,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREExpressions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelLookupTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelLookupTypeResource>), response.Headers);
+            return (List<LookupTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<LookupTypeResource>), response.Headers);
         }
     
     }

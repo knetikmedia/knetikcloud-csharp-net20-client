@@ -14,8 +14,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
         /// </summary>
-        /// <returns>List&lt;ModelVariableTypeResource&gt;</returns>
-        List<ModelVariableTypeResource> GetBREVariableTypes ();
+        /// <returns>List&lt;VariableTypeResource&gt;</returns>
+        List<VariableTypeResource> GetBREVariableTypes ();
         /// <summary>
         /// List valid values for a type Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
         /// </summary>
@@ -23,8 +23,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterName">Filter results by those with names starting with this string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceSimpleReferenceResourceobject</returns>
-        ModelPageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page);
+        /// <returns>PageResourceSimpleReferenceResourceobject</returns>
+        PageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page);
     }
   
     /// <summary>
@@ -83,8 +83,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
         /// </summary>
-        /// <returns>List&lt;ModelVariableTypeResource&gt;</returns>            
-        public List<ModelVariableTypeResource> GetBREVariableTypes ()
+        /// <returns>List&lt;VariableTypeResource&gt;</returns>            
+        public List<VariableTypeResource> GetBREVariableTypes ()
         {
             
     
@@ -109,7 +109,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREVariableTypes: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelVariableTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelVariableTypeResource>), response.Headers);
+            return (List<VariableTypeResource>) ApiClient.Deserialize(response.Content, typeof(List<VariableTypeResource>), response.Headers);
         }
     
         /// <summary>
@@ -119,8 +119,8 @@ namespace com.knetikcloud.Api
         /// <param name="filterName">Filter results by those with names starting with this string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceSimpleReferenceResourceobject</returns>            
-        public ModelPageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page)
+        /// <returns>PageResourceSimpleReferenceResourceobject</returns>            
+        public PageResourceSimpleReferenceResourceobject GetBREVariableValues (string name, string filterName, int? size, int? page)
         {
             
             // verify the required parameter 'name' is set
@@ -152,7 +152,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetBREVariableValues: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceSimpleReferenceResourceobject) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceSimpleReferenceResourceobject), response.Headers);
+            return (PageResourceSimpleReferenceResourceobject) ApiClient.Deserialize(response.Content, typeof(PageResourceSimpleReferenceResourceobject), response.Headers);
         }
     
     }

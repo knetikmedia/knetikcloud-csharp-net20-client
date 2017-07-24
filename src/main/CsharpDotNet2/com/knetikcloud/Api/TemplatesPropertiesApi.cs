@@ -15,13 +15,13 @@ namespace com.knetikcloud.Api
         /// Get details for a template property type 
         /// </summary>
         /// <param name="type">type</param>
-        /// <returns>ModelPropertyFieldListResource</returns>
-        ModelPropertyFieldListResource GetTemplatePropertyType (string type);
+        /// <returns>PropertyFieldListResource</returns>
+        PropertyFieldListResource GetTemplatePropertyType (string type);
         /// <summary>
         /// List template property types 
         /// </summary>
-        /// <returns>List&lt;ModelPropertyFieldListResource&gt;</returns>
-        List<ModelPropertyFieldListResource> GetTemplatePropertyTypes ();
+        /// <returns>List&lt;PropertyFieldListResource&gt;</returns>
+        List<PropertyFieldListResource> GetTemplatePropertyTypes ();
     }
   
     /// <summary>
@@ -81,8 +81,8 @@ namespace com.knetikcloud.Api
         /// Get details for a template property type 
         /// </summary>
         /// <param name="type">type</param> 
-        /// <returns>ModelPropertyFieldListResource</returns>            
-        public ModelPropertyFieldListResource GetTemplatePropertyType (string type)
+        /// <returns>PropertyFieldListResource</returns>            
+        public PropertyFieldListResource GetTemplatePropertyType (string type)
         {
             
             // verify the required parameter 'type' is set
@@ -111,14 +111,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTemplatePropertyType: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPropertyFieldListResource) ApiClient.Deserialize(response.Content, typeof(ModelPropertyFieldListResource), response.Headers);
+            return (PropertyFieldListResource) ApiClient.Deserialize(response.Content, typeof(PropertyFieldListResource), response.Headers);
         }
     
         /// <summary>
         /// List template property types 
         /// </summary>
-        /// <returns>List&lt;ModelPropertyFieldListResource&gt;</returns>            
-        public List<ModelPropertyFieldListResource> GetTemplatePropertyTypes ()
+        /// <returns>List&lt;PropertyFieldListResource&gt;</returns>            
+        public List<PropertyFieldListResource> GetTemplatePropertyTypes ()
         {
             
     
@@ -143,7 +143,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTemplatePropertyTypes: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelPropertyFieldListResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelPropertyFieldListResource>), response.Headers);
+            return (List<PropertyFieldListResource>) ApiClient.Deserialize(response.Content, typeof(List<PropertyFieldListResource>), response.Headers);
         }
     
     }

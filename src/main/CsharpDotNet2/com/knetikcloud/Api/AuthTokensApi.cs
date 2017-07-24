@@ -23,8 +23,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="username">The username of the user</param>
         /// <param name="clientId">The id of the client</param>
-        /// <returns>ModelOauthAccessTokenResource</returns>
-        ModelOauthAccessTokenResource GetToken (string username, string clientId);
+        /// <returns>OauthAccessTokenResource</returns>
+        OauthAccessTokenResource GetToken (string username, string clientId);
         /// <summary>
         /// List usernames and client ids Token value not shown
         /// </summary>
@@ -33,8 +33,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceOauthAccessTokenResource</returns>
-        ModelPageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order);
+        /// <returns>PageResourceOauthAccessTokenResource</returns>
+        PageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order);
     }
   
     /// <summary>
@@ -131,8 +131,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="username">The username of the user</param> 
         /// <param name="clientId">The id of the client</param> 
-        /// <returns>ModelOauthAccessTokenResource</returns>            
-        public ModelOauthAccessTokenResource GetToken (string username, string clientId)
+        /// <returns>OauthAccessTokenResource</returns>            
+        public OauthAccessTokenResource GetToken (string username, string clientId)
         {
             
             // verify the required parameter 'username' is set
@@ -165,7 +165,7 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetToken: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelOauthAccessTokenResource) ApiClient.Deserialize(response.Content, typeof(ModelOauthAccessTokenResource), response.Headers);
+            return (OauthAccessTokenResource) ApiClient.Deserialize(response.Content, typeof(OauthAccessTokenResource), response.Headers);
         }
     
         /// <summary>
@@ -176,8 +176,8 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceOauthAccessTokenResource</returns>            
-        public ModelPageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order)
+        /// <returns>PageResourceOauthAccessTokenResource</returns>            
+        public PageResourceOauthAccessTokenResource GetTokens (string filterClientId, string filterUsername, int? size, int? page, string order)
         {
             
     
@@ -207,7 +207,7 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTokens: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceOauthAccessTokenResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceOauthAccessTokenResource), response.Headers);
+            return (PageResourceOauthAccessTokenResource) ApiClient.Deserialize(response.Content, typeof(PageResourceOauthAccessTokenResource), response.Headers);
         }
     
     }

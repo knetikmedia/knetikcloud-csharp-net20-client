@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a reward set 
         /// </summary>
         /// <param name="rewardSetResource">The reward set resource object</param>
-        /// <returns>ModelRewardSetResource</returns>
-        ModelRewardSetResource CreateRewardSet (ModelRewardSetResource rewardSetResource);
+        /// <returns>RewardSetResource</returns>
+        RewardSetResource CreateRewardSet (RewardSetResource rewardSetResource);
         /// <summary>
         /// Delete a reward set 
         /// </summary>
@@ -27,23 +27,23 @@ namespace com.knetikcloud.Api
         /// Get a single reward set 
         /// </summary>
         /// <param name="id">The reward id</param>
-        /// <returns>ModelRewardSetResource</returns>
-        ModelRewardSetResource GetRewardSet (int? id);
+        /// <returns>RewardSetResource</returns>
+        RewardSetResource GetRewardSet (int? id);
         /// <summary>
         /// List and search reward sets 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceRewardSetResource</returns>
-        ModelPageResourceRewardSetResource GetRewardSets (int? size, int? page, string order);
+        /// <returns>PageResourceRewardSetResource</returns>
+        PageResourceRewardSetResource GetRewardSets (int? size, int? page, string order);
         /// <summary>
         /// Update a reward set 
         /// </summary>
         /// <param name="id">The reward id</param>
         /// <param name="rewardSetResource">The reward set resource object</param>
-        /// <returns>ModelRewardSetResource</returns>
-        ModelRewardSetResource UpdateRewardSet (int? id, ModelRewardSetResource rewardSetResource);
+        /// <returns>RewardSetResource</returns>
+        RewardSetResource UpdateRewardSet (int? id, RewardSetResource rewardSetResource);
     }
   
     /// <summary>
@@ -103,8 +103,8 @@ namespace com.knetikcloud.Api
         /// Create a reward set 
         /// </summary>
         /// <param name="rewardSetResource">The reward set resource object</param> 
-        /// <returns>ModelRewardSetResource</returns>            
-        public ModelRewardSetResource CreateRewardSet (ModelRewardSetResource rewardSetResource)
+        /// <returns>RewardSetResource</returns>            
+        public RewardSetResource CreateRewardSet (RewardSetResource rewardSetResource)
         {
             
     
@@ -130,7 +130,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateRewardSet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRewardSetResource) ApiClient.Deserialize(response.Content, typeof(ModelRewardSetResource), response.Headers);
+            return (RewardSetResource) ApiClient.Deserialize(response.Content, typeof(RewardSetResource), response.Headers);
         }
     
         /// <summary>
@@ -174,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Get a single reward set 
         /// </summary>
         /// <param name="id">The reward id</param> 
-        /// <returns>ModelRewardSetResource</returns>            
-        public ModelRewardSetResource GetRewardSet (int? id)
+        /// <returns>RewardSetResource</returns>            
+        public RewardSetResource GetRewardSet (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRewardSet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRewardSetResource) ApiClient.Deserialize(response.Content, typeof(ModelRewardSetResource), response.Headers);
+            return (RewardSetResource) ApiClient.Deserialize(response.Content, typeof(RewardSetResource), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceRewardSetResource</returns>            
-        public ModelPageResourceRewardSetResource GetRewardSets (int? size, int? page, string order)
+        /// <returns>PageResourceRewardSetResource</returns>            
+        public PageResourceRewardSetResource GetRewardSets (int? size, int? page, string order)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetRewardSets: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceRewardSetResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceRewardSetResource), response.Headers);
+            return (PageResourceRewardSetResource) ApiClient.Deserialize(response.Content, typeof(PageResourceRewardSetResource), response.Headers);
         }
     
         /// <summary>
@@ -250,8 +250,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The reward id</param> 
         /// <param name="rewardSetResource">The reward set resource object</param> 
-        /// <returns>ModelRewardSetResource</returns>            
-        public ModelRewardSetResource UpdateRewardSet (int? id, ModelRewardSetResource rewardSetResource)
+        /// <returns>RewardSetResource</returns>            
+        public RewardSetResource UpdateRewardSet (int? id, RewardSetResource rewardSetResource)
         {
             
             // verify the required parameter 'id' is set
@@ -281,7 +281,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateRewardSet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRewardSetResource) ApiClient.Deserialize(response.Content, typeof(ModelRewardSetResource), response.Headers);
+            return (RewardSetResource) ApiClient.Deserialize(response.Content, typeof(RewardSetResource), response.Headers);
         }
     
     }

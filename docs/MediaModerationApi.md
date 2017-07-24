@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getmoderationreport"></a>
 # **GetModerationReport**
-> ModelFlagReportResource GetModerationReport (long? id)
+> FlagReportResource GetModerationReport (long? id)
 
 Get a flag report
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // Get a flag report
-                ModelFlagReportResource result = apiInstance.GetModerationReport(id);
+                FlagReportResource result = apiInstance.GetModerationReport(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelFlagReportResource**](ModelFlagReportResource.md)
+[**FlagReportResource**](FlagReportResource.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="getmoderationreports"></a>
 # **GetModerationReports**
-> ModelPageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page)
+> PageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, int? size, int? page)
 
 Returns a page of flag reports
 
@@ -107,7 +107,7 @@ namespace Example
             try
             {
                 // Returns a page of flag reports
-                ModelPageResourceFlagReportResource result = apiInstance.GetModerationReports(excludeResolved, filterContext, size, page);
+                PageResourceFlagReportResource result = apiInstance.GetModerationReports(excludeResolved, filterContext, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceFlagReportResource**](ModelPageResourceFlagReportResource.md)
+[**PageResourceFlagReportResource**](PageResourceFlagReportResource.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 <a name="updatemoderationreport"></a>
 # **UpdateModerationReport**
-> void UpdateModerationReport (long? id, ModelFlagReportResource flagReportResource)
+> void UpdateModerationReport (long? id, FlagReportResource flagReportResource)
 
 Update a flag report
 
@@ -171,7 +171,7 @@ namespace Example
 
             var apiInstance = new MediaModerationApi();
             var id = 789;  // long? | The flag report id
-            var flagReportResource = new ModelFlagReportResource(); // ModelFlagReportResource | The new flag report (optional) 
+            var flagReportResource = new FlagReportResource(); // FlagReportResource | The new flag report (optional) 
 
             try
             {
@@ -192,7 +192,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The flag report id | 
- **flagReportResource** | [**ModelFlagReportResource**](ModelFlagReportResource.md)| The new flag report | [optional] 
+ **flagReportResource** | [**FlagReportResource**](FlagReportResource.md)| The new flag report | [optional] 
 
 ### Return type
 

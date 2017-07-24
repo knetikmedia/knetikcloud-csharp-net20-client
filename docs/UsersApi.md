@@ -88,7 +88,7 @@ void (empty response body)
 
 <a name="createusertemplate"></a>
 # **CreateUserTemplate**
-> ModelTemplateResource CreateUserTemplate (ModelTemplateResource userTemplateResource)
+> TemplateResource CreateUserTemplate (TemplateResource userTemplateResource)
 
 Create a user template
 
@@ -113,12 +113,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersApi();
-            var userTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The user template resource object (optional) 
+            var userTemplateResource = new TemplateResource(); // TemplateResource | The user template resource object (optional) 
 
             try
             {
                 // Create a user template
-                ModelTemplateResource result = apiInstance.CreateUserTemplate(userTemplateResource);
+                TemplateResource result = apiInstance.CreateUserTemplate(userTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -134,11 +134,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The user template resource object | [optional] 
+ **userTemplateResource** | [**TemplateResource**](TemplateResource.md)| The user template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ void (empty response body)
 
 <a name="getuser"></a>
 # **GetUser**
-> ModelUserResource GetUser (string id)
+> UserResource GetUser (string id)
 
 Get a single user
 
@@ -249,7 +249,7 @@ namespace Example
             try
             {
                 // Get a single user
-                ModelUserResource result = apiInstance.GetUser(id);
+                UserResource result = apiInstance.GetUser(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserResource**](ModelUserResource.md)
+[**UserResource**](UserResource.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 <a name="getusertemplate"></a>
 # **GetUserTemplate**
-> ModelTemplateResource GetUserTemplate (string id)
+> TemplateResource GetUserTemplate (string id)
 
 Get a single user template
 
@@ -375,7 +375,7 @@ namespace Example
             try
             {
                 // Get a single user template
-                ModelTemplateResource result = apiInstance.GetUserTemplate(id);
+                TemplateResource result = apiInstance.GetUserTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 <a name="getusertemplates"></a>
 # **GetUserTemplates**
-> ModelPageResourceTemplateResource GetUserTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetUserTemplates (int? size, int? page, string order)
 
 List and search user templates
 
@@ -440,7 +440,7 @@ namespace Example
             try
             {
                 // List and search user templates
-                ModelPageResourceTemplateResource result = apiInstance.GetUserTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetUserTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 <a name="getusers"></a>
 # **GetUsers**
-> ModelPageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order)
+> PageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterSearch, int? size, int? page, string order)
 
 List and search users
 
@@ -519,7 +519,7 @@ namespace Example
             try
             {
                 // List and search users
-                ModelPageResourceUserBaseResource result = apiInstance.GetUsers(filterDisplayname, filterEmail, filterFirstname, filterFullname, filterLastname, filterUsername, filterTag, filterGroup, filterRole, filterSearch, size, page, order);
+                PageResourceUserBaseResource result = apiInstance.GetUsers(filterDisplayname, filterEmail, filterFirstname, filterFullname, filterLastname, filterUsername, filterTag, filterGroup, filterRole, filterSearch, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserBaseResource**](ModelPageResourceUserBaseResource.md)
+[**PageResourceUserBaseResource**](PageResourceUserBaseResource.md)
 
 ### Authorization
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 <a name="passwordreset"></a>
 # **PasswordReset**
-> void PasswordReset (int? id, ModelNewPasswordRequest newPasswordRequest)
+> void PasswordReset (int? id, NewPasswordRequest newPasswordRequest)
 
 Choose a new password after a reset
 
@@ -589,7 +589,7 @@ namespace Example
             
             var apiInstance = new UsersApi();
             var id = 56;  // int? | The id of the user
-            var newPasswordRequest = new ModelNewPasswordRequest(); // ModelNewPasswordRequest | The new password request object (optional) 
+            var newPasswordRequest = new NewPasswordRequest(); // NewPasswordRequest | The new password request object (optional) 
 
             try
             {
@@ -610,7 +610,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the user | 
- **newPasswordRequest** | [**ModelNewPasswordRequest**](ModelNewPasswordRequest.md)| The new password request object | [optional] 
+ **newPasswordRequest** | [**NewPasswordRequest**](NewPasswordRequest.md)| The new password request object | [optional] 
 
 ### Return type
 
@@ -629,7 +629,7 @@ No authorization required
 
 <a name="registeruser"></a>
 # **RegisterUser**
-> ModelUserResource RegisterUser (ModelUserResource userResource)
+> UserResource RegisterUser (UserResource userResource)
 
 Register a new user
 
@@ -651,12 +651,12 @@ namespace Example
         {
             
             var apiInstance = new UsersApi();
-            var userResource = new ModelUserResource(); // ModelUserResource | The user resource object (optional) 
+            var userResource = new UserResource(); // UserResource | The user resource object (optional) 
 
             try
             {
                 // Register a new user
-                ModelUserResource result = apiInstance.RegisterUser(userResource);
+                UserResource result = apiInstance.RegisterUser(userResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -672,11 +672,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userResource** | [**ModelUserResource**](ModelUserResource.md)| The user resource object | [optional] 
+ **userResource** | [**UserResource**](UserResource.md)| The user resource object | [optional] 
 
 ### Return type
 
-[**ModelUserResource**](ModelUserResource.md)
+[**UserResource**](UserResource.md)
 
 ### Authorization
 
@@ -882,7 +882,7 @@ No authorization required
 
 <a name="submitpasswordreset"></a>
 # **SubmitPasswordReset**
-> void SubmitPasswordReset (ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty passwordReset)
+> void SubmitPasswordReset (PasswordResetRequest passwordReset)
 
 Reset a user's password without user id
 
@@ -904,7 +904,7 @@ namespace Example
         {
             
             var apiInstance = new UsersApi();
-            var passwordReset = new ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty(); // ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty | An object containing one of three methods to look up a user (optional) 
+            var passwordReset = new PasswordResetRequest(); // PasswordResetRequest | An object containing one of three methods to look up a user (optional) 
 
             try
             {
@@ -924,7 +924,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **passwordReset** | [**ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty**](ModelARequestToResetAUsersPasswordByUsingAKnownUserProperty.md)| An object containing one of three methods to look up a user | [optional] 
+ **passwordReset** | [**PasswordResetRequest**](PasswordResetRequest.md)| An object containing one of three methods to look up a user | [optional] 
 
 ### Return type
 
@@ -943,7 +943,7 @@ No authorization required
 
 <a name="updateuser"></a>
 # **UpdateUser**
-> void UpdateUser (string id, ModelUserResource userResource)
+> void UpdateUser (string id, UserResource userResource)
 
 Update a user
 
@@ -969,7 +969,7 @@ namespace Example
 
             var apiInstance = new UsersApi();
             var id = id_example;  // string | The id of the user or 'me'
-            var userResource = new ModelUserResource(); // ModelUserResource | The user resource object (optional) 
+            var userResource = new UserResource(); // UserResource | The user resource object (optional) 
 
             try
             {
@@ -990,7 +990,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the user or &#39;me&#39; | 
- **userResource** | [**ModelUserResource**](ModelUserResource.md)| The user resource object | [optional] 
+ **userResource** | [**UserResource**](UserResource.md)| The user resource object | [optional] 
 
 ### Return type
 
@@ -1009,7 +1009,7 @@ void (empty response body)
 
 <a name="updateusertemplate"></a>
 # **UpdateUserTemplate**
-> ModelTemplateResource UpdateUserTemplate (string id, ModelTemplateResource userTemplateResource)
+> TemplateResource UpdateUserTemplate (string id, TemplateResource userTemplateResource)
 
 Update a user template
 
@@ -1033,12 +1033,12 @@ namespace Example
 
             var apiInstance = new UsersApi();
             var id = id_example;  // string | The id of the template
-            var userTemplateResource = new ModelTemplateResource(); // ModelTemplateResource | The user template resource object (optional) 
+            var userTemplateResource = new TemplateResource(); // TemplateResource | The user template resource object (optional) 
 
             try
             {
                 // Update a user template
-                ModelTemplateResource result = apiInstance.UpdateUserTemplate(id, userTemplateResource);
+                TemplateResource result = apiInstance.UpdateUserTemplate(id, userTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1055,11 +1055,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **userTemplateResource** | [**ModelTemplateResource**](ModelTemplateResource.md)| The user template resource object | [optional] 
+ **userTemplateResource** | [**TemplateResource**](TemplateResource.md)| The user template resource object | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

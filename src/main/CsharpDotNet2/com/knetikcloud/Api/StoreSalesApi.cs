@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a sale 
         /// </summary>
         /// <param name="catalogSale">The catalog sale object</param>
-        /// <returns>ModelCatalogSale</returns>
-        ModelCatalogSale CreateCatalogSale (ModelCatalogSale catalogSale);
+        /// <returns>CatalogSale</returns>
+        CatalogSale CreateCatalogSale (CatalogSale catalogSale);
         /// <summary>
         /// Delete a sale 
         /// </summary>
@@ -27,23 +27,23 @@ namespace com.knetikcloud.Api
         /// Get a single sale 
         /// </summary>
         /// <param name="id">The id of the sale</param>
-        /// <returns>ModelCatalogSale</returns>
-        ModelCatalogSale GetCatalogSale (int? id);
+        /// <returns>CatalogSale</returns>
+        CatalogSale GetCatalogSale (int? id);
         /// <summary>
         /// List and search sales 
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceCatalogSale</returns>
-        ModelPageResourceCatalogSale GetCatalogSales (int? size, int? page, string order);
+        /// <returns>PageResourceCatalogSale</returns>
+        PageResourceCatalogSale GetCatalogSales (int? size, int? page, string order);
         /// <summary>
         /// Update a sale 
         /// </summary>
         /// <param name="id">The id of the sale</param>
         /// <param name="catalogSale">The catalog sale object</param>
-        /// <returns>ModelCatalogSale</returns>
-        ModelCatalogSale UpdateCatalogSale (int? id, ModelCatalogSale catalogSale);
+        /// <returns>CatalogSale</returns>
+        CatalogSale UpdateCatalogSale (int? id, CatalogSale catalogSale);
     }
   
     /// <summary>
@@ -103,8 +103,8 @@ namespace com.knetikcloud.Api
         /// Create a sale 
         /// </summary>
         /// <param name="catalogSale">The catalog sale object</param> 
-        /// <returns>ModelCatalogSale</returns>            
-        public ModelCatalogSale CreateCatalogSale (ModelCatalogSale catalogSale)
+        /// <returns>CatalogSale</returns>            
+        public CatalogSale CreateCatalogSale (CatalogSale catalogSale)
         {
             
     
@@ -130,7 +130,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateCatalogSale: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCatalogSale) ApiClient.Deserialize(response.Content, typeof(ModelCatalogSale), response.Headers);
+            return (CatalogSale) ApiClient.Deserialize(response.Content, typeof(CatalogSale), response.Headers);
         }
     
         /// <summary>
@@ -174,8 +174,8 @@ namespace com.knetikcloud.Api
         /// Get a single sale 
         /// </summary>
         /// <param name="id">The id of the sale</param> 
-        /// <returns>ModelCatalogSale</returns>            
-        public ModelCatalogSale GetCatalogSale (int? id)
+        /// <returns>CatalogSale</returns>            
+        public CatalogSale GetCatalogSale (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCatalogSale: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCatalogSale) ApiClient.Deserialize(response.Content, typeof(ModelCatalogSale), response.Headers);
+            return (CatalogSale) ApiClient.Deserialize(response.Content, typeof(CatalogSale), response.Headers);
         }
     
         /// <summary>
@@ -213,8 +213,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceCatalogSale</returns>            
-        public ModelPageResourceCatalogSale GetCatalogSales (int? size, int? page, string order)
+        /// <returns>PageResourceCatalogSale</returns>            
+        public PageResourceCatalogSale GetCatalogSales (int? size, int? page, string order)
         {
             
     
@@ -242,7 +242,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCatalogSales: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceCatalogSale) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceCatalogSale), response.Headers);
+            return (PageResourceCatalogSale) ApiClient.Deserialize(response.Content, typeof(PageResourceCatalogSale), response.Headers);
         }
     
         /// <summary>
@@ -250,8 +250,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the sale</param> 
         /// <param name="catalogSale">The catalog sale object</param> 
-        /// <returns>ModelCatalogSale</returns>            
-        public ModelCatalogSale UpdateCatalogSale (int? id, ModelCatalogSale catalogSale)
+        /// <returns>CatalogSale</returns>            
+        public CatalogSale UpdateCatalogSale (int? id, CatalogSale catalogSale)
         {
             
             // verify the required parameter 'id' is set
@@ -281,7 +281,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCatalogSale: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCatalogSale) ApiClient.Deserialize(response.Content, typeof(ModelCatalogSale), response.Headers);
+            return (CatalogSale) ApiClient.Deserialize(response.Content, typeof(CatalogSale), response.Headers);
         }
     
     }

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createpermission"></a>
 # **CreatePermission**
-> ModelPermissionResource CreatePermission (ModelPermissionResource permissionResource)
+> PermissionResource CreatePermission (PermissionResource permissionResource)
 
 Create a new permission
 
@@ -36,12 +36,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new AuthPermissionsApi();
-            var permissionResource = new ModelPermissionResource(); // ModelPermissionResource | The permission resource object (optional) 
+            var permissionResource = new PermissionResource(); // PermissionResource | The permission resource object (optional) 
 
             try
             {
                 // Create a new permission
-                ModelPermissionResource result = apiInstance.CreatePermission(permissionResource);
+                PermissionResource result = apiInstance.CreatePermission(permissionResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,11 +57,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **permissionResource** | [**ModelPermissionResource**](ModelPermissionResource.md)| The permission resource object | [optional] 
+ **permissionResource** | [**PermissionResource**](PermissionResource.md)| The permission resource object | [optional] 
 
 ### Return type
 
-[**ModelPermissionResource**](ModelPermissionResource.md)
+[**PermissionResource**](PermissionResource.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ void (empty response body)
 
 <a name="getpermission"></a>
 # **GetPermission**
-> ModelPermissionResource GetPermission (string permission)
+> PermissionResource GetPermission (string permission)
 
 Get a single permission
 
@@ -168,7 +168,7 @@ namespace Example
             try
             {
                 // Get a single permission
-                ModelPermissionResource result = apiInstance.GetPermission(permission);
+                PermissionResource result = apiInstance.GetPermission(permission);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPermissionResource**](ModelPermissionResource.md)
+[**PermissionResource**](PermissionResource.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 <a name="getpermissions"></a>
 # **GetPermissions**
-> ModelPageResourcePermissionResource GetPermissions (int? size, int? page, string order)
+> PageResourcePermissionResource GetPermissions (int? size, int? page, string order)
 
 List and search permissions
 
@@ -233,7 +233,7 @@ namespace Example
             try
             {
                 // List and search permissions
-                ModelPageResourcePermissionResource result = apiInstance.GetPermissions(size, page, order);
+                PageResourcePermissionResource result = apiInstance.GetPermissions(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourcePermissionResource**](ModelPageResourcePermissionResource.md)
+[**PageResourcePermissionResource**](PageResourcePermissionResource.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a name="updatepermission"></a>
 # **UpdatePermission**
-> ModelPermissionResource UpdatePermission (string permission, ModelPermissionResource permissionResource)
+> PermissionResource UpdatePermission (string permission, PermissionResource permissionResource)
 
 Update a permission
 
@@ -294,12 +294,12 @@ namespace Example
 
             var apiInstance = new AuthPermissionsApi();
             var permission = permission_example;  // string | The permission value
-            var permissionResource = new ModelPermissionResource(); // ModelPermissionResource | The permission resource object (optional) 
+            var permissionResource = new PermissionResource(); // PermissionResource | The permission resource object (optional) 
 
             try
             {
                 // Update a permission
-                ModelPermissionResource result = apiInstance.UpdatePermission(permission, permissionResource);
+                PermissionResource result = apiInstance.UpdatePermission(permission, permissionResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -316,11 +316,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **permission** | **string**| The permission value | 
- **permissionResource** | [**ModelPermissionResource**](ModelPermissionResource.md)| The permission resource object | [optional] 
+ **permissionResource** | [**PermissionResource**](PermissionResource.md)| The permission resource object | [optional] 
 
 ### Return type
 
-[**ModelPermissionResource**](ModelPermissionResource.md)
+[**PermissionResource**](PermissionResource.md)
 
 ### Authorization
 

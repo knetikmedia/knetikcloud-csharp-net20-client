@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getbatch"></a>
 # **GetBatch**
-> List<ModelBatchReturn> GetBatch (string token)
+> List<BatchReturn> GetBatch (string token)
 
 Get batch result with token
 
@@ -37,7 +37,7 @@ namespace Example
             try
             {
                 // Get batch result with token
-                List&lt;ModelBatchReturn&gt; result = apiInstance.GetBatch(token);
+                List&lt;BatchReturn&gt; result = apiInstance.GetBatch(token);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelBatchReturn>**](ModelBatchReturn.md)
+[**List<BatchReturn>**](BatchReturn.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 
 <a name="sendbatch"></a>
 # **SendBatch**
-> List<ModelBatchReturn> SendBatch (ModelBatch batch)
+> List<BatchReturn> SendBatch (Batch batch)
 
 Request to run API call given the method, content type, path url, and body of request
 
@@ -94,12 +94,12 @@ namespace Example
         {
             
             var apiInstance = new UtilBatchApi();
-            var batch = new ModelBatch(); // ModelBatch | The batch object (optional) 
+            var batch = new Batch(); // Batch | The batch object (optional) 
 
             try
             {
                 // Request to run API call given the method, content type, path url, and body of request
-                List&lt;ModelBatchReturn&gt; result = apiInstance.SendBatch(batch);
+                List&lt;BatchReturn&gt; result = apiInstance.SendBatch(batch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -115,11 +115,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batch** | [**ModelBatch**](ModelBatch.md)| The batch object | [optional] 
+ **batch** | [**Batch**](Batch.md)| The batch object | [optional] 
 
 ### Return type
 
-[**List<ModelBatchReturn>**](ModelBatchReturn.md)
+[**List<BatchReturn>**](BatchReturn.md)
 
 ### Authorization
 

@@ -16,25 +16,25 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to create a PayPal billing agreement</param>
         /// <returns>string</returns>
-        string CreatePayPalBillingAgreementUrl (ModelCreateBillingAgreementRequest request);
+        string CreatePayPalBillingAgreementUrl (CreateBillingAgreementRequest request);
         /// <summary>
         /// Create a payment token for PayPal express checkout Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
         /// </summary>
         /// <param name="request">The request to create a PayPal payment token</param>
         /// <returns>string</returns>
-        string CreatePayPalExpressCheckout (ModelCreatePayPalPaymentRequest request);
+        string CreatePayPalExpressCheckout (CreatePayPalPaymentRequest request);
         /// <summary>
         /// Finalizes a billing agreement after the user has accepted through PayPal Returns the ID of the new payment method created for the user for the billing agreement.
         /// </summary>
         /// <param name="request">The request to finalize a PayPal billing agreement</param>
         /// <returns>int?</returns>
-        int? FinalizePayPalBillingAgreement (ModelFinalizeBillingAgreementRequest request);
+        int? FinalizePayPalBillingAgreement (FinalizeBillingAgreementRequest request);
         /// <summary>
         /// Finalizes a payment after the user has completed checkout with PayPal The invoice will be marked paid/failed by asynchronous IPN callback.
         /// </summary>
         /// <param name="request">The request to finalize the payment</param>
         /// <returns></returns>
-        void FinalizePayPalCheckout (ModelFinalizePayPalPaymentRequest request);
+        void FinalizePayPalCheckout (FinalizePayPalPaymentRequest request);
     }
   
     /// <summary>
@@ -95,7 +95,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to create a PayPal billing agreement</param> 
         /// <returns>string</returns>            
-        public string CreatePayPalBillingAgreementUrl (ModelCreateBillingAgreementRequest request)
+        public string CreatePayPalBillingAgreementUrl (CreateBillingAgreementRequest request)
         {
             
     
@@ -129,7 +129,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to create a PayPal payment token</param> 
         /// <returns>string</returns>            
-        public string CreatePayPalExpressCheckout (ModelCreatePayPalPaymentRequest request)
+        public string CreatePayPalExpressCheckout (CreatePayPalPaymentRequest request)
         {
             
     
@@ -163,7 +163,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to finalize a PayPal billing agreement</param> 
         /// <returns>int?</returns>            
-        public int? FinalizePayPalBillingAgreement (ModelFinalizeBillingAgreementRequest request)
+        public int? FinalizePayPalBillingAgreement (FinalizeBillingAgreementRequest request)
         {
             
     
@@ -197,7 +197,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="request">The request to finalize the payment</param> 
         /// <returns></returns>            
-        public void FinalizePayPalCheckout (ModelFinalizePayPalPaymentRequest request)
+        public void FinalizePayPalCheckout (FinalizePayPalPaymentRequest request)
         {
             
     

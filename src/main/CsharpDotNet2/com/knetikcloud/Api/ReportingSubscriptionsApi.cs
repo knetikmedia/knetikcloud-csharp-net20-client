@@ -16,8 +16,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>ModelPageResourceBillingReport</returns>
-        ModelPageResourceBillingReport GetSubscriptionReports (int? size, int? page);
+        /// <returns>PageResourceBillingReport</returns>
+        PageResourceBillingReport GetSubscriptionReports (int? size, int? page);
     }
   
     /// <summary>
@@ -78,8 +78,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>ModelPageResourceBillingReport</returns>            
-        public ModelPageResourceBillingReport GetSubscriptionReports (int? size, int? page)
+        /// <returns>PageResourceBillingReport</returns>            
+        public PageResourceBillingReport GetSubscriptionReports (int? size, int? page)
         {
             
     
@@ -106,7 +106,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetSubscriptionReports: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceBillingReport) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceBillingReport), response.Headers);
+            return (PageResourceBillingReport) ApiClient.Deserialize(response.Content, typeof(PageResourceBillingReport), response.Headers);
         }
     
     }

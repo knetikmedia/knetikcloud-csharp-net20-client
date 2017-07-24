@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getsigneds3url"></a>
 # **GetSignedS3URL**
-> ModelAmazonS3Activity GetSignedS3URL (string filename, string contentType)
+> AmazonS3Activity GetSignedS3URL (string filename, string contentType)
 
 Get a signed S3 URL
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // Get a signed S3 URL
-                ModelAmazonS3Activity result = apiInstance.GetSignedS3URL(filename, contentType);
+                AmazonS3Activity result = apiInstance.GetSignedS3URL(filename, contentType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelAmazonS3Activity**](ModelAmazonS3Activity.md)
+[**AmazonS3Activity**](AmazonS3Activity.md)
 
 ### Authorization
 

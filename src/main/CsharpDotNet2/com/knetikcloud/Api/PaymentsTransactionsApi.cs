@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Get the details for a single transaction 
         /// </summary>
         /// <param name="id">id</param>
-        /// <returns>ModelTransactionResource</returns>
-        ModelTransactionResource GetTransaction (int? id);
+        /// <returns>TransactionResource</returns>
+        TransactionResource GetTransaction (int? id);
         /// <summary>
         /// List and search transactions 
         /// </summary>
@@ -24,15 +24,15 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceTransactionResource</returns>
-        ModelPageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order);
+        /// <returns>PageResourceTransactionResource</returns>
+        PageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order);
         /// <summary>
         /// Refund a payment transaction, in full or in part Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
         /// </summary>
         /// <param name="id">The id of the transaction to refund</param>
         /// <param name="request">Request containing refund details</param>
-        /// <returns>ModelRefundResource</returns>
-        ModelRefundResource RefundTransaction (int? id, ModelRefundRequest request);
+        /// <returns>RefundResource</returns>
+        RefundResource RefundTransaction (int? id, RefundRequest request);
     }
   
     /// <summary>
@@ -92,8 +92,8 @@ namespace com.knetikcloud.Api
         /// Get the details for a single transaction 
         /// </summary>
         /// <param name="id">id</param> 
-        /// <returns>ModelTransactionResource</returns>            
-        public ModelTransactionResource GetTransaction (int? id)
+        /// <returns>TransactionResource</returns>            
+        public TransactionResource GetTransaction (int? id)
         {
             
             // verify the required parameter 'id' is set
@@ -122,7 +122,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTransaction: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelTransactionResource) ApiClient.Deserialize(response.Content, typeof(ModelTransactionResource), response.Headers);
+            return (TransactionResource) ApiClient.Deserialize(response.Content, typeof(TransactionResource), response.Headers);
         }
     
         /// <summary>
@@ -132,8 +132,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceTransactionResource</returns>            
-        public ModelPageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order)
+        /// <returns>PageResourceTransactionResource</returns>            
+        public PageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order)
         {
             
     
@@ -162,7 +162,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetTransactions: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceTransactionResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceTransactionResource), response.Headers);
+            return (PageResourceTransactionResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTransactionResource), response.Headers);
         }
     
         /// <summary>
@@ -170,8 +170,8 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="id">The id of the transaction to refund</param> 
         /// <param name="request">Request containing refund details</param> 
-        /// <returns>ModelRefundResource</returns>            
-        public ModelRefundResource RefundTransaction (int? id, ModelRefundRequest request)
+        /// <returns>RefundResource</returns>            
+        public RefundResource RefundTransaction (int? id, RefundRequest request)
         {
             
             // verify the required parameter 'id' is set
@@ -201,7 +201,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling RefundTransaction: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelRefundResource) ApiClient.Deserialize(response.Content, typeof(ModelRefundResource), response.Headers);
+            return (RefundResource) ApiClient.Deserialize(response.Content, typeof(RefundResource), response.Headers);
         }
     
     }

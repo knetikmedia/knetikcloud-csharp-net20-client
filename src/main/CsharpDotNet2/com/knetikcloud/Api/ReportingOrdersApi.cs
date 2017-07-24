@@ -22,8 +22,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to return, unix timestamp in seconds. Default is end of time</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
-        /// <returns>ModelPageResourceAggregateInvoiceReportResource</returns>
-        ModelPageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page);
+        /// <returns>PageResourceAggregateInvoiceReportResource</returns>
+        PageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page);
     }
   
     /// <summary>
@@ -90,8 +90,8 @@ namespace com.knetikcloud.Api
         /// <param name="endDate">The end of the time range to return, unix timestamp in seconds. Default is end of time</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
-        /// <returns>ModelPageResourceAggregateInvoiceReportResource</returns>            
-        public ModelPageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page)
+        /// <returns>PageResourceAggregateInvoiceReportResource</returns>            
+        public PageResourceAggregateInvoiceReportResource GetInvoiceReports (string currencyCode, string granularity, string filterPaymentStatus, string filterFulfillmentStatus, long? startDate, long? endDate, int? size, int? page)
         {
             
             // verify the required parameter 'currencyCode' is set
@@ -127,7 +127,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetInvoiceReports: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceAggregateInvoiceReportResource) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceAggregateInvoiceReportResource), response.Headers);
+            return (PageResourceAggregateInvoiceReportResource) ApiClient.Deserialize(response.Content, typeof(PageResourceAggregateInvoiceReportResource), response.Headers);
         }
     
     }

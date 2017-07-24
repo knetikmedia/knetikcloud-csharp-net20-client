@@ -1,9 +1,9 @@
-# com.knetikcloud.Model.ModelBooleanResource
+# com.knetikcloud.Model.BooleanResource
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | **bool?** |  | [optional] [default to null]
+**Value** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

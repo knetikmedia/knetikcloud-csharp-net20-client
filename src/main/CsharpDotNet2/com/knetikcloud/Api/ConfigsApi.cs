@@ -15,8 +15,8 @@ namespace com.knetikcloud.Api
         /// Create a new config 
         /// </summary>
         /// <param name="config">The config object</param>
-        /// <returns>ModelConfig</returns>
-        ModelConfig CreateConfig (ModelConfig config);
+        /// <returns>Config</returns>
+        Config CreateConfig (Config config);
         /// <summary>
         /// Delete an existing config 
         /// </summary>
@@ -27,8 +27,8 @@ namespace com.knetikcloud.Api
         /// Get a single config Only configs that are public readable will be shown without admin access
         /// </summary>
         /// <param name="name">The config name</param>
-        /// <returns>ModelConfig</returns>
-        ModelConfig GetConfig (string name);
+        /// <returns>Config</returns>
+        Config GetConfig (string name);
         /// <summary>
         /// List and search configs 
         /// </summary>
@@ -36,15 +36,15 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
-        /// <returns>ModelPageResourceConfig</returns>
-        ModelPageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order);
+        /// <returns>PageResourceConfig</returns>
+        PageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order);
         /// <summary>
         /// Update an existing config 
         /// </summary>
         /// <param name="name">The config name</param>
         /// <param name="config">The config object</param>
         /// <returns></returns>
-        void UpdateConfig (string name, ModelConfig config);
+        void UpdateConfig (string name, Config config);
     }
   
     /// <summary>
@@ -104,8 +104,8 @@ namespace com.knetikcloud.Api
         /// Create a new config 
         /// </summary>
         /// <param name="config">The config object</param> 
-        /// <returns>ModelConfig</returns>            
-        public ModelConfig CreateConfig (ModelConfig config)
+        /// <returns>Config</returns>            
+        public Config CreateConfig (Config config)
         {
             
     
@@ -131,7 +131,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateConfig: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelConfig) ApiClient.Deserialize(response.Content, typeof(ModelConfig), response.Headers);
+            return (Config) ApiClient.Deserialize(response.Content, typeof(Config), response.Headers);
         }
     
         /// <summary>
@@ -175,8 +175,8 @@ namespace com.knetikcloud.Api
         /// Get a single config Only configs that are public readable will be shown without admin access
         /// </summary>
         /// <param name="name">The config name</param> 
-        /// <returns>ModelConfig</returns>            
-        public ModelConfig GetConfig (string name)
+        /// <returns>Config</returns>            
+        public Config GetConfig (string name)
         {
             
             // verify the required parameter 'name' is set
@@ -205,7 +205,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetConfig: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelConfig) ApiClient.Deserialize(response.Content, typeof(ModelConfig), response.Headers);
+            return (Config) ApiClient.Deserialize(response.Content, typeof(Config), response.Headers);
         }
     
         /// <summary>
@@ -215,8 +215,8 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
-        /// <returns>ModelPageResourceConfig</returns>            
-        public ModelPageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order)
+        /// <returns>PageResourceConfig</returns>            
+        public PageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order)
         {
             
     
@@ -245,7 +245,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetConfigs: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelPageResourceConfig) ApiClient.Deserialize(response.Content, typeof(ModelPageResourceConfig), response.Headers);
+            return (PageResourceConfig) ApiClient.Deserialize(response.Content, typeof(PageResourceConfig), response.Headers);
         }
     
         /// <summary>
@@ -254,7 +254,7 @@ namespace com.knetikcloud.Api
         /// <param name="name">The config name</param> 
         /// <param name="config">The config object</param> 
         /// <returns></returns>            
-        public void UpdateConfig (string name, ModelConfig config)
+        public void UpdateConfig (string name, Config config)
         {
             
             // verify the required parameter 'name' is set

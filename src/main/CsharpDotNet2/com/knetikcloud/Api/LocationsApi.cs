@@ -14,8 +14,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of countries 
         /// </summary>
-        /// <returns>List&lt;ModelCountryResource&gt;</returns>
-        List<ModelCountryResource> GetCountries ();
+        /// <returns>List&lt;CountryResource&gt;</returns>
+        List<CountryResource> GetCountries ();
         /// <summary>
         /// Get the iso3 code of your country Determined by geo ip location
         /// </summary>
@@ -25,13 +25,13 @@ namespace com.knetikcloud.Api
         /// Get a list of a country&#39;s states 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
-        /// <returns>List&lt;ModelStateResource&gt;</returns>
-        List<ModelStateResource> GetCountryStates (string countryCodeIso3);
+        /// <returns>List&lt;StateResource&gt;</returns>
+        List<StateResource> GetCountryStates (string countryCodeIso3);
         /// <summary>
         /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting
         /// </summary>
-        /// <returns>ModelCurrencyResource</returns>
-        ModelCurrencyResource GetCurrencyByGeoLocation ();
+        /// <returns>CurrencyResource</returns>
+        CurrencyResource GetCurrencyByGeoLocation ();
     }
   
     /// <summary>
@@ -90,8 +90,8 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Get a list of countries 
         /// </summary>
-        /// <returns>List&lt;ModelCountryResource&gt;</returns>            
-        public List<ModelCountryResource> GetCountries ()
+        /// <returns>List&lt;CountryResource&gt;</returns>            
+        public List<CountryResource> GetCountries ()
         {
             
     
@@ -116,7 +116,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCountries: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelCountryResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelCountryResource>), response.Headers);
+            return (List<CountryResource>) ApiClient.Deserialize(response.Content, typeof(List<CountryResource>), response.Headers);
         }
     
         /// <summary>
@@ -155,8 +155,8 @@ namespace com.knetikcloud.Api
         /// Get a list of a country&#39;s states 
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
-        /// <returns>List&lt;ModelStateResource&gt;</returns>            
-        public List<ModelStateResource> GetCountryStates (string countryCodeIso3)
+        /// <returns>List&lt;StateResource&gt;</returns>            
+        public List<StateResource> GetCountryStates (string countryCodeIso3)
         {
             
             // verify the required parameter 'countryCodeIso3' is set
@@ -185,14 +185,14 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCountryStates: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<ModelStateResource>) ApiClient.Deserialize(response.Content, typeof(List<ModelStateResource>), response.Headers);
+            return (List<StateResource>) ApiClient.Deserialize(response.Content, typeof(List<StateResource>), response.Headers);
         }
     
         /// <summary>
         /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting
         /// </summary>
-        /// <returns>ModelCurrencyResource</returns>            
-        public ModelCurrencyResource GetCurrencyByGeoLocation ()
+        /// <returns>CurrencyResource</returns>            
+        public CurrencyResource GetCurrencyByGeoLocation ()
         {
             
     
@@ -217,7 +217,7 @@ namespace com.knetikcloud.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetCurrencyByGeoLocation: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (ModelCurrencyResource) ApiClient.Deserialize(response.Content, typeof(ModelCurrencyResource), response.Headers);
+            return (CurrencyResource) ApiClient.Deserialize(response.Content, typeof(CurrencyResource), response.Headers);
         }
     
     }

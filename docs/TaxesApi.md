@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="createcountrytax"></a>
 # **CreateCountryTax**
-> ModelCountryTaxResource CreateCountryTax (ModelCountryTaxResource taxResource)
+> CountryTaxResource CreateCountryTax (CountryTaxResource taxResource)
 
 Create a country tax
 
@@ -42,12 +42,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new TaxesApi();
-            var taxResource = new ModelCountryTaxResource(); // ModelCountryTaxResource | The tax object (optional) 
+            var taxResource = new CountryTaxResource(); // CountryTaxResource | The tax object (optional) 
 
             try
             {
                 // Create a country tax
-                ModelCountryTaxResource result = apiInstance.CreateCountryTax(taxResource);
+                CountryTaxResource result = apiInstance.CreateCountryTax(taxResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,11 +63,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxResource** | [**ModelCountryTaxResource**](ModelCountryTaxResource.md)| The tax object | [optional] 
+ **taxResource** | [**CountryTaxResource**](CountryTaxResource.md)| The tax object | [optional] 
 
 ### Return type
 
-[**ModelCountryTaxResource**](ModelCountryTaxResource.md)
+[**CountryTaxResource**](CountryTaxResource.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="createstatetax"></a>
 # **CreateStateTax**
-> ModelStateTaxResource CreateStateTax (string countryCodeIso3, ModelStateTaxResource taxResource)
+> StateTaxResource CreateStateTax (string countryCodeIso3, StateTaxResource taxResource)
 
 Create a state tax
 
@@ -106,12 +106,12 @@ namespace Example
 
             var apiInstance = new TaxesApi();
             var countryCodeIso3 = countryCodeIso3_example;  // string | The iso3 code of the country
-            var taxResource = new ModelStateTaxResource(); // ModelStateTaxResource | The tax object (optional) 
+            var taxResource = new StateTaxResource(); // StateTaxResource | The tax object (optional) 
 
             try
             {
                 // Create a state tax
-                ModelStateTaxResource result = apiInstance.CreateStateTax(countryCodeIso3, taxResource);
+                StateTaxResource result = apiInstance.CreateStateTax(countryCodeIso3, taxResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -128,11 +128,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **countryCodeIso3** | **string**| The iso3 code of the country | 
- **taxResource** | [**ModelStateTaxResource**](ModelStateTaxResource.md)| The tax object | [optional] 
+ **taxResource** | [**StateTaxResource**](StateTaxResource.md)| The tax object | [optional] 
 
 ### Return type
 
-[**ModelStateTaxResource**](ModelStateTaxResource.md)
+[**StateTaxResource**](StateTaxResource.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ void (empty response body)
 
 <a name="getcountrytax"></a>
 # **GetCountryTax**
-> ModelCountryTaxResource GetCountryTax (string countryCodeIso3)
+> CountryTaxResource GetCountryTax (string countryCodeIso3)
 
 Get a single tax
 
@@ -298,7 +298,7 @@ namespace Example
             try
             {
                 // Get a single tax
-                ModelCountryTaxResource result = apiInstance.GetCountryTax(countryCodeIso3);
+                CountryTaxResource result = apiInstance.GetCountryTax(countryCodeIso3);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelCountryTaxResource**](ModelCountryTaxResource.md)
+[**CountryTaxResource**](CountryTaxResource.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ No authorization required
 
 <a name="getcountrytaxes"></a>
 # **GetCountryTaxes**
-> ModelPageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order)
+> PageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order)
 
 List and search taxes
 
@@ -362,7 +362,7 @@ namespace Example
             try
             {
                 // List and search taxes
-                ModelPageResourceCountryTaxResource result = apiInstance.GetCountryTaxes(size, page, order);
+                PageResourceCountryTaxResource result = apiInstance.GetCountryTaxes(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceCountryTaxResource**](ModelPageResourceCountryTaxResource.md)
+[**PageResourceCountryTaxResource**](PageResourceCountryTaxResource.md)
 
 ### Authorization
 
@@ -399,7 +399,7 @@ No authorization required
 
 <a name="getstatetax"></a>
 # **GetStateTax**
-> ModelStateTaxResource GetStateTax (string countryCodeIso3, string stateCode)
+> StateTaxResource GetStateTax (string countryCodeIso3, string stateCode)
 
 Get a single state tax
 
@@ -425,7 +425,7 @@ namespace Example
             try
             {
                 // Get a single state tax
-                ModelStateTaxResource result = apiInstance.GetStateTax(countryCodeIso3, stateCode);
+                StateTaxResource result = apiInstance.GetStateTax(countryCodeIso3, stateCode);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelStateTaxResource**](ModelStateTaxResource.md)
+[**StateTaxResource**](StateTaxResource.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ No authorization required
 
 <a name="getstatetaxesforcountries"></a>
 # **GetStateTaxesForCountries**
-> ModelPageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order)
+> PageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order)
 
 List and search taxes across all countries
 
@@ -490,7 +490,7 @@ namespace Example
             try
             {
                 // List and search taxes across all countries
-                ModelPageResourceStateTaxResource result = apiInstance.GetStateTaxesForCountries(size, page, order);
+                PageResourceStateTaxResource result = apiInstance.GetStateTaxesForCountries(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceStateTaxResource**](ModelPageResourceStateTaxResource.md)
+[**PageResourceStateTaxResource**](PageResourceStateTaxResource.md)
 
 ### Authorization
 
@@ -527,7 +527,7 @@ No authorization required
 
 <a name="getstatetaxesforcountry"></a>
 # **GetStateTaxesForCountry**
-> ModelPageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order)
+> PageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order)
 
 List and search taxes within a country
 
@@ -557,7 +557,7 @@ namespace Example
             try
             {
                 // List and search taxes within a country
-                ModelPageResourceStateTaxResource result = apiInstance.GetStateTaxesForCountry(countryCodeIso3, size, page, order);
+                PageResourceStateTaxResource result = apiInstance.GetStateTaxesForCountry(countryCodeIso3, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceStateTaxResource**](ModelPageResourceStateTaxResource.md)
+[**PageResourceStateTaxResource**](PageResourceStateTaxResource.md)
 
 ### Authorization
 
@@ -595,7 +595,7 @@ No authorization required
 
 <a name="updatecountrytax"></a>
 # **UpdateCountryTax**
-> ModelCountryTaxResource UpdateCountryTax (string countryCodeIso3, ModelCountryTaxResource taxResource)
+> CountryTaxResource UpdateCountryTax (string countryCodeIso3, CountryTaxResource taxResource)
 
 Create or update a tax
 
@@ -619,12 +619,12 @@ namespace Example
 
             var apiInstance = new TaxesApi();
             var countryCodeIso3 = countryCodeIso3_example;  // string | The iso3 code of the country
-            var taxResource = new ModelCountryTaxResource(); // ModelCountryTaxResource | The tax object (optional) 
+            var taxResource = new CountryTaxResource(); // CountryTaxResource | The tax object (optional) 
 
             try
             {
                 // Create or update a tax
-                ModelCountryTaxResource result = apiInstance.UpdateCountryTax(countryCodeIso3, taxResource);
+                CountryTaxResource result = apiInstance.UpdateCountryTax(countryCodeIso3, taxResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -641,11 +641,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **countryCodeIso3** | **string**| The iso3 code of the country | 
- **taxResource** | [**ModelCountryTaxResource**](ModelCountryTaxResource.md)| The tax object | [optional] 
+ **taxResource** | [**CountryTaxResource**](CountryTaxResource.md)| The tax object | [optional] 
 
 ### Return type
 
-[**ModelCountryTaxResource**](ModelCountryTaxResource.md)
+[**CountryTaxResource**](CountryTaxResource.md)
 
 ### Authorization
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 <a name="updatestatetax"></a>
 # **UpdateStateTax**
-> ModelStateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, ModelStateTaxResource taxResource)
+> StateTaxResource UpdateStateTax (string countryCodeIso3, string stateCode, StateTaxResource taxResource)
 
 Create or update a state tax
 
@@ -685,12 +685,12 @@ namespace Example
             var apiInstance = new TaxesApi();
             var countryCodeIso3 = countryCodeIso3_example;  // string | The iso3 code of the country
             var stateCode = stateCode_example;  // string | The code of the state
-            var taxResource = new ModelStateTaxResource(); // ModelStateTaxResource | The tax object (optional) 
+            var taxResource = new StateTaxResource(); // StateTaxResource | The tax object (optional) 
 
             try
             {
                 // Create or update a state tax
-                ModelStateTaxResource result = apiInstance.UpdateStateTax(countryCodeIso3, stateCode, taxResource);
+                StateTaxResource result = apiInstance.UpdateStateTax(countryCodeIso3, stateCode, taxResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -708,11 +708,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **countryCodeIso3** | **string**| The iso3 code of the country | 
  **stateCode** | **string**| The code of the state | 
- **taxResource** | [**ModelStateTaxResource**](ModelStateTaxResource.md)| The tax object | [optional] 
+ **taxResource** | [**StateTaxResource**](StateTaxResource.md)| The tax object | [optional] 
 
 ### Return type
 
-[**ModelStateTaxResource**](ModelStateTaxResource.md)
+[**StateTaxResource**](StateTaxResource.md)
 
 ### Authorization
 

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createshippingitem"></a>
 # **CreateShippingItem**
-> ModelShippingItem CreateShippingItem (bool? cascade, ModelShippingItem shippingItem)
+> ShippingItem CreateShippingItem (bool? cascade, ShippingItem shippingItem)
 
 Create a shipping item
 
@@ -43,12 +43,12 @@ namespace Example
 
             var apiInstance = new StoreShippingApi();
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var shippingItem = new ModelShippingItem(); // ModelShippingItem | The shipping item object (optional) 
+            var shippingItem = new ShippingItem(); // ShippingItem | The shipping item object (optional) 
 
             try
             {
                 // Create a shipping item
-                ModelShippingItem result = apiInstance.CreateShippingItem(cascade, shippingItem);
+                ShippingItem result = apiInstance.CreateShippingItem(cascade, shippingItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -65,11 +65,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **shippingItem** | [**ModelShippingItem**](ModelShippingItem.md)| The shipping item object | [optional] 
+ **shippingItem** | [**ShippingItem**](ShippingItem.md)| The shipping item object | [optional] 
 
 ### Return type
 
-[**ModelShippingItem**](ModelShippingItem.md)
+[**ShippingItem**](ShippingItem.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 <a name="createshippingtemplate"></a>
 # **CreateShippingTemplate**
-> ModelItemTemplateResource CreateShippingTemplate (ModelItemTemplateResource shippingTemplateResource)
+> ItemTemplateResource CreateShippingTemplate (ItemTemplateResource shippingTemplateResource)
 
 Create a shipping template
 
@@ -109,12 +109,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StoreShippingApi();
-            var shippingTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The new shipping template (optional) 
+            var shippingTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new shipping template (optional) 
 
             try
             {
                 // Create a shipping template
-                ModelItemTemplateResource result = apiInstance.CreateShippingTemplate(shippingTemplateResource);
+                ItemTemplateResource result = apiInstance.CreateShippingTemplate(shippingTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,11 +130,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The new shipping template | [optional] 
+ **shippingTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The new shipping template | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ void (empty response body)
 
 <a name="getshippingitem"></a>
 # **GetShippingItem**
-> ModelShippingItem GetShippingItem (int? id)
+> ShippingItem GetShippingItem (int? id)
 
 Get a single shipping item
 
@@ -300,7 +300,7 @@ namespace Example
             try
             {
                 // Get a single shipping item
-                ModelShippingItem result = apiInstance.GetShippingItem(id);
+                ShippingItem result = apiInstance.GetShippingItem(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelShippingItem**](ModelShippingItem.md)
+[**ShippingItem**](ShippingItem.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ No authorization required
 
 <a name="getshippingtemplate"></a>
 # **GetShippingTemplate**
-> ModelItemTemplateResource GetShippingTemplate (string id)
+> ItemTemplateResource GetShippingTemplate (string id)
 
 Get a single shipping template
 
@@ -365,7 +365,7 @@ namespace Example
             try
             {
                 // Get a single shipping template
-                ModelItemTemplateResource result = apiInstance.GetShippingTemplate(id);
+                ItemTemplateResource result = apiInstance.GetShippingTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 <a name="getshippingtemplates"></a>
 # **GetShippingTemplates**
-> ModelPageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order)
+> PageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order)
 
 List and search shipping templates
 
@@ -430,7 +430,7 @@ namespace Example
             try
             {
                 // List and search shipping templates
-                ModelPageResourceItemTemplateResource result = apiInstance.GetShippingTemplates(size, page, order);
+                PageResourceItemTemplateResource result = apiInstance.GetShippingTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceItemTemplateResource**](ModelPageResourceItemTemplateResource.md)
+[**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
 
 ### Authorization
 
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 <a name="updateshippingitem"></a>
 # **UpdateShippingItem**
-> ModelShippingItem UpdateShippingItem (int? id, bool? cascade, ModelShippingItem shippingItem)
+> ShippingItem UpdateShippingItem (int? id, bool? cascade, ShippingItem shippingItem)
 
 Update a shipping item
 
@@ -492,12 +492,12 @@ namespace Example
             var apiInstance = new StoreShippingApi();
             var id = 56;  // int? | The id of the shipping item
             var cascade = true;  // bool? | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional)  (default to false)
-            var shippingItem = new ModelShippingItem(); // ModelShippingItem | The shipping item object (optional) 
+            var shippingItem = new ShippingItem(); // ShippingItem | The shipping item object (optional) 
 
             try
             {
                 // Update a shipping item
-                ModelShippingItem result = apiInstance.UpdateShippingItem(id, cascade, shippingItem);
+                ShippingItem result = apiInstance.UpdateShippingItem(id, cascade, shippingItem);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -515,11 +515,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the shipping item | 
  **cascade** | **bool?**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **shippingItem** | [**ModelShippingItem**](ModelShippingItem.md)| The shipping item object | [optional] 
+ **shippingItem** | [**ShippingItem**](ShippingItem.md)| The shipping item object | [optional] 
 
 ### Return type
 
-[**ModelShippingItem**](ModelShippingItem.md)
+[**ShippingItem**](ShippingItem.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 <a name="updateshippingtemplate"></a>
 # **UpdateShippingTemplate**
-> ModelItemTemplateResource UpdateShippingTemplate (string id, ModelItemTemplateResource shippingTemplateResource)
+> ItemTemplateResource UpdateShippingTemplate (string id, ItemTemplateResource shippingTemplateResource)
 
 Update a shipping template
 
@@ -558,12 +558,12 @@ namespace Example
 
             var apiInstance = new StoreShippingApi();
             var id = id_example;  // string | The id of the template
-            var shippingTemplateResource = new ModelItemTemplateResource(); // ModelItemTemplateResource | The shipping template resource object (optional) 
+            var shippingTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The shipping template resource object (optional) 
 
             try
             {
                 // Update a shipping template
-                ModelItemTemplateResource result = apiInstance.UpdateShippingTemplate(id, shippingTemplateResource);
+                ItemTemplateResource result = apiInstance.UpdateShippingTemplate(id, shippingTemplateResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -580,11 +580,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **shippingTemplateResource** | [**ModelItemTemplateResource**](ModelItemTemplateResource.md)| The shipping template resource object | [optional] 
+ **shippingTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The shipping template resource object | [optional] 
 
 ### Return type
 
-[**ModelItemTemplateResource**](ModelItemTemplateResource.md)
+[**ItemTemplateResource**](ItemTemplateResource.md)
 
 ### Authorization
 

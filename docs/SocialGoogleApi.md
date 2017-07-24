@@ -4,16 +4,16 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**LinkAccounts1**](SocialGoogleApi.md#linkaccounts1) | **POST** /social/google/users | Link facebook account
+[**LinkAccounts1**](SocialGoogleApi.md#linkaccounts1) | **POST** /social/google/users | Link google account
 
 
 <a name="linkaccounts1"></a>
 # **LinkAccounts1**
-> void LinkAccounts1 (ModelGoogleToken facebookToken)
+> void LinkAccounts1 (GoogleToken googleToken)
 
-Link facebook account
+Link google account
 
-Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
 
 ### Example
 ```csharp
@@ -34,12 +34,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SocialGoogleApi();
-            var facebookToken = new ModelGoogleToken(); // ModelGoogleToken | The token from facebook (optional) 
+            var googleToken = new GoogleToken(); // GoogleToken | The token from google (optional) 
 
             try
             {
-                // Link facebook account
-                apiInstance.LinkAccounts1(facebookToken);
+                // Link google account
+                apiInstance.LinkAccounts1(googleToken);
             }
             catch (Exception e)
             {
@@ -54,7 +54,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **facebookToken** | [**ModelGoogleToken**](ModelGoogleToken.md)| The token from facebook | [optional] 
+ **googleToken** | [**GoogleToken**](GoogleToken.md)| The token from google | [optional] 
 
 ### Return type
 

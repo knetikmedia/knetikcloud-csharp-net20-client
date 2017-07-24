@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="adduserlog"></a>
 # **AddUserLog**
-> void AddUserLog (ModelUserActionLog logEntry)
+> void AddUserLog (UserActionLog logEntry)
 
 Add a user log entry
 
@@ -38,7 +38,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new LogsApi();
-            var logEntry = new ModelUserActionLog(); // ModelUserActionLog | The user log entry to be added (optional) 
+            var logEntry = new UserActionLog(); // UserActionLog | The user log entry to be added (optional) 
 
             try
             {
@@ -58,7 +58,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logEntry** | [**ModelUserActionLog**](ModelUserActionLog.md)| The user log entry to be added | [optional] 
+ **logEntry** | [**UserActionLog**](UserActionLog.md)| The user log entry to be added | [optional] 
 
 ### Return type
 
@@ -77,7 +77,7 @@ void (empty response body)
 
 <a name="getbreeventlog"></a>
 # **GetBREEventLog**
-> ModelBreEventLog GetBREEventLog (string id)
+> BreEventLog GetBREEventLog (string id)
 
 Get an existing BRE event log entry by id
 
@@ -105,7 +105,7 @@ namespace Example
             try
             {
                 // Get an existing BRE event log entry by id
-                ModelBreEventLog result = apiInstance.GetBREEventLog(id);
+                BreEventLog result = apiInstance.GetBREEventLog(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelBreEventLog**](ModelBreEventLog.md)
+[**BreEventLog**](BreEventLog.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 <a name="getbreeventlogs"></a>
 # **GetBREEventLogs**
-> ModelPageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order)
+> PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order)
 
 Returns a list of BRE event log entries
 
@@ -173,7 +173,7 @@ namespace Example
             try
             {
                 // Returns a list of BRE event log entries
-                ModelPageResourceBreEventLog result = apiInstance.GetBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order);
+                PageResourceBreEventLog result = apiInstance.GetBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBreEventLog**](ModelPageResourceBreEventLog.md)
+[**PageResourceBreEventLog**](PageResourceBreEventLog.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 <a name="getbreforwardlog"></a>
 # **GetBREForwardLog**
-> ModelForwardLog GetBREForwardLog (string id)
+> ForwardLog GetBREForwardLog (string id)
 
 Get an existing forward log entry by id
 
@@ -241,7 +241,7 @@ namespace Example
             try
             {
                 // Get an existing forward log entry by id
-                ModelForwardLog result = apiInstance.GetBREForwardLog(id);
+                ForwardLog result = apiInstance.GetBREForwardLog(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelForwardLog**](ModelForwardLog.md)
+[**ForwardLog**](ForwardLog.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 <a name="getbreforwardlogs"></a>
 # **GetBREForwardLogs**
-> ModelPageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order)
+> PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order)
 
 Returns a list of forward log entries
 
@@ -309,7 +309,7 @@ namespace Example
             try
             {
                 // Returns a list of forward log entries
-                ModelPageResourceForwardLog result = apiInstance.GetBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, size, page, order);
+                PageResourceForwardLog result = apiInstance.GetBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceForwardLog**](ModelPageResourceForwardLog.md)
+[**PageResourceForwardLog**](PageResourceForwardLog.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserlog"></a>
 # **GetUserLog**
-> ModelUserActionLog GetUserLog (string id)
+> UserActionLog GetUserLog (string id)
 
 Returns a user log entry by id
 
@@ -377,7 +377,7 @@ namespace Example
             try
             {
                 // Returns a user log entry by id
-                ModelUserActionLog result = apiInstance.GetUserLog(id);
+                UserActionLog result = apiInstance.GetUserLog(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserActionLog**](ModelUserActionLog.md)
+[**UserActionLog**](UserActionLog.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserlogs"></a>
 # **GetUserLogs**
-> ModelPageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order)
+> PageResourceUserActionLog GetUserLogs (int? filterUser, string filterActionName, int? size, int? page, string order)
 
 Returns a page of user logs entries
 
@@ -444,7 +444,7 @@ namespace Example
             try
             {
                 // Returns a page of user logs entries
-                ModelPageResourceUserActionLog result = apiInstance.GetUserLogs(filterUser, filterActionName, size, page, order);
+                PageResourceUserActionLog result = apiInstance.GetUserLogs(filterUser, filterActionName, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserActionLog**](ModelPageResourceUserActionLog.md)
+[**PageResourceUserActionLog**](PageResourceUserActionLog.md)
 
 ### Authorization
 

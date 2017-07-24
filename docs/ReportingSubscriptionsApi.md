@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getsubscriptionreports"></a>
 # **GetSubscriptionReports**
-> ModelPageResourceBillingReport GetSubscriptionReports (int? size, int? page)
+> PageResourceBillingReport GetSubscriptionReports (int? size, int? page)
 
 Get a list of available subscription reports in most recent first order
 
@@ -38,7 +38,7 @@ namespace Example
             try
             {
                 // Get a list of available subscription reports in most recent first order
-                ModelPageResourceBillingReport result = apiInstance.GetSubscriptionReports(size, page);
+                PageResourceBillingReport result = apiInstance.GetSubscriptionReports(size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceBillingReport**](ModelPageResourceBillingReport.md)
+[**PageResourceBillingReport**](PageResourceBillingReport.md)
 
 ### Authorization
 

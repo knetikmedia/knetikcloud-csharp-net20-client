@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 <a name="createachievement"></a>
 # **CreateAchievement**
-> ModelAchievementDefinitionResource CreateAchievement (ModelAchievementDefinitionResource achievement)
+> AchievementDefinitionResource CreateAchievement (AchievementDefinitionResource achievement)
 
 Create a new achievement definition
 
@@ -51,12 +51,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationAchievementsApi();
-            var achievement = new ModelAchievementDefinitionResource(); // ModelAchievementDefinitionResource | The achievement definition (optional) 
+            var achievement = new AchievementDefinitionResource(); // AchievementDefinitionResource | The achievement definition (optional) 
 
             try
             {
                 // Create a new achievement definition
-                ModelAchievementDefinitionResource result = apiInstance.CreateAchievement(achievement);
+                AchievementDefinitionResource result = apiInstance.CreateAchievement(achievement);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -72,11 +72,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **achievement** | [**ModelAchievementDefinitionResource**](ModelAchievementDefinitionResource.md)| The achievement definition | [optional] 
+ **achievement** | [**AchievementDefinitionResource**](AchievementDefinitionResource.md)| The achievement definition | [optional] 
 
 ### Return type
 
-[**ModelAchievementDefinitionResource**](ModelAchievementDefinitionResource.md)
+[**AchievementDefinitionResource**](AchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 <a name="createachievementtemplate"></a>
 # **CreateAchievementTemplate**
-> ModelTemplateResource CreateAchievementTemplate (ModelTemplateResource template)
+> TemplateResource CreateAchievementTemplate (TemplateResource template)
 
 Create an achievement template
 
@@ -116,12 +116,12 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationAchievementsApi();
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The achievement template to be created (optional) 
+            var template = new TemplateResource(); // TemplateResource | The achievement template to be created (optional) 
 
             try
             {
                 // Create an achievement template
-                ModelTemplateResource result = apiInstance.CreateAchievementTemplate(template);
+                TemplateResource result = apiInstance.CreateAchievementTemplate(template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,11 +137,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The achievement template to be created | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The achievement template to be created | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ void (empty response body)
 
 <a name="getachievement"></a>
 # **GetAchievement**
-> ModelAchievementDefinitionResource GetAchievement (string name)
+> AchievementDefinitionResource GetAchievement (string name)
 
 Get a single achievement definition
 
@@ -314,7 +314,7 @@ namespace Example
             try
             {
                 // Get a single achievement definition
-                ModelAchievementDefinitionResource result = apiInstance.GetAchievement(name);
+                AchievementDefinitionResource result = apiInstance.GetAchievement(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelAchievementDefinitionResource**](ModelAchievementDefinitionResource.md)
+[**AchievementDefinitionResource**](AchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="getachievementtemplate"></a>
 # **GetAchievementTemplate**
-> ModelTemplateResource GetAchievementTemplate (string id)
+> TemplateResource GetAchievementTemplate (string id)
 
 Get a single achievement template
 
@@ -377,7 +377,7 @@ namespace Example
             try
             {
                 // Get a single achievement template
-                ModelTemplateResource result = apiInstance.GetAchievementTemplate(id);
+                TemplateResource result = apiInstance.GetAchievementTemplate(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="getachievementtemplates"></a>
 # **GetAchievementTemplates**
-> ModelPageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order)
+> PageResourceTemplateResource GetAchievementTemplates (int? size, int? page, string order)
 
 List and search achievement templates
 
@@ -442,7 +442,7 @@ namespace Example
             try
             {
                 // List and search achievement templates
-                ModelPageResourceTemplateResource result = apiInstance.GetAchievementTemplates(size, page, order);
+                PageResourceTemplateResource result = apiInstance.GetAchievementTemplates(size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceTemplateResource**](ModelPageResourceTemplateResource.md)
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 <a name="getachievementtriggers"></a>
 # **GetAchievementTriggers**
-> List<ModelBreTriggerResource> GetAchievementTriggers ()
+> List<BreTriggerResource> GetAchievementTriggers ()
 
 Get the list of triggers that can be used to trigger an achievement progress update
 
@@ -506,7 +506,7 @@ namespace Example
             try
             {
                 // Get the list of triggers that can be used to trigger an achievement progress update
-                List&lt;ModelBreTriggerResource&gt; result = apiInstance.GetAchievementTriggers();
+                List&lt;BreTriggerResource&gt; result = apiInstance.GetAchievementTriggers();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -523,7 +523,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<ModelBreTriggerResource>**](ModelBreTriggerResource.md)
+[**List<BreTriggerResource>**](BreTriggerResource.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ This endpoint does not need any parameter.
 
 <a name="getachievements"></a>
 # **GetAchievements**
-> ModelPageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived)
+> PageResourceAchievementDefinitionResource GetAchievements (string filterTagset, string filterName, bool? filterHidden, int? size, int? page, string order, bool? filterDerived)
 
 Get all achievement definitions in the system
 
@@ -572,7 +572,7 @@ namespace Example
             try
             {
                 // Get all achievement definitions in the system
-                ModelPageResourceAchievementDefinitionResource result = apiInstance.GetAchievements(filterTagset, filterName, filterHidden, size, page, order, filterDerived);
+                PageResourceAchievementDefinitionResource result = apiInstance.GetAchievements(filterTagset, filterName, filterHidden, size, page, order, filterDerived);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceAchievementDefinitionResource**](ModelPageResourceAchievementDefinitionResource.md)
+[**PageResourceAchievementDefinitionResource**](PageResourceAchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -613,7 +613,7 @@ Name | Type | Description  | Notes
 
 <a name="getderivedachievements"></a>
 # **GetDerivedAchievements**
-> List<ModelAchievementDefinitionResource> GetDerivedAchievements (string name)
+> List<AchievementDefinitionResource> GetDerivedAchievements (string name)
 
 Get a list of derived achievements
 
@@ -643,7 +643,7 @@ namespace Example
             try
             {
                 // Get a list of derived achievements
-                List&lt;ModelAchievementDefinitionResource&gt; result = apiInstance.GetDerivedAchievements(name);
+                List&lt;AchievementDefinitionResource&gt; result = apiInstance.GetDerivedAchievements(name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ModelAchievementDefinitionResource>**](ModelAchievementDefinitionResource.md)
+[**List<AchievementDefinitionResource>**](AchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserachievementprogress"></a>
 # **GetUserAchievementProgress**
-> ModelUserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName)
+> UserAchievementGroupResource GetUserAchievementProgress (int? userId, string achievementName)
 
 Retrieve progress on a given achievement for a given user
 
@@ -709,7 +709,7 @@ namespace Example
             try
             {
                 // Retrieve progress on a given achievement for a given user
-                ModelUserAchievementGroupResource result = apiInstance.GetUserAchievementProgress(userId, achievementName);
+                UserAchievementGroupResource result = apiInstance.GetUserAchievementProgress(userId, achievementName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -730,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserAchievementGroupResource**](ModelUserAchievementGroupResource.md)
+[**UserAchievementGroupResource**](UserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserachievementsprogress"></a>
 # **GetUserAchievementsProgress**
-> ModelPageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+> PageResourceUserAchievementGroupResource GetUserAchievementsProgress (int? userId, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
 
 Retrieve progress on achievements for a given user
 
@@ -780,7 +780,7 @@ namespace Example
             try
             {
                 // Retrieve progress on achievements for a given user
-                ModelPageResourceUserAchievementGroupResource result = apiInstance.GetUserAchievementsProgress(userId, filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
+                PageResourceUserAchievementGroupResource result = apiInstance.GetUserAchievementsProgress(userId, filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserAchievementGroupResource**](ModelPageResourceUserAchievementGroupResource.md)
+[**PageResourceUserAchievementGroupResource**](PageResourceUserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersachievementprogress"></a>
 # **GetUsersAchievementProgress**
-> ModelPageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+> PageResourceUserAchievementGroupResource GetUsersAchievementProgress (string achievementName, bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
 
 Retrieve progress on a given achievement for all users
 
@@ -855,7 +855,7 @@ namespace Example
             try
             {
                 // Retrieve progress on a given achievement for all users
-                ModelPageResourceUserAchievementGroupResource result = apiInstance.GetUsersAchievementProgress(achievementName, filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
+                PageResourceUserAchievementGroupResource result = apiInstance.GetUsersAchievementProgress(achievementName, filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -880,7 +880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserAchievementGroupResource**](ModelPageResourceUserAchievementGroupResource.md)
+[**PageResourceUserAchievementGroupResource**](PageResourceUserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersachievementsprogress"></a>
 # **GetUsersAchievementsProgress**
-> ModelPageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
+> PageResourceUserAchievementGroupResource GetUsersAchievementsProgress (bool? filterAchievementDerived, string filterAchievementTagset, string filterAchievementName, int? size, int? page)
 
 Retrieve progress on achievements for all users
 
@@ -929,7 +929,7 @@ namespace Example
             try
             {
                 // Retrieve progress on achievements for all users
-                ModelPageResourceUserAchievementGroupResource result = apiInstance.GetUsersAchievementsProgress(filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
+                PageResourceUserAchievementGroupResource result = apiInstance.GetUsersAchievementsProgress(filterAchievementDerived, filterAchievementTagset, filterAchievementName, size, page);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -953,7 +953,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPageResourceUserAchievementGroupResource**](ModelPageResourceUserAchievementGroupResource.md)
+[**PageResourceUserAchievementGroupResource**](PageResourceUserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -968,7 +968,7 @@ Name | Type | Description  | Notes
 
 <a name="incrementachievementprogress"></a>
 # **IncrementAchievementProgress**
-> ModelUserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
+> UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
 
 Increment an achievement progress record for a user
 
@@ -1000,7 +1000,7 @@ namespace Example
             try
             {
                 // Increment an achievement progress record for a user
-                ModelUserAchievementGroupResource result = apiInstance.IncrementAchievementProgress(userId, achievementName, progress);
+                UserAchievementGroupResource result = apiInstance.IncrementAchievementProgress(userId, achievementName, progress);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1022,7 +1022,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserAchievementGroupResource**](ModelUserAchievementGroupResource.md)
+[**UserAchievementGroupResource**](UserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 
 <a name="setachievementprogress"></a>
 # **SetAchievementProgress**
-> ModelUserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
+> UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
 
 Set an achievement progress record for a user
 
@@ -1069,7 +1069,7 @@ namespace Example
             try
             {
                 // Set an achievement progress record for a user
-                ModelUserAchievementGroupResource result = apiInstance.SetAchievementProgress(userId, achievementName, progress);
+                UserAchievementGroupResource result = apiInstance.SetAchievementProgress(userId, achievementName, progress);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelUserAchievementGroupResource**](ModelUserAchievementGroupResource.md)
+[**UserAchievementGroupResource**](UserAchievementGroupResource.md)
 
 ### Authorization
 
@@ -1106,7 +1106,7 @@ Name | Type | Description  | Notes
 
 <a name="updateachievement"></a>
 # **UpdateAchievement**
-> ModelAchievementDefinitionResource UpdateAchievement (string name, ModelAchievementDefinitionResource achievement)
+> AchievementDefinitionResource UpdateAchievement (string name, AchievementDefinitionResource achievement)
 
 Update an achievement definition
 
@@ -1132,12 +1132,12 @@ namespace Example
 
             var apiInstance = new GamificationAchievementsApi();
             var name = name_example;  // string | The name of the achievement
-            var achievement = new ModelAchievementDefinitionResource(); // ModelAchievementDefinitionResource | The achievement definition (optional) 
+            var achievement = new AchievementDefinitionResource(); // AchievementDefinitionResource | The achievement definition (optional) 
 
             try
             {
                 // Update an achievement definition
-                ModelAchievementDefinitionResource result = apiInstance.UpdateAchievement(name, achievement);
+                AchievementDefinitionResource result = apiInstance.UpdateAchievement(name, achievement);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1154,11 +1154,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The name of the achievement | 
- **achievement** | [**ModelAchievementDefinitionResource**](ModelAchievementDefinitionResource.md)| The achievement definition | [optional] 
+ **achievement** | [**AchievementDefinitionResource**](AchievementDefinitionResource.md)| The achievement definition | [optional] 
 
 ### Return type
 
-[**ModelAchievementDefinitionResource**](ModelAchievementDefinitionResource.md)
+[**AchievementDefinitionResource**](AchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -1173,7 +1173,7 @@ Name | Type | Description  | Notes
 
 <a name="updateachievementtemplate"></a>
 # **UpdateAchievementTemplate**
-> ModelTemplateResource UpdateAchievementTemplate (string id, ModelTemplateResource template)
+> TemplateResource UpdateAchievementTemplate (string id, TemplateResource template)
 
 Update an achievement template
 
@@ -1197,12 +1197,12 @@ namespace Example
 
             var apiInstance = new GamificationAchievementsApi();
             var id = id_example;  // string | The id of the template
-            var template = new ModelTemplateResource(); // ModelTemplateResource | The updated template (optional) 
+            var template = new TemplateResource(); // TemplateResource | The updated template (optional) 
 
             try
             {
                 // Update an achievement template
-                ModelTemplateResource result = apiInstance.UpdateAchievementTemplate(id, template);
+                TemplateResource result = apiInstance.UpdateAchievementTemplate(id, template);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1219,11 +1219,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the template | 
- **template** | [**ModelTemplateResource**](ModelTemplateResource.md)| The updated template | [optional] 
+ **template** | [**TemplateResource**](TemplateResource.md)| The updated template | [optional] 
 
 ### Return type
 
-[**ModelTemplateResource**](ModelTemplateResource.md)
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
