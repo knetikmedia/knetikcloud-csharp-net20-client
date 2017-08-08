@@ -21,6 +21,14 @@ namespace com.knetikcloud.Model {
     public string Action { get; set; }
 
     /// <summary>
+    /// URL for accessing the resource via CDN if configured (will default to the main url if not)
+    /// </summary>
+    /// <value>URL for accessing the resource via CDN if configured (will default to the main url if not)</value>
+    [DataMember(Name="cdn_url", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "cdn_url")]
+    public string CdnUrl { get; set; }
+
+    /// <summary>
     /// Date the resource was created in S3
     /// </summary>
     /// <value>Date the resource was created in S3</value>
@@ -53,9 +61,9 @@ namespace com.knetikcloud.Model {
     public string ObjectKey { get; set; }
 
     /// <summary>
-    /// URL for accessing the S3 resource
+    /// URL for posting and later accessing the S3 resource
     /// </summary>
-    /// <value>URL for accessing the S3 resource</value>
+    /// <value>URL for posting and later accessing the S3 resource</value>
     [DataMember(Name="url", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "url")]
     public string Url { get; set; }
@@ -77,6 +85,7 @@ namespace com.knetikcloud.Model {
       var sb = new StringBuilder();
       sb.Append("class AmazonS3Activity {\n");
       sb.Append("  Action: ").Append(Action).Append("\n");
+      sb.Append("  CdnUrl: ").Append(CdnUrl).Append("\n");
       sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
       sb.Append("  Filename: ").Append(Filename).Append("\n");
       sb.Append("  Id: ").Append(Id).Append("\n");

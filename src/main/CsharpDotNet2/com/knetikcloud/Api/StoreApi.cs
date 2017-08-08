@@ -95,6 +95,12 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceStoreItem</returns>
         PageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order);
         /// <summary>
+        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+        /// </summary>
+        /// <param name="quickBuyRequest">Quick buy details</param>
+        /// <returns>InvoiceResource</returns>
+        InvoiceResource QuickBuy (QuickBuyRequest quickBuyRequest);
+        /// <summary>
         /// Update an item template 
         /// </summary>
         /// <param name="id">The id of the template</param>
@@ -560,6 +566,40 @@ namespace com.knetikcloud.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling GetStoreItems: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PageResourceStoreItem) ApiClient.Deserialize(response.Content, typeof(PageResourceStoreItem), response.Headers);
+        }
+    
+        /// <summary>
+        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+        /// </summary>
+        /// <param name="quickBuyRequest">Quick buy details</param> 
+        /// <returns>InvoiceResource</returns>            
+        public InvoiceResource QuickBuy (QuickBuyRequest quickBuyRequest)
+        {
+            
+    
+            var path = "/store/quick-buy";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(quickBuyRequest); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "OAuth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling QuickBuy: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling QuickBuy: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (InvoiceResource) ApiClient.Deserialize(response.Content, typeof(InvoiceResource), response.Headers);
         }
     
         /// <summary>

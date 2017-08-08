@@ -64,10 +64,10 @@ namespace com.knetikcloud.Api
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetPaymentStatuses ();
         /// <summary>
-        /// Trigger payment of an invoice 
+        /// Pay an invoice using a saved payment method 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
-        /// <param name="request">Payment info</param>
+        /// <param name="request">The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.</param>
         /// <returns></returns>
         void PayInvoice (int? id, PayBySavedMethodRequest request);
         /// <summary>
@@ -78,14 +78,14 @@ namespace com.knetikcloud.Api
         /// <param name="sku">The sku of an item in the bundle in the invoice</param>
         /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param>
         /// <returns></returns>
-        void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status);
+        void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, StringWrapper status);
         /// <summary>
         /// Set the external reference of an invoice 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="externalRef">External reference info</param>
         /// <returns></returns>
-        void SetExternalRef (int? id, string externalRef);
+        void SetExternalRef (int? id, StringWrapper externalRef);
         /// <summary>
         /// Set the fulfillment status of an invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
         /// </summary>
@@ -93,14 +93,14 @@ namespace com.knetikcloud.Api
         /// <param name="sku">The sku of an item in the invoice</param>
         /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param>
         /// <returns></returns>
-        void SetInvoiceItemFulfillmentStatus (int? id, string sku, string status);
+        void SetInvoiceItemFulfillmentStatus (int? id, string sku, StringWrapper status);
         /// <summary>
         /// Set the order notes of an invoice 
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="orderNotes">Payment status info</param>
         /// <returns></returns>
-        void SetOrderNotes (int? id, string orderNotes);
+        void SetOrderNotes (int? id, StringWrapper orderNotes);
         /// <summary>
         /// Set the payment status of an invoice This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
         /// </summary>
@@ -413,10 +413,10 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Trigger payment of an invoice 
+        /// Pay an invoice using a saved payment method 
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
-        /// <param name="request">Payment info</param> 
+        /// <param name="request">The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.</param> 
         /// <returns></returns>            
         public void PayInvoice (int? id, PayBySavedMethodRequest request)
         {
@@ -459,7 +459,7 @@ namespace com.knetikcloud.Api
         /// <param name="sku">The sku of an item in the bundle in the invoice</param> 
         /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param> 
         /// <returns></returns>            
-        public void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status)
+        public void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, StringWrapper status)
         {
             
             // verify the required parameter 'id' is set
@@ -509,7 +509,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         /// <param name="id">The id of the invoice</param> 
         /// <param name="externalRef">External reference info</param> 
         /// <returns></returns>            
-        public void SetExternalRef (int? id, string externalRef)
+        public void SetExternalRef (int? id, StringWrapper externalRef)
         {
             
             // verify the required parameter 'id' is set
@@ -549,7 +549,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         /// <param name="sku">The sku of an item in the invoice</param> 
         /// <param name="status">The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;</param> 
         /// <returns></returns>            
-        public void SetInvoiceItemFulfillmentStatus (int? id, string sku, string status)
+        public void SetInvoiceItemFulfillmentStatus (int? id, string sku, StringWrapper status)
         {
             
             // verify the required parameter 'id' is set
@@ -595,7 +595,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         /// <param name="id">The id of the invoice</param> 
         /// <param name="orderNotes">Payment status info</param> 
         /// <returns></returns>            
-        public void SetOrderNotes (int? id, string orderNotes)
+        public void SetOrderNotes (int? id, StringWrapper orderNotes)
         {
             
             // verify the required parameter 'id' is set

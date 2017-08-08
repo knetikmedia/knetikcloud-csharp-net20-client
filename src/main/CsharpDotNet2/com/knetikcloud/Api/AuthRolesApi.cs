@@ -39,11 +39,13 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List and search roles 
         /// </summary>
+        /// <param name="filterName">Filter for roles that have a name starting with specified string</param>
+        /// <param name="filterRole">Filter for roles that have a role starting with specified string</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
         /// <returns>PageResourceRoleResource</returns>
-        PageResourceRoleResource GetRoles (int? size, int? page, string order);
+        PageResourceRoleResource GetRoles (string filterName, string filterRole, int? size, int? page, string order);
         /// <summary>
         /// Get roles for a user 
         /// </summary>
@@ -283,11 +285,13 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List and search roles 
         /// </summary>
+        /// <param name="filterName">Filter for roles that have a name starting with specified string</param> 
+        /// <param name="filterRole">Filter for roles that have a role starting with specified string</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
         /// <returns>PageResourceRoleResource</returns>            
-        public PageResourceRoleResource GetRoles (int? size, int? page, string order)
+        public PageResourceRoleResource GetRoles (string filterName, string filterRole, int? size, int? page, string order)
         {
             
     
@@ -300,7 +304,9 @@ namespace com.knetikcloud.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
+             if (filterName != null) queryParams.Add("filter_name", ApiClient.ParameterToString(filterName)); // query parameter
+ if (filterRole != null) queryParams.Add("filter_role", ApiClient.ParameterToString(filterRole)); // query parameter
+ if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         

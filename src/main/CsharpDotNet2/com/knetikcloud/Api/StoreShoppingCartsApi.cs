@@ -79,14 +79,14 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the cart</param>
         /// <param name="currencyCode">The code of the currency</param>
         /// <returns></returns>
-        void SetCartCurrency (string id, string currencyCode);
+        void SetCartCurrency (string id, StringWrapper currencyCode);
         /// <summary>
         /// Sets the owner of a cart if none is set already 
         /// </summary>
         /// <param name="id">The id of the cart</param>
         /// <param name="userId">The id of the user</param>
         /// <returns></returns>
-        void SetCartOwner (string id, int? userId);
+        void SetCartOwner (string id, IntWrapper userId);
         /// <summary>
         /// Changes the quantity of an item already in the cart A quantity of zero will remove the item from the cart altogether.
         /// </summary>
@@ -508,7 +508,7 @@ path = path.Replace("{" + "code" + "}", ApiClient.ParameterToString(code));
         /// <param name="id">The id of the cart</param> 
         /// <param name="currencyCode">The code of the currency</param> 
         /// <returns></returns>            
-        public void SetCartCurrency (string id, string currencyCode)
+        public void SetCartCurrency (string id, StringWrapper currencyCode)
         {
             
             // verify the required parameter 'id' is set
@@ -547,7 +547,7 @@ path = path.Replace("{" + "code" + "}", ApiClient.ParameterToString(code));
         /// <param name="id">The id of the cart</param> 
         /// <param name="userId">The id of the user</param> 
         /// <returns></returns>            
-        public void SetCartOwner (string id, int? userId)
+        public void SetCartOwner (string id, IntWrapper userId)
         {
             
             // verify the required parameter 'id' is set

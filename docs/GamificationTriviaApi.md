@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 <a name="addquestiontag"></a>
 # **AddQuestionTag**
-> void AddQuestionTag (string id, string tag)
+> void AddQuestionTag (string id, StringWrapper tag)
 
 Add a tag to a question
 
@@ -127,7 +127,7 @@ namespace Example
 
             var apiInstance = new GamificationTriviaApi();
             var id = id_example;  // string | The id of the question
-            var tag = tag_example;  // string | The new tag (optional) 
+            var tag = new StringWrapper(); // StringWrapper | The new tag (optional) 
 
             try
             {
@@ -148,7 +148,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the question | 
- **tag** | **string**| The new tag | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The new tag | [optional] 
 
 ### Return type
 
@@ -167,7 +167,7 @@ void (empty response body)
 
 <a name="addtagtoquestionsbatch"></a>
 # **AddTagToQuestionsBatch**
-> int? AddTagToQuestionsBatch (string tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
+> int? AddTagToQuestionsBatch (StringWrapper tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
 
 Add a tag to a batch of questions
 
@@ -192,7 +192,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new GamificationTriviaApi();
-            var tag = tag_example;  // string | The tag to add (optional) 
+            var tag = new StringWrapper(); // StringWrapper | The tag to add (optional) 
             var filterSearch = filterSearch_example;  // string | Filter for documents whose question, answers or tags contains provided string (optional) 
             var filterIdset = filterIdset_example;  // string | Filter for documents whose id is in the comma separated list provided (optional) 
             var filterCategory = filterCategory_example;  // string | Filter for questions with specified category, by id (optional) 
@@ -221,7 +221,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **string**| The tag to add | [optional] 
+ **tag** | [**StringWrapper**](StringWrapper.md)| The tag to add | [optional] 
  **filterSearch** | **string**| Filter for documents whose question, answers or tags contains provided string | [optional] 
  **filterIdset** | **string**| Filter for documents whose id is in the comma separated list provided | [optional] 
  **filterCategory** | **string**| Filter for questions with specified category, by id | [optional] 

@@ -24,7 +24,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the question</param>
         /// <param name="tag">The new tag</param>
         /// <returns></returns>
-        void AddQuestionTag (string id, string tag);
+        void AddQuestionTag (string id, StringWrapper tag);
         /// <summary>
         /// Add a tag to a batch of questions All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
         /// </summary>
@@ -38,7 +38,7 @@ namespace com.knetikcloud.Api
         /// <param name="filterPublished">Filter for questions currenctly published or not</param>
         /// <param name="filterImportId">Filter for questions from a specific import job</param>
         /// <returns>int?</returns>
-        int? AddTagToQuestionsBatch (string tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
+        int? AddTagToQuestionsBatch (StringWrapper tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
         /// <summary>
         /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
         /// </summary>
@@ -352,7 +352,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the question</param> 
         /// <param name="tag">The new tag</param> 
         /// <returns></returns>            
-        public void AddQuestionTag (string id, string tag)
+        public void AddQuestionTag (string id, StringWrapper tag)
         {
             
             // verify the required parameter 'id' is set
@@ -398,7 +398,7 @@ namespace com.knetikcloud.Api
         /// <param name="filterPublished">Filter for questions currenctly published or not</param> 
         /// <param name="filterImportId">Filter for questions from a specific import job</param> 
         /// <returns>int?</returns>            
-        public int? AddTagToQuestionsBatch (string tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
+        public int? AddTagToQuestionsBatch (StringWrapper tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId)
         {
             
     

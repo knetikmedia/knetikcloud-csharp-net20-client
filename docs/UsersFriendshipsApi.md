@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 <a name="redeemfriendshiptoken"></a>
 # **RedeemFriendshipToken**
-> void RedeemFriendshipToken (string userId, string token)
+> void RedeemFriendshipToken (string userId, StringWrapper token)
 
 Redeem friendship token
 
@@ -307,7 +307,7 @@ namespace Example
 
             var apiInstance = new UsersFriendshipsApi();
             var userId = userId_example;  // string | The id of the user or 'me' if logged in
-            var token = token_example;  // string | The invite token (optional) 
+            var token = new StringWrapper(); // StringWrapper | The invite token (optional) 
 
             try
             {
@@ -328,7 +328,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string**| The id of the user or &#39;me&#39; if logged in | 
- **token** | **string**| The invite token | [optional] 
+ **token** | [**StringWrapper**](StringWrapper.md)| The invite token | [optional] 
 
 ### Return type
 

@@ -47,15 +47,15 @@ namespace com.knetikcloud.Api
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
         /// <param name="paymentMethodId">The id of the payment method</param>
         /// <returns></returns>
-        void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, int? paymentMethodId);
+        void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, IntWrapper paymentMethodId);
         /// <summary>
-        /// Set the status of a subscription The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
         /// <param name="status">The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;)</param>
         /// <returns></returns>
-        void SetSubscriptionStatus (int? userId, int? inventoryId, string status);
+        void SetSubscriptionStatus (int? userId, int? inventoryId, StringWrapper status);
         /// <summary>
         /// Set a new subscription plan for a user 
         /// </summary>
@@ -63,7 +63,7 @@ namespace com.knetikcloud.Api
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
         /// <param name="planId">The id of the new plan. Must be from the same subscription</param>
         /// <returns></returns>
-        void SetUserSubscriptionPlan (int? userId, int? inventoryId, string planId);
+        void SetUserSubscriptionPlan (int? userId, int? inventoryId, StringWrapper planId);
         /// <summary>
         /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
         /// </summary>
@@ -304,7 +304,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
         /// <param name="paymentMethodId">The id of the payment method</param> 
         /// <returns></returns>            
-        public void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, int? paymentMethodId)
+        public void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, IntWrapper paymentMethodId)
         {
             
             // verify the required parameter 'userId' is set
@@ -342,13 +342,13 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set the status of a subscription The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
         /// <param name="status">The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;)</param> 
         /// <returns></returns>            
-        public void SetSubscriptionStatus (int? userId, int? inventoryId, string status)
+        public void SetSubscriptionStatus (int? userId, int? inventoryId, StringWrapper status)
         {
             
             // verify the required parameter 'userId' is set
@@ -395,7 +395,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
         /// <param name="planId">The id of the new plan. Must be from the same subscription</param> 
         /// <returns></returns>            
-        public void SetUserSubscriptionPlan (int? userId, int? inventoryId, string planId)
+        public void SetUserSubscriptionPlan (int? userId, int? inventoryId, StringWrapper planId)
         {
             
             // verify the required parameter 'userId' is set

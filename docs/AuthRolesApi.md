@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 <a name="getroles"></a>
 # **GetRoles**
-> PageResourceRoleResource GetRoles (int? size, int? page, string order)
+> PageResourceRoleResource GetRoles (string filterName, string filterRole, int? size, int? page, string order)
 
 List and search roles
 
@@ -294,6 +294,8 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new AuthRolesApi();
+            var filterName = filterName_example;  // string | Filter for roles that have a name starting with specified string (optional) 
+            var filterRole = filterRole_example;  // string | Filter for roles that have a role starting with specified string (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
             var order = order_example;  // string | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional) 
@@ -301,7 +303,7 @@ namespace Example
             try
             {
                 // List and search roles
-                PageResourceRoleResource result = apiInstance.GetRoles(size, page, order);
+                PageResourceRoleResource result = apiInstance.GetRoles(filterName, filterRole, size, page, order);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -317,6 +319,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterName** | **string**| Filter for roles that have a name starting with specified string | [optional] 
+ **filterRole** | **string**| Filter for roles that have a role starting with specified string | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **string**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 

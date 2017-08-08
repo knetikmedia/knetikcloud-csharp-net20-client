@@ -67,7 +67,7 @@ namespace com.knetikcloud.Api
         /// <param name="name">The level schema name</param>
         /// <param name="progress">The amount of progress to add</param>
         /// <returns></returns>
-        void IncrementProgress (int? userId, string name, int? progress);
+        void IncrementProgress (int? userId, string name, IntWrapper progress);
         /// <summary>
         /// Set leveling progress for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
         /// </summary>
@@ -75,7 +75,7 @@ namespace com.knetikcloud.Api
         /// <param name="name">The level schema name</param>
         /// <param name="progress">The new progress amount</param>
         /// <returns></returns>
-        void SetProgress (int? userId, string name, int? progress);
+        void SetProgress (int? userId, string name, IntWrapper progress);
         /// <summary>
         /// Update a level 
         /// </summary>
@@ -412,7 +412,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         /// <param name="name">The level schema name</param> 
         /// <param name="progress">The amount of progress to add</param> 
         /// <returns></returns>            
-        public void IncrementProgress (int? userId, string name, int? progress)
+        public void IncrementProgress (int? userId, string name, IntWrapper progress)
         {
             
             // verify the required parameter 'userId' is set
@@ -456,7 +456,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         /// <param name="name">The level schema name</param> 
         /// <param name="progress">The new progress amount</param> 
         /// <returns></returns>            
-        public void SetProgress (int? userId, string name, int? progress)
+        public void SetProgress (int? userId, string name, IntWrapper progress)
         {
             
             // verify the required parameter 'userId' is set

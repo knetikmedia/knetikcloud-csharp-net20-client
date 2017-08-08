@@ -17,7 +17,7 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user</param>
         /// <param name="tag">tag</param>
         /// <returns></returns>
-        void AddUserTag (int? userId, string tag);
+        void AddUserTag (int? userId, StringWrapper tag);
         /// <summary>
         /// Create a user template User Templates define a type of user and the properties they have
         /// </summary>
@@ -101,7 +101,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The id of the user</param>
         /// <param name="password">The new plain text password</param>
         /// <returns></returns>
-        void SetPassword (int? id, string password);
+        void SetPassword (int? id, StringWrapper password);
         /// <summary>
         /// Reset a user&#39;s password A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
         /// </summary>
@@ -189,7 +189,7 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user</param> 
         /// <param name="tag">tag</param> 
         /// <returns></returns>            
-        public void AddUserTag (int? userId, string tag)
+        public void AddUserTag (int? userId, StringWrapper tag)
         {
             
             // verify the required parameter 'userId' is set
@@ -626,7 +626,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         /// <param name="id">The id of the user</param> 
         /// <param name="password">The new plain text password</param> 
         /// <returns></returns>            
-        public void SetPassword (int? id, string password)
+        public void SetPassword (int? id, StringWrapper password)
         {
             
             // verify the required parameter 'id' is set

@@ -20,6 +20,13 @@ namespace com.knetikcloud.Model {
     public bool? Ascending { get; set; }
 
     /// <summary>
+    /// Gets or Sets Descending
+    /// </summary>
+    [DataMember(Name="descending", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "descending")]
+    public bool? Descending { get; set; }
+
+    /// <summary>
     /// Gets or Sets Direction
     /// </summary>
     [DataMember(Name="direction", EmitDefaultValue=false)]
@@ -56,6 +63,7 @@ namespace com.knetikcloud.Model {
       var sb = new StringBuilder();
       sb.Append("class Order {\n");
       sb.Append("  Ascending: ").Append(Ascending).Append("\n");
+      sb.Append("  Descending: ").Append(Descending).Append("\n");
       sb.Append("  Direction: ").Append(Direction).Append("\n");
       sb.Append("  IgnoreCase: ").Append(IgnoreCase).Append("\n");
       sb.Append("  NullHandling: ").Append(NullHandling).Append("\n");

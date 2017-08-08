@@ -17,7 +17,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The poll id</param>
         /// <param name="answerKey">The answer key</param>
         /// <returns>PollResponseResource</returns>
-        PollResponseResource AnswerPoll (string id, string answerKey);
+        PollResponseResource AnswerPoll (string id, StringWrapper answerKey);
         /// <summary>
         /// Create a new poll Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
         /// </summary>
@@ -155,7 +155,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The poll id</param> 
         /// <param name="answerKey">The answer key</param> 
         /// <returns>PollResponseResource</returns>            
-        public PollResponseResource AnswerPoll (string id, string answerKey)
+        public PollResponseResource AnswerPoll (string id, StringWrapper answerKey)
         {
             
             // verify the required parameter 'id' is set

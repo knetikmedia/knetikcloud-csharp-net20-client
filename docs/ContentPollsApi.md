@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="answerpoll"></a>
 # **AnswerPoll**
-> PollResponseResource AnswerPoll (string id, string answerKey)
+> PollResponseResource AnswerPoll (string id, StringWrapper answerKey)
 
 Add your vote to a poll
 
@@ -44,7 +44,7 @@ namespace Example
 
             var apiInstance = new ContentPollsApi();
             var id = id_example;  // string | The poll id
-            var answerKey = answerKey_example;  // string | The answer key (optional) 
+            var answerKey = new StringWrapper(); // StringWrapper | The answer key (optional) 
 
             try
             {
@@ -66,7 +66,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The poll id | 
- **answerKey** | **string**| The answer key | [optional] 
+ **answerKey** | [**StringWrapper**](StringWrapper.md)| The answer key | [optional] 
 
 ### Return type
 

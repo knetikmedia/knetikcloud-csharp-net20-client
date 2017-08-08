@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addusertag"></a>
 # **AddUserTag**
-> void AddUserTag (int? userId, string tag)
+> void AddUserTag (int? userId, StringWrapper tag)
 
 Add a tag to a user
 
@@ -48,7 +48,7 @@ namespace Example
 
             var apiInstance = new UsersApi();
             var userId = 56;  // int? | The id of the user
-            var tag = tag_example;  // string | tag
+            var tag = new StringWrapper(); // StringWrapper | tag
 
             try
             {
@@ -69,7 +69,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
- **tag** | **string**| tag | 
+ **tag** | [**StringWrapper**](StringWrapper.md)| tag | 
 
 ### Return type
 
@@ -755,7 +755,7 @@ void (empty response body)
 
 <a name="setpassword"></a>
 # **SetPassword**
-> void SetPassword (int? id, string password)
+> void SetPassword (int? id, StringWrapper password)
 
 Set a user's password
 
@@ -781,7 +781,7 @@ namespace Example
 
             var apiInstance = new UsersApi();
             var id = 56;  // int? | The id of the user
-            var password = password_example;  // string | The new plain text password (optional) 
+            var password = new StringWrapper(); // StringWrapper | The new plain text password (optional) 
 
             try
             {
@@ -802,7 +802,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the user | 
- **password** | **string**| The new plain text password | [optional] 
+ **password** | [**StringWrapper**](StringWrapper.md)| The new plain text password | [optional] 
 
 ### Return type
 

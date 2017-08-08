@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**GetStore**](StoreApi.md#getstore) | **GET** /store | Get a listing of store items
 [**GetStoreItem**](StoreApi.md#getstoreitem) | **GET** /store/items/{id} | Get a single store item
 [**GetStoreItems**](StoreApi.md#getstoreitems) | **GET** /store/items | List and search store items
+[**QuickBuy**](StoreApi.md#quickbuy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
 [**UpdateItemTemplate**](StoreApi.md#updateitemtemplate) | **PUT** /store/items/templates/{id} | Update an item template
 [**UpdateStoreItem**](StoreApi.md#updatestoreitem) | **PUT** /store/items/{id} | Update a store item
 
@@ -681,6 +682,71 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="quickbuy"></a>
+# **QuickBuy**
+> InvoiceResource QuickBuy (QuickBuyRequest quickBuyRequest)
+
+One-step purchase and pay for a single SKU item from a user's wallet
+
+Used to create and automatically pay an invoice for a single unit of a single SKU from a user's wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class QuickBuyExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: OAuth2
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StoreApi();
+            var quickBuyRequest = new QuickBuyRequest(); // QuickBuyRequest | Quick buy details (optional) 
+
+            try
+            {
+                // One-step purchase and pay for a single SKU item from a user's wallet
+                InvoiceResource result = apiInstance.QuickBuy(quickBuyRequest);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling StoreApi.QuickBuy: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quickBuyRequest** | [**QuickBuyRequest**](QuickBuyRequest.md)| Quick buy details | [optional] 
+
+### Return type
+
+[**InvoiceResource**](InvoiceResource.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

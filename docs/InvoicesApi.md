@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**GetInvoiceLogs**](InvoicesApi.md#getinvoicelogs) | **GET** /invoices/{id}/logs | List invoice logs
 [**GetInvoices**](InvoicesApi.md#getinvoices) | **GET** /invoices | Retrieve invoices
 [**GetPaymentStatuses**](InvoicesApi.md#getpaymentstatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
-[**PayInvoice**](InvoicesApi.md#payinvoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+[**PayInvoice**](InvoicesApi.md#payinvoice) | **POST** /invoices/{id}/payments | Pay an invoice using a saved payment method
 [**SetBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setbundledinvoiceitemfulfillmentstatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 [**SetExternalRef**](InvoicesApi.md#setexternalref) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 [**SetInvoiceItemFulfillmentStatus**](InvoicesApi.md#setinvoiceitemfulfillmentstatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
@@ -427,7 +427,7 @@ No authorization required
 # **PayInvoice**
 > void PayInvoice (int? id, PayBySavedMethodRequest request)
 
-Trigger payment of an invoice
+Pay an invoice using a saved payment method
 
 ### Example
 ```csharp
@@ -449,11 +449,11 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | Payment info (optional) 
+            var request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited. (optional) 
 
             try
             {
-                // Trigger payment of an invoice
+                // Pay an invoice using a saved payment method
                 apiInstance.PayInvoice(id, request);
             }
             catch (Exception e)
@@ -470,7 +470,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| Payment info | [optional] 
+ **request** | [**PayBySavedMethodRequest**](PayBySavedMethodRequest.md)| The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited. | [optional] 
 
 ### Return type
 
@@ -489,7 +489,7 @@ void (empty response body)
 
 <a name="setbundledinvoiceitemfulfillmentstatus"></a>
 # **SetBundledInvoiceItemFulfillmentStatus**
-> void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, string status)
+> void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, StringWrapper status)
 
 Set the fulfillment status of a bundled invoice item
 
@@ -517,7 +517,7 @@ namespace Example
             var id = 56;  // int? | The id of the invoice
             var bundleSku = bundleSku_example;  // string | The sku of the bundle in the invoice that contains the given target
             var sku = sku_example;  // string | The sku of an item in the bundle in the invoice
-            var status = status_example;  // string | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+            var status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
             try
             {
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
  **id** | **int?**| The id of the invoice | 
  **bundleSku** | **string**| The sku of the bundle in the invoice that contains the given target | 
  **sku** | **string**| The sku of an item in the bundle in the invoice | 
- **status** | **string**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -559,7 +559,7 @@ void (empty response body)
 
 <a name="setexternalref"></a>
 # **SetExternalRef**
-> void SetExternalRef (int? id, string externalRef)
+> void SetExternalRef (int? id, StringWrapper externalRef)
 
 Set the external reference of an invoice
 
@@ -583,7 +583,7 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var externalRef = externalRef_example;  // string | External reference info (optional) 
+            var externalRef = new StringWrapper(); // StringWrapper | External reference info (optional) 
 
             try
             {
@@ -604,7 +604,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **externalRef** | **string**| External reference info | [optional] 
+ **externalRef** | [**StringWrapper**](StringWrapper.md)| External reference info | [optional] 
 
 ### Return type
 
@@ -623,7 +623,7 @@ void (empty response body)
 
 <a name="setinvoiceitemfulfillmentstatus"></a>
 # **SetInvoiceItemFulfillmentStatus**
-> void SetInvoiceItemFulfillmentStatus (int? id, string sku, string status)
+> void SetInvoiceItemFulfillmentStatus (int? id, string sku, StringWrapper status)
 
 Set the fulfillment status of an invoice item
 
@@ -650,7 +650,7 @@ namespace Example
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
             var sku = sku_example;  // string | The sku of an item in the invoice
-            var status = status_example;  // string | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+            var status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
             try
             {
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
  **sku** | **string**| The sku of an item in the invoice | 
- **status** | **string**| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39; | 
 
 ### Return type
 
@@ -691,7 +691,7 @@ void (empty response body)
 
 <a name="setordernotes"></a>
 # **SetOrderNotes**
-> void SetOrderNotes (int? id, string orderNotes)
+> void SetOrderNotes (int? id, StringWrapper orderNotes)
 
 Set the order notes of an invoice
 
@@ -715,7 +715,7 @@ namespace Example
 
             var apiInstance = new InvoicesApi();
             var id = 56;  // int? | The id of the invoice
-            var orderNotes = orderNotes_example;  // string | Payment status info (optional) 
+            var orderNotes = new StringWrapper(); // StringWrapper | Payment status info (optional) 
 
             try
             {
@@ -736,7 +736,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int?**| The id of the invoice | 
- **orderNotes** | **string**| Payment status info | [optional] 
+ **orderNotes** | [**StringWrapper**](StringWrapper.md)| Payment status info | [optional] 
 
 ### Return type
 

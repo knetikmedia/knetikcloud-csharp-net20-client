@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 <a name="incrementprogress"></a>
 # **IncrementProgress**
-> void IncrementProgress (int? userId, string name, int? progress)
+> void IncrementProgress (int? userId, string name, IntWrapper progress)
 
 Update or create a leveling progress record for a user
 
@@ -501,7 +501,7 @@ namespace Example
             var apiInstance = new GamificationLevelingApi();
             var userId = 56;  // int? | The id of the user
             var name = name_example;  // string | The level schema name
-            var progress = 56;  // int? | The amount of progress to add (optional) 
+            var progress = new IntWrapper(); // IntWrapper | The amount of progress to add (optional) 
 
             try
             {
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **name** | **string**| The level schema name | 
- **progress** | **int?**| The amount of progress to add | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount of progress to add | [optional] 
 
 ### Return type
 
@@ -542,7 +542,7 @@ void (empty response body)
 
 <a name="setprogress"></a>
 # **SetProgress**
-> void SetProgress (int? userId, string name, int? progress)
+> void SetProgress (int? userId, string name, IntWrapper progress)
 
 Set leveling progress for a user
 
@@ -569,7 +569,7 @@ namespace Example
             var apiInstance = new GamificationLevelingApi();
             var userId = 56;  // int? | The id of the user
             var name = name_example;  // string | The level schema name
-            var progress = 56;  // int? | The new progress amount (optional) 
+            var progress = new IntWrapper(); // IntWrapper | The new progress amount (optional) 
 
             try
             {
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **name** | **string**| The level schema name | 
- **progress** | **int?**| The new progress amount | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress amount | [optional] 
 
 ### Return type
 

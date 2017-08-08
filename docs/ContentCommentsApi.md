@@ -331,7 +331,7 @@ No authorization required
 
 <a name="updatecomment"></a>
 # **UpdateComment**
-> void UpdateComment (long? id, string content)
+> void UpdateComment (long? id, StringWrapper content)
 
 Update a comment
 
@@ -355,7 +355,7 @@ namespace Example
 
             var apiInstance = new ContentCommentsApi();
             var id = 789;  // long? | The comment id
-            var content = content_example;  // string | The comment content (optional) 
+            var content = new StringWrapper(); // StringWrapper | The comment content (optional) 
 
             try
             {
@@ -376,7 +376,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The comment id | 
- **content** | **string**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 

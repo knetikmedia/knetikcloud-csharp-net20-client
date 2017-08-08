@@ -46,7 +46,7 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param>
         /// <param name="token">The invite token</param>
         /// <returns></returns>
-        void RedeemFriendshipToken (string userId, string token);
+        void RedeemFriendshipToken (string userId, StringWrapper token);
         /// <summary>
         /// Remove or decline a friend 
         /// </summary>
@@ -276,7 +276,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param> 
         /// <param name="token">The invite token</param> 
         /// <returns></returns>            
-        public void RedeemFriendshipToken (string userId, string token)
+        public void RedeemFriendshipToken (string userId, StringWrapper token)
         {
             
             // verify the required parameter 'userId' is set

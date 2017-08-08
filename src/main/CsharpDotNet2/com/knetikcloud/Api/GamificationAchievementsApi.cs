@@ -125,7 +125,7 @@ namespace com.knetikcloud.Api
         /// <param name="achievementName">The achievement&#39;s name</param>
         /// <param name="progress">The amount to add to the progress value</param>
         /// <returns>UserAchievementGroupResource</returns>
-        UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress);
+        UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, IntWrapper progress);
         /// <summary>
         /// Set an achievement progress record for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
         /// </summary>
@@ -133,7 +133,7 @@ namespace com.knetikcloud.Api
         /// <param name="achievementName">The achievement&#39;s name</param>
         /// <param name="progress">The new progress value</param>
         /// <returns>UserAchievementGroupResource</returns>
-        UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress);
+        UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, IntWrapper progress);
         /// <summary>
         /// Update an achievement definition The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
         /// </summary>
@@ -759,7 +759,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="achievementName">The achievement&#39;s name</param> 
         /// <param name="progress">The amount to add to the progress value</param> 
         /// <returns>UserAchievementGroupResource</returns>            
-        public UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
+        public UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, IntWrapper progress)
         {
             
             // verify the required parameter 'userId' is set
@@ -803,7 +803,7 @@ path = path.Replace("{" + "achievement_name" + "}", ApiClient.ParameterToString(
         /// <param name="achievementName">The achievement&#39;s name</param> 
         /// <param name="progress">The new progress value</param> 
         /// <returns>UserAchievementGroupResource</returns>            
-        public UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
+        public UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, IntWrapper progress)
         {
             
             // verify the required parameter 'userId' is set

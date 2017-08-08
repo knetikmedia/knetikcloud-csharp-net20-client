@@ -32,7 +32,7 @@ Method | HTTP request | Description
 
 <a name="addusertovideowhitelist"></a>
 # **AddUserToVideoWhitelist**
-> void AddUserToVideoWhitelist (long? id, int? userId)
+> void AddUserToVideoWhitelist (long? id, IntWrapper userId)
 
 Adds a user to a video's whitelist
 
@@ -58,7 +58,7 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var id = 789;  // long? | The video id
-            var userId = 56;  // int? | The user id (optional) 
+            var userId = new IntWrapper(); // IntWrapper | The user id (optional) 
 
             try
             {
@@ -79,7 +79,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **long?**| The video id | 
- **userId** | **int?**| The user id | [optional] 
+ **userId** | [**IntWrapper**](IntWrapper.md)| The user id | [optional] 
 
 ### Return type
 
@@ -290,7 +290,7 @@ void (empty response body)
 
 <a name="addvideoflag"></a>
 # **AddVideoFlag**
-> FlagResource AddVideoFlag (long? videoId, string reason)
+> FlagResource AddVideoFlag (long? videoId, StringWrapper reason)
 
 Add a new flag
 
@@ -314,7 +314,7 @@ namespace Example
 
             var apiInstance = new MediaVideosApi();
             var videoId = 789;  // long? | The video id
-            var reason = reason_example;  // string | The flag reason (optional) 
+            var reason = new StringWrapper(); // StringWrapper | The flag reason (optional) 
 
             try
             {
@@ -336,7 +336,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
- **reason** | **string**| The flag reason | [optional] 
+ **reason** | [**StringWrapper**](StringWrapper.md)| The flag reason | [optional] 
 
 ### Return type
 
@@ -1405,7 +1405,7 @@ void (empty response body)
 
 <a name="updatevideocomment"></a>
 # **UpdateVideoComment**
-> void UpdateVideoComment (long? videoId, long? id, string content)
+> void UpdateVideoComment (long? videoId, long? id, StringWrapper content)
 
 Update a video comment
 
@@ -1430,7 +1430,7 @@ namespace Example
             var apiInstance = new MediaVideosApi();
             var videoId = 789;  // long? | The video id
             var id = 789;  // long? | The comment id
-            var content = content_example;  // string | The comment content (optional) 
+            var content = new StringWrapper(); // StringWrapper | The comment content (optional) 
 
             try
             {
@@ -1452,7 +1452,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
  **id** | **long?**| The comment id | 
- **content** | **string**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 
@@ -1471,7 +1471,7 @@ void (empty response body)
 
 <a name="updatevideorelationship"></a>
 # **UpdateVideoRelationship**
-> void UpdateVideoRelationship (long? videoId, long? relationshipId, string details)
+> void UpdateVideoRelationship (long? videoId, long? relationshipId, StringWrapper details)
 
 Update a video's relationship details
 
@@ -1496,7 +1496,7 @@ namespace Example
             var apiInstance = new MediaVideosApi();
             var videoId = 789;  // long? | The video id
             var relationshipId = 789;  // long? | The relationship id
-            var details = details_example;  // string | The video relationship details (optional) 
+            var details = new StringWrapper(); // StringWrapper | The video relationship details (optional) 
 
             try
             {
@@ -1518,7 +1518,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
  **relationshipId** | **long?**| The relationship id | 
- **details** | **string**| The video relationship details | [optional] 
+ **details** | [**StringWrapper**](StringWrapper.md)| The video relationship details | [optional] 
 
 ### Return type
 

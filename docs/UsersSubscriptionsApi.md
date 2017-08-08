@@ -277,7 +277,7 @@ void (empty response body)
 
 <a name="setsubscriptionpaymentmethod"></a>
 # **SetSubscriptionPaymentMethod**
-> void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, int? paymentMethodId)
+> void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, IntWrapper paymentMethodId)
 
 Set the payment method to use for a subscription
 
@@ -304,7 +304,7 @@ namespace Example
             var apiInstance = new UsersSubscriptionsApi();
             var userId = 56;  // int? | The id of the user
             var inventoryId = 56;  // int? | The id of the user's inventory
-            var paymentMethodId = 56;  // int? | The id of the payment method (optional) 
+            var paymentMethodId = new IntWrapper(); // IntWrapper | The id of the payment method (optional) 
 
             try
             {
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **inventoryId** | **int?**| The id of the user&#39;s inventory | 
- **paymentMethodId** | **int?**| The id of the payment method | [optional] 
+ **paymentMethodId** | [**IntWrapper**](IntWrapper.md)| The id of the payment method | [optional] 
 
 ### Return type
 
@@ -345,11 +345,11 @@ void (empty response body)
 
 <a name="setsubscriptionstatus"></a>
 # **SetSubscriptionStatus**
-> void SetSubscriptionStatus (int? userId, int? inventoryId, string status)
+> void SetSubscriptionStatus (int? userId, int? inventoryId, StringWrapper status)
 
 Set the status of a subscription
 
-The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
 
 ### Example
 ```csharp
@@ -372,7 +372,7 @@ namespace Example
             var apiInstance = new UsersSubscriptionsApi();
             var userId = 56;  // int? | The id of the user
             var inventoryId = 56;  // int? | The id of the user's inventory
-            var status = status_example;  // string | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
+            var status = new StringWrapper(); // StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
 
             try
             {
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **inventoryId** | **int?**| The id of the user&#39;s inventory | 
- **status** | **string**| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) | 
 
 ### Return type
 
@@ -413,7 +413,7 @@ void (empty response body)
 
 <a name="setusersubscriptionplan"></a>
 # **SetUserSubscriptionPlan**
-> void SetUserSubscriptionPlan (int? userId, int? inventoryId, string planId)
+> void SetUserSubscriptionPlan (int? userId, int? inventoryId, StringWrapper planId)
 
 Set a new subscription plan for a user
 
@@ -438,7 +438,7 @@ namespace Example
             var apiInstance = new UsersSubscriptionsApi();
             var userId = 56;  // int? | The id of the user
             var inventoryId = 56;  // int? | The id of the user's inventory
-            var planId = planId_example;  // string | The id of the new plan. Must be from the same subscription (optional) 
+            var planId = new StringWrapper(); // StringWrapper | The id of the new plan. Must be from the same subscription (optional) 
 
             try
             {
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The id of the user | 
  **inventoryId** | **int?**| The id of the user&#39;s inventory | 
- **planId** | **string**| The id of the new plan. Must be from the same subscription | [optional] 
+ **planId** | [**StringWrapper**](StringWrapper.md)| The id of the new plan. Must be from the same subscription | [optional] 
 
 ### Return type
 

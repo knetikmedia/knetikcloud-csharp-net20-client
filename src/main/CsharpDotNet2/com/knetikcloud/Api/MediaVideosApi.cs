@@ -17,7 +17,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The video id</param>
         /// <param name="userId">The user id</param>
         /// <returns></returns>
-        void AddUserToVideoWhitelist (long? id, int? userId);
+        void AddUserToVideoWhitelist (long? id, IntWrapper userId);
         /// <summary>
         /// Adds a new video in the system 
         /// </summary>
@@ -44,7 +44,7 @@ namespace com.knetikcloud.Api
         /// <param name="videoId">The video id</param>
         /// <param name="reason">The flag reason</param>
         /// <returns>FlagResource</returns>
-        FlagResource AddVideoFlag (long? videoId, string reason);
+        FlagResource AddVideoFlag (long? videoId, StringWrapper reason);
         /// <summary>
         /// Adds one or more existing videos as related to this one 
         /// </summary>
@@ -178,7 +178,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The comment id</param>
         /// <param name="content">The comment content</param>
         /// <returns></returns>
-        void UpdateVideoComment (long? videoId, long? id, string content);
+        void UpdateVideoComment (long? videoId, long? id, StringWrapper content);
         /// <summary>
         /// Update a video&#39;s relationship details 
         /// </summary>
@@ -186,7 +186,7 @@ namespace com.knetikcloud.Api
         /// <param name="relationshipId">The relationship id</param>
         /// <param name="details">The video relationship details</param>
         /// <returns></returns>
-        void UpdateVideoRelationship (long? videoId, long? relationshipId, string details);
+        void UpdateVideoRelationship (long? videoId, long? relationshipId, StringWrapper details);
         /// <summary>
         /// Increment a video&#39;s view count 
         /// </summary>
@@ -254,7 +254,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The video id</param> 
         /// <param name="userId">The user id</param> 
         /// <returns></returns>            
-        public void AddUserToVideoWhitelist (long? id, int? userId)
+        public void AddUserToVideoWhitelist (long? id, IntWrapper userId)
         {
             
             // verify the required parameter 'id' is set
@@ -405,7 +405,7 @@ namespace com.knetikcloud.Api
         /// <param name="videoId">The video id</param> 
         /// <param name="reason">The flag reason</param> 
         /// <returns>FlagResource</returns>            
-        public FlagResource AddVideoFlag (long? videoId, string reason)
+        public FlagResource AddVideoFlag (long? videoId, StringWrapper reason)
         {
             
             // verify the required parameter 'videoId' is set
@@ -1106,7 +1106,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="id">The comment id</param> 
         /// <param name="content">The comment content</param> 
         /// <returns></returns>            
-        public void UpdateVideoComment (long? videoId, long? id, string content)
+        public void UpdateVideoComment (long? videoId, long? id, StringWrapper content)
         {
             
             // verify the required parameter 'videoId' is set
@@ -1150,7 +1150,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// <param name="relationshipId">The relationship id</param> 
         /// <param name="details">The video relationship details</param> 
         /// <returns></returns>            
-        public void UpdateVideoRelationship (long? videoId, long? relationshipId, string details)
+        public void UpdateVideoRelationship (long? videoId, long? relationshipId, StringWrapper details)
         {
             
             // verify the required parameter 'videoId' is set

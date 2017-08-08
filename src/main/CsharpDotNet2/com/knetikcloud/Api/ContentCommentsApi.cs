@@ -52,7 +52,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The comment id</param>
         /// <param name="content">The comment content</param>
         /// <returns></returns>
-        void UpdateComment (long? id, string content);
+        void UpdateComment (long? id, StringWrapper content);
     }
   
     /// <summary>
@@ -306,7 +306,7 @@ namespace com.knetikcloud.Api
         /// <param name="id">The comment id</param> 
         /// <param name="content">The comment content</param> 
         /// <returns></returns>            
-        public void UpdateComment (long? id, string content)
+        public void UpdateComment (long? id, StringWrapper content)
         {
             
             // verify the required parameter 'id' is set

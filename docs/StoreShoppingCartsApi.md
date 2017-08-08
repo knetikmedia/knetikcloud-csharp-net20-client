@@ -606,7 +606,7 @@ void (empty response body)
 
 <a name="setcartcurrency"></a>
 # **SetCartCurrency**
-> void SetCartCurrency (string id, string currencyCode)
+> void SetCartCurrency (string id, StringWrapper currencyCode)
 
 Sets the currency to use for the cart
 
@@ -632,7 +632,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var currencyCode = currencyCode_example;  // string | The code of the currency (optional) 
+            var currencyCode = new StringWrapper(); // StringWrapper | The code of the currency (optional) 
 
             try
             {
@@ -653,7 +653,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **currencyCode** | **string**| The code of the currency | [optional] 
+ **currencyCode** | [**StringWrapper**](StringWrapper.md)| The code of the currency | [optional] 
 
 ### Return type
 
@@ -672,7 +672,7 @@ void (empty response body)
 
 <a name="setcartowner"></a>
 # **SetCartOwner**
-> void SetCartOwner (string id, int? userId)
+> void SetCartOwner (string id, IntWrapper userId)
 
 Sets the owner of a cart if none is set already
 
@@ -696,7 +696,7 @@ namespace Example
 
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
-            var userId = 56;  // int? | The id of the user (optional) 
+            var userId = new IntWrapper(); // IntWrapper | The id of the user (optional) 
 
             try
             {
@@ -717,7 +717,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the cart | 
- **userId** | **int?**| The id of the user | [optional] 
+ **userId** | [**IntWrapper**](IntWrapper.md)| The id of the user | [optional] 
 
 ### Return type
 

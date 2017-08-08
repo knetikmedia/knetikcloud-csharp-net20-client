@@ -13,6 +13,14 @@ namespace com.knetikcloud.Model {
   [DataContract]
   public class StripeCreatePaymentMethod {
     /// <summary>
+    /// Additional optional details to store on the payment method. If included, all fields in the details will override any defaults
+    /// </summary>
+    /// <value>Additional optional details to store on the payment method. If included, all fields in the details will override any defaults</value>
+    [DataMember(Name="details", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "details")]
+    public PaymentMethodDetails Details { get; set; }
+
+    /// <summary>
     /// A token from Stripe to identify payment info to be tied to the customer
     /// </summary>
     /// <value>A token from Stripe to identify payment info to be tied to the customer</value>
@@ -36,6 +44,7 @@ namespace com.knetikcloud.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class StripeCreatePaymentMethod {\n");
+      sb.Append("  Details: ").Append(Details).Append("\n");
       sb.Append("  Token: ").Append(Token).Append("\n");
       sb.Append("  UserId: ").Append(UserId).Append("\n");
       sb.Append("}\n");

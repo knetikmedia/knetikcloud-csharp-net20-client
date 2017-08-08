@@ -968,7 +968,7 @@ Name | Type | Description  | Notes
 
 <a name="incrementachievementprogress"></a>
 # **IncrementAchievementProgress**
-> UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, int? progress)
+> UserAchievementGroupResource IncrementAchievementProgress (int? userId, string achievementName, IntWrapper progress)
 
 Increment an achievement progress record for a user
 
@@ -995,7 +995,7 @@ namespace Example
             var apiInstance = new GamificationAchievementsApi();
             var userId = 56;  // int? | The user's id
             var achievementName = achievementName_example;  // string | The achievement's name
-            var progress = 56;  // int? | The amount to add to the progress value (optional) 
+            var progress = new IntWrapper(); // IntWrapper | The amount to add to the progress value (optional) 
 
             try
             {
@@ -1018,7 +1018,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The user&#39;s id | 
  **achievementName** | **string**| The achievement&#39;s name | 
- **progress** | **int?**| The amount to add to the progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount to add to the progress value | [optional] 
 
 ### Return type
 
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 
 <a name="setachievementprogress"></a>
 # **SetAchievementProgress**
-> UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, int? progress)
+> UserAchievementGroupResource SetAchievementProgress (int? userId, string achievementName, IntWrapper progress)
 
 Set an achievement progress record for a user
 
@@ -1064,7 +1064,7 @@ namespace Example
             var apiInstance = new GamificationAchievementsApi();
             var userId = 56;  // int? | The user's id
             var achievementName = achievementName_example;  // string | The achievement's name
-            var progress = 56;  // int? | The new progress value (optional) 
+            var progress = new IntWrapper(); // IntWrapper | The new progress value (optional) 
 
             try
             {
@@ -1087,7 +1087,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int?**| The user&#39;s id | 
  **achievementName** | **string**| The achievement&#39;s name | 
- **progress** | **int?**| The new progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress value | [optional] 
 
 ### Return type
 
