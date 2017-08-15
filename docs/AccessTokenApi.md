@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getoauthtoken"></a>
 # **GetOAuthToken**
-> OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
+> OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password, string token, string refreshToken)
 
 Get access token
 
@@ -32,13 +32,15 @@ namespace Example
             var grantType = grantType_example;  // string | Grant type (default to client_credentials)
             var clientId = clientId_example;  // string | The id of the client (default to knetik)
             var clientSecret = clientSecret_example;  // string | The secret key of the client.  Used only with a grant_type of client_credentials (optional) 
-            var username = username_example;  // string | The username of the client.  Used only with a grant_type of password (optional) 
-            var password = password_example;  // string | The password of the client.  Used only with a grant_type of password (optional) 
+            var username = username_example;  // string | The username of the client. Used only with a grant_type of password (optional) 
+            var password = password_example;  // string | The password of the client. Used only with a grant_type of password (optional) 
+            var token = token_example;  // string | The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) (optional) 
+            var refreshToken = refreshToken_example;  // string | The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token (optional) 
 
             try
             {
                 // Get access token
-                OAuth2Resource result = apiInstance.GetOAuthToken(grantType, clientId, clientSecret, username, password);
+                OAuth2Resource result = apiInstance.GetOAuthToken(grantType, clientId, clientSecret, username, password, token, refreshToken);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,8 +59,10 @@ Name | Type | Description  | Notes
  **grantType** | **string**| Grant type | [default to client_credentials]
  **clientId** | **string**| The id of the client | [default to knetik]
  **clientSecret** | **string**| The secret key of the client.  Used only with a grant_type of client_credentials | [optional] 
- **username** | **string**| The username of the client.  Used only with a grant_type of password | [optional] 
- **password** | **string**| The password of the client.  Used only with a grant_type of password | [optional] 
+ **username** | **string**| The username of the client. Used only with a grant_type of password | [optional] 
+ **password** | **string**| The password of the client. Used only with a grant_type of password | [optional] 
+ **token** | **string**| The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) | [optional] 
+ **refreshToken** | **string**| The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token | [optional] 
 
 ### Return type
 

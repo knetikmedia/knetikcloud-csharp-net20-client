@@ -17,10 +17,12 @@ namespace com.knetikcloud.Api
         /// <param name="grantType">Grant type</param>
         /// <param name="clientId">The id of the client</param>
         /// <param name="clientSecret">The secret key of the client.  Used only with a grant_type of client_credentials</param>
-        /// <param name="username">The username of the client.  Used only with a grant_type of password</param>
-        /// <param name="password">The password of the client.  Used only with a grant_type of password</param>
+        /// <param name="username">The username of the client. Used only with a grant_type of password</param>
+        /// <param name="password">The password of the client. Used only with a grant_type of password</param>
+        /// <param name="token">The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)</param>
+        /// <param name="refreshToken">The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token</param>
         /// <returns>OAuth2Resource</returns>
-        OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password);
+        OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password, string token, string refreshToken);
     }
   
     /// <summary>
@@ -82,10 +84,12 @@ namespace com.knetikcloud.Api
         /// <param name="grantType">Grant type</param> 
         /// <param name="clientId">The id of the client</param> 
         /// <param name="clientSecret">The secret key of the client.  Used only with a grant_type of client_credentials</param> 
-        /// <param name="username">The username of the client.  Used only with a grant_type of password</param> 
-        /// <param name="password">The password of the client.  Used only with a grant_type of password</param> 
+        /// <param name="username">The username of the client. Used only with a grant_type of password</param> 
+        /// <param name="password">The password of the client. Used only with a grant_type of password</param> 
+        /// <param name="token">The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)</param> 
+        /// <param name="refreshToken">The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token</param> 
         /// <returns>OAuth2Resource</returns>            
-        public OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password)
+        public OAuth2Resource GetOAuthToken (string grantType, string clientId, string clientSecret, string username, string password, string token, string refreshToken)
         {
             
             // verify the required parameter 'grantType' is set
@@ -109,6 +113,8 @@ if (clientId != null) formParams.Add("client_id", ApiClient.ParameterToString(cl
 if (clientSecret != null) formParams.Add("client_secret", ApiClient.ParameterToString(clientSecret)); // form parameter
 if (username != null) formParams.Add("username", ApiClient.ParameterToString(username)); // form parameter
 if (password != null) formParams.Add("password", ApiClient.ParameterToString(password)); // form parameter
+if (token != null) formParams.Add("token", ApiClient.ParameterToString(token)); // form parameter
+if (refreshToken != null) formParams.Add("refresh_token", ApiClient.ParameterToString(refreshToken)); // form parameter
                 
             // authentication setting, if any
             String[] authSettings = new String[] {  };
