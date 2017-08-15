@@ -102,9 +102,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new GamificationLeaderboardsApi();
             var contextType = contextType_example;  // string | The context type for the leaderboard
             var contextId = contextId_example;  // string | The context id for the leaderboard
@@ -139,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

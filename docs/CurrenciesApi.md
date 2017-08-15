@@ -32,9 +32,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new CurrenciesApi();
             var currency = new CurrencyResource(); // CurrencyResource | The currency object (optional) 
 
@@ -65,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,9 +92,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new CurrenciesApi();
             var code = code_example;  // string | The currency code
 
@@ -127,7 +121,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -285,9 +279,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new CurrenciesApi();
             var code = code_example;  // string | The currency code
             var currency = new CurrencyResource(); // CurrencyResource | The currency object (optional) 
@@ -319,7 +310,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

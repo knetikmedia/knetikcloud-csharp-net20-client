@@ -32,9 +32,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new FulfillmentApi();
             var type = new FulfillmentType(); // FulfillmentType | The fulfillment type (optional) 
 
@@ -65,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,9 +92,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new FulfillmentApi();
             var id = 56;  // int? | The id
 
@@ -127,7 +121,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -281,9 +275,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new FulfillmentApi();
             var id = 56;  // int? | The id
             var fulfillmentType = new FulfillmentType(); // FulfillmentType | The fulfillment type (optional) 
@@ -315,7 +306,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

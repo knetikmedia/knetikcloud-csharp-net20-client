@@ -32,9 +32,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthPermissionsApi();
             var permissionResource = new PermissionResource(); // PermissionResource | The permission resource object (optional) 
 
@@ -65,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,9 +92,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthPermissionsApi();
             var permission = permission_example;  // string | The permission value
             var force = true;  // bool? | If true, removes permission assigned to roles (optional) 
@@ -129,7 +123,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -159,9 +153,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthPermissionsApi();
             var permission = permission_example;  // string | The permission value
 
@@ -192,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -222,9 +213,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthPermissionsApi();
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
@@ -259,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -289,9 +277,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthPermissionsApi();
             var permission = permission_example;  // string | The permission value
             var permissionResource = new PermissionResource(); // PermissionResource | The permission resource object (optional) 
@@ -324,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

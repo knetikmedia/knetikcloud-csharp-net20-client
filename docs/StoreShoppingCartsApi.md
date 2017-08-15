@@ -40,9 +40,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var customDiscount = new CouponDefinition(); // CouponDefinition | The details of the discount to add (optional) 
@@ -74,7 +71,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -104,9 +101,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var skuRequest = new SkuRequest(); // SkuRequest | The request of the sku (optional) 
@@ -138,7 +132,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -170,9 +164,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object (optional) 
@@ -204,7 +195,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,9 +227,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var owner = 56;  // int? | Set the owner of a cart. If not specified, defaults to the calling user's id. If specified and is not the calling user's id, SHOPPING_CARTS_ADMIN permission is required (optional) 
             var currencyCode = currencyCode_example;  // string | Set the currency for the cart, by currency code. May be disallowed by site settings. (optional) 
@@ -271,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -301,9 +289,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
 
@@ -334,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -364,9 +349,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var filterOwnerId = 56;  // int? | Filter by the id of the owner (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
@@ -403,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -433,9 +415,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
 
@@ -466,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -498,9 +477,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
 
@@ -531,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -561,9 +537,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var code = code_example;  // string | The SKU code of the coupon to remove
@@ -595,7 +568,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -627,9 +600,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var currencyCode = new StringWrapper(); // StringWrapper | The code of the currency (optional) 
@@ -661,7 +631,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -691,9 +661,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var userId = new IntWrapper(); // IntWrapper | The id of the user (optional) 
@@ -725,7 +692,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -757,9 +724,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object (optional) 
@@ -791,7 +755,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -821,9 +785,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new StoreShoppingCartsApi();
             var id = id_example;  // string | The id of the cart
             var cartShippingAddressRequest = new CartShippingAddressRequest(); // CartShippingAddressRequest | The cart shipping address request object (optional) 
@@ -855,7 +816,7 @@ void (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

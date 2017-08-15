@@ -59,6 +59,7 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List and search articles Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
+        /// <param name="filterActiveOnly">Filter for articles that are active (true) or inactive (false)</param>
         /// <param name="filterCategory">Filter for articles from a specific category by id</param>
         /// <param name="filterTagset">Filter for articles with at least one of a specified set of tags (separated by comma)</param>
         /// <param name="filterTagIntersection">Filter for articles with all of a specified set of tags (separated by comma)</param>
@@ -68,7 +69,7 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
         /// <returns>PageResourceArticleResource</returns>
-        PageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order);
+        PageResourceArticleResource GetArticles (bool? filterActiveOnly, string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order);
         /// <summary>
         /// Update an existing article 
         /// </summary>
@@ -159,7 +160,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(articleResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -193,7 +194,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(articleTemplateResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -230,7 +231,7 @@ namespace com.knetikcloud.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -269,7 +270,7 @@ namespace com.knetikcloud.Api
              if (cascade != null) queryParams.Add("cascade", ApiClient.ParameterToString(cascade)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -343,7 +344,7 @@ namespace com.knetikcloud.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -381,7 +382,7 @@ namespace com.knetikcloud.Api
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -397,6 +398,7 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// List and search articles Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
         /// </summary>
+        /// <param name="filterActiveOnly">Filter for articles that are active (true) or inactive (false)</param> 
         /// <param name="filterCategory">Filter for articles from a specific category by id</param> 
         /// <param name="filterTagset">Filter for articles with at least one of a specified set of tags (separated by comma)</param> 
         /// <param name="filterTagIntersection">Filter for articles with all of a specified set of tags (separated by comma)</param> 
@@ -406,7 +408,7 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
         /// <returns>PageResourceArticleResource</returns>            
-        public PageResourceArticleResource GetArticles (string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order)
+        public PageResourceArticleResource GetArticles (bool? filterActiveOnly, string filterCategory, string filterTagset, string filterTagIntersection, string filterTagExclusion, string filterTitle, int? size, int? page, string order)
         {
             
     
@@ -419,7 +421,8 @@ namespace com.knetikcloud.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-             if (filterCategory != null) queryParams.Add("filter_category", ApiClient.ParameterToString(filterCategory)); // query parameter
+             if (filterActiveOnly != null) queryParams.Add("filter_active_only", ApiClient.ParameterToString(filterActiveOnly)); // query parameter
+ if (filterCategory != null) queryParams.Add("filter_category", ApiClient.ParameterToString(filterCategory)); // query parameter
  if (filterTagset != null) queryParams.Add("filter_tagset", ApiClient.ParameterToString(filterTagset)); // query parameter
  if (filterTagIntersection != null) queryParams.Add("filter_tag_intersection", ApiClient.ParameterToString(filterTagIntersection)); // query parameter
  if (filterTagExclusion != null) queryParams.Add("filter_tag_exclusion", ApiClient.ParameterToString(filterTagExclusion)); // query parameter
@@ -468,7 +471,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(articleResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -507,7 +510,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(articleTemplateResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

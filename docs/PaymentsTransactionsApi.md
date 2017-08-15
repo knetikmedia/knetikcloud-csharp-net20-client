@@ -30,9 +30,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new PaymentsTransactionsApi();
             var id = 56;  // int? | id
 
@@ -63,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -93,9 +90,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new PaymentsTransactionsApi();
             var filterInvoice = 56;  // int? | Filter for transactions from a specific invoice (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
@@ -132,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -164,9 +158,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new PaymentsTransactionsApi();
             var id = 56;  // int? | The id of the transaction to refund
             var request = new RefundRequest(); // RefundRequest | Request containing refund details (optional) 
@@ -199,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

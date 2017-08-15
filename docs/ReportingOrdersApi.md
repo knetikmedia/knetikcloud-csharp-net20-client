@@ -28,9 +28,6 @@ namespace Example
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: OAuth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new ReportingOrdersApi();
             var currencyCode = currencyCode_example;  // string | The code for a currency to get sales data for
             var granularity = granularity_example;  // string | The time duration to aggregate by (optional)  (default to day)
@@ -75,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

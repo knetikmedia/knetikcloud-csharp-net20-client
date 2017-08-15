@@ -107,7 +107,7 @@ namespace com.knetikcloud.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -173,7 +173,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(maintenance); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -207,7 +207,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(maintenance); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

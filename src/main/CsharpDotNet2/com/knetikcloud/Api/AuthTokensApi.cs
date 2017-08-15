@@ -113,7 +113,7 @@ namespace com.knetikcloud.Api
  if (clientId != null) queryParams.Add("client_id", ApiClient.ParameterToString(clientId)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -155,7 +155,7 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -197,7 +197,7 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

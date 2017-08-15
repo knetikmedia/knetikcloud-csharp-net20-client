@@ -29,6 +29,14 @@ namespace com.knetikcloud.Model {
     public string Availability { get; set; }
 
     /// <summary>
+    /// The behaviors linked to the item, describing various options and interactions. May not be included in item lists
+    /// </summary>
+    /// <value>The behaviors linked to the item, describing various options and interactions. May not be included in item lists</value>
+    [DataMember(Name="behaviors", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "behaviors")]
+    public List<Behavior> Behaviors { get; set; }
+
+    /// <summary>
     /// A category for filtering items
     /// </summary>
     /// <value>A category for filtering items</value>
@@ -182,6 +190,7 @@ namespace com.knetikcloud.Model {
       sb.Append("class SubscriptionResource {\n");
       sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
       sb.Append("  Availability: ").Append(Availability).Append("\n");
+      sb.Append("  Behaviors: ").Append(Behaviors).Append("\n");
       sb.Append("  Category: ").Append(Category).Append("\n");
       sb.Append("  ConsolidationDayOfMonth: ").Append(ConsolidationDayOfMonth).Append("\n");
       sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");

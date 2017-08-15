@@ -12,7 +12,15 @@ namespace com.knetikcloud.Api
     public interface IAmazonWebServicesS3Api
     {
         /// <summary>
-        /// Get a signed S3 URL Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+        /// </summary>
+        /// <param name="bucket">S3 bucket name</param>
+        /// <param name="path">The path to the file relative the bucket (the s3 object key)</param>
+        /// <param name="expiration">The number of seconds this URL will be valid. Default to 60</param>
+        /// <returns>string</returns>
+        string GetDownloadURL (string bucket, string path, int? expiration);
+        /// <summary>
+        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
         /// </summary>
         /// <param name="filename">The file name</param>
         /// <param name="contentType">The content type</param>
@@ -74,7 +82,45 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get a signed S3 URL Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+        /// </summary>
+        /// <param name="bucket">S3 bucket name</param> 
+        /// <param name="path">The path to the file relative the bucket (the s3 object key)</param> 
+        /// <param name="expiration">The number of seconds this URL will be valid. Default to 60</param> 
+        /// <returns>string</returns>            
+        public string GetDownloadURL (string bucket, string path, int? expiration)
+        {
+            
+    
+            var path = "/amazon/s3/downloadurl";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+             if (bucket != null) queryParams.Add("bucket", ApiClient.ParameterToString(bucket)); // query parameter
+ if (path != null) queryParams.Add("path", ApiClient.ParameterToString(path)); // query parameter
+ if (expiration != null) queryParams.Add("expiration", ApiClient.ParameterToString(expiration)); // query parameter
+                                        
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetDownloadURL: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetDownloadURL: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (string) ApiClient.Deserialize(response.Content, typeof(string), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
         /// </summary>
         /// <param name="filename">The file name</param> 
         /// <param name="contentType">The content type</param> 
@@ -96,7 +142,7 @@ namespace com.knetikcloud.Api
  if (contentType != null) queryParams.Add("content_type", ApiClient.ParameterToString(contentType)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

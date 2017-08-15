@@ -191,7 +191,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(req); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -260,7 +260,7 @@ namespace com.knetikcloud.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -301,7 +301,7 @@ namespace com.knetikcloud.Api
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -367,7 +367,7 @@ namespace com.knetikcloud.Api
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -438,7 +438,7 @@ namespace com.knetikcloud.Api
                                                 postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -490,7 +490,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(status); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -529,7 +529,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(externalRef); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -576,7 +576,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(status); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -615,7 +615,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(orderNotes); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -654,7 +654,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -693,7 +693,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
                                                 postBody = ApiClient.Serialize(billingInfoRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "OAuth2" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

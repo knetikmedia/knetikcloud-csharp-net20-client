@@ -257,7 +257,11 @@ namespace com.knetikcloud.Client
                 // determine which one to use
                 switch(auth)
                 {
-                    case "OAuth2":
+                    case "oauth2_client_credentials_grant":
+                        
+                        //TODO support oauth
+                        break;
+                    case "oauth2_password_grant":
                         
                         //TODO support oauth
                         break;
