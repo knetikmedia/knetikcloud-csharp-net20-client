@@ -20,6 +20,14 @@ namespace com.knetikcloud.Model {
     [JsonProperty(PropertyName = "payment_method")]
     public int? PaymentMethod { get; set; }
 
+    /// <summary>
+    /// The id of a user to bill. Must have PAYMENTS_ADMIN permission
+    /// </summary>
+    /// <value>The id of a user to bill. Must have PAYMENTS_ADMIN permission</value>
+    [DataMember(Name="user_id", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "user_id")]
+    public int? UserId { get; set; }
+
 
     /// <summary>
     /// Get the string presentation of the object
@@ -29,6 +37,7 @@ namespace com.knetikcloud.Model {
       var sb = new StringBuilder();
       sb.Append("class PayBySavedMethodRequest {\n");
       sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+      sb.Append("  UserId: ").Append(UserId).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
