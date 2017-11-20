@@ -303,6 +303,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new MediaArtistsApi();
             var id = 789;  // long? | The artist id
             var showContributions = 56;  // int? | The number of contributions to show fetch (optional) 
@@ -335,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -499,6 +504,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new MediaArtistsApi();
             var filterArtistsByName = filterArtistsByName_example;  // string | Filter for artists which name *STARTS* with the given string (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
@@ -535,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 

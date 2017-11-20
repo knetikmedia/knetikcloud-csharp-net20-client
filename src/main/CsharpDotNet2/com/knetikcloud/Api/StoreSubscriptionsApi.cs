@@ -312,7 +312,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -425,7 +425,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

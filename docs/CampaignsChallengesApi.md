@@ -652,6 +652,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var id = 789;  // long? | The challenge id
 
@@ -682,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -712,6 +717,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var challengeId = 789;  // long? | The challenge id
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
@@ -748,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -780,6 +790,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var id = 789;  // long? | The challenge_activity id
             var challengeId = 789;  // long? | The challenge id
@@ -812,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -976,6 +991,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var id = 789;  // long? | The challenge event id
 
@@ -1006,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1036,6 +1056,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var filterStartDate = filterStartDate_example;  // string | A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional) 
             var filterEndDate = filterEndDate_example;  // string | A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional) 
@@ -1078,7 +1103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1242,6 +1267,11 @@ namespace Example
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new CampaignsChallengesApi();
             var filterActiveCampaign = true;  // bool? | Filter for challenges that are tied to active campaigns (optional) 
             var filterStartDate = filterStartDate_example;  // string | A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional) 
@@ -1282,7 +1312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1362,7 +1392,7 @@ Name | Type | Description  | Notes
 
 <a name="updatechallengeactivity"></a>
 # **UpdateChallengeActivity**
-> ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource)
+> ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings)
 
 Update a challenge activity
 
@@ -1392,11 +1422,12 @@ namespace Example
             var id = 789;  // long? | The challenge_activity id
             var challengeId = 789;  // long? | The challenge id
             var challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object (optional) 
+            var validateSettings = true;  // bool? | Whether to validate the settings being sent against the available settings on the base activity. (optional)  (default to false)
 
             try
             {
                 // Update a challenge activity
-                ChallengeActivityResource result = apiInstance.UpdateChallengeActivity(id, challengeId, challengeActivityResource);
+                ChallengeActivityResource result = apiInstance.UpdateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1415,6 +1446,7 @@ Name | Type | Description  | Notes
  **id** | **long?**| The challenge_activity id | 
  **challengeId** | **long?**| The challenge id | 
  **challengeActivityResource** | [**ChallengeActivityResource**](ChallengeActivityResource.md)| The challenge activity resource object | [optional] 
+ **validateSettings** | **bool?**| Whether to validate the settings being sent against the available settings on the base activity. | [optional] [default to false]
 
 ### Return type
 

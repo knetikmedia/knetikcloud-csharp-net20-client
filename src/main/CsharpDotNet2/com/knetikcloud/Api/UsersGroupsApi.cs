@@ -566,7 +566,7 @@ namespace com.knetikcloud.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -608,7 +608,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -726,7 +726,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -840,7 +840,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
              if (filterChildren != null) queryParams.Add("filter_children", ApiClient.ParameterToString(filterChildren)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -890,7 +890,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

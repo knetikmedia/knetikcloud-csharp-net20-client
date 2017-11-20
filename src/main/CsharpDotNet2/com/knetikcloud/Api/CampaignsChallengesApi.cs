@@ -162,8 +162,9 @@ namespace com.knetikcloud.Api
         /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
         /// <param name="challengeActivityResource">The challenge activity resource object</param>
+        /// <param name="validateSettings">Whether to validate the settings being sent against the available settings on the base activity.</param>
         /// <returns>ChallengeActivityResource</returns>
-        ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource);
+        ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings);
         /// <summary>
         /// Update an challenge activity template 
         /// </summary>
@@ -291,7 +292,7 @@ namespace com.knetikcloud.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-             if (validateSettings != null) queryParams.Add("validateSettings", ApiClient.ParameterToString(validateSettings)); // query parameter
+             if (validateSettings != null) queryParams.Add("validate_settings", ApiClient.ParameterToString(validateSettings)); // query parameter
                                     postBody = ApiClient.Serialize(challengeActivityResource); // http body (model) parameter
     
             // authentication setting, if any
@@ -594,7 +595,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -637,7 +638,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -679,7 +680,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -791,7 +792,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -837,7 +838,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -956,7 +957,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1014,8 +1015,9 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
         /// <param name="challengeActivityResource">The challenge activity resource object</param> 
+        /// <param name="validateSettings">Whether to validate the settings being sent against the available settings on the base activity.</param> 
         /// <returns>ChallengeActivityResource</returns>            
-        public ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource)
+        public ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings)
         {
             
             // verify the required parameter 'id' is set
@@ -1036,7 +1038,8 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                                                postBody = ApiClient.Serialize(challengeActivityResource); // http body (model) parameter
+             if (validateSettings != null) queryParams.Add("validateSettings", ApiClient.ParameterToString(validateSettings)); // query parameter
+                                    postBody = ApiClient.Serialize(challengeActivityResource); // http body (model) parameter
     
             // authentication setting, if any
             String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
