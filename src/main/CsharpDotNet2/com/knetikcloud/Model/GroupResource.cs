@@ -77,6 +77,14 @@ namespace com.knetikcloud.Model {
     public int? SubMemberCount { get; set; }
 
     /// <summary>
+    /// Tags for search
+    /// </summary>
+    /// <value>Tags for search</value>
+    [DataMember(Name="tags", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "tags")]
+    public List<string> Tags { get; set; }
+
+    /// <summary>
     /// A group template this group is validated against. May be null and no validation of additional_properties will be done
     /// </summary>
     /// <value>A group template this group is validated against. May be null and no validation of additional_properties will be done</value>
@@ -85,9 +93,9 @@ namespace com.knetikcloud.Model {
     public string Template { get; set; }
 
     /// <summary>
-    /// Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created
+    /// Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
     /// </summary>
-    /// <value>Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created</value>
+    /// <value>Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID</value>
     [DataMember(Name="unique_name", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "unique_name")]
     public string UniqueName { get; set; }
@@ -108,6 +116,7 @@ namespace com.knetikcloud.Model {
       sb.Append("  Parent: ").Append(Parent).Append("\n");
       sb.Append("  Status: ").Append(Status).Append("\n");
       sb.Append("  SubMemberCount: ").Append(SubMemberCount).Append("\n");
+      sb.Append("  Tags: ").Append(Tags).Append("\n");
       sb.Append("  Template: ").Append(Template).Append("\n");
       sb.Append("  UniqueName: ").Append(UniqueName).Append("\n");
       sb.Append("}\n");

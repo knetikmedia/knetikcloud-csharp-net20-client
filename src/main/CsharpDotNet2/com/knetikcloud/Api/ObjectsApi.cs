@@ -73,11 +73,11 @@ namespace com.knetikcloud.Api
         /// Update an object 
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param>
-        /// <param name="entitlementId">The id of the entitlement</param>
+        /// <param name="objectId">The id of the object</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="objectItem">The object item object</param>
         /// <returns></returns>
-        void UpdateObjectItem (string templateId, int? entitlementId, bool? cascade, EntitlementItem objectItem);
+        void UpdateObjectItem (string templateId, int? objectId, bool? cascade, ObjectResource objectItem);
         /// <summary>
         /// Update an entitlement template 
         /// </summary>
@@ -460,24 +460,24 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         /// Update an object 
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param> 
-        /// <param name="entitlementId">The id of the entitlement</param> 
+        /// <param name="objectId">The id of the object</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="objectItem">The object item object</param> 
         /// <returns></returns>            
-        public void UpdateObjectItem (string templateId, int? entitlementId, bool? cascade, EntitlementItem objectItem)
+        public void UpdateObjectItem (string templateId, int? objectId, bool? cascade, ObjectResource objectItem)
         {
             
             // verify the required parameter 'templateId' is set
             if (templateId == null) throw new ApiException(400, "Missing required parameter 'templateId' when calling UpdateObjectItem");
             
-            // verify the required parameter 'entitlementId' is set
-            if (entitlementId == null) throw new ApiException(400, "Missing required parameter 'entitlementId' when calling UpdateObjectItem");
+            // verify the required parameter 'objectId' is set
+            if (objectId == null) throw new ApiException(400, "Missing required parameter 'objectId' when calling UpdateObjectItem");
             
     
             var path = "/objects/{template_id}/{object_id}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "template_id" + "}", ApiClient.ParameterToString(templateId));
-path = path.Replace("{" + "entitlement_id" + "}", ApiClient.ParameterToString(entitlementId));
+path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectId));
     
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();

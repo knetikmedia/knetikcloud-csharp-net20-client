@@ -11,8 +11,9 @@ Name | Type | Description | Notes
 **Parent** | **string** | The unique name of another group that this group is a subset of | [optional] 
 **Status** | **string** | The status which describes whether other users can freely join the group or not | 
 **SubMemberCount** | **int?** | The number of users in child groups | [optional] 
+**Tags** | **List&lt;string&gt;** | Tags for search | [optional] 
 **Template** | **string** | A group template this group is validated against. May be null and no validation of additional_properties will be done | [optional] 
-**UniqueName** | **string** | Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created | 
+**UniqueName** | **string** | Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

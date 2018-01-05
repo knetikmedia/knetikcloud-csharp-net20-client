@@ -13,6 +13,14 @@ namespace com.knetikcloud.Model {
   [DataContract]
   public class ListPropertyDefinitionResource : PropertyDefinitionResource {
     /// <summary>
+    /// The description of the property
+    /// </summary>
+    /// <value>The description of the property</value>
+    [DataMember(Name="description", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "description")]
+    public string Description { get; set; }
+
+    /// <summary>
     /// A list of the fields on both the property definition and property of this type
     /// </summary>
     /// <value>A list of the fields on both the property definition and property of this type</value>
@@ -21,12 +29,44 @@ namespace com.knetikcloud.Model {
     public PropertyFieldListResource FieldList { get; set; }
 
     /// <summary>
+    /// The friendly front-facing name of the property
+    /// </summary>
+    /// <value>The friendly front-facing name of the property</value>
+    [DataMember(Name="friendly_name", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "friendly_name")]
+    public string FriendlyName { get; set; }
+
+    /// <summary>
     /// The name of the property
     /// </summary>
     /// <value>The name of the property</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "name")]
     public string Name { get; set; }
+
+    /// <summary>
+    /// The JSON path to the option label
+    /// </summary>
+    /// <value>The JSON path to the option label</value>
+    [DataMember(Name="option_label_path", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "option_label_path")]
+    public string OptionLabelPath { get; set; }
+
+    /// <summary>
+    /// The JSON path to the option value
+    /// </summary>
+    /// <value>The JSON path to the option value</value>
+    [DataMember(Name="option_value_path", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "option_value_path")]
+    public string OptionValuePath { get; set; }
+
+    /// <summary>
+    /// URL of service containing the property options (assumed JSON array)
+    /// </summary>
+    /// <value>URL of service containing the property options (assumed JSON array)</value>
+    [DataMember(Name="options_url", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "options_url")]
+    public string OptionsUrl { get; set; }
 
     /// <summary>
     /// Whether the property is required
@@ -76,8 +116,13 @@ namespace com.knetikcloud.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class ListPropertyDefinitionResource {\n");
+      sb.Append("  Description: ").Append(Description).Append("\n");
       sb.Append("  FieldList: ").Append(FieldList).Append("\n");
+      sb.Append("  FriendlyName: ").Append(FriendlyName).Append("\n");
       sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  OptionLabelPath: ").Append(OptionLabelPath).Append("\n");
+      sb.Append("  OptionValuePath: ").Append(OptionValuePath).Append("\n");
+      sb.Append("  OptionsUrl: ").Append(OptionsUrl).Append("\n");
       sb.Append("  Required: ").Append(Required).Append("\n");
       sb.Append("  Type: ").Append(Type).Append("\n");
       sb.Append("  MaxCount: ").Append(MaxCount).Append("\n");

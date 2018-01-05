@@ -77,18 +77,11 @@ namespace com.knetikcloud.Model {
     public string Type { get; set; }
 
     /// <summary>
-    /// Gets or Sets CustomerSetup
+    /// Gets or Sets Teardown
     /// </summary>
-    [DataMember(Name="customer_setup", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "customer_setup")]
-    public bool? CustomerSetup { get; set; }
-
-    /// <summary>
-    /// Gets or Sets CustomerTeardown
-    /// </summary>
-    [DataMember(Name="customer_teardown", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "customer_teardown")]
-    public bool? CustomerTeardown { get; set; }
+    [DataMember(Name="teardown", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "teardown")]
+    public bool? Teardown { get; set; }
 
 
     /// <summary>
@@ -107,8 +100,7 @@ namespace com.knetikcloud.Model {
       sb.Append("  Synchronous: ").Append(Synchronous).Append("\n");
       sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
       sb.Append("  Type: ").Append(Type).Append("\n");
-      sb.Append("  CustomerSetup: ").Append(CustomerSetup).Append("\n");
-      sb.Append("  CustomerTeardown: ").Append(CustomerTeardown).Append("\n");
+      sb.Append("  Teardown: ").Append(Teardown).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

@@ -37,9 +37,17 @@ namespace com.knetikcloud.Model {
     public long? CreatedDate { get; set; }
 
     /// <summary>
-    /// The decimal to multiply the system base currency (from config 'currency') to localize to this one. Should be 1 for the base currency itself.
+    /// Whether this is the default currency. All real money wallets will be in this currency, and the 'factor' on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing
     /// </summary>
-    /// <value>The decimal to multiply the system base currency (from config 'currency') to localize to this one. Should be 1 for the base currency itself.</value>
+    /// <value>Whether this is the default currency. All real money wallets will be in this currency, and the 'factor' on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing</value>
+    [DataMember(Name="default_currency", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "default_currency")]
+    public bool? DefaultCurrency { get; set; }
+
+    /// <summary>
+    /// The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself.
+    /// </summary>
+    /// <value>The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself.</value>
     [DataMember(Name="factor", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "factor")]
     public decimal? Factor { get; set; }
@@ -87,6 +95,7 @@ namespace com.knetikcloud.Model {
       sb.Append("  Active: ").Append(Active).Append("\n");
       sb.Append("  Code: ").Append(Code).Append("\n");
       sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+      sb.Append("  DefaultCurrency: ").Append(DefaultCurrency).Append("\n");
       sb.Append("  Factor: ").Append(Factor).Append("\n");
       sb.Append("  Icon: ").Append(Icon).Append("\n");
       sb.Append("  Name: ").Append(Name).Append("\n");

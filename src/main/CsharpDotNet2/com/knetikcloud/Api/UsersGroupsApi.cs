@@ -44,7 +44,7 @@ namespace com.knetikcloud.Api
         /// <returns>TemplateResource</returns>
         TemplateResource CreateGroupTemplate (TemplateResource groupTemplateResource);
         /// <summary>
-        /// Removes a group from the system IF no resources are attached to it 
+        /// Removes a group from the system All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
         /// <returns></returns>
@@ -69,6 +69,12 @@ namespace com.knetikcloud.Api
         /// <param name="uniqueName">The group unique name</param>
         /// <returns>GroupResource</returns>
         GroupResource GetGroup (string uniqueName);
+        /// <summary>
+        /// Get group ancestors Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+        /// </summary>
+        /// <param name="uniqueName">The group unique name</param>
+        /// <returns>List&lt;GroupResource&gt;</returns>
+        List<GroupResource> GetGroupAncestors (string uniqueName);
         /// <summary>
         /// Get a user from a group 
         /// </summary>
@@ -142,7 +148,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void RemoveGroupMember (string uniqueName, int? userId);
         /// <summary>
-        /// Update a group 
+        /// Update a group If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
         /// </summary>
         /// <param name="uniqueName">The group unique name</param>
         /// <param name="groupResource">The updated group</param>
@@ -428,7 +434,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Removes a group from the system IF no resources are attached to it 
+        /// Removes a group from the system All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
         /// <returns></returns>            
@@ -577,6 +583,43 @@ namespace com.knetikcloud.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGroup: " + response.ErrorMessage, response.ErrorMessage);
     
             return (GroupResource) ApiClient.Deserialize(response.Content, typeof(GroupResource), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get group ancestors Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+        /// </summary>
+        /// <param name="uniqueName">The group unique name</param> 
+        /// <returns>List&lt;GroupResource&gt;</returns>            
+        public List<GroupResource> GetGroupAncestors (string uniqueName)
+        {
+            
+            // verify the required parameter 'uniqueName' is set
+            if (uniqueName == null) throw new ApiException(400, "Missing required parameter 'uniqueName' when calling GetGroupAncestors");
+            
+    
+            var path = "/users/groups/{unique_name}/ancestors";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "unique_name" + "}", ApiClient.ParameterToString(uniqueName));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetGroupAncestors: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetGroupAncestors: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (List<GroupResource>) ApiClient.Deserialize(response.Content, typeof(List<GroupResource>), response.Headers);
         }
     
         /// <summary>
@@ -946,7 +989,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         }
     
         /// <summary>
-        /// Update a group 
+        /// Update a group If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
         /// </summary>
         /// <param name="uniqueName">The group unique name</param> 
         /// <param name="groupResource">The updated group</param> 

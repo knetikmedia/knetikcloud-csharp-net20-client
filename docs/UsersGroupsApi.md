@@ -9,10 +9,11 @@ Method | HTTP request | Description
 [**CreateGroup**](UsersGroupsApi.md#creategroup) | **POST** /users/groups | Create a group
 [**CreateGroupMemberTemplate**](UsersGroupsApi.md#creategroupmembertemplate) | **POST** /users/groups/members/templates | Create an group member template
 [**CreateGroupTemplate**](UsersGroupsApi.md#creategrouptemplate) | **POST** /users/groups/templates | Create a group template
-[**DeleteGroup**](UsersGroupsApi.md#deletegroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+[**DeleteGroup**](UsersGroupsApi.md#deletegroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 [**DeleteGroupMemberTemplate**](UsersGroupsApi.md#deletegroupmembertemplate) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 [**DeleteGroupTemplate**](UsersGroupsApi.md#deletegrouptemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
 [**GetGroup**](UsersGroupsApi.md#getgroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+[**GetGroupAncestors**](UsersGroupsApi.md#getgroupancestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 [**GetGroupMember**](UsersGroupsApi.md#getgroupmember) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 [**GetGroupMemberTemplate**](UsersGroupsApi.md#getgroupmembertemplate) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 [**GetGroupMemberTemplates**](UsersGroupsApi.md#getgroupmembertemplates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -367,7 +368,9 @@ Name | Type | Description  | Notes
 # **DeleteGroup**
 > void DeleteGroup (string uniqueName)
 
-Removes a group from the system IF no resources are attached to it
+Removes a group from the system
+
+All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group's parent if they were not added to it directly as well.
 
 ### Example
 ```csharp
@@ -394,7 +397,7 @@ namespace Example
 
             try
             {
-                // Removes a group from the system IF no resources are attached to it
+                // Removes a group from the system
                 apiInstance.DeleteGroup(uniqueName);
             }
             catch (Exception e)
@@ -620,6 +623,68 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getgroupancestors"></a>
+# **GetGroupAncestors**
+> List<GroupResource> GetGroupAncestors (string uniqueName)
+
+Get group ancestors
+
+Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class GetGroupAncestorsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new UsersGroupsApi();
+            var uniqueName = uniqueName_example;  // string | The group unique name
+
+            try
+            {
+                // Get group ancestors
+                List&lt;GroupResource&gt; result = apiInstance.GetGroupAncestors(uniqueName);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersGroupsApi.GetGroupAncestors: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uniqueName** | **string**| The group unique name | 
+
+### Return type
+
+[**List<GroupResource>**](GroupResource.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -1253,6 +1318,8 @@ void (empty response body)
 > void UpdateGroup (string uniqueName, GroupResource groupResource)
 
 Update a group
+
+If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
 
 ### Example
 ```csharp

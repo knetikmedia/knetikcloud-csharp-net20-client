@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface ISearchApi
     {
         /// <summary>
-        /// Search an index The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+        /// Search an index with no template The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="query">The query to be used for the search</param>
@@ -20,6 +20,16 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <returns>PageResourceMapstringobject</returns>
         PageResourceMapstringobject SearchIndex (string type, Object query, int? size, int? page);
+        /// <summary>
+        /// Search an index with a template The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+        /// </summary>
+        /// <param name="type">The index type</param>
+        /// <param name="template">The index template</param>
+        /// <param name="query">The query to be used for the search</param>
+        /// <param name="size">The number of documents returned per page</param>
+        /// <param name="page">The number of the page returned, starting with 1</param>
+        /// <returns>PageResourceMapstringobject</returns>
+        PageResourceMapstringobject SearchIndexWithTemplate (string type, string template, Object query, int? size, int? page);
     }
   
     /// <summary>
@@ -76,7 +86,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Search an index The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+        /// Search an index with no template The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="query">The query to be used for the search</param> 
@@ -114,6 +124,54 @@ namespace com.knetikcloud.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling SearchIndex: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling SearchIndex: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (PageResourceMapstringobject) ApiClient.Deserialize(response.Content, typeof(PageResourceMapstringobject), response.Headers);
+        }
+    
+        /// <summary>
+        /// Search an index with a template The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+        /// </summary>
+        /// <param name="type">The index type</param> 
+        /// <param name="template">The index template</param> 
+        /// <param name="query">The query to be used for the search</param> 
+        /// <param name="size">The number of documents returned per page</param> 
+        /// <param name="page">The number of the page returned, starting with 1</param> 
+        /// <returns>PageResourceMapstringobject</returns>            
+        public PageResourceMapstringobject SearchIndexWithTemplate (string type, string template, Object query, int? size, int? page)
+        {
+            
+            // verify the required parameter 'type' is set
+            if (type == null) throw new ApiException(400, "Missing required parameter 'type' when calling SearchIndexWithTemplate");
+            
+            // verify the required parameter 'template' is set
+            if (template == null) throw new ApiException(400, "Missing required parameter 'template' when calling SearchIndexWithTemplate");
+            
+    
+            var path = "/search/index/{type}/{template}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
+path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
+ if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
+                                    postBody = ApiClient.Serialize(query); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SearchIndexWithTemplate: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SearchIndexWithTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PageResourceMapstringobject) ApiClient.Deserialize(response.Content, typeof(PageResourceMapstringobject), response.Headers);
         }
