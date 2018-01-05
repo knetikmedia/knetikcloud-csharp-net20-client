@@ -1,6 +1,6 @@
 # com.knetikcloud..MediaVideosApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,22 +11,27 @@ Method | HTTP request | Description
 [**AddVideoFlag**](MediaVideosApi.md#addvideoflag) | **POST** /media/videos/{video_id}/moderation | Add a new flag
 [**AddVideoRelationships**](MediaVideosApi.md#addvideorelationships) | **POST** /media/videos/{video_id}/related | Adds one or more existing videos as related to this one
 [**CreateVideoDisposition**](MediaVideosApi.md#createvideodisposition) | **POST** /media/videos/{video_id}/dispositions | Create a video disposition
+[**CreateVideoTemplate**](MediaVideosApi.md#createvideotemplate) | **POST** /media/videos/templates | Create a video template
 [**DeleteVideo**](MediaVideosApi.md#deletevideo) | **DELETE** /media/videos/{id} | Deletes a video from the system if no resources are attached to it
 [**DeleteVideoComment**](MediaVideosApi.md#deletevideocomment) | **DELETE** /media/videos/{video_id}/comments/{id} | Delete a video comment
 [**DeleteVideoDisposition**](MediaVideosApi.md#deletevideodisposition) | **DELETE** /media/videos/{video_id}/dispositions/{disposition_id} | Delete a video disposition
 [**DeleteVideoFlag**](MediaVideosApi.md#deletevideoflag) | **DELETE** /media/videos/{video_id}/moderation | Delete a flag
 [**DeleteVideoRelationship**](MediaVideosApi.md#deletevideorelationship) | **DELETE** /media/videos/{video_id}/related/{id} | Delete a video&#39;s relationship
+[**DeleteVideoTemplate**](MediaVideosApi.md#deletevideotemplate) | **DELETE** /media/videos/templates/{id} | Delete a video template
 [**GetUserVideos**](MediaVideosApi.md#getuservideos) | **GET** /users/{user_id}/videos | Get user videos
 [**GetVideo**](MediaVideosApi.md#getvideo) | **GET** /media/videos/{id} | Loads a specific video details
 [**GetVideoComments**](MediaVideosApi.md#getvideocomments) | **GET** /media/videos/{video_id}/comments | Returns a page of comments for a video
 [**GetVideoDispositions**](MediaVideosApi.md#getvideodispositions) | **GET** /media/videos/{video_id}/dispositions | Returns a page of dispositions for a video
 [**GetVideoRelationships**](MediaVideosApi.md#getvideorelationships) | **GET** /media/videos/{video_id}/related | Returns a page of video relationships
+[**GetVideoTemplate**](MediaVideosApi.md#getvideotemplate) | **GET** /media/videos/templates/{id} | Get a single video template
+[**GetVideoTemplates**](MediaVideosApi.md#getvideotemplates) | **GET** /media/videos/templates | List and search video templates
 [**GetVideos**](MediaVideosApi.md#getvideos) | **GET** /media/videos | Search videos using the documented filters
 [**RemoveUserFromVideoWhitelist**](MediaVideosApi.md#removeuserfromvideowhitelist) | **DELETE** /media/videos/{video_id}/whitelist/{id} | Removes a user from a video&#39;s whitelist
 [**RemoveVideoContributor**](MediaVideosApi.md#removevideocontributor) | **DELETE** /media/videos/{video_id}/contributors/{id} | Removes a contributor from a video
 [**UpdateVideo**](MediaVideosApi.md#updatevideo) | **PUT** /media/videos/{id} | Modifies a video&#39;s details
 [**UpdateVideoComment**](MediaVideosApi.md#updatevideocomment) | **PUT** /media/videos/{video_id}/comments/{id}/content | Update a video comment
 [**UpdateVideoRelationship**](MediaVideosApi.md#updatevideorelationship) | **PUT** /media/videos/{video_id}/related/{id}/relationship_details | Update a video&#39;s relationship details
+[**UpdateVideoTemplate**](MediaVideosApi.md#updatevideotemplate) | **PUT** /media/videos/templates/{id} | Update a video template
 [**ViewVideo**](MediaVideosApi.md#viewvideo) | **POST** /media/videos/{id}/views | Increment a video&#39;s view count
 
 
@@ -497,6 +502,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="createvideotemplate"></a>
+# **CreateVideoTemplate**
+> TemplateResource CreateVideoTemplate (TemplateResource videoTemplateResource)
+
+Create a video template
+
+Video Templates define a type of video and the properties they have
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class CreateVideoTemplateExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new MediaVideosApi();
+            var videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object (optional) 
+
+            try
+            {
+                // Create a video template
+                TemplateResource result = apiInstance.CreateVideoTemplate(videoTemplateResource);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MediaVideosApi.CreateVideoTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional] 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="deletevideo"></a>
 # **DeleteVideo**
 > void DeleteVideo (long? id)
@@ -805,6 +877,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **long?**| The video id | 
  **id** | **long?**| The relationship id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletevideotemplate"></a>
+# **DeleteVideoTemplate**
+> void DeleteVideoTemplate (string id, string cascade)
+
+Delete a video template
+
+If cascade = 'detach', it will force delete the template even if it's attached to other objects
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class DeleteVideoTemplateExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new MediaVideosApi();
+            var id = id_example;  // string | The id of the template
+            var cascade = cascade_example;  // string | The value needed to delete used templates (optional) 
+
+            try
+            {
+                // Delete a video template
+                apiInstance.DeleteVideoTemplate(id, cascade);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MediaVideosApi.DeleteVideoTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the template | 
+ **cascade** | **string**| The value needed to delete used templates | [optional] 
 
 ### Return type
 
@@ -1152,6 +1292,140 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResourceVideoRelationshipResource**](PageResourceVideoRelationshipResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getvideotemplate"></a>
+# **GetVideoTemplate**
+> TemplateResource GetVideoTemplate (string id)
+
+Get a single video template
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class GetVideoTemplateExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new MediaVideosApi();
+            var id = id_example;  // string | The id of the template
+
+            try
+            {
+                // Get a single video template
+                TemplateResource result = apiInstance.GetVideoTemplate(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MediaVideosApi.GetVideoTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the template | 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getvideotemplates"></a>
+# **GetVideoTemplates**
+> PageResourceTemplateResource GetVideoTemplates (int? size, int? page, string order)
+
+List and search video templates
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class GetVideoTemplatesExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new MediaVideosApi();
+            var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
+            var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
+            var order = order_example;  // string | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)  (default to id:ASC)
+
+            try
+            {
+                // List and search video templates
+                PageResourceTemplateResource result = apiInstance.GetVideoTemplates(size, page, order);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MediaVideosApi.GetVideoTemplates: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **string**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
+
+### Return type
+
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -1581,6 +1855,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatevideotemplate"></a>
+# **UpdateVideoTemplate**
+> TemplateResource UpdateVideoTemplate (string id, TemplateResource videoTemplateResource)
+
+Update a video template
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class UpdateVideoTemplateExample
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new MediaVideosApi();
+            var id = id_example;  // string | The id of the template
+            var videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object (optional) 
+
+            try
+            {
+                // Update a video template
+                TemplateResource result = apiInstance.UpdateVideoTemplate(id, videoTemplateResource);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MediaVideosApi.UpdateVideoTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the template | 
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional] 
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 

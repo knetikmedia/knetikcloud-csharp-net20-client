@@ -1,6 +1,6 @@
 # com.knetikcloud..ContentCommentsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**DeleteComment**](ContentCommentsApi.md#deletecomment) | **DELETE** /comments/{id} | Delete a comment
 [**GetComment**](ContentCommentsApi.md#getcomment) | **GET** /comments/{id} | Return a comment
 [**GetComments**](ContentCommentsApi.md#getcomments) | **GET** /comments | Returns a page of comments
-[**SearchComments**](ContentCommentsApi.md#searchcomments) | **POST** /comments/search | Search the comment index
 [**UpdateComment**](ContentCommentsApi.md#updatecomment) | **PUT** /comments/{id}/content | Update a comment
 
 
@@ -259,77 +258,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **context** | **string**| Get comments by context type | 
  **contextId** | **int?**| Get comments by context id | 
- **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
- **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
-
-### Return type
-
-[**PageResourceCommentResource**](PageResourceCommentResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="searchcomments"></a>
-# **SearchComments**
-> PageResourceCommentResource SearchComments (Object query, int? size, int? page)
-
-Search the comment index
-
-The body is an ElasticSearch query json. Please see their <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html'>documentation</a> for details on the format and search options
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using com.knetikcloud.Api;
-using com.knetikcloud.Client;
-using com.knetikcloud.Model;
-
-namespace Example
-{
-    public class SearchCommentsExample
-    {
-        public void main()
-        {
-            
-            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure OAuth2 access token for authorization: oauth2_password_grant
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ContentCommentsApi();
-            var query = ;  // Object | The search query (optional) 
-            var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
-            var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
-
-            try
-            {
-                // Search the comment index
-                PageResourceCommentResource result = apiInstance.SearchComments(query, size, page);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ContentCommentsApi.SearchComments: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **Object**| The search query | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
 

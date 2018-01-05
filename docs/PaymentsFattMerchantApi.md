@@ -1,6 +1,6 @@
 # com.knetikcloud..PaymentsFattMerchantApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

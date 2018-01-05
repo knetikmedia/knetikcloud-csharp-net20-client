@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | **bool?** | Whether the video is available, based on various factors | [optional] 
+**AdditionalProperties** | [**Dictionary&lt;string, Property&gt;**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] 
 **Author** | [**SimpleReferenceResourcelong**](SimpleReferenceResourcelong.md) | The original artist of the media | [optional] 
 **Authored** | **long?** | The date the media was created as a unix timestamp in seconds | [optional] 
 **Banned** | **bool?** | Whether the video has been banned or not | [optional] 
@@ -26,6 +27,7 @@ Name | Type | Description | Notes
 **ShortDescription** | **string** | The user friendly name of that resource. Defaults to blank string | [optional] 
 **Size** | **long?** | The size of the media. Minimum 0 if supplied | [optional] 
 **Tags** | **List&lt;string&gt;** | The tags for the video | [optional] 
+**Template** | **string** | A video template this video is validated against (private). May be null and no validation of additional_properties will be done | [optional] 
 **Thumbnail** | **string** | The country of a thumbnail version. Typically a url | [optional] 
 **UpdatedDate** | **long?** | The date/time this resource was last updated in seconds since unix epoch | [optional] 
 **Uploader** | [**SimpleUserResource**](SimpleUserResource.md) | The user the media was uploaded by. May be null for system uploaded media. May only be set to a user other than the current caller if VIDEOS_ADMIN permission. Null will mean the caller is the uploader unless the caller has VIDEOS_ADMIN permission, in which case it will be set to null | [optional] 

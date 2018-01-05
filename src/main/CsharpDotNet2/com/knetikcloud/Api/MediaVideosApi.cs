@@ -60,6 +60,12 @@ namespace com.knetikcloud.Api
         /// <returns>DispositionResource</returns>
         DispositionResource CreateVideoDisposition (int? videoId, DispositionResource dispositionResource);
         /// <summary>
+        /// Create a video template Video Templates define a type of video and the properties they have
+        /// </summary>
+        /// <param name="videoTemplateResource">The video template resource object</param>
+        /// <returns>TemplateResource</returns>
+        TemplateResource CreateVideoTemplate (TemplateResource videoTemplateResource);
+        /// <summary>
         /// Deletes a video from the system if no resources are attached to it 
         /// </summary>
         /// <param name="id">The video id</param>
@@ -91,6 +97,13 @@ namespace com.knetikcloud.Api
         /// <param name="id">The relationship id</param>
         /// <returns></returns>
         void DeleteVideoRelationship (long? videoId, long? id);
+        /// <summary>
+        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// </summary>
+        /// <param name="id">The id of the template</param>
+        /// <param name="cascade">The value needed to delete used templates</param>
+        /// <returns></returns>
+        void DeleteVideoTemplate (string id, string cascade);
         /// <summary>
         /// Get user videos 
         /// </summary>
@@ -130,6 +143,20 @@ namespace com.knetikcloud.Api
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <returns>PageResourceVideoRelationshipResource</returns>
         PageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page);
+        /// <summary>
+        /// Get a single video template 
+        /// </summary>
+        /// <param name="id">The id of the template</param>
+        /// <returns>TemplateResource</returns>
+        TemplateResource GetVideoTemplate (string id);
+        /// <summary>
+        /// List and search video templates 
+        /// </summary>
+        /// <param name="size">The number of objects returned per page</param>
+        /// <param name="page">The number of the page returned, starting with 1</param>
+        /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
+        /// <returns>PageResourceTemplateResource</returns>
+        PageResourceTemplateResource GetVideoTemplates (int? size, int? page, string order);
         /// <summary>
         /// Search videos using the documented filters 
         /// </summary>
@@ -187,6 +214,13 @@ namespace com.knetikcloud.Api
         /// <param name="details">The video relationship details</param>
         /// <returns></returns>
         void UpdateVideoRelationship (long? videoId, long? relationshipId, StringWrapper details);
+        /// <summary>
+        /// Update a video template 
+        /// </summary>
+        /// <param name="id">The id of the template</param>
+        /// <param name="videoTemplateResource">The video template resource object</param>
+        /// <returns>TemplateResource</returns>
+        TemplateResource UpdateVideoTemplate (string id, TemplateResource videoTemplateResource);
         /// <summary>
         /// Increment a video&#39;s view count 
         /// </summary>
@@ -517,6 +551,40 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
+        /// Create a video template Video Templates define a type of video and the properties they have
+        /// </summary>
+        /// <param name="videoTemplateResource">The video template resource object</param> 
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource CreateVideoTemplate (TemplateResource videoTemplateResource)
+        {
+            
+    
+            var path = "/media/videos/templates";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(videoTemplateResource); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling CreateVideoTemplate: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling CreateVideoTemplate: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
+        }
+    
+        /// <summary>
         /// Deletes a video from the system if no resources are attached to it 
         /// </summary>
         /// <param name="id">The video id</param> 
@@ -707,6 +775,45 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
                 throw new ApiException ((int)response.StatusCode, "Error calling DeleteVideoRelationship: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling DeleteVideoRelationship: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return;
+        }
+    
+        /// <summary>
+        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// </summary>
+        /// <param name="id">The id of the template</param> 
+        /// <param name="cascade">The value needed to delete used templates</param> 
+        /// <returns></returns>            
+        public void DeleteVideoTemplate (string id, string cascade)
+        {
+            
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling DeleteVideoTemplate");
+            
+    
+            var path = "/media/videos/templates/{id}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+             if (cascade != null) queryParams.Add("cascade", ApiClient.ParameterToString(cascade)); // query parameter
+                                        
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling DeleteVideoTemplate: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling DeleteVideoTemplate: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
         }
@@ -912,6 +1019,81 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
                 throw new ApiException ((int)response.StatusCode, "Error calling GetVideoRelationships: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PageResourceVideoRelationshipResource) ApiClient.Deserialize(response.Content, typeof(PageResourceVideoRelationshipResource), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get a single video template 
+        /// </summary>
+        /// <param name="id">The id of the template</param> 
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource GetVideoTemplate (string id)
+        {
+            
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling GetVideoTemplate");
+            
+    
+            var path = "/media/videos/templates/{id}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetVideoTemplate: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetVideoTemplate: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
+        }
+    
+        /// <summary>
+        /// List and search video templates 
+        /// </summary>
+        /// <param name="size">The number of objects returned per page</param> 
+        /// <param name="page">The number of the page returned, starting with 1</param> 
+        /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
+        /// <returns>PageResourceTemplateResource</returns>            
+        public PageResourceTemplateResource GetVideoTemplates (int? size, int? page, string order)
+        {
+            
+    
+            var path = "/media/videos/templates";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
+ if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
+ if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
+                                        
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetVideoTemplates: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetVideoTemplates: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (PageResourceTemplateResource) ApiClient.Deserialize(response.Content, typeof(PageResourceTemplateResource), response.Headers);
         }
     
         /// <summary>
@@ -1185,6 +1367,45 @@ path = path.Replace("{" + "relationship_id" + "}", ApiClient.ParameterToString(r
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateVideoRelationship: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
+        }
+    
+        /// <summary>
+        /// Update a video template 
+        /// </summary>
+        /// <param name="id">The id of the template</param> 
+        /// <param name="videoTemplateResource">The video template resource object</param> 
+        /// <returns>TemplateResource</returns>            
+        public TemplateResource UpdateVideoTemplate (string id, TemplateResource videoTemplateResource)
+        {
+            
+            // verify the required parameter 'id' is set
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UpdateVideoTemplate");
+            
+    
+            var path = "/media/videos/templates/{id}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(videoTemplateResource); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling UpdateVideoTemplate: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling UpdateVideoTemplate: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (TemplateResource) ApiClient.Deserialize(response.Content, typeof(TemplateResource), response.Headers);
         }
     
         /// <summary>

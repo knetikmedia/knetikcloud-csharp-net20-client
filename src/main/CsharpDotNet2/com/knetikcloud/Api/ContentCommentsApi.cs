@@ -39,14 +39,6 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceCommentResource</returns>
         PageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page);
         /// <summary>
-        /// Search the comment index The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-        /// </summary>
-        /// <param name="query">The search query</param>
-        /// <param name="size">The number of objects returned per page</param>
-        /// <param name="page">The number of the page returned, starting with 1</param>
-        /// <returns>PageResourceCommentResource</returns>
-        PageResourceCommentResource SearchComments (Object query, int? size, int? page);
-        /// <summary>
         /// Update a comment 
         /// </summary>
         /// <param name="id">The comment id</param>
@@ -258,44 +250,6 @@ namespace com.knetikcloud.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling GetComments: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetComments: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCommentResource), response.Headers);
-        }
-    
-        /// <summary>
-        /// Search the comment index The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-        /// </summary>
-        /// <param name="query">The search query</param> 
-        /// <param name="size">The number of objects returned per page</param> 
-        /// <param name="page">The number of the page returned, starting with 1</param> 
-        /// <returns>PageResourceCommentResource</returns>            
-        public PageResourceCommentResource SearchComments (Object query, int? size, int? page)
-        {
-            
-    
-            var path = "/comments/search";
-            path = path.Replace("{format}", "json");
-                
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
- if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
-                                    postBody = ApiClient.Serialize(query); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling SearchComments: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling SearchComments: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PageResourceCommentResource) ApiClient.Deserialize(response.Content, typeof(PageResourceCommentResource), response.Headers);
         }

@@ -24,7 +24,7 @@ namespace com.knetikcloud.Client
         /// Initializes a new instance of the <see cref="ApiClient" /> class.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath="https://sandbox.knetikcloud.com")
+        public ApiClient(String basePath="https://devsandbox.knetikcloud.com")
         {
             BasePath = basePath;
             RestClient = new RestClient(BasePath);
