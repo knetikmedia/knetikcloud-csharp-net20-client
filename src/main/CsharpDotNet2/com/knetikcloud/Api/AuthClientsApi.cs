@@ -12,30 +12,30 @@ namespace com.knetikcloud.Api
     public interface IAuthClientsApi
     {
         /// <summary>
-        /// Create a new client 
+        /// Create a new client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientResource">The client resource object</param>
         /// <returns>ClientResource</returns>
         ClientResource CreateClient (ClientResource clientResource);
         /// <summary>
-        /// Delete a client 
+        /// Delete a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <returns></returns>
         void DeleteClient (string clientKey);
         /// <summary>
-        /// Get a single client 
+        /// Get a single client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <returns>ClientResource</returns>
         ClientResource GetClient (string clientKey);
         /// <summary>
-        /// List available client grant types 
+        /// List available client grant types &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <returns>List&lt;GrantTypeResource&gt;</returns>
         List<GrantTypeResource> GetClientGrantTypes ();
         /// <summary>
-        /// List and search clients 
+        /// List and search clients &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -43,21 +43,21 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceClientResource</returns>
         PageResourceClientResource GetClients (int? size, int? page, string order);
         /// <summary>
-        /// Set grant types for a client 
+        /// Set grant types for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <param name="grantList">A list of unique grant types</param>
         /// <returns></returns>
         void SetClientGrantTypes (string clientKey, List<string> grantList);
         /// <summary>
-        /// Set redirect uris for a client 
+        /// Set redirect uris for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <param name="redirectList">A list of unique redirect uris</param>
         /// <returns></returns>
         void SetClientRedirectUris (string clientKey, List<string> redirectList);
         /// <summary>
-        /// Update a client 
+        /// Update a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param>
         /// <param name="clientResource">The client resource object</param>
@@ -119,7 +119,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new client 
+        /// Create a new client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientResource">The client resource object</param> 
         /// <returns>ClientResource</returns>            
@@ -153,7 +153,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a client 
+        /// Delete a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <returns></returns>            
@@ -190,7 +190,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single client 
+        /// Get a single client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <returns>ClientResource</returns>            
@@ -227,7 +227,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List available client grant types 
+        /// List available client grant types &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <returns>List&lt;GrantTypeResource&gt;</returns>            
         public List<GrantTypeResource> GetClientGrantTypes ()
@@ -259,7 +259,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search clients 
+        /// List and search clients &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -297,7 +297,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set grant types for a client 
+        /// Set grant types for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <param name="grantList">A list of unique grant types</param> 
@@ -336,7 +336,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set redirect uris for a client 
+        /// Set redirect uris for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <param name="redirectList">A list of unique redirect uris</param> 
@@ -375,7 +375,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a client 
+        /// Update a client &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
         /// </summary>
         /// <param name="clientKey">The key of the client</param> 
         /// <param name="clientResource">The client resource object</param> 

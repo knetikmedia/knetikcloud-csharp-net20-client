@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface ITemplatesPropertiesApi
     {
         /// <summary>
-        /// Get details for a template property type 
+        /// Get details for a template property type &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="type">type</param>
         /// <returns>PropertyFieldListResource</returns>
         PropertyFieldListResource GetTemplatePropertyType (string type);
         /// <summary>
-        /// List template property types 
+        /// List template property types &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;PropertyFieldListResource&gt;</returns>
         List<PropertyFieldListResource> GetTemplatePropertyTypes ();
@@ -78,7 +78,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get details for a template property type 
+        /// Get details for a template property type &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="type">type</param> 
         /// <returns>PropertyFieldListResource</returns>            
@@ -115,7 +115,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List template property types 
+        /// List template property types &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;PropertyFieldListResource&gt;</returns>            
         public List<PropertyFieldListResource> GetTemplatePropertyTypes ()

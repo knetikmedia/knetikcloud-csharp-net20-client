@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IUtilHealthApi
     {
         /// <summary>
-        /// Get health info 
+        /// Get health info &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Object</returns>
         Object GetHealth ();
@@ -72,7 +72,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get health info 
+        /// Get health info &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Object</returns>            
         public Object GetHealth ()

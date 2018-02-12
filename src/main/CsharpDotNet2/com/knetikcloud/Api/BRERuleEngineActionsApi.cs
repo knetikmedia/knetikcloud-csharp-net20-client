@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IBRERuleEngineActionsApi
     {
         /// <summary>
-        /// Get a list of available actions 
+        /// Get a list of available actions &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
         /// </summary>
         /// <param name="filterCategory">Filter for actions that are within a specific category</param>
         /// <param name="filterName">Filter for actions that have names containing the given string</param>
@@ -76,7 +76,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get a list of available actions 
+        /// Get a list of available actions &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
         /// </summary>
         /// <param name="filterCategory">Filter for actions that are within a specific category</param> 
         /// <param name="filterName">Filter for actions that have names containing the given string</param> 

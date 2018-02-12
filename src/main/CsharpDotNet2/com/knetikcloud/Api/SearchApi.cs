@@ -12,27 +12,27 @@ namespace com.knetikcloud.Api
     public interface ISearchApi
     {
         /// <summary>
-        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <returns>Object</returns>
         Object SearchCountGET (string type);
         /// <summary>
-        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="query">The query to be used for the search</param>
         /// <returns>Object</returns>
         Object SearchCountPOST (string type, Object query);
         /// <summary>
-        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
         /// <returns>Object</returns>
         Object SearchCountWithTemplateGET (string type, string template);
         /// <summary>
-        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
@@ -40,14 +40,14 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchCountWithTemplatePOST (string type, string template, Object query);
         /// <summary>
-        /// Get document with no template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get document with no template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
         /// <returns>Object</returns>
         Object SearchDocumentGET (string type, string id);
         /// <summary>
-        /// Get document with a template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get document with a template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
@@ -55,14 +55,14 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchDocumentWithTemplateGET (string type, string id, string template);
         /// <summary>
-        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
         /// <returns>Object</returns>
         Object SearchExplainGET (string type, string id);
         /// <summary>
-        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
@@ -70,7 +70,7 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchExplainPOST (string type, string id, Object query);
         /// <summary>
-        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
@@ -78,7 +78,7 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchExplainWithTemplateGET (string type, string id, string template);
         /// <summary>
-        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="id">The index id</param>
@@ -87,27 +87,27 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchExplainWithTemplatePOST (string type, string id, string template, Object query);
         /// <summary>
-        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="query">The query to be used for the search</param>
         /// <returns>Object</returns>
         Object SearchIndex (string type, Object query);
         /// <summary>
-        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <returns>Object</returns>
         Object SearchIndexGET (string type);
         /// <summary>
-        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
         /// <returns>Object</returns>
         Object SearchIndexWithTemplateGET (string type, string template);
         /// <summary>
-        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
@@ -115,45 +115,45 @@ namespace com.knetikcloud.Api
         /// <returns>Object</returns>
         Object SearchIndexWithTemplatePOST (string type, string template, Object query);
         /// <summary>
-        /// Get indices This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get indices This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <returns>Object</returns>
         Object SearchIndicesGET ();
         /// <summary>
-        /// Get mapping with no template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get mapping with no template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <returns>Object</returns>
         Object SearchMappingsGET (string type);
         /// <summary>
-        /// Get mapping with a template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get mapping with a template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
         /// <returns>Object</returns>
         Object SearchMappingsWithTemplateGET (string type, string template);
         /// <summary>
-        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <returns>Object</returns>
         Object SearchValidateGET (string type);
         /// <summary>
-        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="query">The query to be used for the search</param>
         /// <returns>Object</returns>
         Object SearchValidatePOST (string type, Object query);
         /// <summary>
-        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
         /// <returns>Object</returns>
         Object SearchValidateWithTemplateGET (string type, string template);
         /// <summary>
-        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param>
         /// <param name="template">The index template</param>
@@ -216,7 +216,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <returns>Object</returns>            
@@ -253,7 +253,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="query">The query to be used for the search</param> 
@@ -292,7 +292,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -334,7 +334,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Count matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -378,7 +378,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Get document with no template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get document with no template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -420,7 +420,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get document with a template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get document with a template This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -467,7 +467,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -509,7 +509,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -553,7 +553,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -600,7 +600,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+        /// Explain matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="id">The index id</param> 
@@ -649,7 +649,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="query">The query to be used for the search</param> 
@@ -688,7 +688,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with no template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <returns>Object</returns>            
@@ -725,7 +725,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -767,7 +767,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+        /// Search an index with a template This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -811,7 +811,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Get indices This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get indices This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <returns>Object</returns>            
         public Object SearchIndicesGET ()
@@ -843,7 +843,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Get mapping with no template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get mapping with no template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <returns>Object</returns>            
@@ -880,7 +880,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Get mapping with a template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+        /// Get mapping with a template This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -922,7 +922,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <returns>Object</returns>            
@@ -959,7 +959,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with no template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="query">The query to be used for the search</param> 
@@ -998,7 +998,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 
@@ -1040,7 +1040,7 @@ path = path.Replace("{" + "template" + "}", ApiClient.ParameterToString(template
         }
     
         /// <summary>
-        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+        /// Validate matches with a template This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
         /// </summary>
         /// <param name="type">The index type</param> 
         /// <param name="template">The index template</param> 

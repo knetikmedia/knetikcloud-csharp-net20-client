@@ -12,39 +12,39 @@ namespace com.knetikcloud.Api
     public interface ITaxesApi
     {
         /// <summary>
-        /// Create a country tax 
+        /// Create a country tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="taxResource">The tax object</param>
         /// <returns>CountryTaxResource</returns>
         CountryTaxResource CreateCountryTax (CountryTaxResource taxResource);
         /// <summary>
-        /// Create a state tax 
+        /// Create a state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="taxResource">The tax object</param>
         /// <returns>StateTaxResource</returns>
         StateTaxResource CreateStateTax (string countryCodeIso3, StateTaxResource taxResource);
         /// <summary>
-        /// Delete an existing tax 
+        /// Delete an existing tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <returns></returns>
         void DeleteCountryTax (string countryCodeIso3);
         /// <summary>
-        /// Delete an existing state tax 
+        /// Delete an existing state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="stateCode">The code of the state</param>
         /// <returns></returns>
         void DeleteStateTax (string countryCodeIso3, string stateCode);
         /// <summary>
-        /// Get a single tax 
+        /// Get a single tax &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <returns>CountryTaxResource</returns>
         CountryTaxResource GetCountryTax (string countryCodeIso3);
         /// <summary>
-        /// List and search taxes Get a list of taxes
+        /// List and search taxes &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
@@ -52,14 +52,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceCountryTaxResource</returns>
         PageResourceCountryTaxResource GetCountryTaxes (int? size, int? page, string order);
         /// <summary>
-        /// Get a single state tax 
+        /// Get a single state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="stateCode">The code of the state</param>
         /// <returns>StateTaxResource</returns>
         StateTaxResource GetStateTax (string countryCodeIso3, string stateCode);
         /// <summary>
-        /// List and search taxes across all countries Get a list of taxes
+        /// List and search taxes across all countries &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned</param>
@@ -67,7 +67,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceStateTaxResource</returns>
         PageResourceStateTaxResource GetStateTaxesForCountries (int? size, int? page, string order);
         /// <summary>
-        /// List and search taxes within a country Get a list of taxes
+        /// List and search taxes within a country &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -76,14 +76,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceStateTaxResource</returns>
         PageResourceStateTaxResource GetStateTaxesForCountry (string countryCodeIso3, int? size, int? page, string order);
         /// <summary>
-        /// Create or update a tax 
+        /// Create or update a tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="taxResource">The tax object</param>
         /// <returns>CountryTaxResource</returns>
         CountryTaxResource UpdateCountryTax (string countryCodeIso3, CountryTaxResource taxResource);
         /// <summary>
-        /// Create or update a state tax 
+        /// Create or update a state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <param name="stateCode">The code of the state</param>
@@ -146,7 +146,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a country tax 
+        /// Create a country tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="taxResource">The tax object</param> 
         /// <returns>CountryTaxResource</returns>            
@@ -180,7 +180,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a state tax 
+        /// Create a state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="taxResource">The tax object</param> 
@@ -219,7 +219,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing tax 
+        /// Delete an existing tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <returns></returns>            
@@ -256,7 +256,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing state tax 
+        /// Delete an existing state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="stateCode">The code of the state</param> 
@@ -298,7 +298,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// Get a single tax 
+        /// Get a single tax &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <returns>CountryTaxResource</returns>            
@@ -335,7 +335,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// List and search taxes Get a list of taxes
+        /// List and search taxes &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
@@ -373,7 +373,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// Get a single state tax 
+        /// Get a single state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="stateCode">The code of the state</param> 
@@ -415,7 +415,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// List and search taxes across all countries Get a list of taxes
+        /// List and search taxes across all countries &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned</param> 
@@ -453,7 +453,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// List and search taxes within a country Get a list of taxes
+        /// List and search taxes within a country &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -496,7 +496,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// Create or update a tax 
+        /// Create or update a tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="taxResource">The tax object</param> 
@@ -535,7 +535,7 @@ path = path.Replace("{" + "state_code" + "}", ApiClient.ParameterToString(stateC
         }
     
         /// <summary>
-        /// Create or update a state tax 
+        /// Create or update a state tax &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <param name="stateCode">The code of the state</param> 

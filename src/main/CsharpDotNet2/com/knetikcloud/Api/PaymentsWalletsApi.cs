@@ -12,14 +12,14 @@ namespace com.knetikcloud.Api
     public interface IPaymentsWalletsApi
     {
         /// <summary>
-        /// Returns the user&#39;s wallet for the given currency code 
+        /// Returns the user&#39;s wallet for the given currency code &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being retrieved</param>
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param>
         /// <returns>SimpleWallet</returns>
         SimpleWallet GetUserWallet (int? userId, string currencyCode);
         /// <summary>
-        /// Retrieve a user&#39;s wallet transactions 
+        /// Retrieve a user&#39;s wallet transactions &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet transactions are being retrieved</param>
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param>
@@ -33,18 +33,18 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceWalletTransactionResource</returns>
         PageResourceWalletTransactionResource GetUserWalletTransactions (int? userId, string currencyCode, string filterType, long? filterMaxDate, long? filterMinDate, string filterSign, int? size, int? page, string order);
         /// <summary>
-        /// List all of a user&#39;s wallets 
+        /// List all of a user&#39;s wallets &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallets are being retrieved</param>
         /// <returns>List&lt;SimpleWallet&gt;</returns>
         List<SimpleWallet> GetUserWallets (int? userId);
         /// <summary>
-        /// Retrieves a summation of wallet balances by currency code 
+        /// Retrieves a summation of wallet balances by currency code &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <returns>PageResourceWalletTotalResponse</returns>
         PageResourceWalletTotalResponse GetWalletBalances ();
         /// <summary>
-        /// Retrieve wallet transactions across the system 
+        /// Retrieve wallet transactions across the system &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="filterInvoice">Filter for transactions from a specific invoice</param>
         /// <param name="filterType">Filter for transactions with specified type</param>
@@ -60,7 +60,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceWalletTransactionResource</returns>
         PageResourceWalletTransactionResource GetWalletTransactions (int? filterInvoice, string filterType, string filterDate, string filterSign, int? filterUserId, string filterUsername, string filterDetails, string filterCurrencyCode, int? size, int? page, string order);
         /// <summary>
-        /// Retrieve a list of wallets across the system 
+        /// Retrieve a list of wallets across the system &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -68,7 +68,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSimpleWallet</returns>
         PageResourceSimpleWallet GetWallets (int? size, int? page, string order);
         /// <summary>
-        /// Updates the balance for a user&#39;s wallet 
+        /// Updates the balance for a user&#39;s wallet &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being modified</param>
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param>
@@ -131,7 +131,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Returns the user&#39;s wallet for the given currency code 
+        /// Returns the user&#39;s wallet for the given currency code &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being retrieved</param> 
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param> 
@@ -173,7 +173,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// Retrieve a user&#39;s wallet transactions 
+        /// Retrieve a user&#39;s wallet transactions &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet transactions are being retrieved</param> 
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param> 
@@ -229,7 +229,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// List all of a user&#39;s wallets 
+        /// List all of a user&#39;s wallets &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallets are being retrieved</param> 
         /// <returns>List&lt;SimpleWallet&gt;</returns>            
@@ -266,7 +266,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// Retrieves a summation of wallet balances by currency code 
+        /// Retrieves a summation of wallet balances by currency code &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <returns>PageResourceWalletTotalResponse</returns>            
         public PageResourceWalletTotalResponse GetWalletBalances ()
@@ -298,7 +298,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// Retrieve wallet transactions across the system 
+        /// Retrieve wallet transactions across the system &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="filterInvoice">Filter for transactions from a specific invoice</param> 
         /// <param name="filterType">Filter for transactions with specified type</param> 
@@ -352,7 +352,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// Retrieve a list of wallets across the system 
+        /// Retrieve a list of wallets across the system &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -390,7 +390,7 @@ path = path.Replace("{" + "currency_code" + "}", ApiClient.ParameterToString(cur
         }
     
         /// <summary>
-        /// Updates the balance for a user&#39;s wallet 
+        /// Updates the balance for a user&#39;s wallet &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
         /// </summary>
         /// <param name="userId">The ID of the user for whom wallet is being modified</param> 
         /// <param name="currencyCode">Currency code of the user&#39;s wallet</param> 

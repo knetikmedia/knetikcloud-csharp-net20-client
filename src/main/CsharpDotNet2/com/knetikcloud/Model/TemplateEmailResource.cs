@@ -29,6 +29,14 @@ namespace com.knetikcloud.Model {
     public List<int?> Recipients { get; set; }
 
     /// <summary>
+    /// The subject for email
+    /// </summary>
+    /// <value>The subject for email</value>
+    [DataMember(Name="subject", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "subject")]
+    public string Subject { get; set; }
+
+    /// <summary>
     /// The key for the template
     /// </summary>
     /// <value>The key for the template</value>
@@ -54,6 +62,7 @@ namespace com.knetikcloud.Model {
       sb.Append("class TemplateEmailResource {\n");
       sb.Append("  From: ").Append(From).Append("\n");
       sb.Append("  Recipients: ").Append(Recipients).Append("\n");
+      sb.Append("  Subject: ").Append(Subject).Append("\n");
       sb.Append("  TemplateKey: ").Append(TemplateKey).Append("\n");
       sb.Append("  TemplateVars: ").Append(TemplateVars).Append("\n");
       sb.Append("}\n");

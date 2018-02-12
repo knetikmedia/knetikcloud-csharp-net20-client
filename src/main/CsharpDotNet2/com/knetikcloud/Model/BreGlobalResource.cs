@@ -61,9 +61,9 @@ namespace com.knetikcloud.Model {
     public bool? SystemGlobal { get; set; }
 
     /// <summary>
-    /// The variable type the global stores. See the See Bre Variables enpoint for list
+    /// The variable type the global stores. See the BRE variables endpoint for list
     /// </summary>
-    /// <value>The variable type the global stores. See the See Bre Variables enpoint for list</value>
+    /// <value>The variable type the global stores. See the BRE variables endpoint for list</value>
     [DataMember(Name="type", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "type")]
     public string Type { get; set; }

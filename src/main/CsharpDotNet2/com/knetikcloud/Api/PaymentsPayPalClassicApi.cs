@@ -12,25 +12,25 @@ namespace com.knetikcloud.Api
     public interface IPaymentsPayPalClassicApi
     {
         /// <summary>
-        /// Create a PayPal Classic billing agreement for the user Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+        /// Create a PayPal Classic billing agreement for the user Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a PayPal billing agreement</param>
         /// <returns>string</returns>
         string CreatePayPalBillingAgreementUrl (CreateBillingAgreementRequest request);
         /// <summary>
-        /// Create a payment token for PayPal express checkout Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+        /// Create a payment token for PayPal express checkout Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a PayPal payment token</param>
         /// <returns>string</returns>
         string CreatePayPalExpressCheckout (CreatePayPalPaymentRequest request);
         /// <summary>
-        /// Finalizes a billing agreement after the user has accepted through PayPal Returns the ID of the new payment method created for the user for the billing agreement.
+        /// Finalizes a billing agreement after the user has accepted through PayPal Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to finalize a PayPal billing agreement</param>
         /// <returns>int?</returns>
         int? FinalizePayPalBillingAgreement (FinalizeBillingAgreementRequest request);
         /// <summary>
-        /// Finalizes a payment after the user has completed checkout with PayPal The invoice will be marked paid/failed by asynchronous IPN callback.
+        /// Finalizes a payment after the user has completed checkout with PayPal The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to finalize the payment</param>
         /// <returns></returns>
@@ -91,7 +91,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a PayPal Classic billing agreement for the user Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+        /// Create a PayPal Classic billing agreement for the user Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a PayPal billing agreement</param> 
         /// <returns>string</returns>            
@@ -125,7 +125,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a payment token for PayPal express checkout Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+        /// Create a payment token for PayPal express checkout Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a PayPal payment token</param> 
         /// <returns>string</returns>            
@@ -159,7 +159,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Finalizes a billing agreement after the user has accepted through PayPal Returns the ID of the new payment method created for the user for the billing agreement.
+        /// Finalizes a billing agreement after the user has accepted through PayPal Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to finalize a PayPal billing agreement</param> 
         /// <returns>int?</returns>            
@@ -193,7 +193,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Finalizes a payment after the user has completed checkout with PayPal The invoice will be marked paid/failed by asynchronous IPN callback.
+        /// Finalizes a payment after the user has completed checkout with PayPal The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to finalize the payment</param> 
         /// <returns></returns>            

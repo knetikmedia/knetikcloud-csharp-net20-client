@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Actions** | [**List&lt;BreActionLog&gt;**](BreActionLog.md) | The actions of the BRE rule | [optional] 
 **Ran** | **bool?** | Whether the rule ran | [optional] 
 **Reason** | **string** | The reason for the rule | [optional] 
 **RuleEndDate** | **long?** | The end date of the rule in seconds | [optional] 

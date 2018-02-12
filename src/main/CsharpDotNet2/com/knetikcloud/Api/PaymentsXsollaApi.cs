@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IPaymentsXsollaApi
     {
         /// <summary>
-        /// Create a payment token that should be used to forward the user to Xsolla so they can complete payment 
+        /// Create a payment token that should be used to forward the user to Xsolla so they can complete payment &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
         /// </summary>
         /// <param name="request">The payment request to be sent to XSolla</param>
         /// <returns>string</returns>
@@ -73,7 +73,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a payment token that should be used to forward the user to Xsolla so they can complete payment 
+        /// Create a payment token that should be used to forward the user to Xsolla so they can complete payment &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
         /// </summary>
         /// <param name="request">The payment request to be sent to XSolla</param> 
         /// <returns>string</returns>            

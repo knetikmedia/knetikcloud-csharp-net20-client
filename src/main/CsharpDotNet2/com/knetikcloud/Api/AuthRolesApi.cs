@@ -12,32 +12,32 @@ namespace com.knetikcloud.Api
     public interface IAuthRolesApi
     {
         /// <summary>
-        /// Create a new role 
+        /// Create a new role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="roleResource">The role resource object</param>
         /// <returns>RoleResource</returns>
         RoleResource CreateRole (RoleResource roleResource);
         /// <summary>
-        /// Delete a role 
+        /// Delete a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param>
         /// <param name="force">If true, removes role from users/clients</param>
         /// <returns></returns>
         void DeleteRole (string role, bool? force);
         /// <summary>
-        /// Get roles for a client 
+        /// Get roles for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="clientKey">The client key</param>
         /// <returns>List&lt;RoleResource&gt;</returns>
         List<RoleResource> GetClientRoles (string clientKey);
         /// <summary>
-        /// Get a single role 
+        /// Get a single role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param>
         /// <returns>RoleResource</returns>
         RoleResource GetRole (string role);
         /// <summary>
-        /// List and search roles 
+        /// List and search roles &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for roles that have a name starting with specified string</param>
         /// <param name="filterRole">Filter for roles that have a role starting with specified string</param>
@@ -47,34 +47,34 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceRoleResource</returns>
         PageResourceRoleResource GetRoles (string filterName, string filterRole, int? size, int? page, string order);
         /// <summary>
-        /// Get roles for a user 
+        /// Get roles for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <returns>List&lt;RoleResource&gt;</returns>
         List<RoleResource> GetUserRoles (int? userId);
         /// <summary>
-        /// Set roles for a client 
+        /// Set roles for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="clientKey">The client key</param>
         /// <param name="rolesList">The list of unique roles</param>
         /// <returns>ClientResource</returns>
         ClientResource SetClientRoles (string clientKey, List<string> rolesList);
         /// <summary>
-        /// Set permissions for a role 
+        /// Set permissions for a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param>
         /// <param name="permissionsList">The list of unique permissions</param>
         /// <returns>RoleResource</returns>
         RoleResource SetPermissionsForRole (string role, List<string> permissionsList);
         /// <summary>
-        /// Set roles for a user 
+        /// Set roles for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="userId">The user&#39;s id</param>
         /// <param name="rolesList">The list of unique roles</param>
         /// <returns>UserResource</returns>
         UserResource SetUserRoles (int? userId, List<string> rolesList);
         /// <summary>
-        /// Update a role 
+        /// Update a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param>
         /// <param name="roleResource">The role resource object</param>
@@ -136,7 +136,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new role 
+        /// Create a new role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="roleResource">The role resource object</param> 
         /// <returns>RoleResource</returns>            
@@ -170,7 +170,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a role 
+        /// Delete a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <param name="force">If true, removes role from users/clients</param> 
@@ -209,7 +209,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get roles for a client 
+        /// Get roles for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="clientKey">The client key</param> 
         /// <returns>List&lt;RoleResource&gt;</returns>            
@@ -246,7 +246,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single role 
+        /// Get a single role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <returns>RoleResource</returns>            
@@ -283,7 +283,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search roles 
+        /// List and search roles &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for roles that have a name starting with specified string</param> 
         /// <param name="filterRole">Filter for roles that have a role starting with specified string</param> 
@@ -325,7 +325,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get roles for a user 
+        /// Get roles for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="userId">The user&#39;s id</param> 
         /// <returns>List&lt;RoleResource&gt;</returns>            
@@ -362,7 +362,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set roles for a client 
+        /// Set roles for a client &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="clientKey">The client key</param> 
         /// <param name="rolesList">The list of unique roles</param> 
@@ -401,7 +401,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set permissions for a role 
+        /// Set permissions for a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <param name="permissionsList">The list of unique permissions</param> 
@@ -440,7 +440,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set roles for a user 
+        /// Set roles for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="userId">The user&#39;s id</param> 
         /// <param name="rolesList">The list of unique roles</param> 
@@ -479,7 +479,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a role 
+        /// Update a role &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
         /// </summary>
         /// <param name="role">The role value</param> 
         /// <param name="roleResource">The role resource object</param> 

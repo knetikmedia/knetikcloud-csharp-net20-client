@@ -13,9 +13,9 @@ namespace com.knetikcloud.Model {
   [DataContract]
   public class Config {
     /// <summary>
-    /// The description of the config.  Max 140 characters
+    /// The description of the config.  Max 255 characters
     /// </summary>
-    /// <value>The description of the config.  Max 140 characters</value>
+    /// <value>The description of the config.  Max 255 characters</value>
     [DataMember(Name="description", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "description")]
     public string Description { get; set; }

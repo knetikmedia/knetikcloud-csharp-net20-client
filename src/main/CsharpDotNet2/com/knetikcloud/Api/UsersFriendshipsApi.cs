@@ -12,14 +12,14 @@ namespace com.knetikcloud.Api
     public interface IUsersFriendshipsApi
     {
         /// <summary>
-        /// Add a friend As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+        /// Add a friend As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param>
         /// <param name="id">The id of the user to befriend</param>
         /// <returns></returns>
         void AddFriend (string userId, int? id);
         /// <summary>
-        /// Get friends list 
+        /// Get friends list &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="filterUsername">Filter for friends with the given username</param>
@@ -29,13 +29,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSimpleUserResource</returns>
         PageResourceSimpleUserResource GetFriends (string userId, string filterUsername, int? filterUserId, int? size, int? page);
         /// <summary>
-        /// Returns the invite token This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+        /// Returns the invite token This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param>
         /// <returns>string</returns>
         string GetInviteToken (string userId);
         /// <summary>
-        /// Get pending invites Invites that the specified user received
+        /// Get pending invites Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -43,14 +43,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSimpleUserResource</returns>
         PageResourceSimpleUserResource GetInvites (string userId, int? size, int? page);
         /// <summary>
-        /// Redeem friendship token Immediately connects the requested user with the user mapped by the provided invite token
+        /// Redeem friendship token Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param>
         /// <param name="token">The invite token</param>
         /// <returns></returns>
         void RedeemFriendshipToken (string userId, StringWrapper token);
         /// <summary>
-        /// Remove or decline a friend 
+        /// Remove or decline a friend &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param>
         /// <param name="id">The id of the user to befriend</param>
@@ -112,7 +112,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a friend As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+        /// Add a friend As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param> 
         /// <param name="id">The id of the user to befriend</param> 
@@ -154,7 +154,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get friends list 
+        /// Get friends list &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="filterUsername">Filter for friends with the given username</param> 
@@ -199,7 +199,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Returns the invite token This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+        /// Returns the invite token This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param> 
         /// <returns>string</returns>            
@@ -236,7 +236,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get pending invites Invites that the specified user received
+        /// Get pending invites Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -277,7 +277,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Redeem friendship token Immediately connects the requested user with the user mapped by the provided invite token
+        /// Redeem friendship token Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param> 
         /// <param name="token">The invite token</param> 
@@ -316,7 +316,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Remove or decline a friend 
+        /// Remove or decline a friend &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39; if logged in</param> 
         /// <param name="id">The id of the user to befriend</param> 

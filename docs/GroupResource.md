@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalProperties** | [**Dictionary&lt;string, Property&gt;**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] 
-**Description** | **string** | A description of the group. Max 250 characters | [optional] 
+**Description** | **string** | A description of the group | [optional] 
 **MemberCount** | **int?** | The number of users in the group | [optional] 
 **MessageOfTheDay** | **string** | A message of the day for members of the group | [optional] 
 **Name** | **string** | The name of the group. Max 50 characters | 

@@ -12,100 +12,100 @@ namespace com.knetikcloud.Api
     public interface IMediaVideosApi
     {
         /// <summary>
-        /// Adds a user to a video&#39;s whitelist Whitelisted users can view video regardless of privacy setting.
+        /// Adds a user to a video&#39;s whitelist Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param>
         /// <param name="userId">The user id</param>
         /// <returns></returns>
         void AddUserToVideoWhitelist (long? id, IntWrapper userId);
         /// <summary>
-        /// Adds a new video in the system 
+        /// Adds a new video in the system &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoResource">The video object</param>
         /// <returns>VideoResource</returns>
         VideoResource AddVideo (VideoResource videoResource);
         /// <summary>
-        /// Add a new video comment 
+        /// Add a new video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id </param>
         /// <param name="commentResource">The comment object</param>
         /// <returns>CommentResource</returns>
         CommentResource AddVideoComment (int? videoId, CommentResource commentResource);
         /// <summary>
-        /// Adds a contributor to a video 
+        /// Adds a contributor to a video &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="contributionResource">The contribution object</param>
         /// <returns></returns>
         void AddVideoContributor (long? videoId, ContributionResource contributionResource);
         /// <summary>
-        /// Add a new flag 
+        /// Add a new flag &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="reason">The flag reason</param>
         /// <returns>FlagResource</returns>
         FlagResource AddVideoFlag (long? videoId, StringWrapper reason);
         /// <summary>
-        /// Adds one or more existing videos as related to this one 
+        /// Adds one or more existing videos as related to this one &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="videoRelationshipResource">The video relationship object </param>
         /// <returns>VideoRelationshipResource</returns>
         VideoRelationshipResource AddVideoRelationships (long? videoId, VideoRelationshipResource videoRelationshipResource);
         /// <summary>
-        /// Create a video disposition 
+        /// Create a video disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="dispositionResource">The disposition object</param>
         /// <returns>DispositionResource</returns>
         DispositionResource CreateVideoDisposition (int? videoId, DispositionResource dispositionResource);
         /// <summary>
-        /// Create a video template Video Templates define a type of video and the properties they have
+        /// Create a video template Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="videoTemplateResource">The video template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateVideoTemplate (TemplateResource videoTemplateResource);
         /// <summary>
-        /// Deletes a video from the system if no resources are attached to it 
+        /// Deletes a video from the system if no resources are attached to it &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param>
         /// <returns></returns>
         void DeleteVideo (long? id);
         /// <summary>
-        /// Delete a video comment 
+        /// Delete a video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="id">The comment id</param>
         /// <returns></returns>
         void DeleteVideoComment (long? videoId, long? id);
         /// <summary>
-        /// Delete a video disposition 
+        /// Delete a video disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="dispositionId">The disposition id</param>
         /// <returns></returns>
         void DeleteVideoDisposition (long? dispositionId);
         /// <summary>
-        /// Delete a flag 
+        /// Delete a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <returns></returns>
         void DeleteVideoFlag (long? videoId);
         /// <summary>
-        /// Delete a video&#39;s relationship 
+        /// Delete a video&#39;s relationship &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="id">The relationship id</param>
         /// <returns></returns>
         void DeleteVideoRelationship (long? videoId, long? id);
         /// <summary>
-        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteVideoTemplate (string id, string cascade);
         /// <summary>
-        /// Get user videos 
+        /// Get user videos &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="userId">The user id</param>
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param>
@@ -114,13 +114,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceVideoResource</returns>
         PageResourceVideoResource GetUserVideos (int? userId, bool? excludeFlagged, int? size, int? page);
         /// <summary>
-        /// Loads a specific video details 
+        /// Loads a specific video details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param>
         /// <returns>VideoResource</returns>
         VideoResource GetVideo (long? id);
         /// <summary>
-        /// Returns a page of comments for a video 
+        /// Returns a page of comments for a video &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -128,7 +128,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceCommentResource</returns>
         PageResourceCommentResource GetVideoComments (int? videoId, int? size, int? page);
         /// <summary>
-        /// Returns a page of dispositions for a video 
+        /// Returns a page of dispositions for a video &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -136,7 +136,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceDispositionResource</returns>
         PageResourceDispositionResource GetVideoDispositions (int? videoId, int? size, int? page);
         /// <summary>
-        /// Returns a page of video relationships 
+        /// Returns a page of video relationships &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -144,13 +144,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceVideoRelationshipResource</returns>
         PageResourceVideoRelationshipResource GetVideoRelationships (long? videoId, int? size, int? page);
         /// <summary>
-        /// Get a single video template 
+        /// Get a single video template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetVideoTemplate (string id);
         /// <summary>
-        /// List and search video templates 
+        /// List and search video templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -158,7 +158,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetVideoTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Search videos using the documented filters 
+        /// Search videos using the documented filters &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param>
         /// <param name="filterVideosByUploader">Filter for videos by uploader id</param>
@@ -178,28 +178,28 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceVideoResource</returns>
         PageResourceVideoResource GetVideos (bool? excludeFlagged, int? filterVideosByUploader, string filterCategory, string filterTagset, string filterVideosByName, int? filterVideosByContributor, int? filterVideosByAuthor, bool? filterHasAuthor, bool? filterHasUploader, string filterRelatedTo, bool? filterFriends, string filterDisposition, int? size, int? page, string order);
         /// <summary>
-        /// Removes a user from a video&#39;s whitelist Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+        /// Removes a user from a video&#39;s whitelist Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="id">The user id</param>
         /// <returns></returns>
         void RemoveUserFromVideoWhitelist (long? videoId, int? id);
         /// <summary>
-        /// Removes a contributor from a video 
+        /// Removes a contributor from a video &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="id">The contributor id</param>
         /// <returns></returns>
         void RemoveVideoContributor (long? videoId, int? id);
         /// <summary>
-        /// Modifies a video&#39;s details 
+        /// Modifies a video&#39;s details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param>
         /// <param name="videoResource">The video object</param>
         /// <returns></returns>
         void UpdateVideo (long? id, VideoResource videoResource);
         /// <summary>
-        /// Update a video comment 
+        /// Update a video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="id">The comment id</param>
@@ -207,7 +207,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void UpdateVideoComment (long? videoId, long? id, StringWrapper content);
         /// <summary>
-        /// Update a video&#39;s relationship details 
+        /// Update a video&#39;s relationship details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param>
         /// <param name="relationshipId">The relationship id</param>
@@ -215,14 +215,14 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void UpdateVideoRelationship (long? videoId, long? relationshipId, StringWrapper details);
         /// <summary>
-        /// Update a video template 
+        /// Update a video template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="videoTemplateResource">The video template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource UpdateVideoTemplate (string id, TemplateResource videoTemplateResource);
         /// <summary>
-        /// Increment a video&#39;s view count 
+        /// Increment a video&#39;s view count &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The video id</param>
         /// <returns></returns>
@@ -283,7 +283,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Adds a user to a video&#39;s whitelist Whitelisted users can view video regardless of privacy setting.
+        /// Adds a user to a video&#39;s whitelist Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param> 
         /// <param name="userId">The user id</param> 
@@ -322,7 +322,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Adds a new video in the system 
+        /// Adds a new video in the system &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoResource">The video object</param> 
         /// <returns>VideoResource</returns>            
@@ -356,7 +356,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Add a new video comment 
+        /// Add a new video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id </param> 
         /// <param name="commentResource">The comment object</param> 
@@ -395,7 +395,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Adds a contributor to a video 
+        /// Adds a contributor to a video &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="contributionResource">The contribution object</param> 
@@ -434,7 +434,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Add a new flag 
+        /// Add a new flag &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="reason">The flag reason</param> 
@@ -473,7 +473,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Adds one or more existing videos as related to this one 
+        /// Adds one or more existing videos as related to this one &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="videoRelationshipResource">The video relationship object </param> 
@@ -512,7 +512,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a video disposition 
+        /// Create a video disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="dispositionResource">The disposition object</param> 
@@ -551,7 +551,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a video template Video Templates define a type of video and the properties they have
+        /// Create a video template Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="videoTemplateResource">The video template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -585,7 +585,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Deletes a video from the system if no resources are attached to it 
+        /// Deletes a video from the system if no resources are attached to it &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param> 
         /// <returns></returns>            
@@ -622,7 +622,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a video comment 
+        /// Delete a video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="id">The comment id</param> 
@@ -664,7 +664,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Delete a video disposition 
+        /// Delete a video disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="dispositionId">The disposition id</param> 
         /// <returns></returns>            
@@ -701,7 +701,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Delete a flag 
+        /// Delete a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <returns></returns>            
@@ -738,7 +738,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Delete a video&#39;s relationship 
+        /// Delete a video&#39;s relationship &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="id">The relationship id</param> 
@@ -780,7 +780,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a video template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -819,7 +819,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get user videos 
+        /// Get user videos &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="userId">The user id</param> 
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param> 
@@ -862,7 +862,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Loads a specific video details 
+        /// Loads a specific video details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param> 
         /// <returns>VideoResource</returns>            
@@ -899,7 +899,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Returns a page of comments for a video 
+        /// Returns a page of comments for a video &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -940,7 +940,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Returns a page of dispositions for a video 
+        /// Returns a page of dispositions for a video &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -981,7 +981,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Returns a page of video relationships 
+        /// Returns a page of video relationships &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -1022,7 +1022,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single video template 
+        /// Get a single video template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -1059,7 +1059,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List and search video templates 
+        /// List and search video templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -1097,7 +1097,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Search videos using the documented filters 
+        /// Search videos using the documented filters &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="excludeFlagged">Skip videos that have been flagged by the current user</param> 
         /// <param name="filterVideosByUploader">Filter for videos by uploader id</param> 
@@ -1159,7 +1159,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Removes a user from a video&#39;s whitelist Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+        /// Removes a user from a video&#39;s whitelist Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="id">The user id</param> 
@@ -1201,7 +1201,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Removes a contributor from a video 
+        /// Removes a contributor from a video &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="id">The contributor id</param> 
@@ -1243,7 +1243,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Modifies a video&#39;s details 
+        /// Modifies a video&#39;s details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="id">The video id</param> 
         /// <param name="videoResource">The video object</param> 
@@ -1282,7 +1282,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update a video comment 
+        /// Update a video comment &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="id">The comment id</param> 
@@ -1326,7 +1326,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update a video&#39;s relationship details 
+        /// Update a video&#39;s relationship details &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
         /// </summary>
         /// <param name="videoId">The video id</param> 
         /// <param name="relationshipId">The relationship id</param> 
@@ -1370,7 +1370,7 @@ path = path.Replace("{" + "relationship_id" + "}", ApiClient.ParameterToString(r
         }
     
         /// <summary>
-        /// Update a video template 
+        /// Update a video template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="videoTemplateResource">The video template resource object</param> 
@@ -1409,7 +1409,7 @@ path = path.Replace("{" + "relationship_id" + "}", ApiClient.ParameterToString(r
         }
     
         /// <summary>
-        /// Increment a video&#39;s view count 
+        /// Increment a video&#39;s view count &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The video id</param> 
         /// <returns></returns>            

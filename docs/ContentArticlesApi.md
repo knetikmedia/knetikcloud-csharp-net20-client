@@ -1,6 +1,6 @@
 # com.knetikcloud..ContentArticlesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Create a new article
 
-Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.<br><br><b>Permissions:</b> ARTICLES_ADMIN
 
 ### Example
 ```csharp
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 Create an article template
 
-Article Templates define a type of article and the properties they have
+Article Templates define a type of article and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -156,6 +156,8 @@ Name | Type | Description  | Notes
 
 Delete an existing article
 
+<b>Permissions Needed:</b> ARTICLES_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -209,7 +211,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -220,7 +222,7 @@ void (empty response body)
 
 Delete an article template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -277,7 +279,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -287,6 +289,8 @@ void (empty response body)
 > ArticleResource GetArticle (string id)
 
 Get a single article
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -342,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -352,6 +356,8 @@ Name | Type | Description  | Notes
 > TemplateResource GetArticleTemplate (string id)
 
 Get a single article template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```csharp
@@ -407,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -417,6 +423,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource GetArticleTemplates (int? size, int? page, string order)
 
 List and search article templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```csharp
@@ -476,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -487,7 +495,7 @@ Name | Type | Description  | Notes
 
 List and search articles
 
-Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed.
+Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use 'Get a single article' to retrieve the full resource with assets for a given item as needed. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -559,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -569,6 +577,8 @@ Name | Type | Description  | Notes
 > ArticleResource UpdateArticle (string id, ArticleResource articleResource)
 
 Update an existing article
+
+<b>Permissions Needed:</b> ARTICLES_ADMIN
 
 ### Example
 ```csharp
@@ -636,6 +646,8 @@ Name | Type | Description  | Notes
 > TemplateResource UpdateArticleTemplate (string id, TemplateResource articleTemplateResource)
 
 Update an article template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp

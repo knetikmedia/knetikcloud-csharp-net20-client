@@ -1,11 +1,11 @@
 # com.knetikcloud..BRERuleEngineExpressionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetBREExpression**](BRERuleEngineExpressionsApi.md#getbreexpression) | **GET** /bre/expressions/{type} | Lookup a specific expression
-[**GetBREExpressions**](BRERuleEngineExpressionsApi.md#getbreexpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions.
+[**GetBREExpressions**](BRERuleEngineExpressionsApi.md#getbreexpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions
 [**GetExpressionAsText**](BRERuleEngineExpressionsApi.md#getexpressionastext) | **POST** /bre/expressions | Returns the textual representation of an expression
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > ExpressionResource GetBREExpression (string type)
 
 Lookup a specific expression
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```csharp
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -78,9 +80,9 @@ Name | Type | Description  | Notes
 # **GetBREExpressions**
 > List<ExpressionResource> GetBREExpressions (string filterTypeGroup)
 
-Get a list of supported expressions to use in conditions or actions.
+Get a list of supported expressions to use in conditions or actions
 
-Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. <br><br><b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```csharp
@@ -107,7 +109,7 @@ namespace Example
 
             try
             {
-                // Get a list of supported expressions to use in conditions or actions.
+                // Get a list of supported expressions to use in conditions or actions
                 List&lt;ExpressionResource&gt; result = apiInstance.GetBREExpressions(filterTypeGroup);
                 Debug.WriteLine(result);
             }
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -146,6 +148,8 @@ Name | Type | Description  | Notes
 > StringWrapper GetExpressionAsText (ExpressionResource expression)
 
 Returns the textual representation of an expression
+
+<b>Permissions Needed:</b> BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```csharp

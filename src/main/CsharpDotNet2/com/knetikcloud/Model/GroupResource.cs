@@ -21,9 +21,9 @@ namespace com.knetikcloud.Model {
     public Dictionary<string, Property> AdditionalProperties { get; set; }
 
     /// <summary>
-    /// A description of the group. Max 250 characters
+    /// A description of the group
     /// </summary>
-    /// <value>A description of the group. Max 250 characters</value>
+    /// <value>A description of the group</value>
     [DataMember(Name="description", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "description")]
     public string Description { get; set; }

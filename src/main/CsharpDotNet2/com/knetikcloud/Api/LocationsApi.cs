@@ -12,23 +12,23 @@ namespace com.knetikcloud.Api
     public interface ILocationsApi
     {
         /// <summary>
-        /// Get a list of countries 
+        /// Get a list of countries &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;CountryResource&gt;</returns>
         List<CountryResource> GetCountries ();
         /// <summary>
-        /// Get the iso3 code of your country Determined by geo ip location
+        /// Get the iso3 code of your country Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>string</returns>
         string GetCountryByGeoLocation ();
         /// <summary>
-        /// Get a list of a country&#39;s states 
+        /// Get a list of a country&#39;s states &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param>
         /// <returns>List&lt;StateResource&gt;</returns>
         List<StateResource> GetCountryStates (string countryCodeIso3);
         /// <summary>
-        /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting
+        /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>CurrencyResource</returns>
         CurrencyResource GetCurrencyByGeoLocation ();
@@ -88,7 +88,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get a list of countries 
+        /// Get a list of countries &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;CountryResource&gt;</returns>            
         public List<CountryResource> GetCountries ()
@@ -120,7 +120,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get the iso3 code of your country Determined by geo ip location
+        /// Get the iso3 code of your country Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>string</returns>            
         public string GetCountryByGeoLocation ()
@@ -152,7 +152,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a list of a country&#39;s states 
+        /// Get a list of a country&#39;s states &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="countryCodeIso3">The iso3 code of the country</param> 
         /// <returns>List&lt;StateResource&gt;</returns>            
@@ -189,7 +189,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting
+        /// Get the currency information of your country Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>CurrencyResource</returns>            
         public CurrencyResource GetCurrencyByGeoLocation ()

@@ -12,12 +12,12 @@ namespace com.knetikcloud.Api
     public interface IBRERuleEngineVariablesApi
     {
         /// <summary>
-        /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+        /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
         /// </summary>
         /// <returns>List&lt;VariableTypeResource&gt;</returns>
         List<VariableTypeResource> GetBREVariableTypes ();
         /// <summary>
-        /// List valid values for a type Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+        /// List valid values for a type Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
         /// </summary>
         /// <param name="name">The name of the type</param>
         /// <param name="filterName">Filter results by those with names starting with this string</param>
@@ -81,7 +81,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+        /// Get a list of variable types available Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
         /// </summary>
         /// <returns>List&lt;VariableTypeResource&gt;</returns>            
         public List<VariableTypeResource> GetBREVariableTypes ()
@@ -113,7 +113,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List valid values for a type Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+        /// List valid values for a type Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
         /// </summary>
         /// <param name="name">The name of the type</param> 
         /// <param name="filterName">Filter results by those with names starting with this string</param> 

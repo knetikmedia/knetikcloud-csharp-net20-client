@@ -12,25 +12,25 @@ namespace com.knetikcloud.Api
     public interface ICampaignsRewardsApi
     {
         /// <summary>
-        /// Create a reward set 
+        /// Create a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="rewardSetResource">The reward set resource object</param>
         /// <returns>RewardSetResource</returns>
         RewardSetResource CreateRewardSet (RewardSetResource rewardSetResource);
         /// <summary>
-        /// Delete a reward set 
+        /// Delete a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="id">The reward id</param>
         /// <returns></returns>
         void DeleteRewardSet (int? id);
         /// <summary>
-        /// Get a single reward set 
+        /// Get a single reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The reward id</param>
         /// <returns>RewardSetResource</returns>
         RewardSetResource GetRewardSet (int? id);
         /// <summary>
-        /// List and search reward sets 
+        /// List and search reward sets &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -38,7 +38,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceRewardSetResource</returns>
         PageResourceRewardSetResource GetRewardSets (int? size, int? page, string order);
         /// <summary>
-        /// Update a reward set 
+        /// Update a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="id">The reward id</param>
         /// <param name="rewardSetResource">The reward set resource object</param>
@@ -100,7 +100,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a reward set 
+        /// Create a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="rewardSetResource">The reward set resource object</param> 
         /// <returns>RewardSetResource</returns>            
@@ -134,7 +134,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a reward set 
+        /// Delete a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="id">The reward id</param> 
         /// <returns></returns>            
@@ -171,7 +171,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single reward set 
+        /// Get a single reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The reward id</param> 
         /// <returns>RewardSetResource</returns>            
@@ -208,7 +208,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search reward sets 
+        /// List and search reward sets &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -246,7 +246,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a reward set 
+        /// Update a reward set &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
         /// </summary>
         /// <param name="id">The reward id</param> 
         /// <param name="rewardSetResource">The reward set resource object</param> 

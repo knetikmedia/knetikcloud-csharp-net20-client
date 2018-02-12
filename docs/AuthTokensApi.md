@@ -1,6 +1,6 @@
 # com.knetikcloud..AuthTokensApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > void DeleteTokens (string username, string clientId)
 
 Delete tokens by username, client id, or both
+
+<b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```csharp
@@ -70,7 +72,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -80,6 +82,8 @@ void (empty response body)
 > OauthAccessTokenResource GetToken (string username, string clientId)
 
 Get a single token by username and client id
+
+<b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```csharp
@@ -137,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -148,7 +152,7 @@ Name | Type | Description  | Notes
 
 List usernames and client ids
 
-Token value not shown
+Token value not shown. <br><br><b>Permissions Needed:</b> TOKENS_ADMIN
 
 ### Example
 ```csharp
@@ -212,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

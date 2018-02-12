@@ -1,6 +1,6 @@
 # com.knetikcloud..CategoriesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > CategoryResource CreateCategory (CategoryResource category)
 
 Create a new category
+
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
 
 ### Example
 ```csharp
@@ -88,7 +90,7 @@ Name | Type | Description  | Notes
 
 Create a category template
 
-Templates define a type of category and the properties they have
+Templates define a type of category and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -155,6 +157,8 @@ Name | Type | Description  | Notes
 
 Delete an existing category
 
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -208,7 +212,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -219,7 +223,7 @@ void (empty response body)
 
 Delete a category template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -276,7 +280,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -286,6 +290,8 @@ void (empty response body)
 > PageResourceCategoryResource GetCategories (string filterSearch, bool? filterActive, int? size, int? page, string order)
 
 List and search categories with optional filters
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -349,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -359,6 +365,8 @@ Name | Type | Description  | Notes
 > CategoryResource GetCategory (string id)
 
 Get a single category
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -414,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -424,6 +432,8 @@ Name | Type | Description  | Notes
 > TemplateResource GetCategoryTemplate (string id)
 
 Get a single category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```csharp
@@ -479,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -489,6 +499,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource GetCategoryTemplates (int? size, int? page, string order)
 
 List and search category templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```csharp
@@ -548,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -558,6 +570,8 @@ Name | Type | Description  | Notes
 > PageResourcestring GetTags (int? size, int? page)
 
 List all trivia tags in the system
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -615,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -625,6 +639,8 @@ Name | Type | Description  | Notes
 > CategoryResource UpdateCategory (string id, CategoryResource category)
 
 Update an existing category
+
+<b>Permissions Needed:</b> CATEGORIES_ADMIN
 
 ### Example
 ```csharp
@@ -692,6 +708,8 @@ Name | Type | Description  | Notes
 > TemplateResource UpdateCategoryTemplate (string id, TemplateResource template)
 
 Update a category template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp

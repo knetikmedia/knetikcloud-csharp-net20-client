@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface IPaymentsTransactionsApi
     {
         /// <summary>
-        /// Get the details for a single transaction 
+        /// Get the details for a single transaction &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
         /// </summary>
         /// <param name="id">id</param>
         /// <returns>TransactionResource</returns>
         TransactionResource GetTransaction (int? id);
         /// <summary>
-        /// List and search transactions 
+        /// List and search transactions &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
         /// </summary>
         /// <param name="filterInvoice">Filter for transactions from a specific invoice</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -27,7 +27,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTransactionResource</returns>
         PageResourceTransactionResource GetTransactions (int? filterInvoice, int? size, int? page, string order);
         /// <summary>
-        /// Refund a payment transaction, in full or in part Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+        /// Refund a payment transaction, in full or in part Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the transaction to refund</param>
         /// <param name="request">Request containing refund details</param>
@@ -89,7 +89,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get the details for a single transaction 
+        /// Get the details for a single transaction &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
         /// </summary>
         /// <param name="id">id</param> 
         /// <returns>TransactionResource</returns>            
@@ -126,7 +126,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search transactions 
+        /// List and search transactions &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
         /// </summary>
         /// <param name="filterInvoice">Filter for transactions from a specific invoice</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -166,7 +166,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Refund a payment transaction, in full or in part Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+        /// Refund a payment transaction, in full or in part Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the transaction to refund</param> 
         /// <param name="request">Request containing refund details</param> 

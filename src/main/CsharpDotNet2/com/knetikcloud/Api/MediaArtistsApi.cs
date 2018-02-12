@@ -12,45 +12,45 @@ namespace com.knetikcloud.Api
     public interface IMediaArtistsApi
     {
         /// <summary>
-        /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+        /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="artistResource">The new artist</param>
         /// <returns>ArtistResource</returns>
         ArtistResource AddArtist (ArtistResource artistResource);
         /// <summary>
-        /// Create an artist template Artist Templates define a type of artist and the properties they have
+        /// Create an artist template Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="artistTemplateResource">The artist template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateArtistTemplate (TemplateResource artistTemplateResource);
         /// <summary>
-        /// Removes an artist from the system IF no resources are attached to it 
+        /// Removes an artist from the system IF no resources are attached to it &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The artist id</param>
         /// <returns></returns>
         void DeleteArtist (long? id);
         /// <summary>
-        /// Delete an artist template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete an artist template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteArtistTemplate (string id, string cascade);
         /// <summary>
-        /// Loads a specific artist details 
+        /// Loads a specific artist details &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The artist id</param>
         /// <param name="showContributions">The number of contributions to show fetch</param>
         /// <returns>ArtistResource</returns>
         ArtistResource GetArtist (long? id, int? showContributions);
         /// <summary>
-        /// Get a single artist template 
+        /// Get a single artist template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetArtistTemplate (string id);
         /// <summary>
-        /// List and search artist templates 
+        /// List and search artist templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -58,7 +58,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetArtistTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Search for artists 
+        /// Search for artists &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterArtistsByName">Filter for artists which name *STARTS* with the given string</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -67,14 +67,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceArtistResource</returns>
         PageResourceArtistResource GetArtists (string filterArtistsByName, int? size, int? page, string order);
         /// <summary>
-        /// Modifies an artist details 
+        /// Modifies an artist details &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The artist id</param>
         /// <param name="artistResource">The new artist</param>
         /// <returns></returns>
         void UpdateArtist (long? id, ArtistResource artistResource);
         /// <summary>
-        /// Update an artist template 
+        /// Update an artist template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="artistTemplateResource">The artist template resource object</param>
@@ -136,7 +136,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+        /// Adds a new artist in the system Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="artistResource">The new artist</param> 
         /// <returns>ArtistResource</returns>            
@@ -170,7 +170,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create an artist template Artist Templates define a type of artist and the properties they have
+        /// Create an artist template Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="artistTemplateResource">The artist template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Removes an artist from the system IF no resources are attached to it 
+        /// Removes an artist from the system IF no resources are attached to it &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The artist id</param> 
         /// <returns></returns>            
@@ -241,7 +241,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an artist template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete an artist template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -280,7 +280,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Loads a specific artist details 
+        /// Loads a specific artist details &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The artist id</param> 
         /// <param name="showContributions">The number of contributions to show fetch</param> 
@@ -319,7 +319,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single artist template 
+        /// Get a single artist template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -356,7 +356,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search artist templates 
+        /// List and search artist templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -394,7 +394,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Search for artists 
+        /// Search for artists &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterArtistsByName">Filter for artists which name *STARTS* with the given string</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -434,7 +434,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Modifies an artist details 
+        /// Modifies an artist details &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
         /// </summary>
         /// <param name="id">The artist id</param> 
         /// <param name="artistResource">The new artist</param> 
@@ -473,7 +473,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update an artist template 
+        /// Update an artist template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="artistTemplateResource">The artist template resource object</param> 

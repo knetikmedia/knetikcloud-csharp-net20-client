@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface IPaymentsStripeApi
     {
         /// <summary>
-        /// Create a Stripe payment method for a user Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+        /// Create a Stripe payment method for a user Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STRIPE_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a Stripe customer with payment info</param>
         /// <returns>PaymentMethodResource</returns>
         PaymentMethodResource CreateStripePaymentMethod (StripeCreatePaymentMethod request);
         /// <summary>
-        /// Pay with a single use token Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+        /// Pay with a single use token Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="request">The request to pay an invoice</param>
         /// <returns></returns>
@@ -79,7 +79,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a Stripe payment method for a user Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+        /// Create a Stripe payment method for a user Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STRIPE_ADMIN or owner
         /// </summary>
         /// <param name="request">The request to create a Stripe customer with payment info</param> 
         /// <returns>PaymentMethodResource</returns>            
@@ -113,7 +113,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Pay with a single use token Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+        /// Pay with a single use token Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="request">The request to pay an invoice</param> 
         /// <returns></returns>            

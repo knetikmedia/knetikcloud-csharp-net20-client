@@ -21,6 +21,14 @@ namespace com.knetikcloud.Model {
     public Dictionary<string, Property> AdditionalProperties { get; set; }
 
     /// <summary>
+    /// Defines core settings about the activity that affect how it can be created/played by users.
+    /// </summary>
+    /// <value>Defines core settings about the activity that affect how it can be created/played by users.</value>
+    [DataMember(Name="core_settings", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "core_settings")]
+    public CoreActivitySettings CoreSettings { get; set; }
+
+    /// <summary>
     /// The date/time this resource was created in seconds since unix epoch
     /// </summary>
     /// <value>The date/time this resource was created in seconds since unix epoch</value>
@@ -149,6 +157,7 @@ namespace com.knetikcloud.Model {
       var sb = new StringBuilder();
       sb.Append("class ActivityResource {\n");
       sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
+      sb.Append("  CoreSettings: ").Append(CoreSettings).Append("\n");
       sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
       sb.Append("  Entitlements: ").Append(Entitlements).Append("\n");
       sb.Append("  Id: ").Append(Id).Append("\n");

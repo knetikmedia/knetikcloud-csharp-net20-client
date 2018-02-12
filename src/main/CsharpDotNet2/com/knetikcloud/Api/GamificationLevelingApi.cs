@@ -12,30 +12,30 @@ namespace com.knetikcloud.Api
     public interface IGamificationLevelingApi
     {
         /// <summary>
-        /// Create a level schema 
+        /// Create a level schema &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="level">The level schema definition</param>
         /// <returns>LevelingResource</returns>
         LevelingResource CreateLevel (LevelingResource level);
         /// <summary>
-        /// Delete a level 
+        /// Delete a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param>
         /// <returns></returns>
         void DeleteLevel (string name);
         /// <summary>
-        /// Retrieve a level 
+        /// Retrieve a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param>
         /// <returns>LevelingResource</returns>
         LevelingResource GetLevel (string name);
         /// <summary>
-        /// Get the list of triggers that can be used to trigger a leveling progress update 
+        /// Get the list of triggers that can be used to trigger a leveling progress update &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <returns>List&lt;BreTriggerResource&gt;</returns>
         List<BreTriggerResource> GetLevelTriggers ();
         /// <summary>
-        /// List and search levels Get a list of levels schemas with optional filtering
+        /// List and search levels Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for level schemas whose name contains a given string</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -44,14 +44,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceLevelingResource</returns>
         PageResourceLevelingResource GetLevels (string filterName, int? size, int? page, string order);
         /// <summary>
-        /// Get a user&#39;s progress for a given level schema 
+        /// Get a user&#39;s progress for a given level schema &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="name">The level schema name</param>
         /// <returns>UserLevelingResource</returns>
         UserLevelingResource GetUserLevel (string userId, string name);
         /// <summary>
-        /// Get a user&#39;s progress for all level schemas Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+        /// Get a user&#39;s progress for all level schemas Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param>
         /// <param name="filterName">Filter for level schemas whose name contains a given string</param>
@@ -61,7 +61,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceUserLevelingResource</returns>
         PageResourceUserLevelingResource GetUserLevels (string userId, string filterName, int? size, int? page, string order);
         /// <summary>
-        /// Update or create a leveling progress record for a user If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+        /// Update or create a leveling progress record for a user If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="name">The level schema name</param>
@@ -69,7 +69,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void IncrementProgress (int? userId, string name, IntWrapper progress);
         /// <summary>
-        /// Set leveling progress for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+        /// Set leveling progress for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="name">The level schema name</param>
@@ -77,7 +77,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetProgress (int? userId, string name, IntWrapper progress);
         /// <summary>
-        /// Update a level 
+        /// Update a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param>
         /// <param name="newLevel">The level schema definition</param>
@@ -139,7 +139,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a level schema 
+        /// Create a level schema &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="level">The level schema definition</param> 
         /// <returns>LevelingResource</returns>            
@@ -173,7 +173,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a level 
+        /// Delete a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param> 
         /// <returns></returns>            
@@ -210,7 +210,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Retrieve a level 
+        /// Retrieve a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param> 
         /// <returns>LevelingResource</returns>            
@@ -247,7 +247,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get the list of triggers that can be used to trigger a leveling progress update 
+        /// Get the list of triggers that can be used to trigger a leveling progress update &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <returns>List&lt;BreTriggerResource&gt;</returns>            
         public List<BreTriggerResource> GetLevelTriggers ()
@@ -279,7 +279,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search levels Get a list of levels schemas with optional filtering
+        /// List and search levels Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for level schemas whose name contains a given string</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -319,7 +319,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a user&#39;s progress for a given level schema 
+        /// Get a user&#39;s progress for a given level schema &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="name">The level schema name</param> 
@@ -361,7 +361,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         }
     
         /// <summary>
-        /// Get a user&#39;s progress for all level schemas Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+        /// Get a user&#39;s progress for all level schemas Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
         /// </summary>
         /// <param name="userId">The id of the user or &#39;me&#39;</param> 
         /// <param name="filterName">Filter for level schemas whose name contains a given string</param> 
@@ -406,7 +406,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         }
     
         /// <summary>
-        /// Update or create a leveling progress record for a user If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+        /// Update or create a leveling progress record for a user If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="name">The level schema name</param> 
@@ -450,7 +450,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         }
     
         /// <summary>
-        /// Set leveling progress for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+        /// Set leveling progress for a user If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="name">The level schema name</param> 
@@ -494,7 +494,7 @@ path = path.Replace("{" + "name" + "}", ApiClient.ParameterToString(name));
         }
     
         /// <summary>
-        /// Update a level 
+        /// Update a level &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
         /// </summary>
         /// <param name="name">The level schema name</param> 
         /// <param name="newLevel">The level schema definition</param> 

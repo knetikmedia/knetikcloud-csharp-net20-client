@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface IUtilBatchApi
     {
         /// <summary>
-        /// Get batch result with token Tokens expire in 24 hours
+        /// Get batch result with token Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="token">token</param>
         /// <returns>List&lt;BatchReturn&gt;</returns>
         List<BatchReturn> GetBatch (string token);
         /// <summary>
-        /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+        /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="batch">The batch object</param>
         /// <returns>List&lt;BatchReturn&gt;</returns>
@@ -79,7 +79,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get batch result with token Tokens expire in 24 hours
+        /// Get batch result with token Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="token">token</param> 
         /// <returns>List&lt;BatchReturn&gt;</returns>            
@@ -116,7 +116,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+        /// Request to run API call given the method, content type, path url, and body of request Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="batch">The batch object</param> 
         /// <returns>List&lt;BatchReturn&gt;</returns>            

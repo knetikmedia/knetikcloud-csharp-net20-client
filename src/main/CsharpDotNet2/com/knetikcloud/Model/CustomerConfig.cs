@@ -27,13 +27,6 @@ namespace com.knetikcloud.Model {
     public DatabaseConfig Database { get; set; }
 
     /// <summary>
-    /// Gets or Sets Io
-    /// </summary>
-    [DataMember(Name="io", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "io")]
-    public IOConfig Io { get; set; }
-
-    /// <summary>
     /// Gets or Sets Name
     /// </summary>
     [DataMember(Name="name", EmitDefaultValue=false)]
@@ -57,7 +50,6 @@ namespace com.knetikcloud.Model {
       sb.Append("class CustomerConfig {\n");
       sb.Append("  Aliases: ").Append(Aliases).Append("\n");
       sb.Append("  Database: ").Append(Database).Append("\n");
-      sb.Append("  Io: ").Append(Io).Append("\n");
       sb.Append("  Name: ").Append(Name).Append("\n");
       sb.Append("  S3Config: ").Append(S3Config).Append("\n");
       sb.Append("}\n");

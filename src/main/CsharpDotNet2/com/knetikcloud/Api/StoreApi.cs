@@ -12,44 +12,44 @@ namespace com.knetikcloud.Api
     public interface IStoreApi
     {
         /// <summary>
-        /// Create an item template Item Templates define a type of item and the properties they have.
+        /// Create an item template Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="itemTemplateResource">The new item template</param>
         /// <returns>StoreItemTemplateResource</returns>
         StoreItemTemplateResource CreateItemTemplate (StoreItemTemplateResource itemTemplateResource);
         /// <summary>
-        /// Create a store item SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+        /// Create a store item SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="storeItem">The store item object</param>
         /// <returns>StoreItem</returns>
         StoreItem CreateStoreItem (bool? cascade, StoreItem storeItem);
         /// <summary>
-        /// Delete an item template 
+        /// Delete an item template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param>
         /// <returns></returns>
         void DeleteItemTemplate (string id, string cascade);
         /// <summary>
-        /// Delete a store item 
+        /// Delete a store item &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="id">The id of the item</param>
         /// <returns></returns>
         void DeleteStoreItem (int? id);
         /// <summary>
-        /// List available item behaviors 
+        /// List available item behaviors &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;BehaviorDefinitionResource&gt;</returns>
         List<BehaviorDefinitionResource> GetBehaviors ();
         /// <summary>
-        /// Get a single item template Item Templates define a type of item and the properties they have.
+        /// Get a single item template Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>StoreItemTemplateResource</returns>
         StoreItemTemplateResource GetItemTemplate (string id);
         /// <summary>
-        /// List and search item templates 
+        /// List and search item templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -57,13 +57,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceStoreItemTemplateResource</returns>
         PageResourceStoreItemTemplateResource GetItemTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Get a single store item 
+        /// Get a single store item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the item</param>
         /// <returns>StoreItem</returns>
         StoreItem GetStoreItem (int? id);
         /// <summary>
-        /// List and search store items If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+        /// List and search store items If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterNameSearch">Filter for items whose name starts with a given string.</param>
         /// <param name="filterUniqueKey">Filter for items whose unique_key is a given string.</param>
@@ -85,20 +85,20 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceStoreItem</returns>
         PageResourceStoreItem GetStoreItems (string filterNameSearch, string filterUniqueKey, bool? filterPublished, bool? filterDisplayable, string filterStart, string filterEnd, string filterStartDate, string filterStopDate, string filterSku, string filterPrice, string filterTag, string filterItemsByType, string filterBundledSkus, int? filterVendor, int? size, int? page, string order);
         /// <summary>
-        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
         /// </summary>
         /// <param name="quickBuyRequest">Quick buy details</param>
         /// <returns>InvoiceResource</returns>
         InvoiceResource QuickBuy (QuickBuyRequest quickBuyRequest);
         /// <summary>
-        /// Update an item template 
+        /// Update an item template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="itemTemplateResource">The item template resource object</param>
         /// <returns>StoreItemTemplateResource</returns>
         StoreItemTemplateResource UpdateItemTemplate (string id, StoreItemTemplateResource itemTemplateResource);
         /// <summary>
-        /// Update a store item 
+        /// Update a store item &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="id">The id of the item</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
@@ -161,7 +161,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create an item template Item Templates define a type of item and the properties they have.
+        /// Create an item template Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="itemTemplateResource">The new item template</param> 
         /// <returns>StoreItemTemplateResource</returns>            
@@ -195,7 +195,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a store item SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+        /// Create a store item SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="storeItem">The store item object</param> 
@@ -231,7 +231,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an item template 
+        /// Delete an item template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param> 
@@ -270,7 +270,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a store item 
+        /// Delete a store item &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="id">The id of the item</param> 
         /// <returns></returns>            
@@ -307,7 +307,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List available item behaviors 
+        /// List available item behaviors &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;BehaviorDefinitionResource&gt;</returns>            
         public List<BehaviorDefinitionResource> GetBehaviors ()
@@ -339,7 +339,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single item template Item Templates define a type of item and the properties they have.
+        /// Get a single item template Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>StoreItemTemplateResource</returns>            
@@ -376,7 +376,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search item templates 
+        /// List and search item templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -414,7 +414,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single store item 
+        /// Get a single store item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the item</param> 
         /// <returns>StoreItem</returns>            
@@ -451,7 +451,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search store items If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+        /// List and search store items If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterNameSearch">Filter for items whose name starts with a given string.</param> 
         /// <param name="filterUniqueKey">Filter for items whose unique_key is a given string.</param> 
@@ -517,7 +517,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+        /// One-step purchase and pay for a single SKU item from a user&#39;s wallet Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
         /// </summary>
         /// <param name="quickBuyRequest">Quick buy details</param> 
         /// <returns>InvoiceResource</returns>            
@@ -551,7 +551,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update an item template 
+        /// Update an item template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="itemTemplateResource">The item template resource object</param> 
@@ -590,7 +590,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a store item 
+        /// Update a store item &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
         /// </summary>
         /// <param name="id">The id of the item</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 

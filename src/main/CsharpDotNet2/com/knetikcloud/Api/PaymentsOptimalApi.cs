@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IPaymentsOptimalApi
     {
         /// <summary>
-        /// Initiate silent post with Optimal Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+        /// Initiate silent post with Optimal Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
         /// </summary>
         /// <param name="request">The payment request to initiate</param>
         /// <returns>string</returns>
@@ -73,7 +73,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Initiate silent post with Optimal Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+        /// Initiate silent post with Optimal Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
         /// </summary>
         /// <param name="request">The payment request to initiate</param> 
         /// <returns>string</returns>            

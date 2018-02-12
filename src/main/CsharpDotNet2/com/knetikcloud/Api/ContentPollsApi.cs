@@ -12,57 +12,57 @@ namespace com.knetikcloud.Api
     public interface IContentPollsApi
     {
         /// <summary>
-        /// Add your vote to a poll 
+        /// Add your vote to a poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
         /// </summary>
         /// <param name="id">The poll id</param>
         /// <param name="answerKey">The answer key</param>
         /// <returns>PollResponseResource</returns>
         PollResponseResource AnswerPoll (string id, StringWrapper answerKey);
         /// <summary>
-        /// Create a new poll Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+        /// Create a new poll Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="pollResource">The poll object</param>
         /// <returns>PollResource</returns>
         PollResource CreatePoll (PollResource pollResource);
         /// <summary>
-        /// Create a poll template Poll templates define a type of poll and the properties they have
+        /// Create a poll template Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="pollTemplateResource">The poll template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreatePollTemplate (TemplateResource pollTemplateResource);
         /// <summary>
-        /// Delete an existing poll 
+        /// Delete an existing poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="id">The poll id</param>
         /// <returns></returns>
         void DeletePoll (string id);
         /// <summary>
-        /// Delete a poll template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a poll template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeletePollTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single poll 
+        /// Get a single poll &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The poll id</param>
         /// <returns>PollResource</returns>
         PollResource GetPoll (string id);
         /// <summary>
-        /// Get poll answer 
+        /// Get poll answer &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
         /// </summary>
         /// <param name="id">The poll id</param>
         /// <returns>PollResponseResource</returns>
         PollResponseResource GetPollAnswer (string id);
         /// <summary>
-        /// Get a single poll template 
+        /// Get a single poll template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetPollTemplate (string id);
         /// <summary>
-        /// List and search poll templates 
+        /// List and search poll templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -70,7 +70,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetPollTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List and search polls Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+        /// List and search polls Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterCategory">Filter for polls from a specific category by id</param>
         /// <param name="filterTagset">Filter for polls with specified tags (separated by comma)</param>
@@ -81,14 +81,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourcePollResource</returns>
         PageResourcePollResource GetPolls (string filterCategory, string filterTagset, string filterText, int? size, int? page, string order);
         /// <summary>
-        /// Update an existing poll 
+        /// Update an existing poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="id">The poll id</param>
         /// <param name="pollResource">The poll object</param>
         /// <returns>PollResource</returns>
         PollResource UpdatePoll (string id, PollResource pollResource);
         /// <summary>
-        /// Update a poll template 
+        /// Update a poll template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="pollTemplateResource">The poll template resource object</param>
@@ -150,7 +150,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add your vote to a poll 
+        /// Add your vote to a poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
         /// </summary>
         /// <param name="id">The poll id</param> 
         /// <param name="answerKey">The answer key</param> 
@@ -189,7 +189,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a new poll Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+        /// Create a new poll Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="pollResource">The poll object</param> 
         /// <returns>PollResource</returns>            
@@ -223,7 +223,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a poll template Poll templates define a type of poll and the properties they have
+        /// Create a poll template Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="pollTemplateResource">The poll template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -257,7 +257,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing poll 
+        /// Delete an existing poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="id">The poll id</param> 
         /// <returns></returns>            
@@ -294,7 +294,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a poll template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a poll template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -333,7 +333,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single poll 
+        /// Get a single poll &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The poll id</param> 
         /// <returns>PollResource</returns>            
@@ -370,7 +370,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get poll answer 
+        /// Get poll answer &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
         /// </summary>
         /// <param name="id">The poll id</param> 
         /// <returns>PollResponseResource</returns>            
@@ -407,7 +407,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single poll template 
+        /// Get a single poll template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -444,7 +444,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search poll templates 
+        /// List and search poll templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -482,7 +482,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search polls Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+        /// List and search polls Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterCategory">Filter for polls from a specific category by id</param> 
         /// <param name="filterTagset">Filter for polls with specified tags (separated by comma)</param> 
@@ -526,7 +526,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update an existing poll 
+        /// Update an existing poll &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
         /// </summary>
         /// <param name="id">The poll id</param> 
         /// <param name="pollResource">The poll object</param> 
@@ -565,7 +565,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a poll template 
+        /// Update a poll template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="pollTemplateResource">The poll template resource object</param> 

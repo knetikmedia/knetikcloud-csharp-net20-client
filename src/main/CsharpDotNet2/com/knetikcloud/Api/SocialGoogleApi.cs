@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface ISocialGoogleApi
     {
         /// <summary>
-        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
         /// </summary>
         /// <param name="googleToken">The token from google</param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+        /// Link google account Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
         /// </summary>
         /// <param name="googleToken">The token from google</param> 
         /// <returns></returns>            

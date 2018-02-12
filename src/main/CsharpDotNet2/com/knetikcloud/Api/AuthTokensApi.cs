@@ -12,21 +12,21 @@ namespace com.knetikcloud.Api
     public interface IAuthTokensApi
     {
         /// <summary>
-        /// Delete tokens by username, client id, or both 
+        /// Delete tokens by username, client id, or both &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="username">The username of the user</param>
         /// <param name="clientId">The id of the client</param>
         /// <returns></returns>
         void DeleteTokens (string username, string clientId);
         /// <summary>
-        /// Get a single token by username and client id 
+        /// Get a single token by username and client id &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="username">The username of the user</param>
         /// <param name="clientId">The id of the client</param>
         /// <returns>OauthAccessTokenResource</returns>
         OauthAccessTokenResource GetToken (string username, string clientId);
         /// <summary>
-        /// List usernames and client ids Token value not shown
+        /// List usernames and client ids Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="filterClientId">Filters for token whose client id matches provided string</param>
         /// <param name="filterUsername">Filters for token whose username matches provided string</param>
@@ -91,7 +91,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Delete tokens by username, client id, or both 
+        /// Delete tokens by username, client id, or both &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="username">The username of the user</param> 
         /// <param name="clientId">The id of the client</param> 
@@ -127,7 +127,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single token by username and client id 
+        /// Get a single token by username and client id &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="username">The username of the user</param> 
         /// <param name="clientId">The id of the client</param> 
@@ -169,7 +169,7 @@ path = path.Replace("{" + "client_id" + "}", ApiClient.ParameterToString(clientI
         }
     
         /// <summary>
-        /// List usernames and client ids Token value not shown
+        /// List usernames and client ids Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
         /// </summary>
         /// <param name="filterClientId">Filters for token whose client id matches provided string</param> 
         /// <param name="filterUsername">Filters for token whose username matches provided string</param> 

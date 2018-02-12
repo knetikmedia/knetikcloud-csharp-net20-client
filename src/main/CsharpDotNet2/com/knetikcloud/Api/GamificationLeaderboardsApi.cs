@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IGamificationLeaderboardsApi
     {
         /// <summary>
-        /// Retrieves leaderboard details and paginated entries The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+        /// Retrieves leaderboard details and paginated entries The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="contextType">The context type for the leaderboard</param>
         /// <param name="contextId">The context id for the leaderboard</param>
@@ -22,7 +22,7 @@ namespace com.knetikcloud.Api
         /// <returns>LeaderboardResource</returns>
         LeaderboardResource GetLeaderboard (string contextType, string contextId, int? size, int? page, string order);
         /// <summary>
-        /// Retrieves a specific user entry with rank The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+        /// Retrieves a specific user entry with rank The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="contextType">The context type for the leaderboard</param>
         /// <param name="contextId">The context id for the leaderboard</param>
@@ -30,7 +30,7 @@ namespace com.knetikcloud.Api
         /// <returns>LeaderboardEntryResource</returns>
         LeaderboardEntryResource GetLeaderboardRank (string contextType, string contextId, string id);
         /// <summary>
-        /// Get a list of available leaderboard strategy names 
+        /// Get a list of available leaderboard strategy names &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetLeaderboardStrategies ();
@@ -90,7 +90,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Retrieves leaderboard details and paginated entries The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+        /// Retrieves leaderboard details and paginated entries The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="contextType">The context type for the leaderboard</param> 
         /// <param name="contextId">The context id for the leaderboard</param> 
@@ -138,7 +138,7 @@ path = path.Replace("{" + "context_id" + "}", ApiClient.ParameterToString(contex
         }
     
         /// <summary>
-        /// Retrieves a specific user entry with rank The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+        /// Retrieves a specific user entry with rank The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="contextType">The context type for the leaderboard</param> 
         /// <param name="contextId">The context id for the leaderboard</param> 
@@ -185,7 +185,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a list of available leaderboard strategy names 
+        /// Get a list of available leaderboard strategy names &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>            
         public List<string> GetLeaderboardStrategies ()

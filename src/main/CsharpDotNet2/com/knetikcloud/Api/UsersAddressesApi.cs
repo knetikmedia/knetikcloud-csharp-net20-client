@@ -12,28 +12,28 @@ namespace com.knetikcloud.Api
     public interface IUsersAddressesApi
     {
         /// <summary>
-        /// Create a new address 
+        /// Create a new address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="savedAddressResource">The new address</param>
         /// <returns>SavedAddressResource</returns>
         SavedAddressResource CreateAddress (string userId, SavedAddressResource savedAddressResource);
         /// <summary>
-        /// Delete an address 
+        /// Delete an address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="id">The id of the address</param>
         /// <returns></returns>
         void DeleteAddress (string userId, int? id);
         /// <summary>
-        /// Get a single address 
+        /// Get a single address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="id">The id of the address</param>
         /// <returns>SavedAddressResource</returns>
         SavedAddressResource GetAddress (string userId, int? id);
         /// <summary>
-        /// List and search addresses 
+        /// List and search addresses &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -42,7 +42,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSavedAddressResource</returns>
         PageResourceSavedAddressResource GetAddresses (string userId, int? size, int? page, string order);
         /// <summary>
-        /// Update an address 
+        /// Update an address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="id">The id of the address</param>
@@ -105,7 +105,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new address 
+        /// Create a new address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="savedAddressResource">The new address</param> 
@@ -144,7 +144,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an address 
+        /// Delete an address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="id">The id of the address</param> 
@@ -186,7 +186,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single address 
+        /// Get a single address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="id">The id of the address</param> 
@@ -228,7 +228,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List and search addresses 
+        /// List and search addresses &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -271,7 +271,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update an address 
+        /// Update an address &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="id">The id of the address</param> 

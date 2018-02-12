@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface ICampaignsChallengesApi
     {
         /// <summary>
-        /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+        /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="challengeResource">The challenge resource object</param>
         /// <returns>ChallengeResource</returns>
         ChallengeResource CreateChallenge (ChallengeResource challengeResource);
         /// <summary>
-        /// Create a challenge activity 
+        /// Create a challenge activity &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="challengeId">The challenge id</param>
         /// <param name="challengeActivityResource">The challenge activity resource object</param>
@@ -26,58 +26,58 @@ namespace com.knetikcloud.Api
         /// <returns>ChallengeActivityResource</returns>
         ChallengeActivityResource CreateChallengeActivity (long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings);
         /// <summary>
-        /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have
+        /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateChallengeActivityTemplate (TemplateResource challengeActivityTemplateResource);
         /// <summary>
-        /// Create a challenge template Challenge Templates define a type of challenge and the properties they have
+        /// Create a challenge template Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="challengeTemplateResource">The challenge template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateChallengeTemplate (TemplateResource challengeTemplateResource);
         /// <summary>
-        /// Delete a challenge 
+        /// Delete a challenge &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge id</param>
         /// <returns></returns>
         void DeleteChallenge (long? id);
         /// <summary>
-        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
         /// <returns></returns>
         void DeleteChallengeActivity (long? id, long? challengeId);
         /// <summary>
-        /// Delete a challenge activity template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a challenge activity template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteChallengeActivityTemplate (string id, string cascade);
         /// <summary>
-        /// Delete a challenge event 
+        /// Delete a challenge event &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge event id</param>
         /// <returns></returns>
         void DeleteChallengeEvent (long? id);
         /// <summary>
-        /// Delete a challenge template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a challenge template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteChallengeTemplate (string id, string cascade);
         /// <summary>
-        /// Retrieve a challenge 
+        /// Retrieve a challenge &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge id</param>
         /// <returns>ChallengeResource</returns>
         ChallengeResource GetChallenge (long? id);
         /// <summary>
-        /// List and search challenge activities 
+        /// List and search challenge activities &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="challengeId">The challenge id</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -86,20 +86,20 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceBareChallengeActivityResource</returns>
         PageResourceBareChallengeActivityResource GetChallengeActivities (long? challengeId, int? size, int? page, string order);
         /// <summary>
-        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
         /// <returns>ChallengeActivityResource</returns>
         ChallengeActivityResource GetChallengeActivity (long? id, long? challengeId);
         /// <summary>
-        /// Get a single challenge activity template 
+        /// Get a single challenge activity template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetChallengeActivityTemplate (string id);
         /// <summary>
-        /// List and search challenge activity templates 
+        /// List and search challenge activity templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -107,13 +107,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetChallengeActivityTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Retrieve a single challenge event details 
+        /// Retrieve a single challenge event details &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge event id</param>
         /// <returns>ChallengeEventResource</returns>
         ChallengeEventResource GetChallengeEvent (long? id);
         /// <summary>
-        /// Retrieve a list of challenge events 
+        /// Retrieve a list of challenge events &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
         /// <param name="filterEndDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
@@ -125,13 +125,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceChallengeEventResource</returns>
         PageResourceChallengeEventResource GetChallengeEvents (string filterStartDate, string filterEndDate, bool? filterCampaigns, long? filterChallenge, int? size, int? page, string order);
         /// <summary>
-        /// Get a single challenge template 
+        /// Get a single challenge template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetChallengeTemplate (string id);
         /// <summary>
-        /// List and search challenge templates 
+        /// List and search challenge templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -139,7 +139,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetChallengeTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Retrieve a list of challenges 
+        /// Retrieve a list of challenges &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterActiveCampaign">Filter for challenges that are tied to active campaigns</param>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
@@ -150,14 +150,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceChallengeResource</returns>
         PageResourceChallengeResource GetChallenges (bool? filterActiveCampaign, string filterStartDate, string filterEndDate, int? size, int? page, string order);
         /// <summary>
-        /// Update a challenge If the challenge is a copy, changes will propagate to all the related challenges
+        /// Update a challenge If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge id</param>
         /// <param name="challengeResource">The challenge resource object</param>
         /// <returns>ChallengeResource</returns>
         ChallengeResource UpdateChallenge (long? id, ChallengeResource challengeResource);
         /// <summary>
-        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge_activity id</param>
         /// <param name="challengeId">The challenge id</param>
@@ -166,14 +166,14 @@ namespace com.knetikcloud.Api
         /// <returns>ChallengeActivityResource</returns>
         ChallengeActivityResource UpdateChallengeActivity (long? id, long? challengeId, ChallengeActivityResource challengeActivityResource, bool? validateSettings);
         /// <summary>
-        /// Update an challenge activity template 
+        /// Update an challenge activity template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource UpdateChallengeActivityTemplate (string id, TemplateResource challengeActivityTemplateResource);
         /// <summary>
-        /// Update a challenge template 
+        /// Update a challenge template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="challengeTemplateResource">The challenge template resource object</param>
@@ -235,7 +235,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+        /// Create a challenge Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="challengeResource">The challenge resource object</param> 
         /// <returns>ChallengeResource</returns>            
@@ -269,7 +269,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a challenge activity 
+        /// Create a challenge activity &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="challengeId">The challenge id</param> 
         /// <param name="challengeActivityResource">The challenge activity resource object</param> 
@@ -310,7 +310,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have
+        /// Create a challenge activity template Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -344,7 +344,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a challenge template Challenge Templates define a type of challenge and the properties they have
+        /// Create a challenge template Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="challengeTemplateResource">The challenge template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -378,7 +378,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a challenge 
+        /// Delete a challenge &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge id</param> 
         /// <returns></returns>            
@@ -415,7 +415,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Delete a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
@@ -457,7 +457,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Delete a challenge activity template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a challenge activity template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -496,7 +496,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Delete a challenge event 
+        /// Delete a challenge event &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge event id</param> 
         /// <returns></returns>            
@@ -533,7 +533,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Delete a challenge template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a challenge template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -572,7 +572,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Retrieve a challenge 
+        /// Retrieve a challenge &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge id</param> 
         /// <returns>ChallengeResource</returns>            
@@ -609,7 +609,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// List and search challenge activities 
+        /// List and search challenge activities &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="challengeId">The challenge id</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -652,7 +652,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Get a single challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
@@ -694,7 +694,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Get a single challenge activity template 
+        /// Get a single challenge activity template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -731,7 +731,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// List and search challenge activity templates 
+        /// List and search challenge activity templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -769,7 +769,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Retrieve a single challenge event details 
+        /// Retrieve a single challenge event details &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The challenge event id</param> 
         /// <returns>ChallengeEventResource</returns>            
@@ -806,7 +806,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Retrieve a list of challenge events 
+        /// Retrieve a list of challenge events &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
         /// <param name="filterEndDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
@@ -852,7 +852,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Get a single challenge template 
+        /// Get a single challenge template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -889,7 +889,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// List and search challenge templates 
+        /// List and search challenge templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -927,7 +927,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Retrieve a list of challenges 
+        /// Retrieve a list of challenges &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterActiveCampaign">Filter for challenges that are tied to active campaigns</param> 
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
@@ -971,7 +971,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Update a challenge If the challenge is a copy, changes will propagate to all the related challenges
+        /// Update a challenge If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge id</param> 
         /// <param name="challengeResource">The challenge resource object</param> 
@@ -1010,7 +1010,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+        /// Update a challenge activity A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
         /// </summary>
         /// <param name="id">The challenge_activity id</param> 
         /// <param name="challengeId">The challenge id</param> 
@@ -1056,7 +1056,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Update an challenge activity template 
+        /// Update an challenge activity template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="challengeActivityTemplateResource">The challengeActivity template resource object</param> 
@@ -1095,7 +1095,7 @@ path = path.Replace("{" + "challenge_id" + "}", ApiClient.ParameterToString(chal
         }
     
         /// <summary>
-        /// Update a challenge template 
+        /// Update a challenge template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="challengeTemplateResource">The challenge template resource object</param> 

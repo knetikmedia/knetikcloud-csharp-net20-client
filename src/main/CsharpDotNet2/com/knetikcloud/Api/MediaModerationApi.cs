@@ -12,13 +12,13 @@ namespace com.knetikcloud.Api
     public interface IMediaModerationApi
     {
         /// <summary>
-        /// Add a flag 
+        /// Add a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="flagResource">The flag resource object</param>
         /// <returns>FlagResource</returns>
         FlagResource AddFlag (FlagResource flagResource);
         /// <summary>
-        /// Delete a flag 
+        /// Delete a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
         /// </summary>
         /// <param name="contextName">The name of the context</param>
         /// <param name="contextId">The id of the context</param>
@@ -26,7 +26,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void DeleteFlag (string contextName, string contextId, int? userId);
         /// <summary>
-        /// Returns a page of flags 
+        /// Returns a page of flags &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
         /// </summary>
         /// <param name="filterContext">Filter by flag context</param>
         /// <param name="filterContextId">Filter by flag context ID</param>
@@ -36,13 +36,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceFlagResource</returns>
         PageResourceFlagResource GetFlags (string filterContext, string filterContextId, int? filterUserId, int? size, int? page);
         /// <summary>
-        /// Get a flag report 
+        /// Get a flag report &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="id">The flag report id</param>
         /// <returns>FlagReportResource</returns>
         FlagReportResource GetModerationReport (long? id);
         /// <summary>
-        /// Returns a page of flag reports Context can be either a free-form string or a pre-defined context name
+        /// Returns a page of flag reports Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="excludeResolved">Ignore resolved context</param>
         /// <param name="filterContext">Filter by moderation context</param>
@@ -52,7 +52,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceFlagReportResource</returns>
         PageResourceFlagReportResource GetModerationReports (bool? excludeResolved, string filterContext, string filterContextId, int? size, int? page);
         /// <summary>
-        /// Update a flag report Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+        /// Update a flag report Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="id">The flag report id</param>
         /// <param name="flagReportResource">The new flag report</param>
@@ -114,7 +114,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a flag 
+        /// Add a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="flagResource">The flag resource object</param> 
         /// <returns>FlagResource</returns>            
@@ -148,7 +148,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a flag 
+        /// Delete a flag &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
         /// </summary>
         /// <param name="contextName">The name of the context</param> 
         /// <param name="contextId">The id of the context</param> 
@@ -186,7 +186,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a page of flags 
+        /// Returns a page of flags &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
         /// </summary>
         /// <param name="filterContext">Filter by flag context</param> 
         /// <param name="filterContextId">Filter by flag context ID</param> 
@@ -228,7 +228,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a flag report 
+        /// Get a flag report &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="id">The flag report id</param> 
         /// <returns>FlagReportResource</returns>            
@@ -265,7 +265,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a page of flag reports Context can be either a free-form string or a pre-defined context name
+        /// Returns a page of flag reports Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="excludeResolved">Ignore resolved context</param> 
         /// <param name="filterContext">Filter by moderation context</param> 
@@ -307,7 +307,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a flag report Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+        /// Update a flag report Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
         /// </summary>
         /// <param name="id">The flag report id</param> 
         /// <param name="flagReportResource">The new flag report</param> 

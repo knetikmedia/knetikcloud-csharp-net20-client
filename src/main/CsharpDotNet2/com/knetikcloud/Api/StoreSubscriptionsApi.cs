@@ -12,45 +12,45 @@ namespace com.knetikcloud.Api
     public interface IStoreSubscriptionsApi
     {
         /// <summary>
-        /// Creates a subscription item and associated plans 
+        /// Creates a subscription item and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="subscriptionResource">The subscription to be created</param>
         /// <returns>SubscriptionResource</returns>
         SubscriptionResource CreateSubscription (SubscriptionResource subscriptionResource);
         /// <summary>
-        /// Create a subscription template Subscription Templates define a type of subscription and the properties they have.
+        /// Create a subscription template Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="subscriptionTemplateResource">The new subscription template</param>
         /// <returns>SubscriptionTemplateResource</returns>
         SubscriptionTemplateResource CreateSubscriptionTemplate (SubscriptionTemplateResource subscriptionTemplateResource);
         /// <summary>
-        /// Delete a subscription plan Must not be locked or a migration target
+        /// Delete a subscription plan Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the subscription</param>
         /// <param name="planId">The id of the plan</param>
         /// <returns></returns>
         void DeleteSubscription (int? id, string planId);
         /// <summary>
-        /// Delete a subscription template 
+        /// Delete a subscription template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param>
         /// <returns></returns>
         void DeleteSubscriptionTemplate (string id, string cascade);
         /// <summary>
-        /// Retrieve a single subscription item and associated plans 
+        /// Retrieve a single subscription item and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the subscription</param>
         /// <returns>SubscriptionResource</returns>
         SubscriptionResource GetSubscription (int? id);
         /// <summary>
-        /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have.
+        /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>SubscriptionTemplateResource</returns>
         SubscriptionTemplateResource GetSubscriptionTemplate (string id);
         /// <summary>
-        /// List and search subscription templates 
+        /// List and search subscription templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -58,7 +58,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSubscriptionTemplateResource</returns>
         PageResourceSubscriptionTemplateResource GetSubscriptionTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List available subscription items and associated plans 
+        /// List available subscription items and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -66,19 +66,19 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceSubscriptionResource</returns>
         PageResourceSubscriptionResource GetSubscriptions (int? size, int? page, string order);
         /// <summary>
-        /// Processes subscriptions and charge dues 
+        /// Processes subscriptions and charge dues &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <returns></returns>
         void ProcessSubscriptions ();
         /// <summary>
-        /// Updates a subscription item and associated plans Will not remove plans left out
+        /// Updates a subscription item and associated plans Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the subscription</param>
         /// <param name="subscriptionResource">The subscription resource object</param>
         /// <returns></returns>
         void UpdateSubscription (int? id, SubscriptionResource subscriptionResource);
         /// <summary>
-        /// Update a subscription template 
+        /// Update a subscription template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="subscriptionTemplateResource">The subscription template resource object</param>
@@ -140,7 +140,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Creates a subscription item and associated plans 
+        /// Creates a subscription item and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="subscriptionResource">The subscription to be created</param> 
         /// <returns>SubscriptionResource</returns>            
@@ -174,7 +174,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a subscription template Subscription Templates define a type of subscription and the properties they have.
+        /// Create a subscription template Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="subscriptionTemplateResource">The new subscription template</param> 
         /// <returns>SubscriptionTemplateResource</returns>            
@@ -208,7 +208,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a subscription plan Must not be locked or a migration target
+        /// Delete a subscription plan Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the subscription</param> 
         /// <param name="planId">The id of the plan</param> 
@@ -250,7 +250,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Delete a subscription template 
+        /// Delete a subscription template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param> 
@@ -289,7 +289,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Retrieve a single subscription item and associated plans 
+        /// Retrieve a single subscription item and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the subscription</param> 
         /// <returns>SubscriptionResource</returns>            
@@ -326,7 +326,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have.
+        /// Get a single subscription template Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>SubscriptionTemplateResource</returns>            
@@ -363,7 +363,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// List and search subscription templates 
+        /// List and search subscription templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -401,7 +401,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// List available subscription items and associated plans 
+        /// List available subscription items and associated plans &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -439,7 +439,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Processes subscriptions and charge dues 
+        /// Processes subscriptions and charge dues &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <returns></returns>            
         public void ProcessSubscriptions ()
@@ -471,7 +471,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Updates a subscription item and associated plans Will not remove plans left out
+        /// Updates a subscription item and associated plans Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the subscription</param> 
         /// <param name="subscriptionResource">The subscription resource object</param> 
@@ -510,7 +510,7 @@ path = path.Replace("{" + "plan_id" + "}", ApiClient.ParameterToString(planId));
         }
     
         /// <summary>
-        /// Update a subscription template 
+        /// Update a subscription template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="subscriptionTemplateResource">The subscription template resource object</param> 

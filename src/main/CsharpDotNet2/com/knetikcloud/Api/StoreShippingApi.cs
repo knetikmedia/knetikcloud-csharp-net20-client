@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IStoreShippingApi
     {
         /// <summary>
-        /// Create a shipping item A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+        /// Create a shipping item A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="shippingItem">The shipping item object</param>
@@ -25,32 +25,32 @@ namespace com.knetikcloud.Api
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource CreateShippingTemplate (ItemTemplateResource shippingTemplateResource);
         /// <summary>
-        /// Delete a shipping item 
+        /// Delete a shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the shipping item</param>
         /// <returns></returns>
         void DeleteShippingItem (int? id);
         /// <summary>
-        /// Delete a shipping template 
+        /// Delete a shipping template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param>
         /// <returns></returns>
         void DeleteShippingTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single shipping item 
+        /// Get a single shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the shipping item</param>
         /// <returns>ShippingItem</returns>
         ShippingItem GetShippingItem (int? id);
         /// <summary>
-        /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have.
+        /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource GetShippingTemplate (string id);
         /// <summary>
-        /// List and search shipping templates 
+        /// List and search shipping templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -58,7 +58,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceItemTemplateResource</returns>
         PageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Update a shipping item 
+        /// Update a shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the shipping item</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
@@ -66,7 +66,7 @@ namespace com.knetikcloud.Api
         /// <returns>ShippingItem</returns>
         ShippingItem UpdateShippingItem (int? id, bool? cascade, ShippingItem shippingItem);
         /// <summary>
-        /// Update a shipping template 
+        /// Update a shipping template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="shippingTemplateResource">The shipping template resource object</param>
@@ -128,7 +128,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a shipping item A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+        /// Create a shipping item A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="shippingItem">The shipping item object</param> 
@@ -198,7 +198,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a shipping item 
+        /// Delete a shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the shipping item</param> 
         /// <returns></returns>            
@@ -235,7 +235,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a shipping template 
+        /// Delete a shipping template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param> 
@@ -274,7 +274,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single shipping item 
+        /// Get a single shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the shipping item</param> 
         /// <returns>ShippingItem</returns>            
@@ -311,7 +311,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have.
+        /// Get a single shipping template Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -348,7 +348,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search shipping templates 
+        /// List and search shipping templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -386,7 +386,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a shipping item 
+        /// Update a shipping item &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
         /// </summary>
         /// <param name="id">The id of the shipping item</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
@@ -427,7 +427,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a shipping template 
+        /// Update a shipping template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="shippingTemplateResource">The shipping template resource object</param> 

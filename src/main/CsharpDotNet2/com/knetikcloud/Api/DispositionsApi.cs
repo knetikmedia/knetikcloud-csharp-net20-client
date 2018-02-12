@@ -12,32 +12,32 @@ namespace com.knetikcloud.Api
     public interface IDispositionsApi
     {
         /// <summary>
-        /// Add a new disposition 
+        /// Add a new disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
         /// </summary>
         /// <param name="disposition">The new disposition record</param>
         /// <returns>DispositionResource</returns>
         DispositionResource AddDisposition (DispositionResource disposition);
         /// <summary>
-        /// Delete a disposition 
+        /// Delete a disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the disposition record</param>
         /// <returns></returns>
         void DeleteDisposition (long? id);
         /// <summary>
-        /// Returns a disposition 
+        /// Returns a disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the disposition record</param>
         /// <returns>DispositionResource</returns>
         DispositionResource GetDisposition (long? id);
         /// <summary>
-        /// Returns a list of disposition counts 
+        /// Returns a list of disposition counts &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param>
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param>
         /// <returns>List&lt;DispositionCount&gt;</returns>
         List<DispositionCount> GetDispositionCounts (string filterContext, string filterOwner);
         /// <summary>
-        /// Returns a page of dispositions 
+        /// Returns a page of dispositions &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param>
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param>
@@ -102,7 +102,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a new disposition 
+        /// Add a new disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
         /// </summary>
         /// <param name="disposition">The new disposition record</param> 
         /// <returns>DispositionResource</returns>            
@@ -136,7 +136,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a disposition 
+        /// Delete a disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the disposition record</param> 
         /// <returns></returns>            
@@ -173,7 +173,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a disposition 
+        /// Returns a disposition &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the disposition record</param> 
         /// <returns>DispositionResource</returns>            
@@ -210,7 +210,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a list of disposition counts 
+        /// Returns a list of disposition counts &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param> 
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param> 
@@ -246,7 +246,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a page of dispositions 
+        /// Returns a page of dispositions &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterContext">Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47</param> 
         /// <param name="filterOwner">Filter for dispositions from a specific user by id or &#39;me&#39;</param> 

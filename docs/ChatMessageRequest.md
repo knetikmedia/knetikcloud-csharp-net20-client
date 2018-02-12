@@ -1,12 +1,10 @@
-# com.knetikcloud.Model.IOConfig
+# com.knetikcloud.Model.ChatMessageRequest
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Customer** | **string** |  | [optional] 
-**Enabled** | **bool?** |  | [optional] 
-**Environment** | **string** |  | [optional] 
-**Product** | **string** |  | [optional] 
+**Content** | **Object** | The content of the message | 
+**MessageType** | **string** | The type of the message set by the client | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

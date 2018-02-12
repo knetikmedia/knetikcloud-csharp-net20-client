@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IUtilSecurityApi
     {
         /// <summary>
-        /// Returns the authentication log for a user A log entry is recorded everytime a user requests a new token. Standard pagination available
+        /// Returns the authentication log for a user A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
         /// </summary>
         /// <param name="userId">The user id</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -21,7 +21,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceLocationLogResource</returns>
         PageResourceLocationLogResource GetUserLocationLog (int? userId, int? size, int? page, string order);
         /// <summary>
-        /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info 
+        /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
         /// </summary>
         /// <returns>TokenDetailsResource</returns>
         TokenDetailsResource GetUserTokenDetails ();
@@ -81,7 +81,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Returns the authentication log for a user A log entry is recorded everytime a user requests a new token. Standard pagination available
+        /// Returns the authentication log for a user A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
         /// </summary>
         /// <param name="userId">The user id</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -121,7 +121,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info 
+        /// Returns the authentication token details. Use /users endpoint for detailed user&#39;s info &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
         /// </summary>
         /// <returns>TokenDetailsResource</returns>            
         public TokenDetailsResource GetUserTokenDetails ()

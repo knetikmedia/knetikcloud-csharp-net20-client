@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IObjectsApi
     {
         /// <summary>
-        /// Create an object 
+        /// Create an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is to be part of</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
@@ -20,34 +20,34 @@ namespace com.knetikcloud.Api
         /// <returns>ObjectResource</returns>
         ObjectResource CreateObjectItem (string templateId, bool? cascade, ObjectResource objectItem);
         /// <summary>
-        /// Create an object template Object templates define a type of entitlement and the properties they have
+        /// Create an object template Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="template">The entitlement template to be created</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource CreateObjectTemplate (ItemTemplateResource template);
         /// <summary>
-        /// Delete an object 
+        /// Delete an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param>
         /// <param name="objectId">The id of the object</param>
         /// <returns></returns>
         void DeleteObjectItem (string templateId, int? objectId);
         /// <summary>
-        /// Delete an entitlement template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete an entitlement template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteObjectTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single object 
+        /// Get a single object &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param>
         /// <param name="objectId">The id of the object</param>
         /// <returns>ObjectResource</returns>
         ObjectResource GetObjectItem (string templateId, int? objectId);
         /// <summary>
-        /// List and search objects 
+        /// List and search objects &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="templateId">The id of the template to get objects for</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -56,13 +56,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceObjectResource</returns>
         PageResourceObjectResource GetObjectItems (string templateId, int? size, int? page, string order);
         /// <summary>
-        /// Get a single entitlement template 
+        /// Get a single entitlement template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource GetObjectTemplate (string id);
         /// <summary>
-        /// List and search entitlement templates 
+        /// List and search entitlement templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -70,7 +70,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceItemTemplateResource</returns>
         PageResourceItemTemplateResource GetObjectTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Update an object 
+        /// Update an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param>
         /// <param name="objectId">The id of the object</param>
@@ -79,7 +79,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void UpdateObjectItem (string templateId, int? objectId, bool? cascade, ObjectResource objectItem);
         /// <summary>
-        /// Update an entitlement template 
+        /// Update an entitlement template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="template">The updated template</param>
@@ -141,7 +141,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create an object 
+        /// Create an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is to be part of</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
@@ -182,7 +182,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create an object template Object templates define a type of entitlement and the properties they have
+        /// Create an object template Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="template">The entitlement template to be created</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -216,7 +216,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an object 
+        /// Delete an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param> 
         /// <param name="objectId">The id of the object</param> 
@@ -258,7 +258,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// Delete an entitlement template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete an entitlement template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -297,7 +297,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// Get a single object 
+        /// Get a single object &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param> 
         /// <param name="objectId">The id of the object</param> 
@@ -339,7 +339,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// List and search objects 
+        /// List and search objects &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="templateId">The id of the template to get objects for</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -382,7 +382,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// Get a single entitlement template 
+        /// Get a single entitlement template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -419,7 +419,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// List and search entitlement templates 
+        /// List and search entitlement templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -457,7 +457,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// Update an object 
+        /// Update an object &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
         /// </summary>
         /// <param name="templateId">The id of the template this object is part of</param> 
         /// <param name="objectId">The id of the object</param> 
@@ -503,7 +503,7 @@ path = path.Replace("{" + "object_id" + "}", ApiClient.ParameterToString(objectI
         }
     
         /// <summary>
-        /// Update an entitlement template 
+        /// Update an entitlement template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="template">The updated template</param> 

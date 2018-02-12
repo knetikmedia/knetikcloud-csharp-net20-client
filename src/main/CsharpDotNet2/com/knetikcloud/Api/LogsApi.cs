@@ -12,19 +12,19 @@ namespace com.knetikcloud.Api
     public interface ILogsApi
     {
         /// <summary>
-        /// Add a user log entry 
+        /// Add a user log entry &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
         /// </summary>
         /// <param name="logEntry">The user log entry to be added</param>
         /// <returns></returns>
         void AddUserLog (UserActionLog logEntry);
         /// <summary>
-        /// Get an existing BRE event log entry by id 
+        /// Get an existing BRE event log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="id">The BRE event log entry id</param>
         /// <returns>BreEventLog</returns>
         BreEventLog GetBREEventLog (string id);
         /// <summary>
-        /// Returns a list of BRE event log entries 
+        /// Returns a list of BRE event log entries &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
         /// <param name="filterEventName">Filter event logs by event name</param>
@@ -32,33 +32,35 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
+        /// <param name="filterRuleId">Filter event logs by request id</param>
         /// <returns>PageResourceBreEventLog</returns>
-        PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order);
+        PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order, string filterRuleId);
         /// <summary>
-        /// Get an existing forward log entry by id 
+        /// Get an existing forward log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="id">The forward log entry id</param>
         /// <returns>ForwardLog</returns>
         ForwardLog GetBREForwardLog (string id);
         /// <summary>
-        /// Returns a list of forward log entries 
+        /// Returns a list of forward log entries &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
         /// <param name="filterEndDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
         /// <param name="filterStatusCode">Filter forward logs by http status code</param>
+        /// <param name="filterUrl">Filter forward logs by URL starting with...</param>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param>
         /// <returns>PageResourceForwardLog</returns>
-        PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order);
+        PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? filterUrl, int? size, int? page, string order);
         /// <summary>
-        /// Returns a user log entry by id 
+        /// Returns a user log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
         /// </summary>
         /// <param name="id">The user log entry id</param>
         /// <returns>UserActionLog</returns>
         UserActionLog GetUserLog (string id);
         /// <summary>
-        /// Returns a page of user logs entries 
+        /// Returns a page of user logs entries &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
         /// </summary>
         /// <param name="filterUser">Filter for actions taken by a specific user by id</param>
         /// <param name="filterActionName">Filter for actions of a specific name</param>
@@ -123,7 +125,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a user log entry 
+        /// Add a user log entry &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
         /// </summary>
         /// <param name="logEntry">The user log entry to be added</param> 
         /// <returns></returns>            
@@ -157,7 +159,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get an existing BRE event log entry by id 
+        /// Get an existing BRE event log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="id">The BRE event log entry id</param> 
         /// <returns>BreEventLog</returns>            
@@ -194,7 +196,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a list of BRE event log entries 
+        /// Returns a list of BRE event log entries &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
         /// <param name="filterEventName">Filter event logs by event name</param> 
@@ -202,8 +204,9 @@ namespace com.knetikcloud.Api
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
+        /// <param name="filterRuleId">Filter event logs by request id</param> 
         /// <returns>PageResourceBreEventLog</returns>            
-        public PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order)
+        public PageResourceBreEventLog GetBREEventLogs (string filterStartDate, string filterEventName, string filterEventId, int? size, int? page, string order, string filterRuleId)
         {
             
     
@@ -222,6 +225,7 @@ namespace com.knetikcloud.Api
  if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
+ if (filterRuleId != null) queryParams.Add("filter_rule_id", ApiClient.ParameterToString(filterRuleId)); // query parameter
                                         
             // authentication setting, if any
             String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
@@ -238,7 +242,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get an existing forward log entry by id 
+        /// Get an existing forward log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="id">The forward log entry id</param> 
         /// <returns>ForwardLog</returns>            
@@ -275,16 +279,17 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a list of forward log entries 
+        /// Returns a list of forward log entries &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
         /// </summary>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
         /// <param name="filterEndDate">A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
         /// <param name="filterStatusCode">Filter forward logs by http status code</param> 
+        /// <param name="filterUrl">Filter forward logs by URL starting with...</param> 
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
         /// <param name="order">A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]</param> 
         /// <returns>PageResourceForwardLog</returns>            
-        public PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? size, int? page, string order)
+        public PageResourceForwardLog GetBREForwardLogs (string filterStartDate, string filterEndDate, int? filterStatusCode, int? filterUrl, int? size, int? page, string order)
         {
             
     
@@ -300,6 +305,7 @@ namespace com.knetikcloud.Api
              if (filterStartDate != null) queryParams.Add("filter_start_date", ApiClient.ParameterToString(filterStartDate)); // query parameter
  if (filterEndDate != null) queryParams.Add("filter_end_date", ApiClient.ParameterToString(filterEndDate)); // query parameter
  if (filterStatusCode != null) queryParams.Add("filter_status_code", ApiClient.ParameterToString(filterStatusCode)); // query parameter
+ if (filterUrl != null) queryParams.Add("filter_url", ApiClient.ParameterToString(filterUrl)); // query parameter
  if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
  if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
  if (order != null) queryParams.Add("order", ApiClient.ParameterToString(order)); // query parameter
@@ -319,7 +325,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a user log entry by id 
+        /// Returns a user log entry by id &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
         /// </summary>
         /// <param name="id">The user log entry id</param> 
         /// <returns>UserActionLog</returns>            
@@ -356,7 +362,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a page of user logs entries 
+        /// Returns a page of user logs entries &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
         /// </summary>
         /// <param name="filterUser">Filter for actions taken by a specific user by id</param> 
         /// <param name="filterActionName">Filter for actions of a specific name</param> 

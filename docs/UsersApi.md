@@ -1,18 +1,20 @@
 # com.knetikcloud..UsersApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddUserTag**](UsersApi.md#addusertag) | **POST** /users/{user_id}/tags | Add a tag to a user
 [**CreateUserTemplate**](UsersApi.md#createusertemplate) | **POST** /users/templates | Create a user template
 [**DeleteUserTemplate**](UsersApi.md#deleteusertemplate) | **DELETE** /users/templates/{id} | Delete a user template
+[**GetDirectMessages1**](UsersApi.md#getdirectmessages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
 [**GetUser**](UsersApi.md#getuser) | **GET** /users/{id} | Get a single user
 [**GetUserTags**](UsersApi.md#getusertags) | **GET** /users/{user_id}/tags | List tags for a user
 [**GetUserTemplate**](UsersApi.md#getusertemplate) | **GET** /users/templates/{id} | Get a single user template
 [**GetUserTemplates**](UsersApi.md#getusertemplates) | **GET** /users/templates | List and search user templates
 [**GetUsers**](UsersApi.md#getusers) | **GET** /users | List and search users
 [**PasswordReset**](UsersApi.md#passwordreset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
+[**PostUserMessage**](UsersApi.md#postusermessage) | **POST** /users/{recipient_id}/messages | Send a user message
 [**RegisterUser**](UsersApi.md#registeruser) | **POST** /users | Register a new user
 [**RemoveUserTag**](UsersApi.md#removeusertag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 [**SetPassword**](UsersApi.md#setpassword) | **PUT** /users/{id}/password | Set a user&#39;s password
@@ -27,6 +29,8 @@ Method | HTTP request | Description
 > void AddUserTag (int? userId, StringWrapper tag)
 
 Add a tag to a user
+
+<b>Permissions Needed:</b> USERS_ADMIN
 
 ### Example
 ```csharp
@@ -94,7 +98,7 @@ void (empty response body)
 
 Create a user template
 
-User Templates define a type of user and the properties they have
+User Templates define a type of user and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -161,7 +165,7 @@ Name | Type | Description  | Notes
 
 Delete a user template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -218,7 +222,78 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getdirectmessages1"></a>
+# **GetDirectMessages1**
+> PageResourceChatMessageResource GetDirectMessages1 (int? recipientId, int? size, int? page)
+
+Get a list of direct messages with this user
+
+<b>Permissions Needed:</b> ANY
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class GetDirectMessages1Example
+    {
+        public void main()
+        {
+            
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure OAuth2 access token for authorization: oauth2_password_grant
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new UsersApi();
+            var recipientId = 56;  // int? | The user id
+            var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
+            var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
+
+            try
+            {
+                // Get a list of direct messages with this user
+                PageResourceChatMessageResource result = apiInstance.GetDirectMessages1(recipientId, size, page);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.GetDirectMessages1: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipientId** | **int?**| The user id | 
+ **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
+
+### Return type
+
+[**PageResourceChatMessageResource**](PageResourceChatMessageResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -229,7 +304,7 @@ void (empty response body)
 
 Get a single user
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -285,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -295,6 +370,8 @@ Name | Type | Description  | Notes
 > List<string> GetUserTags (int? userId)
 
 List tags for a user
+
+<b>Permissions Needed:</b> USERS_ADMIN
 
 ### Example
 ```csharp
@@ -350,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -360,6 +437,8 @@ Name | Type | Description  | Notes
 > TemplateResource GetUserTemplate (string id)
 
 Get a single user template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```csharp
@@ -415,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -425,6 +504,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource GetUserTemplates (int? size, int? page, string order)
 
 List and search user templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```csharp
@@ -484,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -495,7 +576,7 @@ Name | Type | Description  | Notes
 
 List and search users
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -579,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -590,7 +671,7 @@ Name | Type | Description  | Notes
 
 Choose a new password after a reset
 
-Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Finish resetting a user's password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -652,13 +733,75 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="postusermessage"></a>
+# **PostUserMessage**
+> ChatMessageResource PostUserMessage (int? recipientId, ChatMessageRequest chatMessageRequest)
+
+Send a user message
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using com.knetikcloud.Api;
+using com.knetikcloud.Client;
+using com.knetikcloud.Model;
+
+namespace Example
+{
+    public class PostUserMessageExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new UsersApi();
+            var recipientId = 56;  // int? | The user id
+            var chatMessageRequest = new ChatMessageRequest(); // ChatMessageRequest | The chat message request (optional) 
+
+            try
+            {
+                // Send a user message
+                ChatMessageResource result = apiInstance.PostUserMessage(recipientId, chatMessageRequest);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.PostUserMessage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipientId** | **int?**| The user id | 
+ **chatMessageRequest** | [**ChatMessageRequest**](ChatMessageRequest.md)| The chat message request | [optional] 
+
+### Return type
+
+[**ChatMessageResource**](ChatMessageResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="registeruser"></a>
 # **RegisterUser**
 > UserResource RegisterUser (UserResource userResource)
 
 Register a new user
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -725,6 +868,8 @@ Name | Type | Description  | Notes
 
 Remove a tag from a user
 
+<b>Permissions Needed:</b> USERS_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -780,7 +925,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -791,7 +936,7 @@ void (empty response body)
 
 Set a user's password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. <br><br><b>Permissions Needed:</b> USERS_ADMIN or (USERS_USER and owner)
 
 ### Example
 ```csharp
@@ -859,7 +1004,7 @@ void (empty response body)
 
 Reset a user's password
 
-A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -925,7 +1070,7 @@ void (empty response body)
 
 Reset a user's password without user id
 
-A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+A reset code will be generated and a 'forgot_password' BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. <br><br><b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -991,7 +1136,7 @@ void (empty response body)
 
 Update a user
 
-Password will not be edited on this endpoint, use password specific endpoints.
+Password will not be edited on this endpoint, use password specific endpoints. <br><br><b>Permissions Needed:</b> USERS_ADMIN or owner
 
 ### Example
 ```csharp
@@ -1058,6 +1203,8 @@ void (empty response body)
 > TemplateResource UpdateUserTemplate (string id, TemplateResource userTemplateResource)
 
 Update a user template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp

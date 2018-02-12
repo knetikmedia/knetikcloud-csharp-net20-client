@@ -12,34 +12,34 @@ namespace com.knetikcloud.Api
     public interface IPaymentsApi
     {
         /// <summary>
-        /// Create a new payment method for a user 
+        /// Create a new payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being created</param>
         /// <param name="paymentMethod">Payment method being created</param>
         /// <returns>PaymentMethodResource</returns>
         PaymentMethodResource CreatePaymentMethod (int? userId, PaymentMethodResource paymentMethod);
         /// <summary>
-        /// Delete an existing payment method for a user 
+        /// Delete an existing payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being updated</param>
         /// <param name="id">ID of the payment method being deleted</param>
         /// <returns></returns>
         void DeletePaymentMethod (int? userId, int? id);
         /// <summary>
-        /// Get a single payment method for a user 
+        /// Get a single payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being retrieved</param>
         /// <param name="id">ID of the payment method being retrieved</param>
         /// <returns>PaymentMethodResource</returns>
         PaymentMethodResource GetPaymentMethod (int? userId, int? id);
         /// <summary>
-        /// Get a single payment method type 
+        /// Get a single payment method type &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">ID of the payment method type being retrieved</param>
         /// <returns>PaymentMethodTypeResource</returns>
         PaymentMethodTypeResource GetPaymentMethodType (int? id);
         /// <summary>
-        /// Get all payment method types 
+        /// Get all payment method types &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterName">Filter for payment method types whose name matches a given string</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -48,7 +48,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourcePaymentMethodTypeResource</returns>
         PageResourcePaymentMethodTypeResource GetPaymentMethodTypes (string filterName, int? size, int? page, string order);
         /// <summary>
-        /// Get all payment methods for a user 
+        /// Get all payment methods for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment methods are being retrieved</param>
         /// <param name="filterName">Filter for payment methods whose name starts with a given string</param>
@@ -61,19 +61,19 @@ namespace com.knetikcloud.Api
         /// <returns>List&lt;PaymentMethodResource&gt;</returns>
         List<PaymentMethodResource> GetPaymentMethods (int? userId, string filterName, string filterPaymentType, int? filterPaymentMethodTypeId, string filterPaymentMethodTypeName, int? size, int? page, string order);
         /// <summary>
-        /// Authorize payment of an invoice for later capture 
+        /// Authorize payment of an invoice for later capture &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
         /// </summary>
         /// <param name="request">Payment authorization request</param>
         /// <returns>PaymentAuthorizationResource</returns>
         PaymentAuthorizationResource PaymentAuthorization (PaymentAuthorizationResource request);
         /// <summary>
-        /// Capture an existing invoice payment authorization 
+        /// Capture an existing invoice payment authorization &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
         /// </summary>
         /// <param name="id">ID of the payment authorization to capture</param>
         /// <returns></returns>
         void PaymentCapture (int? id);
         /// <summary>
-        /// Update an existing payment method for a user 
+        /// Update an existing payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being updated</param>
         /// <param name="id">ID of the payment method being updated</param>
@@ -136,7 +136,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new payment method for a user 
+        /// Create a new payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being created</param> 
         /// <param name="paymentMethod">Payment method being created</param> 
@@ -175,7 +175,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing payment method for a user 
+        /// Delete an existing payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being updated</param> 
         /// <param name="id">ID of the payment method being deleted</param> 
@@ -217,7 +217,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single payment method for a user 
+        /// Get a single payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being retrieved</param> 
         /// <param name="id">ID of the payment method being retrieved</param> 
@@ -259,7 +259,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single payment method type 
+        /// Get a single payment method type &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">ID of the payment method type being retrieved</param> 
         /// <returns>PaymentMethodTypeResource</returns>            
@@ -296,7 +296,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get all payment method types 
+        /// Get all payment method types &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterName">Filter for payment method types whose name matches a given string</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -336,7 +336,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get all payment methods for a user 
+        /// Get all payment methods for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment methods are being retrieved</param> 
         /// <param name="filterName">Filter for payment methods whose name starts with a given string</param> 
@@ -387,7 +387,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Authorize payment of an invoice for later capture 
+        /// Authorize payment of an invoice for later capture &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
         /// </summary>
         /// <param name="request">Payment authorization request</param> 
         /// <returns>PaymentAuthorizationResource</returns>            
@@ -421,7 +421,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Capture an existing invoice payment authorization 
+        /// Capture an existing invoice payment authorization &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
         /// </summary>
         /// <param name="id">ID of the payment authorization to capture</param> 
         /// <returns></returns>            
@@ -458,7 +458,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update an existing payment method for a user 
+        /// Update an existing payment method for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
         /// </summary>
         /// <param name="userId">ID of the user for whom the payment method is being updated</param> 
         /// <param name="id">ID of the payment method being updated</param> 

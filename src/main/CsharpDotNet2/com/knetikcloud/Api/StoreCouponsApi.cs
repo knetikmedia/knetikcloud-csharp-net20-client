@@ -12,51 +12,51 @@ namespace com.knetikcloud.Api
     public interface IStoreCouponsApi
     {
         /// <summary>
-        /// Create a coupon item SKUs have to be unique in the entire store.
+        /// Create a coupon item SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="couponItem">The coupon item object</param>
         /// <returns>CouponItem</returns>
         CouponItem CreateCouponItem (bool? cascade, CouponItem couponItem);
         /// <summary>
-        /// Create a coupon template Coupon Templates define a type of coupon and the properties they have.
+        /// Create a coupon template Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="couponTemplateResource">The new coupon template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource CreateCouponTemplate (ItemTemplateResource couponTemplateResource);
         /// <summary>
-        /// Delete a coupon item 
+        /// Delete a coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param>
         /// <returns></returns>
         void DeleteCouponItem (int? id);
         /// <summary>
-        /// Delete a coupon template 
+        /// Delete a coupon template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param>
         /// <returns></returns>
         void DeleteCouponTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single coupon item 
+        /// Get a single coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param>
         /// <returns>CouponItem</returns>
         CouponItem GetCouponItem (int? id);
         /// <summary>
-        /// Get a coupon by sku 
+        /// Get a coupon by sku &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="sku">A sku of the coupon</param>
         /// <returns>CouponItem</returns>
         CouponItem GetCouponItemBySku (string sku);
         /// <summary>
-        /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have.
+        /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource GetCouponTemplate (string id);
         /// <summary>
-        /// List and search coupon templates 
+        /// List and search coupon templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -64,7 +64,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceItemTemplateResource</returns>
         PageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Update a coupon item 
+        /// Update a coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
@@ -72,7 +72,7 @@ namespace com.knetikcloud.Api
         /// <returns>CouponItem</returns>
         CouponItem UpdateCouponItem (int? id, bool? cascade, CouponItem couponItem);
         /// <summary>
-        /// Update a coupon template 
+        /// Update a coupon template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="couponTemplateResource">The coupon template resource object</param>
@@ -134,7 +134,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a coupon item SKUs have to be unique in the entire store.
+        /// Create a coupon item SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="couponItem">The coupon item object</param> 
@@ -170,7 +170,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a coupon template Coupon Templates define a type of coupon and the properties they have.
+        /// Create a coupon template Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="couponTemplateResource">The new coupon template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -204,7 +204,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a coupon item 
+        /// Delete a coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param> 
         /// <returns></returns>            
@@ -241,7 +241,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a coupon template 
+        /// Delete a coupon template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param> 
@@ -280,7 +280,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single coupon item 
+        /// Get a single coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param> 
         /// <returns>CouponItem</returns>            
@@ -317,7 +317,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a coupon by sku 
+        /// Get a coupon by sku &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="sku">A sku of the coupon</param> 
         /// <returns>CouponItem</returns>            
@@ -354,7 +354,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have.
+        /// Get a single coupon template Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -391,7 +391,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search coupon templates 
+        /// List and search coupon templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -429,7 +429,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a coupon item 
+        /// Update a coupon item &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
         /// </summary>
         /// <param name="id">The id of the coupon</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
@@ -470,7 +470,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a coupon template 
+        /// Update a coupon template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="couponTemplateResource">The coupon template resource object</param> 

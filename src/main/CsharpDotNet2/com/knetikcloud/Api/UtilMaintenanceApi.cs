@@ -12,23 +12,23 @@ namespace com.knetikcloud.Api
     public interface IUtilMaintenanceApi
     {
         /// <summary>
-        /// Delete maintenance info 
+        /// Delete maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <returns></returns>
         void DeleteMaintenance ();
         /// <summary>
-        /// Get current maintenance info Get current maintenance info. 404 if no maintenance.
+        /// Get current maintenance info Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Maintenance</returns>
         Maintenance GetMaintenance ();
         /// <summary>
-        /// Set current maintenance info 
+        /// Set current maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <param name="maintenance">The maintenance object</param>
         /// <returns></returns>
         void SetMaintenance (Maintenance maintenance);
         /// <summary>
-        /// Update current maintenance info 
+        /// Update current maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <param name="maintenance">The maintenance object</param>
         /// <returns></returns>
@@ -89,7 +89,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Delete maintenance info 
+        /// Delete maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <returns></returns>            
         public void DeleteMaintenance ()
@@ -121,7 +121,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get current maintenance info Get current maintenance info. 404 if no maintenance.
+        /// Get current maintenance info Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Maintenance</returns>            
         public Maintenance GetMaintenance ()
@@ -153,7 +153,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set current maintenance info 
+        /// Set current maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <param name="maintenance">The maintenance object</param> 
         /// <returns></returns>            
@@ -187,7 +187,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update current maintenance info 
+        /// Update current maintenance info &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
         /// </summary>
         /// <param name="maintenance">The maintenance object</param> 
         /// <returns></returns>            

@@ -1,6 +1,6 @@
 # com.knetikcloud..UsersRelationshipsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > UserRelationshipResource CreateUserRelationship (UserRelationshipResource relationship)
 
 Create a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
 
 ### Example
 ```csharp
@@ -82,6 +84,8 @@ Name | Type | Description  | Notes
 
 Delete a user relationship
 
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -135,7 +139,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -145,6 +149,8 @@ void (empty response body)
 > UserRelationshipResource GetUserRelationship (long? id)
 
 Get a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```csharp
@@ -200,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -210,6 +216,8 @@ Name | Type | Description  | Notes
 > PageResourceUserRelationshipResource GetUserRelationships (int? size, int? page, string order)
 
 Get a list of user relationships
+
+<b>Permissions Needed:</b> RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```csharp
@@ -269,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -279,6 +287,8 @@ Name | Type | Description  | Notes
 > UserRelationshipResource UpdateUserRelationship (long? id, UserRelationshipResource relationship)
 
 Update a user relationship
+
+<b>Permissions Needed:</b> RELATIONSHIPS_ADMIN
 
 ### Example
 ```csharp

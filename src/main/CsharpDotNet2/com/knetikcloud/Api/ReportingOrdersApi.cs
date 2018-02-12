@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IReportingOrdersApi
     {
         /// <summary>
-        /// Retrieve invoice counts aggregated by time ranges 
+        /// Retrieve invoice counts aggregated by time ranges &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
         /// </summary>
         /// <param name="currencyCode">The code for a currency to get sales data for</param>
         /// <param name="granularity">The time duration to aggregate by</param>
@@ -80,7 +80,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Retrieve invoice counts aggregated by time ranges 
+        /// Retrieve invoice counts aggregated by time ranges &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
         /// </summary>
         /// <param name="currencyCode">The code for a currency to get sales data for</param> 
         /// <param name="granularity">The time duration to aggregate by</param> 

@@ -21,12 +21,28 @@ namespace com.knetikcloud.Model {
     public long? ActivityId { get; set; }
 
     /// <summary>
+    /// The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint
+    /// </summary>
+    /// <value>The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint</value>
+    [DataMember(Name="bans", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "bans")]
+    public List<int?> Bans { get; set; }
+
+    /// <summary>
     /// The id of the challenge activity (as part of the event, required if eventId set)
     /// </summary>
     /// <value>The id of the challenge activity (as part of the event, required if eventId set)</value>
     [DataMember(Name="challenge_activity_id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "challenge_activity_id")]
     public long? ChallengeActivityId { get; set; }
+
+    /// <summary>
+    /// Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity.
+    /// </summary>
+    /// <value>Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity.</value>
+    [DataMember(Name="core_settings", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "core_settings")]
+    public CoreActivityOccurrenceSettings CoreSettings { get; set; }
 
     /// <summary>
     /// The date this occurrence was created, unix timestamp in seconds
@@ -51,6 +67,14 @@ namespace com.knetikcloud.Model {
     [DataMember(Name="event_id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "event_id")]
     public long? EventId { get; set; }
+
+    /// <summary>
+    /// The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well
+    /// </summary>
+    /// <value>The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well</value>
+    [DataMember(Name="host", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "host")]
+    public SimpleUserResource Host { get; set; }
 
     /// <summary>
     /// The id of the activity occurrence
@@ -125,10 +149,13 @@ namespace com.knetikcloud.Model {
       var sb = new StringBuilder();
       sb.Append("class ActivityOccurrenceResource {\n");
       sb.Append("  ActivityId: ").Append(ActivityId).Append("\n");
+      sb.Append("  Bans: ").Append(Bans).Append("\n");
       sb.Append("  ChallengeActivityId: ").Append(ChallengeActivityId).Append("\n");
+      sb.Append("  CoreSettings: ").Append(CoreSettings).Append("\n");
       sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
       sb.Append("  Entitlement: ").Append(Entitlement).Append("\n");
       sb.Append("  EventId: ").Append(EventId).Append("\n");
+      sb.Append("  Host: ").Append(Host).Append("\n");
       sb.Append("  Id: ").Append(Id).Append("\n");
       sb.Append("  RewardStatus: ").Append(RewardStatus).Append("\n");
       sb.Append("  Settings: ").Append(Settings).Append("\n");

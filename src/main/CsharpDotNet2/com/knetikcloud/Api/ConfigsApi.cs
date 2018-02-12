@@ -12,25 +12,25 @@ namespace com.knetikcloud.Api
     public interface IConfigsApi
     {
         /// <summary>
-        /// Create a new config 
+        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
         /// </summary>
         /// <param name="config">The config object</param>
         /// <returns>Config</returns>
         Config CreateConfig (Config config);
         /// <summary>
-        /// Delete an existing config 
+        /// Delete an existing config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="name">The config name</param>
         /// <returns></returns>
         void DeleteConfig (string name);
         /// <summary>
-        /// Get a single config Only configs that are public readable will be shown without admin access
+        /// Get a single config Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="name">The config name</param>
         /// <returns>Config</returns>
         Config GetConfig (string name);
         /// <summary>
-        /// List and search configs 
+        /// List and search configs &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterSearch">Filter for configs whose name contains the given string</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -39,7 +39,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceConfig</returns>
         PageResourceConfig GetConfigs (string filterSearch, int? size, int? page, string order);
         /// <summary>
-        /// Update an existing config 
+        /// Update an existing config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="name">The config name</param>
         /// <param name="config">The config object</param>
@@ -101,7 +101,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new config 
+        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
         /// </summary>
         /// <param name="config">The config object</param> 
         /// <returns>Config</returns>            
@@ -135,7 +135,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing config 
+        /// Delete an existing config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="name">The config name</param> 
         /// <returns></returns>            
@@ -172,7 +172,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single config Only configs that are public readable will be shown without admin access
+        /// Get a single config Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="name">The config name</param> 
         /// <returns>Config</returns>            
@@ -209,7 +209,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search configs 
+        /// List and search configs &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterSearch">Filter for configs whose name contains the given string</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -249,7 +249,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update an existing config 
+        /// Update an existing config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="name">The config name</param> 
         /// <param name="config">The config object</param> 

@@ -1,6 +1,6 @@
 # com.knetikcloud..UsersInventoryApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 Adds an item to the user inventory
 
-The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 Check for access to an item without consuming
 
-Useful for pre-check and accounts for all various buisness rules
+Useful for pre-check and accounts for all various buisness rules. <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN or owner
 
 ### Example
 ```csharp
@@ -161,7 +161,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -171,6 +171,8 @@ void (empty response body)
 > EntitlementItem CreateEntitlementItem (bool? cascade, EntitlementItem entitlementItem)
 
 Create an entitlement item
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -239,7 +241,7 @@ Name | Type | Description  | Notes
 
 Create an entitlement template
 
-Entitlement templates define a type of entitlement and the properties they have
+Entitlement templates define a type of entitlement and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -306,6 +308,8 @@ Name | Type | Description  | Notes
 
 Delete an entitlement item
 
+<b>Permissions Needed:</b> INVENTORY_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -359,7 +363,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -370,7 +374,7 @@ void (empty response body)
 
 Delete an entitlement template
 
-If cascade = 'detach', it will force delete the template even if it's attached to other objects
+If cascade = 'detach', it will force delete the template even if it's attached to other objects. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -427,7 +431,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -437,6 +441,8 @@ void (empty response body)
 > EntitlementItem GetEntitlementItem (int? entitlementId)
 
 Get a single entitlement item
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -492,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -502,6 +508,8 @@ Name | Type | Description  | Notes
 > PageResourceEntitlementItem GetEntitlementItems (string filterTemplate, int? size, int? page, string order)
 
 List and search entitlement items
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -563,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -573,6 +581,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource GetEntitlementTemplate (string id)
 
 Get a single entitlement template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```csharp
@@ -628,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -638,6 +648,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource GetEntitlementTemplates (int? size, int? page, string order)
 
 List and search entitlement templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```csharp
@@ -697,7 +709,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -707,6 +719,8 @@ Name | Type | Description  | Notes
 > PageResourceUserInventoryResource GetUserInventories (int? id, bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
 
 List the user inventory entries for a given user
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN or owner
 
 ### Example
 ```csharp
@@ -778,16 +792,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getuserinventory"></a>
 # **GetUserInventory**
-> UserInventoryResource GetUserInventory (int? userId, int? id)
+> UserInventoryResource GetUserInventory (string userId, int? id)
 
 Get an inventory entry
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -810,7 +826,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new UsersInventoryApi();
-            var userId = 56;  // int? | The id of the inventory owner or 'me' for the logged in user
+            var userId = userId_example;  // string | The id of the inventory owner or 'me' for the logged in user
             var id = 56;  // int? | The id of the user inventory
 
             try
@@ -832,7 +848,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int?**| The id of the inventory owner or &#39;me&#39; for the logged in user | 
+ **userId** | **string**| The id of the inventory owner or &#39;me&#39; for the logged in user | 
  **id** | **int?**| The id of the user inventory | 
 
 ### Return type
@@ -845,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -855,6 +871,8 @@ Name | Type | Description  | Notes
 > PageResourceUserItemLogResource GetUserInventoryLog (string userId, int? id, int? size, int? page)
 
 List the log entries for this inventory entry
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN or owner
 
 ### Example
 ```csharp
@@ -916,7 +934,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -926,6 +944,8 @@ Name | Type | Description  | Notes
 > PageResourceUserInventoryResource GetUsersInventory (bool? inactive, int? size, int? page, string filterItemName, int? filterItemId, string filterUsername, string filterGroup, string filterDate)
 
 List the user inventory entries for all users
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -995,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1005,6 +1025,8 @@ Name | Type | Description  | Notes
 > void GrantUserEntitlement (int? userId, EntitlementGrantRequest grantRequest)
 
 Grant an entitlement
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -1071,6 +1093,8 @@ void (empty response body)
 > void UpdateEntitlementItem (int? entitlementId, bool? cascade, EntitlementItem entitlementItem)
 
 Update an entitlement item
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -1140,6 +1164,8 @@ void (empty response body)
 
 Update an entitlement template
 
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -1206,6 +1232,8 @@ Name | Type | Description  | Notes
 > void UpdateUserInventoryBehaviorData (int? userId, int? id, Object data)
 
 Set the behavior data for an inventory entry
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -1275,7 +1303,7 @@ void (empty response body)
 
 Set the expiration date
 
-Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). <br><br><b>Permissions Needed:</b> INVENTORY_ADMIN
 
 ### Example
 ```csharp
@@ -1345,6 +1373,8 @@ void (empty response body)
 
 Set the status for an inventory entry
 
+<b>Permissions Needed:</b> INVENTORY_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -1412,6 +1442,8 @@ void (empty response body)
 > void UseUserEntitlementItem (string userId, int? itemId, string sku, string info)
 
 Use an item
+
+<b>Permissions Needed:</b> INVENTORY_ADMIN or owner
 
 ### Example
 ```csharp

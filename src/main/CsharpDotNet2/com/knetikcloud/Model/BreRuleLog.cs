@@ -13,6 +13,14 @@ namespace com.knetikcloud.Model {
   [DataContract]
   public class BreRuleLog {
     /// <summary>
+    /// The actions of the BRE rule
+    /// </summary>
+    /// <value>The actions of the BRE rule</value>
+    [DataMember(Name="actions", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "actions")]
+    public List<BreActionLog> Actions { get; set; }
+
+    /// <summary>
     /// Whether the rule ran
     /// </summary>
     /// <value>Whether the rule ran</value>
@@ -68,6 +76,7 @@ namespace com.knetikcloud.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class BreRuleLog {\n");
+      sb.Append("  Actions: ").Append(Actions).Append("\n");
       sb.Append("  Ran: ").Append(Ran).Append("\n");
       sb.Append("  Reason: ").Append(Reason).Append("\n");
       sb.Append("  RuleEndDate: ").Append(RuleEndDate).Append("\n");

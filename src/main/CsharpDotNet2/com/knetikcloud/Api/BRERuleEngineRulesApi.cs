@@ -12,31 +12,31 @@ namespace com.knetikcloud.Api
     public interface IBRERuleEngineRulesApi
     {
         /// <summary>
-        /// Create a rule Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+        /// Create a rule Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="breRule">The BRE rule object</param>
         /// <returns>BreRule</returns>
         BreRule CreateBRERule (BreRule breRule);
         /// <summary>
-        /// Delete a rule May fail if there are existing rules against it. Cannot delete core rules
+        /// Delete a rule May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param>
         /// <returns></returns>
         void DeleteBRERule (string id);
         /// <summary>
-        /// Returns a string representation of the provided expression 
+        /// Returns a string representation of the provided expression &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="expression">The expression</param>
         /// <returns>string</returns>
         string GetBREExpressionAsString (Expressionobject expression);
         /// <summary>
-        /// Get a single rule 
+        /// Get a single rule &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param>
         /// <returns>BreRule</returns>
         BreRule GetBRERule (string id);
         /// <summary>
-        /// List rules 
+        /// List rules &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for rules containing the given name</param>
         /// <param name="filterEnabled">Filter for rules by active status, null for both</param>
@@ -49,14 +49,14 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceBreRule</returns>
         PageResourceBreRule GetBRERules (string filterName, bool? filterEnabled, bool? filterSystem, string filterTrigger, string filterAction, string filterCondition, int? size, int? page);
         /// <summary>
-        /// Enable or disable a rule This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+        /// Enable or disable a rule This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param>
         /// <param name="enabled">The boolean value</param>
         /// <returns></returns>
         void SetBRERule (string id, BooleanResource enabled);
         /// <summary>
-        /// Update a rule Cannot update system rules
+        /// Update a rule Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param>
         /// <param name="breRule">The BRE rule object</param>
@@ -118,7 +118,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a rule Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+        /// Create a rule Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="breRule">The BRE rule object</param> 
         /// <returns>BreRule</returns>            
@@ -152,7 +152,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a rule May fail if there are existing rules against it. Cannot delete core rules
+        /// Delete a rule May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param> 
         /// <returns></returns>            
@@ -189,7 +189,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a string representation of the provided expression 
+        /// Returns a string representation of the provided expression &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="expression">The expression</param> 
         /// <returns>string</returns>            
@@ -223,7 +223,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single rule 
+        /// Get a single rule &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param> 
         /// <returns>BreRule</returns>            
@@ -260,7 +260,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List rules 
+        /// List rules &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="filterName">Filter for rules containing the given name</param> 
         /// <param name="filterEnabled">Filter for rules by active status, null for both</param> 
@@ -308,7 +308,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Enable or disable a rule This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+        /// Enable or disable a rule This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param> 
         /// <param name="enabled">The boolean value</param> 
@@ -347,7 +347,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a rule Cannot update system rules
+        /// Update a rule Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
         /// </summary>
         /// <param name="id">The id of the rule</param> 
         /// <param name="breRule">The BRE rule object</param> 

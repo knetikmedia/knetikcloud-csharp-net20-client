@@ -12,20 +12,20 @@ namespace com.knetikcloud.Api
     public interface IUsersSubscriptionsApi
     {
         /// <summary>
-        /// Get details about a user&#39;s subscription 
+        /// Get details about a user&#39;s subscription &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
         /// <returns>InventorySubscriptionResource</returns>
         InventorySubscriptionResource GetUserSubscriptionDetails (int? userId, int? inventoryId);
         /// <summary>
-        /// Get details about a user&#39;s subscriptions 
+        /// Get details about a user&#39;s subscriptions &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <returns>List&lt;InventorySubscriptionResource&gt;</returns>
         List<InventorySubscriptionResource> GetUsersSubscriptionDetails (int? userId);
         /// <summary>
-        /// Reactivate a subscription and charge fee 
+        /// Reactivate a subscription and charge fee &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -33,7 +33,7 @@ namespace com.knetikcloud.Api
         /// <returns>InvoiceResource</returns>
         InvoiceResource ReactivateUserSubscription (int? userId, int? inventoryId, ReactivateSubscriptionRequest reactivateSubscriptionRequest);
         /// <summary>
-        /// Set a new date to bill a subscription on 
+        /// Set a new date to bill a subscription on &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -41,7 +41,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetSubscriptionBillDate (int? userId, int? inventoryId, long? billDate);
         /// <summary>
-        /// Set the payment method to use for a subscription May send null to use floating default
+        /// Set the payment method to use for a subscription May send null to use floating default. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -49,7 +49,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetSubscriptionPaymentMethod (int? userId, int? inventoryId, IntWrapper paymentMethodId);
         /// <summary>
-        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -57,7 +57,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetSubscriptionStatus (int? userId, int? inventoryId, StringWrapper status);
         /// <summary>
-        /// Set a new subscription plan for a user 
+        /// Set a new subscription plan for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -65,7 +65,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetUserSubscriptionPlan (int? userId, int? inventoryId, StringWrapper planId);
         /// <summary>
-        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="inventoryId">The id of the user&#39;s inventory</param>
@@ -128,7 +128,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get details about a user&#39;s subscription 
+        /// Get details about a user&#39;s subscription &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -170,7 +170,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Get details about a user&#39;s subscriptions 
+        /// Get details about a user&#39;s subscriptions &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <returns>List&lt;InventorySubscriptionResource&gt;</returns>            
@@ -207,7 +207,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Reactivate a subscription and charge fee 
+        /// Reactivate a subscription and charge fee &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -251,7 +251,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set a new date to bill a subscription on 
+        /// Set a new date to bill a subscription on &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -298,7 +298,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set the payment method to use for a subscription May send null to use floating default
+        /// Set the payment method to use for a subscription May send null to use floating default. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -342,7 +342,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+        /// Set the status of a subscription Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -389,7 +389,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set a new subscription plan for a user 
+        /// Set a new subscription plan for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 
@@ -433,7 +433,7 @@ path = path.Replace("{" + "inventory_id" + "}", ApiClient.ParameterToString(inve
         }
     
         /// <summary>
-        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+        /// Set a new subscription price for a user This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="inventoryId">The id of the user&#39;s inventory</param> 

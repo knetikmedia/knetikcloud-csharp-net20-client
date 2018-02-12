@@ -12,45 +12,53 @@ namespace com.knetikcloud.Api
     public interface IUsersApi
     {
         /// <summary>
-        /// Add a tag to a user 
+        /// Add a tag to a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="tag">tag</param>
         /// <returns></returns>
         void AddUserTag (int? userId, StringWrapper tag);
         /// <summary>
-        /// Create a user template User Templates define a type of user and the properties they have
+        /// Create a user template User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="userTemplateResource">The user template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateUserTemplate (TemplateResource userTemplateResource);
         /// <summary>
-        /// Delete a user template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a user template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteUserTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single user Additional private info is included as USERS_ADMIN
+        /// Get a list of direct messages with this user &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+        /// </summary>
+        /// <param name="recipientId">The user id</param>
+        /// <param name="size">The number of objects returned per page</param>
+        /// <param name="page">The number of the page returned, starting with 1</param>
+        /// <returns>PageResourceChatMessageResource</returns>
+        PageResourceChatMessageResource GetDirectMessages1 (int? recipientId, int? size, int? page);
+        /// <summary>
+        /// Get a single user Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param>
         /// <returns>UserResource</returns>
         UserResource GetUser (string id);
         /// <summary>
-        /// List tags for a user 
+        /// List tags for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetUserTags (int? userId);
         /// <summary>
-        /// Get a single user template 
+        /// Get a single user template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetUserTemplate (string id);
         /// <summary>
-        /// List and search user templates 
+        /// List and search user templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -58,7 +66,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetUserTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List and search users Additional private info is included as USERS_ADMIN
+        /// List and search users Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterDisplayname">Filter for users whose display name starts with provided string.</param>
         /// <param name="filterEmail">Filter for users whose email starts with provided string. Requires USERS_ADMIN permission</param>
@@ -78,53 +86,60 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceUserBaseResource</returns>
         PageResourceUserBaseResource GetUsers (string filterDisplayname, string filterEmail, string filterFirstname, string filterFullname, string filterLastname, string filterUsername, string filterTag, string filterGroup, string filterRole, string filterLastActivity, string filterIdList, string filterSearch, int? size, int? page, string order);
         /// <summary>
-        /// Choose a new password after a reset Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+        /// Choose a new password after a reset Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user</param>
         /// <param name="newPasswordRequest">The new password request object</param>
         /// <returns></returns>
         void PasswordReset (int? id, NewPasswordRequest newPasswordRequest);
         /// <summary>
-        /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security
+        /// Send a user message 
+        /// </summary>
+        /// <param name="recipientId">The user id</param>
+        /// <param name="chatMessageRequest">The chat message request</param>
+        /// <returns>ChatMessageResource</returns>
+        ChatMessageResource PostUserMessage (int? recipientId, ChatMessageRequest chatMessageRequest);
+        /// <summary>
+        /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="userResource">The user resource object</param>
         /// <returns>UserResource</returns>
         UserResource RegisterUser (UserResource userResource);
         /// <summary>
-        /// Remove a tag from a user 
+        /// Remove a tag from a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param>
         /// <param name="tag">The tag to remove</param>
         /// <returns></returns>
         void RemoveUserTag (int? userId, string tag);
         /// <summary>
-        /// Set a user&#39;s password Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+        /// Set a user&#39;s password Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
         /// </summary>
         /// <param name="id">The id of the user</param>
         /// <param name="password">The new plain text password</param>
         /// <returns></returns>
         void SetPassword (int? id, StringWrapper password);
         /// <summary>
-        /// Reset a user&#39;s password A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+        /// Reset a user&#39;s password A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user</param>
         /// <returns></returns>
         void StartPasswordReset (int? id);
         /// <summary>
-        /// Reset a user&#39;s password without user id A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+        /// Reset a user&#39;s password without user id A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="passwordReset">An object containing one of three methods to look up a user</param>
         /// <returns></returns>
         void SubmitPasswordReset (PasswordResetRequest passwordReset);
         /// <summary>
-        /// Update a user Password will not be edited on this endpoint, use password specific endpoints.
+        /// Update a user Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param>
         /// <param name="userResource">The user resource object</param>
         /// <returns></returns>
         void UpdateUser (string id, UserResource userResource);
         /// <summary>
-        /// Update a user template 
+        /// Update a user template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="userTemplateResource">The user template resource object</param>
@@ -186,7 +201,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a tag to a user 
+        /// Add a tag to a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="tag">tag</param> 
@@ -228,7 +243,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a user template User Templates define a type of user and the properties they have
+        /// Create a user template User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="userTemplateResource">The user template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -262,7 +277,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a user template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a user template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -301,7 +316,48 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single user Additional private info is included as USERS_ADMIN
+        /// Get a list of direct messages with this user &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+        /// </summary>
+        /// <param name="recipientId">The user id</param> 
+        /// <param name="size">The number of objects returned per page</param> 
+        /// <param name="page">The number of the page returned, starting with 1</param> 
+        /// <returns>PageResourceChatMessageResource</returns>            
+        public PageResourceChatMessageResource GetDirectMessages1 (int? recipientId, int? size, int? page)
+        {
+            
+            // verify the required parameter 'recipientId' is set
+            if (recipientId == null) throw new ApiException(400, "Missing required parameter 'recipientId' when calling GetDirectMessages1");
+            
+    
+            var path = "/users/users/{recipient_id}/messages";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "recipient_id" + "}", ApiClient.ParameterToString(recipientId));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+             if (size != null) queryParams.Add("size", ApiClient.ParameterToString(size)); // query parameter
+ if (page != null) queryParams.Add("page", ApiClient.ParameterToString(page)); // query parameter
+                                        
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2_client_credentials_grant", "oauth2_password_grant" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetDirectMessages1: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetDirectMessages1: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (PageResourceChatMessageResource) ApiClient.Deserialize(response.Content, typeof(PageResourceChatMessageResource), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get a single user Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param> 
         /// <returns>UserResource</returns>            
@@ -338,7 +394,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List tags for a user 
+        /// List tags for a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <returns>List&lt;string&gt;</returns>            
@@ -375,7 +431,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single user template 
+        /// Get a single user template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -412,7 +468,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search user templates 
+        /// List and search user templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -450,7 +506,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search users Additional private info is included as USERS_ADMIN
+        /// List and search users Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterDisplayname">Filter for users whose display name starts with provided string.</param> 
         /// <param name="filterEmail">Filter for users whose email starts with provided string. Requires USERS_ADMIN permission</param> 
@@ -512,7 +568,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Choose a new password after a reset Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+        /// Choose a new password after a reset Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user</param> 
         /// <param name="newPasswordRequest">The new password request object</param> 
@@ -551,7 +607,46 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security
+        /// Send a user message 
+        /// </summary>
+        /// <param name="recipientId">The user id</param> 
+        /// <param name="chatMessageRequest">The chat message request</param> 
+        /// <returns>ChatMessageResource</returns>            
+        public ChatMessageResource PostUserMessage (int? recipientId, ChatMessageRequest chatMessageRequest)
+        {
+            
+            // verify the required parameter 'recipientId' is set
+            if (recipientId == null) throw new ApiException(400, "Missing required parameter 'recipientId' when calling PostUserMessage");
+            
+    
+            var path = "/users/{recipient_id}/messages";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "recipient_id" + "}", ApiClient.ParameterToString(recipientId));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                postBody = ApiClient.Serialize(chatMessageRequest); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling PostUserMessage: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling PostUserMessage: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (ChatMessageResource) ApiClient.Deserialize(response.Content, typeof(ChatMessageResource), response.Headers);
+        }
+    
+        /// <summary>
+        /// Register a new user Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="userResource">The user resource object</param> 
         /// <returns>UserResource</returns>            
@@ -585,7 +680,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Remove a tag from a user 
+        /// Remove a tag from a user &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
         /// </summary>
         /// <param name="userId">The id of the user</param> 
         /// <param name="tag">The tag to remove</param> 
@@ -627,7 +722,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Set a user&#39;s password Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+        /// Set a user&#39;s password Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
         /// </summary>
         /// <param name="id">The id of the user</param> 
         /// <param name="password">The new plain text password</param> 
@@ -666,7 +761,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Reset a user&#39;s password A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+        /// Reset a user&#39;s password A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the user</param> 
         /// <returns></returns>            
@@ -703,7 +798,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Reset a user&#39;s password without user id A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+        /// Reset a user&#39;s password without user id A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="passwordReset">An object containing one of three methods to look up a user</param> 
         /// <returns></returns>            
@@ -737,7 +832,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Update a user Password will not be edited on this endpoint, use password specific endpoints.
+        /// Update a user Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
         /// </summary>
         /// <param name="id">The id of the user or &#39;me&#39;</param> 
         /// <param name="userResource">The user resource object</param> 
@@ -776,7 +871,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Update a user template 
+        /// Update a user template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="userTemplateResource">The user template resource object</param> 

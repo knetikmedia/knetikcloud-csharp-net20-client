@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IUtilVersionApi
     {
         /// <summary>
-        /// Get current version info 
+        /// Get current version info &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Version</returns>
         Version GetVersion ();
@@ -72,7 +72,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get current version info 
+        /// Get current version info &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>Version</returns>            
         public Version GetVersion ()

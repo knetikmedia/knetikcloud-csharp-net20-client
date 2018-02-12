@@ -12,21 +12,21 @@ namespace com.knetikcloud.Api
     public interface IGamificationTriviaApi
     {
         /// <summary>
-        /// Add an answer to a question 
+        /// Add an answer to a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="answer">The new answer</param>
         /// <returns>AnswerResource</returns>
         AnswerResource AddQuestionAnswers (string questionId, AnswerResource answer);
         /// <summary>
-        /// Add a tag to a question 
+        /// Add a tag to a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <param name="tag">The new tag</param>
         /// <returns></returns>
         void AddQuestionTag (string id, StringWrapper tag);
         /// <summary>
-        /// Add a tag to a batch of questions All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+        /// Add a tag to a batch of questions All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="tag">The tag to add</param>
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param>
@@ -40,57 +40,57 @@ namespace com.knetikcloud.Api
         /// <returns>int?</returns>
         int? AddTagToQuestionsBatch (StringWrapper tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
         /// <summary>
-        /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+        /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="request">The new import job</param>
         /// <returns>ImportJobResource</returns>
         ImportJobResource CreateImportJob (ImportJobResource request);
         /// <summary>
-        /// Create a question 
+        /// Create a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="question">The new question</param>
         /// <returns>QuestionResource</returns>
         QuestionResource CreateQuestion (QuestionResource question);
         /// <summary>
-        /// Create a question template Question templates define a type of question and the properties they have
+        /// Create a question template Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionTemplateResource">The question template resource object</param>
         /// <returns>QuestionTemplateResource</returns>
         QuestionTemplateResource CreateQuestionTemplate (QuestionTemplateResource questionTemplateResource);
         /// <summary>
-        /// Delete an import job Also deletes all questions that were imported by it
+        /// Delete an import job Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <returns></returns>
         void DeleteImportJob (long? id);
         /// <summary>
-        /// Delete a question 
+        /// Delete a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <returns></returns>
         void DeleteQuestion (string id);
         /// <summary>
-        /// Remove an answer from a question 
+        /// Remove an answer from a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="id">The id of the answer</param>
         /// <returns></returns>
         void DeleteQuestionAnswers (string questionId, string id);
         /// <summary>
-        /// Delete a question template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a question template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteQuestionTemplate (string id, string cascade);
         /// <summary>
-        /// Get an import job 
+        /// Get an import job &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <returns>ImportJobResource</returns>
         ImportJobResource GetImportJob (long? id);
         /// <summary>
-        /// Get a list of import job 
+        /// Get a list of import job &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterVendor">Filter for jobs by vendor id</param>
         /// <param name="filterCategory">Filter for jobs by category id</param>
@@ -102,44 +102,44 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceImportJobResource</returns>
         PageResourceImportJobResource GetImportJobs (string filterVendor, string filterCategory, string filterName, string filterStatus, int? size, int? page, string order);
         /// <summary>
-        /// Get a single question 
+        /// Get a single question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <returns>QuestionResource</returns>
         QuestionResource GetQuestion (string id);
         /// <summary>
-        /// Get an answer for a question 
+        /// Get an answer for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="id">The id of the answer</param>
         /// <returns>AnswerResource</returns>
         AnswerResource GetQuestionAnswer (string questionId, string id);
         /// <summary>
-        /// List the answers available for a question 
+        /// List the answers available for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <returns>List&lt;AnswerResource&gt;</returns>
         List<AnswerResource> GetQuestionAnswers (string questionId);
         /// <summary>
-        /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+        /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="since">Timestamp in seconds</param>
         /// <returns>List&lt;DeltaResource&gt;</returns>
         List<DeltaResource> GetQuestionDeltas (long? since);
         /// <summary>
-        /// List the tags for a question 
+        /// List the tags for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetQuestionTags (string id);
         /// <summary>
-        /// Get a single question template 
+        /// Get a single question template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>QuestionTemplateResource</returns>
         QuestionTemplateResource GetQuestionTemplate (string id);
         /// <summary>
-        /// List and search question templates 
+        /// List and search question templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -147,7 +147,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceQuestionTemplateResource</returns>
         PageResourceQuestionTemplateResource GetQuestionTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List and search questions 
+        /// List and search questions &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -163,7 +163,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceQuestionResource</returns>
         PageResourceQuestionResource GetQuestions (int? size, int? page, string order, string filterSearch, string filterIdset, string filterCategory, string filterTagset, string filterTag, string filterType, bool? filterPublished, long? filterImportId);
         /// <summary>
-        /// Count questions based on filters This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+        /// Count questions based on filters This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param>
         /// <param name="filterIdset">Filter for documents whose id is in the comma separated list provided</param>
@@ -175,21 +175,21 @@ namespace com.knetikcloud.Api
         /// <returns>long?</returns>
         long? GetQuestionsCount (string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished);
         /// <summary>
-        /// Start processing an import job Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+        /// Start processing an import job Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <param name="publishNow">Whether the new questions should be published live immediately</param>
         /// <returns>ImportJobResource</returns>
         ImportJobResource ProcessImportJob (long? id, bool? publishNow);
         /// <summary>
-        /// Remove a tag from a question 
+        /// Remove a tag from a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <param name="tag">The tag to remove</param>
         /// <returns></returns>
         void RemoveQuestionTag (string id, string tag);
         /// <summary>
-        /// Remove a tag from a batch of questions ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+        /// Remove a tag from a batch of questions ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="tag">The tag to remove</param>
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param>
@@ -203,7 +203,7 @@ namespace com.knetikcloud.Api
         /// <returns>int?</returns>
         int? RemoveTagToQuestionsBatch (string tag, string filterSearch, string filterIdset, string filterCategory, string filterTag, string filterTagset, string filterType, bool? filterPublished, long? filterImportId);
         /// <summary>
-        /// List and search tags by the beginning of the string For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+        /// List and search tags by the beginning of the string For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterSearch">Filter for tags starting with the given text</param>
         /// <param name="filterCategory">Filter for tags on questions from a specific category</param>
@@ -211,21 +211,21 @@ namespace com.knetikcloud.Api
         /// <returns>List&lt;string&gt;</returns>
         List<string> SearchQuestionTags (string filterSearch, string filterCategory, long? filterImportId);
         /// <summary>
-        /// Update an import job Changes should be made before process is started for there to be any effect.
+        /// Update an import job Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param>
         /// <param name="request">The updated job</param>
         /// <returns>ImportJobResource</returns>
         ImportJobResource UpdateImportJob (long? id, ImportJobResource request);
         /// <summary>
-        /// Update a question 
+        /// Update a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param>
         /// <param name="question">The updated question</param>
         /// <returns>QuestionResource</returns>
         QuestionResource UpdateQuestion (string id, QuestionResource question);
         /// <summary>
-        /// Update an answer for a question 
+        /// Update an answer for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param>
         /// <param name="id">The id of the answer</param>
@@ -233,14 +233,14 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void UpdateQuestionAnswer (string questionId, string id, AnswerResource answer);
         /// <summary>
-        /// Update a question template 
+        /// Update a question template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="questionTemplateResource">The question template resource object</param>
         /// <returns>QuestionTemplateResource</returns>
         QuestionTemplateResource UpdateQuestionTemplate (string id, QuestionTemplateResource questionTemplateResource);
         /// <summary>
-        /// Bulk update questions Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+        /// Bulk update questions Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="question">New values for a set of question fields</param>
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param>
@@ -308,7 +308,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add an answer to a question 
+        /// Add an answer to a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="answer">The new answer</param> 
@@ -347,7 +347,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Add a tag to a question 
+        /// Add a tag to a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <param name="tag">The new tag</param> 
@@ -386,7 +386,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Add a tag to a batch of questions All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+        /// Add a tag to a batch of questions All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="tag">The tag to add</param> 
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param> 
@@ -436,7 +436,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+        /// Create an import job Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="request">The new import job</param> 
         /// <returns>ImportJobResource</returns>            
@@ -470,7 +470,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a question 
+        /// Create a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="question">The new question</param> 
         /// <returns>QuestionResource</returns>            
@@ -504,7 +504,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a question template Question templates define a type of question and the properties they have
+        /// Create a question template Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionTemplateResource">The question template resource object</param> 
         /// <returns>QuestionTemplateResource</returns>            
@@ -538,7 +538,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an import job Also deletes all questions that were imported by it
+        /// Delete an import job Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <returns></returns>            
@@ -575,7 +575,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a question 
+        /// Delete a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <returns></returns>            
@@ -612,7 +612,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Remove an answer from a question 
+        /// Remove an answer from a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="id">The id of the answer</param> 
@@ -654,7 +654,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Delete a question template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a question template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -693,7 +693,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get an import job 
+        /// Get an import job &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <returns>ImportJobResource</returns>            
@@ -730,7 +730,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a list of import job 
+        /// Get a list of import job &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterVendor">Filter for jobs by vendor id</param> 
         /// <param name="filterCategory">Filter for jobs by category id</param> 
@@ -776,7 +776,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single question 
+        /// Get a single question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <returns>QuestionResource</returns>            
@@ -813,7 +813,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get an answer for a question 
+        /// Get an answer for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="id">The id of the answer</param> 
@@ -855,7 +855,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List the answers available for a question 
+        /// List the answers available for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <returns>List&lt;AnswerResource&gt;</returns>            
@@ -892,7 +892,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+        /// List question deltas in ascending order of updated date The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="since">Timestamp in seconds</param> 
         /// <returns>List&lt;DeltaResource&gt;</returns>            
@@ -926,7 +926,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List the tags for a question 
+        /// List the tags for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <returns>List&lt;string&gt;</returns>            
@@ -963,7 +963,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Get a single question template 
+        /// Get a single question template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>QuestionTemplateResource</returns>            
@@ -1000,7 +1000,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List and search question templates 
+        /// List and search question templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -1038,7 +1038,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// List and search questions 
+        /// List and search questions &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -1092,7 +1092,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Count questions based on filters This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+        /// Count questions based on filters This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param> 
         /// <param name="filterIdset">Filter for documents whose id is in the comma separated list provided</param> 
@@ -1138,7 +1138,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Start processing an import job Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+        /// Start processing an import job Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <param name="publishNow">Whether the new questions should be published live immediately</param> 
@@ -1180,7 +1180,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Remove a tag from a question 
+        /// Remove a tag from a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <param name="tag">The tag to remove</param> 
@@ -1222,7 +1222,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Remove a tag from a batch of questions ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+        /// Remove a tag from a batch of questions ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="tag">The tag to remove</param> 
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param> 
@@ -1275,7 +1275,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// List and search tags by the beginning of the string For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+        /// List and search tags by the beginning of the string For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="filterSearch">Filter for tags starting with the given text</param> 
         /// <param name="filterCategory">Filter for tags on questions from a specific category</param> 
@@ -1313,7 +1313,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Update an import job Changes should be made before process is started for there to be any effect.
+        /// Update an import job Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the job</param> 
         /// <param name="request">The updated job</param> 
@@ -1352,7 +1352,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Update a question 
+        /// Update a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="id">The id of the question</param> 
         /// <param name="question">The updated question</param> 
@@ -1391,7 +1391,7 @@ path = path.Replace("{" + "tag" + "}", ApiClient.ParameterToString(tag));
         }
     
         /// <summary>
-        /// Update an answer for a question 
+        /// Update an answer for a question &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="questionId">The id of the question</param> 
         /// <param name="id">The id of the answer</param> 
@@ -1435,7 +1435,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update a question template 
+        /// Update a question template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="questionTemplateResource">The question template resource object</param> 
@@ -1474,7 +1474,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Bulk update questions Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+        /// Bulk update questions Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
         /// </summary>
         /// <param name="question">New values for a set of question fields</param> 
         /// <param name="filterSearch">Filter for documents whose question, answers or tags contains provided string</param> 

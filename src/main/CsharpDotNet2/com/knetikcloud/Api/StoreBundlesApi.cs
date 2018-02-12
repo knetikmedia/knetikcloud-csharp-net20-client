@@ -12,45 +12,45 @@ namespace com.knetikcloud.Api
     public interface IStoreBundlesApi
     {
         /// <summary>
-        /// Create a bundle item The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+        /// Create a bundle item The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
         /// <param name="bundleItem">The bundle item object</param>
         /// <returns>BundleItem</returns>
         BundleItem CreateBundleItem (bool? cascade, BundleItem bundleItem);
         /// <summary>
-        /// Create a bundle template Bundle Templates define a type of bundle and the properties they have.
+        /// Create a bundle template Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="bundleTemplateResource">The new bundle template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource CreateBundleTemplate (ItemTemplateResource bundleTemplateResource);
         /// <summary>
-        /// Delete a bundle item 
+        /// Delete a bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the bundle</param>
         /// <returns></returns>
         void DeleteBundleItem (int? id);
         /// <summary>
-        /// Delete a bundle template 
+        /// Delete a bundle template &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param>
         /// <returns></returns>
         void DeleteBundleTemplate (string id, string cascade);
         /// <summary>
-        /// Get a single bundle item 
+        /// Get a single bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the bundle</param>
         /// <returns>BundleItem</returns>
         BundleItem GetBundleItem (int? id);
         /// <summary>
-        /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have.
+        /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>ItemTemplateResource</returns>
         ItemTemplateResource GetBundleTemplate (string id);
         /// <summary>
-        /// List and search bundle templates 
+        /// List and search bundle templates &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -58,7 +58,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceItemTemplateResource</returns>
         PageResourceItemTemplateResource GetBundleTemplates (int? size, int? page, string order);
         /// <summary>
-        /// Update a bundle item 
+        /// Update a bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the bundle</param>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param>
@@ -66,7 +66,7 @@ namespace com.knetikcloud.Api
         /// <returns>BundleItem</returns>
         BundleItem UpdateBundleItem (int? id, bool? cascade, BundleItem bundleItem);
         /// <summary>
-        /// Update a bundle template 
+        /// Update a bundle template &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="bundleTemplateResource">The bundle template resource object</param>
@@ -128,7 +128,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a bundle item The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+        /// Create a bundle item The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
         /// <param name="bundleItem">The bundle item object</param> 
@@ -164,7 +164,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a bundle template Bundle Templates define a type of bundle and the properties they have.
+        /// Create a bundle template Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="bundleTemplateResource">The new bundle template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -198,7 +198,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a bundle item 
+        /// Delete a bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the bundle</param> 
         /// <returns></returns>            
@@ -235,7 +235,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a bundle template 
+        /// Delete a bundle template &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach</param> 
@@ -274,7 +274,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single bundle item 
+        /// Get a single bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the bundle</param> 
         /// <returns>BundleItem</returns>            
@@ -311,7 +311,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have.
+        /// Get a single bundle template Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>ItemTemplateResource</returns>            
@@ -348,7 +348,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search bundle templates 
+        /// List and search bundle templates &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -386,7 +386,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a bundle item 
+        /// Update a bundle item &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the bundle</param> 
         /// <param name="cascade">Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.</param> 
@@ -427,7 +427,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a bundle template 
+        /// Update a bundle template &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="bundleTemplateResource">The bundle template resource object</param> 

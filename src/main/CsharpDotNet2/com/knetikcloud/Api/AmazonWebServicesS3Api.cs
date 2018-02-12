@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IAmazonWebServicesS3Api
     {
         /// <summary>
-        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
         /// </summary>
         /// <param name="bucket">S3 bucket name</param>
         /// <param name="path">The path to the file relative the bucket (the s3 object key)</param>
@@ -20,7 +20,7 @@ namespace com.knetikcloud.Api
         /// <returns>string</returns>
         string GetDownloadURL (string bucket, string path, int? expiration);
         /// <summary>
-        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_USER or S3_ADMIN
         /// </summary>
         /// <param name="filename">The file name</param>
         /// <param name="contentType">The content type</param>
@@ -82,7 +82,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+        /// Get a temporary signed S3 URL for download To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
         /// </summary>
         /// <param name="bucket">S3 bucket name</param> 
         /// <param name="path">The path to the file relative the bucket (the s3 object key)</param> 
@@ -120,7 +120,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+        /// Get a signed S3 URL for upload Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_USER or S3_ADMIN
         /// </summary>
         /// <param name="filename">The file name</param> 
         /// <param name="contentType">The content type</param> 

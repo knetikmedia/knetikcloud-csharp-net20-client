@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalProperties** | [**Dictionary&lt;string, Property&gt;**](Property.md) | A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities | [optional] 
+**CoreSettings** | [**CoreActivitySettings**](CoreActivitySettings.md) | Defines core settings about the activity that affect how it can be created/played by users. | [optional] 
 **CreatedDate** | **long?** | The date/time this resource was created in seconds since unix epoch | [optional] 
 **Entitlements** | [**List&lt;ActivityEntitlementResource&gt;**](ActivityEntitlementResource.md) | The list of items that can be used for entitlement (wager amounts/etc) | [optional] 
 **Id** | **long?** | The unique ID for that resource | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **ShortDescription** | **string** | The user friendly name of that resource. Defaults to blank string | [optional] 
 **Template** | **bool?** | Whether this activity is a template for other activities. Default: false | [optional] 
 **TemplateId** | **string** | An activity template this activity is validated against (private). May be null and no validation of additional_properties will be done | [optional] 
-**Type** | **string** | The type of the activity | 
+**Type** | **string** | The type of the activity | [optional] 
 **UniqueKey** | **string** | The unique key (for static reference in code) of the activity | [optional] 
 **UpdatedDate** | **long?** | The date/time this resource was last updated in seconds since unix epoch | [optional] 
 

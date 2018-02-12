@@ -1,6 +1,6 @@
 # com.knetikcloud..StoreShippingApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create a shipping item
 
-A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. <br><br><b>Permissions Needed:</b> SHIPPING_ADMIN
 
 ### Example
 ```csharp
@@ -157,6 +157,8 @@ Name | Type | Description  | Notes
 
 Delete a shipping item
 
+<b>Permissions Needed:</b> SHIPPING_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -210,7 +212,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -220,6 +222,8 @@ void (empty response body)
 > void DeleteShippingTemplate (string id, string cascade)
 
 Delete a shipping template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -276,7 +280,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -286,6 +290,8 @@ void (empty response body)
 > ShippingItem GetShippingItem (int? id)
 
 Get a single shipping item
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -341,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -352,7 +358,7 @@ Name | Type | Description  | Notes
 
 Get a single shipping template
 
-Shipping Templates define a type of shipping and the properties they have.
+Shipping Templates define a type of shipping and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```csharp
@@ -408,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -418,6 +424,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource GetShippingTemplates (int? size, int? page, string order)
 
 List and search shipping templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```csharp
@@ -477,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -487,6 +495,8 @@ Name | Type | Description  | Notes
 > ShippingItem UpdateShippingItem (int? id, bool? cascade, ShippingItem shippingItem)
 
 Update a shipping item
+
+<b>Permissions Needed:</b> SHIPPING_ADMIN
 
 ### Example
 ```csharp
@@ -556,6 +566,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource UpdateShippingTemplate (string id, ItemTemplateResource shippingTemplateResource)
 
 Update a shipping template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp

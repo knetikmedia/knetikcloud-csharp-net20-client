@@ -12,45 +12,45 @@ namespace com.knetikcloud.Api
     public interface ICampaignsApi
     {
         /// <summary>
-        /// Add a challenge to a campaign 
+        /// Add a challenge to a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The id of the campaign</param>
         /// <param name="challengeId">The id of the challenge</param>
         /// <returns></returns>
         void AddChallengeToCampaign (long? id, long? challengeId);
         /// <summary>
-        /// Create a campaign 
+        /// Create a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="campaignResource">The campaign resource object</param>
         /// <returns>CampaignResource</returns>
         CampaignResource CreateCampaign (CampaignResource campaignResource);
         /// <summary>
-        /// Create a campaign template Campaign Templates define a type of campaign and the properties they have
+        /// Create a campaign template Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="campaignTemplateResource">The campaign template resource object</param>
         /// <returns>TemplateResource</returns>
         TemplateResource CreateCampaignTemplate (TemplateResource campaignTemplateResource);
         /// <summary>
-        /// Delete a campaign 
+        /// Delete a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The campaign id</param>
         /// <returns></returns>
         void DeleteCampaign (long? id);
         /// <summary>
-        /// Delete a campaign template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a campaign template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="cascade">The value needed to delete used templates</param>
         /// <returns></returns>
         void DeleteCampaignTemplate (string id, string cascade);
         /// <summary>
-        /// Returns a single campaign 
+        /// Returns a single campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The campaign id</param>
         /// <returns>CampaignResource</returns>
         CampaignResource GetCampaign (long? id);
         /// <summary>
-        /// List the challenges associated with a campaign 
+        /// List the challenges associated with a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The campaign id</param>
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param>
@@ -61,13 +61,13 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceChallengeResource</returns>
         PageResourceChallengeResource GetCampaignChallenges (long? id, string filterStartDate, string filterEndDate, int? size, int? page, string order);
         /// <summary>
-        /// Get a single campaign template 
+        /// Get a single campaign template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <returns>TemplateResource</returns>
         TemplateResource GetCampaignTemplate (string id);
         /// <summary>
-        /// List and search campaign templates 
+        /// List and search campaign templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param>
         /// <param name="page">The number of the page returned, starting with 1</param>
@@ -75,7 +75,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetCampaignTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List and search campaigns 
+        /// List and search campaigns &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterActive">Filter for campaigns that are active</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -84,21 +84,21 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceCampaignResource</returns>
         PageResourceCampaignResource GetCampaigns (bool? filterActive, int? size, int? page, string order);
         /// <summary>
-        /// Remove a challenge from a campaign 
+        /// Remove a challenge from a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="campaignId">The campaign id</param>
         /// <param name="id">The challenge id</param>
         /// <returns></returns>
         void RemoveChallengeFromCampaign (long? campaignId, long? id);
         /// <summary>
-        /// Update a campaign 
+        /// Update a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The campaign id</param>
         /// <param name="campaignResource">The campaign resource object</param>
         /// <returns>CampaignResource</returns>
         CampaignResource UpdateCampaign (long? id, CampaignResource campaignResource);
         /// <summary>
-        /// Update an campaign template 
+        /// Update an campaign template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param>
         /// <param name="campaignTemplateResource">The campaign template resource object</param>
@@ -160,7 +160,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a challenge to a campaign 
+        /// Add a challenge to a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The id of the campaign</param> 
         /// <param name="challengeId">The id of the challenge</param> 
@@ -199,7 +199,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a campaign 
+        /// Create a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="campaignResource">The campaign resource object</param> 
         /// <returns>CampaignResource</returns>            
@@ -233,7 +233,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Create a campaign template Campaign Templates define a type of campaign and the properties they have
+        /// Create a campaign template Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="campaignTemplateResource">The campaign template resource object</param> 
         /// <returns>TemplateResource</returns>            
@@ -267,7 +267,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a campaign 
+        /// Delete a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The campaign id</param> 
         /// <returns></returns>            
@@ -304,7 +304,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a campaign template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+        /// Delete a campaign template If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="cascade">The value needed to delete used templates</param> 
@@ -343,7 +343,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a single campaign 
+        /// Returns a single campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The campaign id</param> 
         /// <returns>CampaignResource</returns>            
@@ -380,7 +380,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List the challenges associated with a campaign 
+        /// List the challenges associated with a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The campaign id</param> 
         /// <param name="filterStartDate">A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).</param> 
@@ -427,7 +427,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single campaign template 
+        /// Get a single campaign template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <returns>TemplateResource</returns>            
@@ -464,7 +464,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search campaign templates 
+        /// List and search campaign templates &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="size">The number of objects returned per page</param> 
         /// <param name="page">The number of the page returned, starting with 1</param> 
@@ -502,7 +502,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search campaigns 
+        /// List and search campaigns &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="filterActive">Filter for campaigns that are active</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -542,7 +542,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Remove a challenge from a campaign 
+        /// Remove a challenge from a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="campaignId">The campaign id</param> 
         /// <param name="id">The challenge id</param> 
@@ -584,7 +584,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update a campaign 
+        /// Update a campaign &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
         /// </summary>
         /// <param name="id">The campaign id</param> 
         /// <param name="campaignResource">The campaign resource object</param> 
@@ -623,7 +623,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         }
     
         /// <summary>
-        /// Update an campaign template 
+        /// Update an campaign template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
         /// <param name="id">The id of the template</param> 
         /// <param name="campaignTemplateResource">The campaign template resource object</param> 

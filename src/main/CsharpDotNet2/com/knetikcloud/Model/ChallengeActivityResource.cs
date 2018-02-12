@@ -37,6 +37,14 @@ namespace com.knetikcloud.Model {
     public long? ChallengeId { get; set; }
 
     /// <summary>
+    /// Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity.
+    /// </summary>
+    /// <value>Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity.</value>
+    [DataMember(Name="core_settings", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "core_settings")]
+    public CoreChallengeActivitySettings CoreSettings { get; set; }
+
+    /// <summary>
     /// The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing
     /// </summary>
     /// <value>The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing</value>
@@ -87,6 +95,7 @@ namespace com.knetikcloud.Model {
       sb.Append("  ActivityId: ").Append(ActivityId).Append("\n");
       sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
       sb.Append("  ChallengeId: ").Append(ChallengeId).Append("\n");
+      sb.Append("  CoreSettings: ").Append(CoreSettings).Append("\n");
       sb.Append("  Entitlement: ").Append(Entitlement).Append("\n");
       sb.Append("  Id: ").Append(Id).Append("\n");
       sb.Append("  RewardSet: ").Append(RewardSet).Append("\n");

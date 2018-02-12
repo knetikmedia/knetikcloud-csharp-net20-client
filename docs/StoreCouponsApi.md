@@ -1,6 +1,6 @@
 # com.knetikcloud..StoreCouponsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Create a coupon item
 
-SKUs have to be unique in the entire store.
+SKUs have to be unique in the entire store. <br><br><b>Permissions Needed:</b> COUPONS_ADMIN
 
 ### Example
 ```csharp
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 Create a coupon template
 
-Coupon Templates define a type of coupon and the properties they have.
+Coupon Templates define a type of coupon and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -158,6 +158,8 @@ Name | Type | Description  | Notes
 
 Delete a coupon item
 
+<b>Permissions Needed:</b> COUPONS_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -211,7 +213,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -221,6 +223,8 @@ void (empty response body)
 > void DeleteCouponTemplate (string id, string cascade)
 
 Delete a coupon template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp
@@ -277,7 +281,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -287,6 +291,8 @@ void (empty response body)
 > CouponItem GetCouponItem (int? id)
 
 Get a single coupon item
+
+<b>Permissions Needed:</b> COUPONS_ADMIN
 
 ### Example
 ```csharp
@@ -342,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -352,6 +358,8 @@ Name | Type | Description  | Notes
 > CouponItem GetCouponItemBySku (string sku)
 
 Get a coupon by sku
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -407,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -418,7 +426,7 @@ Name | Type | Description  | Notes
 
 Get a single coupon template
 
-Coupon Templates define a type of coupon and the properties they have.
+Coupon Templates define a type of coupon and the properties they have. <br><br><b>Permissions Needed:</b> TEMPLATE_ADMIN or COUPONS_ADMIN
 
 ### Example
 ```csharp
@@ -474,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -484,6 +492,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource GetCouponTemplates (int? size, int? page, string order)
 
 List and search coupon templates
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN or COUPONS_ADMIN
 
 ### Example
 ```csharp
@@ -543,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -553,6 +563,8 @@ Name | Type | Description  | Notes
 > CouponItem UpdateCouponItem (int? id, bool? cascade, CouponItem couponItem)
 
 Update a coupon item
+
+<b>Permissions Needed:</b> COUPONS_ADMIN
 
 ### Example
 ```csharp
@@ -622,6 +634,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource UpdateCouponTemplate (string id, ItemTemplateResource couponTemplateResource)
 
 Update a coupon template
+
+<b>Permissions Needed:</b> TEMPLATE_ADMIN
 
 ### Example
 ```csharp

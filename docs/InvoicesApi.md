@@ -1,6 +1,6 @@
 # com.knetikcloud..InvoicesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 Create an invoice
 
-Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. <br><br><b>Permissions Needed:</b> INVOICES_USER or INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -92,6 +92,8 @@ Name | Type | Description  | Notes
 
 Lists available fulfillment statuses
 
+<b>Permissions Needed:</b> ANY
+
 ### Example
 ```csharp
 using System;
@@ -142,7 +144,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -152,6 +154,8 @@ This endpoint does not need any parameter.
 > InvoiceResource GetInvoice (int? id)
 
 Retrieve an invoice
+
+<b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -207,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -217,6 +221,8 @@ Name | Type | Description  | Notes
 > PageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page)
 
 List invoice logs
+
+<b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -276,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -287,7 +293,7 @@ Name | Type | Description  | Notes
 
 Retrieve invoices
 
-Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user's invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user's invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. <br><br><b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -326,7 +332,7 @@ namespace Example
             var filterSku = filterSku_example;  // string | Filters invoices by item sku (optional) 
             var size = 56;  // int? | The number of objects returned per page (optional)  (default to 25)
             var page = 56;  // int? | The number of the page returned, starting with 1 (optional)  (default to 1)
-            var order = order_example;  // string | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)  (default to 1)
+            var order = order_example;  // string | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional) 
 
             try
             {
@@ -363,7 +369,7 @@ Name | Type | Description  | Notes
  **filterSku** | **string**| Filters invoices by item sku | [optional] 
  **size** | **int?**| The number of objects returned per page | [optional] [default to 25]
  **page** | **int?**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **string**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **string**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -375,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -385,6 +391,8 @@ Name | Type | Description  | Notes
 > List<string> GetPaymentStatuses ()
 
 Lists available payment statuses
+
+<b>Permissions Needed:</b> ANY
 
 ### Example
 ```csharp
@@ -436,7 +444,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -446,6 +454,8 @@ This endpoint does not need any parameter.
 > void PayInvoice (int? id, PayBySavedMethodRequest request)
 
 Pay an invoice using a saved payment method
+
+<b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -513,7 +523,7 @@ void (empty response body)
 
 Set the fulfillment status of a bundled invoice item
 
-This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -585,6 +595,8 @@ void (empty response body)
 
 Set the external reference of an invoice
 
+<b>Permissions Needed:</b> INVOICES_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -651,7 +663,7 @@ void (empty response body)
 
 Set the fulfillment status of an invoice item
 
-This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -721,6 +733,8 @@ void (empty response body)
 
 Set the order notes of an invoice
 
+<b>Permissions Needed:</b> INVOICES_ADMIN
+
 ### Example
 ```csharp
 using System;
@@ -787,7 +801,7 @@ void (empty response body)
 
 Set the payment status of an invoice
 
-This may trigger fulfillment if setting the status to 'paid'. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+This may trigger fulfillment if setting the status to 'paid'. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. <br><br><b>Permissions Needed:</b> INVOICES_ADMIN
 
 ### Example
 ```csharp
@@ -854,6 +868,8 @@ void (empty response body)
 > void UpdateBillingInfo (int? id, AddressResource billingInfoRequest)
 
 Set or update billing info
+
+<b>Permissions Needed:</b> INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```csharp

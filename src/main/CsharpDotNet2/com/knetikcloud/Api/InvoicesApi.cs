@@ -12,24 +12,24 @@ namespace com.knetikcloud.Api
     public interface IInvoicesApi
     {
         /// <summary>
-        /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+        /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
         /// </summary>
         /// <param name="req">Invoice to be created</param>
         /// <returns>List&lt;InvoiceResource&gt;</returns>
         List<InvoiceResource> CreateInvoice (InvoiceCreateRequest req);
         /// <summary>
-        /// Lists available fulfillment statuses 
+        /// Lists available fulfillment statuses &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetFulFillmentStatuses ();
         /// <summary>
-        /// Retrieve an invoice 
+        /// Retrieve an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <returns>InvoiceResource</returns>
         InvoiceResource GetInvoice (int? id);
         /// <summary>
-        /// List invoice logs 
+        /// List invoice logs &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="size">The number of objects returned per page</param>
@@ -37,7 +37,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceInvoiceLogEntry</returns>
         PageResourceInvoiceLogEntry GetInvoiceLogs (int? id, int? size, int? page);
         /// <summary>
-        /// Retrieve invoices Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+        /// Retrieve invoices Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="filterUser">The id of a user to get invoices for. Automtically added if not being called with admin permissions.</param>
         /// <param name="filterEmail">Filters invoices by customer&#39;s email. Admins only.</param>
@@ -59,19 +59,19 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceInvoiceResource</returns>
         PageResourceInvoiceResource GetInvoices (int? filterUser, string filterEmail, string filterFulfillmentStatus, string filterPaymentStatus, string filterItemName, string filterExternalRef, string filterCreatedDate, string filterVendorIds, string filterCurrency, string filterShippingStateName, string filterShippingCountryName, string filterShipping, string filterVendorName, string filterSku, int? size, int? page, string order);
         /// <summary>
-        /// Lists available payment statuses 
+        /// Lists available payment statuses &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetPaymentStatuses ();
         /// <summary>
-        /// Pay an invoice using a saved payment method 
+        /// Pay an invoice using a saved payment method &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="request">The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.</param>
         /// <returns></returns>
         void PayInvoice (int? id, PayBySavedMethodRequest request);
         /// <summary>
-        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="bundleSku">The sku of the bundle in the invoice that contains the given target</param>
@@ -80,14 +80,14 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetBundledInvoiceItemFulfillmentStatus (int? id, string bundleSku, string sku, StringWrapper status);
         /// <summary>
-        /// Set the external reference of an invoice 
+        /// Set the external reference of an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="externalRef">External reference info</param>
         /// <returns></returns>
         void SetExternalRef (int? id, StringWrapper externalRef);
         /// <summary>
-        /// Set the fulfillment status of an invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the fulfillment status of an invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="sku">The sku of an item in the invoice</param>
@@ -95,21 +95,21 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SetInvoiceItemFulfillmentStatus (int? id, string sku, StringWrapper status);
         /// <summary>
-        /// Set the order notes of an invoice 
+        /// Set the order notes of an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="orderNotes">Payment status info</param>
         /// <returns></returns>
         void SetOrderNotes (int? id, StringWrapper orderNotes);
         /// <summary>
-        /// Set the payment status of an invoice This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the payment status of an invoice This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="request">Payment status info</param>
         /// <returns></returns>
         void SetPaymentStatus (int? id, InvoicePaymentStatusRequest request);
         /// <summary>
-        /// Set or update billing info 
+        /// Set or update billing info &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param>
         /// <param name="billingInfoRequest">Address info</param>
@@ -171,7 +171,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+        /// Create an invoice Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
         /// </summary>
         /// <param name="req">Invoice to be created</param> 
         /// <returns>List&lt;InvoiceResource&gt;</returns>            
@@ -205,7 +205,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Lists available fulfillment statuses 
+        /// Lists available fulfillment statuses &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>            
         public List<string> GetFulFillmentStatuses ()
@@ -237,7 +237,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Retrieve an invoice 
+        /// Retrieve an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <returns>InvoiceResource</returns>            
@@ -274,7 +274,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List invoice logs 
+        /// List invoice logs &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="size">The number of objects returned per page</param> 
@@ -315,7 +315,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Retrieve invoices Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+        /// Retrieve invoices Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="filterUser">The id of a user to get invoices for. Automtically added if not being called with admin permissions.</param> 
         /// <param name="filterEmail">Filters invoices by customer&#39;s email. Admins only.</param> 
@@ -381,7 +381,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Lists available payment statuses 
+        /// Lists available payment statuses &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <returns>List&lt;string&gt;</returns>            
         public List<string> GetPaymentStatuses ()
@@ -413,7 +413,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Pay an invoice using a saved payment method 
+        /// Pay an invoice using a saved payment method &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="request">The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.</param> 
@@ -452,7 +452,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the fulfillment status of a bundled invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="bundleSku">The sku of the bundle in the invoice that contains the given target</param> 
@@ -504,7 +504,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         }
     
         /// <summary>
-        /// Set the external reference of an invoice 
+        /// Set the external reference of an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="externalRef">External reference info</param> 
@@ -543,7 +543,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         }
     
         /// <summary>
-        /// Set the fulfillment status of an invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the fulfillment status of an invoice item This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="sku">The sku of an item in the invoice</param> 
@@ -590,7 +590,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         }
     
         /// <summary>
-        /// Set the order notes of an invoice 
+        /// Set the order notes of an invoice &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="orderNotes">Payment status info</param> 
@@ -629,7 +629,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         }
     
         /// <summary>
-        /// Set the payment status of an invoice This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+        /// Set the payment status of an invoice This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="request">Payment status info</param> 
@@ -668,7 +668,7 @@ path = path.Replace("{" + "sku" + "}", ApiClient.ParameterToString(sku));
         }
     
         /// <summary>
-        /// Set or update billing info 
+        /// Set or update billing info &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
         /// </summary>
         /// <param name="id">The id of the invoice</param> 
         /// <param name="billingInfoRequest">Address info</param> 

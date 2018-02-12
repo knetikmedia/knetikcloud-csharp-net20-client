@@ -12,25 +12,25 @@ namespace com.knetikcloud.Api
     public interface IContentCommentsApi
     {
         /// <summary>
-        /// Add a new comment 
+        /// Add a new comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="commentResource">The comment to be added</param>
         /// <returns>CommentResource</returns>
         CommentResource AddComment (CommentResource commentResource);
         /// <summary>
-        /// Delete a comment 
+        /// Delete a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="id">The comment id</param>
         /// <returns></returns>
         void DeleteComment (long? id);
         /// <summary>
-        /// Return a comment 
+        /// Return a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The comment id</param>
         /// <returns>CommentResource</returns>
         CommentResource GetComment (long? id);
         /// <summary>
-        /// Returns a page of comments 
+        /// Returns a page of comments &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="context">Get comments by context type</param>
         /// <param name="contextId">Get comments by context id</param>
@@ -39,7 +39,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceCommentResource</returns>
         PageResourceCommentResource GetComments (string context, int? contextId, int? size, int? page);
         /// <summary>
-        /// Update a comment 
+        /// Update a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="id">The comment id</param>
         /// <param name="content">The comment content</param>
@@ -101,7 +101,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add a new comment 
+        /// Add a new comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="commentResource">The comment to be added</param> 
         /// <returns>CommentResource</returns>            
@@ -135,7 +135,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete a comment 
+        /// Delete a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="id">The comment id</param> 
         /// <returns></returns>            
@@ -172,7 +172,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Return a comment 
+        /// Return a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="id">The comment id</param> 
         /// <returns>CommentResource</returns>            
@@ -209,7 +209,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Returns a page of comments 
+        /// Returns a page of comments &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
         /// </summary>
         /// <param name="context">Get comments by context type</param> 
         /// <param name="contextId">Get comments by context id</param> 
@@ -255,7 +255,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update a comment 
+        /// Update a comment &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
         /// </summary>
         /// <param name="id">The comment id</param> 
         /// <param name="content">The comment content</param> 
