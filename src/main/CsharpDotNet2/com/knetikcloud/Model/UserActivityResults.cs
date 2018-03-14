@@ -45,9 +45,9 @@ namespace com.knetikcloud.Model {
     public long? Score { get; set; }
 
     /// <summary>
-    /// Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each
+    /// Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each
     /// </summary>
-    /// <value>Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each</value>
+    /// <value>Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each</value>
     [DataMember(Name="tags", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "tags")]
     public List<string> Tags { get; set; }

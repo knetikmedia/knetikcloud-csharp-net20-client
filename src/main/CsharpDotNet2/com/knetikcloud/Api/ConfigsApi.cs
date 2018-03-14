@@ -12,7 +12,7 @@ namespace com.knetikcloud.Api
     public interface IConfigsApi
     {
         /// <summary>
-        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="config">The config object</param>
         /// <returns>Config</returns>
@@ -101,7 +101,7 @@ namespace com.knetikcloud.Api
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+        /// Create a new config &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
         /// </summary>
         /// <param name="config">The config object</param> 
         /// <returns>Config</returns>            

@@ -40,7 +40,7 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Update a fulfillment type &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
         /// </summary>
-        /// <param name="id">The id</param>
+        /// <param name="id">The fulfillment id</param>
         /// <param name="fulfillmentType">The fulfillment type</param>
         /// <returns></returns>
         void UpdateFulfillmentType (int? id, FulfillmentType fulfillmentType);
@@ -248,7 +248,7 @@ namespace com.knetikcloud.Api
         /// <summary>
         /// Update a fulfillment type &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
         /// </summary>
-        /// <param name="id">The id</param> 
+        /// <param name="id">The fulfillment id</param> 
         /// <param name="fulfillmentType">The fulfillment type</param> 
         /// <returns></returns>            
         public void UpdateFulfillmentType (int? id, FulfillmentType fulfillmentType)

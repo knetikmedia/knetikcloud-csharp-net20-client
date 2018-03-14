@@ -70,7 +70,7 @@ namespace com.knetikcloud.Api
         /// <returns>ActivityResource</returns>
         ActivityResource GetActivity (long? id);
         /// <summary>
-        /// Load a single activity occurrence details &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+        /// Load a single activity occurrence details &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param>
         /// <returns>ActivityOccurrenceResource</returns>
@@ -90,7 +90,7 @@ namespace com.knetikcloud.Api
         /// <returns>PageResourceTemplateResource</returns>
         PageResourceTemplateResource GetActivityTemplates (int? size, int? page, string order);
         /// <summary>
-        /// List activity occurrences &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+        /// List activity occurrences &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="filterActivity">Filter for occurrences of the given activity ID</param>
         /// <param name="filterStatus">Filter for occurrences in the given status</param>
@@ -111,14 +111,14 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void RemoveUser (long? activityOccurrenceId, string userId, bool? ban, bool? bypassRestrictions);
         /// <summary>
-        /// Sets the status of an activity occurrence to FINISHED and logs metrics In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+        /// Sets the status of an activity occurrence to FINISHED and logs metrics In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param>
         /// <param name="activityOccurrenceResults">The activity occurrence object</param>
         /// <returns>ActivityOccurrenceResults</returns>
         ActivityOccurrenceResults SetActivityOccurrenceResults (long? activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults);
         /// <summary>
-        /// Sets the settings of an activity occurrence 
+        /// Sets the settings of an activity occurrence &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param>
         /// <param name="settings">The new settings</param>
@@ -131,7 +131,7 @@ namespace com.knetikcloud.Api
         /// <param name="userId">The id of the user</param>
         /// <param name="status">The new status</param>
         /// <returns>ActivityUserResource</returns>
-        ActivityUserResource SetUserStatus (long? activityOccurrenceId, string userId, string status);
+        ActivityUserResource SetUserStatus (long? activityOccurrenceId, string userId, ActivityUserStatusWrapper status);
         /// <summary>
         /// Update an activity &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
         /// </summary>
@@ -140,12 +140,12 @@ namespace com.knetikcloud.Api
         /// <returns>ActivityResource</returns>
         ActivityResource UpdateActivity (long? id, ActivityResource activityResource);
         /// <summary>
-        /// Update the status of an activity occurrence If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+        /// Update the status of an activity occurrence If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param>
         /// <param name="activityOccurrenceStatus">The activity occurrence status object</param>
         /// <returns></returns>
-        void UpdateActivityOccurrenceStatus (long? activityOccurrenceId, ValueWrapperstring activityOccurrenceStatus);
+        void UpdateActivityOccurrenceStatus (long? activityOccurrenceId, ActivityOccurrenceStatusWrapper activityOccurrenceStatus);
         /// <summary>
         /// Update an activity template &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
         /// </summary>
@@ -513,7 +513,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Load a single activity occurrence details &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+        /// Load a single activity occurrence details &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param> 
         /// <returns>ActivityOccurrenceResource</returns>            
@@ -625,7 +625,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List activity occurrences &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+        /// List activity occurrences &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="filterActivity">Filter for occurrences of the given activity ID</param> 
         /// <param name="filterStatus">Filter for occurrences in the given status</param> 
@@ -717,7 +717,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         }
     
         /// <summary>
-        /// Sets the status of an activity occurrence to FINISHED and logs metrics In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+        /// Sets the status of an activity occurrence to FINISHED and logs metrics In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param> 
         /// <param name="activityOccurrenceResults">The activity occurrence object</param> 
@@ -756,7 +756,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         }
     
         /// <summary>
-        /// Sets the settings of an activity occurrence 
+        /// Sets the settings of an activity occurrence &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param> 
         /// <param name="settings">The new settings</param> 
@@ -801,7 +801,7 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         /// <param name="userId">The id of the user</param> 
         /// <param name="status">The new status</param> 
         /// <returns>ActivityUserResource</returns>            
-        public ActivityUserResource SetUserStatus (long? activityOccurrenceId, string userId, string status)
+        public ActivityUserResource SetUserStatus (long? activityOccurrenceId, string userId, ActivityUserStatusWrapper status)
         {
             
             // verify the required parameter 'activityOccurrenceId' is set
@@ -878,12 +878,12 @@ path = path.Replace("{" + "user_id" + "}", ApiClient.ParameterToString(userId));
         }
     
         /// <summary>
-        /// Update the status of an activity occurrence If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+        /// Update the status of an activity occurrence If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
         /// </summary>
         /// <param name="activityOccurrenceId">The id of the activity occurrence</param> 
         /// <param name="activityOccurrenceStatus">The activity occurrence status object</param> 
         /// <returns></returns>            
-        public void UpdateActivityOccurrenceStatus (long? activityOccurrenceId, ValueWrapperstring activityOccurrenceStatus)
+        public void UpdateActivityOccurrenceStatus (long? activityOccurrenceId, ActivityOccurrenceStatusWrapper activityOccurrenceStatus)
         {
             
             // verify the required parameter 'activityOccurrenceId' is set

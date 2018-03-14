@@ -1,6 +1,6 @@
 # com.knetikcloud..ChatApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**GetThreadMessages**](ChatApi.md#getthreadmessages) | **GET** /chat/threads/{id}/messages | List messages in a thread
 [**GetTopicMessages**](ChatApi.md#gettopicmessages) | **GET** /chat/topics/{id}/messages | List messages in a topic
 [**RemoveChatBlacklist**](ChatApi.md#removechatblacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-[**SendMessage**](ChatApi.md#sendmessage) | **POST** /chat/messages | Send a message
+[**SendChatMessage**](ChatApi.md#sendchatmessage) | **POST** /chat/messages | Send a message
 
 
 <a name="acknowledgechatmessage"></a>
@@ -780,9 +780,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sendmessage"></a>
-# **SendMessage**
-> ChatMessageResource SendMessage (ChatMessageResource chatMessageResource)
+<a name="sendchatmessage"></a>
+# **SendChatMessage**
+> ChatMessageResource SendChatMessage (ChatMessageResource chatMessageResource)
 
 Send a message
 
@@ -798,7 +798,7 @@ using com.knetikcloud.Model;
 
 namespace Example
 {
-    public class SendMessageExample
+    public class SendChatMessageExample
     {
         public void main()
         {
@@ -814,12 +814,12 @@ namespace Example
             try
             {
                 // Send a message
-                ChatMessageResource result = apiInstance.SendMessage(chatMessageResource);
+                ChatMessageResource result = apiInstance.SendChatMessage(chatMessageResource);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ChatApi.SendMessage: " + e.Message );
+                Debug.Print("Exception when calling ChatApi.SendChatMessage: " + e.Message );
             }
         }
     }

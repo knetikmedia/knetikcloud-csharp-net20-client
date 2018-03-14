@@ -24,19 +24,19 @@ namespace com.knetikcloud.Api
         /// <returns>MessageTemplateResource</returns>
         MessageTemplateResource CreateMessageTemplate (MessageTemplateResource messageTemplate);
         /// <summary>
-        /// Delete an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Delete an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param>
         /// <returns></returns>
         void DeleteMessageTemplate (string id);
         /// <summary>
-        /// Get a single message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Get a single message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param>
         /// <returns>MessageTemplateResource</returns>
         MessageTemplateResource GetMessageTemplate (string id);
         /// <summary>
-        /// List and search message templates Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// List and search message templates Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="filterTagset">Filter for message templates with at least one of a specified set of tags (separated by comma)</param>
         /// <param name="filterTagIntersection">Filter for message templates with all of a specified set of tags (separated by comma)</param>
@@ -51,7 +51,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="messageResource">The message to be sent</param>
         /// <returns></returns>
-        void SendMessage1 (MessageResource messageResource);
+        void SendMessage (MessageResource messageResource);
         /// <summary>
         /// Send a raw email to one or more users &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
@@ -95,7 +95,7 @@ namespace com.knetikcloud.Api
         /// <returns></returns>
         void SendWebsocket (WebsocketMessageResource websocketResource);
         /// <summary>
-        /// Update an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Update an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param>
         /// <param name="messageTemplateResource">The message template</param>
@@ -225,7 +225,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Delete an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Delete an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param> 
         /// <returns></returns>            
@@ -262,7 +262,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Get a single message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Get a single message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param> 
         /// <returns>MessageTemplateResource</returns>            
@@ -299,7 +299,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// List and search message templates Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// List and search message templates Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="filterTagset">Filter for message templates with at least one of a specified set of tags (separated by comma)</param> 
         /// <param name="filterTagIntersection">Filter for message templates with all of a specified set of tags (separated by comma)</param> 
@@ -347,7 +347,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="messageResource">The message to be sent</param> 
         /// <returns></returns>            
-        public void SendMessage1 (MessageResource messageResource)
+        public void SendMessage (MessageResource messageResource)
         {
             
     
@@ -369,9 +369,9 @@ namespace com.knetikcloud.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage1: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage1: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
         }
@@ -615,7 +615,7 @@ namespace com.knetikcloud.Api
         }
     
         /// <summary>
-        /// Update an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+        /// Update an existing message template &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
         /// </summary>
         /// <param name="id">The message_template id</param> 
         /// <param name="messageTemplateResource">The message template</param> 

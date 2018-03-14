@@ -28,6 +28,20 @@ namespace com.knetikcloud.Model {
     public string ErrorMsg { get; set; }
 
     /// <summary>
+    /// Gets or Sets EventId
+    /// </summary>
+    [DataMember(Name="event_id", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "event_id")]
+    public string EventId { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Headers
+    /// </summary>
+    [DataMember(Name="headers", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "headers")]
+    public string Headers { get; set; }
+
+    /// <summary>
     /// The http status code the forward log entry
     /// </summary>
     /// <value>The http status code the forward log entry</value>
@@ -42,6 +56,13 @@ namespace com.knetikcloud.Model {
     [DataMember(Name="id", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id")]
     public string Id { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Method
+    /// </summary>
+    [DataMember(Name="method", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "method")]
+    public string Method { get; set; }
 
     /// <summary>
     /// The payload of the forward log entry
@@ -68,12 +89,33 @@ namespace com.knetikcloud.Model {
     public int? RetryCount { get; set; }
 
     /// <summary>
+    /// Gets or Sets Retryable
+    /// </summary>
+    [DataMember(Name="retryable", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "retryable")]
+    public bool? Retryable { get; set; }
+
+    /// <summary>
+    /// Gets or Sets RuleId
+    /// </summary>
+    [DataMember(Name="rule_id", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "rule_id")]
+    public string RuleId { get; set; }
+
+    /// <summary>
     /// The start date of the forward log entry
     /// </summary>
     /// <value>The start date of the forward log entry</value>
     [DataMember(Name="start_date", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "start_date")]
     public long? StartDate { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Success
+    /// </summary>
+    [DataMember(Name="success", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "success")]
+    public bool? Success { get; set; }
 
     /// <summary>
     /// The endpoint url of the forward log entry
@@ -93,12 +135,18 @@ namespace com.knetikcloud.Model {
       sb.Append("class ForwardLog {\n");
       sb.Append("  EndDate: ").Append(EndDate).Append("\n");
       sb.Append("  ErrorMsg: ").Append(ErrorMsg).Append("\n");
+      sb.Append("  EventId: ").Append(EventId).Append("\n");
+      sb.Append("  Headers: ").Append(Headers).Append("\n");
       sb.Append("  HttpStatusCode: ").Append(HttpStatusCode).Append("\n");
       sb.Append("  Id: ").Append(Id).Append("\n");
+      sb.Append("  Method: ").Append(Method).Append("\n");
       sb.Append("  Payload: ").Append(Payload).Append("\n");
       sb.Append("  Response: ").Append(Response).Append("\n");
       sb.Append("  RetryCount: ").Append(RetryCount).Append("\n");
+      sb.Append("  Retryable: ").Append(Retryable).Append("\n");
+      sb.Append("  RuleId: ").Append(RuleId).Append("\n");
       sb.Append("  StartDate: ").Append(StartDate).Append("\n");
+      sb.Append("  Success: ").Append(Success).Append("\n");
       sb.Append("  Url: ").Append(Url).Append("\n");
       sb.Append("}\n");
       return sb.ToString();

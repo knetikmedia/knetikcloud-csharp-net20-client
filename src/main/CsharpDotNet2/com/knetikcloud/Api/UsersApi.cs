@@ -329,7 +329,7 @@ namespace com.knetikcloud.Api
             if (recipientId == null) throw new ApiException(400, "Missing required parameter 'recipientId' when calling GetDirectMessages1");
             
     
-            var path = "/users/users/{recipient_id}/messages";
+            var path = "/users/{recipient_id}/messages";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "recipient_id" + "}", ApiClient.ParameterToString(recipientId));
     

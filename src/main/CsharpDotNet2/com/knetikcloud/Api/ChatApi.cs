@@ -97,7 +97,7 @@ namespace com.knetikcloud.Api
         /// </summary>
         /// <param name="chatMessageResource">The chat message resource</param>
         /// <returns>ChatMessageResource</returns>
-        ChatMessageResource SendMessage (ChatMessageResource chatMessageResource);
+        ChatMessageResource SendChatMessage (ChatMessageResource chatMessageResource);
     }
   
     /// <summary>
@@ -598,7 +598,7 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
         /// </summary>
         /// <param name="chatMessageResource">The chat message resource</param> 
         /// <returns>ChatMessageResource</returns>            
-        public ChatMessageResource SendMessage (ChatMessageResource chatMessageResource)
+        public ChatMessageResource SendChatMessage (ChatMessageResource chatMessageResource)
         {
             
     
@@ -620,9 +620,9 @@ path = path.Replace("{" + "id" + "}", ApiClient.ParameterToString(id));
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling SendChatMessage: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling SendMessage: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling SendChatMessage: " + response.ErrorMessage, response.ErrorMessage);
     
             return (ChatMessageResource) ApiClient.Deserialize(response.Content, typeof(ChatMessageResource), response.Headers);
         }

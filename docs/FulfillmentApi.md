@@ -1,6 +1,6 @@
 # com.knetikcloud..FulfillmentApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -311,7 +311,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FulfillmentApi();
-            var id = 56;  // int? | The id
+            var id = 56;  // int? | The fulfillment id
             var fulfillmentType = new FulfillmentType(); // FulfillmentType | The fulfillment type (optional) 
 
             try
@@ -332,7 +332,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int?**| The id | 
+ **id** | **int?**| The fulfillment id | 
  **fulfillmentType** | [**FulfillmentType**](FulfillmentType.md)| The fulfillment type | [optional] 
 
 ### Return type
